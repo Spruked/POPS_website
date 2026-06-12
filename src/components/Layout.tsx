@@ -43,6 +43,7 @@ export default function Layout({ children }: LayoutProps) {
             <Link to="/about" className="nav-link">About</Link>
             <Link to="/declaration" className="nav-link">Declaration</Link>
             <Link to="/pledge" className="nav-link">Pledge</Link>
+            <Link to="/lexicon" className="nav-link">Lexicon</Link>
             <Link to="/download" className="nav-link">Access</Link>
             <Link to="/pricing" className="nav-cta">Get P.O.P.S.</Link>
           </div>
@@ -72,6 +73,7 @@ export default function Layout({ children }: LayoutProps) {
             <Link to="/about">About</Link>
             <Link to="/declaration">Declaration</Link>
             <Link to="/pledge">Pledge</Link>
+            <Link to="/lexicon">Lexicon</Link>
             <Link to="/download">Access</Link>
             <Link to="/privacy">Privacy</Link>
             <Link to="/terms">Terms</Link>
