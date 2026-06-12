@@ -1,6 +1,11 @@
 import { Link, useParams } from "react-router-dom";
 import PageSeo from "../components/PageSeo";
-import { WEBSITE_LEXICON } from "../data/popsLexicon";
+import { WEBSITE_LEXICON, WEBSITE_LEXICON_RULES, WEBSITE_LEXICON_VALIDATION } from "../data/popsLexicon";
+import { LEXICON_VALIDATION_FAILURE_MESSAGE } from "../data/validatePopsLexicon";
+
+function formatCategory(category: string) {
+  return category.replace(/_/g, " ").replace(/\b\w/g, (letter) => letter.toUpperCase());
+}
 
 export default function LexiconPage() {
   const { slug } = useParams();
@@ -12,6 +17,11 @@ export default function LexiconPage() {
     : "The POPS Lexicon explains court-safe evidence language, key legal terms, annotations, highlights, and factual wording.";
   const path = selectedEntry ? `/lexicon/${selectedEntry.slug}` : "/lexicon";
   const image = selectedEntry ? `https://pops.spruked.com/og/lexicon-${selectedEntry.slug}.svg` : undefined;
+  const groupedEntries = entries.reduce<Record<string, typeof WEBSITE_LEXICON>>((groups, entry) => {
+    groups[entry.category] = groups[entry.category] || [];
+    groups[entry.category].push(entry);
+    return groups;
+  }, {});
 
   return (
     <div className="document-page">
@@ -31,6 +41,7 @@ export default function LexiconPage() {
         <p>
           Some terms may carry legal significance and should be reviewed carefully before they are used in a report, packet, or filing.
         </p>
+        <p><strong>Rewrite guidance:</strong> {WEBSITE_LEXICON_RULES.rewrite_strategy.join(" ")}</p>
 
         {selectedEntry && (
           <p>
@@ -38,17 +49,34 @@ export default function LexiconPage() {
           </p>
         )}
 
+        {!WEBSITE_LEXICON_VALIDATION.ok && (
+          <article className="lexicon-document-card">
+            <p><strong>{LEXICON_VALIDATION_FAILURE_MESSAGE}</strong></p>
+            <ul>
+              {WEBSITE_LEXICON_VALIDATION.errors.map((error) => (
+                <li key={error}>{error}</li>
+              ))}
+            </ul>
+          </article>
+        )}
+
         <div className="lexicon-document-list">
-          {entries.map((entry) => (
-            <article className="lexicon-document-card" key={entry.term}>
-              <div className="lexicon-document-heading">
-                <h2>{selectedEntry ? entry.term : <Link to={`/lexicon/${entry.slug}`}>{entry.term}</Link>}</h2>
-                <span className={`lexicon-sensitivity ${entry.sensitivity.toLowerCase()}`}>{entry.sensitivity} Sensitivity</span>
-              </div>
-              <p><strong>Plain-English meaning:</strong> {entry.meaning}</p>
-              <p><strong>POPS use:</strong> {entry.popsUse}</p>
-              <p><strong>Court-safe example:</strong> {entry.example}</p>
-            </article>
+          {Object.entries(groupedEntries).map(([category, categoryEntries]) => (
+            <section className="lexicon-document-group" key={category}>
+              <div className="document-rule"><span>{formatCategory(category)}</span></div>
+              {categoryEntries.map((entry) => (
+                <article className="lexicon-document-card" key={entry.term}>
+                  <div className="lexicon-document-heading">
+                    <h2>{selectedEntry ? entry.term : <Link to={`/lexicon/${entry.slug}`}>{entry.term}</Link>}</h2>
+                    <span className={`lexicon-sensitivity ${entry.sensitivity.toLowerCase()}`}>{entry.sensitivity} Sensitivity</span>
+                  </div>
+                  <p><strong>Plain-English meaning:</strong> {entry.meaning}</p>
+                  <p><strong>Why it matters:</strong> {entry.whyItMatters}</p>
+                  <p><strong>POPS use:</strong> {entry.popsUse}</p>
+                  <p><strong>Court-safe example:</strong> {entry.example}</p>
+                </article>
+              ))}
+            </section>
           ))}
         </div>
       </section>
