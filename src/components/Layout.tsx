@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 
@@ -24,17 +24,20 @@ export default function Layout({ children }: LayoutProps) {
 
   return (
     <div className="page">
-      <nav className="nav" style={{
-        background: scrolled ? "rgba(7, 10, 15, 0.95)" : "rgba(7, 10, 15, 0.6)",
-        boxShadow: scrolled ? "0 4px 24px rgba(0,0,0,0.3)" : "none",
-      }}>
+      <nav
+        className="nav"
+        style={{
+          background: scrolled ? "rgba(7, 10, 15, 0.95)" : "rgba(7, 10, 15, 0.6)",
+          boxShadow: scrolled ? "0 4px 24px rgba(0,0,0,0.3)" : "none",
+        }}
+      >
         <div className="nav-inner">
           <Link to="/" className="nav-logo">
             <div className="nav-logo-shield">
               <img src="/popsbadge.png" alt="POPS badge" className="brand-badge" />
             </div>
             <div className="nav-logo-text">
-              P.O.P.S.<span>™</span>
+              P.O.P.S.<span>TM</span>
             </div>
           </Link>
 
@@ -48,8 +51,8 @@ export default function Layout({ children }: LayoutProps) {
             <Link to="/access" className="nav-cta">Get P.O.P.S.</Link>
           </div>
 
-          <button 
-            className="nav-link" 
+          <button
+            className="nav-link"
             style={{ display: "none", background: "none", border: "none" }}
             onClick={() => setMobileOpen(!mobileOpen)}
           >
@@ -65,7 +68,7 @@ export default function Layout({ children }: LayoutProps) {
           <div className="footer-brand">
             <img src="/popsbadge.png" alt="POPS badge" className="footer-badge" />
             <div className="footer-brand-text">
-              P.O.P.S.<span>™</span>
+              P.O.P.S.<span>TM</span>
             </div>
           </div>
           <div className="footer-links">
@@ -80,7 +83,7 @@ export default function Layout({ children }: LayoutProps) {
             <Link to="/policies-procedures">Policies &amp; Procedures</Link>
           </div>
           <div className="footer-copy">
-            © 2026 Proof of Presence System. This is a Pro Prime Series application. All rights reserved.
+            (c) 2026 Proof of Presence System. This is a Pro Prime Series application. All rights reserved.
           </div>
         </div>
       </footer>

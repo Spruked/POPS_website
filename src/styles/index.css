@@ -1,6 +1,27 @@
 @import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap');
 
 :root {
+  --pops-bg: #070a0f;
+  --pops-bg-2: #0a1b30;
+  --pops-panel: #0d0f14;
+  --pops-panel-2: #1a1f26;
+  --pops-border: #1e293b;
+  --pops-border-soft: rgba(30, 96, 255, 0.24);
+  --pops-border-strong: #334155;
+  --pops-blue: #1e60ff;
+  --pops-blue-bright: #69b7ff;
+  --pops-blue-soft: rgba(30, 96, 255, 0.14);
+  --pops-gold: #fbbf24;
+  --pops-gold-soft: rgba(251, 191, 36, 0.14);
+  --pops-text: #e8edf5;
+  --pops-text-soft: #94a3b8;
+  --pops-text-muted: #64748b;
+  --pops-danger: #ff3b3b;
+  --pops-danger-soft: rgba(255, 59, 59, 0.14);
+  --pops-success: #10b981;
+  --pops-warning: #f59e0b;
+  --pops-shadow-blue: 0 0 40px rgba(30, 96, 255, 0.15);
+  --pops-radius: 8px;
   /* P.O.P.S. Brand Palette from branding sheet */
   --forge-blue: #1E60FF;
   --forge-blue-glow: rgba(30, 96, 255, 0.4);
