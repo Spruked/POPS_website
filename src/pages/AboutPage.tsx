@@ -1,4 +1,5 @@
 import { Shield, Fingerprint, Gavel, Eye, Database, Lock, FileCheck, CheckCircle } from "lucide-react";
+import PageSeo from "../components/PageSeo";
 
 const PILLARS = [
   {
@@ -59,6 +60,11 @@ const STEPS = [
 export default function AboutPage() {
   return (
     <div>
+      <PageSeo
+        title="About POPS | First Order of Protection"
+        description="Learn the POPS mission, doctrine, local-first evidence model, and the discipline behind Proof of Presence."
+        path="/about"
+      />
       <section className="about-hero">
         <div className="container">
           <span className="mono" style={{ color: "var(--forge-blue)", display: "block", marginBottom: 16 }}>

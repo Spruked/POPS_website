@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { CheckCircle, Shield, Lock, FileCheck, Clock, Zap, Copy, Check } from "lucide-react";
+import PageSeo from "../components/PageSeo";
 
 const TIERS = [
   {
@@ -90,6 +91,11 @@ export default function DownloadPage() {
 
   return (
     <div style={{ paddingTop: 72 }}>
+      <PageSeo
+        title="Get POPS | Local-First Evidence System"
+        description="Get POPS, the local-first evidence system for documenting presence, preserving records, and preparing attorney-ready packets."
+        path="/access"
+      />
       {/* ─── CHOOSE TIER ─── */}
       <section className="section">
         <div className="container">

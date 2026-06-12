@@ -44,8 +44,8 @@ export default function Layout({ children }: LayoutProps) {
             <Link to="/declaration" className="nav-link">Declaration</Link>
             <Link to="/pledge" className="nav-link">Pledge</Link>
             <Link to="/lexicon" className="nav-link">Lexicon</Link>
-            <Link to="/download" className="nav-link">Access</Link>
-            <Link to="/pricing" className="nav-cta">Get P.O.P.S.</Link>
+            <Link to="/access" className="nav-link">Access</Link>
+            <Link to="/access" className="nav-cta">Get P.O.P.S.</Link>
           </div>
 
           <button 
@@ -74,7 +74,7 @@ export default function Layout({ children }: LayoutProps) {
             <Link to="/declaration">Declaration</Link>
             <Link to="/pledge">Pledge</Link>
             <Link to="/lexicon">Lexicon</Link>
-            <Link to="/download">Access</Link>
+            <Link to="/access">Access</Link>
             <Link to="/privacy">Privacy</Link>
             <Link to="/terms">Terms</Link>
             <Link to="/policies-procedures">Policies &amp; Procedures</Link>

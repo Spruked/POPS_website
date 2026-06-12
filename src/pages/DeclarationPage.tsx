@@ -1,3 +1,6 @@
+import { Link } from "react-router-dom";
+import PageSeo from "../components/PageSeo";
+
 const ARTICLES = [
   {
     number: "Article I",
@@ -34,6 +37,11 @@ const ARTICLES = [
 export default function DeclarationPage() {
   return (
     <div className="document-page">
+      <PageSeo
+        title="The POPS Declaration | First Order of Protection"
+        description="The POPS Declaration defines fathers as the First Order of Protection through presence, evidence, guardianship, and record keeping."
+        path="/declaration"
+      />
       <section className="document-hero">
         <img src="/popsbadge.png" alt="POPS badge" className="document-crest" />
         <span className="mono">Proof of Presence System</span>
@@ -102,6 +110,15 @@ export default function DeclarationPage() {
         <div className="document-signature">
           Filed under the authority of every man who has ever stood between his family and the dark, and called it nothing more than Tuesday.
         </div>
+
+        <section className="doctrine-cta">
+          <p className="eyebrow">From Philosophy to Practice</p>
+          <h2>Proof of Presence requires a record.</h2>
+          <p>
+            The P.O.P.S. Declaration establishes the standard. The desktop application helps preserve evidence, organize timelines, verify files with SHA-256 integrity, and prepare a court-safe record for attorney review.
+          </p>
+          <Link className="btn btn-primary" to="/access">Get P.O.P.S.</Link>
+        </section>
       </section>
     </div>
   );

@@ -442,6 +442,22 @@ h4 { font-size: 20px; line-height: 1.3; }
   line-height: 1.6;
 }
 
+.feature-card-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.inline-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 18px;
+  color: var(--forge-blue);
+  font-weight: 700;
+  font-size: 13px;
+}
+
 .security-stroke-grid .feature-card {
   border-width: 3px;
 }
@@ -1147,6 +1163,28 @@ h4 { font-size: 20px; line-height: 1.3; }
   text-align: center;
 }
 
+.doctrine-cta {
+  margin-top: 42px;
+  padding: 30px;
+  border: 1px solid rgba(30, 96, 255, 0.35);
+  border-radius: var(--radius);
+  background: linear-gradient(145deg, rgba(30, 96, 255, 0.1), rgba(13, 15, 20, 0.96));
+  text-align: center;
+}
+
+.doctrine-cta .eyebrow {
+  color: var(--forge-blue) !important;
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.doctrine-cta h2 {
+  margin-bottom: 12px;
+}
+
 .lexicon-document-list {
   display: grid;
   gap: 18px;
@@ -1171,6 +1209,15 @@ h4 { font-size: 20px; line-height: 1.3; }
 
 .lexicon-document-heading h2 {
   font-size: 24px;
+}
+
+.lexicon-document-heading h2 a {
+  color: var(--text-primary);
+  text-decoration: none;
+}
+
+.lexicon-document-heading h2 a:hover {
+  color: var(--forge-blue);
 }
 
 .lexicon-sensitivity {

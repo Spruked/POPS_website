@@ -1,0 +1,17 @@
+{
+  "name": "P.O.P.S. - Proof of Presence System",
+  "short_name": "P.O.P.S.",
+  "description": "A local-first fatherhood discipline and evidence-preservation platform.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#070a0f",
+  "theme_color": "#1E60FF",
+  "icons": [
+    {
+      "src": "/popsbadge.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}

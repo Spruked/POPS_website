@@ -1,3 +1,6 @@
+import { Link } from "react-router-dom";
+import PageSeo from "../components/PageSeo";
+
 const PLEDGES = [
   {
     title: "Presence",
@@ -28,6 +31,11 @@ const PLEDGES = [
 export default function PledgePage() {
   return (
     <div className="document-page">
+      <PageSeo
+        title="The POPS Pledge | Preserve Protect Prove"
+        description="The POPS Pledge is a commitment to vigilance, restraint, record keeping, lawful presence, and permanent protection."
+        path="/pledge"
+      />
       <section className="document-hero">
         <img src="/popsbadge.png" alt="POPS badge" className="document-crest" />
         <span className="mono">First Order of Protection</span>
@@ -87,6 +95,15 @@ export default function PledgePage() {
         <div className="document-signature">
           This is the First Order. This is Proof of Presence.
         </div>
+
+        <section className="doctrine-cta">
+          <p className="eyebrow">From Philosophy to Practice</p>
+          <h2>Proof of Presence requires a record.</h2>
+          <p>
+            The P.O.P.S. Pledge establishes the commitment. The desktop application helps preserve evidence, organize timelines, verify files with SHA-256 integrity, and prepare a court-safe record for attorney review.
+          </p>
+          <Link className="btn btn-primary" to="/access">Get P.O.P.S.</Link>
+        </section>
       </section>
     </div>
   );
