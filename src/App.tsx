@@ -8,6 +8,8 @@ import AttorneyReferralPage from "./pages/AttorneyReferralPage";
 import CounselHandoffPage from "./pages/CounselHandoffPage";
 import EventsPage from "./pages/EventsPage";
 import AccountPortalPage from "./pages/AccountPortalPage";
+import DeclarationPage from "./pages/DeclarationPage";
+import PledgePage from "./pages/PledgePage";
 import TermsPage from "./pages/TermsPage";
 import PoliciesProceduresPage from "./pages/PoliciesProceduresPage";
 import PrivacyPage from "./pages/PrivacyPage";
@@ -26,6 +28,8 @@ function App() {
           <Route path="/counsel-handoff" element={<CounselHandoffPage />} />
           <Route path="/events" element={<EventsPage />} />
           <Route path="/account" element={<AccountPortalPage />} />
+          <Route path="/declaration" element={<DeclarationPage />} />
+          <Route path="/pledge" element={<PledgePage />} />
           <Route path="/terms" element={<TermsPage />} />
           <Route path="/policies-procedures" element={<PoliciesProceduresPage />} />
           <Route path="/privacy" element={<PrivacyPage />} />
