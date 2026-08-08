@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X } from "lucide-react";
+import { Menu, ShoppingCart, X } from "lucide-react";
+import { useCart } from "../cart";
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -10,6 +11,7 @@ export default function Layout({ children }: LayoutProps) {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const location = useLocation();
+  const { itemCount } = useCart();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -47,8 +49,13 @@ export default function Layout({ children }: LayoutProps) {
             <Link to="/declaration" className="nav-link">Declaration</Link>
             <Link to="/pledge" className="nav-link">Pledge</Link>
             <Link to="/lexicon" className="nav-link">Lexicon</Link>
-            <Link to="/access" className="nav-link">Access</Link>
-            <Link to="/access" className="nav-cta">Get P.O.P.S.</Link>
+            <Link to="/access" className="nav-link" data-orb-target="pops.nav.access">Access</Link>
+            <Link to="/cart" className="nav-cart" aria-label={`Cart with ${itemCount} item${itemCount === 1 ? "" : "s"}`}>
+              <ShoppingCart size={17} />
+              <span>Cart</span>
+              {itemCount > 0 && <strong>{itemCount}</strong>}
+            </Link>
+            <Link to="/access" className="nav-cta" data-orb-target="pops.nav.get-pops">Get P.O.P.S.</Link>
           </div>
 
           <button
@@ -78,12 +85,19 @@ export default function Layout({ children }: LayoutProps) {
             <Link to="/pledge">Pledge</Link>
             <Link to="/lexicon">Lexicon</Link>
             <Link to="/access">Access</Link>
+            <Link to="/cart">Cart</Link>
             <Link to="/privacy">Privacy</Link>
             <Link to="/terms">Terms</Link>
             <Link to="/policies-procedures">Policies &amp; Procedures</Link>
           </div>
+          <div className="footer-network" aria-label="Spruked network">
+            <a href="https://spruked.com/" target="_blank" rel="noopener">Spruked</a>
+            <a href="https://orbweaver.spruked.com/" target="_blank" rel="noopener">OrbWeaver</a>
+            <a href="https://certsig.com/" target="_blank" rel="noopener">CertSig</a>
+            <a href="https://truemarkmint.com/" target="_blank" rel="noopener">TrueMarkMint</a>
+          </div>
           <div className="footer-copy">
-            (c) 2026 Proof of Presence System. This is a Pro Prime Series application. All rights reserved.
+            Copyright 2026 Proof of Presence System. Pro Prime Series AI. All rights reserved.
           </div>
         </div>
       </footer>

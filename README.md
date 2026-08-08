@@ -136,6 +136,18 @@ Analytics is optional and controlled by environment variable:
 VITE_GA_MEASUREMENT_ID=G-XXXXXXXXXX
 ```
 
+Square checkout is controlled by backend environment variables. Put production
+values in `.env.local`; do not commit the access token.
+
+```text
+SQUARE_ENVIRONMENT=production
+SQUARE_APPLICATION_ID=your-production-application-id
+SQUARE_LOCATION_ID=your-location-id
+SQUARE_ACCESS_TOKEN=your-production-access-token
+SQUARE_VERSION=2026-07-15
+SQUARE_REDIRECT_URL=https://pops.spruked.com/access
+```
+
 Search Console should be connected once `https://pops.spruked.com` is stable through the tunnel.
 
 ## Doctrine Content

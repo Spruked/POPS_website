@@ -1,8 +1,14 @@
 import { Link } from "react-router-dom";
+import PageSeo from "../components/PageSeo";
 
 export default function EventsPage() {
   return (
     <div style={{ paddingTop: 88 }}>
+      <PageSeo
+        title="POPS Events | Updates and Q&A"
+        description="POPS events, live Q&A sessions, community updates, and future registration information for fathers using Proof of Presence."
+        path="/events"
+      />
       <section className="section">
         <div className="container">
           <div className="section-header">

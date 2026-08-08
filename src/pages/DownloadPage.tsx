@@ -1,6 +1,8 @@
 import { useState } from "react";
-import { CheckCircle, Shield, Lock, FileCheck, Clock, Zap, Copy, Check } from "lucide-react";
+import { Link, useNavigate } from "react-router-dom";
+import { CheckCircle, Shield, Lock, FileCheck, Clock, Zap, Copy, Check, ShoppingCart } from "lucide-react";
 import PageSeo from "../components/PageSeo";
+import { getProduct, useCart } from "../cart";
 
 const TIERS = [
   {
@@ -77,9 +79,26 @@ export default function DownloadPage() {
   const [selectedTier, setSelectedTier] = useState("opendoor");
   const [copied, setCopied] = useState(false);
   const [licenseKey, setLicenseKey] = useState("");
-  const [step, setStep] = useState<"choose" | "checkout" | "activate">("choose");
+  const [showReview, setShowReview] = useState(false);
+  const navigate = useNavigate();
+  const { addItem } = useCart();
 
-  const tier = TIERS.find(t => t.id === selectedTier)!;
+  function handleTierAction(id: string) {
+    const product = getProduct(id);
+
+    if (!product) {
+      return;
+    }
+
+    if (product.requiresReview) {
+      setSelectedTier(id);
+      setShowReview(true);
+      return;
+    }
+
+    addItem(product);
+    navigate("/cart");
+  }
 
   function handleCopyKey() {
     const key = "POPS-" + Math.random().toString(36).substring(2, 10).toUpperCase() + "-" + Math.random().toString(36).substring(2, 6).toUpperCase();
@@ -97,11 +116,11 @@ export default function DownloadPage() {
         path="/access"
       />
       {/* ─── CHOOSE TIER ─── */}
-      <section className="section">
+      <section className="section" data-orb-target="pops.access.options">
         <div className="container">
           <div className="section-header">
             <span className="mono access-kicker">Get P.O.P.S.</span>
-            <h2>Choose Your Access</h2>
+            <h1>Choose Your POPS Access</h1>
             <p>
               POPS has one product. Guardian pays the full license. Open Door contributes what they can. Sponsors help carry the rest. POPS Membership is one-time $12.99 lifetime access.
             </p>
@@ -112,6 +131,12 @@ export default function DownloadPage() {
               <div 
                 key={t.id}
                 id={t.id === "opendoor" ? "opendoor-access" : t.id === "sponsor" ? "sponsor-access" : undefined}
+                data-orb-target={
+                  t.id === "guardian" ? "pops.access.standard"
+                  : t.id === "opendoor" ? "pops.access.hardship"
+                  : t.id === "sponsor" ? "pops.access.sponsor"
+                  : "pops.access.membership"
+                }
                 className={`pricing-card ${t.primary ? "featured" : ""} ${t.id === "membership" ? "pricing-membership-row" : ""} ${selectedTier === t.id ? "" : ""}`}
                 onClick={() => setSelectedTier(t.id)}
                 style={{ 
@@ -131,8 +156,12 @@ export default function DownloadPage() {
                 <button 
                   className={t.primary ? "btn btn-primary" : "btn btn-ghost"}
                   style={{ width: "100%", justifyContent: "center" }}
-                  onClick={() => setStep(t.id === "guardian" || t.id === "membership" ? "checkout" : "activate")}
+                  onClick={(event) => {
+                    event.stopPropagation();
+                    handleTierAction(t.id);
+                  }}
                 >
+                  {t.id === "guardian" || t.id === "membership" || t.id === "sponsor" ? <ShoppingCart size={16} /> : null}
                   {t.cta}
                 </button>
               </div>
@@ -141,80 +170,9 @@ export default function DownloadPage() {
         </div>
       </section>
 
-      {/* ─── CHECKOUT (Simulated) ─── */}
-      {step === "checkout" && (
-        <section className="section section-alt">
-          <div className="container" style={{ maxWidth: 480 }}>
-            <div className="section-header">
-              <span className="mono">Checkout</span>
-              <h2>Complete Checkout</h2>
-            </div>
-
-            <div className="card" style={{ padding: 32 }}>
-              <div style={{ 
-                display: "flex", alignItems: "center", gap: 16, 
-                padding: "16px 20px", 
-                background: "linear-gradient(145deg, var(--gunmetal), var(--obsidian))",
-                borderRadius: "var(--radius-lg)",
-                marginBottom: 24,
-                border: "1px solid var(--border-dim)",
-              }}>
-                <div style={{
-                  width: 48, height: 48, borderRadius: "var(--radius)",
-                  background: "rgba(30, 96, 255, 0.1)",
-                  border: "1px solid rgba(30, 96, 255, 0.2)",
-                  display: "flex", alignItems: "center", justifyContent: "center",
-                  color: "var(--forge-blue)",
-                }}>
-                  <Shield size={24} />
-                </div>
-                <div>
-                  <div style={{ fontWeight: 700, fontSize: 16 }}>{tier.name}</div>
-                  <div style={{ color: "var(--text-muted)", fontSize: 14 }}>{tier.price} {tier.period}</div>
-                </div>
-              </div>
-
-              <div style={{ display: "flex", flexDirection: "column", gap: 16, marginBottom: 24 }}>
-                <div className="form-group">
-                  <label>Email Address</label>
-                  <input type="email" placeholder="your@email.com" />
-                </div>
-                <div className="form-group">
-                  <label>Card Number</label>
-                  <input placeholder="0000 0000 0000 0000" />
-                </div>
-                <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16 }}>
-                  <div className="form-group">
-                    <label>Expiry</label>
-                    <input placeholder="MM/YY" />
-                  </div>
-                  <div className="form-group">
-                    <label>CVC</label>
-                    <input placeholder="123" />
-                  </div>
-                </div>
-              </div>
-
-              <button 
-                className="btn btn-primary" 
-                style={{ width: "100%", justifyContent: "center", padding: "16px" }}
-                onClick={() => setStep("activate")}
-              >
-                <Lock size={16} />
-                Pay {tier.price} & Continue
-              </button>
-
-              <p style={{ textAlign: "center", fontSize: 12, color: "var(--text-dim)", marginTop: 16 }}>
-                Secure one-time payment. No recurring charges. License delivery after payment.
-              </p>
-            </div>
-          </div>
-        </section>
-      )}
-
       {/* ─── ACTIVATE / DOWNLOAD ─── */}
-      {step === "activate" && (
-        <section className="section section-alt">
+      {showReview && (
+        <section className="section section-alt" data-orb-target="pops.access.activation">
           <div className="container" style={{ maxWidth: 640 }}>
             <div className="section-header">
               <span className="mono">Open Door Policy</span>
@@ -305,13 +263,24 @@ export default function DownloadPage() {
                   <li>Everyone approved receives the same tool.</li>
                 </ol>
               </div>
+
+              <div style={{ display: "flex", gap: 12, justifyContent: "center", flexWrap: "wrap", marginTop: 28 }}>
+                <Link to="/account" className="btn btn-primary">
+                  <Lock size={16} />
+                  Start Open Door Review
+                </Link>
+                <button className="btn btn-ghost" onClick={() => handleTierAction("sponsor")}>
+                  <ShoppingCart size={16} />
+                  Sponsor Instead
+                </button>
+              </div>
             </div>
           </div>
         </section>
       )}
 
       {/* ─── WHY LOCAL-FIRST ─── */}
-      <section className="section">
+      <section className="section" data-orb-target="pops.access.local-first">
         <div className="container">
           <div className="section-header">
             <span className="mono">Security</span>

@@ -1,6 +1,13 @@
+import PageSeo from "../components/PageSeo";
+
 export default function TermsPage() {
   return (
     <div style={{ paddingTop: 88 }}>
+      <PageSeo
+        title="POPS Terms of Service | Proof of Presence System"
+        description="Terms for using the POPS website and desktop application, including scope, user responsibility, access, payment, and disclaimers."
+        path="/terms"
+      />
       <section className="section">
         <div className="container" style={{ maxWidth: 980 }}>
           <div className="section-header">

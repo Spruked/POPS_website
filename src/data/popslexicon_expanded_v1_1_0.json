@@ -1,0 +1,676 @@
+{
+  "module": "POPS Lexicon",
+  "version": "1.1.0",
+  "description": "Courtroom, evidence, procedure, family-law, and constitutional terms for POPS users to recognize, understand, and use carefully in records, timelines, and exports.",
+  "audience": [
+    "parents",
+    "pro se users",
+    "attorneys",
+    "case reviewers"
+  ],
+  "terms": [
+    {
+      "term": "culpable",
+      "category": "legal",
+      "sensitivity": "high",
+      "plain_english": "Legally or morally responsible for wrongdoing.",
+      "why_it_matters": "This word can sound like a legal conclusion, so POPS should encourage factual wording instead of blame.",
+      "court_safe_example": "The records show the scheduled parenting time did not occur on the dates listed.",
+      "app_guidance": "Flag for attorney review if used in a report, packet, or filing."
+    },
+    {
+      "term": "exculpatory",
+      "category": "evidence",
+      "sensitivity": "medium",
+      "plain_english": "Evidence that may help show a person did not do something wrong or did comply with an order.",
+      "why_it_matters": "Users should be able to tag records that may help show lawful conduct or a good-faith effort.",
+      "court_safe_example": "This message may be exculpatory because it shows I appeared at the exchange location on time.",
+      "app_guidance": "Allow tagging and evidence classification."
+    },
+    {
+      "term": "pro se",
+      "category": "court_procedure",
+      "sensitivity": "medium",
+      "plain_english": "Representing yourself in court without an attorney.",
+      "why_it_matters": "Many POPS users may be self-represented and need organizing help.",
+      "court_safe_example": "I am appearing pro se and have organized the attached records for the Court's review.",
+      "app_guidance": "Show as informational and supportive, not as legal advice."
+    },
+    {
+      "term": "prima facie",
+      "category": "legal_standard",
+      "sensitivity": "high",
+      "plain_english": "Something that appears sufficient on its face unless challenged by other evidence.",
+      "why_it_matters": "This is a legal threshold term and should be used carefully.",
+      "court_safe_example": "The timeline and records may show a prima facie pattern of missed parenting time.",
+      "app_guidance": "Flag for review when used as a conclusion."
+    },
+    {
+      "term": "estoppel",
+      "category": "legal_doctrine",
+      "sensitivity": "high",
+      "plain_english": "A rule that may prevent someone from taking a position that conflicts with earlier words, actions, or promises when another person relied on them.",
+      "why_it_matters": "POPS should preserve messages, agreements, and reliance evidence.",
+      "court_safe_example": "The messages show an agreed exchange time, and I relied on that agreement by appearing at the location.",
+      "app_guidance": "Flag for attorney review if used in a filing."
+    },
+    {
+      "term": "habeas corpus",
+      "category": "constitutional_procedure",
+      "sensitivity": "high",
+      "plain_english": "\"You shall have the body.\" A procedure used to challenge unlawful detention or restraint.",
+      "why_it_matters": "This is a serious legal procedure and should be handled cautiously.",
+      "court_safe_example": "This term involves serious legal procedure and should be reviewed with an attorney or appropriate legal authority before use.",
+      "app_guidance": "Restrict to informational display and attorney review guidance."
+    },
+    {
+      "term": "Fifth Amendment",
+      "category": "constitutional_right",
+      "sensitivity": "high",
+      "plain_english": "A constitutional protection that includes due process and protection against self-incrimination.",
+      "why_it_matters": "Statements involving accusations, police contact, admissions, or investigations may need careful review.",
+      "court_safe_example": "Statements involving possible criminal exposure should be reviewed by counsel before filing or sharing.",
+      "app_guidance": "Flag sensitive narrative content for review."
+    },
+    {
+      "term": "Fourteenth Amendment",
+      "category": "constitutional_right",
+      "sensitivity": "high",
+      "plain_english": "A constitutional protection that includes due process and equal protection principles.",
+      "why_it_matters": "In family-law contexts, users may hear this discussed in relation to notice, hearings, fairness, and state action.",
+      "court_safe_example": "My records are organized to show notice received, appearances made, and communication attempts.",
+      "app_guidance": "Provide plain-language explanation and flag constitutional claims for review."
+    },
+    {
+      "term": "due process",
+      "category": "constitutional_principle",
+      "sensitivity": "medium",
+      "plain_english": "Fair legal procedure, including notice and an opportunity to be heard before important rights are affected.",
+      "why_it_matters": "POPS can help track service, hearings, filings, and procedural gaps.",
+      "court_safe_example": "The attached records show the dates I received notice and the steps I took to respond.",
+      "app_guidance": "Support factual tracking; do not suggest legal conclusions."
+    },
+    {
+      "term": "equal protection",
+      "category": "constitutional_principle",
+      "sensitivity": "medium",
+      "plain_english": "The idea that the government should apply the law fairly and not treat similarly situated people differently without a lawful reason.",
+      "why_it_matters": "POPS should preserve facts and comparisons for attorney review.",
+      "court_safe_example": "The records show the dates, actions taken, and how the situation was handled compared with prior events.",
+      "app_guidance": "Keep factual and avoid encouraging unsupported constitutional claims."
+    },
+    {
+      "term": "admission",
+      "category": "evidence",
+      "sensitivity": "medium",
+      "plain_english": "A statement or conduct that may be used as evidence because it acknowledges a fact.",
+      "why_it_matters": "Messages and statements can matter, but context and admissibility may be disputed.",
+      "court_safe_example": "In the message dated May 4, the sender stated that the exchange would not occur that evening.",
+      "app_guidance": "Preserve the full record and surrounding context; do not quote selectively."
+    },
+    {
+      "term": "affidavit",
+      "category": "evidence",
+      "sensitivity": "high",
+      "plain_english": "A written statement made under oath, often signed before a notary or other authorized officer.",
+      "why_it_matters": "An affidavit can carry legal consequences if it is inaccurate or incomplete.",
+      "court_safe_example": "I declare under oath that the attached timeline was prepared from contemporaneous messages and calendar records.",
+      "app_guidance": "Require careful review, source references, and any required oath or notarization process before use."
+    },
+    {
+      "term": "authentication",
+      "category": "evidence",
+      "sensitivity": "medium",
+      "plain_english": "Showing that a record, message, image, or other item is what the person offering it says it is.",
+      "why_it_matters": "A screenshot or file may need context showing where it came from and how it was kept.",
+      "court_safe_example": "The attached screenshot includes the sender name, date, time, and the conversation context visible in the original thread.",
+      "app_guidance": "Preserve originals when possible and record source, date, device, and export method."
+    },
+    {
+      "term": "chain of custody",
+      "category": "evidence",
+      "sensitivity": "medium",
+      "plain_english": "A record of who collected, handled, stored, or transferred an item of evidence.",
+      "why_it_matters": "It can help show that a file or physical item was not altered after it was collected.",
+      "court_safe_example": "The original photograph was saved from my phone on June 3 and copied to the evidence folder without editing.",
+      "app_guidance": "Track source, collection date, storage location, and any copies or exports."
+    },
+    {
+      "term": "contemporaneous record",
+      "category": "evidence",
+      "sensitivity": "low",
+      "plain_english": "A note, message, calendar entry, or record made at or near the time an event happened.",
+      "why_it_matters": "Records created close in time may be easier to understand and verify than memories written much later.",
+      "court_safe_example": "My calendar entry from the same day notes that I arrived at the exchange location at 5:58 p.m.",
+      "app_guidance": "Preserve original timestamps and clearly label later summaries as later summaries."
+    },
+    {
+      "term": "corroboration",
+      "category": "evidence",
+      "sensitivity": "medium",
+      "plain_english": "Independent information that supports or confirms another statement or record.",
+      "why_it_matters": "A timeline becomes stronger when multiple records point to the same event.",
+      "court_safe_example": "The phone location history, calendar entry, and text message all place me at the exchange location that evening.",
+      "app_guidance": "Link related records without overstating that they prove more than they show."
+    },
+    {
+      "term": "declaration",
+      "category": "evidence",
+      "sensitivity": "medium",
+      "plain_english": "A signed written statement that may be made under penalty of perjury, depending on the court and jurisdiction.",
+      "why_it_matters": "A declaration should be factual, accurate, and consistent with the records it references.",
+      "court_safe_example": "I state that the attached messages are true copies of messages received on the dates shown.",
+      "app_guidance": "Provide factual templates only; require user review and jurisdiction-specific filing review."
+    },
+    {
+      "term": "exhibit",
+      "category": "evidence",
+      "sensitivity": "low",
+      "plain_english": "A document, image, message, record, or other item identified for use in a hearing, filing, or packet.",
+      "why_it_matters": "Clear labels and an exhibit list help a reviewer locate the supporting record quickly.",
+      "court_safe_example": "Exhibit B is the message thread from June 1 through June 4.",
+      "app_guidance": "Support exhibit labels, descriptions, source references, and a packet index."
+    },
+    {
+      "term": "foundation",
+      "category": "evidence",
+      "sensitivity": "medium",
+      "plain_english": "Basic facts used to explain why a record or witness statement should be considered reliable or relevant.",
+      "why_it_matters": "A document may need context about who created it, when, and how it was obtained.",
+      "court_safe_example": "I received this message directly through the co-parenting application on the date shown.",
+      "app_guidance": "Prompt for source, date, author or sender, and how the record was preserved."
+    },
+    {
+      "term": "hearsay",
+      "category": "evidence",
+      "sensitivity": "high",
+      "plain_english": "An out-of-court statement offered to prove that what the statement says is true; exceptions and rules can be complicated.",
+      "why_it_matters": "A person may have heard something or received a message but still need help understanding how it can be used.",
+      "court_safe_example": "The school email states what the staff member reported, and the original email is preserved with its date and sender.",
+      "app_guidance": "Flag for attorney review; help preserve the original source rather than advising on admissibility."
+    },
+    {
+      "term": "metadata",
+      "category": "evidence",
+      "sensitivity": "medium",
+      "plain_english": "Technical information stored with a file, such as creation date, modification date, device, or location data.",
+      "why_it_matters": "Metadata can help establish when or how a file was created, but it can be incomplete or changed during copying.",
+      "court_safe_example": "The original photo file was retained with its file information and creation date.",
+      "app_guidance": "Preserve original files where lawful and avoid claiming metadata proves more than it shows."
+    },
+    {
+      "term": "preservation",
+      "category": "evidence",
+      "sensitivity": "medium",
+      "plain_english": "Keeping records in a way that protects them from loss, alteration, or deletion.",
+      "why_it_matters": "A complete record can be more useful than a reconstructed memory after a dispute begins.",
+      "court_safe_example": "The message thread was exported and saved with the original dates before the account settings changed.",
+      "app_guidance": "Support local copies, hashes where available, source notes, and lawful retention practices."
+    },
+    {
+      "term": "redaction",
+      "category": "evidence",
+      "sensitivity": "medium",
+      "plain_english": "Removing or covering private or protected information before sharing a record.",
+      "why_it_matters": "Court packets and attorney packets may need personal information protected without hiding relevant facts.",
+      "court_safe_example": "The child’s account number was redacted while the dates and communication content remain visible.",
+      "app_guidance": "Offer copies for review only; remind users to verify court-specific privacy rules."
+    },
+    {
+      "term": "relevance",
+      "category": "evidence",
+      "sensitivity": "medium",
+      "plain_english": "Whether a record has a meaningful connection to an issue being considered.",
+      "why_it_matters": "A smaller, focused packet can be easier to review than a large collection of unrelated materials.",
+      "court_safe_example": "This message is included because it directly addresses the scheduled parenting-time exchange on June 12.",
+      "app_guidance": "Help users link a record to an event, issue, date, or order without making legal conclusions."
+    },
+    {
+      "term": "screenshot",
+      "category": "evidence",
+      "sensitivity": "low",
+      "plain_english": "An image showing what appeared on a screen at a particular time.",
+      "why_it_matters": "Screenshots can be helpful, but they can omit context, be cropped, or lose information from the original source.",
+      "court_safe_example": "The screenshot includes the sender, date, time, and enough of the thread to show the message context.",
+      "app_guidance": "Store the original image, note the source, and preserve the full thread or export when available."
+    },
+    {
+      "term": "answer",
+      "category": "court_procedure",
+      "sensitivity": "medium",
+      "plain_english": "A formal written response to a petition, complaint, or other pleading.",
+      "why_it_matters": "Deadlines and required content vary, so ignoring a served document can have consequences.",
+      "court_safe_example": "The records show the date I received the petition and the date I filed my response.",
+      "app_guidance": "Track service and filing dates; do not generate jurisdiction-specific legal answers without review."
+    },
+    {
+      "term": "certificate of service",
+      "category": "court_procedure",
+      "sensitivity": "medium",
+      "plain_english": "A statement showing when and how a document was delivered or sent to another party or attorney.",
+      "why_it_matters": "Courts often require proof that the other side was given the filing or notice.",
+      "court_safe_example": "The certificate states that a copy was mailed to the listed address on the date shown.",
+      "app_guidance": "Track delivery method, date, recipient, and supporting receipt or confirmation."
+    },
+    {
+      "term": "continuance",
+      "category": "court_procedure",
+      "sensitivity": "medium",
+      "plain_english": "A postponement of a hearing, trial, or other court date.",
+      "why_it_matters": "A rescheduled date may require new notice, preparation, and calendar tracking.",
+      "court_safe_example": "The notice dated August 3 states that the hearing was continued to August 24.",
+      "app_guidance": "Track original date, new date, notice source, and any deadlines affected."
+    },
+    {
+      "term": "default judgment",
+      "category": "court_procedure",
+      "sensitivity": "high",
+      "plain_english": "A court decision that may be entered when a party does not respond or appear as required.",
+      "why_it_matters": "It can have serious consequences and depends on court rules, notice, and timing.",
+      "court_safe_example": "The records show the date of service, the response deadline, and the court notices received.",
+      "app_guidance": "Flag prominently for immediate attorney or court-clerk review."
+    },
+    {
+      "term": "discovery",
+      "category": "court_procedure",
+      "sensitivity": "high",
+      "plain_english": "The formal process by which parties request information, documents, or testimony from one another before a hearing or trial.",
+      "why_it_matters": "Discovery requests and responses can have strict deadlines and objections.",
+      "court_safe_example": "The request for production lists the documents requested and the response due date.",
+      "app_guidance": "Track requests, responses, deadlines, and source records; do not advise on objections or legal sufficiency."
+    },
+    {
+      "term": "docket",
+      "category": "court_procedure",
+      "sensitivity": "low",
+      "plain_english": "The court’s official schedule or list of case events, filings, hearings, and entries.",
+      "why_it_matters": "A docket can help verify dates and identify what the court has recorded in the case.",
+      "court_safe_example": "The docket entry shows that the motion was filed on March 14 and set for hearing on April 2.",
+      "app_guidance": "Support docket-date tracking and source links or screenshots."
+    },
+    {
+      "term": "filing",
+      "category": "court_procedure",
+      "sensitivity": "medium",
+      "plain_english": "Submitting a document to the court for the case record.",
+      "why_it_matters": "A document may not count as filed until it is accepted under the court’s rules.",
+      "court_safe_example": "The electronic receipt shows the document was submitted on May 6 at 2:14 p.m.",
+      "app_guidance": "Track submission, acceptance, rejection, confirmation number, and deadline."
+    },
+    {
+      "term": "hearing",
+      "category": "court_procedure",
+      "sensitivity": "medium",
+      "plain_english": "A scheduled court proceeding where a judge, commissioner, or other official considers an issue in a case.",
+      "why_it_matters": "The purpose, documents, witnesses, and deadlines for a hearing can differ.",
+      "court_safe_example": "The notice lists a hearing on the motion for June 18 at 9:00 a.m.",
+      "app_guidance": "Help users organize notices, preparation records, and post-hearing notes."
+    },
+    {
+      "term": "mediation",
+      "category": "court_procedure",
+      "sensitivity": "medium",
+      "plain_english": "A structured process in which a neutral person helps parties try to discuss and resolve issues.",
+      "why_it_matters": "Mediation rules, confidentiality, and court requirements vary.",
+      "court_safe_example": "The order directs the parties to attend mediation before the next status conference.",
+      "app_guidance": "Track dates, orders, and agreements; do not advise on what a user should concede or accept."
+    },
+    {
+      "term": "motion",
+      "category": "court_procedure",
+      "sensitivity": "high",
+      "plain_english": "A formal request asking the court to make a decision or take a particular action.",
+      "why_it_matters": "Motions can trigger deadlines, notice requirements, and written response rules.",
+      "court_safe_example": "The motion requests a hearing regarding the dates listed in the attached timeline.",
+      "app_guidance": "Flag for review; help organize supporting records without drafting case-specific legal argument."
+    },
+    {
+      "term": "notice",
+      "category": "court_procedure",
+      "sensitivity": "medium",
+      "plain_english": "Information that tells a person about a court date, filing, request, order, or required action.",
+      "why_it_matters": "Notice dates can matter when tracking deadlines and whether a person had an opportunity to respond.",
+      "court_safe_example": "The envelope and notice show that I received the hearing notice on September 8.",
+      "app_guidance": "Track date sent, date received, delivery method, and related deadline."
+    },
+    {
+      "term": "order",
+      "category": "court_procedure",
+      "sensitivity": "high",
+      "plain_english": "A direction or decision issued by a court or authorized judicial officer.",
+      "why_it_matters": "An order may set duties, dates, restrictions, or rights that should be followed exactly.",
+      "court_safe_example": "The order states that the exchange is to occur at the listed location and time.",
+      "app_guidance": "Store the complete order, effective date, page references, and a neutral compliance timeline."
+    },
+    {
+      "term": "petition",
+      "category": "court_procedure",
+      "sensitivity": "high",
+      "plain_english": "A formal document that begins or asks for a particular court action in many family-law and civil cases.",
+      "why_it_matters": "It identifies what is being requested and can trigger response deadlines.",
+      "court_safe_example": "The petition filed on January 12 requests the relief described in its numbered paragraphs.",
+      "app_guidance": "Track filing, service, deadlines, and the exact documents received."
+    },
+    {
+      "term": "response",
+      "category": "court_procedure",
+      "sensitivity": "medium",
+      "plain_english": "A written reply to a petition, motion, request, or other court document.",
+      "why_it_matters": "Responses may have deadlines and formatting rules that depend on the court.",
+      "court_safe_example": "The filing receipt shows that the response was submitted before the listed deadline.",
+      "app_guidance": "Track deadline and filing confirmation; do not generate substantive legal positions without review."
+    },
+    {
+      "term": "service",
+      "category": "court_procedure",
+      "sensitivity": "high",
+      "plain_english": "The legally recognized delivery of court papers or notices to a party or other required person.",
+      "why_it_matters": "Service can affect deadlines, notice questions, and whether a court may proceed.",
+      "court_safe_example": "The return of service identifies the date, method, and address used for delivery.",
+      "app_guidance": "Track the original service record and flag service disputes for qualified review."
+    },
+    {
+      "term": "summons",
+      "category": "court_procedure",
+      "sensitivity": "high",
+      "plain_english": "An official court document notifying a person that a case has been filed and that a response or appearance may be required.",
+      "why_it_matters": "A summons often includes a deadline and warning about consequences of not responding.",
+      "court_safe_example": "The summons states the response deadline and the address for filing.",
+      "app_guidance": "Flag urgently for deadline tracking and attorney or court-clerk review."
+    },
+    {
+      "term": "temporary order",
+      "category": "court_procedure",
+      "sensitivity": "high",
+      "plain_english": "A court order intended to apply while a case is pending or until another order replaces it.",
+      "why_it_matters": "Temporary orders can control parenting time, support, contact, or other issues before a final decision.",
+      "court_safe_example": "The temporary order sets the parenting-time schedule effective on the date listed.",
+      "app_guidance": "Store separate from final orders and track effective dates, changes, and compliance facts."
+    },
+    {
+      "term": "venue",
+      "category": "court_procedure",
+      "sensitivity": "medium",
+      "plain_english": "The county, district, or court location where a case is heard.",
+      "why_it_matters": "Venue can affect where documents are filed and where hearings occur.",
+      "court_safe_example": "The caption and docket identify the county and division where the case is pending.",
+      "app_guidance": "Track court location and case number; flag venue issues for attorney review."
+    },
+    {
+      "term": "best interests of the child",
+      "category": "legal_standard",
+      "sensitivity": "high",
+      "plain_english": "A standard courts often use when making decisions that affect a child; the specific factors vary by jurisdiction.",
+      "why_it_matters": "Parents may hear this phrase often, but it should not replace concrete facts about the child’s needs and circumstances.",
+      "court_safe_example": "The records show the child’s school schedule, medical appointments, established routines, and each parent’s documented participation.",
+      "app_guidance": "Encourage factual organization by topic; flag legal-conclusion language for review."
+    },
+    {
+      "term": "child support",
+      "category": "legal",
+      "sensitivity": "high",
+      "plain_english": "Money ordered or agreed to help meet a child’s financial needs.",
+      "why_it_matters": "Support orders, payments, credits, and enforcement can carry important legal and financial consequences.",
+      "court_safe_example": "The payment record lists the date, amount, method, and confirmation number for each payment shown.",
+      "app_guidance": "Track records neutrally; direct users to qualified help for calculation, modification, or enforcement questions."
+    },
+    {
+      "term": "compliance",
+      "category": "legal",
+      "sensitivity": "medium",
+      "plain_english": "Following a court order, rule, agreement, or stated requirement.",
+      "why_it_matters": "A useful record separates what an order says from the specific actions taken afterward.",
+      "court_safe_example": "The order required the exchange at 6:00 p.m.; the timeline records my arrival at 5:55 p.m. and departure at 6:25 p.m.",
+      "app_guidance": "Compare dated facts to specific order language without declaring a legal violation."
+    },
+    {
+      "term": "contempt",
+      "category": "legal",
+      "sensitivity": "high",
+      "plain_english": "A court finding or process involving alleged disobedience of a court order; procedures and standards vary.",
+      "why_it_matters": "Calling conduct contemptuous is a legal conclusion that can require specific proof and court process.",
+      "court_safe_example": "The attached timeline identifies the order provision, the scheduled date, the communications, and the outcome recorded that day.",
+      "app_guidance": "Flag for attorney review; guide users toward neutral order-to-event documentation."
+    },
+    {
+      "term": "custody",
+      "category": "legal",
+      "sensitivity": "high",
+      "plain_english": "A legal term concerning parental rights, responsibilities, decision-making, and/or a child’s living arrangements, depending on the jurisdiction.",
+      "why_it_matters": "The word can have several legal meanings, so users should rely on the exact language of their order.",
+      "court_safe_example": "The order uses the terms listed on pages 2 through 4; this timeline records the parenting schedule followed on the dates shown.",
+      "app_guidance": "Prompt users to attach the exact order and avoid paraphrasing legal rights as conclusions."
+    },
+    {
+      "term": "enforcement",
+      "category": "legal",
+      "sensitivity": "high",
+      "plain_english": "A process for asking a court or agency to require compliance with an order or obligation.",
+      "why_it_matters": "Enforcement procedures, deadlines, and available remedies differ by order type and jurisdiction.",
+      "court_safe_example": "The packet identifies the order, the specific dates at issue, the communications, and the supporting records.",
+      "app_guidance": "Organize evidence and timelines; do not promise a remedy or instruct on legal strategy."
+    },
+    {
+      "term": "good-faith effort",
+      "category": "legal",
+      "sensitivity": "medium",
+      "plain_english": "A sincere and reasonable effort to do what was required, even if the result was not fully achieved.",
+      "why_it_matters": "Evidence of attempts, notice, and follow-through can be important when events do not go as planned.",
+      "court_safe_example": "I confirmed the exchange time, arrived at the location, waited for 30 minutes, and sent one neutral follow-up message.",
+      "app_guidance": "Support chronological proof of efforts and avoid conclusory labels."
+    },
+    {
+      "term": "guardian ad litem",
+      "category": "legal",
+      "sensitivity": "high",
+      "plain_english": "A person appointed by a court in some cases to investigate or represent a child’s interests; duties vary by jurisdiction.",
+      "why_it_matters": "A guardian ad litem may request records, interviews, or information relevant to the child.",
+      "court_safe_example": "The communication log identifies the date of the request and the records provided in response.",
+      "app_guidance": "Track requests and responses; advise users to follow the exact court order and consult counsel when needed."
+    },
+    {
+      "term": "legal custody",
+      "category": "legal",
+      "sensitivity": "high",
+      "plain_english": "A term often used for authority or responsibility to make major decisions for a child, such as education, medical care, or religion; definitions vary by jurisdiction.",
+      "why_it_matters": "A custody order may divide or share decision-making in specific ways.",
+      "court_safe_example": "The order’s decision-making provisions are attached, and the log records the date the school information request was made.",
+      "app_guidance": "Track exact order language and factual communications; avoid telling users what authority they have."
+    },
+    {
+      "term": "parenting plan",
+      "category": "legal",
+      "sensitivity": "medium",
+      "plain_english": "A written plan or order describing parenting schedules, exchanges, decision-making, communication, or related responsibilities.",
+      "why_it_matters": "The specific wording of the plan often matters more than a general description of what either parent believes it requires.",
+      "court_safe_example": "Section 3 of the parenting plan identifies the holiday schedule used for the dates listed.",
+      "app_guidance": "Provide order-linked timeline tools and plain-language labels for plan sections."
+    },
+    {
+      "term": "parenting time",
+      "category": "legal",
+      "sensitivity": "medium",
+      "plain_english": "Time a parent is scheduled or allowed to spend with a child, often under a court order or parenting plan.",
+      "why_it_matters": "The schedule, location, notice, and communications around each event can be important.",
+      "court_safe_example": "The parenting-time entry lists the scheduled start time, location, messages, and the outcome observed.",
+      "app_guidance": "Support neutral event logs, order references, and communication attachments."
+    },
+    {
+      "term": "physical custody",
+      "category": "legal",
+      "sensitivity": "high",
+      "plain_english": "A term often used for where a child lives or how parenting time is arranged; definitions vary by jurisdiction.",
+      "why_it_matters": "People may use this phrase casually, but the court order may define responsibilities and schedules differently.",
+      "court_safe_example": "The attached order identifies the residential schedule, and the calendar records the dates actually scheduled.",
+      "app_guidance": "Use the order’s language and prompt for factual scheduling records."
+    },
+    {
+      "term": "petitioner",
+      "category": "legal",
+      "sensitivity": "low",
+      "plain_english": "The person who files a petition or starts a court proceeding in many cases.",
+      "why_it_matters": "Knowing each party’s court label can help keep captions, filings, and records organized.",
+      "court_safe_example": "The petition identifies the filing party as the petitioner.",
+      "app_guidance": "Display case-caption roles accurately without implying legal status beyond the filed documents."
+    },
+    {
+      "term": "respondent",
+      "category": "legal",
+      "sensitivity": "low",
+      "plain_english": "The person who is required to respond to a petition, motion, or other court request in many cases.",
+      "why_it_matters": "The respondent may have response and appearance deadlines.",
+      "court_safe_example": "The summons identifies the responding party and the listed deadline.",
+      "app_guidance": "Track service, response deadlines, and filing confirmations."
+    },
+    {
+      "term": "visitation",
+      "category": "legal",
+      "sensitivity": "medium",
+      "plain_english": "A term sometimes used for scheduled contact or time with a child; current court language and meaning vary by jurisdiction.",
+      "why_it_matters": "The exact wording of the relevant order controls, and many courts use different terms such as parenting time.",
+      "court_safe_example": "The order identifies the scheduled contact period, and the timeline records the events on the dates shown.",
+      "app_guidance": "Prefer the exact language used in the user’s order and support factual event records."
+    },
+    {
+      "term": "burden of proof",
+      "category": "legal_standard",
+      "sensitivity": "high",
+      "plain_english": "The responsibility to provide enough evidence to support a claim or requested finding.",
+      "why_it_matters": "The burden can differ by issue and jurisdiction, so POPS should not tell a user they have met it.",
+      "court_safe_example": "The packet identifies each event, the supporting record, and the source for that record.",
+      "app_guidance": "Use informational language and encourage attorney review for legal conclusions."
+    },
+    {
+      "term": "credibility",
+      "category": "legal_standard",
+      "sensitivity": "medium",
+      "plain_english": "How believable or reliable a person, statement, or record appears to a decision-maker.",
+      "why_it_matters": "Consistency, detail, source records, and accurate corrections can affect how a record is understood.",
+      "court_safe_example": "The timeline identifies each event source and distinguishes direct observation from information reported by someone else.",
+      "app_guidance": "Promote source labeling, corrections, and factual wording; do not coach testimony."
+    },
+    {
+      "term": "material change in circumstances",
+      "category": "legal_standard",
+      "sensitivity": "high",
+      "plain_english": "A significant change in facts that may be relevant when a court considers modifying an existing order; the legal standard varies.",
+      "why_it_matters": "It is a legal conclusion that should be supported by dated facts rather than broad claims.",
+      "court_safe_example": "The timeline records the move date, school change, work schedule change, and the related communication history.",
+      "app_guidance": "Flag for attorney review and organize before-and-after factual records."
+    },
+    {
+      "term": "preponderance of the evidence",
+      "category": "legal_standard",
+      "sensitivity": "high",
+      "plain_english": "A standard often described as showing that something is more likely true than not true.",
+      "why_it_matters": "Whether this standard applies depends on the type of case and issue.",
+      "court_safe_example": "The records are organized by date, source, and related order provision for professional review.",
+      "app_guidance": "Flag for review; do not determine whether evidence meets the standard."
+    },
+    {
+      "term": "collateral estoppel",
+      "category": "legal_doctrine",
+      "sensitivity": "high",
+      "plain_english": "A doctrine that may prevent an issue already decided in one proceeding from being decided again in another proceeding, subject to legal requirements.",
+      "why_it_matters": "It is technical and depends on the prior case, issue, parties, and judgment.",
+      "court_safe_example": "The prior order and the current filing are preserved with their case numbers and dates for attorney review.",
+      "app_guidance": "Flag for attorney review; do not characterize an issue as barred."
+    },
+    {
+      "term": "res judicata",
+      "category": "legal_doctrine",
+      "sensitivity": "high",
+      "plain_english": "A doctrine that may prevent a claim already finally decided from being litigated again, subject to legal requirements.",
+      "why_it_matters": "It requires careful comparison of prior and current proceedings.",
+      "court_safe_example": "The prior judgment, case caption, date, and relevant filed documents are preserved for review.",
+      "app_guidance": "Attorney-review only; do not apply the doctrine automatically."
+    },
+    {
+      "term": "waiver",
+      "category": "legal_doctrine",
+      "sensitivity": "high",
+      "plain_english": "Giving up a right or objection, sometimes by a clear statement and sometimes through conduct, depending on the law.",
+      "why_it_matters": "A user should not assume a right was waived or preserved without reviewing the actual record and rules.",
+      "court_safe_example": "The messages, notices, and responses are organized by date so a reviewer can see what was requested and how each party responded.",
+      "app_guidance": "Flag for review; avoid claims that a right was waived."
+    },
+    {
+      "term": "notice and opportunity to be heard",
+      "category": "constitutional_principle",
+      "sensitivity": "medium",
+      "plain_english": "The basic idea that a person should receive notice of an important proceeding and a meaningful chance to respond.",
+      "why_it_matters": "Records of notices, service, hearing dates, and filings can help document what happened.",
+      "court_safe_example": "The attached records show the date I received notice, the hearing date, and the response I filed.",
+      "app_guidance": "Support procedural timeline tracking; do not assert a constitutional violation."
+    },
+    {
+      "term": "self-incrimination",
+      "category": "constitutional_right",
+      "sensitivity": "high",
+      "plain_english": "Providing information that could be used to suggest that a person committed a crime or offense.",
+      "why_it_matters": "Family-law matters can overlap with allegations that create separate legal exposure.",
+      "court_safe_example": "Before submitting a statement that could create criminal exposure, seek qualified legal advice.",
+      "app_guidance": "Flag strongly for attorney review; do not advise a user whether to answer a question."
+    },
+    {
+      "term": "state action",
+      "category": "constitutional_principle",
+      "sensitivity": "high",
+      "plain_english": "Government conduct or involvement that may be required before certain constitutional protections apply.",
+      "why_it_matters": "Not every disagreement between private people creates a constitutional claim.",
+      "court_safe_example": "The records identify the court order, agency communication, or official action involved, with dates and sources.",
+      "app_guidance": "Provide plain-language caution and flag constitutional claims for attorney review."
+    }
+  ],
+  "global_rules": {
+    "high_sensitivity_terms": [
+      "culpable",
+      "prima facie",
+      "estoppel",
+      "habeas corpus",
+      "Fifth Amendment",
+      "Fourteenth Amendment",
+      "affidavit",
+      "hearsay",
+      "default judgment",
+      "discovery",
+      "motion",
+      "order",
+      "petition",
+      "service",
+      "summons",
+      "temporary order",
+      "best interests of the child",
+      "child support",
+      "contempt",
+      "custody",
+      "enforcement",
+      "guardian ad litem",
+      "legal custody",
+      "physical custody",
+      "burden of proof",
+      "material change in circumstances",
+      "preponderance of the evidence",
+      "collateral estoppel",
+      "res judicata",
+      "waiver",
+      "self-incrimination",
+      "state action"
+    ],
+    "flag_message": "Attorney Review Recommended: This term may carry legal significance. Make sure the surrounding facts, evidence, and wording are accurate before filing or sharing.",
+    "rewrite_strategy": [
+      "Prefer facts over conclusions.",
+      "Prefer dates, records, and actions over blame.",
+      "Prefer documented events over legal labels."
+    ]
+  },
+  "ui_behavior": {
+    "show_plain_english": true,
+    "show_court_safe_example": true,
+    "show_sensitivity_badge": true,
+    "show_attorney_review_flag": true,
+    "allow_search": true,
+    "allow_favorites": true,
+    "allow_term_tagging": true
+  }
+}

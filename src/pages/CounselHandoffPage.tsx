@@ -1,8 +1,14 @@
 import { Link } from "react-router-dom";
+import PageSeo from "../components/PageSeo";
 
 export default function CounselHandoffPage() {
   return (
     <div style={{ paddingTop: 88 }}>
+      <PageSeo
+        title="Counsel Handoff | POPS Attorney Packet Export"
+        description="Learn how POPS prepares local-first attorney handoff packets with timelines, evidence indexes, selected files, manifests, and hash verification."
+        path="/counsel-handoff"
+      />
       <section className="section">
         <div className="container" style={{ maxWidth: 1040 }}>
           <div className="section-header">

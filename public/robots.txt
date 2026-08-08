@@ -1,6 +1,5 @@
 User-agent: *
 Allow: /
 Allow: /lexicon/
-Allow: /blog/
 
 Sitemap: https://pops.spruked.com/sitemap.xml

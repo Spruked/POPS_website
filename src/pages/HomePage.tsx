@@ -71,7 +71,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section id="what-pops-does" className="section">
+      <section id="what-pops-does" className="section" data-orb-target="pops.home.what-is-pops">
         <div className="container">
           <div className="section-header">
             <span className="mono">What POPS Does</span>
@@ -82,15 +82,15 @@ export default function HomePage() {
           </div>
 
           <div className="features-grid">
-            <div className="feature-card">
+            <div className="feature-card" data-orb-target="pops.home.capture">
               <h3>Capture</h3>
               <p>Record incidents, denied exchanges, messages, files, dates, people, and court-order context.</p>
             </div>
-            <div className="feature-card">
+            <div className="feature-card" data-orb-target="pops.home.evidence-vault">
               <h3>Preserve</h3>
               <p>Keep originals, hash files with SHA-256, and maintain evidence integrity for later review.</p>
             </div>
-            <div className="feature-card">
+            <div className="feature-card" data-orb-target="pops.home.records">
               <h3>Organize</h3>
               <p>Build timelines, evidence indexes, incident logs, communication summaries, and attorney-ready packets.</p>
             </div>
@@ -137,7 +137,7 @@ export default function HomePage() {
               <h3>App / ORB Lexicon</h3>
               <p>Deeper working context for doctrine, rewrite rules, annotation labels, evidence terms, support terms, visitation terms, and risk classification.</p>
             </div>
-            <div className="feature-card">
+            <div className="feature-card" data-orb-target="pops.home.local-first">
               <h3>Local Authority</h3>
               <p>The app remains local-first. Evidence storage, SQLite records, ORB runtime behavior, and exports stay with the downloadable desktop application.</p>
             </div>

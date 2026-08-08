@@ -1,5 +1,6 @@
 import { FormEvent, useState } from "react";
 import { Link } from "react-router-dom";
+import PageSeo from "../components/PageSeo";
 
 export default function AccountPortalPage() {
   const [submitted, setSubmitted] = useState(false);
@@ -11,6 +12,11 @@ export default function AccountPortalPage() {
 
   return (
     <div style={{ paddingTop: 88 }}>
+      <PageSeo
+        title="POPS Account Signup | Access and Updates"
+        description="Create a POPS account to manage product access, downloads, release updates, and future account-connected services."
+        path="/account"
+      />
       <section className="section">
         <div className="container" style={{ maxWidth: 780 }}>
           <div className="section-header">
