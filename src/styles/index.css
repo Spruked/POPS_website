@@ -538,6 +538,108 @@ h4 { font-size: 20px; line-height: 1.3; }
   border-color: #38bdf8;
 }
 
+/* Child Support Ledger */
+.ledger-hero-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.ledger-lead-card h2 {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.ledger-field-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.ledger-field {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 52px;
+  padding: 14px 16px;
+  border: 1px solid var(--border-dim);
+  border-radius: var(--radius);
+  background: rgba(26, 31, 38, 0.68);
+  color: var(--text-secondary);
+  font-size: 14px;
+}
+
+.ledger-field svg {
+  color: var(--forge-blue);
+  flex-shrink: 0;
+}
+
+.ledger-status-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+
+.ledger-status {
+  padding: 9px 13px;
+  border: 1px solid rgba(99, 156, 255, 0.32);
+  border-radius: 999px;
+  background: rgba(30, 96, 255, 0.08);
+  color: #d9e9ff;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.ledger-rule-card,
+.ledger-summary-card {
+  display: flex;
+  gap: 18px;
+  padding: 28px;
+  align-items: flex-start;
+}
+
+.ledger-rule-card svg,
+.ledger-summary-card > svg {
+  color: var(--forge-blue);
+  flex-shrink: 0;
+}
+
+.ledger-rule-card p,
+.ledger-summary-card p {
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+.ledger-flow {
+  display: flex;
+  align-items: stretch;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.ledger-flow div {
+  display: flex;
+  align-items: center;
+  max-width: 190px;
+  min-height: 72px;
+  padding: 14px;
+  border: 1px solid var(--border-dim);
+  border-radius: var(--radius);
+  background: linear-gradient(145deg, var(--gunmetal), var(--obsidian));
+  color: var(--text-secondary);
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.ledger-flow > svg {
+  align-self: center;
+  color: var(--forge-blue);
+  flex-shrink: 0;
+}
+
 /* ─── How it works — Pipeline steps ─── */
 .steps {
   display: flex;
@@ -1116,6 +1218,31 @@ h4 { font-size: 20px; line-height: 1.3; }
   line-height: 1.6;
 }
 
+.checkout-notice a {
+  color: #ffffff;
+  font-weight: 800;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.square-card-container {
+  min-height: 90px;
+  padding: 14px;
+  border: 1px solid var(--border-dim);
+  border-radius: var(--radius);
+  background: rgba(255, 255, 255, 0.96);
+}
+
+.square-card-loading {
+  margin-top: 12px;
+  color: var(--text-muted);
+  font-size: 13px;
+}
+
+.paypal-button-container {
+  min-height: 52px;
+}
+
 .checkout-line {
   align-items: flex-start;
 }
@@ -1674,6 +1801,24 @@ h4 { font-size: 20px; line-height: 1.3; }
     justify-content: flex-start;
     text-align: left;
   }
+  .ledger-hero-grid,
+  .ledger-field-grid {
+    grid-template-columns: 1fr;
+  }
+  .ledger-rule-card,
+  .ledger-summary-card {
+    flex-direction: column;
+  }
+  .ledger-flow {
+    flex-direction: column;
+  }
+  .ledger-flow div {
+    max-width: none;
+    width: 100%;
+  }
+  .ledger-flow > svg {
+    transform: rotate(90deg);
+  }
   .footer-inner { flex-direction: column; text-align: center; }
   .doctrine-block {
     padding: 28px 22px;
@@ -1886,4 +2031,122 @@ h4 { font-size: 20px; line-height: 1.3; }
   to {
     opacity: 0;
   }
+}
+
+
+/* GUARDIAN PROMO CARD */
+.guardian-card {
+  --guardian-green: #22c55e;
+  --guardian-green-soft: rgba(34, 197, 94, 0.14);
+  --guardian-green-border: rgba(34, 197, 94, 0.78);
+  border-color: var(--guardian-green) !important;
+  box-shadow: none !important;
+}
+
+.guardian-card .guardian-access-block,
+.guardian-card .guardian-access-block .pricing-price,
+.guardian-card .guardian-access-block .pricing-price *,
+.guardian-card .guardian-access-block .pricing-desc {
+  color: var(--guardian-green) !important;
+  -webkit-text-fill-color: var(--guardian-green) !important;
+  text-shadow: none !important;
+}
+
+.guardian-card .guardian-access-block {
+  border-color: var(--guardian-green-border) !important;
+}
+
+.guardian-access-block {
+  margin: 0 0 20px;
+  padding: 18px 16px;
+  border: 1px solid var(--guardian-green-border);
+  border-radius: var(--radius);
+  background: rgba(13, 15, 20, 0.72);
+  box-shadow: none;
+}
+
+.guardian-price-stack {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+  margin-bottom: 14px;
+}
+
+.guardian-regular-price {
+  font-size: 0.95rem !important;
+  opacity: 0.76;
+  text-decoration: line-through;
+  text-decoration-color: var(--guardian-green-border);
+}
+
+.guardian-intro-price {
+  display: block;
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 2.45rem !important;
+  line-height: 0.95;
+  font-weight: 800 !important;
+}
+
+.guardian-license-note,
+.guardian-beta-label {
+  font-size: 0.82rem !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  opacity: 0.86;
+}
+
+.guardian-beta-block,
+.guardian-plan-block {
+  margin: 18px 0 0;
+  padding: 15px;
+  border: 1px solid var(--border-dim);
+  border-radius: var(--radius);
+  background: rgba(13, 15, 20, 0.72);
+  font-size: 0.9rem;
+  line-height: 1.55;
+  box-shadow: none;
+}
+
+.guardian-access-block .pricing-desc {
+  min-height: 0;
+  margin-bottom: 14px;
+}
+
+.guardian-beta-block {
+  margin: 0 0 22px;
+}
+
+.guardian-beta-block strong {
+  display: block;
+  margin: 5px 0 7px;
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 2rem;
+  line-height: 1;
+  font-weight: 800;
+}
+
+.guardian-beta-block p {
+  margin: 0;
+}
+
+.guardian-plan-block strong,
+.guardian-plan-block span {
+  display: block;
+  color: var(--text-secondary) !important;
+  -webkit-text-fill-color: var(--text-secondary) !important;
+  text-shadow: none !important;
+}
+
+.guardian-plan-block strong {
+  margin-bottom: 4px;
+  color: var(--text-primary) !important;
+  -webkit-text-fill-color: var(--text-primary) !important;
+}
+
+.guardian-action-button {
+  width: 100%;
+  justify-content: center;
+  margin-top: 14px;
 }

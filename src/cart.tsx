@@ -30,12 +30,21 @@ const CartContext = createContext<CartContextValue | undefined>(undefined);
 
 export const PRODUCTS: Product[] = [
   {
-    id: "guardian",
+    id: "guardian-intro",
     name: "Guardian Access",
-    price: 149,
-    priceLabel: "$149",
-    period: "one-time Windows app license",
+    price: 99,
+    priceLabel: "$99",
+    period: "introductory one-time Windows app license",
     description: "Full POPS desktop app access with lifetime POPS Membership included.",
+    fulfillment: "Windows installer and license activation instructions after checkout.",
+  },
+  {
+    id: "guardian",
+    name: "Guardian Beta Tester Access",
+    price: 55,
+    priceLabel: "$55",
+    period: "beta tester one-time Windows app license",
+    description: "Beta tester access to the full POPS desktop app with lifetime POPS Membership included.",
     fulfillment: "Windows installer and license activation instructions after checkout.",
   },
   {
