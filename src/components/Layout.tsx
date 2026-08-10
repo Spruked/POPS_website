@@ -49,13 +49,14 @@ export default function Layout({ children }: LayoutProps) {
             <Link to="/declaration" className="nav-link">Declaration</Link>
             <Link to="/pledge" className="nav-link">Pledge</Link>
             <Link to="/lexicon" className="nav-link">Lexicon</Link>
-            <Link to="/access" className="nav-link" data-orb-target="pops.nav.access">Access</Link>
+            <Link to="/child-support-ledger" className="nav-link">Ledger</Link>
+            <Link to="/access" className="nav-link">Access</Link>
             <Link to="/cart" className="nav-cart" aria-label={`Cart with ${itemCount} item${itemCount === 1 ? "" : "s"}`}>
               <ShoppingCart size={17} />
               <span>Cart</span>
               {itemCount > 0 && <strong>{itemCount}</strong>}
             </Link>
-            <Link to="/access" className="nav-cta" data-orb-target="pops.nav.get-pops">Get P.O.P.S.</Link>
+            <Link to="/access" className="nav-cta">Get P.O.P.S.</Link>
           </div>
 
           <button
@@ -81,6 +82,9 @@ export default function Layout({ children }: LayoutProps) {
           <div className="footer-links">
             <Link to="/">Landing</Link>
             <Link to="/about">About</Link>
+            <Link to="/visitation-estimates">State Estimates</Link>
+            <Link to="/father-absence-statistics">Father Absence Data</Link>
+            <Link to="/child-support-ledger">Child Support Ledger</Link>
             <Link to="/declaration">Declaration</Link>
             <Link to="/pledge">Pledge</Link>
             <Link to="/lexicon">Lexicon</Link>

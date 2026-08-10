@@ -137,7 +137,10 @@ VITE_GA_MEASUREMENT_ID=G-XXXXXXXXXX
 ```
 
 Square checkout is controlled by backend environment variables. Put production
-values in `.env.local`; do not commit the access token.
+values in `.env.local`; do not commit the access token. The checkout page loads
+Square's embedded Web Payments form using `SQUARE_APPLICATION_ID` and
+`SQUARE_LOCATION_ID`, then the backend charges the Square token with the private
+`SQUARE_ACCESS_TOKEN`.
 
 ```text
 SQUARE_ENVIRONMENT=production
@@ -146,6 +149,16 @@ SQUARE_LOCATION_ID=your-location-id
 SQUARE_ACCESS_TOKEN=your-production-access-token
 SQUARE_VERSION=2026-07-15
 SQUARE_REDIRECT_URL=https://pops.spruked.com/access
+```
+
+PayPal checkout is optional and should be tested in sandbox first. The browser
+loads the PayPal button with `PAYPAL_CLIENT_ID`; the backend creates and
+captures Orders API payments with `PAYPAL_CLIENT_SECRET`.
+
+```text
+PAYPAL_ENVIRONMENT=sandbox
+PAYPAL_CLIENT_ID=your-sandbox-client-id
+PAYPAL_CLIENT_SECRET=your-sandbox-client-secret
 ```
 
 Search Console should be connected once `https://pops.spruked.com` is stable through the tunnel.

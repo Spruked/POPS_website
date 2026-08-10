@@ -8,9 +8,9 @@ const TIERS = [
   {
     id: "guardian",
     name: "Guardian Access",
-    price: "$149",
-    period: "one-time app license",
-    desc: "You own the POPS desktop app license. No monthly payment. Includes lifetime POPS Membership. Optional yearly maintenance renewal: $19.99.",
+    price: "$99",
+    period: "introductory one-time app license",
+    desc: "Introductory access to the full POPS desktop app.",
     features: [
       "Evidence Vault with SHA-256 hashing",
       "Court Order & Violation tracking",
@@ -19,7 +19,7 @@ const TIERS = [
       "Download access and license activation",
       "Includes lifetime POPS Membership",
     ],
-    cta: "Get POPS — $149",
+    cta: "Get POPS — $55",
     primary: false,
   },
   {
@@ -116,7 +116,7 @@ export default function DownloadPage() {
         path="/access"
       />
       {/* ─── CHOOSE TIER ─── */}
-      <section className="section" data-orb-target="pops.access.options">
+      <section className="section">
         <div className="container">
           <div className="section-header">
             <span className="mono access-kicker">Get P.O.P.S.</span>
@@ -131,39 +131,95 @@ export default function DownloadPage() {
               <div 
                 key={t.id}
                 id={t.id === "opendoor" ? "opendoor-access" : t.id === "sponsor" ? "sponsor-access" : undefined}
-                data-orb-target={
-                  t.id === "guardian" ? "pops.access.standard"
-                  : t.id === "opendoor" ? "pops.access.hardship"
-                  : t.id === "sponsor" ? "pops.access.sponsor"
-                  : "pops.access.membership"
-                }
-                className={`pricing-card ${t.primary ? "featured" : ""} ${t.id === "membership" ? "pricing-membership-row" : ""} ${selectedTier === t.id ? "" : ""}`}
+
+                className={`pricing-card ${t.id === "guardian" ? "guardian-card" : ""} ${t.primary ? "featured" : ""} ${t.id === "membership" ? "pricing-membership-row" : ""} ${selectedTier === t.id ? "" : ""}`}
                 onClick={() => setSelectedTier(t.id)}
                 style={{ 
                   cursor: "pointer",
-                  borderColor: selectedTier === t.id ? (t.primary ? "var(--forge-blue)" : "var(--border-glow)") : undefined,
+                  borderColor: selectedTier === t.id ? (t.id === "guardian" ? "#22c55e" : t.primary ? "var(--forge-blue)" : "var(--border-glow)") : undefined,
                   boxShadow: selectedTier === t.id && t.primary ? "var(--shadow-glow)" : undefined,
                 }}
               >
                 <div className="pricing-tier">{t.name}</div>
-                <div className="pricing-price">{t.price}{t.period && <span> {t.period}</span>}</div>
-                <p className="pricing-desc">{t.desc}</p>
+                {t.id === "guardian" ? (
+                  <div className="guardian-access-block">
+                    <div className="pricing-price guardian-price-stack">
+                      <span className="guardian-regular-price">Regular price $139</span>
+                      <strong className="guardian-intro-price">$99 introductory price</strong>
+                      <span className="guardian-license-note">One-time app license</span>
+                    </div>
+                    <p className="pricing-desc">{t.desc}</p>
+                    <button
+                      className="btn btn-ghost guardian-action-button"
+                      type="button"
+                      onClick={(event) => {
+                        event.stopPropagation();
+                        handleTierAction("guardian-intro");
+                      }}
+                    >
+                      <ShoppingCart size={16} />
+                      Get Guardian Access - $99
+                    </button>
+                    <div className="guardian-plan-block">
+                      <strong>
+                        Payment plan option: $8.74 per month for 12 months
+                      </strong>
+                      <span>
+                        $99 introductory price + $5.88 processing fee =
+                        $104.88 total.
+                      </span>
+                    </div>
+                  </div>
+                ) : (
+                  <>
+                    <div className="pricing-price">
+                      {t.price}
+                      {t.period && <span> {t.period}</span>}
+                    </div>
+                    <p className="pricing-desc">{t.desc}</p>
+                  </>
+                )}
+                {t.id === "guardian" && (
+                  <div className="guardian-beta-block">
+                    <span className="guardian-beta-label">Beta Tester Access</span>
+                    <strong>Beta tester price $55</strong>
+                    <p>
+                      Beta testers receive the complete Guardian license for $55. This is not a reduced
+                      product and not a subscription. Beta testers are expected to use POPS during the
+                      launch window, report bugs or confusing screens, give practical feedback, and allow
+                      follow-up contact so the production release can be tightened.
+                    </p>
+                    <button
+                      className="btn btn-ghost guardian-action-button"
+                      type="button"
+                      onClick={(event) => {
+                        event.stopPropagation();
+                        handleTierAction("guardian");
+                      }}
+                    >
+                      <ShoppingCart size={16} />
+                      Get Beta Tester Access - $55
+                    </button>
+                  </div>
+                )}
                 <ul className="pricing-features">
                   {t.features.map((f, i) => (
                     <li key={i}><CheckCircle size={16} />{f}</li>
                   ))}
                 </ul>
-                <button 
-                  className={t.primary ? "btn btn-primary" : "btn btn-ghost"}
-                  style={{ width: "100%", justifyContent: "center" }}
-                  onClick={(event) => {
-                    event.stopPropagation();
-                    handleTierAction(t.id);
-                  }}
-                >
-                  {t.id === "guardian" || t.id === "membership" || t.id === "sponsor" ? <ShoppingCart size={16} /> : null}
-                  {t.cta}
-                </button>
+                {t.id !== "guardian" && (
+                  <button
+                    className={t.primary ? "btn btn-primary" : "btn btn-ghost"}
+                    style={{ width: "100%", justifyContent: "center" }}
+                    onClick={(event) => {
+                      event.stopPropagation();
+                      handleTierAction(t.id);
+                    }}
+                  >
+                    {t.id === "membership" || t.id === "sponsor" ? <ShoppingCart size={16} /> : null}
+                    {t.cta}
+                  </button>
+                )}
               </div>
             ))}
           </div>
@@ -172,7 +228,7 @@ export default function DownloadPage() {
 
       {/* ─── ACTIVATE / DOWNLOAD ─── */}
       {showReview && (
-        <section className="section section-alt" data-orb-target="pops.access.activation">
+        <section className="section section-alt">
           <div className="container" style={{ maxWidth: 640 }}>
             <div className="section-header">
               <span className="mono">Open Door Policy</span>
@@ -280,7 +336,7 @@ export default function DownloadPage() {
       )}
 
       {/* ─── WHY LOCAL-FIRST ─── */}
-      <section className="section" data-orb-target="pops.access.local-first">
+      <section className="section">
         <div className="container">
           <div className="section-header">
             <span className="mono">Security</span>

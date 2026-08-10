@@ -5,8 +5,12 @@ import { formatCurrency, PRODUCTS, useCart } from "../cart";
 
 export default function CartPage() {
   const { addItem, itemCount, items, removeItem, subtotal, updateQuantity } = useCart();
+  const hasGuardianAccess = items.some((item) => item.id === "guardian" || item.id === "guardian-intro");
   const suggestedProducts = PRODUCTS.filter(
-    (product) => !product.requiresReview && !items.some((item) => item.id === product.id)
+    (product) =>
+      !product.requiresReview &&
+      !items.some((item) => item.id === product.id) &&
+      (!(product.id === "guardian" || product.id === "guardian-intro") || !hasGuardianAccess)
   );
 
   return (

@@ -4,6 +4,9 @@ import Analytics from "./components/Analytics";
 import Layout from "./components/Layout";
 import LandingSplash from "./components/LandingSplash";
 import HomePage from "./pages/HomePage";
+import StateVisitationEstimatesPage from "./pages/StateVisitationEstimatesPage";
+import FatherAbsenceStatisticsPage from "./pages/FatherAbsenceStatisticsPage";
+import ChildSupportLedgerPage from "./pages/ChildSupportLedgerPage";
 import AboutPage from "./pages/AboutPage";
 import DownloadPage from "./pages/DownloadPage";
 import CartPage from "./pages/CartPage";
@@ -17,19 +20,20 @@ import PledgePage from "./pages/PledgePage";
 import TermsPage from "./pages/TermsPage";
 import PoliciesProceduresPage from "./pages/PoliciesProceduresPage";
 import PrivacyPage from "./pages/PrivacyPage";
-import WebsiteFloatingOrb from "./orb/WebsiteFloatingOrb";
 
 function App() {
   return (
     <BrowserRouter>
       <Analytics />
       <LandingSplash />
-      <WebsiteFloatingOrb />
       <Layout>
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/pricing" element={<Navigate to="/access" replace />} />
           <Route path="/about" element={<AboutPage />} />
+          <Route path="/visitation-estimates" element={<StateVisitationEstimatesPage />} />
+          <Route path="/father-absence-statistics" element={<FatherAbsenceStatisticsPage />} />
+          <Route path="/child-support-ledger" element={<ChildSupportLedgerPage />} />
           <Route path="/access" element={<DownloadPage />} />
           <Route path="/download" element={<Navigate to="/access" replace />} />
           <Route path="/cart" element={<CartPage />} />
