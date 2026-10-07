@@ -18,6 +18,7 @@ import TermsPage from "./pages/TermsPage";
 import PoliciesProceduresPage from "./pages/PoliciesProceduresPage";
 import PrivacyPage from "./pages/PrivacyPage";
 import WebsiteFloatingOrb from "./orb/WebsiteFloatingOrb";
+import SeePopsInActionPage from "./pages/SeePopsInActionPage";
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/pricing" element={<Navigate to="/access" replace />} />
           <Route path="/about" element={<AboutPage />} />
+          <Route path="/see-pops-in-action" element={<SeePopsInActionPage />} />
           <Route path="/access" element={<DownloadPage />} />
           <Route path="/download" element={<Navigate to="/access" replace />} />
           <Route path="/cart" element={<CartPage />} />
