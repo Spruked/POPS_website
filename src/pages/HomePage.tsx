@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, BookOpenCheck, Download, FileCheck, Gavel, Shield } from "lucide-react";
+import { ArrowRight, BookOpenCheck, Download, FileCheck, Gavel, MonitorPlay, Shield } from "lucide-react";
 import PageSeo from "../components/PageSeo";
 
 const FLOW = [
@@ -56,6 +56,10 @@ export default function HomePage() {
             <Link to="/access" className="btn btn-primary">
               <Download size={18} />
               Get POPS
+            </Link>
+            <Link to="/see-pops-in-action" className="btn btn-ghost">
+              <MonitorPlay size={18} />
+              See POPS in Action
             </Link>
             <Link to="/declaration" className="btn btn-ghost">
               Read the Declaration <ArrowRight size={16} />
