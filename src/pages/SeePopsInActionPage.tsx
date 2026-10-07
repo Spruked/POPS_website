@@ -52,12 +52,6 @@ export default function SeePopsInActionPage() {
                 }}
               >
                 <source src="/media/pops-in-action.mp4" type="video/mp4" />
-                <track
-                  kind="captions"
-                  src="/media/pops-in-action.vtt"
-                  srcLang="en"
-                  label="English"
-                />
                 Your browser does not support HTML video.
               </video>
             ) : (
