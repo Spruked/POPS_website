@@ -46,6 +46,7 @@ export default function Layout({ children }: LayoutProps) {
           <div className="nav-links" style={{ display: mobileOpen ? "flex" : undefined }}>
             <Link to="/" className="nav-link">Landing</Link>
             <Link to="/about" className="nav-link">About</Link>
+            <Link to="/see-pops-in-action" className="nav-link">In Action</Link>
             <Link to="/declaration" className="nav-link">Declaration</Link>
             <Link to="/pledge" className="nav-link">Pledge</Link>
             <Link to="/lexicon" className="nav-link">Lexicon</Link>
@@ -81,6 +82,7 @@ export default function Layout({ children }: LayoutProps) {
           <div className="footer-links">
             <Link to="/">Landing</Link>
             <Link to="/about">About</Link>
+            <Link to="/see-pops-in-action">See POPS in Action</Link>
             <Link to="/declaration">Declaration</Link>
             <Link to="/pledge">Pledge</Link>
             <Link to="/lexicon">Lexicon</Link>
