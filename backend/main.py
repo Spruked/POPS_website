@@ -2,16 +2,14 @@ from __future__ import annotations
 
 import asyncio
 import base64
-import contextlib
 import hashlib
 import json
 import os
 import re
 import shutil
-import sys
 import tempfile
-import threading
 import uuid
+from functools import lru_cache
 from pathlib import Path
 from typing import Any
 
@@ -41,18 +39,16 @@ def _load_local_env() -> None:
 
 _load_local_env()
 
-ORB_ROOT = REPO_ROOT / "Renova_te_ipsum"
 POINTER_ESCALATION_ROOT = REPO_ROOT / "orb_pointer_human_escalate"
 TTS_CACHE_DIR = Path(os.getenv("ORB_TTS_CACHE_DIR", str(REPO_ROOT / "data" / "tts_cache")))
 TTS_CACHE_DIR.mkdir(parents=True, exist_ok=True)
-
-if str(ORB_ROOT) not in sys.path:
-  sys.path.insert(0, str(ORB_ROOT))
+ORB_WEAVER_CONTEXT_PATH = Path(os.getenv(
+  "ORB_WEAVER_CONTEXT_PATH",
+  str(REPO_ROOT / "data" / "orb-weaver" / "crawl-8" / "latest_context.json"),
+))
 
 app = FastAPI(title="Pops Website ORB API")
 
-_orb_controller: Any | None = None
-_orb_lock = threading.Lock()
 _tts_locks: dict[str, asyncio.Lock] = {}
 _mcp_tool_name_pattern = re.compile(r'"name"\s*:\s*"([^"]+)"')
 
@@ -82,7 +78,7 @@ class SquareCheckoutRequest(BaseModel):
 PRODUCT_CATALOG: dict[str, dict[str, Any]] = {
   "guardian": {
     "name": "Guardian Access",
-    "price_cents": 14900,
+    "price_cents": 9900,
   },
   "sponsor": {
     "name": "Sponsor a Father",
@@ -95,35 +91,6 @@ PRODUCT_CATALOG: dict[str, dict[str, Any]] = {
 }
 
 
-@contextlib.contextmanager
-def _orb_cwd():
-  previous = Path.cwd()
-  os.chdir(ORB_ROOT)
-  try:
-    yield
-  finally:
-    os.chdir(previous)
-
-
-def _get_orb_controller() -> Any | None:
-  global _orb_controller
-  if _orb_controller is not None:
-    return _orb_controller
-
-  with _orb_lock:
-    if _orb_controller is not None:
-      return _orb_controller
-    try:
-      with _orb_cwd():
-        from orb_controller import SF_ORB_Controller
-
-        _orb_controller = SF_ORB_Controller()
-    except Exception as exc:
-      print(f"Pops controller unavailable: {exc}")
-      _orb_controller = None
-  return _orb_controller
-
-
 def _fallback_pulse() -> dict[str, Any]:
   return {
     "cognitive_mode": "READY",
@@ -132,44 +99,36 @@ def _fallback_pulse() -> dict[str, Any]:
 
 
 def _orb_cognitive_pulse(transcript: str) -> dict[str, Any]:
-  controller = _get_orb_controller()
-  if controller is None:
-    return _fallback_pulse()
-
-  digest = hashlib.sha256(transcript.encode("utf-8")).digest()
-  x = 120 + digest[0] / 255 * 1680
-  y = 120 + digest[1] / 255 * 840
-  stimulus = {
-    "type": "website_text",
-    "coordinates": [x, y],
-    "velocity": max(1.0, min(len(transcript) / 16, 24.0)),
-    "intent": "website_orb_assist",
-    "content_hash": hashlib.sha256(transcript.encode("utf-8")).hexdigest(),
-    "meta": {"test_mode": True},
-  }
-
-  try:
-    with _orb_cwd():
-      thought = controller.cognitively_emerge(stimulus)
-    if hasattr(thought, "pulse"):
-      pulse = thought.pulse()
-      pulse.setdefault("cognitive_mode", "READY")
-      pulse.setdefault("glow_intensity", 0.72)
-      return pulse
-    if isinstance(thought, dict):
-      cached = thought.get("predicate") or thought.get("data", {}).get("predicate")
-      if isinstance(cached, dict):
-        cached.setdefault("cognitive_mode", thought.get("status", "DETERMINISTIC"))
-        cached.setdefault("glow_intensity", cached.get("confidence", 0.82))
-        return cached
-  except Exception as exc:
-    print(f"Pops pulse fallback: {exc}")
-
+  del transcript
   return _fallback_pulse()
 
 
-def _memory_context(_transcript: str) -> None:
-  return None
+def _memory_context(_transcript: str) -> str | None:
+  context = _load_orb_weaver_context()
+  if not context:
+    return None
+
+  crawl = context.get("pointer_plot_map", {})
+  diagnostics = crawl.get("diagnostics", {}) if isinstance(crawl, dict) else {}
+  return (
+    "Orb Weaver Crawl 8 context loaded: 28 validated pages; "
+    f"{diagnostics.get('unique_verified_guidance_targets', 0)} guidance-eligible targets; "
+    f"{diagnostics.get('unresolved_guidance_targets', 0)} targets still require verification; "
+    f"{diagnostics.get('route_locator_conflict_count', 0)} route/locator conflicts. "
+    "Use only explicit verified website targets for live pointing."
+  )
+
+
+@lru_cache(maxsize=1)
+def _load_orb_weaver_context() -> dict[str, Any] | None:
+  if not ORB_WEAVER_CONTEXT_PATH.exists():
+    return None
+  try:
+    payload = json.loads(ORB_WEAVER_CONTEXT_PATH.read_text(encoding="utf-8"))
+  except (OSError, ValueError) as exc:
+    print(f"Orb Weaver context unavailable: {exc}")
+    return None
+  return payload if isinstance(payload, dict) else None
 
 
 def _desktop_mcp_root() -> Path:
@@ -238,12 +197,12 @@ async def _transcribe_with_faster_whisper(audio_bytes: bytes, filename: str) -> 
   if not audio_bytes:
     raise HTTPException(status_code=400, detail="No audio was received.")
 
-  stt_url = os.getenv("FASTER_WHISPER_STT_URL", "http://127.0.0.1:9000/stt")
+  stt_url = os.getenv("FASTER_WHISPER_STT_URL", "http://127.0.0.1:13000/stt")
   try:
     async with httpx.AsyncClient(timeout=45) as client:
       response = await client.post(
         stt_url,
-        files={"audio": (filename or "website-orb.webm", audio_bytes, "audio/webm")},
+        files={"file": (filename or "website-orb.webm", audio_bytes, "audio/webm")},
       )
       response.raise_for_status()
       payload = response.json()
@@ -260,6 +219,37 @@ def _local_fallback_answer(transcript: str) -> str:
   compact = " ".join(transcript.split())
   if not compact:
     return "I did not catch enough to answer yet."
+
+  context = _load_orb_weaver_context() or {}
+  page_knowledge = context.get("page_knowledge", [])
+  if isinstance(page_knowledge, list):
+    terms = [term for term in re.findall(r"[a-z0-9-]+", compact.lower()) if len(term) > 3]
+    best_page: dict[str, Any] | None = None
+    best_score = 0
+    for page in page_knowledge:
+      if not isinstance(page, dict):
+        continue
+      route = str(page.get("route") or "/").lower()
+      title = str(page.get("title") or "").lower()
+      haystack = " ".join(
+        str(page.get(key, ""))
+        for key in ("route", "title", "summary", "content_excerpt")
+      ).lower()
+      if not terms:
+        continue
+      score = sum(term in haystack for term in terms)
+      score += sum(10 for term in terms if term in route or term in title)
+      if score > best_score:
+        best_score = score
+        best_page = page
+
+    if best_page is not None and best_score >= min(2, len(terms)):
+      title = str(best_page.get("title") or "This POPS page")
+      route = str(best_page.get("route") or "/")
+      summary = " ".join(str(best_page.get("content_excerpt") or best_page.get("summary") or "").split())
+      if summary:
+        return f"{title} is at {route}. {summary[:240]}"
+
   return "I heard you. I can help with POPS records, evidence organization, and court-safe wording."
 
 
@@ -270,10 +260,12 @@ async def _llm_orb_spoken_output(transcript: str, pulse: dict[str, Any]) -> tupl
   if not llm_url:
     return _local_fallback_answer(transcript), "local-fallback"
 
+  memory_context = _memory_context(transcript) or "No Orb Weaver crawl context is available."
   prompt = (
     "You are Pops, the POPS website ORB. Answer in one short spoken sentence. "
     "No markdown, no private internals, and do not invent facts. "
     f"Cognitive mode: {pulse.get('cognitive_mode', 'READY')}. "
+    f"Website context: {memory_context} "
     f"User said: {transcript}"
   )
 
@@ -556,7 +548,7 @@ async def capabilities() -> dict[str, Any]:
   configured_mcp_root = os.getenv("ORB_DESKTOP_MCP_ROOT", "/mnt/r/mcp_server")
   resolved_mcp_root = _desktop_mcp_root()
   mcp_server = _desktop_mcp_server_path()
-  stt_url = os.getenv("FASTER_WHISPER_STT_URL", "http://127.0.0.1:9000/stt")
+  stt_url = os.getenv("FASTER_WHISPER_STT_URL", "http://127.0.0.1:13000/stt")
   tts_provider = os.getenv("ORB_TTS_PROVIDER", "kokoro").lower()
   tts_url = os.getenv("ORB_TTS_QWEN_URL" if tts_provider == "qwen" else "ORB_TTS_KOKORO_URL", "http://127.0.0.1:8880/speak")
 
@@ -588,12 +580,6 @@ async def capabilities() -> dict[str, Any]:
       "server_path": str(mcp_server),
       "server_exists": mcp_server.exists(),
       "relay_url": os.getenv("ORB_DESKTOP_MCP_URL") or None,
-    },
-    "renova_te_ipsum": {
-      "root": str(ORB_ROOT),
-      "available": ORB_ROOT.exists(),
-      "controller_module": str(ORB_ROOT / "orb_controller.py"),
-      "controller_exists": (ORB_ROOT / "orb_controller.py").exists(),
     },
     "pointer_human_escalation": {
       "root": str(POINTER_ESCALATION_ROOT),

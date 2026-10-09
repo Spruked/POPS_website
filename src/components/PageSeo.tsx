@@ -5,11 +5,12 @@ interface PageSeoProps {
   description: string;
   path: string;
   image?: string;
+  indexable?: boolean;
 }
 
 const SITE_URL = "https://pops.spruked.com";
 
-export default function PageSeo({ title, description, path, image }: PageSeoProps) {
+export default function PageSeo({ title, description, path, image, indexable = true }: PageSeoProps) {
   const canonicalUrl = `${SITE_URL}${path}`;
   const imageUrl = image || `${SITE_URL}/popsbanner1600.png`;
   const schema = {
@@ -51,9 +52,10 @@ export default function PageSeo({ title, description, path, image }: PageSeoProp
     <Helmet>
       <title>{title}</title>
       <meta name="description" content={description} />
-      <meta name="robots" content="index, follow, max-image-preview:large" />
+      <meta name="robots" content={indexable ? "index, follow, max-image-preview:large" : "noindex, nofollow"} />
       <link rel="canonical" href={canonicalUrl} />
       <meta property="og:type" content="website" />
+      <meta property="og:site_name" content="P.O.P.S. — Proof of Presence System" />
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
       <meta property="og:url" content={canonicalUrl} />

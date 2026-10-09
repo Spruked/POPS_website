@@ -1,0 +1,292 @@
+{
+  "schema": "orb_weaver.commercial_catalog.v1",
+  "entry_count": 10,
+  "product_count": 10,
+  "service_count": 0,
+  "priced_entry_count": 0,
+  "sku_model_count": 0,
+  "availability_count": 0,
+  "variant_count": 0,
+  "specification_count": 0,
+  "source_page_count": 7,
+  "entries": [
+    {
+      "catalog_id": "catalog_cb3310b39a042f9e",
+      "kind": "Product",
+      "name": "Local-First Evidence System Enter",
+      "description": null,
+      "sku": null,
+      "gtin": null,
+      "brand": null,
+      "category": null,
+      "url": "https://pops.spruked.com/access",
+      "source_page": "https://pops.spruked.com/access",
+      "offers": [],
+      "availability": null,
+      "variants": [],
+      "specifications": {},
+      "schema_types": [],
+      "evidence": [
+        "entity_extraction"
+      ],
+      "confidence": 0.62
+    },
+    {
+      "catalog_id": "catalog_de33595f8b62c7cd",
+      "kind": "Product",
+      "name": "Presence System",
+      "description": null,
+      "sku": null,
+      "gtin": null,
+      "brand": null,
+      "category": null,
+      "url": "https://pops.spruked.com",
+      "source_page": "https://pops.spruked.com",
+      "offers": [],
+      "availability": null,
+      "variants": [],
+      "specifications": {},
+      "schema_types": [],
+      "evidence": [
+        "entity_extraction"
+      ],
+      "confidence": 0.62
+    },
+    {
+      "catalog_id": "catalog_4423afae43a1f210",
+      "kind": "Product",
+      "name": "Presence System Enter Pops",
+      "description": null,
+      "sku": null,
+      "gtin": null,
+      "brand": null,
+      "category": null,
+      "url": "https://pops.spruked.com/terms",
+      "source_page": "https://pops.spruked.com/terms",
+      "offers": [],
+      "availability": null,
+      "variants": [],
+      "specifications": {},
+      "schema_types": [],
+      "evidence": [
+        "entity_extraction"
+      ],
+      "confidence": 0.62
+    },
+    {
+      "catalog_id": "catalog_96db2b95392c3659",
+      "kind": "Product",
+      "name": "Presence System The",
+      "description": null,
+      "sku": null,
+      "gtin": null,
+      "brand": null,
+      "category": null,
+      "url": "https://pops.spruked.com/declaration",
+      "source_page": "https://pops.spruked.com/declaration",
+      "offers": [],
+      "availability": null,
+      "variants": [],
+      "specifications": {},
+      "schema_types": [],
+      "evidence": [
+        "entity_extraction"
+      ],
+      "confidence": 0.62
+    },
+    {
+      "catalog_id": "catalog_7c5d33e53060bf8a",
+      "kind": "Product",
+      "name": "Pro Prime Series",
+      "description": null,
+      "sku": null,
+      "gtin": null,
+      "brand": null,
+      "category": null,
+      "url": "https://pops.spruked.com/lexicon/due-process",
+      "source_page": "https://pops.spruked.com/lexicon/due-process",
+      "offers": [],
+      "availability": null,
+      "variants": [],
+      "specifications": {},
+      "schema_types": [],
+      "evidence": [
+        "entity_extraction"
+      ],
+      "confidence": 0.62
+    },
+    {
+      "catalog_id": "catalog_274ff8a9b939300f",
+      "kind": "Product",
+      "name": "Product Boundary POPS",
+      "description": null,
+      "sku": null,
+      "gtin": null,
+      "brand": null,
+      "category": null,
+      "url": "https://pops.spruked.com/policies-procedures",
+      "source_page": "https://pops.spruked.com/policies-procedures",
+      "offers": [],
+      "availability": null,
+      "variants": [],
+      "specifications": {},
+      "schema_types": [],
+      "evidence": [
+        "entity_extraction"
+      ],
+      "confidence": 0.62
+    },
+    {
+      "catalog_id": "catalog_c1896a4e1c7ce312",
+      "kind": "Product",
+      "name": "Service",
+      "description": null,
+      "sku": null,
+      "gtin": null,
+      "brand": null,
+      "category": null,
+      "url": "https://pops.spruked.com/account",
+      "source_page": "https://pops.spruked.com/account",
+      "offers": [],
+      "availability": null,
+      "variants": [],
+      "specifications": {},
+      "schema_types": [],
+      "evidence": [
+        "entity_extraction"
+      ],
+      "confidence": 0.62
+    },
+    {
+      "catalog_id": "catalog_f4b0e3043ffeaaef",
+      "kind": "Product",
+      "name": "Service Mission Statement POPS",
+      "description": null,
+      "sku": null,
+      "gtin": null,
+      "brand": null,
+      "category": null,
+      "url": "https://pops.spruked.com/declaration",
+      "source_page": "https://pops.spruked.com/declaration",
+      "offers": [],
+      "availability": null,
+      "variants": [],
+      "specifications": {},
+      "schema_types": [],
+      "evidence": [
+        "entity_extraction"
+      ],
+      "confidence": 0.62
+    },
+    {
+      "catalog_id": "catalog_ca961fc9743f0ad1",
+      "kind": "Product",
+      "name": "Service Scope POPS",
+      "description": null,
+      "sku": null,
+      "gtin": null,
+      "brand": null,
+      "category": null,
+      "url": "https://pops.spruked.com/terms",
+      "source_page": "https://pops.spruked.com/terms",
+      "offers": [],
+      "availability": null,
+      "variants": [],
+      "specifications": {},
+      "schema_types": [],
+      "evidence": [
+        "entity_extraction"
+      ],
+      "confidence": 0.62
+    },
+    {
+      "catalog_id": "catalog_a7956cdd4105bbe8",
+      "kind": "Product",
+      "name": "Service Standard",
+      "description": null,
+      "sku": null,
+      "gtin": null,
+      "brand": null,
+      "category": null,
+      "url": "https://pops.spruked.com/terms",
+      "source_page": "https://pops.spruked.com/terms",
+      "offers": [],
+      "availability": null,
+      "variants": [],
+      "specifications": {},
+      "schema_types": [],
+      "evidence": [
+        "entity_extraction"
+      ],
+      "confidence": 0.62
+    }
+  ],
+  "indexes": {
+    "by_name": {
+      "local-first evidence system enter": [
+        "catalog_cb3310b39a042f9e"
+      ],
+      "presence system": [
+        "catalog_de33595f8b62c7cd"
+      ],
+      "presence system enter pops": [
+        "catalog_4423afae43a1f210"
+      ],
+      "presence system the": [
+        "catalog_96db2b95392c3659"
+      ],
+      "pro prime series": [
+        "catalog_7c5d33e53060bf8a"
+      ],
+      "product boundary pops": [
+        "catalog_274ff8a9b939300f"
+      ],
+      "service": [
+        "catalog_c1896a4e1c7ce312"
+      ],
+      "service mission statement pops": [
+        "catalog_f4b0e3043ffeaaef"
+      ],
+      "service scope pops": [
+        "catalog_ca961fc9743f0ad1"
+      ],
+      "service standard": [
+        "catalog_a7956cdd4105bbe8"
+      ]
+    },
+    "by_sku_model": {},
+    "by_category": {},
+    "by_url": {
+      "https://pops.spruked.com/access": [
+        "catalog_cb3310b39a042f9e"
+      ],
+      "https://pops.spruked.com": [
+        "catalog_de33595f8b62c7cd"
+      ],
+      "https://pops.spruked.com/terms": [
+        "catalog_4423afae43a1f210",
+        "catalog_ca961fc9743f0ad1",
+        "catalog_a7956cdd4105bbe8"
+      ],
+      "https://pops.spruked.com/declaration": [
+        "catalog_96db2b95392c3659",
+        "catalog_f4b0e3043ffeaaef"
+      ],
+      "https://pops.spruked.com/lexicon/due-process": [
+        "catalog_7c5d33e53060bf8a"
+      ],
+      "https://pops.spruked.com/policies-procedures": [
+        "catalog_274ff8a9b939300f"
+      ],
+      "https://pops.spruked.com/account": [
+        "catalog_c1896a4e1c7ce312"
+      ]
+    },
+    "prices": []
+  },
+  "runtime_policy": {
+    "deterministic_lookup_first": true,
+    "llm_required_for_exact_catalog_facts": false,
+    "source_evidence_required": true
+  }
+}

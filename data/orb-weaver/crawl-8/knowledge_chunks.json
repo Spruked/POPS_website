@@ -1,0 +1,1979 @@
+{
+  "schema": "orb_weaver.knowledge_chunks.v1",
+  "chunk_count": 28,
+  "chunks": [
+    {
+      "chunk_id": "c03dceb3dea8bc24e1e9",
+      "source_url": "https://pops.spruked.com",
+      "route": "/",
+      "title": "POPS | Proof of Presence System for Fathers",
+      "heading": "Proof of Presence.A record that stands.",
+      "section_headings": [
+        "From scattered proof to structured record.",
+        "Doctrine, commitment, language, access.",
+        "Two audiences. One doctrine.",
+        "Proof of Presence requires a record."
+      ],
+      "text": "POPS | Proof of Presence System for Fathers Enter Pops P.O.P.S. TM Home How POPS Works Declaration Pledge Lexicon Account Cart Get P.O.P.S. Local-First Evidence Workstation Proof of Presence. A record that stands. POPS helps fathers document presence, preserve evidence, organize timelines, and prepare court-safe records for attorney review. Get POPS Read the Declaration Local-first SHA-256 hashing Court-safe records Lexicon guided What POPS Does From scattered proof to structured record. POPS is built for the moments when parenting time is blocked, messages go unanswered, orders are disputed, or proof is scattered across screenshots, receipts, PDFs, and memories. Capture Record incidents, denied exchanges, messages, files, dates, people, and court-order context. Preserve Keep originals, hash files with SHA-256, and maintain evidence integrity for later review. Organize Build timelines, evidence indexes, incident logs, communication summaries, and attorney-ready packets. Site Path Doctrine, commitment, language, access. The public website is short by design. The app and ORB carry the deeper working structure. What POPS Does POPS helps fathers preserve records around denied parenting time, court order issues, communication attempts, evidence files, and attorney-ready timelines. Open Declaration The Declaration anchors the doctrine: presence, protection, duty, and the record. Open Pledge The Pledge turns the doctrine into commitment: Preserve. Protect. Prove. Open Lexicon The Lexicon teaches court-safe language and plain-English legal terms. Open Public Site vs App ORB Two audiences. One doctrine. The website explains POPS clearly. The desktop app applies POPS locally with the evidence vault, timeline tools, lexicon guidance, rewrite rules, and ORB support. Website Lexicon Core terms, court-safe highlights, rewrite examples, annotation labels, legal terms, constitutional terms, and FAQ-style education. App / ORB Lexicon Deeper working context for doctrine, rewrite rules, annotation labels, evidence terms, support terms, visitation terms, and risk classification. Local Authority The app remains local-first. Evidence storage, SQLite records, ORB runtime behavior, and exports stay with the downloadable desktop application. Proof of Presence requires a record. The Declaration and Pledge establish the standard. The desktop application helps preserve evidence, organize timelines, verify files, and prepare a court-safe record for attorney review. Get P.O.P.S. P.O.P.S. TM Home How POPS Works Declaration Pledge Lexicon Access Account Cart Events Counsel Handoff Noted Counsel Privacy Terms Policies & Procedures Spruked OrbWeaver CertSig TrueMarkMint Copyright 2026 Proof of Presence System. Pro Prime Series AI. All rights reserved.",
+      "content_hash": "409328d6198a47ddae1df15de7663d32",
+      "route_classification": "public_content",
+      "provenance": [
+        {
+          "source_type": "owner_seed",
+          "source_url": null,
+          "discovery_zone": "owner_seed"
+        },
+        {
+          "source_type": "sitemap",
+          "source_url": "https://pops.spruked.com/sitemap.xml",
+          "discovery_zone": "sitemap"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/pledge",
+          "discovery_zone": "navigation"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/access",
+          "discovery_zone": "navigation"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/about",
+          "discovery_zone": "navigation"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/attorney-referral",
+          "discovery_zone": "navigation"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/cart",
+          "discovery_zone": "navigation"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/pricing",
+          "discovery_zone": "navigation"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/lexicon/due-process",
+          "discovery_zone": "navigation"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/lexicon",
+          "discovery_zone": "navigation"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/lexicon/equal-protection",
+          "discovery_zone": "navigation"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/lexicon/culpable",
+          "discovery_zone": "navigation"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/lexicon/habeas-corpus",
+          "discovery_zone": "navigation"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/lexicon/fourteenth-amendment",
+          "discovery_zone": "navigation"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/lexicon/exculpatory",
+          "discovery_zone": "navigation"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/lexicon/fifth-amendment",
+          "discovery_zone": "navigation"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/lexicon/prima-facie",
+          "discovery_zone": "navigation"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/lexicon/pro-se",
+          "discovery_zone": "navigation"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/lexicon/estoppel",
+          "discovery_zone": "navigation"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com",
+          "discovery_zone": "navigation"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/admin",
+          "discovery_zone": "navigation"
+        }
+      ]
+    },
+    {
+      "chunk_id": "b5a35235bcfb2912678f",
+      "source_url": "https://pops.spruked.com/lexicon",
+      "route": "/lexicon",
+      "title": "POPS Lexicon | Court-Safe Evidence Language",
+      "heading": "POPS Lexicon",
+      "section_headings": [
+        "culpable",
+        "exculpatory",
+        "pro se",
+        "prima facie",
+        "estoppel",
+        "habeas corpus",
+        "Fifth Amendment",
+        "Fourteenth Amendment",
+        "due process",
+        "equal protection"
+      ],
+      "text": "POPS Lexicon | Court-Safe Evidence Language Enter Pops P.O.P.S. TM Home How POPS Works Declaration Pledge Lexicon Account Cart Get P.O.P.S. Court Language Guide POPS Lexicon Plain-English courtroom terms, evidence language, and factual rewrite guidance for parents building disciplined records. Core Court Terms POPS helps users recognize courtroom language, understand it in plain English, and preserve facts in a clear, organized way. This guide is educational. It can help you understand terms you may encounter in court documents, hearings, attorney conversations, or case records. It does not replace legal advice or determine what should be filed in court. Rewrite guidance: Prefer facts over conclusions. Prefer dates, records, and actions over blame. Prefer documented events over legal labels. Search the POPS Lexicon Showing 10 of 10 terms \u00b7 Court-safe explanations \u00b7 Educational only All Terms High Sensitivity Evidence Court Procedure Constitutional Legal culpable High Sensitivity Plain-English meaning: Legally or morally responsible for wrongdoing. Why it matters: This word can sound like a legal conclusion, so POPS should encourage factual wording instead of blame. POPS use: Flag for attorney review if used in a report, packet, or filing. Court-safe example: The records show the scheduled parenting time did not occur on the dates listed. Open direct definition \u2192 Evidence exculpatory Medium Sensitivity Plain-English meaning: Evidence that may help show a person did not do something wrong or did comply with an order. Why it matters: Users should be able to tag records that may help show lawful conduct or a good-faith effort. POPS use: Allow tagging and evidence classification. Court-safe example: This message may be exculpatory because it shows I appeared at the exchange location on time. Open direct definition \u2192 Court Procedure pro se Medium Sensitivity Plain-English meaning: Representing yourself in court without an attorney. Why it matters: Many POPS users may be self-represented and need organizing help. POPS use: Show as informational and supportive, not as legal advice. Court-safe example: I am appearing pro se and have organized the attached records for the Court's review. Open direct definition \u2192 Legal Standard prima facie High Sensitivity Plain-English meaning: Something that appears sufficient on its face unless challenged by other evidence. Why it matters: This is a legal threshold term and should be used carefully. POPS use: Flag for review when used as a conclusion. Court-safe example: The timeline and records may show a prima facie pattern of missed parenting time. Open direct definition \u2192 Legal Doctrine estoppel High Sensitivity Plain-English meaning: A rule that may prevent someone from taking a position that conflicts with earlier words, actions, or promises when another person relied on them. Why it matters: POPS should preserve messages, agreements, and reliance evidence. POPS use: Flag for attorney review if used in a filing. Court-safe example: The messages show an agreed exchange time, and I relied on that agreement by appearing at the location. Open direct definition \u2192 Constitutional Procedure habeas corpus High Sensitivity Plain-English meaning: \"You shall have the body.\" A procedure used to challenge unlawful detention or restraint. Why it matters: This is a serious legal procedure and should be handled cautiously. POPS use: Restrict to informational display and attorney review guidance. Court-safe example: This term involves serious legal procedure and should be reviewed with an attorney or appropriate legal authority before use. Open direct definition \u2192 Constitutional Right Fifth Amendment High Sensitivity Plain-English meaning: A constitutional protection that includes due process and protection against self-incrimination. Why it matters: Statements involving accusations, police contact, admissions, or investigations may need careful review. POPS use: Flag sensitive narrative content for review. Court",
+      "content_hash": "3a57c67384d82a13b140a70640fd1a1f",
+      "route_classification": "public_content",
+      "provenance": [
+        {
+          "source_type": "sitemap",
+          "source_url": "https://pops.spruked.com/sitemap.xml",
+          "discovery_zone": "sitemap"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com",
+          "discovery_zone": "navigation"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/lexicon",
+          "discovery_zone": "navigation"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/lexicon/due-process",
+          "discovery_zone": "navigation"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/pledge",
+          "discovery_zone": "navigation"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/access",
+          "discovery_zone": "navigation"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/about",
+          "discovery_zone": "navigation"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/attorney-referral",
+          "discovery_zone": "navigation"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/cart",
+          "discovery_zone": "navigation"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/pricing",
+          "discovery_zone": "navigation"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/lexicon/equal-protection",
+          "discovery_zone": "navigation"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/lexicon/culpable",
+          "discovery_zone": "navigation"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/lexicon/habeas-corpus",
+          "discovery_zone": "navigation"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/lexicon/fourteenth-amendment",
+          "discovery_zone": "navigation"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/lexicon/exculpatory",
+          "discovery_zone": "navigation"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/lexicon/fifth-amendment",
+          "discovery_zone": "navigation"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/lexicon/prima-facie",
+          "discovery_zone": "navigation"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/lexicon/pro-se",
+          "discovery_zone": "navigation"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/lexicon/estoppel",
+          "discovery_zone": "navigation"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/admin",
+          "discovery_zone": "navigation"
+        }
+      ]
+    },
+    {
+      "chunk_id": "5c288a8972e7f414ccb6",
+      "source_url": "https://pops.spruked.com/lexicon/due-process",
+      "route": "/lexicon/due-process",
+      "title": "POPS Lexicon: due process",
+      "heading": "POPS Lexicon",
+      "section_headings": [
+        "due process"
+      ],
+      "text": "POPS Lexicon: due process Enter Pops P.O.P.S. TM Home How POPS Works Declaration Pledge Lexicon Account Cart Get P.O.P.S. Court Language Guide POPS Lexicon Plain-English courtroom terms, evidence language, and factual rewrite guidance for parents building disciplined records. Core Court Terms POPS helps users recognize courtroom language, understand it in plain English, and preserve facts in a clear, organized way. This guide is educational. It can help you understand terms you may encounter in court documents, hearings, attorney conversations, or case records. It does not replace legal advice or determine what should be filed in court. Rewrite guidance: Prefer facts over conclusions. Prefer dates, records, and actions over blame. Prefer documented events over legal labels. \u2190 Back to the full POPS Lexicon Constitutional Principle due process Medium Sensitivity Plain-English meaning: Fair legal procedure, including notice and an opportunity to be heard before important rights are affected. Why it matters: POPS can help track service, hearings, filings, and procedural gaps. POPS use: Support factual tracking; do not suggest legal conclusions. Court-safe example: The attached records show the dates I received notice and the steps I took to respond. P.O.P.S. TM Home How POPS Works Declaration Pledge Lexicon Access Account Cart Events Counsel Handoff Noted Counsel Privacy Terms Policies & Procedures Spruked OrbWeaver CertSig TrueMarkMint Copyright 2026 Proof of Presence System. Pro Prime Series AI. All rights reserved.",
+      "content_hash": "fee6bd0b11de50fd24775833677251c0",
+      "route_classification": "public_content",
+      "provenance": [
+        {
+          "source_type": "sitemap",
+          "source_url": "https://pops.spruked.com/sitemap.xml",
+          "discovery_zone": "sitemap"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/lexicon",
+          "discovery_zone": "body"
+        }
+      ]
+    },
+    {
+      "chunk_id": "2e31abb7946a9c6279cd",
+      "source_url": "https://pops.spruked.com/pledge",
+      "route": "/pledge",
+      "title": "The POPS Pledge | Preserve Protect Prove",
+      "heading": "The Creed & The Pledge",
+      "section_headings": [
+        "The Charge",
+        "Presence",
+        "Vigilance",
+        "Readiness",
+        "Record",
+        "Restraint",
+        "Permanence",
+        "Proof of Presence requires a record."
+      ],
+      "text": "The POPS Pledge | Preserve Protect Prove Enter Pops P.O.P.S. TM Home How POPS Works Declaration Pledge Lexicon Account Cart Get P.O.P.S. First Order of Protection The Creed & The Pledge Preserve. Protect. Prove. The Creed The Charge I am the First Order of Protection. Before the law arrives, I am here. Before the danger is named, I am watching. Before my family asks, I have already decided: I will not fail them. I do not wait for permission to protect what is mine. I do not require a title to fulfill a calling. My badge is my presence. My oath was sworn the day I accepted this house as my charge. I will preserve what has been entrusted to me. I will protect those who cannot yet protect themselves. I will prove, by action, not by word, that the watchman did not sleep. Preserve Protect Prove This is not a slogan. This is the order of operations for every day I am given breath. The Pledge of Commitment I make this pledge not to an institution, but to the ones under my roof, and before the God who placed them in my care. Presence I pledge my presence: that I will be found, that I will be reachable, that I will not be a stranger in my own home. Vigilance I pledge my vigilance: that I will see the danger before it announces itself, and act before I am asked. Readiness I pledge my readiness: that whatever the moment requires, I will not be found unprepared, untrained, or unwilling. Record I pledge my record: that my actions will speak, and that if ever questioned, the proof of what I did and when I did it will stand on its own. Restraint I pledge my restraint: that my strength exists to shield, not to dominate; my authority exists to serve, not to rule. Permanence I pledge my permanence: that this charge does not end at the end of a shift, a season, or a hard year. It ends when I do, and not before. This is the First Order. This is Proof of Presence. From Philosophy to Practice Proof of Presence requires a record. The P.O.P.S. Pledge establishes the commitment. The desktop application helps preserve evidence, organize timelines, verify files with SHA-256 integrity, and prepare a court-safe record for attorney review. Get P.O.P.S. P.O.P.S. TM Home How POPS Works Declaration Pledge Lexicon Access Account Cart Events Counsel Handoff Noted Counsel Privacy Terms Policies & Procedures Spruked OrbWeaver CertSig TrueMarkMint Copyright 2026 Proof of Presence System. Pro Prime Series AI. All rights reserved.",
+      "content_hash": "53746d1ff925a9c443cfea22b3b19e3d",
+      "route_classification": "public_content",
+      "provenance": [
+        {
+          "source_type": "sitemap",
+          "source_url": "https://pops.spruked.com/sitemap.xml",
+          "discovery_zone": "sitemap"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/lexicon/due-process",
+          "discovery_zone": "navigation"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/pledge",
+          "discovery_zone": "navigation"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/access",
+          "discovery_zone": "navigation"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/about",
+          "discovery_zone": "navigation"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/attorney-referral",
+          "discovery_zone": "navigation"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/cart",
+          "discovery_zone": "navigation"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/pricing",
+          "discovery_zone": "navigation"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/lexicon/equal-protection",
+          "discovery_zone": "navigation"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/lexicon/culpable",
+          "discovery_zone": "navigation"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/lexicon",
+          "discovery_zone": "navigation"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/lexicon/habeas-corpus",
+          "discovery_zone": "navigation"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/lexicon/fourteenth-amendment",
+          "discovery_zone": "navigation"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/lexicon/exculpatory",
+          "discovery_zone": "navigation"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/lexicon/fifth-amendment",
+          "discovery_zone": "navigation"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/lexicon/prima-facie",
+          "discovery_zone": "navigation"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/lexicon/pro-se",
+          "discovery_zone": "navigation"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/lexicon/estoppel",
+          "discovery_zone": "navigation"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com",
+          "discovery_zone": "navigation"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/admin",
+          "discovery_zone": "navigation"
+        }
+      ]
+    },
+    {
+      "chunk_id": "91b2dd42ba218dc50ddd",
+      "source_url": "https://pops.spruked.com/access",
+      "route": "/access",
+      "title": "Get POPS | Local-First Evidence System",
+      "heading": "Choose Your POPS Access",
+      "section_headings": [
+        "Your Case is Yours"
+      ],
+      "text": "Get POPS | Local-First Evidence System Enter Pops P.O.P.S. TM Home How POPS Works Declaration Pledge Lexicon Account Cart Get P.O.P.S. Get P.O.P.S. Choose Your POPS Access This page is for choosing a POPS access path. Guardian is the standard desktop-app license; Open Door is a reviewed assistance path; sponsors help fund access; and Membership provides ongoing education and updates. Guardian Access $99 one-time app license You own the POPS desktop app license. No monthly payment. Includes lifetime POPS Membership. Optional yearly maintenance renewal: $19.99. Evidence Vault with SHA-256 hashing Court Order & Violation tracking Timeline & Event logging Incident logging and record protection Download access and license activation Includes lifetime POPS Membership Get POPS \u2014 $99 Open Door Access Contribute what you can Open Door Access is for fathers who cannot carry the full license price today but are willing to contribute what they can. No fixed minimum, but must be more than zero Requires signed-in POPS account and customer record Includes amount, explanation, urgency, and pro se status Reviewed personally to protect the license pool Approval code required before download/license activation If approved, same full POPS tool and same respect Request Open Door Access Sponsor a Father $25+ support path Help fund access for fathers using Open Door. Some requests may be partially or fully sponsor-covered after review. Suggested amounts: $25, $50, $149, $300 Custom sponsorship amount Supports sponsored license capacity Supports community access and education Supports future legal-resource partnerships Keeps Open Door pool protected Sponsor a Father POPS Membership $12.99 one-time lifetime POPS Membership is one-time $12.99 lifetime membership. Not monthly. Not yearly. Newsletter Events and resource drops Blog posts and POPS updates Regional and national Q&A Ask Another Dad and community rooms POPS education and updates Join POPS Membership \u2014 $12.99 Security Your Case is Yours P.O.P.S. is built local-first. Your data never leaves your machine unless you choose to export it. Local-Only Storage SQLite database on your machine. No cloud sync. No remote servers holding your evidence. Your case files stay where they belong. SHA-256 Verification Every evidence file is hashed before storage. If a file is altered, the hash won't match. Tamper-evident by design. Encrypted Backup Guardian and approved Open Door users can use encrypted exports for USB backup, trusted cloud backup of choice, or attorney handoff. Offline Operation After activation, P.O.P.S. works entirely offline. No internet required. No dependency on our servers. Your case proceeds regardless. P.O.P.S. TM Home How POPS Works Declaration Pledge Lexicon Access Account Cart Events Counsel Handoff Noted Counsel Privacy Terms Policies & Procedures Spruked OrbWeaver CertSig TrueMarkMint Copyright 2026 Proof of Presence System. Pro Prime Series AI. All rights reserved.",
+      "content_hash": "42635c9f6157f54b7d0c1dd4750ae06c",
+      "route_classification": "public_content",
+      "provenance": [
+        {
+          "source_type": "sitemap",
+          "source_url": "https://pops.spruked.com/sitemap.xml",
+          "discovery_zone": "sitemap"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/pledge",
+          "discovery_zone": "navigation"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/access",
+          "discovery_zone": "navigation"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/about",
+          "discovery_zone": "navigation"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/attorney-referral",
+          "discovery_zone": "navigation"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/cart",
+          "discovery_zone": "navigation"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/pricing",
+          "discovery_zone": "navigation"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/lexicon/due-process",
+          "discovery_zone": "navigation"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/lexicon",
+          "discovery_zone": "navigation"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/lexicon/equal-protection",
+          "discovery_zone": "navigation"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/lexicon/culpable",
+          "discovery_zone": "navigation"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/lexicon/habeas-corpus",
+          "discovery_zone": "navigation"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/lexicon/fourteenth-amendment",
+          "discovery_zone": "navigation"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/lexicon/exculpatory",
+          "discovery_zone": "navigation"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/lexicon/fifth-amendment",
+          "discovery_zone": "navigation"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/lexicon/prima-facie",
+          "discovery_zone": "navigation"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/lexicon/pro-se",
+          "discovery_zone": "navigation"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/lexicon/estoppel",
+          "discovery_zone": "navigation"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com",
+          "discovery_zone": "navigation"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/admin",
+          "discovery_zone": "navigation"
+        }
+      ]
+    },
+    {
+      "chunk_id": "1bb5d47a74afdd95732e",
+      "source_url": "https://pops.spruked.com/about",
+      "route": "/about",
+      "title": "About POPS | First Order of Protection",
+      "heading": "Protect the Record.Preserve the Truth.",
+      "section_headings": [],
+      "text": "About POPS | First Order of Protection Enter Pops P.O.P.S. TM Home How POPS Works Declaration Pledge Lexicon Account Cart Get P.O.P.S. The Doctrine Protect the Record. Preserve the Truth. P.O.P.S. - Proof of Presence System is not a support group. It is a support machine. It was built for the father who is being denied access to his child and needs to move through the system with discipline, proof, and restraint. The Doctrine POPS is not a support group. It is a support machine. It was built for the father who is being denied access to his child and needs to move through the system with discipline, proof, and restraint. Not panic. Not revenge. Not desperation. A record. POPS exists because when a father's presence is questioned, emotion is not enough. Memory is not enough. Pain is not enough. The record has to stand. The Mission There is a place in a father that does not need to be taught. The instinct to protect. The duty to stand between harm and the child. The responsibility to show up, provide, guard, and remain accountable even when nobody is watching. That duty is not created by a court order. It is older than that. It lives in conscience, in blood, in faith, and in the charge placed inside a man to protect what has been entrusted to him. So when a father is separated from his child, that calling does not disappear. It becomes trapped. He is still a protector, but the door is locked. He is still responsible, but his hands are tied. He is still called a father, but treated like a visitor. He still carries the duty, but is denied the place to perform it. POPS was built for that place. Not to attack. Not to inflame. Not to spy. Not to turn pain into revenge. POPS exists to help a father preserve the truth when the truth is being contested. The Four Pillars Presence Presence is not just standing in a place. Presence is the call made, the message sent, the arrival at the exchange, the request for records, the follow-up after silence, and the lawful attempt when the door does not open. POPS preserves those attempts so they cannot be erased. Protection Protection means guarding the child, the truth, the record, and the lawful path forward. Not aggression. Not intimidation. Not chaos. Discipline. Standing watch over the facts. Proof A painful story is not enough in court. A pattern needs structure. An event needs a date. A claim needs evidence. A file needs a hash. A timeline needs custody. A report needs restraint. POPS turns scattered facts into organized proof. Restraint Pain can make a person speak in ways that hurt their own case. POPS does not erase the pain. It preserves the original words, then helps translate the record into court-safe language. The truth stays strong without becoming reckless. How the System Thinks POPS follows a disciplined six-step path. No revenge. No chaos. No guessing. Just proof. Capture Record what happened or upload a document, image, message export, receipt, court order, photo, screenshot, or other evidence. Preserve The original file is copied into protected local storage and hashed with SHA-256 so the system can later verify whether it changed. Extract When possible, POPS reads documents, images, screenshots, message exports, and court records to pull out dates, times, names, messages, case numbers, order language, and event details automatically. Review The system presents what it found. The user reviews, corrects, and confirms. POPS does not silently replace the user's judgment. Seal Once confirmed, the record is sealed, hashed, logged, and preserved in the Evidence Vault and audit ledger. Report The system helps generate timelines, evidence indexes, chain-of-custody reports, hash verification reports, attorney packets, and court-safe summaries. The goal is simple: when it is time to speak, the user does not walk in with scattered fragments. He walks in with a record. The Promise Every attempt matters. Every lawful effort matters. Every message matters. Every date matters. Every piece of e",
+      "content_hash": "4aa65932c5d10fcf362570ffd4105f24",
+      "route_classification": "public_content",
+      "provenance": [
+        {
+          "source_type": "sitemap",
+          "source_url": "https://pops.spruked.com/sitemap.xml",
+          "discovery_zone": "sitemap"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/access",
+          "discovery_zone": "navigation"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/about",
+          "discovery_zone": "navigation"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/attorney-referral",
+          "discovery_zone": "navigation"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/cart",
+          "discovery_zone": "navigation"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/pricing",
+          "discovery_zone": "navigation"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/pledge",
+          "discovery_zone": "navigation"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/lexicon/due-process",
+          "discovery_zone": "navigation"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/lexicon/equal-protection",
+          "discovery_zone": "navigation"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/lexicon/culpable",
+          "discovery_zone": "navigation"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/lexicon/habeas-corpus",
+          "discovery_zone": "navigation"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/lexicon/fourteenth-amendment",
+          "discovery_zone": "navigation"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/lexicon/exculpatory",
+          "discovery_zone": "navigation"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/lexicon",
+          "discovery_zone": "navigation"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/lexicon/fifth-amendment",
+          "discovery_zone": "navigation"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/lexicon/prima-facie",
+          "discovery_zone": "navigation"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/lexicon/pro-se",
+          "discovery_zone": "navigation"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/lexicon/estoppel",
+          "discovery_zone": "navigation"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com",
+          "discovery_zone": "navigation"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/admin",
+          "discovery_zone": "navigation"
+        }
+      ]
+    },
+    {
+      "chunk_id": "eaf4adb92d8d2af8dcbd",
+      "source_url": "https://pops.spruked.com/attorney-referral",
+      "route": "/attorney-referral",
+      "title": "POPS Noted Counsel | Merit Recognition",
+      "heading": "Noted Counsel",
+      "section_headings": [
+        "No Rank. No Referral. Only Merit."
+      ],
+      "text": "POPS Noted Counsel | Merit Recognition Enter Pops P.O.P.S. TM Home How POPS Works Declaration Pledge Lexicon Account Cart Get P.O.P.S. POPS NOTED COUNSEL Noted Counsel This page explains the POPS merit-recognition program for counsel. It is informational and is not a referral marketplace. No Rank. No Referral. Only Merit. POPS Noted Counsel is a positive-only merit-recognition page for attorneys who made a meaningful positive impression on a POPS user. Recognition may reflect professionalism, honesty, preparation, respectful treatment, clear communication, or meaningful service to a parent trying to stay present and organized for their child. What This Is POPS Noted Counsel exists to preserve and share carefully moderated positive recognition from real POPS users who had a direct, first-hand experience with an attorney. It is meant to recognize merit\u2014not popularity, advertising budget, status, or influence. What This Is Not Not an attorney ranking system Not a star-rating or score-based review page Not a paid attorney directory Not a referral service or lead-generation program Not a \u201cbest attorney\u201d list Not a public complaint board Not a guarantee that an attorney will accept a case or achieve a result Recognition Rules Only POPS Noted Users may submit a Merit Recognition. Attorneys cannot nominate themselves. Attorneys cannot buy recognition, placement, or visibility. There are no stars, scores, ranks, tiers, or \u201ctop attorney\u201d labels. POPS does not publish negative reviews, attacks, or public disputes. Recognition must come from a real, first-hand positive experience. Private case information, child information, and outcome claims are not published. What Merit Can Look Like A POPS user may recognize an attorney for treating them with dignity, clearly explaining options, being honest about costs and limits, reviewing organized materials carefully, using a POPS timeline or packet effectively, or helping a parent understand what mattered next. A Noted Counsel recognition does not claim that an attorney is superior to another attorney. It does not promise a legal result, availability, affordability, or case acceptance. Why POPS Built This POPS helps fathers and parents arrive more prepared\u2014with clearer timelines, preserved records, factual notes, and organized materials for professional review. When a POPS user is genuinely helped by an attorney who shows merit, that attorney may be recognized here with dignity and without turning the process into advertising, rankings, or referral money. Noted by users. Never bought. Never ranked. Recognized only for merit. Back to Landing Get POPS P.O.P.S. TM Home How POPS Works Declaration Pledge Lexicon Access Account Cart Events Counsel Handoff Noted Counsel Privacy Terms Policies & Procedures Spruked OrbWeaver CertSig TrueMarkMint Copyright 2026 Proof of Presence System. Pro Prime Series AI. All rights reserved.",
+      "content_hash": "2d51522764301f081c717e2fb10e3a0c",
+      "route_classification": "public_content",
+      "provenance": [
+        {
+          "source_type": "sitemap",
+          "source_url": "https://pops.spruked.com/sitemap.xml",
+          "discovery_zone": "sitemap"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/about",
+          "discovery_zone": "footer"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/attorney-referral",
+          "discovery_zone": "footer"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/cart",
+          "discovery_zone": "footer"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/pricing",
+          "discovery_zone": "footer"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/access",
+          "discovery_zone": "footer"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/pledge",
+          "discovery_zone": "footer"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/lexicon/due-process",
+          "discovery_zone": "footer"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/lexicon/equal-protection",
+          "discovery_zone": "footer"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/lexicon/culpable",
+          "discovery_zone": "footer"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/lexicon/habeas-corpus",
+          "discovery_zone": "footer"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/lexicon/fourteenth-amendment",
+          "discovery_zone": "footer"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/lexicon/exculpatory",
+          "discovery_zone": "footer"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/lexicon",
+          "discovery_zone": "footer"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/lexicon/fifth-amendment",
+          "discovery_zone": "footer"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/lexicon/prima-facie",
+          "discovery_zone": "footer"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/lexicon/pro-se",
+          "discovery_zone": "footer"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/lexicon/estoppel",
+          "discovery_zone": "footer"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com",
+          "discovery_zone": "footer"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/admin",
+          "discovery_zone": "footer"
+        }
+      ]
+    },
+    {
+      "chunk_id": "fa8d7384b7a600a13561",
+      "source_url": "https://pops.spruked.com/cart",
+      "route": "/cart",
+      "title": "Cart | POPS",
+      "heading": "Your Cart",
+      "section_headings": [
+        "Your cart is empty."
+      ],
+      "text": "Cart | POPS Enter Pops P.O.P.S. TM Home How POPS Works Declaration Pledge Lexicon Account Cart Get P.O.P.S. Continue Shopping Your Cart POPS website purchases are separate from the desktop application. Guardian Access delivers the Windows installer and license activation instructions after Square checkout. Your cart is empty. Choose Guardian Access, Membership, or a sponsorship amount to continue. Choose POPS Access Also Available Guardian Access $99 | one-time Windows app license Sponsor a Father $25+ | support contribution POPS Membership $12.99 | one-time lifetime membership P.O.P.S. TM Home How POPS Works Declaration Pledge Lexicon Access Account Cart Events Counsel Handoff Noted Counsel Privacy Terms Policies & Procedures Spruked OrbWeaver CertSig TrueMarkMint Copyright 2026 Proof of Presence System. Pro Prime Series AI. All rights reserved.",
+      "content_hash": "3de84c0253d3ef5ff0c3f91f7f9ba71a",
+      "route_classification": "transactional",
+      "provenance": [
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/attorney-referral",
+          "discovery_zone": "navigation"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/cart",
+          "discovery_zone": "navigation"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/pricing",
+          "discovery_zone": "navigation"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/about",
+          "discovery_zone": "navigation"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/access",
+          "discovery_zone": "navigation"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/pledge",
+          "discovery_zone": "navigation"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/lexicon/due-process",
+          "discovery_zone": "navigation"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/lexicon/equal-protection",
+          "discovery_zone": "navigation"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/lexicon",
+          "discovery_zone": "navigation"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/lexicon/culpable",
+          "discovery_zone": "navigation"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/lexicon/habeas-corpus",
+          "discovery_zone": "navigation"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/lexicon/fourteenth-amendment",
+          "discovery_zone": "navigation"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/lexicon/exculpatory",
+          "discovery_zone": "navigation"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/lexicon/fifth-amendment",
+          "discovery_zone": "navigation"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/lexicon/prima-facie",
+          "discovery_zone": "navigation"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/lexicon/pro-se",
+          "discovery_zone": "navigation"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/lexicon/estoppel",
+          "discovery_zone": "navigation"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com",
+          "discovery_zone": "navigation"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/admin",
+          "discovery_zone": "navigation"
+        }
+      ]
+    },
+    {
+      "chunk_id": "d3b2ac16bab16e0d7439",
+      "source_url": "https://pops.spruked.com/events",
+      "route": "/events",
+      "title": "POPS Events | Updates and Q&A",
+      "heading": "Events",
+      "section_headings": [],
+      "text": "POPS Events | Updates and Q&A Enter Pops P.O.P.S. TM Home How POPS Works Declaration Pledge Lexicon Account Cart Get P.O.P.S. Events Events This page is the public calendar for POPS education, live Q&A sessions, community updates, and future registration information. Back to Landing About POPS P.O.P.S. TM Home How POPS Works Declaration Pledge Lexicon Access Account Cart Events Counsel Handoff Noted Counsel Privacy Terms Policies & Procedures Spruked OrbWeaver CertSig TrueMarkMint Copyright 2026 Proof of Presence System. Pro Prime Series AI. All rights reserved.",
+      "content_hash": "e0814cf37cb107432d557cc554085c86",
+      "route_classification": "public_content",
+      "provenance": [
+        {
+          "source_type": "sitemap",
+          "source_url": "https://pops.spruked.com/sitemap.xml",
+          "discovery_zone": "sitemap"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/cart",
+          "discovery_zone": "footer"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/pricing",
+          "discovery_zone": "footer"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/attorney-referral",
+          "discovery_zone": "footer"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/about",
+          "discovery_zone": "footer"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/access",
+          "discovery_zone": "footer"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/pledge",
+          "discovery_zone": "footer"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/lexicon/due-process",
+          "discovery_zone": "footer"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/lexicon/equal-protection",
+          "discovery_zone": "footer"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/lexicon/culpable",
+          "discovery_zone": "footer"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/lexicon/habeas-corpus",
+          "discovery_zone": "footer"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/lexicon/fourteenth-amendment",
+          "discovery_zone": "footer"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/lexicon/exculpatory",
+          "discovery_zone": "footer"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/lexicon/fifth-amendment",
+          "discovery_zone": "footer"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/lexicon/prima-facie",
+          "discovery_zone": "footer"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/lexicon/pro-se",
+          "discovery_zone": "footer"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/lexicon",
+          "discovery_zone": "footer"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/lexicon/estoppel",
+          "discovery_zone": "footer"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com",
+          "discovery_zone": "footer"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/admin",
+          "discovery_zone": "footer"
+        }
+      ]
+    },
+    {
+      "chunk_id": "4a398934d576da4e3f35",
+      "source_url": "https://pops.spruked.com/account",
+      "route": "/account",
+      "title": "POPS Account Signup | Access and Updates",
+      "heading": "Manage Your POPS Access",
+      "section_headings": [],
+      "text": "POPS Account Signup | Access and Updates Enter Pops P.O.P.S. TM Home How POPS Works Declaration Pledge Lexicon Account Cart Get P.O.P.S. Account and Open Door Access Manage Your POPS Access Use this page to create or manage the account connected to your POPS access, downloads, updates, and Open Door review. Full Name Email Address Password Confirm Password I agree to the Terms of Service . I agree to the Privacy Statement . I acknowledge the Policies and Procedures . Send product updates and release notifications. Create Account See Pricing Back to Landing P.O.P.S. TM Home How POPS Works Declaration Pledge Lexicon Access Account Cart Events Counsel Handoff Noted Counsel Privacy Terms Policies & Procedures Spruked OrbWeaver CertSig TrueMarkMint Copyright 2026 Proof of Presence System. Pro Prime Series AI. All rights reserved.",
+      "content_hash": "02002a93607f839a308cc58c84888115",
+      "route_classification": "private",
+      "provenance": [
+        {
+          "source_type": "sitemap",
+          "source_url": "https://pops.spruked.com/sitemap.xml",
+          "discovery_zone": "sitemap"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/cart",
+          "discovery_zone": "navigation"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/pricing",
+          "discovery_zone": "navigation"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/attorney-referral",
+          "discovery_zone": "navigation"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/about",
+          "discovery_zone": "navigation"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/access",
+          "discovery_zone": "navigation"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/pledge",
+          "discovery_zone": "navigation"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/lexicon/due-process",
+          "discovery_zone": "navigation"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/lexicon/equal-protection",
+          "discovery_zone": "navigation"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/lexicon/culpable",
+          "discovery_zone": "navigation"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/lexicon/habeas-corpus",
+          "discovery_zone": "navigation"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/lexicon/fourteenth-amendment",
+          "discovery_zone": "navigation"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/lexicon/exculpatory",
+          "discovery_zone": "navigation"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/lexicon",
+          "discovery_zone": "navigation"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/lexicon/fifth-amendment",
+          "discovery_zone": "navigation"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/lexicon/prima-facie",
+          "discovery_zone": "navigation"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/lexicon/pro-se",
+          "discovery_zone": "navigation"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/lexicon/estoppel",
+          "discovery_zone": "navigation"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com",
+          "discovery_zone": "navigation"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/admin",
+          "discovery_zone": "navigation"
+        }
+      ]
+    },
+    {
+      "chunk_id": "323647fd49f3b05df027",
+      "source_url": "https://pops.spruked.com/privacy",
+      "route": "/privacy",
+      "title": "POPS Privacy Notice | Local-First Records",
+      "heading": "Privacy and Operational Notice",
+      "section_headings": [
+        "1. Privacy Principle",
+        "2. Information POPS May Receive",
+        "3. Information POPS Does Not Request Through General Forms",
+        "4. Local Application Records",
+        "5. How POPS Uses Information",
+        "6. Open Door Access Privacy",
+        "7. POPS Noted Counsel Privacy",
+        "8. Sharing and Disclosure",
+        "9. Security Limits",
+        "10. Retention and Deletion",
+        "11. Children",
+        "12. Changes and Privacy Contact"
+      ],
+      "text": "POPS Privacy Notice | Local-First Records Enter Pops P.O.P.S. TM Home How POPS Works Declaration Pledge Lexicon Account Cart Get P.O.P.S. POPS PRIVACY Privacy and Operational Notice What POPS handles, what stays under the user's control, and what should never be sent through general website forms. 1. Privacy Principle POPS is designed around a local-first principle: family records should remain under the user's control unless the user deliberately chooses to export, share, upload, submit, or transmit them. The POPS website and the POPS desktop application serve different functions. The website is a public information, support, and access channel. The desktop application is intended to help users organize their own case records locally. POPS does not promise automatic cloud backup, encrypted storage, attorney sharing, permanent evidence preservation, or remote access unless a specific active product feature clearly states that it is enabled and explains how it works. 2. Information POPS May Receive POPS may receive information that a person voluntarily enters through a website form, purchase process, account process, support request, Open Door Access request, or Noted Counsel submission. 2.1 Information You May Provide Name, email address, and contact message Purchase, license, or access-request information Support questions and product-feedback information Open Door Access information necessary to review an access request Noted Counsel Merit Recognition information submitted for review 2.2 Basic Technical Information Website hosting, security, email, payment, and analytics providers may process limited technical information needed to deliver the website, prevent abuse, maintain security, diagnose technical problems, or measure basic site performance. This may include information such as browser type, device type, IP address, page request information, timestamps, and referral source. POPS does not use this information to build profiles about a user's private family case, child, court matter, medical situation, or legal dispute. 3. Information POPS Does Not Request Through General Forms Do not send private case evidence through a general POPS contact form, social-media message, ordinary support email, Open Door request, or Noted Counsel submission. Unless POPS provides a clearly identified secure process, do not send: Child names, birth dates, addresses, or school identifiers Case numbers, court orders, pleadings, or attorney work product Medical records, school records, or therapy information Private texts, emails, screenshots, audio, video, or evidence files Passwords, account credentials, Social Security numbers, or bank information Emergency information or information requiring immediate legal action POPS may delete, redact, decline to process, or request removal of sensitive information submitted through an inappropriate channel. 4. Local Application Records POPS is intended to help users organize timelines, communications, evidence references, incident notes, court-order details, and reports on their own device. Users remain responsible for protecting their device, operating-system account, passwords, exported files, backups, and any information they choose to share with an attorney, court, advocate, family member, cloud provider, or another person. 4.1 Export Is a User Decision When POPS provides an export or report feature, the user decides what to export and where to send it. POPS does not control, monitor, retrieve, or delete files after they leave the user's device or are shared with another person or service. 4.2 Do Not Assume a Feature Exists The specific POPS release in use controls which storage, backup, file, hash, export, sharing, and security functions are actually available. Users should review the active product documentation before relying on a feature for sensitive records. 5. How POPS Uses Information POPS may use information it receives to: Operate and maintain the website and product-access processes Res",
+      "content_hash": "8883c2ed0f2f8a71862cacd7cf1ec215",
+      "route_classification": "public_content",
+      "provenance": [
+        {
+          "source_type": "sitemap",
+          "source_url": "https://pops.spruked.com/sitemap.xml",
+          "discovery_zone": "sitemap"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/cart",
+          "discovery_zone": "footer"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/pricing",
+          "discovery_zone": "footer"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/attorney-referral",
+          "discovery_zone": "footer"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/about",
+          "discovery_zone": "footer"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/access",
+          "discovery_zone": "footer"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/pledge",
+          "discovery_zone": "footer"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/lexicon/due-process",
+          "discovery_zone": "footer"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/lexicon/equal-protection",
+          "discovery_zone": "footer"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/lexicon/culpable",
+          "discovery_zone": "footer"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/lexicon/habeas-corpus",
+          "discovery_zone": "footer"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/lexicon/fourteenth-amendment",
+          "discovery_zone": "footer"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/lexicon/exculpatory",
+          "discovery_zone": "footer"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/lexicon/fifth-amendment",
+          "discovery_zone": "footer"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/lexicon/prima-facie",
+          "discovery_zone": "footer"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/lexicon/pro-se",
+          "discovery_zone": "footer"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/lexicon/estoppel",
+          "discovery_zone": "footer"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/lexicon",
+          "discovery_zone": "footer"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com",
+          "discovery_zone": "footer"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/admin",
+          "discovery_zone": "footer"
+        }
+      ]
+    },
+    {
+      "chunk_id": "8aad51358149cba48337",
+      "source_url": "https://pops.spruked.com/declaration",
+      "route": "/declaration",
+      "title": "The POPS Declaration | First Order of Protection",
+      "heading": "The P.O.P.S. Declaration",
+      "section_headings": [
+        "On the Origin of the Charge",
+        "On the Nature of Presence",
+        "On the Limits of Outside Help",
+        "On Rights Inseparable from Responsibility",
+        "On Record and Witness",
+        "On the Permanence of the Office",
+        "Proof of Presence requires a record."
+      ],
+      "text": "The POPS Declaration | First Order of Protection Enter Pops P.O.P.S. TM Home How POPS Works Declaration Pledge Lexicon Account Cart Get P.O.P.S. Proof of Presence System The P.O.P.S. Declaration First Order of Protection and Service Mission Statement POPS - the Proof of Presence System - exists to restore men to their God-given appointment as the First Order of Protection in the home. It equips fathers with the discipline, record-keeping, and truth-preserving tools needed to stand watch over their families, remain accountable in conflict, and protect what has been entrusted to them. POPS strengthens the man, safeguards the record, and preserves the truth when presence is questioned, challenged, or denied. POPS is not a support group. It is a support machine - built to keep a man aligned, sober-minded, and anchored to his calling, even in the hardest seasons of fatherhood. About This Declaration The P.O.P.S. Declaration is the foundational document of the First Order of Protection. It is not a policy, a slogan, or a motivational speech. It is the formal articulation of what men have always been in the home: the first responder, the first defender, the first witness, and the first line of protection long before institutions existed. This Declaration defines the charge, the duty, and the office of the father - not as a cultural role, but as a God-given appointment. It affirms the rights, responsibilities, and presence of the man who stands between his family and the dark, and calls that role by its true name: P.O.P.S. - Proof of Presence System. Preamble When in the course of a family's life, danger does not announce itself, when the call for help cannot wait for sirens, when the wolf is at the door and the door is the only thing between the wolf and the children, there must stand, in that gap, a man. Not a badge. Not a uniform. A father. Before there were Courts of Protection Services, before there were County Officers of Public Safety, before any institution wore the name of guardian, there was the man of the house, standing watch, armed with nothing but resolve and the authority given to him by his Creator. We call this what it has always been: P.O.P.S. - Proof of Presence System. The First Order of Protection and Service. This is not a replacement for law. This is the foundation law was built upon. When the C.O.P.S. cannot get there in time, and there will be moments they cannot, the P.O.P.S. is already there. He was never not there. That is the whole of the charge. We hold these truths to be self-evident, God-given, and undeniable: that every father is entrusted with rights, privileges, and responsibilities that no government granted and no government may revoke; that presence is not passive but is itself a duty; and that a man who stands watch over his household stands in an office older than nations. The Articles Article I On the Origin of the Charge The duty of a man to protect his household is not granted by any government, council, or institution of man. It precedes them all. It was given at the founding of the family itself, and it answers to a higher authority than any badge or statute. What the State formalizes as protective services, the home has always practiced as the first and oldest service of all. Article II On the Nature of Presence Protection is not an event. It is a condition. A man does not become a protector in the moment of crisis. He either was one in every ordinary moment before it, or he was not. Proof of Presence is not proof that he showed up when it mattered. It is proof that he never left. Article III On the Limits of Outside Help We do not despise the C.O.P.S. We honor them, we call them, we cooperate with them. But we do not outsource the charge to them. There is a gap between the call and the arrival, between the danger and the response, and in that gap a family is either covered or it is not. The P.O.P.S. exists in that gap. Always has. Always will. Article IV On Rights Inseparable from Respons",
+      "content_hash": "104775f3acdffb82e26b9b4863ea85c6",
+      "route_classification": "public_content",
+      "provenance": [
+        {
+          "source_type": "sitemap",
+          "source_url": "https://pops.spruked.com/sitemap.xml",
+          "discovery_zone": "sitemap"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/cart",
+          "discovery_zone": "navigation"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/pricing",
+          "discovery_zone": "navigation"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/attorney-referral",
+          "discovery_zone": "navigation"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/about",
+          "discovery_zone": "navigation"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/access",
+          "discovery_zone": "navigation"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/pledge",
+          "discovery_zone": "navigation"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/lexicon/due-process",
+          "discovery_zone": "navigation"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/lexicon/equal-protection",
+          "discovery_zone": "navigation"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/lexicon/culpable",
+          "discovery_zone": "navigation"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/lexicon/habeas-corpus",
+          "discovery_zone": "navigation"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/lexicon/fourteenth-amendment",
+          "discovery_zone": "navigation"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/lexicon",
+          "discovery_zone": "navigation"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/lexicon/exculpatory",
+          "discovery_zone": "navigation"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/lexicon/fifth-amendment",
+          "discovery_zone": "navigation"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/lexicon/prima-facie",
+          "discovery_zone": "navigation"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/lexicon/pro-se",
+          "discovery_zone": "navigation"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/lexicon/estoppel",
+          "discovery_zone": "navigation"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com",
+          "discovery_zone": "navigation"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/admin",
+          "discovery_zone": "navigation"
+        }
+      ]
+    },
+    {
+      "chunk_id": "4db35bde1bf6c79e89e6",
+      "source_url": "https://pops.spruked.com/policies-procedures",
+      "route": "/policies-procedures",
+      "title": "POPS Policies and Procedures | Operating Standards",
+      "heading": "Policies and Procedures",
+      "section_headings": [
+        "1. Purpose and Operating Doctrine",
+        "2. Acceptable Use Policy",
+        "3. Evidence and Record Integrity Procedure",
+        "4. Privacy and Operational Boundary",
+        "5. Standard License and Open Door Access",
+        "6. POPS Noted Counsel - Merit Recognition",
+        "7. Moderation and Enforcement",
+        "8. Policy Updates"
+      ],
+      "text": "POPS Policies and Procedures | Operating Standards Enter Pops P.O.P.S. TM Home How POPS Works Declaration Pledge Lexicon Account Cart Get P.O.P.S. POPS GOVERNANCE Policies and Procedures Clear operating standards for Proof of Presence System, Open Door Access, evidence organization, and POPS Noted Counsel. 1. Purpose and Operating Doctrine P.O.P.S. - Proof of Presence System - helps parents organize facts, preserve records, document good-faith effort, and prepare clearer materials for attorney or court review. POPS is not a law firm. POPS does not provide legal advice, legal representation, legal strategy, or a guarantee of any court result, attorney acceptance, evidence admissibility, or case outcome. 1.1 Core Principle Turn emotion into facts. Turn facts into organized proof. Turn proof into a clearer case file. 1.2 Product Boundary POPS is built to help a parent document what happened, identify the supporting record, organize chronology, and prepare materials for review. It is not built to attack another parent, create revenge material, spy on anyone, or tell a user what legal action to take. 2. Acceptable Use Policy Users must use POPS lawfully, honestly, and with respect for the privacy and rights of others. 2.1 Prohibited Uses Creating, altering, fabricating, or misrepresenting evidence Using POPS to stalk, intimidate, threaten, harass, or retaliate Accessing another person's device, account, or private records without permission Uploading or sharing private information through unapproved channels Using POPS as a substitute for emergency services or qualified legal counsel Presenting POPS-generated material as legal advice, a court order, or verified fact without review 3. Evidence and Record Integrity Procedure POPS helps users organize records. The user remains responsible for the accuracy, completeness, source, and lawful possession of every record they enter, attach, export, or share. 3.1 Preserve Originals Where Possible Users should preserve original messages, native exports, documents, photos, receipts, call logs, and other source material where possible. Screenshots may be useful reference copies, but they can lack source metadata and should not be treated as automatically equivalent to an original record. 3.2 Factual Entry Standard Incident, communication, timeline, and evidence entries should state what occurred, when it occurred, who was involved, what supporting record exists, and what the user personally did. Users should avoid insults, speculation, unsupported accusations, and emotional conclusions. 3.3 User Review Before Export Before exporting or sharing a report, packet, timeline, or statement, the user must review it for accuracy, privacy, completeness, and relevance. POPS does not independently verify the truth of a user's records. 4. Privacy and Operational Boundary POPS is designed around a local-first principle: a parent's family records should remain under that parent's control unless they deliberately choose to export, share, upload, or submit something through a feature that clearly states it will transmit information. 4.1 Do Not Send Private Case Evidence Through General Forms General POPS contact, support, Open Door, and Noted Counsel forms are not for court orders, child names, medical records, school records, screenshots, private messages, audio, video, passwords, Social Security numbers, financial information, or evidence files unless POPS specifically provides a secure purpose-built upload process. 4.2 User Device Responsibility Users are responsible for securing their device, protecting passwords, protecting downloaded reports, maintaining backups where available, and choosing carefully before sharing records with an attorney, court, advocate, or another person. 5. Standard License and Open Door Access The standard POPS license is a one-time purchase of $99.00 . POPS does not require a monthly subscription for the standard license. 5.1 Open Door Access Reserve From every cleared full-price",
+      "content_hash": "f2e1910eeaf658ff2c3010fddb7dda4c",
+      "route_classification": "public_content",
+      "provenance": [
+        {
+          "source_type": "sitemap",
+          "source_url": "https://pops.spruked.com/sitemap.xml",
+          "discovery_zone": "sitemap"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/cart",
+          "discovery_zone": "footer"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/pricing",
+          "discovery_zone": "footer"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/attorney-referral",
+          "discovery_zone": "footer"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/about",
+          "discovery_zone": "footer"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/access",
+          "discovery_zone": "footer"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/pledge",
+          "discovery_zone": "footer"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/lexicon/due-process",
+          "discovery_zone": "footer"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/lexicon/equal-protection",
+          "discovery_zone": "footer"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/lexicon/culpable",
+          "discovery_zone": "footer"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/lexicon/habeas-corpus",
+          "discovery_zone": "footer"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/lexicon/fourteenth-amendment",
+          "discovery_zone": "footer"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/lexicon/exculpatory",
+          "discovery_zone": "footer"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/lexicon/fifth-amendment",
+          "discovery_zone": "footer"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/lexicon",
+          "discovery_zone": "footer"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/lexicon/prima-facie",
+          "discovery_zone": "footer"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/lexicon/pro-se",
+          "discovery_zone": "footer"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/lexicon/estoppel",
+          "discovery_zone": "footer"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com",
+          "discovery_zone": "footer"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/admin",
+          "discovery_zone": "footer"
+        }
+      ]
+    },
+    {
+      "chunk_id": "1a1396f19c604c6ac055",
+      "source_url": "https://pops.spruked.com/terms",
+      "route": "/terms",
+      "title": "POPS Terms of Service | Proof of Presence System",
+      "heading": "Terms of Service",
+      "section_headings": [],
+      "text": "POPS Terms of Service | Proof of Presence System Enter Pops P.O.P.S. TM Home How POPS Works Declaration Pledge Lexicon Account Cart Get P.O.P.S. Legal Terms of Service Standard terms for use of the POPS website and POPS desktop application. 1. Acceptance of Terms By using POPS services, you agree to these Terms of Service and all applicable laws in your jurisdiction. 2. Service Scope POPS is an evidence organization platform. POPS is not legal advice, not therapy, and not a law firm. 3. User Responsibility You are responsible for lawful use of the platform, lawful collection of information, and lawful sharing of records. 4. Account and Access You are responsible for safeguarding your account credentials and any exported records under your control. 5. Payments and Access Paths Pricing and access paths may differ by program type. Access and approval paths are subject to posted terms. 6. Intellectual Property POPS branding, software, and website content are protected intellectual property owned by POPS. 7. Disclaimer POPS does not guarantee legal outcomes or admissibility in court. 8. Limitation of Liability To the maximum extent allowed by law, POPS is not liable for indirect, incidental, or consequential damages. 9. Changes to Terms Terms may be updated. Continued use after updates constitutes acceptance of the revised terms. P.O.P.S. TM Home How POPS Works Declaration Pledge Lexicon Access Account Cart Events Counsel Handoff Noted Counsel Privacy Terms Policies & Procedures Spruked OrbWeaver CertSig TrueMarkMint Copyright 2026 Proof of Presence System. Pro Prime Series AI. All rights reserved.",
+      "content_hash": "e81c7444db55488f99ac2d2caca3d33d",
+      "route_classification": "public_content",
+      "provenance": [
+        {
+          "source_type": "sitemap",
+          "source_url": "https://pops.spruked.com/sitemap.xml",
+          "discovery_zone": "sitemap"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/cart",
+          "discovery_zone": "footer"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/pricing",
+          "discovery_zone": "footer"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/attorney-referral",
+          "discovery_zone": "footer"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/about",
+          "discovery_zone": "footer"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/access",
+          "discovery_zone": "footer"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/pledge",
+          "discovery_zone": "footer"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/lexicon/due-process",
+          "discovery_zone": "footer"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/lexicon/equal-protection",
+          "discovery_zone": "footer"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/lexicon/culpable",
+          "discovery_zone": "footer"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/lexicon/habeas-corpus",
+          "discovery_zone": "footer"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/lexicon/fourteenth-amendment",
+          "discovery_zone": "footer"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/lexicon/exculpatory",
+          "discovery_zone": "footer"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/lexicon/fifth-amendment",
+          "discovery_zone": "footer"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/lexicon",
+          "discovery_zone": "footer"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/lexicon/prima-facie",
+          "discovery_zone": "footer"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/lexicon/pro-se",
+          "discovery_zone": "footer"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/lexicon/estoppel",
+          "discovery_zone": "footer"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com",
+          "discovery_zone": "footer"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/admin",
+          "discovery_zone": "footer"
+        }
+      ]
+    },
+    {
+      "chunk_id": "183658c70d2a77e0d372",
+      "source_url": "https://pops.spruked.com/counsel-handoff",
+      "route": "/counsel-handoff",
+      "title": "Counsel Handoff | POPS Attorney Packet Export",
+      "heading": "Counsel Handoff",
+      "section_headings": [
+        "How POPS Builds the Counsel Packet",
+        "What Gets Exported",
+        "How Hashes and Manifests Work",
+        "User Control and Local-First Handoff",
+        "Future Counsel Portal Direction"
+      ],
+      "text": "Counsel Handoff | POPS Attorney Packet Export Enter Pops P.O.P.S. TM Home How POPS Works Declaration Pledge Lexicon Account Cart Get P.O.P.S. Counsel Handoff Counsel Handoff This page explains how the desktop app turns structured records into export-ready attorney packets while keeping the user in control of what leaves the local app. It is informational; it is not legal advice or a live upload portal. Attorney Packet Creation The desktop workflow assembles timeline entries, incident logs, communication summaries, and linked evidence into a single attorney packet set designed for faster legal review. Controlled Export Scope Users select exactly what is exported: date range, event types, order references, selected evidence, and summary reports. Nothing is forced into a handoff bundle by default. Verification Artifacts Export bundles are designed to include hash verification and manifest detail so receiving counsel can validate evidence integrity and chain-of-custody context. How POPS Builds the Counsel Packet Handoff starts in the desktop app after records are reviewed and organized. The user does not need to rebuild the case manually in separate folders. Select scope: time window, issues, court order references, and key incidents. Generate structured reports: timeline summary, incident summary, communication summary, and order/violation map. Attach supporting evidence files and evidence index. Generate manifest and hash verification set. Export to a user-selected destination for counsel handoff. What Gets Exported Core Reports Master timeline Incident log Denied parenting-time summary Communication summary Evidence Set Evidence index Selected original files Court order references Source notes and tags Integrity and Audit SHA-256 hash report Manifest file Chain-of-custody context Export metadata How Hashes and Manifests Work Each exported evidence file can be paired with its hash value in the verification report. The manifest acts as a packet map listing included files, report artifacts, and identifiers so counsel can verify completeness before substantive review. If a file changes after export, its hash no longer matches the original recorded value. This supports integrity checks during attorney intake and downstream court preparation. User Control and Local-First Handoff POPS is designed so records stay local until the user decides to export. Users choose destination, scope, and shared artifacts. No automatic cloud-first transmission is required for counsel handoff. User chooses what to export and what to withhold User chooses where the packet is saved User chooses how and when to deliver to counsel Local records remain local unless explicitly shared Future Counsel Portal Direction POPS roadmap includes a Counsel Portal path for structured intake and verification workflows. The intended direction is a permissioned handoff model where users can authorize a specific counsel recipient and share packet revisions with clear version history. Until that layer is active, current handoff remains user-controlled through exported packet bundles and direct delivery. Back to Landing See Pricing Attorney Referral Account Portal P.O.P.S. TM Home How POPS Works Declaration Pledge Lexicon Access Account Cart Events Counsel Handoff Noted Counsel Privacy Terms Policies & Procedures Spruked OrbWeaver CertSig TrueMarkMint Copyright 2026 Proof of Presence System. Pro Prime Series AI. All rights reserved.",
+      "content_hash": "86009e6b269df764ac641e828cf2fafa",
+      "route_classification": "public_content",
+      "provenance": [
+        {
+          "source_type": "sitemap",
+          "source_url": "https://pops.spruked.com/sitemap.xml",
+          "discovery_zone": "sitemap"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/cart",
+          "discovery_zone": "footer"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/pricing",
+          "discovery_zone": "footer"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/attorney-referral",
+          "discovery_zone": "footer"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/about",
+          "discovery_zone": "footer"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/access",
+          "discovery_zone": "footer"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/pledge",
+          "discovery_zone": "footer"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/lexicon/due-process",
+          "discovery_zone": "footer"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/lexicon/equal-protection",
+          "discovery_zone": "footer"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/lexicon/culpable",
+          "discovery_zone": "footer"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/lexicon",
+          "discovery_zone": "footer"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/lexicon/habeas-corpus",
+          "discovery_zone": "footer"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/lexicon/fourteenth-amendment",
+          "discovery_zone": "footer"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/lexicon/exculpatory",
+          "discovery_zone": "footer"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/lexicon/fifth-amendment",
+          "discovery_zone": "footer"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/lexicon/prima-facie",
+          "discovery_zone": "footer"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/lexicon/pro-se",
+          "discovery_zone": "footer"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/lexicon/estoppel",
+          "discovery_zone": "footer"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com",
+          "discovery_zone": "footer"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/admin",
+          "discovery_zone": "footer"
+        }
+      ]
+    },
+    {
+      "chunk_id": "18791a476668a3a3886d",
+      "source_url": "https://pops.spruked.com/pricing",
+      "route": "/pricing",
+      "title": "Get POPS | Local-First Evidence System",
+      "heading": "Choose Your POPS Access",
+      "section_headings": [
+        "Your Case is Yours"
+      ],
+      "text": "Get POPS | Local-First Evidence System Enter Pops P.O.P.S. TM Home How POPS Works Declaration Pledge Lexicon Account Cart Get P.O.P.S. Get P.O.P.S. Choose Your POPS Access This page is for choosing a POPS access path. Guardian is the standard desktop-app license; Open Door is a reviewed assistance path; sponsors help fund access; and Membership provides ongoing education and updates. Guardian Access $99 one-time app license You own the POPS desktop app license. No monthly payment. Includes lifetime POPS Membership. Optional yearly maintenance renewal: $19.99. Evidence Vault with SHA-256 hashing Court Order & Violation tracking Timeline & Event logging Incident logging and record protection Download access and license activation Includes lifetime POPS Membership Get POPS \u2014 $99 Open Door Access Contribute what you can Open Door Access is for fathers who cannot carry the full license price today but are willing to contribute what they can. No fixed minimum, but must be more than zero Requires signed-in POPS account and customer record Includes amount, explanation, urgency, and pro se status Reviewed personally to protect the license pool Approval code required before download/license activation If approved, same full POPS tool and same respect Request Open Door Access Sponsor a Father $25+ support path Help fund access for fathers using Open Door. Some requests may be partially or fully sponsor-covered after review. Suggested amounts: $25, $50, $149, $300 Custom sponsorship amount Supports sponsored license capacity Supports community access and education Supports future legal-resource partnerships Keeps Open Door pool protected Sponsor a Father POPS Membership $12.99 one-time lifetime POPS Membership is one-time $12.99 lifetime membership. Not monthly. Not yearly. Newsletter Events and resource drops Blog posts and POPS updates Regional and national Q&A Ask Another Dad and community rooms POPS education and updates Join POPS Membership \u2014 $12.99 Security Your Case is Yours P.O.P.S. is built local-first. Your data never leaves your machine unless you choose to export it. Local-Only Storage SQLite database on your machine. No cloud sync. No remote servers holding your evidence. Your case files stay where they belong. SHA-256 Verification Every evidence file is hashed before storage. If a file is altered, the hash won't match. Tamper-evident by design. Encrypted Backup Guardian and approved Open Door users can use encrypted exports for USB backup, trusted cloud backup of choice, or attorney handoff. Offline Operation After activation, P.O.P.S. works entirely offline. No internet required. No dependency on our servers. Your case proceeds regardless. P.O.P.S. TM Home How POPS Works Declaration Pledge Lexicon Access Account Cart Events Counsel Handoff Noted Counsel Privacy Terms Policies & Procedures Spruked OrbWeaver CertSig TrueMarkMint Copyright 2026 Proof of Presence System. Pro Prime Series AI. All rights reserved.",
+      "content_hash": "42635c9f6157f54b7d0c1dd4750ae06c",
+      "route_classification": "public_content",
+      "provenance": [
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/attorney-referral",
+          "discovery_zone": "body"
+        }
+      ]
+    },
+    {
+      "chunk_id": "095cd4e677fcf7d2322e",
+      "source_url": "https://pops.spruked.com/lexicon/equal-protection",
+      "route": "/lexicon/equal-protection",
+      "title": "POPS Lexicon: equal protection",
+      "heading": "POPS Lexicon",
+      "section_headings": [
+        "equal protection"
+      ],
+      "text": "POPS Lexicon: equal protection Enter Pops P.O.P.S. TM Home How POPS Works Declaration Pledge Lexicon Account Cart Get P.O.P.S. Court Language Guide POPS Lexicon Plain-English courtroom terms, evidence language, and factual rewrite guidance for parents building disciplined records. Core Court Terms POPS helps users recognize courtroom language, understand it in plain English, and preserve facts in a clear, organized way. This guide is educational. It can help you understand terms you may encounter in court documents, hearings, attorney conversations, or case records. It does not replace legal advice or determine what should be filed in court. Rewrite guidance: Prefer facts over conclusions. Prefer dates, records, and actions over blame. Prefer documented events over legal labels. \u2190 Back to the full POPS Lexicon Constitutional Principle equal protection Medium Sensitivity Plain-English meaning: The idea that the government should apply the law fairly and not treat similarly situated people differently without a lawful reason. Why it matters: POPS should preserve facts and comparisons for attorney review. POPS use: Keep factual and avoid encouraging unsupported constitutional claims. Court-safe example: The records show the dates, actions taken, and how the situation was handled compared with prior events. P.O.P.S. TM Home How POPS Works Declaration Pledge Lexicon Access Account Cart Events Counsel Handoff Noted Counsel Privacy Terms Policies & Procedures Spruked OrbWeaver CertSig TrueMarkMint Copyright 2026 Proof of Presence System. Pro Prime Series AI. All rights reserved.",
+      "content_hash": "5a144d666d3a7cb854c2f38a3a1e6da2",
+      "route_classification": "public_content",
+      "provenance": [
+        {
+          "source_type": "sitemap",
+          "source_url": "https://pops.spruked.com/sitemap.xml",
+          "discovery_zone": "sitemap"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/lexicon",
+          "discovery_zone": "body"
+        }
+      ]
+    },
+    {
+      "chunk_id": "f1196d55245cda824e30",
+      "source_url": "https://pops.spruked.com/lexicon/culpable",
+      "route": "/lexicon/culpable",
+      "title": "POPS Lexicon: culpable",
+      "heading": "POPS Lexicon",
+      "section_headings": [
+        "culpable"
+      ],
+      "text": "POPS Lexicon: culpable Enter Pops P.O.P.S. TM Home How POPS Works Declaration Pledge Lexicon Account Cart Get P.O.P.S. Court Language Guide POPS Lexicon Plain-English courtroom terms, evidence language, and factual rewrite guidance for parents building disciplined records. Core Court Terms POPS helps users recognize courtroom language, understand it in plain English, and preserve facts in a clear, organized way. This guide is educational. It can help you understand terms you may encounter in court documents, hearings, attorney conversations, or case records. It does not replace legal advice or determine what should be filed in court. Rewrite guidance: Prefer facts over conclusions. Prefer dates, records, and actions over blame. Prefer documented events over legal labels. \u2190 Back to the full POPS Lexicon Legal culpable High Sensitivity Plain-English meaning: Legally or morally responsible for wrongdoing. Why it matters: This word can sound like a legal conclusion, so POPS should encourage factual wording instead of blame. POPS use: Flag for attorney review if used in a report, packet, or filing. Court-safe example: The records show the scheduled parenting time did not occur on the dates listed. P.O.P.S. TM Home How POPS Works Declaration Pledge Lexicon Access Account Cart Events Counsel Handoff Noted Counsel Privacy Terms Policies & Procedures Spruked OrbWeaver CertSig TrueMarkMint Copyright 2026 Proof of Presence System. Pro Prime Series AI. All rights reserved.",
+      "content_hash": "3dd106d8516feabb03bf8884d949e0ce",
+      "route_classification": "public_content",
+      "provenance": [
+        {
+          "source_type": "sitemap",
+          "source_url": "https://pops.spruked.com/sitemap.xml",
+          "discovery_zone": "sitemap"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/lexicon",
+          "discovery_zone": "body"
+        }
+      ]
+    },
+    {
+      "chunk_id": "a6cc6927cf8900894275",
+      "source_url": "https://pops.spruked.com/lexicon/habeas-corpus",
+      "route": "/lexicon/habeas-corpus",
+      "title": "POPS Lexicon: habeas corpus",
+      "heading": "POPS Lexicon",
+      "section_headings": [
+        "habeas corpus"
+      ],
+      "text": "POPS Lexicon: habeas corpus Enter Pops P.O.P.S. TM Home How POPS Works Declaration Pledge Lexicon Account Cart Get P.O.P.S. Court Language Guide POPS Lexicon Plain-English courtroom terms, evidence language, and factual rewrite guidance for parents building disciplined records. Core Court Terms POPS helps users recognize courtroom language, understand it in plain English, and preserve facts in a clear, organized way. This guide is educational. It can help you understand terms you may encounter in court documents, hearings, attorney conversations, or case records. It does not replace legal advice or determine what should be filed in court. Rewrite guidance: Prefer facts over conclusions. Prefer dates, records, and actions over blame. Prefer documented events over legal labels. \u2190 Back to the full POPS Lexicon Constitutional Procedure habeas corpus High Sensitivity Plain-English meaning: \"You shall have the body.\" A procedure used to challenge unlawful detention or restraint. Why it matters: This is a serious legal procedure and should be handled cautiously. POPS use: Restrict to informational display and attorney review guidance. Court-safe example: This term involves serious legal procedure and should be reviewed with an attorney or appropriate legal authority before use. P.O.P.S. TM Home How POPS Works Declaration Pledge Lexicon Access Account Cart Events Counsel Handoff Noted Counsel Privacy Terms Policies & Procedures Spruked OrbWeaver CertSig TrueMarkMint Copyright 2026 Proof of Presence System. Pro Prime Series AI. All rights reserved.",
+      "content_hash": "bc0c0fd815cf04bb00b14683978cd374",
+      "route_classification": "public_content",
+      "provenance": [
+        {
+          "source_type": "sitemap",
+          "source_url": "https://pops.spruked.com/sitemap.xml",
+          "discovery_zone": "sitemap"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/lexicon",
+          "discovery_zone": "body"
+        }
+      ]
+    },
+    {
+      "chunk_id": "0f3010a23ba1e5e919ae",
+      "source_url": "https://pops.spruked.com/lexicon/fourteenth-amendment",
+      "route": "/lexicon/fourteenth-amendment",
+      "title": "POPS Lexicon: Fourteenth Amendment",
+      "heading": "POPS Lexicon",
+      "section_headings": [
+        "Fourteenth Amendment"
+      ],
+      "text": "POPS Lexicon: Fourteenth Amendment Enter Pops P.O.P.S. TM Home How POPS Works Declaration Pledge Lexicon Account Cart Get P.O.P.S. Court Language Guide POPS Lexicon Plain-English courtroom terms, evidence language, and factual rewrite guidance for parents building disciplined records. Core Court Terms POPS helps users recognize courtroom language, understand it in plain English, and preserve facts in a clear, organized way. This guide is educational. It can help you understand terms you may encounter in court documents, hearings, attorney conversations, or case records. It does not replace legal advice or determine what should be filed in court. Rewrite guidance: Prefer facts over conclusions. Prefer dates, records, and actions over blame. Prefer documented events over legal labels. \u2190 Back to the full POPS Lexicon Constitutional Right Fourteenth Amendment High Sensitivity Plain-English meaning: A constitutional protection that includes due process and equal protection principles. Why it matters: In family-law contexts, users may hear this discussed in relation to notice, hearings, fairness, and state action. POPS use: Provide plain-language explanation and flag constitutional claims for review. Court-safe example: My records are organized to show notice received, appearances made, and communication attempts. P.O.P.S. TM Home How POPS Works Declaration Pledge Lexicon Access Account Cart Events Counsel Handoff Noted Counsel Privacy Terms Policies & Procedures Spruked OrbWeaver CertSig TrueMarkMint Copyright 2026 Proof of Presence System. Pro Prime Series AI. All rights reserved.",
+      "content_hash": "479e87aef1c97c5880e37cd230926888",
+      "route_classification": "public_content",
+      "provenance": [
+        {
+          "source_type": "sitemap",
+          "source_url": "https://pops.spruked.com/sitemap.xml",
+          "discovery_zone": "sitemap"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/lexicon",
+          "discovery_zone": "body"
+        }
+      ]
+    },
+    {
+      "chunk_id": "1cdfd2910d4e3203c1ce",
+      "source_url": "https://pops.spruked.com/lexicon/exculpatory",
+      "route": "/lexicon/exculpatory",
+      "title": "POPS Lexicon: exculpatory",
+      "heading": "POPS Lexicon",
+      "section_headings": [
+        "exculpatory"
+      ],
+      "text": "POPS Lexicon: exculpatory Enter Pops P.O.P.S. TM Home How POPS Works Declaration Pledge Lexicon Account Cart Get P.O.P.S. Court Language Guide POPS Lexicon Plain-English courtroom terms, evidence language, and factual rewrite guidance for parents building disciplined records. Core Court Terms POPS helps users recognize courtroom language, understand it in plain English, and preserve facts in a clear, organized way. This guide is educational. It can help you understand terms you may encounter in court documents, hearings, attorney conversations, or case records. It does not replace legal advice or determine what should be filed in court. Rewrite guidance: Prefer facts over conclusions. Prefer dates, records, and actions over blame. Prefer documented events over legal labels. \u2190 Back to the full POPS Lexicon Evidence exculpatory Medium Sensitivity Plain-English meaning: Evidence that may help show a person did not do something wrong or did comply with an order. Why it matters: Users should be able to tag records that may help show lawful conduct or a good-faith effort. POPS use: Allow tagging and evidence classification. Court-safe example: This message may be exculpatory because it shows I appeared at the exchange location on time. P.O.P.S. TM Home How POPS Works Declaration Pledge Lexicon Access Account Cart Events Counsel Handoff Noted Counsel Privacy Terms Policies & Procedures Spruked OrbWeaver CertSig TrueMarkMint Copyright 2026 Proof of Presence System. Pro Prime Series AI. All rights reserved.",
+      "content_hash": "9f7b35a5c398d6bace757d2244eddbb3",
+      "route_classification": "public_content",
+      "provenance": [
+        {
+          "source_type": "sitemap",
+          "source_url": "https://pops.spruked.com/sitemap.xml",
+          "discovery_zone": "sitemap"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/lexicon",
+          "discovery_zone": "body"
+        }
+      ]
+    },
+    {
+      "chunk_id": "92552fc4652d45e8f6db",
+      "source_url": "https://pops.spruked.com/lexicon/fifth-amendment",
+      "route": "/lexicon/fifth-amendment",
+      "title": "POPS Lexicon: Fifth Amendment",
+      "heading": "POPS Lexicon",
+      "section_headings": [
+        "Fifth Amendment"
+      ],
+      "text": "POPS Lexicon: Fifth Amendment Enter Pops P.O.P.S. TM Home How POPS Works Declaration Pledge Lexicon Account Cart Get P.O.P.S. Court Language Guide POPS Lexicon Plain-English courtroom terms, evidence language, and factual rewrite guidance for parents building disciplined records. Core Court Terms POPS helps users recognize courtroom language, understand it in plain English, and preserve facts in a clear, organized way. This guide is educational. It can help you understand terms you may encounter in court documents, hearings, attorney conversations, or case records. It does not replace legal advice or determine what should be filed in court. Rewrite guidance: Prefer facts over conclusions. Prefer dates, records, and actions over blame. Prefer documented events over legal labels. \u2190 Back to the full POPS Lexicon Constitutional Right Fifth Amendment High Sensitivity Plain-English meaning: A constitutional protection that includes due process and protection against self-incrimination. Why it matters: Statements involving accusations, police contact, admissions, or investigations may need careful review. POPS use: Flag sensitive narrative content for review. Court-safe example: Statements involving possible criminal exposure should be reviewed by counsel before filing or sharing. P.O.P.S. TM Home How POPS Works Declaration Pledge Lexicon Access Account Cart Events Counsel Handoff Noted Counsel Privacy Terms Policies & Procedures Spruked OrbWeaver CertSig TrueMarkMint Copyright 2026 Proof of Presence System. Pro Prime Series AI. All rights reserved.",
+      "content_hash": "e1c83547e33c0038ab4b1dbf3f87507d",
+      "route_classification": "public_content",
+      "provenance": [
+        {
+          "source_type": "sitemap",
+          "source_url": "https://pops.spruked.com/sitemap.xml",
+          "discovery_zone": "sitemap"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/lexicon",
+          "discovery_zone": "body"
+        }
+      ]
+    },
+    {
+      "chunk_id": "b2e305e82c8b363ec993",
+      "source_url": "https://pops.spruked.com/lexicon/prima-facie",
+      "route": "/lexicon/prima-facie",
+      "title": "POPS Lexicon: prima facie",
+      "heading": "POPS Lexicon",
+      "section_headings": [
+        "prima facie"
+      ],
+      "text": "POPS Lexicon: prima facie Enter Pops P.O.P.S. TM Home How POPS Works Declaration Pledge Lexicon Account Cart Get P.O.P.S. Court Language Guide POPS Lexicon Plain-English courtroom terms, evidence language, and factual rewrite guidance for parents building disciplined records. Core Court Terms POPS helps users recognize courtroom language, understand it in plain English, and preserve facts in a clear, organized way. This guide is educational. It can help you understand terms you may encounter in court documents, hearings, attorney conversations, or case records. It does not replace legal advice or determine what should be filed in court. Rewrite guidance: Prefer facts over conclusions. Prefer dates, records, and actions over blame. Prefer documented events over legal labels. \u2190 Back to the full POPS Lexicon Legal Standard prima facie High Sensitivity Plain-English meaning: Something that appears sufficient on its face unless challenged by other evidence. Why it matters: This is a legal threshold term and should be used carefully. POPS use: Flag for review when used as a conclusion. Court-safe example: The timeline and records may show a prima facie pattern of missed parenting time. P.O.P.S. TM Home How POPS Works Declaration Pledge Lexicon Access Account Cart Events Counsel Handoff Noted Counsel Privacy Terms Policies & Procedures Spruked OrbWeaver CertSig TrueMarkMint Copyright 2026 Proof of Presence System. Pro Prime Series AI. All rights reserved.",
+      "content_hash": "9854e8524cdf3ea0ff85a2e95cc92da2",
+      "route_classification": "public_content",
+      "provenance": [
+        {
+          "source_type": "sitemap",
+          "source_url": "https://pops.spruked.com/sitemap.xml",
+          "discovery_zone": "sitemap"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/lexicon",
+          "discovery_zone": "body"
+        }
+      ]
+    },
+    {
+      "chunk_id": "2940217f6bf108cd5370",
+      "source_url": "https://pops.spruked.com/lexicon/pro-se",
+      "route": "/lexicon/pro-se",
+      "title": "POPS Lexicon: pro se",
+      "heading": "POPS Lexicon",
+      "section_headings": [
+        "pro se"
+      ],
+      "text": "POPS Lexicon: pro se Enter Pops P.O.P.S. TM Home How POPS Works Declaration Pledge Lexicon Account Cart Get P.O.P.S. Court Language Guide POPS Lexicon Plain-English courtroom terms, evidence language, and factual rewrite guidance for parents building disciplined records. Core Court Terms POPS helps users recognize courtroom language, understand it in plain English, and preserve facts in a clear, organized way. This guide is educational. It can help you understand terms you may encounter in court documents, hearings, attorney conversations, or case records. It does not replace legal advice or determine what should be filed in court. Rewrite guidance: Prefer facts over conclusions. Prefer dates, records, and actions over blame. Prefer documented events over legal labels. \u2190 Back to the full POPS Lexicon Court Procedure pro se Medium Sensitivity Plain-English meaning: Representing yourself in court without an attorney. Why it matters: Many POPS users may be self-represented and need organizing help. POPS use: Show as informational and supportive, not as legal advice. Court-safe example: I am appearing pro se and have organized the attached records for the Court's review. P.O.P.S. TM Home How POPS Works Declaration Pledge Lexicon Access Account Cart Events Counsel Handoff Noted Counsel Privacy Terms Policies & Procedures Spruked OrbWeaver CertSig TrueMarkMint Copyright 2026 Proof of Presence System. Pro Prime Series AI. All rights reserved.",
+      "content_hash": "ce11620c9e1edd99f7d0c04deb03cc35",
+      "route_classification": "public_content",
+      "provenance": [
+        {
+          "source_type": "sitemap",
+          "source_url": "https://pops.spruked.com/sitemap.xml",
+          "discovery_zone": "sitemap"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/lexicon",
+          "discovery_zone": "body"
+        }
+      ]
+    },
+    {
+      "chunk_id": "4bf3d881704462fb9124",
+      "source_url": "https://pops.spruked.com/lexicon/estoppel",
+      "route": "/lexicon/estoppel",
+      "title": "POPS Lexicon: estoppel",
+      "heading": "POPS Lexicon",
+      "section_headings": [
+        "estoppel"
+      ],
+      "text": "POPS Lexicon: estoppel Enter Pops P.O.P.S. TM Home How POPS Works Declaration Pledge Lexicon Account Cart Get P.O.P.S. Court Language Guide POPS Lexicon Plain-English courtroom terms, evidence language, and factual rewrite guidance for parents building disciplined records. Core Court Terms POPS helps users recognize courtroom language, understand it in plain English, and preserve facts in a clear, organized way. This guide is educational. It can help you understand terms you may encounter in court documents, hearings, attorney conversations, or case records. It does not replace legal advice or determine what should be filed in court. Rewrite guidance: Prefer facts over conclusions. Prefer dates, records, and actions over blame. Prefer documented events over legal labels. \u2190 Back to the full POPS Lexicon Legal Doctrine estoppel High Sensitivity Plain-English meaning: A rule that may prevent someone from taking a position that conflicts with earlier words, actions, or promises when another person relied on them. Why it matters: POPS should preserve messages, agreements, and reliance evidence. POPS use: Flag for attorney review if used in a filing. Court-safe example: The messages show an agreed exchange time, and I relied on that agreement by appearing at the location. P.O.P.S. TM Home How POPS Works Declaration Pledge Lexicon Access Account Cart Events Counsel Handoff Noted Counsel Privacy Terms Policies & Procedures Spruked OrbWeaver CertSig TrueMarkMint Copyright 2026 Proof of Presence System. Pro Prime Series AI. All rights reserved.",
+      "content_hash": "c5e71687a2c158aa1f05ad935f971078",
+      "route_classification": "public_content",
+      "provenance": [
+        {
+          "source_type": "sitemap",
+          "source_url": "https://pops.spruked.com/sitemap.xml",
+          "discovery_zone": "sitemap"
+        },
+        {
+          "source_type": "internal_link",
+          "source_url": "https://pops.spruked.com/lexicon",
+          "discovery_zone": "body"
+        }
+      ]
+    },
+    {
+      "chunk_id": "9363c3bd780cc1867014",
+      "source_url": "https://pops.spruked.com/sitemap.xml",
+      "route": "/sitemap.xml",
+      "title": null,
+      "heading": null,
+      "section_headings": [],
+      "text": "https://pops.spruked.com/ 2026-07-04 1.0 https://pops.spruked.com/about 2026-07-04 0.8 https://pops.spruked.com/declaration 2026-07-04 0.9 https://pops.spruked.com/pledge 2026-07-04 0.9 https://pops.spruked.com/lexicon 2026-07-04 0.85 https://pops.spruked.com/lexicon/culpable 2026-07-04 0.7 https://pops.spruked.com/lexicon/exculpatory 2026-07-04 0.7 https://pops.spruked.com/lexicon/pro-se 2026-07-04 0.7 https://pops.spruked.com/lexicon/prima-facie 2026-07-04 0.7 https://pops.spruked.com/lexicon/estoppel 2026-07-04 0.7 https://pops.spruked.com/lexicon/habeas-corpus 2026-07-04 0.7 https://pops.spruked.com/lexicon/fifth-amendment 2026-07-04 0.7 https://pops.spruked.com/lexicon/fourteenth-amendment 2026-07-04 0.7 https://pops.spruked.com/lexicon/due-process 2026-07-04 0.7 https://pops.spruked.com/lexicon/equal-protection 2026-07-04 0.7 https://pops.spruked.com/access 2026-07-04 0.9 https://pops.spruked.com/attorney-referral 2026-07-04 0.7 https://pops.spruked.com/counsel-handoff 2026-07-04 0.7 https://pops.spruked.com/events 2026-07-04 0.6 https://pops.spruked.com/account 2026-07-04 0.5 https://pops.spruked.com/privacy 2026-07-04 0.4 https://pops.spruked.com/terms 2026-07-04 0.4 https://pops.spruked.com/policies-procedures 2026-07-04 0.4",
+      "content_hash": "4792e19f742ff3fded59b26722bbdea5",
+      "route_classification": "system",
+      "provenance": [
+        {
+          "source_type": "owner_seed",
+          "source_url": null,
+          "discovery_zone": "owner_seed"
+        }
+      ]
+    },
+    {
+      "chunk_id": "1c1f0388ee86e029bed0",
+      "source_url": "https://pops.spruked.com/robots.txt",
+      "route": "/robots.txt",
+      "title": null,
+      "heading": null,
+      "section_headings": [],
+      "text": "User-agent: * Allow: / Allow: /lexicon/ Sitemap: https://pops.spruked.com/sitemap.xml",
+      "content_hash": "b9eefe698880df929b72761fd4ea82d5",
+      "route_classification": "system",
+      "provenance": [
+        {
+          "source_type": "owner_seed",
+          "source_url": null,
+          "discovery_zone": "owner_seed"
+        }
+      ]
+    },
+    {
+      "chunk_id": "8cdcba91e9b2d3434405",
+      "source_url": "https://pops.spruked.com/admin",
+      "route": "/admin",
+      "title": "P.O.P.S. - Proof of Presence System",
+      "heading": null,
+      "section_headings": [],
+      "text": "P.O.P.S. - Proof of Presence System Enter Pops P.O.P.S. TM Home How POPS Works Declaration Pledge Lexicon Account Cart Get P.O.P.S. P.O.P.S. TM Home How POPS Works Declaration Pledge Lexicon Access Account Cart Events Counsel Handoff Noted Counsel Privacy Terms Policies & Procedures Spruked OrbWeaver CertSig TrueMarkMint Copyright 2026 Proof of Presence System. Pro Prime Series AI. All rights reserved.",
+      "content_hash": "54838f4cf7ea46e728fb208f6ab9b663",
+      "route_classification": "admin",
+      "provenance": [
+        {
+          "source_type": "admin_seed",
+          "source_url": null,
+          "discovery_zone": "admin_section"
+        }
+      ]
+    }
+  ]
+}

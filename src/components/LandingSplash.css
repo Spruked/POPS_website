@@ -1,0 +1,164 @@
+.pops-startup-splash {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  overflow: hidden;
+  background: #04070c;
+  color: #dbe7f2;
+  font-family: var(--font-body, system-ui, sans-serif);
+}
+
+.pops-startup-splash-canvas,
+.pops-startup-splash-vignette {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.pops-startup-splash-canvas {
+  display: block;
+}
+
+.pops-startup-splash-vignette {
+  pointer-events: none;
+  background: radial-gradient(ellipse at 50% 48%, transparent 42%, rgba(0, 0, 0, .72) 100%);
+}
+
+.pops-startup-splash-statement {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: grid;
+  align-content: center;
+  justify-content: center;
+  padding: 0 6vw;
+  color: #d9ebf7;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(30px, 6.2vw, 74px);
+  font-weight: 300;
+  line-height: 1.2;
+  letter-spacing: .01em;
+  text-align: center;
+  text-shadow: 0 2px 24px rgba(0, 0, 0, .48);
+  pointer-events: none;
+  animation: pops-startup-statement-out 1s ease 3.2s forwards;
+}
+
+.pops-startup-splash-statement span {
+  display: block;
+}
+
+.pops-startup-splash-statement.is-hidden {
+  opacity: 0;
+  animation: none;
+}
+
+.pops-startup-splash-statement strong {
+  color: #bfeaff;
+  text-shadow: 0 0 22px rgba(76, 195, 238, .6);
+}
+
+.pops-startup-splash-brand {
+  position: absolute;
+  z-index: 2;
+  left: 0;
+  right: 0;
+  top: 62%;
+  padding: 0 5vw;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 700ms ease, transform 700ms ease;
+  pointer-events: none;
+}
+
+.pops-startup-splash-brand.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.pops-startup-splash-brand h1 {
+  margin: 0;
+  color: #e6f2fb;
+  font-size: clamp(40px, 7vw, 76px);
+  font-weight: 700;
+  letter-spacing: .3em;
+  line-height: 1;
+  text-indent: .3em;
+}
+
+.pops-startup-splash-brand p {
+  margin: 14px 0 0;
+  color: #7fa3c7;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(17px, 2.4vw, 24px);
+  letter-spacing: .06em;
+}
+
+.pops-startup-splash-brand p + p {
+  margin-top: 22px;
+  color: #dbe7f2;
+  font-family: inherit;
+  font-size: clamp(15px, 1.9vw, 19px);
+  letter-spacing: .14em;
+}
+
+.pops-startup-splash-brand button {
+  margin-top: 28px;
+  padding: 10px 24px;
+  color: #dbe7f2;
+  background: rgba(76, 195, 238, .14);
+  border: 1px solid rgba(76, 195, 238, .52);
+  border-radius: 3px;
+  font: inherit;
+  letter-spacing: .12em;
+  cursor: pointer;
+}
+
+.pops-startup-splash-brand button:disabled {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.pops-startup-splash-brand button:hover,
+.pops-startup-splash-brand button:focus-visible {
+  color: #04070c;
+  background: #4cc3ee;
+  outline: 2px solid rgba(76, 195, 238, .32);
+  outline-offset: 3px;
+}
+
+.pops-startup-splash-hint {
+  position: absolute;
+  z-index: 2;
+  left: 0;
+  right: 0;
+  bottom: 26px;
+  margin: 0;
+  color: #7fa3c7;
+  font-size: 14px;
+  letter-spacing: .12em;
+  text-align: center;
+  transition: opacity 400ms ease;
+}
+
+.pops-startup-splash-hint.is-hidden {
+  opacity: 0;
+}
+
+@keyframes pops-startup-statement-out {
+  to { opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pops-startup-splash-statement {
+    animation-duration: .2s;
+    animation-delay: 1.6s;
+  }
+
+  .pops-startup-splash-brand {
+    transition-duration: 200ms;
+  }
+}

@@ -75,6 +75,7 @@ export default function CheckoutPage() {
         title="Checkout | POPS"
         description="Complete your POPS purchase through Square and receive Windows app download or membership instructions."
         path="/checkout"
+        indexable={false}
       />
 
       <section className="section">
@@ -88,6 +89,10 @@ export default function CheckoutPage() {
             <p>
               Review your contact details, then continue to Square for secure payment. The POPS desktop app is a separate Windows download, not a WSL application.
             </p>
+            <div className="beta-platform-notice checkout-platform-notice">
+              <strong>Windows Desktop Beta</strong>
+              <p>POPS Desktop currently runs on Windows PCs. The website and account pages are available on mobile; the full evidence application is not yet a mobile app.</p>
+            </div>
           </div>
 
           <div className="checkout-layout">

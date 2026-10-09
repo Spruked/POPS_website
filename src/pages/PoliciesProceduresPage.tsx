@@ -129,13 +129,13 @@ export default function PoliciesProceduresPage() {
 
             <h2>5. Standard License and Open Door Access</h2>
             <p>
-              The standard POPS license is a one-time purchase of <strong>$149.00</strong>.
+              The standard POPS license is a one-time purchase of <strong>$99.00</strong>.
               POPS does not require a monthly subscription for the standard license.
             </p>
 
             <h3>5.1 Open Door Access Reserve</h3>
             <p>
-              From every cleared full-price POPS license, <strong>15% - $22.35</strong> -
+              From every cleared full-price POPS license, <strong>15% - $14.85</strong> -
               is reserved for Open Door Access. Open Door Access exists to help parents
               facing real hardship obtain POPS through a Pay What You Can path when
               reserve funding is available.

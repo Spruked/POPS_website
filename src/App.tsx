@@ -19,6 +19,9 @@ import PoliciesProceduresPage from "./pages/PoliciesProceduresPage";
 import PrivacyPage from "./pages/PrivacyPage";
 import WebsiteFloatingOrb from "./orb/WebsiteFloatingOrb";
 import SeePopsInActionPage from "./pages/SeePopsInActionPage";
+import ProductDemoPage from "./pages/ProductDemoPage";
+import DesktopAppPage from "./pages/DesktopAppPage";
+import HowYouUseItPage from "./pages/HowYouUseItPage";
 
 function App() {
   return (
@@ -32,6 +35,9 @@ function App() {
           <Route path="/pricing" element={<Navigate to="/access" replace />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/see-pops-in-action" element={<SeePopsInActionPage />} />
+          <Route path="/product-demo" element={<ProductDemoPage />} />
+          <Route path="/desktop-app" element={<DesktopAppPage />} />
+          <Route path="/how-you-use-it" element={<HowYouUseItPage />} />
           <Route path="/access" element={<DownloadPage />} />
           <Route path="/download" element={<Navigate to="/access" replace />} />
           <Route path="/cart" element={<CartPage />} />

@@ -15,6 +15,7 @@ export default function CartPage() {
         title="Cart | POPS"
         description="Review your POPS cart before completing secure checkout through Square."
         path="/cart"
+        indexable={false}
       />
 
       <section className="section">

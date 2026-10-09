@@ -15,8 +15,7 @@ export default function EventsPage() {
             <span className="mono">Events</span>
             <h1>Events</h1>
             <p>
-              This page is a placeholder for POPS events, live Q&amp;A sessions, and community updates.
-              Event scheduling and registration modules will be added here.
+              This page is the public calendar for POPS education, live Q&amp;A sessions, community updates, and future registration information.
             </p>
           </div>
 

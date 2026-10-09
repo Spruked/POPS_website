@@ -1,0 +1,177 @@
+{
+  "schema": "orb_weaver.source_validation.v1",
+  "status": "COMPLETE",
+  "input_count": 28,
+  "validated_count": 28,
+  "invalid_count": 0,
+  "checks": [
+    {
+      "chunk_id": "c03dceb3dea8bc24e1e9",
+      "source_url": "https://pops.spruked.com",
+      "status": "VALID",
+      "content_hash": "409328d6198a47ddae1df15de7663d32"
+    },
+    {
+      "chunk_id": "b5a35235bcfb2912678f",
+      "source_url": "https://pops.spruked.com/lexicon",
+      "status": "VALID",
+      "content_hash": "3a57c67384d82a13b140a70640fd1a1f"
+    },
+    {
+      "chunk_id": "5c288a8972e7f414ccb6",
+      "source_url": "https://pops.spruked.com/lexicon/due-process",
+      "status": "VALID",
+      "content_hash": "fee6bd0b11de50fd24775833677251c0"
+    },
+    {
+      "chunk_id": "2e31abb7946a9c6279cd",
+      "source_url": "https://pops.spruked.com/pledge",
+      "status": "VALID",
+      "content_hash": "53746d1ff925a9c443cfea22b3b19e3d"
+    },
+    {
+      "chunk_id": "91b2dd42ba218dc50ddd",
+      "source_url": "https://pops.spruked.com/access",
+      "status": "VALID",
+      "content_hash": "42635c9f6157f54b7d0c1dd4750ae06c"
+    },
+    {
+      "chunk_id": "1bb5d47a74afdd95732e",
+      "source_url": "https://pops.spruked.com/about",
+      "status": "VALID",
+      "content_hash": "4aa65932c5d10fcf362570ffd4105f24"
+    },
+    {
+      "chunk_id": "eaf4adb92d8d2af8dcbd",
+      "source_url": "https://pops.spruked.com/attorney-referral",
+      "status": "VALID",
+      "content_hash": "2d51522764301f081c717e2fb10e3a0c"
+    },
+    {
+      "chunk_id": "fa8d7384b7a600a13561",
+      "source_url": "https://pops.spruked.com/cart",
+      "status": "VALID",
+      "content_hash": "3de84c0253d3ef5ff0c3f91f7f9ba71a"
+    },
+    {
+      "chunk_id": "d3b2ac16bab16e0d7439",
+      "source_url": "https://pops.spruked.com/events",
+      "status": "VALID",
+      "content_hash": "e0814cf37cb107432d557cc554085c86"
+    },
+    {
+      "chunk_id": "4a398934d576da4e3f35",
+      "source_url": "https://pops.spruked.com/account",
+      "status": "VALID",
+      "content_hash": "02002a93607f839a308cc58c84888115"
+    },
+    {
+      "chunk_id": "323647fd49f3b05df027",
+      "source_url": "https://pops.spruked.com/privacy",
+      "status": "VALID",
+      "content_hash": "8883c2ed0f2f8a71862cacd7cf1ec215"
+    },
+    {
+      "chunk_id": "8aad51358149cba48337",
+      "source_url": "https://pops.spruked.com/declaration",
+      "status": "VALID",
+      "content_hash": "104775f3acdffb82e26b9b4863ea85c6"
+    },
+    {
+      "chunk_id": "4db35bde1bf6c79e89e6",
+      "source_url": "https://pops.spruked.com/policies-procedures",
+      "status": "VALID",
+      "content_hash": "f2e1910eeaf658ff2c3010fddb7dda4c"
+    },
+    {
+      "chunk_id": "1a1396f19c604c6ac055",
+      "source_url": "https://pops.spruked.com/terms",
+      "status": "VALID",
+      "content_hash": "e81c7444db55488f99ac2d2caca3d33d"
+    },
+    {
+      "chunk_id": "183658c70d2a77e0d372",
+      "source_url": "https://pops.spruked.com/counsel-handoff",
+      "status": "VALID",
+      "content_hash": "86009e6b269df764ac641e828cf2fafa"
+    },
+    {
+      "chunk_id": "18791a476668a3a3886d",
+      "source_url": "https://pops.spruked.com/pricing",
+      "status": "VALID",
+      "content_hash": "42635c9f6157f54b7d0c1dd4750ae06c"
+    },
+    {
+      "chunk_id": "095cd4e677fcf7d2322e",
+      "source_url": "https://pops.spruked.com/lexicon/equal-protection",
+      "status": "VALID",
+      "content_hash": "5a144d666d3a7cb854c2f38a3a1e6da2"
+    },
+    {
+      "chunk_id": "f1196d55245cda824e30",
+      "source_url": "https://pops.spruked.com/lexicon/culpable",
+      "status": "VALID",
+      "content_hash": "3dd106d8516feabb03bf8884d949e0ce"
+    },
+    {
+      "chunk_id": "a6cc6927cf8900894275",
+      "source_url": "https://pops.spruked.com/lexicon/habeas-corpus",
+      "status": "VALID",
+      "content_hash": "bc0c0fd815cf04bb00b14683978cd374"
+    },
+    {
+      "chunk_id": "0f3010a23ba1e5e919ae",
+      "source_url": "https://pops.spruked.com/lexicon/fourteenth-amendment",
+      "status": "VALID",
+      "content_hash": "479e87aef1c97c5880e37cd230926888"
+    },
+    {
+      "chunk_id": "1cdfd2910d4e3203c1ce",
+      "source_url": "https://pops.spruked.com/lexicon/exculpatory",
+      "status": "VALID",
+      "content_hash": "9f7b35a5c398d6bace757d2244eddbb3"
+    },
+    {
+      "chunk_id": "92552fc4652d45e8f6db",
+      "source_url": "https://pops.spruked.com/lexicon/fifth-amendment",
+      "status": "VALID",
+      "content_hash": "e1c83547e33c0038ab4b1dbf3f87507d"
+    },
+    {
+      "chunk_id": "b2e305e82c8b363ec993",
+      "source_url": "https://pops.spruked.com/lexicon/prima-facie",
+      "status": "VALID",
+      "content_hash": "9854e8524cdf3ea0ff85a2e95cc92da2"
+    },
+    {
+      "chunk_id": "2940217f6bf108cd5370",
+      "source_url": "https://pops.spruked.com/lexicon/pro-se",
+      "status": "VALID",
+      "content_hash": "ce11620c9e1edd99f7d0c04deb03cc35"
+    },
+    {
+      "chunk_id": "4bf3d881704462fb9124",
+      "source_url": "https://pops.spruked.com/lexicon/estoppel",
+      "status": "VALID",
+      "content_hash": "c5e71687a2c158aa1f05ad935f971078"
+    },
+    {
+      "chunk_id": "9363c3bd780cc1867014",
+      "source_url": "https://pops.spruked.com/sitemap.xml",
+      "status": "VALID",
+      "content_hash": "4792e19f742ff3fded59b26722bbdea5"
+    },
+    {
+      "chunk_id": "1c1f0388ee86e029bed0",
+      "source_url": "https://pops.spruked.com/robots.txt",
+      "status": "VALID",
+      "content_hash": "b9eefe698880df929b72761fd4ea82d5"
+    },
+    {
+      "chunk_id": "8cdcba91e9b2d3434405",
+      "source_url": "https://pops.spruked.com/admin",
+      "status": "VALID",
+      "content_hash": "54838f4cf7ea46e728fb208f6ab9b663"
+    }
+  ]
+}

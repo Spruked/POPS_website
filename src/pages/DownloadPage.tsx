@@ -8,7 +8,7 @@ const TIERS = [
   {
     id: "guardian",
     name: "Guardian Access",
-    price: "$149",
+    price: "$99",
     period: "one-time app license",
     desc: "You own the POPS desktop app license. No monthly payment. Includes lifetime POPS Membership. Optional yearly maintenance renewal: $19.99.",
     features: [
@@ -19,7 +19,7 @@ const TIERS = [
       "Download access and license activation",
       "Includes lifetime POPS Membership",
     ],
-    cta: "Get POPS — $149",
+    cta: "Get POPS — $99",
     primary: false,
   },
   {
@@ -122,8 +122,13 @@ export default function DownloadPage() {
             <span className="mono access-kicker">Get P.O.P.S.</span>
             <h1>Choose Your POPS Access</h1>
             <p>
-              POPS has one product. Guardian pays the full license. Open Door contributes what they can. Sponsors help carry the rest. POPS Membership is one-time $12.99 lifetime access.
+              This page is for choosing a POPS access path. Guardian is the standard desktop-app license; Open Door is a reviewed assistance path; sponsors help fund access; and Membership provides ongoing education and updates.
             </p>
+          </div>
+
+          <div className="beta-platform-notice access-platform-notice">
+            <strong>Windows Desktop Beta</strong>
+            <p>POPS Desktop is currently available for Windows PCs. You can browse the POPS website and manage your account from mobile, but the full evidence application currently runs on desktop. Mobile access is planned.</p>
           </div>
 
           <div className="pricing-grid">

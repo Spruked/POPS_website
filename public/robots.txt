@@ -1,5 +1,8 @@
 User-agent: *
 Allow: /
 Allow: /lexicon/
+Disallow: /account
+Disallow: /cart
+Disallow: /checkout
 
 Sitemap: https://pops.spruked.com/sitemap.xml

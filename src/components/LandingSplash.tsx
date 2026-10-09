@@ -1,228 +1,384 @@
-'use client';
+import { useEffect, useRef, useState } from "react";
+import "./LandingSplash.css";
 
-import { useEffect, useRef, useState } from 'react';
+const SPLASH_KEY = "pops:startup-splash-seen";
+const FULL_DURATION = 14;
+const REDUCED_DURATION = 7;
 
-const SPLASH_KEY = 'spruked:u-macron-splash-seen';
-const DROP_SOUND_MS = 1680;
+type Point = { x: number; y: number };
+type Fragment = { x: number; y: number; targetX: number; targetY: number; phase: number; kind: number };
 
-function playGlassDrop(delaySeconds = 0) {
-  const AudioCtor = window.AudioContext || (window as any).webkitAudioContext;
-  if (!AudioCtor) return;
+const clamp = (value: number, min = 0, max = 1) => Math.min(max, Math.max(min, value));
+const progress = (time: number, start: number, end: number) => clamp((time - start) / (end - start));
+const ease = (value: number) => value < 0.5 ? 4 * value ** 3 : 1 - ((-2 * value + 2) ** 3) / 2;
+const lerp = (a: number, b: number, amount: number) => a + (b - a) * amount;
 
-  const audio = new AudioCtor();
-  const now = audio.currentTime;
-  const hit = now + Math.max(0, delaySeconds);
-  const master = audio.createGain();
-  master.gain.setValueAtTime(0.001, now);
-  master.gain.exponentialRampToValueAtTime(0.22, hit + 0.012);
-  master.gain.exponentialRampToValueAtTime(0.001, hit + 1.15);
-  master.connect(audio.destination);
+function seededRandom(seed: number) {
+  let value = seed;
+  return () => {
+    value = (value * 1664525 + 1013904223) % 4294967296;
+    return value / 4294967296;
+  };
+}
 
-  const plink = audio.createOscillator();
-  const plinkGain = audio.createGain();
-  plink.type = 'sine';
-  plink.frequency.setValueAtTime(1320, hit);
-  plink.frequency.exponentialRampToValueAtTime(620, hit + 0.18);
-  plinkGain.gain.setValueAtTime(0.001, hit);
-  plinkGain.gain.exponentialRampToValueAtTime(0.35, hit + 0.006);
-  plinkGain.gain.exponentialRampToValueAtTime(0.001, hit + 0.42);
-  plink.connect(plinkGain).connect(master);
-  plink.start(hit);
-  plink.stop(hit + 0.44);
+function drawGlow(context: CanvasRenderingContext2D, x: number, y: number, radius: number, color: string, alpha: number) {
+  const gradient = context.createRadialGradient(x, y, 0, x, y, radius);
+  gradient.addColorStop(0, `rgba(${color},${alpha})`);
+  gradient.addColorStop(1, `rgba(${color},0)`);
+  context.fillStyle = gradient;
+  context.fillRect(x - radius, y - radius, radius * 2, radius * 2);
+}
 
-  [880, 1180, 1760].forEach((frequency, index) => {
-    const ring = audio.createOscillator();
-    const ringGain = audio.createGain();
-    ring.type = 'triangle';
-    ring.frequency.setValueAtTime(frequency, hit + 0.035 + index * 0.018);
-    ringGain.gain.setValueAtTime(0.001, hit + 0.03);
-    ringGain.gain.exponentialRampToValueAtTime(0.12 / (index + 1), hit + 0.06 + index * 0.018);
-    ringGain.gain.exponentialRampToValueAtTime(0.001, hit + 0.86 + index * 0.08);
-    ring.connect(ringGain).connect(master);
-    ring.start(hit + 0.03 + index * 0.018);
-    ring.stop(hit + 0.96 + index * 0.08);
-  });
+function drawPresence(context: CanvasRenderingContext2D, x: number, base: number, height: number, color: string, alpha: number) {
+  const top = base - height;
+  const head = height * 0.085;
+  const gradient = context.createLinearGradient(0, top, 0, base);
+  gradient.addColorStop(0, `rgba(${color},${alpha})`);
+  gradient.addColorStop(1, `rgba(${color},0)`);
+  context.fillStyle = gradient;
+  context.beginPath();
+  context.arc(x, top + head, head, 0, Math.PI * 2);
+  context.fill();
+  const shoulder = height * 0.2;
+  context.beginPath();
+  context.moveTo(x - shoulder * 0.35, top + head * 2.3);
+  context.quadraticCurveTo(x - shoulder, top + height * 0.2, x - shoulder * 1.05, top + height * 0.38);
+  context.lineTo(x - shoulder * 0.85, base);
+  context.lineTo(x + shoulder * 0.85, base);
+  context.lineTo(x + shoulder * 1.05, top + height * 0.38);
+  context.quadraticCurveTo(x + shoulder, top + height * 0.2, x + shoulder * 0.35, top + head * 2.3);
+  context.closePath();
+  context.fill();
+}
 
-  const splash = audio.createBufferSource();
-  const buffer = audio.createBuffer(1, audio.sampleRate * 0.16, audio.sampleRate);
-  const data = buffer.getChannelData(0);
-  for (let i = 0; i < data.length; i += 1) {
-    const decay = 1 - i / data.length;
-    data[i] = (Math.random() * 2 - 1) * decay * decay;
+function drawActivationNode(context: CanvasRenderingContext2D, x: number, y: number, radius: number, alpha: number, pulse: number) {
+  if (alpha <= 0) return;
+  const breathing = 0.78 + Math.sin(pulse * Math.PI * 2) * 0.12;
+  drawGlow(context, x, y, radius * 5.5 * breathing, "76,195,238", 0.13 * alpha);
+  context.save();
+  context.strokeStyle = `rgba(157,224,248,${0.32 * alpha})`;
+  context.lineWidth = 1;
+  context.setLineDash([radius * 0.35, radius * 0.9]);
+  context.beginPath();
+  context.arc(x, y, radius * (2.2 + pulse * 0.35), 0, Math.PI * 2);
+  context.stroke();
+  context.setLineDash([]);
+  context.fillStyle = `rgba(202,241,255,${0.56 * alpha})`;
+  context.beginPath();
+  context.arc(x, y, radius * (0.34 + pulse * 0.12), 0, Math.PI * 2);
+  context.fill();
+  context.restore();
+}
+
+function drawOrbIdentity(context: CanvasRenderingContext2D, image: HTMLImageElement, x: number, y: number, radius: number, alpha: number, build: number) {
+  if (alpha <= 0) return;
+  drawGlow(context, x, y, radius * 3.7, "76,195,238", 0.2 * alpha * build);
+  context.save();
+  context.translate(x, y);
+  context.strokeStyle = `rgba(174,226,246,${0.7 * alpha * build})`;
+  context.lineWidth = 1.1;
+  context.beginPath();
+  context.arc(0, 0, radius * (1.35 - build * 0.08), -Math.PI * 0.86, Math.PI * 0.72);
+  context.stroke();
+  context.strokeStyle = `rgba(76,195,238,${0.54 * alpha * build})`;
+  context.beginPath();
+  context.arc(0, 0, radius * 1.62, Math.PI * 0.18, Math.PI * 1.12);
+  context.stroke();
+  context.globalAlpha = alpha * build;
+  if (image.complete && image.naturalWidth > 0) {
+    context.drawImage(image, -radius, -radius, radius * 2, radius * 2);
+  } else {
+    context.fillStyle = "#12161c";
+    context.beginPath();
+    context.arc(0, 0, radius, 0, Math.PI * 2);
+    context.fill();
   }
-  const filter = audio.createBiquadFilter();
-  const splashGain = audio.createGain();
-  filter.type = 'highpass';
-  filter.frequency.setValueAtTime(1650, hit);
-  splashGain.gain.setValueAtTime(0.001, hit + 0.025);
-  splashGain.gain.exponentialRampToValueAtTime(0.075, hit + 0.045);
-  splashGain.gain.exponentialRampToValueAtTime(0.001, hit + 0.18);
-  splash.buffer = buffer;
-  splash.connect(filter).connect(splashGain).connect(master);
-  splash.start(hit + 0.025);
-  splash.stop(hit + 0.2);
+  context.restore();
 }
 
 export default function LandingSplash() {
+  const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const [visible, setVisible] = useState(true);
-  const [exiting, setExiting] = useState(false);
-  const [showEnter, setShowEnter] = useState(false);
-  const [animate, setAnimate] = useState(false);
-  const soundPlayedRef = useRef(false);
-  const soundTimerRef = useRef<number | null>(null);
-  const enterTimerRef = useRef<number | null>(null);
-  const startedAtRef = useRef(0);
-
-  const playOnce = () => {
-    if (soundPlayedRef.current) return;
-    soundPlayedRef.current = true;
-    try {
-      playGlassDrop();
-    } catch {}
-  };
+  const [complete, setComplete] = useState(false);
+  const [reducedMotion, setReducedMotion] = useState(false);
+  const [hintReady, setHintReady] = useState(false);
 
   useEffect(() => {
-    const forceSplash = window.location.search.includes('splash=1');
+    const forceSplash = window.location.search.includes("splash=1");
     const seen = window.sessionStorage.getItem(SPLASH_KEY);
     if (seen && !forceSplash) {
       setVisible(false);
       return;
     }
-
-    startedAtRef.current = window.performance.now();
-    const startTimer = window.setTimeout(() => {
-      setAnimate(true);
-      soundTimerRef.current = window.setTimeout(playOnce, DROP_SOUND_MS);
-    }, 80);
-
-    return () => {
-      window.clearTimeout(startTimer);
-      if (soundTimerRef.current) window.clearTimeout(soundTimerRef.current);
-      if (enterTimerRef.current) window.clearTimeout(enterTimerRef.current);
-    };
+    setReducedMotion(window.matchMedia("(prefers-reduced-motion: reduce)").matches);
+    const hintTimer = window.setTimeout(() => setHintReady(true), 5000);
+    return () => window.clearTimeout(hintTimer);
   }, []);
 
-  const armSound = () => {
-    if (soundPlayedRef.current) return;
-    if (soundTimerRef.current) {
-      window.clearTimeout(soundTimerRef.current);
-      soundTimerRef.current = null;
-    }
-    soundPlayedRef.current = true;
-    const elapsedMs = window.performance.now() - startedAtRef.current;
-    const remainingSeconds = Math.max(0, DROP_SOUND_MS - elapsedMs) / 1000;
-    try {
-      playGlassDrop(remainingSeconds);
-    } catch {}
-  };
+  useEffect(() => {
+    if (!visible) return;
+    const canvas = canvasRef.current;
+    if (!canvas) return;
+    const context = canvas.getContext("2d");
+    if (!context) return;
+    const motionReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const duration = motionReduced ? REDUCED_DURATION : FULL_DURATION;
+    const random = seededRandom(11);
+    const orbImage = new Image();
+    orbImage.src = "/orb/skins/average-dad-mode-transparent.png";
+    const fragments: Fragment[] = Array.from({ length: 30 }, (_, index) => ({
+      x: 0,
+      y: 0,
+      targetX: 0,
+      targetY: 0,
+      phase: 2.8 + random() * 1.5,
+      kind: index % 5,
+    }));
+    let width = 0;
+    let height = 0;
+    let scale = 1;
+    let frame = 0;
+    let start = performance.now();
+    let elapsed = 0;
+    let skipped = false;
+
+    const resize = () => {
+      const ratio = Math.min(window.devicePixelRatio || 1, 2);
+      width = window.innerWidth;
+      height = window.innerHeight;
+      canvas.width = width * ratio;
+      canvas.height = height * ratio;
+      canvas.style.width = `${width}px`;
+      canvas.style.height = `${height}px`;
+      context.setTransform(ratio, 0, 0, ratio, 0, 0);
+      scale = clamp(Math.min(width, height * 1.6) / 1000, 0.5, 1.3);
+    };
+    const finish = () => {
+      setComplete(true);
+    };
+    const skip = () => {
+      skipped = true;
+      elapsed = duration - 0.6;
+      setComplete(true);
+    };
+    const draw = (now: number) => {
+      elapsed = skipped ? duration : Math.min(duration, (now - start) / 1000);
+      // Reduced motion keeps the same story beats while compressing the timeline.
+      const t = motionReduced ? elapsed * (FULL_DURATION / REDUCED_DURATION) : elapsed;
+      const centerX = width / 2;
+      const centerY = height * 0.48;
+      const base = centerY + height * 0.22;
+      const leftX = centerX - Math.min(width * 0.28, 360);
+      const rightX = centerX + Math.min(width * 0.28, 360);
+      const guardianY = centerY - height * 0.12;
+      const warm = progress(t, 0, 2);
+      context.fillStyle = "#04070c";
+      context.fillRect(0, 0, width, height);
+      const background = context.createRadialGradient(centerX, centerY, 0, centerX, centerY, Math.max(width, height) * 0.62);
+      background.addColorStop(0, `rgba(14,34,58,${0.75 * (0.45 + 0.55 * warm)})`);
+      background.addColorStop(0.55, "rgba(8,18,32,.5)");
+      background.addColorStop(1, "rgba(4,7,12,0)");
+      context.fillStyle = background;
+      context.fillRect(0, 0, width, height);
+      if (!motionReduced) {
+        for (let index = 0; index < 70; index += 1) {
+          const x = ((index * 83 + t * (index % 3 + 1) * 0.9) % width + width) % width;
+          const y = ((index * 47 + t * (index % 4 + 1) * 0.35) % height + height) % height;
+          context.fillStyle = `rgba(140,180,220,${0.04 + (index % 5) * 0.018})`;
+          context.beginPath();
+          context.arc(x, y, 0.5 + (index % 3) * 0.35, 0, Math.PI * 2);
+          context.fill();
+        }
+      }
+
+      const separation = 1 - ease(progress(t, 9.2, 11.4));
+      const fatherX = lerp(centerX - 26 * scale, leftX, separation);
+      const childX = lerp(centerX + 22 * scale, rightX, separation);
+      const presence = ease(progress(t, 2.6, 3.6));
+      const fade = 1 - progress(t, 12, 12.6);
+      if (presence > 0 && fade > 0) {
+        const alpha = presence * fade * (1 - 0.75 * (1 - separation));
+        drawGlow(context, fatherX, base - 90 * scale, 70 * scale, "127,163,199", 0.38 * alpha);
+        drawGlow(context, childX, base - 58 * scale, 44 * scale, "217,235,247", 0.36 * alpha);
+        drawPresence(context, fatherX, base, 150 * scale, "127,163,199", alpha * 0.85);
+        drawPresence(context, childX, base, 96 * scale, "217,235,247", alpha * 0.85);
+      }
+
+      const activation = ease(progress(t, 4.8, 6.2)) * (1 - ease(progress(t, 9.2, 10.4)));
+      if (activation > 0) {
+        drawActivationNode(context, centerX, guardianY, 7 * scale, activation, progress(t, 5, 8));
+      }
+
+      const organize = ease(progress(t, 8.6, 10.3));
+      const recordFade = 1 - ease(progress(t, 11.4, 13.2));
+      if (organize > 0 && recordFade > 0) {
+        context.save();
+        context.strokeStyle = `rgba(127,184,218,${0.2 * organize * recordFade})`;
+        context.lineWidth = 1 * scale;
+        for (let row = 0; row < 3; row += 1) {
+          const rowY = base + (58 + row * 34) * scale;
+          context.beginPath();
+          context.moveTo(leftX - 24 * scale, rowY);
+          context.lineTo(rightX + 24 * scale, rowY);
+          context.stroke();
+        }
+        context.restore();
+      }
+      for (let index = 0; index < fragments.length; index += 1) {
+        const fragment = fragments[index];
+        const column = Math.floor(index / 3);
+        const row = index % 3;
+        const sourceX = centerX + Math.sin(index * 2.4) * width * 0.42;
+        const sourceY = centerY + Math.cos(index * 1.7) * height * 0.34;
+        const targetX = leftX + (rightX - leftX) * (0.07 + 0.86 * column / 9);
+        const targetY = base + (58 + row * 34) * scale;
+        const x = lerp(sourceX, targetX, organize);
+        const y = lerp(sourceY, targetY, organize);
+        const alpha = ease(progress(t, fragment.phase, fragment.phase + 0.9)) * (1 - 0.4 * (1 - organize)) * recordFade;
+        if (alpha <= 0.01) continue;
+        context.save();
+        context.translate(x, y);
+        context.rotate(Math.sin(index) * (1 - organize));
+        context.strokeStyle = `rgba(76,195,238,${alpha * 0.8})`;
+        context.lineWidth = 1.3 * scale;
+        context.lineCap = "round";
+        const size = 15 * scale;
+        if (fragment.kind === 0) {
+          context.beginPath();
+          context.moveTo(-size, 0);
+          context.lineTo(size, -size * 0.2);
+          context.stroke();
+        } else if (fragment.kind === 1) {
+          context.strokeRect(-size / 2, -size / 2, size, size);
+          context.beginPath();
+          context.moveTo(-size / 2, -size * 0.22);
+          context.lineTo(size / 2, -size * 0.22);
+          context.stroke();
+        } else if (fragment.kind === 2) {
+          context.strokeRect(-size * 0.75, -size * 0.4, size * 1.5, size * 0.8);
+          context.beginPath();
+          context.moveTo(-size * 0.35, 0);
+          context.lineTo(size * 0.35, 0);
+          context.stroke();
+        } else if (fragment.kind === 3) {
+          context.strokeRect(-size * 0.4, -size * 0.55, size * 0.8, size * 1.1);
+          context.beginPath();
+          context.moveTo(size * 0.15, -size * 0.55);
+          context.lineTo(size * 0.15, -size * 0.3);
+          context.lineTo(size * 0.4, -size * 0.3);
+          context.stroke();
+        } else {
+          context.beginPath();
+          context.moveTo(0, -size * 0.55);
+          context.lineTo(0, size * 0.55);
+          context.arc(0, 0, size * 0.14, 0, Math.PI * 2);
+          context.stroke();
+        }
+        context.restore();
+      }
+
+      const pathProgress = ease(progress(t, 8.6, 10.3));
+      if (pathProgress > 0) {
+        context.save();
+        context.shadowColor = "rgba(76,195,238,.8)";
+        context.shadowBlur = 12 * scale;
+        context.strokeStyle = `rgba(76,195,238,${0.75 * (1 - ease(progress(t, 11.7, 13.1)))})`;
+        context.lineWidth = 1.6 * scale;
+        context.beginPath();
+        context.moveTo(fatherX, base - 90 * scale);
+        for (let index = 1; index <= 6; index += 1) {
+          const amount = clamp(pathProgress * 6 - (index - 1));
+          if (amount <= 0) break;
+          const point: Point = { x: lerp(fatherX, childX, index / 6), y: lerp(base - 90 * scale, base - 58 * scale, index / 6) - Math.sin(Math.PI * index / 6) * 18 * scale };
+          context.lineTo(point.x, point.y);
+        }
+        context.stroke();
+        context.restore();
+      }
+
+      const converge = ease(progress(t, 11.4, 12.9));
+      for (let index = 0; index < 5; index += 1) {
+        const amount = ease(progress(t, 8.7 + index * 0.38, 9.1 + index * 0.38));
+        if (amount <= 0) continue;
+        const start: Point = { x: lerp(fatherX, childX, (index + 1) / 6), y: base - 90 * scale - Math.sin(Math.PI * (index + 1) / 6) * 18 * scale };
+        const end: Point = { x: centerX, y: guardianY };
+        const x = lerp(start.x, end.x, converge);
+        const y = lerp(start.y, end.y, converge);
+        drawGlow(context, x, y, 16 * scale, "76,195,238", amount * (1 - converge));
+        context.fillStyle = `rgba(76,195,238,${amount})`;
+        context.beginPath();
+        context.arc(x, y, (3.5 + 2.5 * amount) * scale, 0, Math.PI * 2);
+        context.fill();
+      }
+
+      const orbBuild = ease(progress(t, 11.6, 13.5));
+      const orbFade = ease(progress(t, 12.2, 13.7));
+      if (orbBuild > 0) {
+        drawOrbIdentity(context, orbImage, centerX, guardianY, (42 + 20 * orbBuild) * scale, orbFade, orbBuild);
+        if (orbBuild > 0.3) {
+          context.save();
+          context.strokeStyle = `rgba(178,230,249,${0.42 * orbBuild})`;
+          context.lineWidth = 1.2 * scale;
+          context.beginPath();
+          context.moveTo(centerX - 82 * scale, guardianY);
+          context.lineTo(centerX - 50 * scale, guardianY);
+          context.moveTo(centerX + 50 * scale, guardianY);
+          context.lineTo(centerX + 82 * scale, guardianY);
+          context.stroke();
+          context.restore();
+        }
+      }
+
+      if (t >= duration) finish();
+      if (elapsed < duration) frame = requestAnimationFrame(draw);
+    };
+
+    resize();
+    window.addEventListener("resize", resize);
+    const pointerDown = (event: PointerEvent) => {
+      if (!(event.target as HTMLElement)?.closest("button")) skip();
+    };
+    const keyDown = (event: KeyboardEvent) => {
+      if (event.key !== "Tab" && !(event.target as HTMLElement)?.closest("button")) skip();
+    };
+    window.addEventListener("pointerdown", pointerDown);
+    window.addEventListener("keydown", keyDown);
+    frame = requestAnimationFrame((now) => {
+      start = now;
+      frame = requestAnimationFrame(draw);
+    });
+    return () => {
+      cancelAnimationFrame(frame);
+      window.removeEventListener("resize", resize);
+      window.removeEventListener("pointerdown", pointerDown);
+      window.removeEventListener("keydown", keyDown);
+    };
+  }, [visible]);
 
   const enterSite = () => {
-    window.sessionStorage.setItem(SPLASH_KEY, '1');
-    setExiting(true);
-    window.setTimeout(() => {
-      setVisible(false);
-      window.location.href = '/';
-    }, 520);
-  };
-
-  const revealEnter = () => {
-    if (showEnter) return;
-    if (enterTimerRef.current) window.clearTimeout(enterTimerRef.current);
-    enterTimerRef.current = window.setTimeout(() => setShowEnter(true), 160);
+    window.sessionStorage.setItem(SPLASH_KEY, "1");
+    setVisible(false);
   };
 
   if (!visible) return null;
 
   return (
-    <div
-      className={`fixed inset-0 z-[10000] flex items-center justify-center bg-black transition-opacity duration-500 ${
-        exiting ? 'pointer-events-none opacity-0' : 'opacity-100'
-      }`}
-      role="dialog"
-      aria-label="Spruked splash screen"
-      onPointerDown={armSound}
-    >
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_42%,rgba(255,255,255,0.14),transparent_30%),radial-gradient(circle_at_50%_58%,rgba(255,0,0,0.16),transparent_38%)]" />
-      <div className="relative flex min-h-[360px] w-full max-w-xl flex-col items-center justify-center px-6">
-        <svg
-          className={`spruked-u-splash h-[min(72vw,430px)] w-[min(72vw,430px)] ${
-            animate ? 'spruked-u-splash-run' : ''
-          }`}
-          viewBox="0 0 200 200"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          aria-hidden="true"
-        >
-          <path
-            className="spruked-u-draw"
-            d="M 42 62 L 42 120 Q 42 160 72 160 L 128 160 Q 158 160 158 120 L 158 62"
-            stroke="#FFFFFF"
-            strokeWidth="13"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          />
-          <line
-            className="spruked-macron-collapse"
-            x1="55"
-            y1="34"
-            x2="145"
-            y2="34"
-            stroke="#FF0000"
-            strokeWidth="13"
-            strokeLinecap="round"
-          >
-            <animate
-              attributeName="y1"
-              from="34"
-              to="145"
-              begin={animate ? '0.82s' : 'indefinite'}
-              dur="1.08s"
-              calcMode="spline"
-              keySplines="0.58 0 0.16 1"
-              fill="freeze"
-            />
-            <animate
-              attributeName="y2"
-              from="34"
-              to="55"
-              begin={animate ? '0.82s' : 'indefinite'}
-              dur="1.08s"
-              calcMode="spline"
-              keySplines="0.58 0 0.16 1"
-              fill="freeze"
-            />
-          </line>
-          <ellipse
-            className="spruked-glass-ripple"
-            cx="58"
-            cy="145"
-            rx="24"
-            ry="7"
-            stroke="#FFFFFF"
-            strokeWidth="2"
-          />
-          <ellipse
-            className="spruked-glass-ripple spruked-glass-ripple-red"
-            cx="58"
-            cy="145"
-            rx="15"
-            ry="4"
-            stroke="#FF0000"
-            strokeWidth="2"
-          />
-        </svg>
-        <div className="spruked-enter-sync" onAnimationEnd={revealEnter} />
-        <button
-          type="button"
-          className={`spruked-enter-button absolute bottom-4 rounded-full border border-truth/60 bg-black px-10 py-4 text-sm font-black uppercase tracking-[0.34em] text-white shadow-[0_0_30px_rgba(255,0,0,0.2)] transition hover:border-truth hover:bg-truth hover:text-black ${
-            showEnter ? 'spruked-enter-button-ready' : ''
-          }`}
-          onClick={enterSite}
-          disabled={!showEnter}
-        >
-          Enter
+    <div className="pops-startup-splash" role="dialog" aria-label="P.O.P.S. startup splash">
+      <canvas ref={canvasRef} className="pops-startup-splash-canvas" aria-hidden="true" />
+      <div className="pops-startup-splash-vignette" aria-hidden="true" />
+      <div className={`pops-startup-splash-statement ${complete ? "is-hidden" : ""}`} aria-live="polite">
+        <span>When presence is denied,</span>
+        <span><strong>proof</strong> becomes the path.</span>
+      </div>
+      <div className={`pops-startup-splash-brand ${complete ? "is-visible" : ""}`}>
+        <h1>P.O.P.S.</h1>
+        <p>Proof of Presence System</p>
+        <p>Preserve. Protect. Prove.</p>
+        <button type="button" onClick={enterSite} disabled={!complete}>
+          {reducedMotion ? "Continue" : "Enter"}
         </button>
       </div>
+      <p className={`pops-startup-splash-hint ${complete || !hintReady ? "is-hidden" : ""}`}>Click or press a key to skip</p>
     </div>
   );
 }

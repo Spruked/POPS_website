@@ -1,0 +1,16 @@
+[Unit]
+Description=POPS Website frontend
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=bryan
+WorkingDirectory=/home/bryan/projects/POPS_website
+ExecStart=/usr/bin/npm run preview -- --host 0.0.0.0 --port 18030
+Restart=always
+RestartSec=5
+Environment=NODE_ENV=production
+
+[Install]
+WantedBy=default.target

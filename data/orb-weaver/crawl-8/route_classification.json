@@ -1,0 +1,153 @@
+{
+  "schema": "orb_weaver.route_classification.v1",
+  "route_count": 28,
+  "category_counts": {
+    "public_content": 23,
+    "transactional": 1,
+    "private": 1,
+    "system": 2,
+    "admin": 1
+  },
+  "routes": [
+    {
+      "url": "https://pops.spruked.com",
+      "route": "/",
+      "category": "public_content"
+    },
+    {
+      "url": "https://pops.spruked.com/lexicon",
+      "route": "/lexicon",
+      "category": "public_content"
+    },
+    {
+      "url": "https://pops.spruked.com/lexicon/due-process",
+      "route": "/lexicon/due-process",
+      "category": "public_content"
+    },
+    {
+      "url": "https://pops.spruked.com/pledge",
+      "route": "/pledge",
+      "category": "public_content"
+    },
+    {
+      "url": "https://pops.spruked.com/access",
+      "route": "/access",
+      "category": "public_content"
+    },
+    {
+      "url": "https://pops.spruked.com/about",
+      "route": "/about",
+      "category": "public_content"
+    },
+    {
+      "url": "https://pops.spruked.com/attorney-referral",
+      "route": "/attorney-referral",
+      "category": "public_content"
+    },
+    {
+      "url": "https://pops.spruked.com/cart",
+      "route": "/cart",
+      "category": "transactional"
+    },
+    {
+      "url": "https://pops.spruked.com/events",
+      "route": "/events",
+      "category": "public_content"
+    },
+    {
+      "url": "https://pops.spruked.com/account",
+      "route": "/account",
+      "category": "private"
+    },
+    {
+      "url": "https://pops.spruked.com/privacy",
+      "route": "/privacy",
+      "category": "public_content"
+    },
+    {
+      "url": "https://pops.spruked.com/declaration",
+      "route": "/declaration",
+      "category": "public_content"
+    },
+    {
+      "url": "https://pops.spruked.com/policies-procedures",
+      "route": "/policies-procedures",
+      "category": "public_content"
+    },
+    {
+      "url": "https://pops.spruked.com/terms",
+      "route": "/terms",
+      "category": "public_content"
+    },
+    {
+      "url": "https://pops.spruked.com/counsel-handoff",
+      "route": "/counsel-handoff",
+      "category": "public_content"
+    },
+    {
+      "url": "https://pops.spruked.com/pricing",
+      "route": "/pricing",
+      "category": "public_content"
+    },
+    {
+      "url": "https://pops.spruked.com/lexicon/equal-protection",
+      "route": "/lexicon/equal-protection",
+      "category": "public_content"
+    },
+    {
+      "url": "https://pops.spruked.com/lexicon/culpable",
+      "route": "/lexicon/culpable",
+      "category": "public_content"
+    },
+    {
+      "url": "https://pops.spruked.com/lexicon/habeas-corpus",
+      "route": "/lexicon/habeas-corpus",
+      "category": "public_content"
+    },
+    {
+      "url": "https://pops.spruked.com/lexicon/fourteenth-amendment",
+      "route": "/lexicon/fourteenth-amendment",
+      "category": "public_content"
+    },
+    {
+      "url": "https://pops.spruked.com/lexicon/exculpatory",
+      "route": "/lexicon/exculpatory",
+      "category": "public_content"
+    },
+    {
+      "url": "https://pops.spruked.com/lexicon/fifth-amendment",
+      "route": "/lexicon/fifth-amendment",
+      "category": "public_content"
+    },
+    {
+      "url": "https://pops.spruked.com/lexicon/prima-facie",
+      "route": "/lexicon/prima-facie",
+      "category": "public_content"
+    },
+    {
+      "url": "https://pops.spruked.com/lexicon/pro-se",
+      "route": "/lexicon/pro-se",
+      "category": "public_content"
+    },
+    {
+      "url": "https://pops.spruked.com/lexicon/estoppel",
+      "route": "/lexicon/estoppel",
+      "category": "public_content"
+    },
+    {
+      "url": "https://pops.spruked.com/sitemap.xml",
+      "route": "/sitemap.xml",
+      "category": "system"
+    },
+    {
+      "url": "https://pops.spruked.com/robots.txt",
+      "route": "/robots.txt",
+      "category": "system"
+    },
+    {
+      "url": "https://pops.spruked.com/admin",
+      "route": "/admin",
+      "category": "admin"
+    }
+  ]
+}

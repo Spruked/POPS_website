@@ -15,8 +15,8 @@ export default function CounselHandoffPage() {
             <span className="mono">Counsel Handoff</span>
             <h1>Counsel Handoff</h1>
             <p>
-              POPS is built to create records that can actually be handed to an attorney. Counsel Handoff explains how the desktop app
-              turns structured records into export-ready packets while keeping the user in control of what leaves the local app.
+              This page explains how the desktop app turns structured records into export-ready attorney packets while keeping the user
+              in control of what leaves the local app. It is informational; it is not legal advice or a live upload portal.
             </p>
           </div>
 

@@ -16,14 +16,15 @@ export default function AccountPortalPage() {
         title="POPS Account Signup | Access and Updates"
         description="Create a POPS account to manage product access, downloads, release updates, and future account-connected services."
         path="/account"
+        indexable={false}
       />
       <section className="section">
         <div className="container" style={{ maxWidth: 780 }}>
           <div className="section-header">
-            <span className="mono">Account Signup</span>
-            <h1>Sign Up for an Account</h1>
+            <span className="mono">Account and Open Door Access</span>
+            <h1>Manage Your POPS Access</h1>
             <p>
-              Create your POPS account to manage access, downloads, and updates.
+              Use this page to create or manage the account connected to your POPS access, downloads, updates, and Open Door review.
             </p>
           </div>
 
@@ -83,7 +84,7 @@ export default function AccountPortalPage() {
 
             {submitted && (
               <p style={{ marginTop: 16, color: "#10b981", fontWeight: 600 }}>
-                Signup submitted. Account onboarding flow will be connected to backend services next.
+                This form is ready for connection to the POPS account service. No account has been created yet.
               </p>
             )}
           </div>

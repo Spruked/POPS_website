@@ -3,6 +3,7 @@ import { Mic } from "lucide-react";
 import { useLocation, useNavigate } from "react-router-dom";
 import {
   sendWebsiteOrbAudio,
+  sendWebsiteOrbText,
   type OrbResponse,
 } from "../services/orbApi";
 import WebsiteOrbPointerOverlay from "./WebsiteOrbPointerOverlay";
@@ -17,13 +18,37 @@ import {
 import type { WebsiteOrbGuideRequest, WebsiteOrbGuideState } from "./websiteOrbTargetTypes";
 import "./WebsiteFloatingOrb.css";
 
+type VoiceRecognitionResultEvent = {
+  resultIndex: number;
+  results: ArrayLike<ArrayLike<{ transcript: string }> & { isFinal: boolean }>;
+};
+
+type VoiceRecognition = {
+  continuous: boolean;
+  interimResults: boolean;
+  lang: string;
+  onresult: ((event: VoiceRecognitionResultEvent) => void) | null;
+  onend: (() => void) | null;
+  onerror: ((event: { error: string }) => void) | null;
+  start: () => void;
+  stop: () => void;
+  abort: () => void;
+};
+
+type VoiceRecognitionConstructor = new () => VoiceRecognition;
+
+type VoiceRecognitionWindow = Window & {
+  SpeechRecognition?: VoiceRecognitionConstructor;
+  webkitSpeechRecognition?: VoiceRecognitionConstructor;
+};
+
 type OrbState = "idle" | "listening" | "thinking" | "speaking" | "error";
 type TravelLook = { x: number; y: number };
 
 const FILLER_CLIPS = ["/orb/voice/latency-fillers/ack.wav", "/orb/voice/latency-fillers/thinking.wav"];
 const ORB_SKIN_SRC = "/orb/skins/average-dad-mode-transparent.png";
-const ORB_SIZE = 112;
-const ORB_MOBILE_SIZE = 92;
+const ORB_SIZE = 220;
+const ORB_MOBILE_SIZE = 175;
 
 function clamp(value: number, min: number, max: number) {
   return Math.min(Math.max(value, min), max);
@@ -62,7 +87,10 @@ export default function WebsiteFloatingOrb() {
   const [lastResponse, setLastResponse] = useState<OrbResponse | null>(null);
   const [splashActive, setSplashActive] = useState(true);
   const [travelLook, setTravelLook] = useState<TravelLook>({ x: 0, y: 0 });
-  const [position, setPosition] = useState(() => ({ x: window.innerWidth - ORB_SIZE - 24, y: 150 }));
+  const [position, setPosition] = useState(() => {
+    const size = activeOrbSize();
+    return { x: window.innerWidth - size - 24, y: 150 };
+  });
   const [guide, setGuide] = useState<WebsiteOrbGuideState | null>(null);
   const [pendingGuide, setPendingGuide] = useState<WebsiteOrbGuideRequest | null>(null);
 
@@ -78,6 +106,16 @@ export default function WebsiteFloatingOrb() {
   const finalAudioRef = useRef<HTMLAudioElement | null>(null);
   const fillerAudioRef = useRef<HTMLAudioElement | null>(null);
   const fillerTimerRef = useRef<number | null>(null);
+  const silenceFrameRef = useRef<number | null>(null);
+  const maxRecordingTimerRef = useRef<number | null>(null);
+  const audioContextRef = useRef<AudioContext | null>(null);
+  const voiceRecognitionRef = useRef<VoiceRecognition | null>(null);
+  const voiceActivationEnabledRef = useRef(false);
+  const voiceQueryActiveRef = useRef(false);
+  const voiceQueryRef = useRef("");
+  const voiceResumeTimerRef = useRef<number | null>(null);
+  const voiceResumeAfterResponseRef = useRef(false);
+  const startVoiceActivationRef = useRef<(() => void) | null>(null);
   const runIdRef = useRef(0);
   const guidePulseRef = useRef(0);
 
@@ -126,12 +164,22 @@ export default function WebsiteFloatingOrb() {
 
       if (!response.tts_audio_url) {
         setOrbState(response.tts_error ? "error" : "idle");
+        if (voiceResumeAfterResponseRef.current) {
+          voiceResumeAfterResponseRef.current = false;
+          window.setTimeout(() => startVoiceActivationRef.current?.(), 250);
+        }
         return;
       }
 
       const audio = new Audio(response.tts_audio_url);
       finalAudioRef.current = audio;
-      audio.onended = () => setOrbState("idle");
+      audio.onended = () => {
+        setOrbState("idle");
+        if (voiceResumeAfterResponseRef.current) {
+          voiceResumeAfterResponseRef.current = false;
+          window.setTimeout(() => startVoiceActivationRef.current?.(), 250);
+        }
+      };
       audio.onerror = () => setOrbState("error");
       setOrbState("speaking");
       await audio.play().catch(() => setOrbState("error"));
@@ -170,10 +218,71 @@ export default function WebsiteFloatingOrb() {
     [scheduleFiller, speakOutput, stopFiller, stopFinalAudio],
   );
 
+  const startVoiceActivation = useCallback(() => {
+    const recognitionCtor = (window as VoiceRecognitionWindow).SpeechRecognition
+      || (window as VoiceRecognitionWindow).webkitSpeechRecognition;
+    if (!recognitionCtor || voiceRecognitionRef.current || voiceActivationEnabledRef.current) return;
+
+    const recognition = new recognitionCtor();
+    recognition.continuous = true;
+    recognition.interimResults = true;
+    recognition.lang = "en-US";
+    voiceActivationEnabledRef.current = true;
+    voiceRecognitionRef.current = recognition;
+    setOrbState("listening");
+
+    recognition.onresult = (event) => {
+      for (let index = event.resultIndex; index < event.results.length; index += 1) {
+        const result = event.results[index];
+        const phrase = result[0]?.transcript?.trim() || "";
+        if (!phrase) continue;
+        if (/\b(?:hey\s+)?pops\b/i.test(phrase)) voiceQueryActiveRef.current = true;
+        if (voiceQueryActiveRef.current && result.isFinal) {
+          voiceQueryRef.current = `${voiceQueryRef.current} ${phrase.replace(/\b(?:hey\s+)?pops\b[:,]?/i, "")}`.trim();
+        }
+      }
+    };
+    recognition.onend = () => {
+      voiceRecognitionRef.current = null;
+      const query = voiceQueryRef.current.trim();
+      const shouldAnswer = voiceQueryActiveRef.current && query.length > 0;
+      voiceQueryActiveRef.current = false;
+      voiceQueryRef.current = "";
+      if (shouldAnswer) {
+        voiceActivationEnabledRef.current = false;
+        void handleOrbResponse(sendWebsiteOrbText(query));
+        voiceResumeAfterResponseRef.current = true;
+        return;
+      }
+      if (voiceActivationEnabledRef.current) window.setTimeout(startVoiceActivation, 250);
+    };
+    recognition.onerror = (event) => {
+      if (event.error === "not-allowed" || event.error === "service-not-allowed") {
+        voiceActivationEnabledRef.current = false;
+        voiceRecognitionRef.current = null;
+        setOrbState("idle");
+      }
+    };
+    try {
+      recognition.start();
+    } catch {
+      voiceActivationEnabledRef.current = false;
+      voiceRecognitionRef.current = null;
+    }
+  }, [handleOrbResponse]);
+
+  startVoiceActivationRef.current = startVoiceActivation;
+
   const startVoiceCapture = useCallback(async () => {
-    if (orbState === "listening") {
+    if (orbState === "listening" && mediaRecorderRef.current?.state === "recording") {
       mediaRecorderRef.current?.stop();
       return;
+    }
+    if (orbState === "listening" && voiceRecognitionRef.current) {
+      voiceActivationEnabledRef.current = false;
+      voiceRecognitionRef.current.abort();
+      voiceRecognitionRef.current = null;
+      setOrbState("idle");
     }
 
     try {
@@ -186,15 +295,57 @@ export default function WebsiteFloatingOrb() {
         if (event.data.size > 0) chunksRef.current.push(event.data);
       };
       recorder.onstop = () => {
+        if (silenceFrameRef.current !== null) {
+          window.cancelAnimationFrame(silenceFrameRef.current);
+          silenceFrameRef.current = null;
+        }
+        if (maxRecordingTimerRef.current !== null) {
+          window.clearTimeout(maxRecordingTimerRef.current);
+          maxRecordingTimerRef.current = null;
+        }
+        audioContextRef.current?.close().catch(() => undefined);
+        audioContextRef.current = null;
         stream.getTracks().forEach((track) => track.stop());
         const blob = new Blob(chunksRef.current, { type: "audio/webm" });
         void handleOrbResponse(sendWebsiteOrbAudio(blob));
       };
       setOrbState("listening");
       recorder.start();
-      window.setTimeout(() => {
+
+      const audioContext = new AudioContext();
+      const analyser = audioContext.createAnalyser();
+      analyser.fftSize = 2048;
+      const source = audioContext.createMediaStreamSource(stream);
+      source.connect(analyser);
+      audioContextRef.current = audioContext;
+      const samples = new Uint8Array(analyser.fftSize);
+      const silenceStartedAt = { value: null as number | null };
+      let heardSpeech = false;
+      const watchForSilence = () => {
+        if (mediaRecorderRef.current?.state !== "recording") return;
+        analyser.getByteTimeDomainData(samples);
+        let sum = 0;
+        for (const sample of samples) {
+          const normalized = (sample - 128) / 128;
+          sum += normalized * normalized;
+        }
+        const volume = Math.sqrt(sum / samples.length);
+        if (volume > 0.035) {
+          heardSpeech = true;
+          silenceStartedAt.value = null;
+        } else if (heardSpeech) {
+          silenceStartedAt.value ??= performance.now();
+          if (performance.now() - silenceStartedAt.value > 1100) {
+            mediaRecorderRef.current.stop();
+            return;
+          }
+        }
+        silenceFrameRef.current = window.requestAnimationFrame(watchForSilence);
+      };
+      silenceFrameRef.current = window.requestAnimationFrame(watchForSilence);
+      maxRecordingTimerRef.current = window.setTimeout(() => {
         if (mediaRecorderRef.current?.state === "recording") mediaRecorderRef.current.stop();
-      }, 6500);
+      }, 20000);
     } catch (error) {
       setOrbState("error");
       setLastResponse({
@@ -209,6 +360,34 @@ export default function WebsiteFloatingOrb() {
       });
     }
   }, [handleOrbResponse, orbState, stopFinalAudio]);
+
+  useEffect(() => {
+    const beginVoiceSession = () => {
+      const speakIntro = "Hi, I'm Pops. Say Pops when you need me, and I'll listen.";
+      if (!("speechSynthesis" in window)) {
+        startVoiceActivation();
+        return;
+      }
+      window.speechSynthesis.cancel();
+      const intro = new SpeechSynthesisUtterance(speakIntro);
+      intro.onend = startVoiceActivation;
+      intro.onerror = startVoiceActivation;
+      window.speechSynthesis.speak(intro);
+    };
+    const handleStartupComplete = () => beginVoiceSession();
+    window.addEventListener("pops:startup-complete", handleStartupComplete);
+    const alreadyStarted = window.sessionStorage.getItem("pops:startup-splash-seen");
+    const timer = alreadyStarted ? window.setTimeout(beginVoiceSession, 700) : null;
+    return () => {
+      window.removeEventListener("pops:startup-complete", handleStartupComplete);
+      if (timer !== null) window.clearTimeout(timer);
+      if (voiceResumeTimerRef.current !== null) window.clearTimeout(voiceResumeTimerRef.current);
+      voiceActivationEnabledRef.current = false;
+      voiceRecognitionRef.current?.abort();
+      voiceRecognitionRef.current = null;
+      window.speechSynthesis?.cancel();
+    };
+  }, [startVoiceActivation]);
 
   useEffect(() => {
     const splashTimer = window.setTimeout(() => setSplashActive(false), 1500);
@@ -387,6 +566,9 @@ export default function WebsiteFloatingOrb() {
   useEffect(() => () => {
     stopFiller();
     stopFinalAudio();
+    if (silenceFrameRef.current !== null) window.cancelAnimationFrame(silenceFrameRef.current);
+    if (maxRecordingTimerRef.current !== null) window.clearTimeout(maxRecordingTimerRef.current);
+    audioContextRef.current?.close().catch(() => undefined);
     mediaRecorderRef.current?.stream.getTracks().forEach((track) => track.stop());
   }, [stopFiller, stopFinalAudio]);
 
@@ -403,8 +585,8 @@ export default function WebsiteFloatingOrb() {
           "--orb-look-x": travelLook.x,
           "--orb-look-y": travelLook.y,
         } as React.CSSProperties}
-        aria-label="Speak to Pops"
-        title="Speak to Pops"
+        aria-label="Talk to Pops"
+        title="Pops — voice assistant"
       >
         <span className="website-orb-splash" />
         <span className="website-orb-pulse" />
@@ -421,6 +603,7 @@ export default function WebsiteFloatingOrb() {
         <span className="website-orb-eye-ring" />
         <span className="website-orb-lens"><Mic size={16} /></span>
       </button>
+      <span className="website-orb-name" aria-hidden="true">Pops</span>
 
       {speechText && (
         <div className={`website-orb-speech ${speechSide}`} role="status" aria-live="polite">

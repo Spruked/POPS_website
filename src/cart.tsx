@@ -32,8 +32,8 @@ export const PRODUCTS: Product[] = [
   {
     id: "guardian",
     name: "Guardian Access",
-    price: 149,
-    priceLabel: "$149",
+    price: 99,
+    priceLabel: "$99",
     period: "one-time Windows app license",
     description: "Full POPS desktop app access with lifetime POPS Membership included.",
     fulfillment: "Windows installer and license activation instructions after checkout.",

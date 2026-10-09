@@ -1,6 +1,6 @@
 # POPS Website ORB
 
-This site now includes a Website ORB deployment for the local `Renova_te_ipsum` cognitive package. It is intentionally separate from any Desktop ORB or Electron dock adapter.
+This site includes a Website ORB deployment backed by the POPS API. It is intentionally separate from any Desktop ORB or Electron dock adapter.
 
 ## Frontend
 
@@ -44,7 +44,7 @@ POST /api/orb/tools/run
 The voice path is:
 
 ```text
-audio upload -> faster-whisper STT -> Renova_te_ipsum pulse -> local LLM/fallback -> Kokoro/Qwen TTS -> cached WAV URL
+audio upload -> faster-whisper STT -> POPS ORB pulse -> local LLM/fallback -> Kokoro/Qwen TTS -> cached WAV URL
 ```
 
 The browser never talks directly to OCR, MCP/MPC, or host desktop tooling.
@@ -52,7 +52,7 @@ The browser never talks directly to OCR, MCP/MPC, or host desktop tooling.
 ## Environment
 
 ```text
-FASTER_WHISPER_STT_URL=http://127.0.0.1:9000/stt
+FASTER_WHISPER_STT_URL=http://127.0.0.1:13000/stt
 LOCAL_LLM_URL=
 LOCAL_LLM_MODEL=
 LOCAL_LLM_TIMEOUT_SECONDS=60

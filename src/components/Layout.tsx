@@ -27,6 +27,7 @@ export default function Layout({ children }: LayoutProps) {
   return (
     <div className="page">
       <nav
+        aria-label="Primary navigation"
         className="nav"
         style={{
           background: scrolled ? "rgba(7, 10, 15, 0.95)" : "rgba(7, 10, 15, 0.6)",
@@ -43,7 +44,7 @@ export default function Layout({ children }: LayoutProps) {
             </div>
           </Link>
 
-          <div className="nav-links" style={{ display: mobileOpen ? "flex" : undefined }}>
+          <div id="primary-navigation" className={`nav-links${mobileOpen ? " is-open" : ""}`} style={{ display: mobileOpen ? "flex" : undefined }}>
             <Link to="/" className="nav-link">Landing</Link>
             <Link to="/about" className="nav-link">About</Link>
             <Link to="/see-pops-in-action" className="nav-link">In Action</Link>
@@ -60,8 +61,11 @@ export default function Layout({ children }: LayoutProps) {
           </div>
 
           <button
-            className="nav-link"
-            style={{ display: "none", background: "none", border: "none" }}
+            className="nav-menu-toggle"
+            type="button"
+            aria-label={mobileOpen ? "Close navigation" : "Open navigation"}
+            aria-expanded={mobileOpen}
+            aria-controls="primary-navigation"
             onClick={() => setMobileOpen(!mobileOpen)}
           >
             {mobileOpen ? <X size={24} /> : <Menu size={24} />}
@@ -87,7 +91,11 @@ export default function Layout({ children }: LayoutProps) {
             <Link to="/pledge">Pledge</Link>
             <Link to="/lexicon">Lexicon</Link>
             <Link to="/access">Access</Link>
+            <Link to="/account">Account</Link>
             <Link to="/cart">Cart</Link>
+            <Link to="/events">Events</Link>
+            <Link to="/counsel-handoff">Counsel Handoff</Link>
+            <Link to="/attorney-referral">Noted Counsel</Link>
             <Link to="/privacy">Privacy</Link>
             <Link to="/terms">Terms</Link>
             <Link to="/policies-procedures">Policies &amp; Procedures</Link>

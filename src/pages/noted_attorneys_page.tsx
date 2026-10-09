@@ -15,7 +15,7 @@ export default function NotedAttorneysPage() {
             <span className="mono">POPS NOTED COUNSEL</span>
             <h1>Noted Counsel</h1>
             <p>
-              Positive-only merit recognition from POPS Noted Users.
+              This page explains the POPS merit-recognition program for counsel. It is informational and is not a referral marketplace.
             </p>
           </div>
 
