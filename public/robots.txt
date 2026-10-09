@@ -4,5 +4,6 @@ Allow: /lexicon/
 Disallow: /account
 Disallow: /cart
 Disallow: /checkout
+Disallow: /api/
 
 Sitemap: https://pops.spruked.com/sitemap.xml
