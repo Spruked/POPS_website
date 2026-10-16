@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import PageSeo from "../components/PageSeo";
 
 export default function PrivacyPage() {
@@ -296,6 +297,11 @@ export default function PrivacyPage() {
               For privacy questions, correction requests, deletion requests, or Noted
               Counsel concerns, contact POPS through the privacy contact listed in the
               site footer.
+            </p>
+
+            <p>
+              The POPS apps for Android, iOS and desktop are covered by the{" "}
+              <Link to="/app-privacy">App Privacy Policy</Link>.
             </p>
 
             <p>

@@ -17,6 +17,7 @@ import PledgePage from "./pages/PledgePage";
 import TermsPage from "./pages/TermsPage";
 import PoliciesProceduresPage from "./pages/PoliciesProceduresPage";
 import PrivacyPage from "./pages/PrivacyPage";
+import AppPrivacyPage from "./pages/AppPrivacyPage";
 import WebsiteFloatingOrb from "./orb/WebsiteFloatingOrb";
 import SeePopsInActionPage from "./pages/SeePopsInActionPage";
 import ProductDemoPage from "./pages/ProductDemoPage";
@@ -53,6 +54,7 @@ function App() {
           <Route path="/terms" element={<TermsPage />} />
           <Route path="/policies-procedures" element={<PoliciesProceduresPage />} />
           <Route path="/privacy" element={<PrivacyPage />} />
+          <Route path="/app-privacy" element={<AppPrivacyPage />} />
         </Routes>
       </Layout>
     </BrowserRouter>
