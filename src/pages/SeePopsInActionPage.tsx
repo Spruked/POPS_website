@@ -41,7 +41,7 @@ export default function SeePopsInActionPage() {
               <video
                 controls
                 preload="metadata"
-                poster="/popsbanner1600.png"
+                poster="/media/pops-desktop-workflow.jpg"
                 onError={() => setVideoAvailable(false)}
                 style={{
                   width: "100%",
@@ -51,7 +51,8 @@ export default function SeePopsInActionPage() {
                   aspectRatio: "16 / 9",
                 }}
               >
-                <source src="/media/pops-in-action.mp4" type="video/mp4" />
+                <source src="/media/pops-desktop-workflow.webm" type="video/webm" />
+                <source src="/media/pops-desktop-workflow.mp4" type="video/mp4" />
                 Your browser does not support HTML video.
               </video>
             ) : (

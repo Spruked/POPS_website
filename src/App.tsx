@@ -18,6 +18,8 @@ import TermsPage from "./pages/TermsPage";
 import PoliciesProceduresPage from "./pages/PoliciesProceduresPage";
 import PrivacyPage from "./pages/PrivacyPage";
 import AppPrivacyPage from "./pages/AppPrivacyPage";
+import AndroidAppPage from "./pages/AndroidAppPage";
+import IosAppPage from "./pages/IosAppPage";
 import WebsiteFloatingOrb from "./orb/WebsiteFloatingOrb";
 import SeePopsInActionPage from "./pages/SeePopsInActionPage";
 import ProductDemoPage from "./pages/ProductDemoPage";
@@ -38,6 +40,8 @@ function App() {
           <Route path="/see-pops-in-action" element={<SeePopsInActionPage />} />
           <Route path="/product-demo" element={<ProductDemoPage />} />
           <Route path="/desktop-app" element={<DesktopAppPage />} />
+          <Route path="/android" element={<AndroidAppPage />} />
+          <Route path="/ios" element={<IosAppPage />} />
           <Route path="/how-you-use-it" element={<HowYouUseItPage />} />
           <Route path="/access" element={<DownloadPage />} />
           <Route path="/download" element={<Navigate to="/access" replace />} />
