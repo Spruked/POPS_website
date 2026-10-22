@@ -1,0 +1,307 @@
+POPS_website-main/
+[Generated source/artifact tree; dependency, runtime-private, build-output and Git metadata directories excluded.]
+├── backend/
+│   ├── customer_site/
+│   │   ├── migrations/
+│   │   │   ├── __init__.py
+│   │   │   └── 0001_initial.py
+│   │   ├── __init__.py
+│   │   ├── forms.py
+│   │   ├── models.py
+│   │   ├── settings.py
+│   │   ├── tests.py
+│   │   ├── urls.py
+│   │   ├── views.py
+│   │   └── wsgi.py
+│   ├── __init__.py
+│   ├── customer-requirements.txt
+│   ├── main.py
+│   ├── manage_customers.py
+│   └── requirements.txt
+├── cali_orb_machine/
+│   ├── cali_skg_INTEGRATION.py
+│   ├── floating_assistant_orb_main_INTEGRATION.py
+│   ├── FloatingOrb.jsx
+│   ├── orb_behavior_runtime.py
+│   ├── orb_command_router.py
+│   ├── orb_lifecycle.py
+│   ├── orb_state_machine.py
+│   ├── orb-bridge_UPDATED.js
+│   └── README_STATE_MACHINE.md
+├── Cali_skg_v4/
+│   ├── cali_skg_v4.py
+│   ├── cali_state_v4.py
+│   ├── README_v4.md
+│   └── requirements.txt
+├── data/
+│   └── orb-weaver/
+│       └── crawl-8/
+│           ├── commercial_catalog.json
+│           ├── crawl.json
+│           ├── knowledge_chunks.json
+│           ├── latest_context.json
+│           ├── lexical_index.json
+│           ├── pointer_plot_map.json
+│           ├── README.md
+│           ├── retrieval_index.json
+│           ├── route_classification.json
+│           ├── scan_stage_execution.json
+│           └── source_validation.json
+├── docs/
+│   ├── launch/
+│   │   ├── screenshots/
+│   │   │   ├── access.png
+│   │   │   ├── account.png
+│   │   │   ├── android.png
+│   │   │   ├── beta.png
+│   │   │   ├── cart.png
+│   │   │   ├── desktop-app.png
+│   │   │   ├── home.png
+│   │   │   ├── mobile-access.png
+│   │   │   ├── mobile-account.png
+│   │   │   ├── mobile-beta.png
+│   │   │   ├── mobile-home.png
+│   │   │   ├── navigation-desktop-1100.png
+│   │   │   ├── navigation-desktop-1280.png
+│   │   │   ├── navigation-desktop-1440.png
+│   │   │   ├── navigation-flat-menu-1024.png
+│   │   │   ├── navigation-flat-menu-320.png
+│   │   │   ├── navigation-flat-menu-390.png
+│   │   │   ├── navigation-flat-menu-820.png
+│   │   │   ├── navigation-flat-menu-mobile-bottom.png
+│   │   │   ├── navigation-header.png
+│   │   │   ├── navigation-mobile-closed.png
+│   │   │   └── navigation-sidebar.png
+│   │   ├── after-pages.json
+│   │   ├── before-pages.json
+│   │   ├── browser-results.json
+│   │   ├── DEVELOPMENT_RELEASE.md
+│   │   ├── IMPLEMENTATION_REPORT.md
+│   │   ├── LAUNCH_READINESS.md
+│   │   ├── MARKETING_PLAN.md
+│   │   ├── navigation-results.json
+│   │   ├── prerender-report.json
+│   │   ├── protected-baseline.json
+│   │   ├── protected-portable-baseline.json
+│   │   ├── reproducibility-results.json
+│   │   └── SITEMAP.md
+│   └── WEBSITE_ORB.md
+├── local-review/
+│   ├── 01-start.png
+│   ├── 02-home.png
+│   ├── 03-access.png
+│   ├── 04-account.png
+│   ├── 05-demo.png
+│   ├── 06-lexicon.png
+│   ├── 07-mobile-home.png
+│   ├── 08-cart.png
+│   └── REVIEW.md
+├── orb_pointer_human_escalate/
+│   ├── orbEscalation.ts
+│   ├── orbState.ts
+│   ├── pointer_plot_schema.py
+│   ├── pointerPlotTypes.ts
+│   ├── pointerResolution.ts
+│   ├── pointerRuntime.ts
+│   ├── promotion.py
+│   ├── README.md
+│   └── scan_extraction.py
+├── public/
+│   ├── og/
+│   │   ├── lexicon-culpable.svg
+│   │   ├── lexicon-due-process.svg
+│   │   ├── lexicon-equal-protection.svg
+│   │   ├── lexicon-estoppel.svg
+│   │   ├── lexicon-exculpatory.svg
+│   │   ├── lexicon-fifth-amendment.svg
+│   │   ├── lexicon-fourteenth-amendment.svg
+│   │   ├── lexicon-habeas-corpus.svg
+│   │   ├── lexicon-prima-facie.svg
+│   │   └── lexicon-pro-se.svg
+│   ├── orb/
+│   │   └── skins/
+│   │       ├── average_dadblkleatherjacket.png
+│   │       ├── average-dad-mode-transparent.png
+│   │       └── average-dad-mode.png
+│   ├── favicon.svg
+│   ├── popsbadge.png
+│   ├── popsbanner1600.png
+│   ├── robots.txt
+│   ├── site.webmanifest
+│   └── sitemap.xml
+├── scripts/
+│   ├── capture-before.cjs
+│   ├── generate-sitemap.mjs
+│   ├── prerender.mjs
+│   ├── report-launch.mjs
+│   ├── verify-launch.cjs
+│   ├── verify-navigation.cjs
+│   └── verify-protected.cjs
+├── src/
+│   ├── components/
+│   │   ├── startup_splash/
+│   │   │   ├── Beautiful-splash-animation.pdf
+│   │   │   ├── P.O.P.S. Startup Splash.html
+│   │   │   └── P.O.P.S. Startup Splash.md
+│   │   ├── Analytics.tsx
+│   │   ├── CustomerForms.tsx
+│   │   ├── DesktopAppPreview.tsx
+│   │   ├── LandingSplash.css
+│   │   ├── LandingSplash.tsx
+│   │   ├── LaunchContent.tsx
+│   │   ├── Layout.tsx
+│   │   └── PageSeo.tsx
+│   ├── data/
+│   │   ├── launchFaq.ts
+│   │   ├── popslexicon_expanded_v1_1_0.json
+│   │   ├── popslexicon.json
+│   │   ├── popslexicon.schema.json
+│   │   ├── popsLexicon.ts
+│   │   ├── sitePages.json
+│   │   └── validatePopsLexicon.ts
+│   ├── orb/
+│   │   ├── pointerGuideController.ts
+│   │   ├── pointerTargetRegistry.ts
+│   │   ├── WebsiteFloatingOrb.css
+│   │   ├── WebsiteFloatingOrb.tsx
+│   │   ├── WebsiteOrbPointerOverlay.tsx
+│   │   └── websiteOrbTargetTypes.ts
+│   ├── pages/
+│   │   ├── AboutPage.tsx
+│   │   ├── AccountPortalPage.tsx
+│   │   ├── CartPage.tsx
+│   │   ├── CheckoutPage.tsx
+│   │   ├── CounselHandoffPage.tsx
+│   │   ├── DeclarationPage.tsx
+│   │   ├── DesktopAppPage.tsx
+│   │   ├── DownloadPage.tsx
+│   │   ├── EventsPage.tsx
+│   │   ├── HomePage.tsx
+│   │   ├── HowYouUseItPage.tsx
+│   │   ├── LaunchPages.tsx
+│   │   ├── LexiconPage.tsx
+│   │   ├── noted_attorneys_page.tsx
+│   │   ├── ParticipationPages.tsx
+│   │   ├── PledgePage.tsx
+│   │   ├── PoliciesProceduresPage.tsx
+│   │   ├── PrivacyPage.tsx
+│   │   ├── ProductDemoPage.tsx
+│   │   ├── SeePopsInActionPage.tsx
+│   │   └── TermsPage.tsx
+│   ├── pops-demo-app/
+│   │   ├── assets/
+│   │   │   ├── narration/
+│   │   │   │   ├── dashboard.wav
+│   │   │   │   ├── dossier.wav
+│   │   │   │   ├── evidence.wav
+│   │   │   │   ├── get-pops.wav
+│   │   │   │   ├── incident.wav
+│   │   │   │   ├── manifest.json
+│   │   │   │   ├── relationships.wav
+│   │   │   │   ├── review.wav
+│   │   │   │   └── timeline.wav
+│   │   │   └── popsbadge.png
+│   │   ├── components/
+│   │   │   ├── evidence/
+│   │   │   │   └── ReviewCommitPanel.tsx
+│   │   │   ├── ContactResearchPanel.tsx
+│   │   │   ├── DemoTour.tsx
+│   │   │   ├── DerivedTimeline.tsx
+│   │   │   ├── FullCaseBundleExport.tsx
+│   │   │   ├── Modal.tsx
+│   │   │   ├── RelationshipTree.tsx
+│   │   │   ├── Sidebar.tsx
+│   │   │   └── ToastContainer.tsx
+│   │   ├── data/
+│   │   │   ├── demoRecords.ts
+│   │   │   └── demoRuntime.ts
+│   │   ├── hooks/
+│   │   │   ├── useCase.ts
+│   │   │   ├── useStore.ts
+│   │   │   ├── useSystem.ts
+│   │   │   └── useToast.ts
+│   │   ├── pages/
+│   │   │   ├── CaseOverview.tsx
+│   │   │   ├── ContactsDossier.tsx
+│   │   │   ├── EvidenceVault.tsx
+│   │   │   ├── Incidents.tsx
+│   │   │   ├── PlayersDossier.tsx
+│   │   │   ├── Reports.tsx
+│   │   │   └── VisitationCalendar.tsx
+│   │   ├── scripts/
+│   │   │   ├── generate-narration.ps1
+│   │   │   ├── inspect-demo.cjs
+│   │   │   ├── test-demo.cjs
+│   │   │   └── test-production.cjs
+│   │   ├── styles/
+│   │   │   ├── demo.css
+│   │   │   └── index.css
+│   │   ├── tour/
+│   │   │   ├── orbBridge.ts
+│   │   │   ├── tourController.ts
+│   │   │   ├── tourSteps.ts
+│   │   │   └── useWebsiteDemoTour.ts
+│   │   ├── utils/
+│   │   │   ├── annotationEngine.ts
+│   │   │   └── helpers.ts
+│   │   ├── validation/
+│   │   │   ├── development/
+│   │   │   │   ├── screenshots/
+│   │   │   │   │   ├── 1024-dashboard.png
+│   │   │   │   │   ├── 1024-relationships.png
+│   │   │   │   │   ├── 390-dashboard.png
+│   │   │   │   │   ├── 390-relationships.png
+│   │   │   │   │   ├── desktop-dashboard.png
+│   │   │   │   │   ├── desktop-evidence-check.png
+│   │   │   │   │   └── desktop-relationships.png
+│   │   │   │   └── test-results.json
+│   │   │   ├── production/
+│   │   │   │   ├── screenshots/
+│   │   │   │   │   ├── 1024-dashboard.png
+│   │   │   │   │   ├── 1024-relationships.png
+│   │   │   │   │   ├── 390-dashboard.png
+│   │   │   │   │   ├── 390-relationships.png
+│   │   │   │   │   ├── desktop-dashboard.png
+│   │   │   │   │   ├── desktop-evidence-check.png
+│   │   │   │   │   └── desktop-relationships.png
+│   │   │   │   └── test-results.json
+│   │   │   ├── authorized-orb-changes.json
+│   │   │   └── production-assets.json
+│   │   ├── App.tsx
+│   │   ├── README.md
+│   │   ├── source-manifest.json
+│   │   ├── tree.txt
+│   │   └── types.ts
+│   ├── services/
+│   │   ├── customerApi.ts
+│   │   └── orbApi.ts
+│   ├── styles/
+│   │   ├── index.css
+│   │   ├── launch.css
+│   │   └── navigation.css
+│   ├── App.tsx
+│   ├── App.tsx.before_noted_counsel
+│   ├── cart.tsx
+│   ├── main.tsx
+│   └── vite-env.d.ts
+├── systemd/
+│   ├── pops-api.service
+│   └── pops-website.service
+├── vault_system/
+│   └── posteriori/
+│       └── a4c08c75417e5dc5e8c7c449a1ab10424c231cf26dc5911ad7fce32cafe1d0e0.json
+├── .env.example
+├── .gitattributes
+├── .gitignore
+├── DEV_LOG.md
+├── index.html
+├── package-lock.json
+├── package.json
+├── README.md
+├── start-customer-dev.ps1
+├── start-local-dev.ps1
+├── state-estimated-fathers-denied-visitation-50.csv
+├── tree.txt
+├── tsconfig.json
+├── vite.config.ts
+└── website_full_tree.txt

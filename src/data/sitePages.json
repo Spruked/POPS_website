@@ -1,0 +1,137 @@
+[
+  {
+    "path": "/",
+    "intent": "Understand parenting-time evidence software",
+    "indexable": true
+  },
+  {
+    "path": "/about",
+    "intent": "Understand the P.O.P.S. purpose",
+    "indexable": true
+  },
+  {
+    "path": "/desktop-app",
+    "intent": "Evaluate Windows evidence organization software",
+    "indexable": true
+  },
+  {
+    "path": "/android",
+    "intent": "Understand Android capture development status",
+    "indexable": true
+  },
+  {
+    "path": "/how-you-use-it",
+    "intent": "Learn the event-to-record workflow",
+    "indexable": true
+  },
+  {
+    "path": "/product-demo",
+    "intent": "Explore a representative Windows workspace",
+    "indexable": true
+  },
+  {
+    "path": "/see-pops-in-action",
+    "intent": "Find actual application demonstration availability",
+    "indexable": true
+  },
+  {
+    "path": "/access",
+    "intent": "Compare Windows license and access paths",
+    "indexable": true
+  },
+  {
+    "path": "/beta",
+    "intent": "Express interest in active beta participation",
+    "indexable": true
+  },
+  {
+    "path": "/early-adopters",
+    "intent": "Understand first-100 paid customer program",
+    "indexable": true
+  },
+  {
+    "path": "/installation",
+    "intent": "Prepare for Windows installation and onboarding",
+    "indexable": true
+  },
+  {
+    "path": "/faq",
+    "intent": "Resolve product and purchasing questions",
+    "indexable": true
+  },
+  {
+    "path": "/support",
+    "intent": "Find technical, account and privacy support",
+    "indexable": true
+  },
+  {
+    "path": "/counsel-handoff",
+    "intent": "Understand release-qualified review exports",
+    "indexable": true
+  },
+  {
+    "path": "/events",
+    "intent": "Find demonstration and event availability",
+    "indexable": true
+  },
+  {
+    "path": "/attorney-referral",
+    "intent": "Understand Noted Counsel merit recognition",
+    "indexable": true
+  },
+  {
+    "path": "/declaration",
+    "intent": "Read the established Declaration",
+    "indexable": true
+  },
+  {
+    "path": "/pledge",
+    "intent": "Read the established Pledge",
+    "indexable": true
+  },
+  {
+    "path": "/lexicon",
+    "intent": "Learn factual recordkeeping terminology",
+    "indexable": true
+  },
+  {
+    "path": "/terms",
+    "intent": "Read existing service terms",
+    "indexable": true
+  },
+  {
+    "path": "/privacy",
+    "intent": "Read existing privacy notice",
+    "indexable": true
+  },
+  {
+    "path": "/policies-procedures",
+    "intent": "Read existing operating and access policies",
+    "indexable": true
+  },
+  {
+    "path": "/account",
+    "intent": "Private customer or transactional action",
+    "indexable": false
+  },
+  {
+    "path": "/account/verify",
+    "intent": "Private customer or transactional action",
+    "indexable": false
+  },
+  {
+    "path": "/account/reset",
+    "intent": "Private customer or transactional action",
+    "indexable": false
+  },
+  {
+    "path": "/cart",
+    "intent": "Private customer or transactional action",
+    "indexable": false
+  },
+  {
+    "path": "/checkout",
+    "intent": "Private customer or transactional action",
+    "indexable": false
+  }
+]

@@ -11,7 +11,7 @@ declare global {
 
 export default function Analytics() {
   useEffect(() => {
-    if (!GA_MEASUREMENT_ID || document.querySelector(`[src*="${GA_MEASUREMENT_ID}"]`)) return;
+    if (/^\/account(?:\/|$)/.test(window.location.pathname) || !GA_MEASUREMENT_ID || document.querySelector(`[src*="${GA_MEASUREMENT_ID}"]`)) return;
 
     const script = document.createElement("script");
     script.async = true;

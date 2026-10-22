@@ -1,0 +1,42 @@
+{
+  "status": "passed",
+  "checks": [
+    "All route definitions: desktop rendering, one H1, unique description element, metadata, noindex, preserved hooks, no horizontal overflow.",
+    "Public titles and descriptions unique; main-content internal destinations recognized.",
+    "Cart refresh, duplicate Guardian, included membership, sponsor quantity and integer-cents totals, removals, corrupt storage, canonical-price restoration.",
+    "Checkout informational only; no payment requests or card fields.",
+    "Private database/secret/backend paths denied by Vite; legacy checkout API unavailable through local proxy.",
+    "Beta enrollment returns persistence confirmation and local-only disclosure.",
+    "Account registration, local verification email, email verification, login, session after refresh, linked beta status, logout, recovery email, reset, and login with new password.",
+    "Support request saved with reference and no upload field.",
+    "Mobile route rendering at 390px and conventional navigation menu.",
+    "32 original protected files preserved; 5 explicitly authorized website ORB integrations verified (LF-normalized for Windows/WSL).",
+    "No uncaught page errors or payment requests."
+  ],
+  "pageErrors": [],
+  "paymentRequests": [],
+  "screenshots": [
+    "access.png",
+    "account.png",
+    "android.png",
+    "beta.png",
+    "cart.png",
+    "desktop-app.png",
+    "home.png",
+    "mobile-access.png",
+    "mobile-account.png",
+    "mobile-beta.png",
+    "mobile-home.png",
+    "navigation-desktop-1100.png",
+    "navigation-desktop-1280.png",
+    "navigation-desktop-1440.png",
+    "navigation-flat-menu-1024.png",
+    "navigation-flat-menu-320.png",
+    "navigation-flat-menu-390.png",
+    "navigation-flat-menu-820.png",
+    "navigation-flat-menu-mobile-bottom.png",
+    "navigation-header.png",
+    "navigation-mobile-closed.png",
+    "navigation-sidebar.png"
+  ]
+}

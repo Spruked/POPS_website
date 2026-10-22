@@ -22,6 +22,8 @@ import SeePopsInActionPage from "./pages/SeePopsInActionPage";
 import ProductDemoPage from "./pages/ProductDemoPage";
 import DesktopAppPage from "./pages/DesktopAppPage";
 import HowYouUseItPage from "./pages/HowYouUseItPage";
+import { AndroidPage, EarlyAdoptersPage, InstallationPage, FaqPage, NotFoundPage } from "./pages/LaunchPages";
+import { BetaPage, SupportPage } from "./pages/ParticipationPages";
 
 function App() {
   return (
@@ -37,6 +39,13 @@ function App() {
           <Route path="/see-pops-in-action" element={<SeePopsInActionPage />} />
           <Route path="/product-demo" element={<ProductDemoPage />} />
           <Route path="/desktop-app" element={<DesktopAppPage />} />
+          <Route path="/android" element={<AndroidPage />} />
+          <Route path="/beta" element={<BetaPage />} />
+          <Route path="/early-adopters" element={<EarlyAdoptersPage />} />
+          <Route path="/installation" element={<InstallationPage />} />
+          <Route path="/faq" element={<FaqPage />} />
+          <Route path="/support" element={<SupportPage />} />
+          <Route path="/contact" element={<Navigate to="/support" replace />} />
           <Route path="/how-you-use-it" element={<HowYouUseItPage />} />
           <Route path="/access" element={<DownloadPage />} />
           <Route path="/download" element={<Navigate to="/access" replace />} />
@@ -46,6 +55,8 @@ function App() {
           <Route path="/counsel-handoff" element={<CounselHandoffPage />} />
           <Route path="/events" element={<EventsPage />} />
           <Route path="/account" element={<AccountPortalPage />} />
+          <Route path="/account/verify" element={<AccountPortalPage />} />
+          <Route path="/account/reset" element={<AccountPortalPage />} />
           <Route path="/declaration" element={<DeclarationPage />} />
           <Route path="/pledge" element={<PledgePage />} />
           <Route path="/lexicon" element={<LexiconPage />} />
@@ -53,6 +64,7 @@ function App() {
           <Route path="/terms" element={<TermsPage />} />
           <Route path="/policies-procedures" element={<PoliciesProceduresPage />} />
           <Route path="/privacy" element={<PrivacyPage />} />
+          <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </Layout>
     </BrowserRouter>

@@ -1,6 +1,7 @@
 export type WebsiteOrbTargetAction = "scroll_to_target" | "ping" | "explain";
 
 export type WebsiteOrbTargetId =
+  | import('../pops-demo-app/tour/tourSteps').DemoTargetId
   | "pops.nav.access"
   | "pops.nav.get-pops"
   | "pops.home.what-is-pops"
@@ -38,5 +39,6 @@ export interface WebsiteOrbGuideState {
   rect: DOMRect;
   message: string;
   pulseKey: number;
+  hidden?: boolean;
 }
 

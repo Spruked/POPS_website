@@ -6,6 +6,16 @@ __pycache__/
 .DS_Store
 .vscode
 .idea
+.local/
+.venv-customer/
+*.sqlite3
+*.sqlite3-*
+*.pyc
+src/pops-demo-app/validation/failure*
+src/pops-demo-app/validation/screenshots/
+src/pops-demo-app/validation/first-tour.png
+src/pops-demo-app/validation/**/failure*
+docs/launch/screenshots/test-failure.png
 .env
 .env.*
 !.env.example

@@ -1,0 +1,491 @@
+{
+  "status": "passed",
+  "mode": "development",
+  "origin": "http://localhost:5173",
+  "checks": [
+    "Real bundled narration decoded and playback time advanced; no live TTS/native service.",
+    "All eight committed narration files match their generation manifest.",
+    "Pause/resume preserves playback position; mute stops audio while retaining captions and guidance.",
+    "Copied dossier selects fictional contacts and shows matching identity/source context.",
+    "Conceptual relationship map uses explicit fixture edges and opens the same person’s dossier.",
+    "Copied incident view links the same fictional message, receipt, note, and timeline record.",
+    "Real Web Crypto SHA-256 comparison matches the exact bundled text; upload controls disabled.",
+    "DerivedTimeline uses the same dated fictional event and evidence IDs.",
+    "Review report is previewable and native export/download controls are disabled.",
+    "Back, Next, Restart, final access link and browser-refresh recovery work; refresh is paused with fresh fictional data.",
+    "Calendar exploration and microphone interaction interrupt narration; Resume and Exit clean up and preserve normal ORB interaction.",
+    "Unauthored/inactive tour requests denied; existing normal ORB guide event still navigates and highlights after tour.",
+    "All eight stops, controls, pointers and layout tested at desktop 1440px, tablet 1024px and mobile 390px.",
+    "Every tour stop played its real bundled narration, including the production asset URLs.",
+    "Read-only original source/asset hashes verified unchanged.",
+    "Zero uncaught browser errors and zero API/native/payment requests."
+  ],
+  "pointers": [
+    {
+      "screen": "dashboard",
+      "expected": {
+        "left": 553.5,
+        "top": 409.875,
+        "width": 762,
+        "height": 230
+      },
+      "actual": {
+        "left": 553.5,
+        "top": 409.875,
+        "width": 762,
+        "height": 230
+      },
+      "visible": true
+    },
+    {
+      "screen": "dossier",
+      "expected": {
+        "left": 821.640625,
+        "top": 409.875,
+        "width": 197.515625,
+        "height": 36
+      },
+      "actual": {
+        "left": 821.640625,
+        "top": 409.875,
+        "width": 197.515625,
+        "height": 36
+      },
+      "visible": true
+    },
+    {
+      "screen": "relationships",
+      "expected": {
+        "left": 526.5,
+        "top": 409.671875,
+        "width": 814,
+        "height": 396
+      },
+      "actual": {
+        "left": 526.5,
+        "top": 409.671875,
+        "width": 814,
+        "height": 396
+      },
+      "visible": true
+    },
+    {
+      "screen": "incident",
+      "expected": {
+        "left": 526.5,
+        "top": 582.875,
+        "width": 814,
+        "height": 192
+      },
+      "actual": {
+        "left": 526.5,
+        "top": 582.875,
+        "width": 814,
+        "height": 192
+      },
+      "visible": true
+    },
+    {
+      "screen": "incident-dialog",
+      "expected": {
+        "left": 520.5,
+        "top": 497.078125,
+        "width": 614,
+        "height": 93
+      },
+      "actual": {
+        "left": 520.5,
+        "top": 497.078125,
+        "width": 614,
+        "height": 93
+      },
+      "visible": true
+    },
+    {
+      "screen": "evidence",
+      "expected": {
+        "left": 526.5,
+        "top": 497.171875,
+        "width": 814,
+        "height": 566.890625
+      },
+      "actual": {
+        "left": 526.5,
+        "top": 497.171875,
+        "width": 814,
+        "height": 566.890625
+      },
+      "visible": true
+    },
+    {
+      "screen": "evidence-dialog",
+      "expected": {
+        "left": 520.5,
+        "top": 419.984375,
+        "width": 614,
+        "height": 93
+      },
+      "actual": {
+        "left": 520.5,
+        "top": 419.984375,
+        "width": 614,
+        "height": 93
+      },
+      "visible": true
+    },
+    {
+      "screen": "timeline",
+      "expected": {
+        "left": 526.5,
+        "top": 496.875,
+        "width": 814,
+        "height": 429.734375
+      },
+      "actual": {
+        "left": 526.5,
+        "top": 496.875,
+        "width": 814,
+        "height": 429.734375
+      },
+      "visible": true
+    },
+    {
+      "screen": "review",
+      "expected": {
+        "left": 526.5,
+        "top": 412.078125,
+        "width": 814,
+        "height": 125
+      },
+      "actual": {
+        "left": 526.5,
+        "top": 412.078125,
+        "width": 814,
+        "height": 125
+      },
+      "visible": true
+    },
+    {
+      "screen": "review-dialog",
+      "expected": {
+        "left": 520.5,
+        "top": 497.796875,
+        "width": 614,
+        "height": 93
+      },
+      "actual": {
+        "left": 520.5,
+        "top": 497.796875,
+        "width": 614,
+        "height": 93
+      },
+      "visible": true
+    },
+    {
+      "screen": "get-pops",
+      "expected": {
+        "left": 526.5,
+        "top": 412.078125,
+        "width": 814,
+        "height": 404.5
+      },
+      "actual": {
+        "left": 526.5,
+        "top": 412.078125,
+        "width": 814,
+        "height": 404.5
+      },
+      "visible": true
+    },
+    {
+      "screen": "dossier",
+      "expected": {
+        "left": 821.640625,
+        "top": 409.875,
+        "width": 197.515625,
+        "height": 36
+      },
+      "actual": {
+        "left": 821.640625,
+        "top": 409.875,
+        "width": 197.515625,
+        "height": 36
+      },
+      "visible": true
+    },
+    {
+      "screen": "dossier",
+      "expected": {
+        "left": 821.640625,
+        "top": 409.875,
+        "width": 197.515625,
+        "height": 36
+      },
+      "actual": {
+        "left": 821.640625,
+        "top": 409.875,
+        "width": 197.515625,
+        "height": 36
+      },
+      "visible": true
+    },
+    {
+      "screen": "1024-dashboard",
+      "expected": {
+        "left": 286,
+        "top": 409.125,
+        "width": 666,
+        "height": 230
+      },
+      "actual": {
+        "left": 286,
+        "top": 409.125,
+        "width": 666,
+        "height": 230
+      },
+      "visible": true
+    },
+    {
+      "screen": "1024-dossier",
+      "expected": {
+        "left": 522.9375,
+        "top": 409.125,
+        "width": 197.515625,
+        "height": 36
+      },
+      "actual": {
+        "left": 522.9375,
+        "top": 409.125,
+        "width": 197.515625,
+        "height": 36
+      },
+      "visible": true
+    },
+    {
+      "screen": "1024-relationships",
+      "expected": {
+        "left": 259,
+        "top": 408.921875,
+        "width": 718,
+        "height": 396
+      },
+      "actual": {
+        "left": 259,
+        "top": 408.921875,
+        "width": 718,
+        "height": 396
+      },
+      "visible": true
+    },
+    {
+      "screen": "1024-incident",
+      "expected": {
+        "left": 259,
+        "top": 582.125,
+        "width": 718,
+        "height": 202
+      },
+      "actual": {
+        "left": 259,
+        "top": 582.125,
+        "width": 718,
+        "height": 202
+      },
+      "visible": true
+    },
+    {
+      "screen": "1024-evidence",
+      "expected": {
+        "left": 259,
+        "top": 496.421875,
+        "width": 718,
+        "height": 511.578125
+      },
+      "actual": {
+        "left": 259,
+        "top": 496.421875,
+        "width": 718,
+        "height": 511.578125
+      },
+      "visible": true
+    },
+    {
+      "screen": "1024-timeline",
+      "expected": {
+        "left": 259,
+        "top": 496.125,
+        "width": 718,
+        "height": 429.734375
+      },
+      "actual": {
+        "left": 259,
+        "top": 496.125,
+        "width": 718,
+        "height": 429.734375
+      },
+      "visible": true
+    },
+    {
+      "screen": "1024-review",
+      "expected": {
+        "left": 259,
+        "top": 411.328125,
+        "width": 718,
+        "height": 142
+      },
+      "actual": {
+        "left": 259,
+        "top": 411.328125,
+        "width": 718,
+        "height": 142
+      },
+      "visible": true
+    },
+    {
+      "screen": "1024-get-pops",
+      "expected": {
+        "left": 259,
+        "top": 411.328125,
+        "width": 718,
+        "height": 404.5
+      },
+      "actual": {
+        "left": 259,
+        "top": 411.328125,
+        "width": 718,
+        "height": 404.5
+      },
+      "visible": true
+    },
+    {
+      "screen": "390-dashboard",
+      "expected": {
+        "left": 66,
+        "top": 753.640625,
+        "width": 260,
+        "height": 254.359375
+      },
+      "actual": {
+        "left": 66,
+        "top": 753.640625,
+        "width": 260,
+        "height": 254.359375
+      },
+      "visible": true
+    },
+    {
+      "screen": "390-dossier",
+      "expected": {
+        "left": 64,
+        "top": 753.640625,
+        "width": 118.96875,
+        "height": 36
+      },
+      "actual": {
+        "left": 64,
+        "top": 753.640625,
+        "width": 118.96875,
+        "height": 36
+      },
+      "visible": true
+    },
+    {
+      "screen": "390-relationships",
+      "expected": {
+        "left": 39,
+        "top": 784.03125,
+        "width": 312,
+        "height": 223.96875
+      },
+      "actual": {
+        "left": 39,
+        "top": 784.03125,
+        "width": 312,
+        "height": 223.96875
+      },
+      "visible": true
+    },
+    {
+      "screen": "390-incident",
+      "expected": {
+        "left": 39,
+        "top": 938.640625,
+        "width": 312,
+        "height": 69.359375
+      },
+      "actual": {
+        "left": 39,
+        "top": 938.640625,
+        "width": 312,
+        "height": 69.359375
+      },
+      "visible": true
+    },
+    {
+      "screen": "390-evidence",
+      "expected": {
+        "left": 39,
+        "top": 783.734375,
+        "width": 312,
+        "height": 224.265625
+      },
+      "actual": {
+        "left": 39,
+        "top": 783.734375,
+        "width": 312,
+        "height": 224.265625
+      },
+      "visible": true
+    },
+    {
+      "screen": "390-timeline",
+      "expected": {
+        "left": 39,
+        "top": 753.84375,
+        "width": 312,
+        "height": 254.15625
+      },
+      "actual": {
+        "left": 39,
+        "top": 753.84375,
+        "width": 312,
+        "height": 254.15625
+      },
+      "visible": true
+    },
+    {
+      "screen": "390-review",
+      "expected": {
+        "left": 39,
+        "top": 728.859375,
+        "width": 312,
+        "height": 201
+      },
+      "actual": {
+        "left": 39,
+        "top": 728.859375,
+        "width": 312,
+        "height": 201
+      },
+      "visible": true
+    },
+    {
+      "screen": "390-get-pops",
+      "expected": {
+        "left": 39,
+        "top": 748.046875,
+        "width": 312,
+        "height": 259.953125
+      },
+      "actual": {
+        "left": 39,
+        "top": 748.046875,
+        "width": 312,
+        "height": 259.953125
+      },
+      "visible": true
+    }
+  ],
+  "errors": [],
+  "requests": []
+}

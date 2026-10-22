@@ -1,0 +1,61 @@
+{
+  "status": "passed",
+  "serving": "dist only; APIs unavailable",
+  "assets": [
+    {
+      "source": "assets/narration/dashboard.wav",
+      "url": "/assets/dashboard-CkfV-dRy.wav",
+      "bytes": 638500,
+      "sha256": "332cc7b4de229efd714ce956705744a1126726df219267480c556f5e7fc6822d"
+    },
+    {
+      "source": "assets/narration/dossier.wav",
+      "url": "/assets/dossier-CSg253q3.wav",
+      "bytes": 768996,
+      "sha256": "df828e8a88f2d460c857c9486d30631c4b078a493a0f7456b442d53393660941"
+    },
+    {
+      "source": "assets/narration/relationships.wav",
+      "url": "/assets/relationships-DMKaqvdQ.wav",
+      "bytes": 816840,
+      "sha256": "f8db44c44a1d1142e914be7c07c9ac9b2d2c5c2bdaaddc96b54babafa68e7519"
+    },
+    {
+      "source": "assets/narration/incident.wav",
+      "url": "/assets/incident-CIVJGp7P.wav",
+      "bytes": 718514,
+      "sha256": "e864b22202ffbcd97f2d5e1d49b920a4be8f787f1063b1fb6b2da307d42f0ecc"
+    },
+    {
+      "source": "assets/narration/evidence.wav",
+      "url": "/assets/evidence-4FU2ZC9m.wav",
+      "bytes": 828748,
+      "sha256": "c661ad4068b15917f693daba75a16a6c633fcb34974de31cf3f60de0bf30f6e1"
+    },
+    {
+      "source": "assets/narration/timeline.wav",
+      "url": "/assets/timeline-CZ5kRKq9.wav",
+      "bytes": 816170,
+      "sha256": "bf3465e756aed38e67d9f4efc2a1316a340ee0107666a3b722c462a631a3b26f"
+    },
+    {
+      "source": "assets/narration/review.wav",
+      "url": "/assets/review-60pzhFYR.wav",
+      "bytes": 815954,
+      "sha256": "72c530791c9b161f66efcc9232bf048cd549f89a75a27eac75e65ca27f2737fb"
+    },
+    {
+      "source": "assets/narration/get-pops.wav",
+      "url": "/assets/get-pops-CwZfwYio.wav",
+      "bytes": 839120,
+      "sha256": "6e648ddab507dd04724e76c8283f9bd10279a84441e9452bfd2ee82ff491d7af"
+    },
+    {
+      "source": "assets/popsbadge.png",
+      "url": "/assets/popsbadge-CIEPB64r.png",
+      "bytes": 1911777,
+      "sha256": "66d740841c55d9ea3ad3db4b63f7c288c7e98dbe1efc36aa00e23b7c9c50489b"
+    }
+  ],
+  "allRequestedByBrowser": true
+}

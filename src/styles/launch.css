@@ -1,0 +1,55 @@
+/* Scoped website launch presentation. Existing shared and runtime styles are untouched. */
+.launch-page { padding: 150px 0 64px; }
+.launch-intro { max-width: 1120px; }
+.launch-intro > .mono { color: #8fc5ff; display: block; margin-bottom: 18px; }
+.launch-intro h1 { max-width: 860px; margin-bottom: 22px; font-size: clamp(36px, 4.2vw, 60px); }
+.launch-lede { color: #b7c5d8; font-size: 19px; line-height: 1.75; max-width: 800px; }
+.launch-body { max-width: 1120px; }
+.launch-section { margin-top: 56px; scroll-margin-top: 120px; }
+.launch-section h2 { font-size: clamp(28px, 3vw, 38px); margin-bottom: 18px; max-width: 850px; }
+.launch-section h3 { font-size: 24px; margin: 22px 0 12px; }
+.launch-section p, .launch-section li, .launch-status p, .launch-capture figcaption, .launch-form p { color: #b7c5d8; line-height: 1.8; }
+.launch-section p + p { margin-top: 16px; }
+.launch-section ul, .launch-section ol { padding-left: 24px; margin: 18px 0; }
+.launch-section li + li { margin-top: 13px; }
+.launch-page a:not(.btn), .launch-home a:not(.btn) { color: #91c8ff; text-underline-offset: 4px; }
+.launch-status { background: #0e1a2b; border: 1px solid #36517a; border-left: 3px solid #69b7ff; padding: 22px 26px; margin-top: 32px; border-radius: 8px; }
+.launch-status strong { color: #d3e7ff; display: block; margin-bottom: 7px; }
+.launch-facts { display: grid; gap: 16px; margin: 24px 0; }
+.launch-facts > div { background: #101721; border: 1px solid #2b3b50; border-radius: 10px; padding: 24px; }
+.launch-facts dt { font-weight: 700; color: #e8edf5; margin-bottom: 10px; }
+.launch-facts dd { color: #b7c5d8; line-height: 1.75; }
+.launch-capture { padding: 30px; margin: 26px 0; border: 1px dashed #55708e; border-radius: 10px; background: #0d1520; }
+.launch-capture .mono { color: #b1cce9; display: block; margin-bottom: 12px; }
+.launch-links { border-top: 1px solid #2b3b50; padding: 30px 0 0; margin-top: 48px; display: flex; flex-wrap: wrap; gap: 20px 28px; }
+.launch-links a { color: #91c8ff; text-underline-offset: 4px; line-height: 1.6; }
+.launch-section > p { max-width: 80ch; }
+.launch-faq { padding: 26px 0; border-bottom: 1px solid #2b3b50; scroll-margin-top: 120px; }
+.launch-faq h2 { font-size: 27px; }
+.launch-grid { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 20px; margin-top: 28px; }
+.launch-card { padding: 26px; background: #101721; border: 1px solid #2b3b50; border-radius: 12px; }
+.launch-card h3 { margin-top: 0; }
+.launch-card p { margin-bottom: 18px; }
+.launch-home { padding: 0 0 70px; }
+.launch-home .container { max-width: 1120px; }
+.launch-form { margin-top: 28px; max-width: 720px; padding: 28px; background: #101721; border: 1px solid #2b3b50; border-radius: 12px; }
+.launch-form label { color: #d4deed; font-size: 15px; display: block; margin: 18px 0 8px; }
+.launch-form input:not([type=checkbox]), .launch-form select, .launch-form textarea { width: 100%; padding: 13px; border: 1px solid #53677f; border-radius: 6px; background: #0a1019; color: #e8edf5; font: inherit; }
+.launch-form textarea { min-height: 140px; resize: vertical; }
+.launch-form .launch-check { display: flex; gap: 12px; align-items: flex-start; line-height: 1.6; }
+.launch-check input { flex: 0 0 auto; margin-top: 5px; width: 18px; height: 18px; }
+.launch-form .btn { margin-top: 22px; }
+.launch-feedback { margin: 22px 0; padding: 18px; border: 1px solid #4f87b9; background: #101f30; border-radius: 8px; line-height: 1.65; overflow-wrap: anywhere; }
+.launch-feedback.is-error { border-color: #e7a0a0; }
+.launch-field-error { display: block; color: #ffb9b9; margin-top: 6px; font-size: 14px; line-height: 1.6; }
+.launch-tabs { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
+.launch-tabs button[aria-pressed=true] { border-color: #69b7ff; background: #17366c; }
+.launch-page :is(a,button,input,select,textarea):focus-visible, .launch-home :is(a,button):focus-visible { outline: 3px solid #a7d4ff; outline-offset: 4px; }
+.launch-honeypot { position: absolute; left: -10000px; width: 1px; height: 1px; overflow: hidden; }
+.launch-page button:disabled { opacity: .65; cursor: not-allowed; }
+.launch-price { font-size: 32px; color: #e8edf5; margin: 15px 0; }
+.launch-page table { border-collapse: collapse; width: 100%; }
+.launch-page th, .launch-page td { border-bottom: 1px solid #334155; text-align: left; padding: 15px; line-height: 1.7; }
+.launch-table-wrap { overflow-x: auto; }
+.launch-card .btn { white-space: normal; text-align: center; }
+@media(max-width: 800px) { .launch-grid { grid-template-columns: 1fr; } .launch-page { padding-top: 128px; } .launch-form { padding: 20px; } .launch-intro h1 { font-size: 38px; } .launch-lede { font-size: 17px; } .launch-section { margin-top: 40px; } .launch-section .hero-actions { flex-direction: column; align-items: stretch; } }

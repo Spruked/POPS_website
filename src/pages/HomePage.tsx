@@ -1,11 +1,12 @@
 import { Link } from "react-router-dom";
 import { ArrowRight, BookOpenCheck, Download, FileCheck, Gavel, MonitorPlay, Shield } from "lucide-react";
 import PageSeo from "../components/PageSeo";
+import { ContentSection, LaunchLinks, StatusNote } from "../components/LaunchContent";
 
 const FLOW = [
   {
     title: "What POPS Does",
-    body: "POPS helps fathers preserve records around denied parenting time, court order issues, communication attempts, evidence files, and attorney-ready timelines.",
+    body: "POPS helps fathers organize parenting-time records, court-order context, communication attempts, supporting files, and a chronology for review.",
     href: "#what-pops-does",
   },
   {
@@ -30,7 +31,7 @@ export default function HomePage() {
     <div>
       <PageSeo
         title="POPS | Proof of Presence System for Fathers"
-        description="POPS is a local-first evidence system for fathers documenting denied parenting time, timelines, records, and attorney-ready case packets."
+        description="Explore P.O.P.S. Windows software for fathers organizing parenting-time notes, supporting files, and timelines. Learn about Android plans, beta testing, and access."
         path="/"
       />
 
@@ -49,7 +50,7 @@ export default function HomePage() {
           </h1>
 
           <p className="hero-subtitle">
-            POPS helps fathers document presence, preserve evidence, organize timelines, and prepare court-safe records for attorney review.
+            Installable Windows software for fathers documenting parenting-time experiences. Bring event notes, supporting files, and a chronological record together for personal review and discussions with counsel.
           </p>
 
           <div className="hero-actions">
@@ -69,11 +70,32 @@ export default function HomePage() {
           <div className="hero-trust">
             <div className="hero-trust-item"><Shield size={16} /><span>Local-first</span></div>
             <div className="hero-trust-item"><FileCheck size={16} /><span>SHA-256 hashing</span></div>
-            <div className="hero-trust-item"><Gavel size={16} /><span>Court-safe records</span></div>
+            <div className="hero-trust-item"><Gavel size={16} /><span>Factual recordkeeping</span></div>
             <div className="hero-trust-item"><BookOpenCheck size={16} /><span>Lexicon guided</span></div>
           </div>
         </div>
       </section>
+
+      <div className="launch-home"><div className="container">
+        <ContentSection id="home-product-purpose" title="Your presence matters. Give the details a place to stay.">
+          <p>A missed exchange is more than a date on a calendar. There may be an unanswered message, a receipt from the trip, a photo, or a note about what you personally observed. When those pieces stay scattered, preparing for a conversation means searching again and relying on memory.</p>
+          <p>P.O.P.S. — Proof of Presence System — is designed to make that work repeatable. Document an event, connect its supporting material, and review it in context. The purpose remains personal: presence, accountability, and a factual record. Preserve. Protect. Prove.</p>
+          <div className="launch-grid">
+            <div className="launch-card"><h3>Windows is the workspace</h3><p>Understand how the Evidence Vault, events, timelines, and case context are intended to work together, and which release details still need verification.</p><Link to="/desktop-app">Explore the Windows software</Link></div>
+            <div className="launch-card"><h3>Android is being prepared</h3><p>Mobile capture, photo and location provenance, offline work, and synchronization are development or validation work. Android availability and license inclusion are not announced.</p><Link to="/android">Read Android development status</Link></div>
+            <div className="launch-card"><h3>See the practical steps</h3><p>Follow a fictional missed exchange from an event note through supporting files and a chronology. Representative examples are labeled; actual release captures are still needed.</p><Link to="/how-you-use-it">Follow the record-building workflow</Link></div>
+          </div>
+        </ContentSection>
+        <ContentSection id="home-practical-example" title="A missed exchange becomes an organized record.">
+          <p>Record the scheduled exchange and what you observed. Associate a relevant photo or message with that event. Keep the source and collection context. Review related entries in date order, then prepare the material supported by your release for your own review or discussion with counsel.</p>
+          <p>The software organizes what you supply. It does not independently establish that an event occurred or decide whether a court order was violated. File integrity checks support the record; they do not guarantee admissibility or a legal result.</p>
+        </ContentSection>
+        <ContentSection id="home-participate" title="Choose how you take part.">
+          <p>The published Guardian offer describes a one-time Windows license with lifetime P.O.P.S. Membership included and no mandatory recurring subscription. Checkout is unavailable while commercial delivery and release details are finalized. Saving a cart selection does not place an order.</p>
+          <StatusNote>We are seeking interest toward 50 active beta participants. The founding-customer program targets the first 100 qualifying paying customers, with special benefits still awaiting approval. Neither a signup nor a saved cart reserves paid-customer status.</StatusNote>
+          <LaunchLinks/>
+        </ContentSection>
+      </div></div>
 
       <section id="what-pops-does" className="section" data-orb-target="pops.home.what-is-pops">
         <div className="container">
@@ -92,11 +114,11 @@ export default function HomePage() {
             </div>
             <div className="feature-card" data-orb-target="pops.home.evidence-vault">
               <h3>Preserve</h3>
-              <p>Keep originals, hash files with SHA-256, and maintain evidence integrity for later review.</p>
+              <p>Preserve source context and compare file contents with recorded SHA-256 hashes where supported by the release.</p>
             </div>
             <div className="feature-card" data-orb-target="pops.home.records">
               <h3>Organize</h3>
-              <p>Build timelines, evidence indexes, incident logs, communication summaries, and attorney-ready packets.</p>
+              <p>Connect event notes and supporting material in a chronology. Specific reports and attorney handoff exports remain subject to release verification.</p>
             </div>
           </div>
         </div>

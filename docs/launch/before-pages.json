@@ -1,0 +1,203 @@
+[
+  {
+    "route": "/",
+    "actualPath": "/",
+    "words": 323,
+    "title": "POPS | Proof of Presence System for Fathers",
+    "hooks": [
+      "pops.nav.access",
+      "pops.nav.get-pops",
+      "pops.home.what-is-pops",
+      "pops.home.capture",
+      "pops.home.evidence-vault",
+      "pops.home.records",
+      "pops.home.local-first"
+    ]
+  },
+  {
+    "route": "/about",
+    "actualPath": "/about",
+    "words": 963,
+    "title": "About POPS | First Order of Protection",
+    "hooks": [
+      "pops.nav.access",
+      "pops.nav.get-pops"
+    ]
+  },
+  {
+    "route": "/desktop-app",
+    "actualPath": "/desktop-app",
+    "words": 222,
+    "title": "P.O.P.S. - Proof of Presence System",
+    "hooks": [
+      "pops.nav.access",
+      "pops.nav.get-pops"
+    ]
+  },
+  {
+    "route": "/product-demo",
+    "actualPath": "/product-demo",
+    "words": 297,
+    "title": "POPS Product Demo | Windows Evidence Workspace",
+    "hooks": [
+      "pops.nav.access",
+      "pops.nav.get-pops"
+    ]
+  },
+  {
+    "route": "/see-pops-in-action",
+    "actualPath": "/see-pops-in-action",
+    "words": 182,
+    "title": "See POPS in Action | Proof of Presence System",
+    "hooks": [
+      "pops.nav.access",
+      "pops.nav.get-pops"
+    ]
+  },
+  {
+    "route": "/how-you-use-it",
+    "actualPath": "/how-you-use-it",
+    "words": 127,
+    "title": "How You Use POPS | P.O.P.S.",
+    "hooks": [
+      "pops.nav.access",
+      "pops.nav.get-pops"
+    ]
+  },
+  {
+    "route": "/access",
+    "actualPath": "/access",
+    "words": 418,
+    "title": "Get POPS | Local-First Evidence System",
+    "hooks": [
+      "pops.nav.access",
+      "pops.nav.get-pops",
+      "pops.access.options",
+      "pops.access.standard",
+      "pops.access.hardship",
+      "pops.access.sponsor",
+      "pops.access.membership",
+      "pops.access.local-first"
+    ]
+  },
+  {
+    "route": "/account",
+    "actualPath": "/account",
+    "words": 71,
+    "title": "POPS Account Signup | Access and Updates",
+    "hooks": [
+      "pops.nav.access",
+      "pops.nav.get-pops"
+    ]
+  },
+  {
+    "route": "/cart",
+    "actualPath": "/cart",
+    "words": 67,
+    "title": "Cart | POPS",
+    "hooks": [
+      "pops.nav.access",
+      "pops.nav.get-pops"
+    ]
+  },
+  {
+    "route": "/checkout",
+    "actualPath": "/cart",
+    "words": 67,
+    "title": "Cart | POPS",
+    "hooks": [
+      "pops.nav.access",
+      "pops.nav.get-pops"
+    ]
+  },
+  {
+    "route": "/counsel-handoff",
+    "actualPath": "/counsel-handoff",
+    "words": 437,
+    "title": "Counsel Handoff | POPS Attorney Packet Export",
+    "hooks": [
+      "pops.nav.access",
+      "pops.nav.get-pops"
+    ]
+  },
+  {
+    "route": "/events",
+    "actualPath": "/events",
+    "words": 25,
+    "title": "POPS Events | Updates and Q&A",
+    "hooks": [
+      "pops.nav.access",
+      "pops.nav.get-pops"
+    ]
+  },
+  {
+    "route": "/attorney-referral",
+    "actualPath": "/attorney-referral",
+    "words": 373,
+    "title": "POPS Noted Counsel | Merit Recognition",
+    "hooks": [
+      "pops.nav.access",
+      "pops.nav.get-pops"
+    ]
+  },
+  {
+    "route": "/lexicon",
+    "actualPath": "/lexicon",
+    "words": 831,
+    "title": "POPS Lexicon | Court-Safe Evidence Language",
+    "hooks": [
+      "pops.nav.access",
+      "pops.nav.get-pops"
+    ]
+  },
+  {
+    "route": "/declaration",
+    "actualPath": "/declaration",
+    "words": 902,
+    "title": "The POPS Declaration | First Order of Protection",
+    "hooks": [
+      "pops.nav.access",
+      "pops.nav.get-pops"
+    ]
+  },
+  {
+    "route": "/pledge",
+    "actualPath": "/pledge",
+    "words": 371,
+    "title": "The POPS Pledge | Preserve Protect Prove",
+    "hooks": [
+      "pops.nav.access",
+      "pops.nav.get-pops"
+    ]
+  },
+  {
+    "route": "/terms",
+    "actualPath": "/terms",
+    "words": 189,
+    "title": "POPS Terms of Service | Proof of Presence System",
+    "hooks": [
+      "pops.nav.access",
+      "pops.nav.get-pops"
+    ]
+  },
+  {
+    "route": "/privacy",
+    "actualPath": "/privacy",
+    "words": 1230,
+    "title": "POPS Privacy Notice | Local-First Records",
+    "hooks": [
+      "pops.nav.access",
+      "pops.nav.get-pops"
+    ]
+  },
+  {
+    "route": "/policies-procedures",
+    "actualPath": "/policies-procedures",
+    "words": 1337,
+    "title": "POPS Policies and Procedures | Operating Standards",
+    "hooks": [
+      "pops.nav.access",
+      "pops.nav.get-pops"
+    ]
+  }
+]

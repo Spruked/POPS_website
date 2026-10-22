@@ -1,0 +1,25 @@
+{
+  "authorization": "Owner explicitly authorized website ORB narration, targeting, sequencing and interaction changes for the mini application; preserve normal operation and TPC/Correspondence/Doctrine architecture.",
+  "files": [
+    {
+      "path": "src/orb/WebsiteFloatingOrb.tsx",
+      "sha256LF": "964194b37a50addc2586e1f83ca78f4f67355333e0e7e759685917eaffdedc0a"
+    },
+    {
+      "path": "src/orb/WebsiteOrbPointerOverlay.tsx",
+      "sha256LF": "f6e741c99abaec2e741fe331d56669a771f936cdd041d63429876e45a67dce44"
+    },
+    {
+      "path": "src/orb/pointerGuideController.ts",
+      "sha256LF": "604c13d3902ac5a7491e8ac6953b78d1fbd9bee06657f514f370bbacd2fc58d4"
+    },
+    {
+      "path": "src/orb/pointerTargetRegistry.ts",
+      "sha256LF": "9afaa0b6b8d9d9dda15284de7673b4fd274a953ffdbff5fad8ed2acc8f7ff232"
+    },
+    {
+      "path": "src/orb/websiteOrbTargetTypes.ts",
+      "sha256LF": "598c12799537b34b2ff1f06d99b063d73be4105efb8dfed0ef7381e5ae60abfc"
+    }
+  ]
+}

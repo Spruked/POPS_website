@@ -1,9 +1,7 @@
 User-agent: *
 Allow: /
-Allow: /lexicon/
-Disallow: /account
-Disallow: /cart
-Disallow: /checkout
 Disallow: /api/
 
+# Private pages use noindex metadata and are excluded from the sitemap.
+# They remain crawlable so crawlers can see noindex; robots.txt is not access control.
 Sitemap: https://pops.spruked.com/sitemap.xml

@@ -1,4 +1,4 @@
-import { createContext, useContext, useMemo, useState } from "react";
+import { createContext, useContext, useEffect, useMemo, useState } from "react";
 import type { ReactNode } from "react";
 
 export interface Product {
@@ -24,6 +24,7 @@ interface CartContextValue {
   clearCart: () => void;
   itemCount: number;
   subtotal: number;
+  persistenceAvailable: boolean;
 }
 
 const CartContext = createContext<CartContextValue | undefined>(undefined);
@@ -36,7 +37,7 @@ export const PRODUCTS: Product[] = [
     priceLabel: "$99",
     period: "one-time Windows app license",
     description: "Full POPS desktop app access with lifetime POPS Membership included.",
-    fulfillment: "Windows installer and license activation instructions after checkout.",
+    fulfillment: "Selection only. Installer delivery and activation instructions are not yet available.",
   },
   {
     id: "opendoor",
@@ -55,7 +56,7 @@ export const PRODUCTS: Product[] = [
     priceLabel: "$25+",
     period: "support contribution",
     description: "Help fund approved Open Door license capacity.",
-    fulfillment: "Sponsorship receipt and confirmation after checkout.",
+    fulfillment: "Selection only. Sponsorship payments are unavailable.",
   },
   {
     id: "membership",
@@ -64,7 +65,7 @@ export const PRODUCTS: Product[] = [
     priceLabel: "$12.99",
     period: "one-time lifetime membership",
     description: "Lifetime community membership for updates, education, events, and resource drops.",
-    fulfillment: "Membership confirmation after checkout.",
+    fulfillment: "Selection only. Membership payment and service availability remain to be confirmed.",
   },
 ];
 
@@ -79,58 +80,51 @@ export function formatCurrency(amount: number) {
   }).format(amount);
 }
 
+const CART_KEY = "pops:website-cart:v1";
+function normalizeCart(value: unknown): CartItem[] {
+  if (!Array.isArray(value)) return [];
+  const result: CartItem[] = [];
+  for (const entry of value) {
+    if (!entry || typeof entry !== 'object') continue;
+    const product = PRODUCTS.find(item => item.id === entry.id && !item.requiresReview);
+    if (!product || result.some(item => item.id === product.id)) continue;
+    const raw = Number(entry.quantity);
+    if (!Number.isFinite(raw) || raw < 1) continue;
+    const quantity = product.id === 'sponsor' ? Math.min(99, Math.floor(raw)) : 1;
+    result.push({...product, quantity});
+  }
+  return result.some(item => item.id === 'guardian') ? result.filter(item => item.id !== 'membership') : result;
+}
+function readCart(): CartItem[] {
+  try { const saved=JSON.parse(localStorage.getItem(CART_KEY) || '[]'); return normalizeCart(saved); }
+  catch { return []; }
+}
 export function CartProvider({ children }: { children: ReactNode }) {
-  const [items, setItems] = useState<CartItem[]>([]);
-
-  const value = useMemo<CartContextValue>(() => {
-    function addItem(product: Product) {
-      setItems((current) => {
-        const existing = current.find((item) => item.id === product.id);
-
-        if (existing) {
-          return current.map((item) =>
-            item.id === product.id
-              ? { ...item, quantity: item.quantity + 1 }
-              : item
-          );
-        }
-
-        return [...current, { ...product, quantity: 1 }];
-      });
-    }
-
-    function removeItem(id: string) {
-      setItems((current) => current.filter((item) => item.id !== id));
-    }
-
-    function updateQuantity(id: string, quantity: number) {
-      setItems((current) =>
-        current
-          .map((item) =>
-            item.id === id ? { ...item, quantity: Math.max(1, quantity) } : item
-          )
-          .filter((item) => item.quantity > 0)
-      );
-    }
-
-    function clearCart() {
-      setItems([]);
-    }
-
-    const itemCount = items.reduce((total, item) => total + item.quantity, 0);
-    const subtotal = items.reduce((total, item) => total + item.price * item.quantity, 0);
-
-    return {
-      items,
-      addItem,
-      removeItem,
-      updateQuantity,
-      clearCart,
-      itemCount,
-      subtotal,
-    };
-  }, [items]);
-
+  const [items,setItems] = useState<CartItem[]>(readCart);
+  const [persistenceAvailable,setPersistenceAvailable] = useState(true);
+  useEffect(() => {
+    try { localStorage.setItem(CART_KEY, JSON.stringify(items.map(({id,quantity})=>({id,quantity})))); setPersistenceAvailable(true); }
+    catch { setPersistenceAvailable(false); }
+  },[items]);
+  useEffect(() => {
+    const update=(event: StorageEvent)=> {if(event.key===CART_KEY || event.key===null)setItems(readCart());};
+    window.addEventListener('storage',update);
+    return ()=>window.removeEventListener('storage',update);
+  },[]);
+  const value=useMemo<CartContextValue>(()=>({
+    items, persistenceAvailable,
+    addItem: (product) => setItems(current=>{
+      const canonical=getProduct(product.id);
+      if(!canonical || canonical.requiresReview || (canonical.id==='membership' && current.some(item=>item.id==='guardian')))return current;
+      const existing=current.find(item=>item.id===canonical.id);
+      return normalizeCart(existing ? current.map(item=>item.id===canonical.id ? {...item,quantity:item.quantity+1}:item):[...current,{...canonical,quantity:1}]);
+    }),
+    removeItem: (id)=>setItems(current=>current.filter(item=>item.id!==id)),
+    updateQuantity: (id,quantity)=>setItems(current=>normalizeCart(current.map(item=>item.id===id?{...item,quantity}:item))),
+    clearCart: ()=>setItems([]),
+    itemCount: items.reduce((total,item)=>total+item.quantity,0),
+    subtotal: items.reduce((total,item)=>total+Math.round(item.price*100)*item.quantity,0)/100,
+  }),[items,persistenceAvailable]);
   return <CartContext.Provider value={value}>{children}</CartContext.Provider>;
 }
 

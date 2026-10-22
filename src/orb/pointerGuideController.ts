@@ -1,4 +1,5 @@
 import { getPointerTarget } from "./pointerTargetRegistry";
+import { findDemoTarget, getDemoVisibleRect, scrollDemoTargetIntoView } from '../pops-demo-app/tour/orbBridge';
 import type { WebsiteOrbGuideRequest, WebsiteOrbGuideState, WebsiteOrbTarget } from "./websiteOrbTargetTypes";
 
 export const WEBSITE_ORB_GUIDE_EVENT = "pops:website-orb-guide-target";
@@ -20,10 +21,14 @@ export function guideRequestFromPulse(pulse: Record<string, unknown> | undefined
 }
 
 export function findPointerTargetElement(target: WebsiteOrbTarget): HTMLElement | null {
-  return document.querySelector<HTMLElement>(target.selector);
+  return target.id.startsWith('pops.demo.') ? findDemoTarget(target.selector) : document.querySelector<HTMLElement>(target.selector);
 }
 
 export function scrollPointerTargetIntoView(element: HTMLElement) {
+  if (element.getRootNode() instanceof ShadowRoot && (element.getRootNode() as ShadowRoot).host.id === 'pops-demo-root') {
+    scrollDemoTargetIntoView(element);
+    return;
+  }
   element.scrollIntoView({ behavior: "smooth", block: "center", inline: "center" });
 }
 
@@ -35,9 +40,10 @@ export function buildGuideState(
 ): WebsiteOrbGuideState {
   return {
     target,
-    rect: element.getBoundingClientRect(),
+    rect: target.id.startsWith('pops.demo.') ? getDemoVisibleRect(element) || element.getBoundingClientRect() : element.getBoundingClientRect(),
     message: message || target.description,
     pulseKey,
+    hidden: target.id.startsWith('pops.demo.') && !getDemoVisibleRect(element),
   };
 }
 

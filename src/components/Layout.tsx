@@ -7,6 +7,17 @@ interface LayoutProps {
   children: React.ReactNode;
 }
 
+const secondaryLinks = [
+  ["/about", "About / Our Mission"], ["/declaration", "Declaration"],
+  ["/pledge", "Pledge"], ["/lexicon", "Lexicon"],
+  ["/early-adopters", "Early Adopters"], ["/how-you-use-it", "How It Works"],
+  ["/installation", "Installation"], ["/faq", "FAQs"],
+  ["/support", "Contact & Support"], ["/counsel-handoff", "Counsel Handoff"],
+  ["/events", "Events"], ["/attorney-referral", "Noted Counsel"],
+  ["/policies-procedures", "Policies & Procedures"], ["/terms", "Terms of Service"],
+  ["/privacy", "Privacy Notice"],
+];
+
 export default function Layout({ children }: LayoutProps) {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -24,11 +35,23 @@ export default function Layout({ children }: LayoutProps) {
     setMobileOpen(false);
   }, [location.pathname]);
 
+  useEffect(() => {
+    if (!mobileOpen) return;
+    const onKey = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        setMobileOpen(false);
+        document.getElementById('site-menu-control')?.focus();
+      }
+    };
+    window.addEventListener('keydown', onKey);
+    return () => window.removeEventListener('keydown', onKey);
+  }, [mobileOpen]);
+
   return (
     <div className="page">
       <nav
         aria-label="Primary navigation"
-        className="nav"
+        className="nav site-header"
         style={{
           background: scrolled ? "rgba(7, 10, 15, 0.95)" : "rgba(7, 10, 15, 0.6)",
           boxShadow: scrolled ? "0 4px 24px rgba(0,0,0,0.3)" : "none",
@@ -44,24 +67,27 @@ export default function Layout({ children }: LayoutProps) {
             </div>
           </Link>
 
-          <div id="primary-navigation" className={`nav-links${mobileOpen ? " is-open" : ""}`} style={{ display: mobileOpen ? "flex" : undefined }}>
-            <Link to="/" className="nav-link">Landing</Link>
-            <Link to="/about" className="nav-link">About</Link>
-            <Link to="/see-pops-in-action" className="nav-link">In Action</Link>
-            <Link to="/declaration" className="nav-link">Declaration</Link>
-            <Link to="/pledge" className="nav-link">Pledge</Link>
-            <Link to="/lexicon" className="nav-link">Lexicon</Link>
-            <Link to="/access" className="nav-link" data-orb-target="pops.nav.access">Access</Link>
-            <Link to="/cart" className="nav-cart" aria-label={`Cart with ${itemCount} item${itemCount === 1 ? "" : "s"}`}>
+          <div id="primary-navigation" className={`nav-links${mobileOpen ? " is-open" : ""}`} onClick={(event) => { if ((event.target as HTMLElement).closest('a')) setMobileOpen(false); }}>
+            <Link to="/" className="nav-link" aria-current={location.pathname==='/'?'page':undefined}>Home</Link>
+            <Link to="/desktop-app" className="nav-link" aria-current={location.pathname==='/desktop-app'?'page':undefined}>Windows</Link>
+            <Link to="/android" className="nav-link" aria-current={location.pathname==='/android'?'page':undefined}>Android</Link>
+            <Link to="/product-demo" className="nav-link" aria-current={location.pathname==='/product-demo'?'page':undefined}>Demo</Link>
+            <Link to="/beta" className="nav-link" aria-current={location.pathname==='/beta'?'page':undefined}>Beta</Link>
+            <Link to="/access" className="nav-link" data-orb-target="pops.nav.access" aria-current={location.pathname==='/access'?'page':undefined}>Pricing</Link>
+            <Link to="/account" className="nav-link" aria-current={location.pathname.startsWith('/account')?'page':undefined}>Sign In</Link>
+            <Link to="/cart" className="nav-cart" aria-label={`Cart with ${itemCount} item${itemCount === 1 ? "" : "s"}`} aria-current={location.pathname==='/cart'?'page':undefined}>
               <ShoppingCart size={17} />
               <span>Cart</span>
               {itemCount > 0 && <strong>{itemCount}</strong>}
             </Link>
-            <Link to="/access" className="nav-cta" data-orb-target="pops.nav.get-pops">Get P.O.P.S.</Link>
+            <div className="site-mobile-secondary">{secondaryLinks.map(([href,label])=><Link key={href} className="nav-link" to={href} aria-current={location.pathname===href?'page':undefined}>{label}</Link>)}</div>
           </div>
+
+          <Link to="/access" className="nav-cta site-purchase" data-orb-target="pops.nav.get-pops">Get P.O.P.S.</Link>
 
           <button
             className="nav-menu-toggle"
+            id="site-menu-control"
             type="button"
             aria-label={mobileOpen ? "Close navigation" : "Open navigation"}
             aria-expanded={mobileOpen}
@@ -69,13 +95,20 @@ export default function Layout({ children }: LayoutProps) {
             onClick={() => setMobileOpen(!mobileOpen)}
           >
             {mobileOpen ? <X size={24} /> : <Menu size={24} />}
+            <span>{mobileOpen ? "Close" : "Menu"}</span>
           </button>
         </div>
       </nav>
 
-      <main key={location.pathname} className="animate-in">{children}</main>
+      <div className="site-frame">
+        <aside className="site-secondary" aria-labelledby="site-navigation-title">
+          <div className="site-secondary-inner"><h2 id="site-navigation-title">Explore P.O.P.S.</h2><p>Our purpose, your next steps.</p><nav aria-label="Site navigation">{secondaryLinks.map(([href,label])=><Link key={href} to={href} aria-current={location.pathname===href?'page':undefined}>{label}</Link>)}</nav></div>
+        </aside>
+        <main id="site-main-content" key={location.pathname} className="animate-in">{children}</main>
+      </div>
 
       <footer className="footer">
+        <div className="container"><nav className="launch-links" aria-label="Products, participation and help"><Link to="/desktop-app">Windows</Link><Link to="/android">Android</Link><Link to="/beta">Beta program</Link><Link to="/early-adopters">Early adopters</Link><Link to="/installation">Installation</Link><Link to="/faq">FAQs</Link><Link to="/support">Contact & privacy support</Link></nav></div>
         <div className="footer-inner">
           <div className="footer-brand">
             <img src="/popsbadge.png" alt="POPS badge" className="footer-badge" />

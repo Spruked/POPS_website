@@ -1,0 +1,190 @@
+{
+  "pages": [
+    {
+      "path": "/",
+      "kind": "public",
+      "bytes": 22596
+    },
+    {
+      "path": "/about",
+      "kind": "public",
+      "bytes": 22744
+    },
+    {
+      "path": "/desktop-app",
+      "kind": "public",
+      "bytes": 18696
+    },
+    {
+      "path": "/android",
+      "kind": "public",
+      "bytes": 14887
+    },
+    {
+      "path": "/how-you-use-it",
+      "kind": "public",
+      "bytes": 16418
+    },
+    {
+      "path": "/product-demo",
+      "kind": "public",
+      "bytes": 14307
+    },
+    {
+      "path": "/see-pops-in-action",
+      "kind": "public",
+      "bytes": 14383
+    },
+    {
+      "path": "/access",
+      "kind": "public",
+      "bytes": 16772
+    },
+    {
+      "path": "/beta",
+      "kind": "public",
+      "bytes": 16040
+    },
+    {
+      "path": "/early-adopters",
+      "kind": "public",
+      "bytes": 15264
+    },
+    {
+      "path": "/installation",
+      "kind": "public",
+      "bytes": 14619
+    },
+    {
+      "path": "/faq",
+      "kind": "public",
+      "bytes": 21992
+    },
+    {
+      "path": "/support",
+      "kind": "public",
+      "bytes": 14839
+    },
+    {
+      "path": "/counsel-handoff",
+      "kind": "public",
+      "bytes": 15675
+    },
+    {
+      "path": "/events",
+      "kind": "public",
+      "bytes": 10995
+    },
+    {
+      "path": "/attorney-referral",
+      "kind": "public",
+      "bytes": 13624
+    },
+    {
+      "path": "/declaration",
+      "kind": "public",
+      "bytes": 16844
+    },
+    {
+      "path": "/pledge",
+      "kind": "public",
+      "bytes": 13391
+    },
+    {
+      "path": "/lexicon",
+      "kind": "public",
+      "bytes": 23273
+    },
+    {
+      "path": "/terms",
+      "kind": "public",
+      "bytes": 11892
+    },
+    {
+      "path": "/privacy",
+      "kind": "public",
+      "bytes": 20037
+    },
+    {
+      "path": "/policies-procedures",
+      "kind": "public",
+      "bytes": 20883
+    },
+    {
+      "path": "/lexicon/culpable",
+      "kind": "public",
+      "bytes": 12211
+    },
+    {
+      "path": "/lexicon/exculpatory",
+      "kind": "public",
+      "bytes": 12308
+    },
+    {
+      "path": "/lexicon/pro-se",
+      "kind": "public",
+      "bytes": 12149
+    },
+    {
+      "path": "/lexicon/prima-facie",
+      "kind": "public",
+      "bytes": 12255
+    },
+    {
+      "path": "/lexicon/estoppel",
+      "kind": "public",
+      "bytes": 12286
+    },
+    {
+      "path": "/lexicon/habeas-corpus",
+      "kind": "public",
+      "bytes": 12386
+    },
+    {
+      "path": "/lexicon/fifth-amendment",
+      "kind": "public",
+      "bytes": 12427
+    },
+    {
+      "path": "/lexicon/fourteenth-amendment",
+      "kind": "public",
+      "bytes": 12557
+    },
+    {
+      "path": "/lexicon/due-process",
+      "kind": "public",
+      "bytes": 12324
+    },
+    {
+      "path": "/lexicon/equal-protection",
+      "kind": "public",
+      "bytes": 12478
+    },
+    {
+      "path": "/account",
+      "kind": "signed-out-noindex-shell",
+      "bytes": 13007
+    },
+    {
+      "path": "/account/verify",
+      "kind": "signed-out-noindex-shell",
+      "bytes": 12806
+    },
+    {
+      "path": "/account/reset",
+      "kind": "signed-out-noindex-shell",
+      "bytes": 13184
+    },
+    {
+      "path": "/cart",
+      "kind": "signed-out-noindex-shell",
+      "bytes": 11607
+    },
+    {
+      "path": "/checkout",
+      "kind": "signed-out-noindex-shell",
+      "bytes": 11788
+    }
+  ],
+  "publicPageDefinitions": 22
+}

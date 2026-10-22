@@ -15,13 +15,13 @@ export default function EventsPage() {
             <span className="mono">Events</span>
             <h1>Events</h1>
             <p>
-              This page is the public calendar for POPS education, live Q&amp;A sessions, community updates, and future registration information.
+              No live sessions are scheduled on this page yet. Future announcements will identify the topic, date, time zone, participation link, and replay availability. A proposed product demonstration will use fictional records to show a practical Windows workflow; no launch date or giveaway is announced.
             </p>
           </div>
 
           <div className="hero-actions" style={{ justifyContent: "center" }}>
             <Link to="/" className="btn btn-ghost">Back to Landing</Link>
-            <Link to="/about" className="btn btn-primary">About POPS</Link>
+            <Link to="/beta" className="btn btn-primary">Explore beta participation</Link><Link to="/see-pops-in-action" className="btn btn-ghost">Walkthrough recording status</Link>
           </div>
         </div>
       </section>

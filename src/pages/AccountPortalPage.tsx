@@ -1,95 +1,36 @@
-import { FormEvent, useState } from "react";
-import { Link } from "react-router-dom";
-import PageSeo from "../components/PageSeo";
-
-export default function AccountPortalPage() {
-  const [submitted, setSubmitted] = useState(false);
-
-  function onSubmit(e: FormEvent<HTMLFormElement>) {
-    e.preventDefault();
-    setSubmitted(true);
-  }
-
-  return (
-    <div style={{ paddingTop: 88 }}>
-      <PageSeo
-        title="POPS Account Signup | Access and Updates"
-        description="Create a POPS account to manage product access, downloads, release updates, and future account-connected services."
-        path="/account"
-        indexable={false}
-      />
-      <section className="section">
-        <div className="container" style={{ maxWidth: 780 }}>
-          <div className="section-header">
-            <span className="mono">Account and Open Door Access</span>
-            <h1>Manage Your POPS Access</h1>
-            <p>
-              Use this page to create or manage the account connected to your POPS access, downloads, updates, and Open Door review.
-            </p>
-          </div>
-
-          <div className="card" style={{ padding: 28 }}>
-            <form onSubmit={onSubmit} className="form-grid">
-              <div className="form-group">
-                <label>Full Name</label>
-                <input required placeholder="Your name" />
-              </div>
-              <div className="form-group">
-                <label>Email Address</label>
-                <input type="email" required placeholder="you@example.com" />
-              </div>
-              <div className="form-group">
-                <label>Password</label>
-                <input type="password" required placeholder="Create password" />
-              </div>
-              <div className="form-group">
-                <label>Confirm Password</label>
-                <input type="password" required placeholder="Confirm password" />
-              </div>
-
-              <div className="form-group" style={{ gridColumn: "1 / -1" }}>
-                <label style={{ display: "flex", gap: 10, alignItems: "center", textTransform: "none", letterSpacing: 0 }}>
-                  <input type="checkbox" required />
-                  I agree to the <Link to="/terms">Terms of Service</Link>.
-                </label>
-              </div>
-
-              <div className="form-group" style={{ gridColumn: "1 / -1" }}>
-                <label style={{ display: "flex", gap: 10, alignItems: "center", textTransform: "none", letterSpacing: 0 }}>
-                  <input type="checkbox" required />
-                  I agree to the <Link to="/privacy">Privacy Statement</Link>.
-                </label>
-              </div>
-
-              <div className="form-group" style={{ gridColumn: "1 / -1" }}>
-                <label style={{ display: "flex", gap: 10, alignItems: "center", textTransform: "none", letterSpacing: 0 }}>
-                  <input type="checkbox" required />
-                  I acknowledge the <Link to="/policies-procedures">Policies and Procedures</Link>.
-                </label>
-              </div>
-
-              <div className="form-group" style={{ gridColumn: "1 / -1" }}>
-                <label style={{ display: "flex", gap: 10, alignItems: "center", textTransform: "none", letterSpacing: 0 }}>
-                  <input type="checkbox" />
-                  Send product updates and release notifications.
-                </label>
-              </div>
-
-              <div style={{ gridColumn: "1 / -1", display: "flex", gap: 12, flexWrap: "wrap" }}>
-                <button type="submit" className="btn btn-primary">Create Account</button>
-                <Link to="/pricing" className="btn btn-ghost">See Pricing</Link>
-                <Link to="/" className="btn btn-ghost">Back to Landing</Link>
-              </div>
-            </form>
-
-            {submitted && (
-              <p style={{ marginTop: 16, color: "#10b981", fontWeight: 600 }}>
-                This form is ready for connection to the POPS account service. No account has been created yet.
-              </p>
-            )}
-          </div>
-        </div>
-      </section>
-    </div>
-  );
+import { useEffect, useState } from 'react';
+import type { FormEvent } from 'react';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { LaunchPage, ContentSection as Section, LaunchLinks, StatusNote } from '../components/LaunchContent';
+import { CustomerField, FormFeedback } from '../components/CustomerForms';
+import { CustomerError, customerPost, customerSession } from '../services/customerApi';
+import type { CustomerSession } from '../services/customerApi';
+export default function AccountPortalPage(){
+ const location=useLocation(),navigate=useNavigate();
+ const query=new URLSearchParams(location.search);
+ const mode=location.pathname.endsWith('/verify')?'verify':location.pathname.endsWith('/reset')?'reset':query.get('mode')||'login';
+ const [session,setSession]=useState<CustomerSession|null>(null),[busy,setBusy]=useState(false),[message,setMessage]=useState(''),[failed,setFailed]=useState(false),[errors,setErrors]=useState<Record<string,string[]>>({});
+ async function refresh(){try{setSession(await customerSession());}catch{setFailed(true);setMessage('The customer service is unavailable. Account actions cannot be completed right now.');}}
+ useEffect(()=>{void refresh();},[]);
+ useEffect(()=>{setMessage(location.state?.accountMessage || '');setErrors({});setFailed(false);},[location.pathname,location.search,location.state]);
+ async function submit(event:FormEvent<HTMLFormElement>){event.preventDefault();const form=event.currentTarget;const payload:Record<string,unknown>=Object.fromEntries(new FormData(form));if(mode==='register')payload.consent=payload.consent==='on';if(mode==='verify')payload.token=query.get('token')||'';if(mode==='reset'){payload.token=query.get('token')||'';payload.uid=query.get('uid')||'';}setBusy(true);setMessage('');setErrors({});setFailed(false);try{const action=({login:'login',register:'register',recovery:'recovery',verification:'verification',verify:'verify',reset:'reset'} as Record<string,string>)[mode]||'login';const result=await customerPost(action,payload);setMessage(result.message);form.reset();await refresh();if(mode==='verify'||mode==='reset'){navigate('/account',{replace:true,state:{accountMessage:result.message}});}}catch(error){setFailed(true);setMessage(error instanceof Error?error.message:'Unable to complete this request.');if(error instanceof CustomerError)setErrors(error.fields);}finally{setBusy(false);}}
+ async function signOut(){setBusy(true);try{const result=await customerPost('logout',{});await refresh();setMessage(result.message);setFailed(false);}catch(error){setFailed(true);setMessage(error instanceof Error?error.message:'Unable to sign out.');}finally{setBusy(false);}}
+ const heading=mode==='register'?'Create your website account':mode==='recovery'?'Recover your website account':mode==='verification'?'Request a verification link':mode==='verify'?'Verify your email address':mode==='reset'?'Choose a new website password':'Your P.O.P.S. website account';
+ return <LaunchPage title="P.O.P.S. Customer Account | Sign In, Register & Recover" description="Create or access your P.O.P.S. website account, verify your email, and recover your password. Website accounts remain separate from local application evidence." path="/account" indexable={false} eyebrow="Website customer account" heading={heading} intro="Manage your website identity and view beta interest associated with your verified email. This account does not contain local case evidence, issue a desktop license, or establish a purchase.">
+ {session?.development&&<StatusNote>Local preview: verification and recovery emails are written to the development outbox on this PC, not sent to your inbox. Records persist in the isolated customer database. They do not reach production.</StatusNote>}
+ <Section id="account-access" title={session?.user?'Account information':'Secure account access'}>
+ {session?.user?<div className="launch-card"><dl className="launch-facts"><div><dt>Name</dt><dd>{session.user.name}</dd></div><div><dt>Verified email</dt><dd>{session.user.email}</dd></div><div><dt>Beta interest</dt><dd>{session.user.beta?`${session.user.beta.status} review · ${session.user.beta.platform}`:'No beta interest is linked to this email.'}</dd></div><div><dt>Purchase status</dt><dd>No purchase or first-100 qualification is issued by this preview.</dd></div></dl><button className="btn btn-ghost" onClick={signOut} disabled={busy}>Sign out</button><FormFeedback message={message} error={failed}/></div>:<>
+ <nav className="launch-tabs" aria-label="Account actions"><Link className="btn btn-ghost" to="/account">Sign in</Link><Link className="btn btn-ghost" to="/account?mode=register">Create account</Link><Link className="btn btn-ghost" to="/account?mode=recovery">Forgot password</Link><Link className="btn btn-ghost" to="/account?mode=verification">Resend verification</Link></nav>
+ <form className="launch-form" onSubmit={submit} key={mode} aria-busy={busy}>
+ {mode==='register'&&<CustomerField name="name" label="Name" autoComplete="name" required maxLength={100} errors={errors}/>}
+ {!['verify','reset'].includes(mode)&&<CustomerField name="email" label="Email address" type="email" autoComplete="email" maxLength={150} required errors={errors}/>}
+ {mode==='login'&&<CustomerField name="password" label="Password" type="password" autoComplete="current-password" required errors={errors}/>}
+ {['register','reset'].includes(mode)&&<><CustomerField name={mode==='reset'?'new_password1':'password1'} label="New password" type="password" autoComplete="new-password" minLength={12} required errors={errors}/><CustomerField name={mode==='reset'?'new_password2':'password2'} label="Confirm new password" type="password" autoComplete="new-password" minLength={12} required errors={errors}/><p>Use at least 12 characters. Avoid common, numeric-only, or personally identifying passwords.</p></>}
+ {mode==='register'&&<label className="launch-check"><input type="checkbox" name="consent" required/><span>I agree to the <Link to="/terms">Terms of Service</Link> and acknowledge the <Link to="/privacy">Privacy Notice</Link> and <Link to="/policies-procedures">Policies and Procedures</Link>.</span></label>}
+ {mode==='verify'&&<p>Confirm this action to verify the address associated with your link. Verification does not sign you in automatically.</p>}
+ {errors.__all__&&<span className="launch-field-error">{errors.__all__.join(' ')}</span>}
+ <FormFeedback message={message} error={failed}/>
+ <button className="btn btn-primary" disabled={busy}>{busy?'Working…':mode==='register'?'Create account':mode==='recovery'?'Request password reset':mode==='verification'?'Request verification link':mode==='verify'?'Verify email':mode==='reset'?'Change password':'Sign in'}</button>
+ </form></>}
+ </Section><Section id="account-boundaries" title="Your website identity is separate from your evidence"><p>Do not enter court records, private messages, child identifiers, or case files into account forms. The website service stores customer identity and session information, not local Vault contents. A password reset concerns this website only.</p><p>Checkout is unavailable. Registration does not activate Windows software, grant Android access, approve Open Door assistance, or reserve beta or founding-customer status. If you need help with verification or an unavailable service, use <Link to="/support">Contact & Support</Link>.</p></Section><LaunchLinks/></LaunchPage>;
 }

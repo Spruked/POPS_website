@@ -1,0 +1,923 @@
+[
+  {
+    "path": "/",
+    "intent": "Understand parenting-time evidence software",
+    "indexable": true,
+    "title": "POPS | Proof of Presence System for Fathers",
+    "description": "Explore P.O.P.S. Windows software for fathers organizing parenting-time notes, supporting files, and timelines. Learn about Android plans, beta testing, and access.",
+    "robots": "index, follow, max-image-preview:large",
+    "canonical": "https://pops.spruked.com/",
+    "descriptionCount": 1,
+    "h1s": 1,
+    "words": 718,
+    "ids": [
+      "home-product-purpose",
+      "home-product-purpose-title",
+      "home-practical-example",
+      "home-practical-example-title",
+      "home-participate",
+      "home-participate-title",
+      "what-pops-does"
+    ],
+    "hooks": [
+      "pops.nav.access",
+      "pops.nav.get-pops",
+      "pops.home.what-is-pops",
+      "pops.home.capture",
+      "pops.home.evidence-vault",
+      "pops.home.records",
+      "pops.home.local-first"
+    ],
+    "links": [
+      "/access",
+      "/see-pops-in-action",
+      "/declaration",
+      "/desktop-app",
+      "/android",
+      "/how-you-use-it",
+      "/desktop-app",
+      "/android",
+      "/beta",
+      "/early-adopters",
+      "/faq",
+      "/support",
+      "/#what-pops-does",
+      "/declaration",
+      "/pledge",
+      "/lexicon",
+      "/access"
+    ],
+    "overflow": false,
+    "beforeWords": 323
+  },
+  {
+    "path": "/about",
+    "intent": "Understand the P.O.P.S. purpose",
+    "indexable": true,
+    "title": "About POPS | First Order of Protection",
+    "description": "Learn the POPS mission, doctrine, local-first evidence model, and the discipline behind Proof of Presence.",
+    "robots": "index, follow, max-image-preview:large",
+    "canonical": "https://pops.spruked.com/about",
+    "descriptionCount": 1,
+    "h1s": 1,
+    "words": 997,
+    "ids": [],
+    "hooks": [
+      "pops.nav.access",
+      "pops.nav.get-pops"
+    ],
+    "links": [],
+    "overflow": false,
+    "beforeWords": 963
+  },
+  {
+    "path": "/desktop-app",
+    "intent": "Evaluate Windows evidence organization software",
+    "indexable": true,
+    "title": "P.O.P.S. Windows Software | Evidence, Events & Timelines",
+    "description": "Explore P.O.P.S. Windows desktop software for parenting-time records, evidence organization, timelines, integrity checks, and release-qualified review outputs.",
+    "robots": "index, follow, max-image-preview:large",
+    "canonical": "https://pops.spruked.com/desktop-app",
+    "descriptionCount": 1,
+    "h1s": 1,
+    "words": 867,
+    "ids": [
+      "windows-purpose",
+      "windows-purpose-title",
+      "windows-workflows",
+      "windows-workflows-title",
+      "windows-example",
+      "windows-example-title",
+      "windows-integrity",
+      "windows-integrity-title",
+      "windows-included",
+      "windows-included-title",
+      "windows-start",
+      "windows-start-title"
+    ],
+    "hooks": [
+      "pops.nav.access",
+      "pops.nav.get-pops"
+    ],
+    "links": [
+      "/how-you-use-it",
+      "/access",
+      "/installation",
+      "/see-pops-in-action",
+      "/desktop-app",
+      "/android",
+      "/beta",
+      "/early-adopters",
+      "/faq",
+      "/support"
+    ],
+    "overflow": false,
+    "beforeWords": 222
+  },
+  {
+    "path": "/android",
+    "intent": "Understand Android capture development status",
+    "indexable": true,
+    "title": "P.O.P.S. Android Companion | Development & Capture Plans",
+    "description": "Explore the forthcoming P.O.P.S. Android companion: intended evidence capture, provenance validation, offline-first work, and planned Windows synchronization.",
+    "robots": "index, follow, max-image-preview:large",
+    "canonical": "https://pops.spruked.com/android",
+    "descriptionCount": 1,
+    "h1s": 1,
+    "words": 460,
+    "ids": [
+      "android-capture",
+      "android-capture-title",
+      "android-status",
+      "android-status-title",
+      "android-example",
+      "android-example-title",
+      "android-participation",
+      "android-participation-title"
+    ],
+    "hooks": [
+      "pops.nav.access",
+      "pops.nav.get-pops"
+    ],
+    "links": [
+      "/beta",
+      "/desktop-app",
+      "/android",
+      "/beta",
+      "/early-adopters",
+      "/faq",
+      "/support"
+    ],
+    "overflow": false,
+    "beforeWords": 0
+  },
+  {
+    "path": "/how-you-use-it",
+    "intent": "Learn the event-to-record workflow",
+    "indexable": true,
+    "title": "How P.O.P.S. Works | From Parenting-Time Event to Organized Record",
+    "description": "Follow a fictional missed-exchange example through event notes, supporting files, source context, chronology, review, and release-qualified outputs.",
+    "robots": "index, follow, max-image-preview:large",
+    "canonical": "https://pops.spruked.com/how-you-use-it",
+    "descriptionCount": 1,
+    "h1s": 1,
+    "words": 678,
+    "ids": [
+      "workflow-capture",
+      "workflow-capture-title",
+      "workflow-preserve",
+      "workflow-preserve-title",
+      "workflow-organize",
+      "workflow-organize-title",
+      "workflow-review",
+      "workflow-review-title",
+      "workflow-report",
+      "workflow-report-title"
+    ],
+    "hooks": [
+      "pops.nav.access",
+      "pops.nav.get-pops"
+    ],
+    "links": [
+      "/counsel-handoff",
+      "/desktop-app",
+      "/desktop-app",
+      "/android",
+      "/beta",
+      "/early-adopters",
+      "/faq",
+      "/support"
+    ],
+    "overflow": false,
+    "beforeWords": 127
+  },
+  {
+    "path": "/product-demo",
+    "intent": "Explore a representative Windows workspace",
+    "indexable": true,
+    "title": "Pops! Interactive Application Demo | Guided Fictional Case Tour",
+    "description": "Tour real Pops! application screens adapted for a fictional case: dossier, relationships, incident, evidence, timeline, and review, with scripted Pops narration.",
+    "robots": "index, follow, max-image-preview:large",
+    "canonical": "https://pops.spruked.com/product-demo",
+    "descriptionCount": 1,
+    "h1s": 1,
+    "words": 379,
+    "ids": [
+      "demo-workspace",
+      "demo-workspace-title",
+      "demo-how-to-explore",
+      "demo-how-to-explore-title",
+      "demo-boundaries",
+      "demo-boundaries-title"
+    ],
+    "hooks": [
+      "pops.nav.access",
+      "pops.nav.get-pops"
+    ],
+    "links": [
+      "/desktop-app",
+      "/access",
+      "/see-pops-in-action",
+      "/desktop-app",
+      "/android",
+      "/beta",
+      "/early-adopters",
+      "/faq",
+      "/support"
+    ],
+    "overflow": false,
+    "beforeWords": 297
+  },
+  {
+    "path": "/see-pops-in-action",
+    "intent": "Find actual application demonstration availability",
+    "indexable": true,
+    "title": "P.O.P.S. Walkthrough | Official Recording Status & Demo Guide",
+    "description": "Check the P.O.P.S. walkthrough recording status and follow the planned real-product demonstration of an event, supporting files, timeline, and review.",
+    "robots": "index, follow, max-image-preview:large",
+    "canonical": "https://pops.spruked.com/see-pops-in-action",
+    "descriptionCount": 1,
+    "h1s": 1,
+    "words": 382,
+    "ids": [
+      "walkthrough-recording",
+      "walkthrough-recording-title",
+      "walkthrough-chapters",
+      "walkthrough-chapters-title",
+      "walkthrough-expectations",
+      "walkthrough-expectations-title"
+    ],
+    "hooks": [
+      "pops.nav.access",
+      "pops.nav.get-pops"
+    ],
+    "links": [
+      "/how-you-use-it",
+      "/product-demo",
+      "/desktop-app",
+      "/android",
+      "/beta",
+      "/early-adopters",
+      "/faq",
+      "/support"
+    ],
+    "overflow": false,
+    "beforeWords": 182
+  },
+  {
+    "path": "/access",
+    "intent": "Compare Windows license and access paths",
+    "indexable": true,
+    "title": "Get P.O.P.S. | Windows License, Membership & Access Options",
+    "description": "Review the existing P.O.P.S. Windows offer, included membership, reviewed assistance, and sponsorship options. Save a selection; checkout is not yet available.",
+    "robots": "index, follow, max-image-preview:large",
+    "canonical": "https://pops.spruked.com/access",
+    "descriptionCount": 1,
+    "h1s": 1,
+    "words": 538,
+    "ids": [
+      "access-options",
+      "access-options-title",
+      "access-guardian",
+      "opendoor-access",
+      "sponsor-access",
+      "access-membership",
+      "access-assistance",
+      "access-assistance-title",
+      "access-local-first",
+      "access-local-first-title",
+      "access-before-purchase",
+      "access-before-purchase-title"
+    ],
+    "hooks": [
+      "pops.nav.access",
+      "pops.nav.get-pops",
+      "pops.access.options",
+      "pops.access.standard",
+      "pops.access.hardship",
+      "pops.access.sponsor",
+      "pops.access.membership",
+      "pops.access.activation",
+      "pops.access.local-first",
+      "pops.access.checkout"
+    ],
+    "links": [
+      "#access-assistance",
+      "/policies-procedures",
+      "/support",
+      "/cart",
+      "/early-adopters",
+      "/faq",
+      "/checkout",
+      "/desktop-app",
+      "/android",
+      "/beta",
+      "/early-adopters",
+      "/faq",
+      "/support"
+    ],
+    "overflow": false,
+    "beforeWords": 418
+  },
+  {
+    "path": "/beta",
+    "intent": "Express interest in active beta participation",
+    "indexable": true,
+    "title": "P.O.P.S. Beta Program | Seeking 50 Active Test Participants",
+    "description": "Express interest in P.O.P.S. beta testing. Learn the 50-participant goal, expected activities, feedback process, privacy precautions, and invitation limitations.",
+    "robots": "index, follow, max-image-preview:large",
+    "canonical": "https://pops.spruked.com/beta",
+    "descriptionCount": 1,
+    "h1s": 1,
+    "words": 498,
+    "ids": [
+      "beta-expectations",
+      "beta-expectations-title",
+      "beta-activities",
+      "beta-activities-title",
+      "beta-feedback",
+      "beta-feedback-title",
+      "beta-enrollment",
+      "beta-enrollment-title",
+      "customer-name",
+      "customer-email",
+      "beta-platform",
+      "beta-experience",
+      "customer-website"
+    ],
+    "hooks": [
+      "pops.nav.access",
+      "pops.nav.get-pops"
+    ],
+    "links": [
+      "/support",
+      "/privacy",
+      "/desktop-app",
+      "/android",
+      "/beta",
+      "/early-adopters",
+      "/faq",
+      "/support"
+    ],
+    "overflow": false,
+    "beforeWords": 0
+  },
+  {
+    "path": "/early-adopters",
+    "intent": "Understand first-100 paid customer program",
+    "indexable": true,
+    "title": "P.O.P.S. Founding Customers | First 100 Paid Adopters",
+    "description": "Learn about the planned first-100 P.O.P.S. customer program, one-time Windows licensing, included membership, and benefits awaiting approval.",
+    "robots": "index, follow, max-image-preview:large",
+    "canonical": "https://pops.spruked.com/early-adopters",
+    "descriptionCount": 1,
+    "h1s": 1,
+    "words": 497,
+    "ids": [
+      "founding-purpose",
+      "founding-purpose-title",
+      "founding-license",
+      "founding-license-title",
+      "founding-status",
+      "founding-status-title",
+      "founding-vs-beta",
+      "founding-vs-beta-title"
+    ],
+    "hooks": [
+      "pops.nav.access",
+      "pops.nav.get-pops"
+    ],
+    "links": [
+      "/access",
+      "/cart",
+      "/beta",
+      "/desktop-app",
+      "/android",
+      "/beta",
+      "/early-adopters",
+      "/faq",
+      "/support"
+    ],
+    "overflow": false,
+    "beforeWords": 0
+  },
+  {
+    "path": "/installation",
+    "intent": "Prepare for Windows installation and onboarding",
+    "indexable": true,
+    "title": "Install P.O.P.S. for Windows | Onboarding Preparation",
+    "description": "Prepare for P.O.P.S. Windows installation: release requirements, trusted delivery, activation, first records, backups, and technical support.",
+    "robots": "index, follow, max-image-preview:large",
+    "canonical": "https://pops.spruked.com/installation",
+    "descriptionCount": 1,
+    "h1s": 1,
+    "words": 420,
+    "ids": [
+      "installation-requirements",
+      "installation-requirements-title",
+      "installation-steps",
+      "installation-steps-title",
+      "installation-first-record",
+      "installation-first-record-title",
+      "installation-help",
+      "installation-help-title"
+    ],
+    "hooks": [
+      "pops.nav.access",
+      "pops.nav.get-pops"
+    ],
+    "links": [
+      "/support",
+      "/desktop-app",
+      "/android",
+      "/beta",
+      "/early-adopters",
+      "/faq",
+      "/support"
+    ],
+    "overflow": false,
+    "beforeWords": 0
+  },
+  {
+    "path": "/faq",
+    "intent": "Resolve product and purchasing questions",
+    "indexable": true,
+    "title": "P.O.P.S. Buying FAQs | Licensing, Beta, Android & Privacy",
+    "description": "Answers about P.O.P.S. Windows licensing, one-time purchases, beta testing, Android plans, file integrity, delivery, and support.",
+    "robots": "index, follow, max-image-preview:large",
+    "canonical": "https://pops.spruked.com/faq",
+    "descriptionCount": 1,
+    "h1s": 1,
+    "words": 685,
+    "ids": [
+      "buying-questions",
+      "faq-1",
+      "faq-2",
+      "faq-3",
+      "faq-4",
+      "faq-5",
+      "faq-6",
+      "faq-7",
+      "faq-8",
+      "faq-9",
+      "faq-10",
+      "faq-11",
+      "faq-12"
+    ],
+    "hooks": [
+      "pops.nav.access",
+      "pops.nav.get-pops"
+    ],
+    "links": [
+      "/desktop-app",
+      "/android",
+      "/beta",
+      "/early-adopters",
+      "/faq",
+      "/support"
+    ],
+    "overflow": false,
+    "beforeWords": 0
+  },
+  {
+    "path": "/support",
+    "intent": "Find technical, account and privacy support",
+    "indexable": true,
+    "title": "Contact P.O.P.S. | Installation, Account & Beta Support",
+    "description": "Contact P.O.P.S. about installation, website accounts, beta feedback, licensing, or privacy without submitting private family records or evidence.",
+    "robots": "index, follow, max-image-preview:large",
+    "canonical": "https://pops.spruked.com/support",
+    "descriptionCount": 1,
+    "h1s": 1,
+    "words": 352,
+    "ids": [
+      "support-before-contact",
+      "support-before-contact-title",
+      "support-request",
+      "support-request-title",
+      "customer-email",
+      "support-category",
+      "support-message",
+      "support-message-help",
+      "customer-website",
+      "support-boundaries",
+      "support-boundaries-title"
+    ],
+    "hooks": [
+      "pops.nav.access",
+      "pops.nav.get-pops"
+    ],
+    "links": [
+      "/account?mode=recovery",
+      "/faq",
+      "/privacy",
+      "/desktop-app",
+      "/android",
+      "/beta",
+      "/early-adopters",
+      "/faq",
+      "/support"
+    ],
+    "overflow": false,
+    "beforeWords": 0
+  },
+  {
+    "path": "/counsel-handoff",
+    "intent": "Understand release-qualified review exports",
+    "indexable": true,
+    "title": "P.O.P.S. Counsel Handoff | Review Materials & Export Validation",
+    "description": "Understand intended P.O.P.S. counsel handoff: selected records, chronology, evidence indexes, provenance context, and export capabilities awaiting release verification.",
+    "robots": "index, follow, max-image-preview:large",
+    "canonical": "https://pops.spruked.com/counsel-handoff",
+    "descriptionCount": 1,
+    "h1s": 1,
+    "words": 525,
+    "ids": [
+      "handoff-scope",
+      "handoff-scope-title",
+      "handoff-contents",
+      "handoff-contents-title",
+      "handoff-integrity",
+      "handoff-integrity-title",
+      "handoff-delivery",
+      "handoff-delivery-title"
+    ],
+    "hooks": [
+      "pops.nav.access",
+      "pops.nav.get-pops"
+    ],
+    "links": [
+      "/how-you-use-it",
+      "/support",
+      "/desktop-app",
+      "/android",
+      "/beta",
+      "/early-adopters",
+      "/faq",
+      "/support"
+    ],
+    "overflow": false,
+    "beforeWords": 437
+  },
+  {
+    "path": "/events",
+    "intent": "Find demonstration and event availability",
+    "indexable": true,
+    "title": "POPS Events | Updates and Q&A",
+    "description": "POPS events, live Q&A sessions, community updates, and future registration information for fathers using Proof of Presence.",
+    "robots": "index, follow, max-image-preview:large",
+    "canonical": "https://pops.spruked.com/events",
+    "descriptionCount": 1,
+    "h1s": 1,
+    "words": 55,
+    "ids": [],
+    "hooks": [
+      "pops.nav.access",
+      "pops.nav.get-pops"
+    ],
+    "links": [
+      "/",
+      "/beta",
+      "/see-pops-in-action"
+    ],
+    "overflow": false,
+    "beforeWords": 25
+  },
+  {
+    "path": "/attorney-referral",
+    "intent": "Understand Noted Counsel merit recognition",
+    "indexable": true,
+    "title": "POPS Noted Counsel | Merit Recognition",
+    "description": "POPS Noted Counsel is a positive-only merit recognition page for attorneys recognized by POPS users for professional, respectful, and useful help.",
+    "robots": "index, follow, max-image-preview:large",
+    "canonical": "https://pops.spruked.com/attorney-referral",
+    "descriptionCount": 1,
+    "h1s": 1,
+    "words": 373,
+    "ids": [],
+    "hooks": [
+      "pops.nav.access",
+      "pops.nav.get-pops"
+    ],
+    "links": [
+      "/",
+      "/pricing"
+    ],
+    "overflow": false,
+    "beforeWords": 373
+  },
+  {
+    "path": "/declaration",
+    "intent": "Read the established Declaration",
+    "indexable": true,
+    "title": "The POPS Declaration | First Order of Protection",
+    "description": "The POPS Declaration defines fathers as the First Order of Protection through presence, evidence, guardianship, and record keeping.",
+    "robots": "index, follow, max-image-preview:large",
+    "canonical": "https://pops.spruked.com/declaration",
+    "descriptionCount": 1,
+    "h1s": 1,
+    "words": 902,
+    "ids": [],
+    "hooks": [
+      "pops.nav.access",
+      "pops.nav.get-pops"
+    ],
+    "links": [
+      "/access"
+    ],
+    "overflow": false,
+    "beforeWords": 902
+  },
+  {
+    "path": "/pledge",
+    "intent": "Read the established Pledge",
+    "indexable": true,
+    "title": "The POPS Pledge | Preserve Protect Prove",
+    "description": "The POPS Pledge is a commitment to vigilance, restraint, record keeping, lawful presence, and permanent protection.",
+    "robots": "index, follow, max-image-preview:large",
+    "canonical": "https://pops.spruked.com/pledge",
+    "descriptionCount": 1,
+    "h1s": 1,
+    "words": 371,
+    "ids": [],
+    "hooks": [
+      "pops.nav.access",
+      "pops.nav.get-pops"
+    ],
+    "links": [
+      "/access"
+    ],
+    "overflow": false,
+    "beforeWords": 371
+  },
+  {
+    "path": "/lexicon",
+    "intent": "Learn factual recordkeeping terminology",
+    "indexable": true,
+    "title": "POPS Lexicon | Court-Safe Evidence Language",
+    "description": "Search the POPS Lexicon for plain-English courtroom terms, evidence language, factual rewrite guidance, and court-safe recordkeeping explanations.",
+    "robots": "index, follow, max-image-preview:large",
+    "canonical": "https://pops.spruked.com/lexicon",
+    "descriptionCount": 1,
+    "h1s": 1,
+    "words": 831,
+    "ids": [
+      "lexicon-search"
+    ],
+    "hooks": [
+      "pops.nav.access",
+      "pops.nav.get-pops"
+    ],
+    "links": [
+      "/lexicon/culpable",
+      "/lexicon/culpable",
+      "/lexicon/exculpatory",
+      "/lexicon/exculpatory",
+      "/lexicon/pro-se",
+      "/lexicon/pro-se",
+      "/lexicon/prima-facie",
+      "/lexicon/prima-facie",
+      "/lexicon/estoppel",
+      "/lexicon/estoppel",
+      "/lexicon/habeas-corpus",
+      "/lexicon/habeas-corpus",
+      "/lexicon/fifth-amendment",
+      "/lexicon/fifth-amendment",
+      "/lexicon/fourteenth-amendment",
+      "/lexicon/fourteenth-amendment",
+      "/lexicon/due-process",
+      "/lexicon/due-process",
+      "/lexicon/equal-protection",
+      "/lexicon/equal-protection"
+    ],
+    "overflow": false,
+    "beforeWords": 831
+  },
+  {
+    "path": "/terms",
+    "intent": "Read existing service terms",
+    "indexable": true,
+    "title": "POPS Terms of Service | Proof of Presence System",
+    "description": "Terms for using the POPS website and desktop application, including scope, user responsibility, access, payment, and disclaimers.",
+    "robots": "index, follow, max-image-preview:large",
+    "canonical": "https://pops.spruked.com/terms",
+    "descriptionCount": 1,
+    "h1s": 1,
+    "words": 189,
+    "ids": [],
+    "hooks": [
+      "pops.nav.access",
+      "pops.nav.get-pops"
+    ],
+    "links": [],
+    "overflow": false,
+    "beforeWords": 189
+  },
+  {
+    "path": "/privacy",
+    "intent": "Read existing privacy notice",
+    "indexable": true,
+    "title": "POPS Privacy Notice | Local-First Records",
+    "description": "Read the POPS privacy and operational notice covering local-first records, website forms, user control, and sensitive evidence boundaries.",
+    "robots": "index, follow, max-image-preview:large",
+    "canonical": "https://pops.spruked.com/privacy",
+    "descriptionCount": 1,
+    "h1s": 1,
+    "words": 1230,
+    "ids": [],
+    "hooks": [
+      "pops.nav.access",
+      "pops.nav.get-pops"
+    ],
+    "links": [],
+    "overflow": false,
+    "beforeWords": 1230
+  },
+  {
+    "path": "/policies-procedures",
+    "intent": "Read existing operating and access policies",
+    "indexable": true,
+    "title": "POPS Policies and Procedures | Operating Standards",
+    "description": "POPS policies and procedures for acceptable use, Open Door Access, evidence organization, record integrity, and Noted Counsel recognition.",
+    "robots": "index, follow, max-image-preview:large",
+    "canonical": "https://pops.spruked.com/policies-procedures",
+    "descriptionCount": 1,
+    "h1s": 1,
+    "words": 1337,
+    "ids": [],
+    "hooks": [
+      "pops.nav.access",
+      "pops.nav.get-pops"
+    ],
+    "links": [],
+    "overflow": false,
+    "beforeWords": 1337
+  },
+  {
+    "path": "/account",
+    "intent": "Private customer or transactional action",
+    "indexable": false,
+    "title": "P.O.P.S. Customer Account | Sign In, Register & Recover",
+    "description": "Create or access your P.O.P.S. website account, verify your email, and recover your password. Website accounts remain separate from local application evidence.",
+    "robots": "noindex, nofollow",
+    "canonical": "https://pops.spruked.com/account",
+    "descriptionCount": 1,
+    "h1s": 1,
+    "words": 179,
+    "ids": [
+      "account-access",
+      "account-access-title",
+      "customer-email",
+      "customer-password",
+      "account-boundaries",
+      "account-boundaries-title"
+    ],
+    "hooks": [
+      "pops.nav.access",
+      "pops.nav.get-pops"
+    ],
+    "links": [
+      "/account",
+      "/account?mode=register",
+      "/account?mode=recovery",
+      "/account?mode=verification",
+      "/support",
+      "/desktop-app",
+      "/android",
+      "/beta",
+      "/early-adopters",
+      "/faq",
+      "/support"
+    ],
+    "overflow": false,
+    "beforeWords": 71
+  },
+  {
+    "path": "/account/verify",
+    "intent": "Private customer or transactional action",
+    "indexable": false,
+    "title": "P.O.P.S. Customer Account | Sign In, Register & Recover",
+    "description": "Create or access your P.O.P.S. website account, verify your email, and recover your password. Website accounts remain separate from local application evidence.",
+    "robots": "noindex, nofollow",
+    "canonical": "https://pops.spruked.com/account",
+    "descriptionCount": 1,
+    "h1s": 1,
+    "words": 194,
+    "ids": [
+      "account-access",
+      "account-access-title",
+      "account-boundaries",
+      "account-boundaries-title"
+    ],
+    "hooks": [
+      "pops.nav.access",
+      "pops.nav.get-pops"
+    ],
+    "links": [
+      "/account",
+      "/account?mode=register",
+      "/account?mode=recovery",
+      "/account?mode=verification",
+      "/support",
+      "/desktop-app",
+      "/android",
+      "/beta",
+      "/early-adopters",
+      "/faq",
+      "/support"
+    ],
+    "overflow": false,
+    "beforeWords": 0
+  },
+  {
+    "path": "/account/reset",
+    "intent": "Private customer or transactional action",
+    "indexable": false,
+    "title": "P.O.P.S. Customer Account | Sign In, Register & Recover",
+    "description": "Create or access your P.O.P.S. website account, verify your email, and recover your password. Website accounts remain separate from local application evidence.",
+    "robots": "noindex, nofollow",
+    "canonical": "https://pops.spruked.com/account",
+    "descriptionCount": 1,
+    "h1s": 1,
+    "words": 194,
+    "ids": [
+      "account-access",
+      "account-access-title",
+      "customer-new_password1",
+      "customer-new_password2",
+      "account-boundaries",
+      "account-boundaries-title"
+    ],
+    "hooks": [
+      "pops.nav.access",
+      "pops.nav.get-pops"
+    ],
+    "links": [
+      "/account",
+      "/account?mode=register",
+      "/account?mode=recovery",
+      "/account?mode=verification",
+      "/support",
+      "/desktop-app",
+      "/android",
+      "/beta",
+      "/early-adopters",
+      "/faq",
+      "/support"
+    ],
+    "overflow": false,
+    "beforeWords": 0
+  },
+  {
+    "path": "/cart",
+    "intent": "Private customer or transactional action",
+    "indexable": false,
+    "title": "Cart | POPS",
+    "description": "Review your POPS cart before completing secure checkout through Square.",
+    "robots": "noindex, nofollow",
+    "canonical": "https://pops.spruked.com/cart",
+    "descriptionCount": 1,
+    "h1s": 1,
+    "words": 73,
+    "ids": [],
+    "hooks": [
+      "pops.nav.access",
+      "pops.nav.get-pops"
+    ],
+    "links": [
+      "/access",
+      "/access"
+    ],
+    "overflow": false,
+    "beforeWords": 67
+  },
+  {
+    "path": "/checkout",
+    "intent": "Private customer or transactional action",
+    "indexable": false,
+    "title": "Checkout Unavailable | P.O.P.S.",
+    "description": "P.O.P.S. checkout is not active. Review your saved selection; no payment, billing record, order, or license is created.",
+    "robots": "noindex, nofollow",
+    "canonical": "https://pops.spruked.com/checkout",
+    "descriptionCount": 1,
+    "h1s": 1,
+    "words": 136,
+    "ids": [
+      "checkout-selection",
+      "checkout-selection-title",
+      "checkout-next-steps",
+      "checkout-next-steps-title"
+    ],
+    "hooks": [
+      "pops.nav.access",
+      "pops.nav.get-pops"
+    ],
+    "links": [
+      "/cart",
+      "/faq",
+      "/support"
+    ],
+    "overflow": false,
+    "beforeWords": 67
+  }
+]

@@ -1,0 +1,50 @@
+[
+    {
+        "step":  "dashboard",
+        "voice":  "Microsoft David Desktop",
+        "text":  "Welcome to Pops! This is a fictional Morgan family case. The dashboard connects the case, its order, deadlines, and supporting records. Nothing here is a real family record.",
+        "sha256":  "332CC7B4DE229EFD714CE956705744A1126726DF219267480C556F5E7FC6822D"
+    },
+    {
+        "step":  "dossier",
+        "voice":  "Microsoft David Desktop",
+        "text":  "The dossier keeps people and their context together. Alex is documenting an exchange with Jamie. Jordan Lee is the fictional attorney, and Riley is a possible source of context. Open a contact to inspect their linked records.",
+        "sha256":  "DF828E8A88F2D460C857C9486D30631C4B078A493A0F7456B442D53393660941"
+    },
+    {
+        "step":  "relationships",
+        "voice":  "Microsoft David Desktop",
+        "text":  "This relationship tree is a conceptual preview. It displays the relationships explicitly supplied in the fictional dossiers. It does not infer a family relationship or independently verify anyone’s role. Select a person to see their connections.",
+        "sha256":  "F8DB44C44A1D1142E914BE7C07C9AC9B2D2C5C2BDAADDC96B54BABAFA68E7519"
+    },
+    {
+        "step":  "incident",
+        "voice":  "Microsoft David Desktop",
+        "text":  "On October tenth, Alex recorded an unsuccessful exchange attempt. Open the incident to see the scheduled time, observed arrival, example message, and linked files. A recorded incident is not a legal finding.",
+        "sha256":  "E864B22202FFBCD97F2D5E1D49B920A4BE8F787F1063B1FB6B2DA307D42F0ECC"
+    },
+    {
+        "step":  "evidence",
+        "voice":  "Microsoft David Desktop",
+        "text":  "The Evidence Vault links three fictional text fixtures to that exchange. Open a file and compare its SHA-256 fingerprint. The calculation is real, but it checks only this bundled example text. It cannot prove that an exchange happened.",
+        "sha256":  "C661AD4068B15917F693DABA75A16A6C633FCB34974DE31CF3F60DE0BF30F6E1"
+    },
+    {
+        "step":  "timeline",
+        "voice":  "Microsoft David Desktop",
+        "text":  "The timeline places the arrangements, the exchange attempt, and preparation for review in order. Each entry keeps its source context and linked evidence. Chronology makes the sequence easier to review without turning it into an independently verified account.",
+        "sha256":  "BF3465E756AED38E67D9F4EFC2A1316A340EE0107666A3B722C462A631A3B26F"
+    },
+    {
+        "step":  "review",
+        "voice":  "Microsoft David Desktop",
+        "text":  "Review brings the selected chronology and supporting items together. Preview the fictional report and check its scope. Export is disabled here. An organized packet is preparation for review, not a guarantee of admissibility or a court result.",
+        "sha256":  "72C530791C9B161F66EFCC9232BF048CD549F89A75A27EAC75E65CA27F2737FB"
+    },
+    {
+        "step":  "get-pops",
+        "voice":  "Microsoft David Desktop",
+        "text":  "That is the complete fictional record: people, an incident, supporting evidence, chronology, and review. Explore Windows access or beta participation when you are ready. Checkout remains unavailable, and this demo does not create a license or an order.",
+        "sha256":  "6E648DDAB507DD04724E76C8283F9BD10279A84441E9452BFD2EE82FF491D7AF"
+    }
+]
