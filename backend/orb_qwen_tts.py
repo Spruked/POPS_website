@@ -1,4 +1,5 @@
 """HTTP adapter to the installed Qwen CLI's verified Gradio API. No TTS engine."""
+import asyncio
 import json
 import os
 from pathlib import Path
@@ -6,8 +7,57 @@ import re
 from urllib.parse import quote, urlparse
 import httpx
 
+_WINDOWS_BRIDGE_CODE = r'''
+import json
+import sys
+import urllib.request
+
+url = sys.argv[1]
+text = sys.stdin.buffer.read(8192).decode('utf-8')
+request = urllib.request.Request(
+    url + '/synthesize',
+    data=json.dumps({'text': text, 'format': 'wav'}).encode('utf-8'),
+    headers={'Content-Type': 'application/json'},
+)
+with urllib.request.urlopen(request, timeout=110) as response:
+    if response.headers.get_content_type() != 'audio/wav':
+        raise ValueError('Qwen bridge did not return WAV audio')
+    audio = response.read(16_777_217)
+if len(audio) > 16_777_216:
+    raise ValueError('Qwen bridge audio exceeds the limit')
+sys.stdout.buffer.write(audio)
+'''
+
+
+async def _synthesize_windows_bridge(text: str, base: str) -> bytes:
+    origin = urlparse(base)
+    if (origin.scheme, origin.hostname, origin.port, origin.path) != ('http', '127.0.0.1', 8020, ''):
+        raise ValueError('The existing Windows Qwen bridge must remain on 127.0.0.1:8020.')
+    python = os.environ.get('ORB_TTS_WINDOWS_PYTHON', '/mnt/c/Users/bryan/AppData/Local/Programs/Python/Python312/python.exe')
+    if not Path(python).is_file():
+        raise ValueError('The configured Windows Python interpreter is unavailable.')
+    process = await asyncio.create_subprocess_exec(
+        python, '-c', _WINDOWS_BRIDGE_CODE, base,
+        stdin=asyncio.subprocess.PIPE,
+        stdout=asyncio.subprocess.PIPE,
+        stderr=asyncio.subprocess.PIPE,
+    )
+    try:
+        audio, error = await asyncio.wait_for(process.communicate(text.encode('utf-8')), timeout=120)
+    except TimeoutError:
+        process.kill()
+        await process.wait()
+        raise ValueError('The existing Qwen bridge timed out.') from None
+    if process.returncode != 0:
+        raise ValueError('The existing Qwen bridge could not synthesize audio.')
+    if len(audio) <= 44 or audio[:4] != b'RIFF' or audio[8:12] != b'WAVE':
+        raise ValueError('The existing Qwen bridge returned invalid WAV audio.')
+    return audio
+
 async def synthesize(text:str)->bytes:
     base=os.environ.get('ORB_TTS_QWEN_URL','').rstrip('/')
+    if os.environ.get('ORB_TTS_QWEN_PAYLOAD_MODE') == 'windows-bridge':
+        return await _synthesize_windows_bridge(text, base)
     origin=urlparse(base)
     if origin.scheme!='http' or origin.hostname not in {'localhost','127.0.0.1','::1'} or origin.path:
         raise ValueError('Qwen CLI must use a configured loopback origin.')

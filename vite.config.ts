@@ -38,5 +38,25 @@ export default defineConfig({
         changeOrigin: true
       }
     }
+  },
+  preview: {
+    host: "0.0.0.0",
+    port: 18030,
+    strictPort: true,
+    allowedHosts: ["pops.spruked.com"],
+    proxy: {
+      "/api/customer": {
+        target: "http://127.0.0.1:8787",
+        changeOrigin: false
+      },
+      "/api/checkout": {
+        target: "http://127.0.0.1:8787",
+        changeOrigin: false
+      },
+      "/api": {
+        target: "http://127.0.0.1:8001",
+        changeOrigin: true
+      }
+    }
   }
 });

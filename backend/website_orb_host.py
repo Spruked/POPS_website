@@ -106,7 +106,7 @@ async def speech(payload:Speech,request:Request):
         if revision!=item.revision or await request.is_disconnected():raise HTTPException(409,'Speech request interrupted.')
         provider='qwen'
         try:
-            if os.getenv('ORB_TTS_QWEN_PAYLOAD_MODE')=='gradio-custom-voice':
+            if os.getenv('ORB_TTS_QWEN_PAYLOAD_MODE') in {'gradio-custom-voice','windows-bridge'}:
                 from .orb_qwen_tts import synthesize
                 audio=await synthesize(turn.content['content'])
             else:

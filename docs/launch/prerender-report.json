@@ -3,207 +3,207 @@
     {
       "path": "/",
       "kind": "public",
-      "bytes": 22596
+      "bytes": 22550
     },
     {
       "path": "/about",
       "kind": "public",
-      "bytes": 22744
+      "bytes": 22698
     },
     {
       "path": "/desktop-app",
       "kind": "public",
-      "bytes": 18696
+      "bytes": 18650
     },
     {
       "path": "/android",
       "kind": "public",
-      "bytes": 14887
+      "bytes": 14841
     },
     {
       "path": "/how-you-use-it",
       "kind": "public",
-      "bytes": 16418
+      "bytes": 16372
     },
     {
       "path": "/product-demo",
       "kind": "public",
-      "bytes": 14473
+      "bytes": 14427
     },
     {
       "path": "/see-pops-in-action",
       "kind": "public",
-      "bytes": 14383
+      "bytes": 14337
     },
     {
       "path": "/access",
       "kind": "public",
-      "bytes": 16772
+      "bytes": 16726
     },
     {
       "path": "/beta",
       "kind": "public",
-      "bytes": 16040
+      "bytes": 15994
     },
     {
       "path": "/early-adopters",
       "kind": "public",
-      "bytes": 15264
+      "bytes": 15218
     },
     {
       "path": "/installation",
       "kind": "public",
-      "bytes": 14619
+      "bytes": 14573
     },
     {
       "path": "/faq",
       "kind": "public",
-      "bytes": 21992
+      "bytes": 21946
     },
     {
       "path": "/support",
       "kind": "public",
-      "bytes": 14839
+      "bytes": 14793
     },
     {
       "path": "/counsel-handoff",
       "kind": "public",
-      "bytes": 15675
+      "bytes": 15629
     },
     {
       "path": "/events",
       "kind": "public",
-      "bytes": 10995
+      "bytes": 10949
     },
     {
       "path": "/attorney-referral",
       "kind": "public",
-      "bytes": 13624
+      "bytes": 13578
     },
     {
       "path": "/declaration",
       "kind": "public",
-      "bytes": 16844
+      "bytes": 16798
     },
     {
       "path": "/pledge",
       "kind": "public",
-      "bytes": 13391
+      "bytes": 13345
     },
     {
       "path": "/lexicon",
       "kind": "public",
-      "bytes": 23273
+      "bytes": 23227
     },
     {
       "path": "/terms",
       "kind": "public",
-      "bytes": 11892
+      "bytes": 11846
     },
     {
       "path": "/privacy",
       "kind": "public",
-      "bytes": 20037
+      "bytes": 19991
     },
     {
       "path": "/policies-procedures",
       "kind": "public",
-      "bytes": 20883
+      "bytes": 20837
     },
     {
       "path": "/lexicon/culpable",
       "kind": "public",
-      "bytes": 12211
+      "bytes": 12165
     },
     {
       "path": "/lexicon/exculpatory",
       "kind": "public",
-      "bytes": 12308
+      "bytes": 12262
     },
     {
       "path": "/lexicon/pro-se",
       "kind": "public",
-      "bytes": 12149
+      "bytes": 12103
     },
     {
       "path": "/lexicon/prima-facie",
       "kind": "public",
-      "bytes": 12255
+      "bytes": 12209
     },
     {
       "path": "/lexicon/estoppel",
       "kind": "public",
-      "bytes": 12286
+      "bytes": 12240
     },
     {
       "path": "/lexicon/habeas-corpus",
       "kind": "public",
-      "bytes": 12386
+      "bytes": 12340
     },
     {
       "path": "/lexicon/fifth-amendment",
       "kind": "public",
-      "bytes": 12427
+      "bytes": 12381
     },
     {
       "path": "/lexicon/fourteenth-amendment",
       "kind": "public",
-      "bytes": 12557
+      "bytes": 12511
     },
     {
       "path": "/lexicon/due-process",
       "kind": "public",
-      "bytes": 12324
+      "bytes": 12278
     },
     {
       "path": "/lexicon/equal-protection",
       "kind": "public",
-      "bytes": 12478
+      "bytes": 12432
     },
     {
       "path": "/account",
       "kind": "signed-out-noindex-shell",
-      "bytes": 13166
+      "bytes": 13120
     },
     {
       "path": "/account/verify",
       "kind": "signed-out-noindex-shell",
-      "bytes": 13108
+      "bytes": 13062
     },
     {
       "path": "/account/reset",
       "kind": "signed-out-noindex-shell",
-      "bytes": 13483
+      "bytes": 13437
     },
     {
       "path": "/cart",
       "kind": "signed-out-noindex-shell",
-      "bytes": 11607
+      "bytes": 11561
     },
     {
       "path": "/checkout",
       "kind": "signed-out-noindex-shell",
-      "bytes": 11788
+      "bytes": 11742
     },
     {
       "path": "/account/profile",
       "kind": "signed-out-noindex-shell",
-      "bytes": 13315
+      "bytes": 13269
     },
     {
       "path": "/account/preferences",
       "kind": "signed-out-noindex-shell",
-      "bytes": 13356
+      "bytes": 13310
     },
     {
       "path": "/account/admin",
       "kind": "signed-out-noindex-shell",
-      "bytes": 13307
+      "bytes": 13261
     },
     {
       "path": "/account/email/verify",
       "kind": "signed-out-noindex-shell",
-      "bytes": 13260
+      "bytes": 13214
     }
   ],
   "publicPageDefinitions": 22
