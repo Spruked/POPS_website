@@ -102,6 +102,7 @@ export default function WebsiteFloatingOrb() {
   const [pendingGuide, setPendingGuide] = useState<WebsiteOrbGuideRequest | null>(null);
 
   const cursorRef = useRef({ x: -1000, y: -1000 });
+  const coreRef = useRef<HTMLButtonElement | null>(null);
   const positionRef = useRef(position);
   const velocityRef = useRef({ x: 0, y: 0 });
   const travelLookRef = useRef<TravelLook>({ x: 0, y: 0 });
@@ -114,6 +115,8 @@ export default function WebsiteFloatingOrb() {
   const silenceFrameRef = useRef<number | null>(null);
   const maxRecordingTimerRef = useRef<number | null>(null);
   const audioContextRef = useRef<AudioContext | null>(null);
+  const speechAudioContextRef = useRef<AudioContext | null>(null);
+  const speechLevelFrameRef = useRef<number | null>(null);
   const voiceRecognitionRef = useRef<VoiceRecognition | null>(null);
   const voiceCaptureRef=useRef(false);
   const voiceActivationEnabledRef = useRef(false);
@@ -140,11 +143,55 @@ export default function WebsiteFloatingOrb() {
     speechRequestRef.current?.abort();speechRequestRef.current=null;
     releaseFinalRef.current?.();releaseFinalRef.current=null;
     setVoiceStatus('');
+    if (speechLevelFrameRef.current !== null) {
+      window.cancelAnimationFrame(speechLevelFrameRef.current);
+      speechLevelFrameRef.current = null;
+    }
+    coreRef.current?.style.setProperty('--orb-speech-level', '0');
+    speechAudioContextRef.current?.close().catch(() => undefined);
+    speechAudioContextRef.current = null;
     if (finalAudioRef.current) {
       finalAudioRef.current.pause();
       finalAudioRef.current.onended=null;finalAudioRef.current.onerror=null;
       finalAudioRef.current.removeAttribute("src");finalAudioRef.current.load();
       finalAudioRef.current = null;
+    }
+  }, []);
+
+  const followSpeechLevel = useCallback(async (audio: HTMLAudioElement) => {
+    try {
+      const context = new AudioContext();
+      await context.resume();
+      if (audio !== finalAudioRef.current) {
+        await context.close();
+        return;
+      }
+      const source = context.createMediaElementSource(audio);
+      const analyser = context.createAnalyser();
+      analyser.fftSize = 512;
+      analyser.smoothingTimeConstant = 0.58;
+      source.connect(analyser);
+      analyser.connect(context.destination);
+      speechAudioContextRef.current = context;
+      const samples = new Uint8Array(analyser.fftSize);
+      let smoothed = 0;
+      const renderLevel = () => {
+        if (audio !== finalAudioRef.current || audio.paused || audio.ended) return;
+        analyser.getByteTimeDomainData(samples);
+        let sum = 0;
+        for (const sample of samples) {
+          const normalized = (sample - 128) / 128;
+          sum += normalized * normalized;
+        }
+        const rms = Math.sqrt(sum / samples.length);
+        const target = clamp((rms - 0.012) * 8.5, 0.08, 1);
+        smoothed += (target - smoothed) * (target > smoothed ? 0.52 : 0.2);
+        coreRef.current?.style.setProperty('--orb-speech-level', smoothed.toFixed(3));
+        speechLevelFrameRef.current = window.requestAnimationFrame(renderLevel);
+      };
+      speechLevelFrameRef.current = window.requestAnimationFrame(renderLevel);
+    } catch {
+      coreRef.current?.style.setProperty('--orb-speech-level', '0.32');
     }
   }, []);
 
@@ -185,10 +232,10 @@ export default function WebsiteFloatingOrb() {
         else{voiceUnavailable();return;}
       }catch{if(current())voiceUnavailable();return;}
       finalAudioRef.current=audio;
-      audio.onended=finish;audio.onerror=voiceUnavailable;audio.onplaying=()=>{if(current()){setOrbState('speaking');setVoiceStatus('Pops is speaking with Qwen TTS.');}};
+      audio.onended=finish;audio.onerror=voiceUnavailable;audio.onplaying=()=>{if(current()){setOrbState('speaking');setVoiceStatus('Pops is speaking with Qwen TTS.');void followSpeechLevel(audio);}};
       await audio.play().catch(()=>{if(current())voiceUnavailable();});
     },
-    [stopFinalAudio],
+    [followSpeechLevel, stopFinalAudio],
   );
 
   const handleOrbResponse = useCallback(
@@ -667,6 +714,7 @@ export default function WebsiteFloatingOrb() {
       <WebsiteOrbPointerOverlay guide={guide} onDismiss={() => setGuide(null)} />
       <div className="website-orb" style={{ transform: `translate3d(${position.x}px, ${position.y}px, 0)` }}>
       <button
+        ref={coreRef}
         className={`website-orb-core is-${orbState} ${splashActive ? "has-splash" : ""}`}
         type="button"
         onClick={startVoiceCapture}
@@ -690,6 +738,7 @@ export default function WebsiteFloatingOrb() {
         <span className="website-orb-skin-wrap">
           <img className="website-orb-skin" src={ORB_SKIN_SRC} alt="" aria-hidden="true" draggable={false} />
         </span>
+        <span className="website-orb-eye-glow" />
         <span className="website-orb-eye-ring" />
         <span className="website-orb-lens"><Mic size={16} /></span>
       </button>

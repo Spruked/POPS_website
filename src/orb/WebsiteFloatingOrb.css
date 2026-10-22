@@ -14,6 +14,7 @@
 }
 
 .website-orb-core {
+  --orb-speech-level: 0;
   width: 220px;
   height: 220px;
   padding: 0;
@@ -44,12 +45,11 @@
 }
 
 .website-orb-core.is-listening {
-  animation: website-orb-breathe 900ms ease-in-out infinite;
+  animation: website-orb-breathe 2800ms ease-in-out infinite;
 }
 
-.website-orb-core.is-thinking,
-.website-orb-core.is-speaking {
-  animation: website-orb-breathe 1300ms ease-in-out infinite;
+.website-orb-core.is-thinking {
+  animation: website-orb-breathe 4800ms ease-in-out infinite;
 }
 
 .website-orb-core.is-error {
@@ -90,7 +90,7 @@
     0 0 26px rgba(199, 145, 72, 0.44),
     inset 0 0 30px rgba(236, 191, 113, 0.14);
   opacity: 0.72;
-  animation: website-orb-dark-pulse 5200ms ease-in-out infinite;
+  animation: website-orb-dark-pulse 16000ms ease-in-out infinite;
 }
 
 .website-orb-orbit {
@@ -101,7 +101,7 @@
     0 0 26px rgba(174, 119, 57, 0.34),
     inset 0 0 20px rgba(237, 196, 123, 0.14);
   opacity: 0.72;
-  animation: website-orb-orbit-pulse 7600ms ease-in-out infinite;
+  animation: website-orb-orbit-pulse 22000ms ease-in-out infinite;
 }
 
 .website-orb-beam {
@@ -119,13 +119,14 @@
     rotate(calc(20deg + var(--orb-look-x) * 28deg))
     translate(calc(var(--orb-look-x) * 18px), calc(var(--orb-look-y) * 16px));
   transform-origin: 50% 0;
-  animation: website-orb-beam-breathe 6800ms ease-in-out infinite;
+  animation: website-orb-beam-breathe 14000ms ease-in-out infinite;
 }
 
 .website-orb-core.is-listening .website-orb-pulse,
 .website-orb-core.is-thinking .website-orb-pulse,
 .website-orb-core.is-speaking .website-orb-pulse {
-  animation: website-orb-pulse 1800ms ease-out infinite;
+  animation: none;
+  opacity: 0.5;
 }
 
 .website-orb-glow {
@@ -149,7 +150,7 @@
   box-shadow:
     0 0 28px rgba(0, 67, 180, 0.36),
     inset 0 0 18px rgba(0, 225, 255, 0.12);
-  animation: website-orb-ring-orbit 16000ms linear infinite;
+  animation: website-orb-ring-orbit 48000ms linear infinite;
 }
 
 .website-orb-ring::after {
@@ -161,7 +162,7 @@
   border-left-color: transparent;
   border-bottom-color: rgba(251, 191, 36, 0.38);
   opacity: 0.88;
-  animation: website-orb-scan 4400ms linear infinite;
+  animation: website-orb-scan 18000ms linear infinite;
 }
 
 .website-orb-node {
@@ -177,14 +178,14 @@
   top: -3px;
   left: 50%;
   transform: translateX(-50%);
-  animation: website-orb-node-pulse-a 3200ms ease-in-out infinite;
+  animation: website-orb-node-pulse-a 9600ms ease-in-out infinite;
 }
 
 .website-orb-node-b {
   right: 4px;
   top: 77%;
   opacity: 0.64;
-  animation: website-orb-node-pulse-b 4200ms ease-in-out infinite;
+  animation: website-orb-node-pulse-b 12600ms ease-in-out infinite;
 }
 
 .website-orb-skin-wrap {
@@ -247,6 +248,30 @@
   transition: opacity 260ms ease, transform 380ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 
+.website-orb-eye-glow {
+  width: 54px;
+  height: 54px;
+  position: absolute;
+  left: 48.4%;
+  top: 18.5%;
+  z-index: 3;
+  border-radius: 50%;
+  pointer-events: none;
+  opacity: 0;
+  background: radial-gradient(circle, rgba(122, 232, 255, .92) 0 8%, rgba(0, 174, 255, .64) 22%, rgba(0, 78, 255, .28) 48%, transparent 72%);
+  filter: blur(5px);
+  transform: translate(-50%, -50%) scale(.78);
+  transition: opacity 220ms ease;
+}
+
+.website-orb-core.is-speaking .website-orb-eye-glow {
+  opacity: calc(.2 + var(--orb-speech-level) * .8);
+  transform: translate(-50%, -50%) scale(calc(.82 + var(--orb-speech-level) * .62));
+  box-shadow:
+    0 0 calc(12px + var(--orb-speech-level) * 30px) rgba(0, 195, 255, calc(.28 + var(--orb-speech-level) * .6)),
+    0 0 calc(22px + var(--orb-speech-level) * 44px) rgba(0, 74, 255, calc(.16 + var(--orb-speech-level) * .42));
+}
+
 .website-orb-eye-ring::before,
 .website-orb-eye-ring::after {
   content: "";
@@ -278,7 +303,17 @@
       calc(-50% + var(--orb-look-x) * 5px),
       calc(-50% + var(--orb-look-y) * 4px)
     );
-  animation: website-orb-eye-focus 3300ms ease-in-out infinite;
+  animation: website-orb-eye-focus 10000ms ease-in-out infinite;
+}
+
+.website-orb-core.is-speaking .website-orb-eye-ring::after {
+  animation: none;
+  transform:
+    translate(
+      calc(-50% + var(--orb-look-x) * 5px),
+      calc(-50% + var(--orb-look-y) * 4px)
+    )
+    scale(calc(.82 + var(--orb-speech-level) * .7));
 }
 
 .website-orb-lens {
@@ -363,7 +398,7 @@
 
 @keyframes website-orb-breathe {
   0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.045); }
+  50% { transform: scale(1.015); }
 }
 
 @keyframes website-orb-arrive {
@@ -411,23 +446,23 @@
 
 @keyframes website-orb-dark-pulse {
   0%, 100% {
-    opacity: 0.48;
-    transform: scale(0.92);
+    opacity: 0.54;
+    transform: scale(0.985);
   }
   50% {
-    opacity: 0.88;
-    transform: scale(1.12);
+    opacity: 0.7;
+    transform: scale(1.025);
   }
 }
 
 @keyframes website-orb-orbit-pulse {
   0%, 100% {
-    opacity: 0.56;
-    transform: scale(0.98);
+    opacity: 0.6;
+    transform: scale(0.995);
   }
   50% {
-    opacity: 0.9;
-    transform: scale(1.04);
+    opacity: 0.76;
+    transform: scale(1.015);
   }
 }
 
