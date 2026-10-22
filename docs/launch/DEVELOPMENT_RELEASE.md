@@ -1,5 +1,7 @@
 # Website development release
 
+> Current owner direction (October 22): ORB interaction is voice-only. The lower-right Ask Pops button and text panel are removed. Generated speech uses the existing Qwen server only; browser speech synthesis is disabled. Failed Qwen tour audio pauses with a retry instruction. Browser speech recognition is microphone input, not the output voice. Older validation screenshots/results below describe earlier revisions unless explicitly marked current.
+
 Updated October 22, 2026. **No production deployment is authorized or performed.**
 
 Repository: https://github.com/Spruked/POPS_website
@@ -60,7 +62,7 @@ The current branch extends the included work with complete customer profiles, ve
 
 Before the live tour checks in the build instructions above, create `.venv-orb`, install `backend/orb-requirements.txt`, and start `start-orb-dev.ps1` against the already-installed model. For customer checks create `.venv-customer`, install its requirements and run `start-customer-dev.ps1`. Ordinary npm builds need neither service, customer records nor the native application. A clean clone contains canonical source without submodule initialization, but does not contain local models, secrets or runtime records.
 
-Current validation: 25 customer tests; customer browser flow; 14 ORB integration tests; flat navigation across seven widths; real-model tour/conversation and pointer geometry across three widths in development and production bundle; nine shipped assets; preserved source hashes. Qwen playback is real; clips seek near their ends for regression timing, and emergency browser speech is instrumented. Recorded-audio STT is not configured. The original A.I.M.S. suite has a Windows concurrent-writer failure (14 pass, 2 skip, 1 fail); the unchanged implementation is used with one worker. See MEMORY_INTEGRATION.md.
+Current validation: 25 customer tests; customer browser flow; 15 ORB integration tests; flat navigation across seven widths; real-model tour/conversation and pointer geometry across three widths in development and production bundle; nine shipped assets; preserved source hashes. Qwen playback is real; clips seek near their ends for regression timing, and emergency browser speech is instrumented. Recorded-audio STT is not configured. The original A.I.M.S. suite has a Windows concurrent-writer failure (14 pass, 2 skip, 1 fail); the unchanged implementation is used with one worker. See MEMORY_INTEGRATION.md.
 
 The existing native scheduled task has been repaired and inference works on 16520. Forced model and supervisor recovery passed after correcting the existing backup trigger to one minute; actual reboot startup is not verified. A boot trigger is configured. See NATIVE_LLAMA_REPAIR.md for evidence and prepared verification. Do not treat this development release as production operational certification.
 
@@ -71,3 +73,5 @@ Current voice default is the installed Qwen CLI, cached 0.6B CustomVoice, Vivian
 The current production-bundle regression passed with Qwen audio at all desktop stops and initial tablet/mobile playback; all responsive screens/pointers progressed using actual muted reading timers. Caption-first conversation, interruption, refresh, Back/Restart/Exit and all nine asset checks passed. See the updated production test-results.json and qwen-validation/results.json.
 
 Fresh GitHub clone of `1726618f903010e483a52d4b8ce50cdb4b66ac27` passed install/build, 84 normal imported-source checks, protected-file checks, fourteen backend tests and nine production-asset hash comparisons. Current Qwen/source reproduction evidence: qwen-validation/reproducibility.json.
+
+Follow-up recovery checks: the owner resolved the reported issue by connecting the microphone. Separate fixes correct the unconfigured-STT capability, route microphone clicks through existing browser recognition, make voice preparation/errors visible, and reconnect expired visitor sessions once. The new `test:orb-recovery` uses real model/Qwen replies with simulated recognition input; no microphone transcription engine was installed. See QWEN_TTS.md and qwen-validation/recovery.json.

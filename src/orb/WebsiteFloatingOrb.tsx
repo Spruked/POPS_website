@@ -4,6 +4,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import {
   sendWebsiteOrbAudio,
   sendWebsiteOrbText,
+  getOrbCapabilities,
   type OrbResponse,
 } from "../services/orbApi";
 import WebsiteOrbPointerOverlay from "./WebsiteOrbPointerOverlay";
@@ -19,7 +20,6 @@ import type { WebsiteOrbGuideRequest, WebsiteOrbGuideState } from "./websiteOrbT
 import "./WebsiteFloatingOrb.css";
 import { useWebsiteDemoTour } from '../pops-demo-app/tour/useWebsiteDemoTour';
 import { getDemoVisibleRect, DEMO_HOST_ID } from '../pops-demo-app/tour/orbBridge';
-import WebsiteOrbConversation from './WebsiteOrbConversation';
 import {reportOrbEvent,isPrivateOrbPage,dispatchOrbAction,orbPost} from './visitorSession';
 import type {OrbAction} from './visitorSession';
 import {applyOrbAction} from './orbActions';
@@ -52,7 +52,6 @@ type VoiceRecognitionWindow = Window & {
 type OrbState = "idle" | "listening" | "thinking" | "speaking" | "error";
 type TravelLook = { x: number; y: number };
 
-const FILLER_CLIPS = ["/orb/voice/latency-fillers/ack.wav", "/orb/voice/latency-fillers/thinking.wav"];
 const ORB_SKIN_SRC = "/orb/skins/average-dad-mode-transparent.png";
 const ORB_SIZE = 220;
 const ORB_MOBILE_SIZE = 175;
@@ -92,6 +91,7 @@ export default function WebsiteFloatingOrb() {
   const navigate = useNavigate();
   const [orbState, setOrbState] = useState<OrbState>("idle");
   const [lastResponse, setLastResponse] = useState<OrbResponse | null>(null);
+  const [voiceStatus,setVoiceStatus]=useState('');
   const [splashActive, setSplashActive] = useState(true);
   const [travelLook, setTravelLook] = useState<TravelLook>({ x: 0, y: 0 });
   const [position, setPosition] = useState(() => {
@@ -111,12 +111,11 @@ export default function WebsiteFloatingOrb() {
   const mediaRecorderRef = useRef<MediaRecorder | null>(null);
   const chunksRef = useRef<BlobPart[]>([]);
   const finalAudioRef = useRef<HTMLAudioElement | null>(null);
-  const fillerAudioRef = useRef<HTMLAudioElement | null>(null);
-  const fillerTimerRef = useRef<number | null>(null);
   const silenceFrameRef = useRef<number | null>(null);
   const maxRecordingTimerRef = useRef<number | null>(null);
   const audioContextRef = useRef<AudioContext | null>(null);
   const voiceRecognitionRef = useRef<VoiceRecognition | null>(null);
+  const voiceCaptureRef=useRef(false);
   const voiceActivationEnabledRef = useRef(false);
   const voiceQueryActiveRef = useRef(false);
   const voiceQueryRef = useRef("");
@@ -126,8 +125,6 @@ export default function WebsiteFloatingOrb() {
   const runIdRef = useRef(0);
   const guidePulseRef = useRef(0);
   const interruptTourRef = useRef<() => void>(() => {});
-  const introSpeechRef = useRef<SpeechSynthesisUtterance | null>(null);
-  const responseSpeechRef = useRef<SpeechSynthesisUtterance | null>(null);
   const speechRequestRef=useRef<AbortController|null>(null);
   const releaseFinalRef=useRef<(()=>void)|null>(null);
   const introActiveRef=useRef(false);
@@ -135,26 +132,14 @@ export default function WebsiteFloatingOrb() {
   const tourSuspendedActivationRef = useRef(false);
 
   const glow = glowFromPulse(lastResponse);
-  const speechText = speechBubbleText(lastResponse);
+  const speechText = ['listening','error'].includes(orbState)?voiceStatus||speechBubbleText(lastResponse):speechBubbleText(lastResponse)||voiceStatus;
   const speechSide = position.x + activeOrbSize() / 2 > window.innerWidth / 2 ? "is-left" : "is-right";
-
-  const stopFiller = useCallback(() => {
-    if (fillerTimerRef.current) {
-      window.clearTimeout(fillerTimerRef.current);
-      fillerTimerRef.current = null;
-    }
-    if (fillerAudioRef.current) {
-      fillerAudioRef.current.pause();
-      fillerAudioRef.current.currentTime = 0;
-      fillerAudioRef.current = null;
-    }
-  }, []);
 
   const stopFinalAudio = useCallback(() => {
     introActiveRef.current=false;
     speechRequestRef.current?.abort();speechRequestRef.current=null;
     releaseFinalRef.current?.();releaseFinalRef.current=null;
-    if (responseSpeechRef.current) { responseSpeechRef.current.onend=null; responseSpeechRef.current.onerror=null; window.speechSynthesis?.cancel(); responseSpeechRef.current=null; }
+    setVoiceStatus('');
     if (finalAudioRef.current) {
       finalAudioRef.current.pause();
       finalAudioRef.current.onended=null;finalAudioRef.current.onerror=null;
@@ -163,20 +148,17 @@ export default function WebsiteFloatingOrb() {
     }
   }, []);
 
-  const scheduleFiller = useCallback(() => {
-    stopFiller();
-    fillerTimerRef.current = window.setTimeout(() => {
-      const clip = FILLER_CLIPS[Math.floor(Math.random() * FILLER_CLIPS.length)];
-      const audio = new Audio(clip);
-      audio.volume = 0.78;
-      audio.play().catch(() => undefined);
-      fillerAudioRef.current = audio;
-    }, 620);
-  }, [stopFiller]);
+  const stopVoiceInput=useCallback(()=>{
+    voiceCaptureRef.current=false;voiceActivationEnabledRef.current=false;
+    voiceQueryActiveRef.current=false;voiceQueryRef.current='';voiceResumeAfterResponseRef.current=false;
+    const recognition=voiceRecognitionRef.current;voiceRecognitionRef.current=null;
+    if(recognition){recognition.onend=null;recognition.onerror=null;recognition.abort();}
+    if(voiceResumeTimerRef.current!==null){clearTimeout(voiceResumeTimerRef.current);voiceResumeTimerRef.current=null;}
+  },[]);
 
   const speakOutput = useCallback(
     async (response: OrbResponse) => {
-      stopFiller();stopFinalAudio();introActiveRef.current=response.llm_source==='website-intro';setLastResponse(response);
+      stopFinalAudio();introActiveRef.current=response.llm_source==='website-intro';setLastResponse(response);
       const guideRequest=guideRequestFromPulse(response.cognitive_pulse);
       if(guideRequest)setPendingGuide(guideRequest);
       const request=new AbortController(),run=runIdRef.current;
@@ -186,44 +168,39 @@ export default function WebsiteFloatingOrb() {
       const finish=()=>{
         if(finished||!current())return;finished=true;stopFinalAudio();setOrbState('idle');
         if(response.action)dispatchOrbAction(response.action);
-        if(voiceResumeAfterResponseRef.current){voiceResumeAfterResponseRef.current=false;window.setTimeout(()=>startVoiceActivationRef.current?.(),250);}
+        if(voiceResumeAfterResponseRef.current){voiceResumeAfterResponseRef.current=false;voiceResumeTimerRef.current=window.setTimeout(()=>startVoiceActivationRef.current?.(),250);}
       };
-      const emergency=()=>{
+      const voiceUnavailable=()=>{
         if(!current())return;
         releaseFinalRef.current?.();releaseFinalRef.current=null;finalAudioRef.current=null;
-        setLastResponse({...response,tts_provider:'emergency-browser-speech',tts_error:'Qwen audio unavailable; captions preserved.'});
-        if(['local-llama.cpp','website-intro'].includes(response.llm_source)&&'speechSynthesis' in window){
-          const speech=new SpeechSynthesisUtterance(response.spoken_output);responseSpeechRef.current=speech;
-          speech.onend=finish;speech.onerror=finish;speech.lang='en-US';speech.rate=.98;setOrbState('speaking');
-          try{window.speechSynthesis.speak(speech);}catch{finish();}
-          window.setTimeout(finish,Math.max(12000,response.spoken_output.length*55));
-        }else finish();
+        setLastResponse({...response,tts_provider:'qwen',tts_error:'Qwen audio unavailable. Click Pops to retry.'});
+        setVoiceStatus('Qwen voice unavailable. Click Pops to retry.');setOrbState('error');
       };
       let audio:HTMLAudioElement;
       try{
         if(response.speech_id){
-          setOrbState('thinking');const prepared=await prepareOrbSpeech(response,request.signal);
+          setOrbState('thinking');setVoiceStatus('Preparing Qwen voice… The caption is ready; local synthesis can take several seconds.');const prepared=await prepareOrbSpeech(response,request.signal);
           if(!current()){prepared.release();return;}audio=prepared.audio;releaseFinalRef.current=prepared.release;
         }else if(response.tts_audio_url){audio=new Audio(response.tts_audio_url);releaseFinalRef.current=()=>{audio.onended=null;audio.onerror=null;audio.pause();audio.removeAttribute('src');audio.load();};}
-        else{emergency();return;}
-      }catch{if(current())emergency();return;}
+        else{voiceUnavailable();return;}
+      }catch{if(current())voiceUnavailable();return;}
       finalAudioRef.current=audio;
-      audio.onended=finish;audio.onerror=emergency;audio.onplaying=()=>{if(current())setOrbState('speaking');};
-      await audio.play().catch(()=>{if(current())emergency();});
+      audio.onended=finish;audio.onerror=voiceUnavailable;audio.onplaying=()=>{if(current()){setOrbState('speaking');setVoiceStatus('Pops is speaking with Qwen TTS.');}};
+      await audio.play().catch(()=>{if(current())voiceUnavailable();});
     },
-    [stopFiller,stopFinalAudio],
+    [stopFinalAudio],
   );
 
   const handleOrbResponse = useCallback(
     async (request: Promise<OrbResponse>) => {
       introAllowedRef.current=false;
       interruptTourRef.current();
-      if(voiceRecognitionRef.current){voiceActivationEnabledRef.current=false;voiceRecognitionRef.current.abort();voiceRecognitionRef.current=null;}
+      if(voiceRecognitionRef.current){voiceActivationEnabledRef.current=false;voiceCaptureRef.current=false;voiceRecognitionRef.current.onend=null;voiceRecognitionRef.current.abort();voiceRecognitionRef.current=null;}
       const runId = runIdRef.current + 1;
       runIdRef.current = runId;
       stopFinalAudio();
       setOrbState("thinking");
-      scheduleFiller();
+      setVoiceStatus('Pops is thinking…');
 
       try {
         const response = await request;
@@ -231,11 +208,13 @@ export default function WebsiteFloatingOrb() {
           await speakOutput(response);
         }
       } catch (error) {
-        stopFiller();
+        if(runIdRef.current!==runId)return;
         setOrbState("error");
+        const message=error instanceof Error?error.message:'The local conversation service is unavailable.';
+        setVoiceStatus(message);
         setLastResponse({
           transcript: "",
-          spoken_output: "",
+          spoken_output: message,
           cognitive_pulse: { cognitive_mode: "OFFLINE", glow_intensity: 0.45 },
           llm_source: "local-fallback",
           memory_context: null,
@@ -245,10 +224,11 @@ export default function WebsiteFloatingOrb() {
         });
       }
     },
-    [scheduleFiller, speakOutput, stopFiller, stopFinalAudio],
+    [speakOutput, stopFinalAudio],
   );
 
   const startVoiceActivation = useCallback(() => {
+    if(isPrivateOrbPage()||document.hidden)return;
     if (document.getElementById(DEMO_HOST_ID)?.dataset.tourActive === 'true') return;
     const recognitionCtor = (window as VoiceRecognitionWindow).SpeechRecognition
       || (window as VoiceRecognitionWindow).webkitSpeechRecognition;
@@ -272,8 +252,10 @@ export default function WebsiteFloatingOrb() {
           voiceQueryRef.current = `${voiceQueryRef.current} ${phrase.replace(/\b(?:hey\s+)?pops\b[:,]?/i, "")}`.trim();
         }
       }
+      if(voiceQueryActiveRef.current&&voiceQueryRef.current.trim())recognition.stop();
     };
     recognition.onend = () => {
+      if(voiceRecognitionRef.current!==recognition)return;
       voiceRecognitionRef.current = null;
       const query = voiceQueryRef.current.trim();
       const shouldAnswer = voiceQueryActiveRef.current && query.length > 0;
@@ -285,13 +267,14 @@ export default function WebsiteFloatingOrb() {
         voiceResumeAfterResponseRef.current = true;
         return;
       }
-      if (voiceActivationEnabledRef.current) window.setTimeout(startVoiceActivation, 250);
+      if (voiceActivationEnabledRef.current) voiceResumeTimerRef.current=window.setTimeout(startVoiceActivation, 250);
     };
     recognition.onerror = (event) => {
-      if (event.error === "not-allowed" || event.error === "service-not-allowed") {
+      if (event.error !== "no-speech" && event.error !== "aborted") {
         voiceActivationEnabledRef.current = false;
         voiceRecognitionRef.current = null;
         setOrbState("idle");
+        setVoiceStatus('Microphone recognition is unavailable. Check microphone permission, then click Pops to retry.');
       }
     };
     try {
@@ -305,20 +288,37 @@ export default function WebsiteFloatingOrb() {
   startVoiceActivationRef.current = startVoiceActivation;
 
   const startVoiceCapture = useCallback(async () => {
+    if(isPrivateOrbPage())return;
     interruptTourRef.current();
     if (orbState === "listening" && mediaRecorderRef.current?.state === "recording") {
       mediaRecorderRef.current?.stop();
       return;
     }
-    if (orbState === "listening" && voiceRecognitionRef.current) {
+    if(voiceCaptureRef.current&&voiceRecognitionRef.current){voiceRecognitionRef.current.stop();return;}
+    if (voiceRecognitionRef.current) {
       voiceActivationEnabledRef.current = false;
+      voiceRecognitionRef.current.onend=null;
       voiceRecognitionRef.current.abort();
       voiceRecognitionRef.current = null;
-      setOrbState("idle");
     }
 
     try {
+      introAllowedRef.current=false;const captureRun=++runIdRef.current;
       stopFinalAudio();
+      const capabilities=await getOrbCapabilities();
+      if(captureRun!==runIdRef.current||isPrivateOrbPage())return;
+      // Reuse browser recognition when the existing recorded-audio backend has
+      // no STT provider. TTS output remains Qwen; no engine is installed here.
+      if(!capabilities.stt.configured){
+        const Recognition=(window as VoiceRecognitionWindow).SpeechRecognition||(window as VoiceRecognitionWindow).webkitSpeechRecognition;
+        if(!Recognition)throw Error('Microphone transcription is unavailable in this browser. Qwen voice needs a recognized question.');
+        const recognition=new Recognition();recognition.continuous=false;recognition.interimResults=true;recognition.lang='en-US';
+        let transcript='';voiceCaptureRef.current=true;voiceRecognitionRef.current=recognition;
+        recognition.onresult=event=>{for(let index=event.resultIndex;index<event.results.length;index++){if(event.results[index].isFinal)transcript+=' '+event.results[index][0].transcript;}};
+        recognition.onerror=event=>{if(voiceRecognitionRef.current!==recognition)return;voiceCaptureRef.current=false;voiceRecognitionRef.current=null;setOrbState('error');setVoiceStatus(event.error==='not-allowed'?'Microphone permission was denied. Allow microphone access, then click Pops to retry.':'Microphone recognition failed ('+event.error+'). Check the microphone, then click Pops to retry.');};
+        recognition.onend=()=>{if(voiceRecognitionRef.current!==recognition)return;voiceCaptureRef.current=false;voiceRecognitionRef.current=null;const query=transcript.trim();if(query){voiceResumeAfterResponseRef.current=true;void handleOrbResponse(sendWebsiteOrbText(query));}else{setOrbState('idle');setVoiceStatus('No speech was detected. Click Pops to try again.');}};
+        setOrbState('listening');setVoiceStatus('Listening… Ask your question. Click Pops again to finish.');recognition.start();return;
+      }
       const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
       const recorder = new MediaRecorder(stream, { mimeType: "audio/webm" });
       chunksRef.current = [];
@@ -379,7 +379,9 @@ export default function WebsiteFloatingOrb() {
         if (mediaRecorderRef.current?.state === "recording") mediaRecorderRef.current.stop();
       }, 20000);
     } catch (error) {
+      voiceCaptureRef.current=false;voiceRecognitionRef.current=null;
       setOrbState("error");
+      setVoiceStatus(error instanceof Error?error.message:'Microphone access was not available.');
       setLastResponse({
         transcript: "",
         spoken_output: error instanceof Error ? error.message : "Microphone access was not available.",
@@ -414,12 +416,9 @@ export default function WebsiteFloatingOrb() {
       window.removeEventListener("pops:startup-complete", handleStartupComplete);
       if (timer !== null) window.clearTimeout(timer);
       if (voiceResumeTimerRef.current !== null) window.clearTimeout(voiceResumeTimerRef.current);
-      voiceActivationEnabledRef.current = false;
-      voiceRecognitionRef.current?.abort();
-      voiceRecognitionRef.current = null;
-      window.speechSynthesis?.cancel();
+      stopVoiceInput();
     };
-  }, [startVoiceActivation,speakOutput]);
+  }, [startVoiceActivation,speakOutput,stopVoiceInput]);
 
   useEffect(() => {
     const splashTimer = window.setTimeout(() => setSplashActive(false), 1500);
@@ -613,23 +612,23 @@ export default function WebsiteFloatingOrb() {
   }, [guide, orbState]);
 
   useEffect(() => () => {
-    stopFiller();
+    stopVoiceInput();
     stopFinalAudio();
     if (silenceFrameRef.current !== null) window.cancelAnimationFrame(silenceFrameRef.current);
     if (maxRecordingTimerRef.current !== null) window.clearTimeout(maxRecordingTimerRef.current);
     audioContextRef.current?.close().catch(() => undefined);
     mediaRecorderRef.current?.stream.getTracks().forEach((track) => track.stop());
-  }, [stopFiller, stopFinalAudio]);
+  }, [stopVoiceInput, stopFinalAudio]);
 
   const interruptDemoTour = useWebsiteDemoTour({
     available: () => {
       introAllowedRef.current=false;
       const interruptedIntro=introActiveRef.current;
       if(interruptedIntro){runIdRef.current++;stopFinalAudio();voiceResumeAfterResponseRef.current=false;tourSuspendedActivationRef.current=true;}
-      if (introSpeechRef.current) { introSpeechRef.current.onend = null; introSpeechRef.current.onerror = null; window.speechSynthesis?.cancel(); introSpeechRef.current = null; }
       if (voiceRecognitionRef.current && !voiceQueryActiveRef.current) {
         tourSuspendedActivationRef.current = voiceActivationEnabledRef.current;
         voiceActivationEnabledRef.current = false;
+        voiceCaptureRef.current=false;voiceRecognitionRef.current.onend=null;
         voiceRecognitionRef.current.abort();
         voiceRecognitionRef.current = null;
       }
@@ -653,21 +652,18 @@ export default function WebsiteFloatingOrb() {
   interruptTourRef.current = interruptDemoTour;
 
   useEffect(()=>{
-    runIdRef.current++;stopFinalAudio();stopFiller();setOrbState('idle');
+    runIdRef.current++;stopFinalAudio();stopVoiceInput();setOrbState('idle');
     if(!isPrivateOrbPage(location.pathname))void reportOrbEvent('page').catch(()=>{});
-  },[location.pathname,stopFinalAudio,stopFiller]);
+  },[location.pathname,stopFinalAudio,stopVoiceInput]);
   useEffect(()=>{
-    const cancel=()=>{runIdRef.current++;stopFinalAudio();stopFiller();setOrbState('idle');};
+    const cancel=()=>{runIdRef.current++;stopFinalAudio();stopVoiceInput();setOrbState('idle');};
     const demo=(event:Event)=>{const command=(event as CustomEvent<{action:string;reason:string}>).detail;if(command?.action==='stop'&&command.reason==='exit')cancel();};
     window.addEventListener('pagehide',cancel);window.addEventListener('pops:demo-orb-presentation',demo);
     return()=>{window.removeEventListener('pagehide',cancel);window.removeEventListener('pops:demo-orb-presentation',demo);cancel();};
-  },[stopFinalAudio,stopFiller]);
+  },[stopFinalAudio,stopVoiceInput]);
   useEffect(()=>{const handle=(event:Event)=>applyOrbAction((event as CustomEvent<OrbAction>).detail,navigate);window.addEventListener('pops:orb-validated-action',handle);return()=>window.removeEventListener('pops:orb-validated-action',handle);},[navigate]);
-  async function askPops(question:string){const pending=sendWebsiteOrbText(question);void handleOrbResponse(pending);return pending;}
-
   return (
     <>
-      <WebsiteOrbConversation ask={askPops} onOpen={()=>interruptDemoTour()} visible={!isPrivateOrbPage(location.pathname)} />
       <WebsiteOrbPointerOverlay guide={guide} onDismiss={() => setGuide(null)} />
       <div className="website-orb" style={{ transform: `translate3d(${position.x}px, ${position.y}px, 0)` }}>
       <button
@@ -701,7 +697,7 @@ export default function WebsiteFloatingOrb() {
 
       {speechText && (
         <div className={`website-orb-speech ${speechSide}`} role="status" aria-live="polite">
-          {speechText}
+          {speechText}{voiceStatus&&voiceStatus!==speechText&&<p>{voiceStatus}</p>}
         </div>
       )}
       </div>

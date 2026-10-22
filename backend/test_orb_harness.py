@@ -90,6 +90,12 @@ class HostBoundaryTests(unittest.TestCase):
     def test_clear_forgets_session_and_invalidates_token(self):
         self.assertEqual(self.client.post('/api/orb/session/clear',headers=self.headers,json={}).status_code,200)
         self.assertEqual(self.client.post('/api/orb/session/event',headers=self.headers,json={'kind':'page','route':'/'}).status_code,401)
+    def test_stt_capability_matches_explicit_provider_configuration(self):
+        with patch.dict(os.environ,{'FASTER_WHISPER_STT_URL':''}):
+            self.assertEqual(self.client.get('/api/orb/capabilities').json()['stt'],{'configured':False,'url':''})
+            self.assertEqual(self.client.post('/api/orb/website-voice',headers=self.headers).status_code,503)
+        with patch.dict(os.environ,{'FASTER_WHISPER_STT_URL':'http://127.0.0.1:13000/stt'}):
+            self.assertEqual(self.client.get('/api/orb/capabilities').json()['stt'],{'configured':True,'url':'http://127.0.0.1:13000/stt'})
     def test_qwen_speech_uses_only_session_assistant_turn_and_removes_audio(self):
         harness=self.module.app.state.harness
         visitor=harness.visitors[self.client.cookies.get(self.module.COOKIE)]

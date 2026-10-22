@@ -1,10 +1,11 @@
 const {chromium}=require('playwright');
+const {installVoiceInput,voiceQuestion}=require('../../../scripts/orb-browser-voice.cjs');
 const fs=require('node:fs'),path=require('node:path'),assert=require('node:assert/strict');
 const origin=process.env.DEMO_BASE_URL||'http://localhost:5173';
 const mode=new URL(origin).port==='5173'?'development':'production';
 const out=path.join('src/pops-demo-app/validation',mode);fs.mkdirSync(path.join(out,'screenshots'),{recursive:true});
 const screens=['dashboard','dossier','relationships','incident','evidence','timeline','review','get-pops'];
-const results={status:'running',mode,origin,checks:[],pointers:[],modelReplies:[],errors:[],forbiddenRequests:[],speech:'Actual Qwen WAV decoding/playback at every desktop stop and the first tablet/mobile stop; other responsive stops use real muted reading-time progression. Clips seek near their end for regression timing. Emergency browser speech is instrumented only as a failure sentinel.',audio:[]};
+const results={status:'running',mode,origin,checks:[],pointers:[],modelReplies:[],errors:[],forbiddenRequests:[],speech:'Actual Qwen WAV decoding/playback at every desktop stop and the first tablet/mobile stop; other responsive stops use real muted reading-time progression. Clips seek near their end for regression timing. Recognition input is simulated. Browser speech synthesis is a failure sentinel and must never be called.',audio:[]};
 fs.writeFileSync(path.join(out,'test-results.json'),JSON.stringify(results,null,2)+'\n');
 (async()=>{
  const browser=await chromium.launch(process.env.PLAYWRIGHT_CHANNEL==='chromium'?{}:{channel:process.env.PLAYWRIGHT_CHANNEL||'chrome'});
@@ -18,6 +19,7 @@ fs.writeFileSync(path.join(out,'test-results.json'),JSON.stringify(results,null,
    Object.defineProperty(window,'speechSynthesis',{configurable:true,value:voice});
    window.__finishPopsSpeech=()=>{const audio=[...window.__popsAudio].reverse().find(item=>item.src.startsWith('blob:')&&!item.paused);if(audio){audio.currentTime=Math.max(0,audio.duration-.04);return;}const utterance=window.__utterance;voice.speaking=false;window.__utterance=null;utterance?.onend?.();};
   });
+  await installVoiceInput(context);
   const page=await context.newPage();page.setDefaultTimeout(20000);
   page.on('pageerror',error=>results.errors.push(error.message));
   page.on('request',request=>{if(/\/api\/(?:customer|checkout)|\/api\/orb\/tools\/run/.test(request.url()))results.forbiddenRequests.push(new URL(request.url()).pathname);});
@@ -52,7 +54,7 @@ fs.writeFileSync(path.join(out,'test-results.json'),JSON.stringify(results,null,
   next=reply(page,'dashboard');await host.getByRole('button',{name:'Resume narration',exact:true}).click();await receive(await next,'dashboard');await pointer(page,'desktop-resumed');
   results.checks.push('Real local-model narration delivered as actual Qwen WAV audio; no Next button; Pause/Resume cleans up and re-enters the same screen.');
   for(let index=1;index<screens.length;index++){
-   next=reply(page,screens[index]);await page.evaluate(()=>window.__finishPopsSpeech());await screen(page,screens[index]);await receive(await next,screens[index]);await pointer(page,'desktop-'+screens[index]);
+   next=reply(page,screens[index]);await page.evaluate(()=>window.__finishPopsSpeech());await screen(page,screens[index]);await receive(await next,screens[index]);await pointer(page,'desktop-'+screens[index]);await page.screenshot({path:path.join(out,'screenshots',String(index+1).padStart(2,'0')+'-'+screens[index]+'.png')});
    if(index===1){await host.getByRole('button',{name:/Jamie Morgan/}).click();assert.match(await host.locator('[data-demo-dossier-identity]').innerText(),/Jamie Morgan/);}
    if(index===2){await host.getByRole('button',{name:/Jordan Lee.*Current attorney/}).click();assert.equal(await host.getByRole('button',{name:'Open Jordan Lee’s dossier',exact:true}).count(),1);await page.screenshot({path:path.join(out,'screenshots/desktop-relationships.png')});}
    if(index===3){await host.getByRole('button',{name:'View',exact:true}).click();await host.getByRole('dialog',{name:'Incident Detail'}).waitFor();await pointer(page,'incident-modal');assert.match(await host.getByRole('dialog').innerText(),/demo-message-001/);await host.getByRole('button',{name:'Close',exact:true}).click();}
@@ -67,11 +69,11 @@ fs.writeFileSync(path.join(out,'test-results.json'),JSON.stringify(results,null,
   next=reply(page,'dashboard');await host.getByRole('button',{name:'Restart',exact:true}).click();await receive(await next,'dashboard');
   await page.reload();await host.getByRole('button',{name:'Resume narration',exact:true}).waitFor();assert.equal(await host.getAttribute('data-tour-active'),'false');
   next=reply(page,'dashboard');await host.getByRole('button',{name:'Resume narration',exact:true}).click();await receive(await next,'dashboard');
-  await page.locator('.orb-chat-toggle').click();await host.getByRole('button',{name:'Resume narration',exact:true}).waitFor();
-  const panel=page.locator('#pops-conversation-panel');await panel.getByLabel('Question for Pops').fill('Who is Jordan Lee in this fictional case?');let answer=page.waitForResponse(r=>r.url().endsWith('/api/orb/website-text')&&r.request().postDataJSON()?.event==='question');await panel.getByRole('button',{name:'Ask Pops',exact:true}).click();let data=await(await answer).json();assert.equal(data.llm_source,'local-llama.cpp');assert.match(data.spoken_output,/attorney|counsel/i);
-  await panel.getByRole('status').filter({hasText:'thinking'}).waitFor({state:'hidden'});await panel.getByLabel('Question for Pops').fill('Who did I just ask about?');answer=page.waitForResponse(r=>r.url().endsWith('/api/orb/website-text')&&r.request().postDataJSON()?.event==='question');await panel.getByRole('button',{name:'Ask Pops',exact:true}).click();data=await(await answer).json();assert.match(data.spoken_output,/Jordan/i);
-  await page.locator('.orb-chat-toggle').click();await host.getByRole('button',{name:'Exit tour',exact:true}).click();await host.getByRole('button',{name:'Start Tour',exact:true}).waitFor();assert.equal(await page.locator('.website-orb-target-ring').count(),0);
-  await page.goto(origin+'/desktop-app');await page.locator('.orb-chat-toggle').click();await panel.getByLabel('Question for Pops').fill('Remind me who Jordan was in the demo.');answer=page.waitForResponse(r=>r.url().endsWith('/api/orb/website-text'));await panel.getByRole('button',{name:'Ask Pops',exact:true}).click();data=await(await answer).json();assert.match(data.spoken_output,/Jordan|attorney|counsel/i);
+  assert.equal(await page.locator('.orb-chat-toggle,#pops-conversation-panel').count(),0);
+  let answer=await voiceQuestion(page,'Who is Jordan Lee in this fictional case?');let data=await answer.json();assert.equal(data.llm_source,'local-llama.cpp');assert.match(data.spoken_output,/attorney|counsel/i);await host.getByRole('button',{name:'Resume narration',exact:true}).waitFor();
+  answer=await voiceQuestion(page,'Who did I just ask about?');data=await answer.json();assert.match(data.spoken_output,/Jordan/i);
+  await host.getByRole('button',{name:'Exit tour',exact:true}).click();await host.getByRole('button',{name:'Start Tour',exact:true}).waitFor();assert.equal(await page.locator('.website-orb-target-ring').count(),0);
+  await page.goto(origin+'/desktop-app');answer=await voiceQuestion(page,'Remind me who Jordan was in the demo.');data=await answer.json();assert.match(data.spoken_output,/Jordan|attorney|counsel/i);
   results.checks.push('Back, Restart and paused refresh recovery passed; conversational interruption remembers Jordan and resumes normal website context after Exit and page navigation.');
   await context.close();
   for(const width of [1024,390]){

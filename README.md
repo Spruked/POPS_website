@@ -1,5 +1,7 @@
 # P.O.P.S. website
 
+> Current owner direction (October 22): ORB interaction is voice-only. The lower-right Ask Pops button and text panel are removed. Generated speech uses the existing Qwen server only; browser speech synthesis is disabled. Failed Qwen tour audio pauses with a retry instruction. Browser speech recognition is microphone input, not the output voice. Older validation screenshots/results below describe earlier revisions unless explicitly marked current.
+
 P.O.P.S. — Proof of Presence System. Local website development for the Windows software launch and forthcoming Android companion. Preserve. Protect. Prove.
 
 This workspace is `C:\Users\bryan\Desktop\POPS\POPS_website-main`. Development preview: **http://localhost:5173**. Production remains on the old PC through WSL and was not modified. The owner subsequently authorized Git tracking and a website-only development branch in `Spruked/POPS_website`. Production deployment requires separate approval. See `docs/launch/DEVELOPMENT_RELEASE.md`.
@@ -164,3 +166,5 @@ npm run test:imports
 Live-model browser tests require the existing model and local ORB host. Production-bundle tests serve `dist` privately and proxy only the local ORB host; they do not deploy. Qwen WAV playback/decoding, model replies and pointer measurements are real. Clips seek near their end to accelerate full-tour regression; only emergency browser speech is instrumented. The regular build requires no application checkout, model file or customer database. Windows service/task scripts are never run by a frontend build.
 
 Qwen speech validation: `npm run test:orb-speech`. Start the existing Qwen CLI with `scripts/windows/Start-ExistingQwenTTS.ps1` using its installed Python/model paths; no engine/model is installed by the website. The running TTS process has no new reboot service/task. See docs/launch/QWEN_TTS.md.
+
+Microphone input: click Pops to ask a question directly. With no recorded-audio STT provider configured, the existing browser recognition is used, subject to browser support and microphone permissions; Qwen still speaks replies. The ORB caption shows voice preparation and errors. Expired sessions reconnect once without requiring a refresh; expired conversation memory stays expired. Run `npm run test:orb-recovery` for the session/input regression (simulated recognition input, real model and Qwen output).

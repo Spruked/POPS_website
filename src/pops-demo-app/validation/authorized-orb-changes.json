@@ -3,7 +3,7 @@
   "files": [
     {
       "path": "src/orb/WebsiteFloatingOrb.tsx",
-      "sha256LF": "64bd6a500cad1b8193890b66b2e717b95be5b88e6f69207a5dedb365a651d235"
+      "sha256LF": "eea4e4f7a0eb2ff8f880011c6b442bc780634ecb427839dda6a15b06f174ad65"
     },
     {
       "path": "src/orb/WebsiteOrbPointerOverlay.tsx",

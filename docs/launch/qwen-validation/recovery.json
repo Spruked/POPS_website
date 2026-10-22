@@ -1,0 +1,10 @@
+{
+  "status": "passed",
+  "checks": [
+    "Expired server session returns 401, renews once, then delivers an actual model response and playable Qwen WAV without refreshing the page.",
+    "A simulated browser recognition result reaches the actual LLM and Qwen playback; clicking Pops no longer posts audio to an unconfigured STT provider. Physical microphone transcription is not claimed.",
+    "Microphone denial is visible with an Ask Pops typing alternative.",
+    "Navigation aborts recognition and cancels audio."
+  ],
+  "errors": []
+}

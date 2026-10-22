@@ -23,7 +23,8 @@
     "test:orb": "node scripts/test-python.mjs orb",
     "context:orb": "node scripts/generate-orb-context.mjs",
     "test:imports": "node scripts/verify-imports.cjs --tracked",
-    "test:orb-speech": "node scripts/verify-orb-speech.cjs"
+    "test:orb-speech": "node scripts/verify-orb-speech.cjs",
+    "test:orb-recovery": "node scripts/verify-orb-recovery.cjs"
   },
   "dependencies": {
     "framer-motion": "^11.0.0",

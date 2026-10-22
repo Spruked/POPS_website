@@ -16,7 +16,7 @@ export function useWebsiteDemoTour(callbacks:BridgeCallbacks){
  const callbacksRef=useRef(callbacks);callbacksRef.current=callbacks;
  const stopRef=useRef<(interrupted?:boolean)=>void>(()=>{});
  useEffect(()=>{
-  let audio:HTMLAudioElement|null=null,utterance:SpeechSynthesisUtterance|null=null,owned=false,generation=0,request:AbortController|null=null;
+  let audio:HTMLAudioElement|null=null,owned=false,generation=0,request:AbortController|null=null;
   let releaseAudio:(()=>void)|null=null;
   let activeTarget:HTMLElement|null=null;const timers=new Set<ReturnType<typeof setTimeout>>();
   const later=(callback:()=>void,delay:number)=>{const timer=setTimeout(()=>{timers.delete(timer);callback();},delay);timers.add(timer);};
@@ -24,10 +24,9 @@ export function useWebsiteDemoTour(callbacks:BridgeCallbacks){
    generation++;request?.abort();request=null;timers.forEach(clearTimeout);timers.clear();
    releaseAudio?.();releaseAudio=null;
    if(audio){audio.pause();audio.removeAttribute('src');audio.load();audio=null;}
-   if(utterance){window.speechSynthesis?.cancel();utterance=null;}
    activeTarget?.classList.remove('demo-target-active');activeTarget=null;
    if(owned){callbacksRef.current.clear();callbacksRef.current.activity(false);callbacksRef.current.released?.(reason);}owned=false;
-   if(interrupted)demoOrbStatus('Guide paused for your question. Ask Pops, then Resume when ready.','interrupted');
+   if(interrupted)demoOrbStatus('Guide paused for your spoken question. Click Pops, then Resume narration when ready.','interrupted');
   };
   stopRef.current=(interrupted=false)=>cleanup('interruption',interrupted);
   const handler=async(event:Event)=>{
@@ -53,18 +52,11 @@ export function useWebsiteDemoTour(callbacks:BridgeCallbacks){
    const readingDelay=Math.min(16000,Math.max(6000,text.length*35));
    const complete=()=>{if(token!==generation)return;callbacksRef.current.activity(false);demoOrbStatus(model?'Narration complete. Pops is guiding the demonstration.':'Offline example complete. Resume to retry the local model.','complete',text);later(advance,900);};
    if(command.muted){callbacksRef.current.activity(false);later(advance,readingDelay);return;}
-   const emergencyVoice=()=>{
+   const voiceUnavailable=()=>{
     if(token!==generation)return;
     releaseAudio?.();releaseAudio=null;audio=null;
-    demoOrbStatus('Qwen voice unavailable. Using emergency browser speech; the caption remains available.','voice-fallback',text);
-    if('speechSynthesis' in window){
-     utterance=new SpeechSynthesisUtterance(text);utterance.lang='en-US';utterance.rate=.98;
-     let finished=false;const finish=()=>{if(finished||token!==generation)return;finished=true;utterance=null;complete();};
-     utterance.onstart=()=>{if(token===generation)callbacksRef.current.activity(true);};
-     utterance.onend=finish;utterance.onerror=()=>{if(token===generation)demoOrbStatus('Voice unavailable. Read the caption while Pops guides the screens.','voice-unavailable',text);later(finish,readingDelay);};
-     try{window.speechSynthesis.speak(utterance);}catch{later(finish,readingDelay);}
-     later(finish,Math.max(20000,readingDelay+10000));
-    }else later(complete,readingDelay);
+    callbacksRef.current.activity(false);
+    demoOrbStatus('Qwen server voice is unavailable or playback was blocked. The tour is paused. Resume narration to retry.','audio-blocked',text);
    };
    if(model&&speechResponse?.speech_id){
     demoOrbStatus('Preparing the Qwen voice. You can read the caption now.','preparing-voice',text);
@@ -73,12 +65,12 @@ export function useWebsiteDemoTour(callbacks:BridgeCallbacks){
      if(token!==generation){prepared.release();return;}
      audio=prepared.audio;releaseAudio=prepared.release;audio.dataset.demoTarget=step.targetId;
      audio.onplaying=()=>{if(token===generation){callbacksRef.current.activity(true);demoOrbStatus('Pops is narrating with Qwen TTS.','speaking',text);}};
-     audio.onended=complete;audio.onerror=emergencyVoice;
-     await audio.play().catch(()=>{if(token===generation)emergencyVoice();});
-    }catch{if(token===generation)emergencyVoice();}
+     audio.onended=complete;audio.onerror=voiceUnavailable;
+     await audio.play().catch(()=>{if(token===generation)voiceUnavailable();});
+    }catch{if(token===generation)voiceUnavailable();}
     return;
    }
-   if(model){emergencyVoice();return;}
+   if(model){voiceUnavailable();return;}
    audio=new Audio(narrationUrls[step.screen]);audio.volume=.85;audio.dataset.demoTarget=step.targetId;
    audio.onplaying=()=>{if(token===generation)callbacksRef.current.activity(true);};audio.onended=complete;
    audio.onerror=()=>{if(token===generation){callbacksRef.current.activity(false);demoOrbStatus('Voice unavailable. Read the authored transcript and Resume to retry the model.','voice-unavailable',text);}};

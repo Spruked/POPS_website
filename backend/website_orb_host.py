@@ -117,7 +117,7 @@ async def speech(payload:Speech,request:Request):
                 path=existing_orb.TTS_CACHE_DIR/filename
                 try:audio=path.read_bytes()
                 finally:path.unlink(missing_ok=True)
-        except Exception:raise HTTPException(503,'Existing Qwen TTS is unavailable. Captions and emergency browser speech remain available.')
+        except Exception:raise HTTPException(503,'Existing Qwen TTS is unavailable. Captions remain available; retry Qwen narration when ready.')
         if revision!=item.revision or await request.is_disconnected():raise HTTPException(409,'Speech request interrupted.')
         if len(audio)<=44 or audio[:4]!=b'RIFF' or audio[8:12]!=b'WAVE':raise HTTPException(502,'Qwen did not return WAV audio.')
         return Response(audio,media_type='audio/wav',headers={'Cache-Control':'no-store','X-Orb-Speech-Provider':provider})
@@ -162,6 +162,10 @@ async def text(payload:Question,request:Request):
 @app.get('/api/orb/capabilities')
 async def capabilities():
     original=await existing_orb.capabilities()
+    # The legacy host reports its historical default URL as "configured" even
+    # when no STT provider was supplied. This development route requires an
+    # explicit provider and must advertise the same condition to the browser.
+    original['stt']={'configured':bool(os.getenv('FASTER_WHISPER_STT_URL')),'url':os.getenv('FASTER_WHISPER_STT_URL','')}
     return {**original,'status':'development-only','tts':{**original.get('tts',{}),'provider':'qwen','configured':bool(os.getenv('ORB_TTS_QWEN_URL')),'voice':os.getenv('ORB_TTS_QWEN_VOICE','Vivian'),'transport':'session-authorized transient WAV; browser speech emergency fallback'},'local_llm':{'configured':True,'url':os.getenv('POPS_LLAMA_BASE_URL','http://127.0.0.1:16520'),'model':'discovered from /v1/models'},'memory':{'canonical':'Vault-Logic-System-Template/AIMS/memory_core','visitor_storage':'volatile short-term memory','durable_storage':'public published website copy only'},'governance':'Production TPC/Correspondence/Doctrine integration deferred by owner; local action validation only.'}
 
 @app.post('/api/orb/website-voice')

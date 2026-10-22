@@ -1,5 +1,7 @@
 # Existing Qwen TTS connection — October 22, 2026
 
+> Current owner direction (October 22): ORB interaction is voice-only. The lower-right Ask Pops button and text panel are removed. Generated speech uses the existing Qwen server only; browser speech synthesis is disabled. Failed Qwen tour audio pauses with a retry instruction. Browser speech recognition is microphone input, not the output voice. Older validation screenshots/results below describe earlier revisions unless explicitly marked current.
+
 The website ORB uses the **installed Qwen CLI**, not a replacement TTS engine/server implementation. Development only; no production service, new Windows service/task, native application or checkout change.
 
 ## Discovered installation and repairs
@@ -54,6 +56,16 @@ New questions, Pause, Mute, Exit, route departure, page-hide and unmount abort p
 
 `npm run test:orb-speech` uses actual Qwen-generated WAVs for the greeting, generated conversation and guided narration, and checks interruption, Pause/Resume, Exit, route departure and page-hide. Delayed-request cancellation and a provider outage are explicitly simulated; browser emergency speech timing is instrumented. It makes no claim of a human pronunciation review. Evidence: `qwen-validation/results.json`, screenshots and `runtime.json`.
 
-The production-bundle tour regression additionally checks real Qwen playback at every desktop stop and initial tablet/mobile playback, then uses actual muted reading-time progression for the remaining responsive stops. All eight screens, model-emitted transitions, pointers, refresh and controls are checked. Its test server serves dist privately and proxies only the existing ORB backend; it does not deploy. See the current `src/pops-demo-app/validation/production/test-results.json` for the completed run and method. Fourteen backend integration tests cover session isolation, speech ownership, removal of temporary audio, provider failure, private-page exclusion, origins/CSRF and disabled tools/payments. Customer browser regression confirms zero ORB requests on customer pages.
+The production-bundle tour regression additionally checks real Qwen playback at every desktop stop and initial tablet/mobile playback, then uses actual muted reading-time progression for the remaining responsive stops. All eight screens, model-emitted transitions, pointers, refresh and controls are checked. Its test server serves dist privately and proxies only the existing ORB backend; it does not deploy. See the current `src/pops-demo-app/validation/production/test-results.json` for the completed run and method. Fifteen backend integration tests cover session isolation, speech ownership, removal of temporary audio, provider failure, private-page exclusion, origins/CSRF and disabled tools/payments. Customer browser regression confirms zero ORB requests on customer pages.
 
 For a future approved deployment, the media Content Security Policy must permit same-origin and blob audio, and the reviewed ORB backend/provider must be configured separately. This development host is not approved for public exposure or production governance.
+
+## Follow-up: microphone and session recovery
+
+The owner confirmed that the reported failure was resolved by plugging in the microphone. A fresh browser independently received a model reply and played its Qwen WAV. The original user report is not attributed to a Qwen service failure.
+
+The inspection also found separate software defects: the legacy capability response advertised an unconfigured historical STT URL; clicking Pops used the unavailable recorded-audio path; and an already-open page did not recover its first request after visitor-session expiry. The development host now reports explicit STT configuration accurately. If no recorded-audio provider is configured, clicking Pops uses existing browser speech recognition with visible listening/permission/error feedback. This input recognition depends on the browser and microphone permissions; Qwen remains the output voice. No transcription engine was installed.
+
+An expired-session 401 renews the session and retries the rejected request once. Previous expired memory is not restored, and old speech IDs are not replayed. The ORB caption reports Qwen preparation and errors. Removed requests for two nonexistent latency-filler WAVs. Navigation and page-hide stop microphone recognition and pending recognition-restart timers as well as speech.
+
+`npm run test:orb-recovery` reproduces expiry against the real backend, verifies actual model/Qwen playback after renewal, supplies a simulated browser recognition transcript to the real model, and checks permission-denial feedback and navigation cleanup. Physical microphone capture and browser transcription are not automated or certified by this test. Evidence: `qwen-validation/recovery.json`.
