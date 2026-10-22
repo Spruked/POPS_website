@@ -13,10 +13,10 @@ import sys
 import urllib.request
 
 url = sys.argv[1]
-text = sys.stdin.buffer.read(8192).decode('utf-8')
+payload = sys.stdin.buffer.read(16384)
 request = urllib.request.Request(
     url + '/synthesize',
-    data=json.dumps({'text': text, 'format': 'wav'}).encode('utf-8'),
+    data=payload,
     headers={'Content-Type': 'application/json'},
 )
 with urllib.request.urlopen(request, timeout=110) as response:
@@ -42,8 +42,18 @@ async def _synthesize_windows_bridge(text: str, base: str) -> bytes:
         stdout=asyncio.subprocess.PIPE,
         stderr=asyncio.subprocess.PIPE,
     )
+    payload = json.dumps({
+        'text': text,
+        'format': 'wav',
+        'speaker': os.environ.get('ORB_TTS_QWEN_VOICE', 'Ryan'),
+        'language': os.environ.get('ORB_TTS_QWEN_LANGUAGE', 'English'),
+        'instruct': os.environ.get(
+            'ORB_TTS_QWEN_INSTRUCT',
+            'A warm, grounded adult male voice. Calm, confident, natural, and concise.',
+        ),
+    }, ensure_ascii=False).encode('utf-8')
     try:
-        audio, error = await asyncio.wait_for(process.communicate(text.encode('utf-8')), timeout=120)
+        audio, error = await asyncio.wait_for(process.communicate(payload), timeout=120)
     except TimeoutError:
         process.kill()
         await process.wait()
