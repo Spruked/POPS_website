@@ -4,7 +4,9 @@ import os
 from pathlib import Path
 import tempfile
 import unittest
-from unittest.mock import patch
+from unittest.mock import patch, AsyncMock
+import io
+import wave
 import httpx
 from fastapi.testclient import TestClient
 from backend.orb_harness import WebsiteHarness, ShortTermMemory
@@ -88,6 +90,37 @@ class HostBoundaryTests(unittest.TestCase):
     def test_clear_forgets_session_and_invalidates_token(self):
         self.assertEqual(self.client.post('/api/orb/session/clear',headers=self.headers,json={}).status_code,200)
         self.assertEqual(self.client.post('/api/orb/session/event',headers=self.headers,json={'kind':'page','route':'/'}).status_code,401)
+    def test_qwen_speech_uses_only_session_assistant_turn_and_removes_audio(self):
+        harness=self.module.app.state.harness
+        visitor=harness.visitors[self.client.cookies.get(self.module.COOKIE)]
+        turn=harness.observe(visitor,{'kind':'conversation','role':'assistant','content':'Windows is the confirmed desktop platform.'})
+        buffer=io.BytesIO()
+        with wave.open(buffer,'wb') as wav:
+            wav.setnchannels(1);wav.setsampwidth(2);wav.setframerate(24000);wav.writeframes(b'\x00\x00'*1200)
+        filename='a'*32+'.wav';audio_path=Path(self.tmp.name)/filename;audio_path.write_bytes(buffer.getvalue())
+        synth=AsyncMock(return_value=('/api/orb/tts/'+filename,'qwen',None))
+        with patch.object(self.module.existing_orb,'TTS_CACHE_DIR',Path(self.tmp.name)),patch.object(self.module.existing_orb,'_synthesize_orb_tts',synth):
+            response=self.client.post('/api/orb/speech',headers=self.headers,json={'response_id':turn.item_id,'route':'/'})
+        self.assertEqual(response.status_code,200,response.text);self.assertEqual(response.content,buffer.getvalue())
+        self.assertEqual(response.headers['x-orb-speech-provider'],'qwen');self.assertFalse(audio_path.exists())
+        synth.assert_awaited_once_with(turn.content['content'],provider='qwen')
+        self.assertEqual(self.client.post('/api/orb/speech',headers=self.headers,json={'response_id':turn.item_id,'route':'/','text':'Arbitrary text'}).status_code,422)
+        _,other,_=harness.visitor(None)
+        alien=harness.observe(other,{'kind':'conversation','role':'assistant','content':'Other visitor response.'})
+        self.assertEqual(self.client.post('/api/orb/speech',headers=self.headers,json={'response_id':alien.item_id,'route':'/'}).status_code,404)
+        self.assertEqual(self.client.get('/api/orb/tts/'+filename).status_code,404)
+    def test_qwen_failure_preserves_text_and_reports_unavailable(self):
+        harness=self.module.app.state.harness;visitor=harness.visitors[self.client.cookies.get(self.module.COOKIE)]
+        turn=harness.observe(visitor,{'kind':'conversation','role':'assistant','content':'A caption remains available.'})
+        with patch.object(self.module.existing_orb,'_synthesize_orb_tts',AsyncMock(return_value=(None,'qwen','Unavailable'))):
+            response=self.client.post('/api/orb/speech',headers=self.headers,json={'response_id':turn.item_id,'route':'/'})
+        self.assertEqual(response.status_code,503);self.assertEqual(visitor.memory.get(turn.item_id).content['content'],'A caption remains available.')
+    def test_intro_uses_canonical_session_and_excludes_private_pages(self):
+        self.assertEqual(self.client.post('/api/orb/speech/intro',headers=self.headers,json={'route':'/account/profile'}).status_code,400)
+        response=self.client.post('/api/orb/speech/intro',headers=self.headers,json={'route':'/desktop-app'})
+        self.assertEqual(response.status_code,200)
+        item=self.module.app.state.harness.visitors[self.client.cookies.get(self.module.COOKIE)]
+        self.assertEqual(item.memory.get(response.json()['speech_id']).content['role'],'assistant')
     def test_production_environment_disabled(self):
         with patch.dict(os.environ,{'POPS_ORB_DEVELOPMENT':'0'}):self.assertEqual(self.client.get('/api/orb/session').status_code,503)
 

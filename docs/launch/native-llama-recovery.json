@@ -1,0 +1,27 @@
+{
+  "retryTriggerInterval": "PT1M",
+  "modelRecoveryPassed": true,
+  "bootTriggerConfigured": true,
+  "oldSupervisorPid": 19000,
+  "oldModelPid": 9996,
+  "inferenceBefore": "Pops recovery works",
+  "recoveredSupervisorPid": 12268,
+  "recoveredModelPid": 20304,
+  "modelRecoverySeconds": 14.9,
+  "checkedAtUtc": "2026-10-22T10:56:21.8578935Z",
+  "inferenceAfterSupervisor": "Pops recovery works",
+  "supervisorRecoverySeconds": 61.2,
+  "inferenceAfterModel": "Pops recovery works",
+  "supervisorRecoveryPassed": true,
+  "status": "passed",
+  "actualRebootTested": false,
+  "logonType": "S4U",
+  "endpoint": "http://127.0.0.1:16520",
+  "initialAttempt": {
+    "status": "failed",
+    "error": "Scheduled task did not recover its supervisor.",
+    "configuration": "Five-minute backup trigger; configured one-minute RestartOnFailure did not recover the force-terminated supervisor within the test window.",
+    "restoredByTestOnFailure": true
+  },
+  "fix": "Changed only the existing task backup repetition trigger to one minute; retained boot/logon/S4U and IgnoreNew. Retested both failures without manual intervention on the passing run."
+}

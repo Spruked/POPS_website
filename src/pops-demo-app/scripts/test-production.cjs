@@ -56,7 +56,7 @@ const server = http.createServer((request, response) => {
     const code = await new Promise((resolve, reject) => { child.once('error', reject); child.once('exit', resolve); });
     assert.equal(code, 0, 'Production tour regression failed');
     for (const item of inventory) assert.ok(requested.has(item.url), `Browser never requested production asset: ${item.url}`);
-    fs.writeFileSync(path.join(demo, 'validation/production-assets.json'), JSON.stringify({ status: 'passed', serving: 'dist; loopback ORB host only; other APIs unavailable', assets: inventory, allRequestedByBrowser: true, audioDecodedByBrowser:true, liveNarration:'real local llama.cpp responses; browser speech lifecycle instrumented' }, null, 2) + '\n');
+    fs.writeFileSync(path.join(demo, 'validation/production-assets.json'), JSON.stringify({ status: 'passed', serving: 'dist; loopback ORB host only; other APIs unavailable', assets: inventory, allRequestedByBrowser: true, audioDecodedByBrowser:true, liveNarration:'real local llama.cpp responses and Qwen WAV playback; emergency browser speech instrumented' }, null, 2) + '\n');
     console.log(`Verified all ${inventory.length} demo assets byte-for-byte in dist and requested by the production browser.`);
   } finally { await new Promise(resolve => server.close(resolve)); }
 })().catch(error => { console.error(error); process.exitCode = 1; });

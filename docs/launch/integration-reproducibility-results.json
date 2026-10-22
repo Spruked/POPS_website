@@ -20,7 +20,7 @@
   "environment": "Windows; no native application checkout, model download, customer database copy or production access required for these clone checks. ORB tests used the already-installed dependency environment with clone source.",
   "limits": [
     "Live-model browser tests are recorded separately under src/pops-demo-app/validation/.",
-    "Forced native process recovery and actual Windows reboot remain unverified after canceled elevation.",
+    "This historical clone check predates later verified native crash recovery and Qwen integration; see their separate current evidence. Actual Windows reboot remains untested.",
     "Two previously documented moderate React Router findings remain; no breaking force upgrade."
   ]
 }

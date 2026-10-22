@@ -137,7 +137,7 @@ See the demo README for the full copied-source inventory, architecture and test 
 
 ## Local llama.cpp and canonical memory update
 
-The existing native Windows scheduled task **ORB Qwen 7B Server** now runs the installed Qwen 2.5 7B Q4_K_M model on `http://127.0.0.1:16520`. No model installation, download or competing service was created. See [native repair evidence and pending recovery checks](docs/launch/NATIVE_LLAMA_REPAIR.md). Boot startup is configured; an actual reboot and forced-crash recovery are not yet verified because the recovery test's administrator prompt was canceled.
+The existing native Windows scheduled task **ORB Qwen 7B Server** now runs the installed Qwen 2.5 7B Q4_K_M model on `http://127.0.0.1:16520`. No model installation, download or competing service was created. See [native repair evidence and verified recovery checks](docs/launch/NATIVE_LLAMA_REPAIR.md). Forced model and supervisor recovery passed with actual inference after each (14.9s and 61.2s). The existing backup trigger now repeats every minute. Boot startup is configured; an actual reboot remains untested.
 
 Set up the separate local host once:
 
@@ -147,7 +147,7 @@ python -m venv .venv-orb
 .\start-orb-dev.ps1
 ```
 
-The host extends the existing ORB backend on loopback port 8001, one worker, with an explicit development flag. Ask Pops provides ordinary typed conversation. Start Tour uses real generated replies, browser speech, registered pointers and locally validated model-emitted screen transitions. There is no Next button. Questions pause the tour; Resume continues. Bundled WAVs remain an identified offline fallback that pauses progression. Recorded-audio STT is not configured.
+The host extends the existing ORB backend on loopback port 8001, one worker, with an explicit development flag. Ask Pops provides ordinary typed conversation. Start Tour uses real generated replies, Qwen TTS, registered pointers and locally validated model-emitted screen transitions. There is no Next button. Questions pause the tour; Resume continues. Bundled WAVs remain an identified offline fallback that pauses progression. Recorded-audio STT is not configured. Qwen uses the existing CLI on 8020 with the cached 0.6B CustomVoice model and Vivian/English. See [Qwen setup and audio cleanup](docs/launch/QWEN_TTS.md).
 
 The original supplied `Vault-Logic-System-Template/` and `AIMS/` are ordinary source directories, not submodules. The adapter uses canonical AIMSMemorySystem/Vault for published copy and canonical ShortTermMemory per visitor. Visitor transcripts stay ephemeral and isolated; customer data is excluded. See [memory contracts and the Windows concurrent-writer limitation](docs/launch/MEMORY_INTEGRATION.md) and [customer schema, permissions and reporting](docs/launch/CUSTOMER_ACCOUNTS.md).
 
@@ -161,4 +161,6 @@ npm run test:demo:production
 npm run test:imports
 ```
 
-Live-model browser tests require the existing model and local ORB host. Production-bundle tests serve `dist` privately and proxy only the local ORB host; they do not deploy. Speech timing is instrumented for repeatability; model replies and pointer measurements are real. The regular build requires no application checkout, model file or customer database. Windows service/task scripts are never run by a frontend build.
+Live-model browser tests require the existing model and local ORB host. Production-bundle tests serve `dist` privately and proxy only the local ORB host; they do not deploy. Qwen WAV playback/decoding, model replies and pointer measurements are real. Clips seek near their end to accelerate full-tour regression; only emergency browser speech is instrumented. The regular build requires no application checkout, model file or customer database. Windows service/task scripts are never run by a frontend build.
+
+Qwen speech validation: `npm run test:orb-speech`. Start the existing Qwen CLI with `scripts/windows/Start-ExistingQwenTTS.ps1` using its installed Python/model paths; no engine/model is installed by the website. The running TTS process has no new reboot service/task. See docs/launch/QWEN_TTS.md.

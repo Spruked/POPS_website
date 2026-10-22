@@ -1,0 +1,49 @@
+{
+  "status": "passed",
+  "provider": "Existing Qwen CLI",
+  "voice": "Vivian",
+  "language": "English",
+  "checks": [
+    "Conversation captions appear as soon as the model replies, independently of Qwen audio preparation.",
+    "Existing Qwen voice plays the authored greeting and an actual generated conversation response through the website backend.",
+    "A new question interrupts the previous clip; route navigation stops playback and revokes its object URL.",
+    "Guided narration uses actual Qwen WAV playback; Pause/Resume and Exit immediately release audio, requests and blob URLs without browser speech.",
+    "Exit during an intentionally delayed speech request cancels it; no late clip or emergency speech begins.",
+    "An explicitly simulated Qwen outage activates the labeled emergency browser fallback and keeps captions; Exit cancels that fallback.",
+    "Page-hide cleanup stops active Qwen audio and revokes URLs; the browser page then closes cleanly."
+  ],
+  "samples": [
+    {
+      "duration": 5.12,
+      "currentTime": 0.015787,
+      "readyState": 4
+    },
+    {
+      "duration": 7.28,
+      "currentTime": 0.010192,
+      "readyState": 4
+    },
+    {
+      "duration": 4.24,
+      "currentTime": 0.013145,
+      "readyState": 4
+    },
+    {
+      "duration": 17.68,
+      "currentTime": 0.002694,
+      "readyState": 4
+    },
+    {
+      "duration": 15.44,
+      "currentTime": 0.013604,
+      "readyState": 4
+    },
+    {
+      "duration": 18.48,
+      "currentTime": 0.002447,
+      "readyState": 4
+    }
+  ],
+  "errors": [],
+  "method": "Actual Qwen audio decoded and played. Browser emergency speech is instrumented; outage and pending-request cancellation are explicitly simulated."
+}

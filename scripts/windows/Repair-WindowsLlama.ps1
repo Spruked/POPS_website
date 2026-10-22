@@ -17,7 +17,7 @@ $stamp=Get-Date -Format 'yyyyMMdd-HHmmss'
 Export-ScheduledTask -TaskName $TaskName | Set-Content -LiteralPath (Join-Path $installedRoot "task-before-$stamp.xml") -Encoding UTF8
 Copy-Item -LiteralPath $launcher -Destination (Join-Path $installedRoot "Start-ORB-LLM.before-$stamp.ps1")
 $settings=New-ScheduledTaskSettingsSet -AllowStartIfOnBatteries -DontStopIfGoingOnBatteries -DontStopOnIdleEnd -StartWhenAvailable -ExecutionTimeLimit ([TimeSpan]::Zero) -RestartCount 999 -RestartInterval (New-TimeSpan -Minutes 1) -MultipleInstances IgnoreNew
-$triggers=@((New-ScheduledTaskTrigger -AtStartup),(New-ScheduledTaskTrigger -AtLogOn -User $existing.Principal.UserId),(New-ScheduledTaskTrigger -Once -At (Get-Date).AddMinutes(1) -RepetitionInterval (New-TimeSpan -Minutes 5)))
+$triggers=@((New-ScheduledTaskTrigger -AtStartup),(New-ScheduledTaskTrigger -AtLogOn -User $existing.Principal.UserId),(New-ScheduledTaskTrigger -Once -At (Get-Date).AddMinutes(1) -RepetitionInterval (New-TimeSpan -Minutes 1)))
 $taskPrincipal=New-ScheduledTaskPrincipal -UserId $existing.Principal.UserId -LogonType S4U -RunLevel Limited
 $action=New-ScheduledTaskAction -Execute "$env:SystemRoot\System32\WindowsPowerShell\v1.0\powershell.exe" -Argument ('-NoProfile -NonInteractive -WindowStyle Hidden -ExecutionPolicy Bypass -File "'+$launcher+'" -ServerPath "'+$ServerPath+'" -ModelPath "'+$ModelPath+'" -Port '+$Port+' -LogDirectory "'+(Join-Path $installedRoot 'logs')+'"') -WorkingDirectory $installedRoot
 Stop-ScheduledTask -TaskName $TaskName
@@ -27,4 +27,4 @@ Copy-Item -LiteralPath (Join-Path $PSScriptRoot 'Start-ORB-LLM.ps1') -Destinatio
 Set-ScheduledTask -TaskName $TaskName -Settings $settings -Trigger $triggers -Principal $taskPrincipal -Action $action | Out-Null
 Start-ScheduledTask -TaskName $TaskName
 if ($ResultPath) { [IO.File]::WriteAllText($ResultPath,'Existing scheduled task repaired and started.') }
-Write-Host 'Existing task repaired: noninteractive startup, startup/logon/5-minute recovery triggers, continuous supervisor, loopback-only inference.'
+Write-Host 'Existing task repaired: noninteractive startup, startup/logon/1-minute recovery triggers, continuous supervisor, loopback-only inference.'

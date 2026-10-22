@@ -6,11 +6,13 @@
   "bootTriggerConfigured": true,
   "task": "ORB Qwen 7B Server",
   "note": "LastTaskResult is the last task trigger/action result, not an inference-health measurement; running instance and HTTP inference verified separately.",
-  "crashRecoveryTest": "Pending: Windows administrator prompt was canceled",
+  "crashRecoveryTest": "Passed: model and supervisor force-termination, new process IDs, readiness and actual inference after each",
   "inference": "Pops local inference works",
   "lastTaskResult": 2147946720,
   "logonType": "S4U",
   "health": "ok",
   "state": "Running",
-  "actualRebootTested": false
+  "actualRebootTested": false,
+  "recoveryEvidence": "native-llama-recovery.json",
+  "retryTriggerInterval": "PT1M"
 }

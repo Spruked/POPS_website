@@ -31,6 +31,7 @@ POPS_website-main/
 │   ├── main.py
 │   ├── manage_customers.py
 │   ├── orb_harness.py
+│   ├── orb_qwen_tts.py
 │   ├── orb-requirements.lock
 │   ├── orb-requirements.txt
 │   ├── requirements.txt
@@ -74,6 +75,11 @@ POPS_website-main/
 │   │   │   ├── profile-desktop.png
 │   │   │   ├── profile-mobile.png
 │   │   │   └── results.json
+│   │   ├── qwen-validation/
+│   │   │   ├── conversation.png
+│   │   │   ├── results.json
+│   │   │   ├── runtime.json
+│   │   │   └── tour.png
 │   │   ├── screenshots/
 │   │   │   ├── access.png
 │   │   │   ├── account.png
@@ -109,11 +115,13 @@ POPS_website-main/
 │   │   ├── MARKETING_PLAN.md
 │   │   ├── MEMORY_INTEGRATION.md
 │   │   ├── NATIVE_LLAMA_REPAIR.md
+│   │   ├── native-llama-recovery.json
 │   │   ├── native-llama-validation.json
 │   │   ├── navigation-results.json
 │   │   ├── prerender-report.json
 │   │   ├── protected-baseline.json
 │   │   ├── protected-portable-baseline.json
+│   │   ├── QWEN_TTS.md
 │   │   ├── reproducibility-results.json
 │   │   └── SITEMAP.md
 │   └── WEBSITE_ORB.md
@@ -163,6 +171,7 @@ POPS_website-main/
 ├── scripts/
 │   ├── windows/
 │   │   ├── Repair-WindowsLlama.ps1
+│   │   ├── Start-ExistingQwenTTS.ps1
 │   │   ├── Start-ORB-LLM.ps1
 │   │   └── Test-WindowsLlamaRecovery.ps1
 │   ├── capture-before.cjs
@@ -175,6 +184,7 @@ POPS_website-main/
 │   ├── verify-imports.cjs
 │   ├── verify-launch.cjs
 │   ├── verify-navigation.cjs
+│   ├── verify-orb-speech.cjs
 │   └── verify-protected.cjs
 ├── src/
 │   ├── components/
@@ -203,6 +213,7 @@ POPS_website-main/
 │   │   └── validatePopsLexicon.ts
 │   ├── orb/
 │   │   ├── orbActions.ts
+│   │   ├── orbSpeech.ts
 │   │   ├── pointerGuideController.ts
 │   │   ├── pointerTargetRegistry.ts
 │   │   ├── registeredDestinations.json

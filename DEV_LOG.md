@@ -73,3 +73,17 @@ Imported the 84 original Vault/A.I.M.S. source files intact, moving only nested 
 Connected normal ORB conversation and the no-Next guided mini-app to existing Qwen llama.cpp. Real local inference, contextual interruption/resumption, all eight stops, desktop/tablet/mobile pointer alignment and production assets passed browser checks. Tests instrument speech timing, not HTTP model replies. Customer data, payments, native app and production remain separate.
 
 Repaired the existing native ORB Qwen 7B Server task in place: S4U, boot/logon/retry triggers, battery allowances, persistent recovery supervisor and clean logs. Inference verified on 16520. Historical exit was cancellation with insufficient retained history to identify its initiator. Forced-crash verification awaits elevation after canceled UAC; actual reboot remains untested. See docs/launch/NATIVE_LLAMA_REPAIR.md.
+
+## 2026-10-22 — controlled native recovery verification
+
+Owner approved reopening administrator elevation. The first controlled crash test proved model recovery but exposed failure to recover the killed supervisor within the test window using RestartOnFailure and the five-minute backup trigger. The failed test restored availability. Changed only the existing task backup repetition to one minute, preserving its boot/logon/S4U configuration and single-instance policy.
+
+Retest passed without manual starts: model PID 9996 to 20304 and working inference in 14.9s; supervisor PID 19000 to 12268 and working inference in 61.2s. Evidence retains the failed first attempt. Updated the reusable recovery test with administrator checks, progress evidence, inference assertions and measured recovery times. An actual Windows reboot remains untested; none was performed. Production and the native application are unchanged.
+
+## 2026-10-22 — existing Qwen voice integration
+
+Owner approved using the installed Qwen CLI and cached 0.6B CustomVoice model. Located the global Python 3.11 installation, repaired its incompatible Hub dependency, and restored only missing tokenizer metadata from an existing local Qwen copy after matching tokenizer JSON/BPE definitions. No Qwen reinstall, replacement engine, model-weight download or Windows service/task was created. Existing CLI runs on loopback 8020 in BF16 with Vivian/English; actual 24kHz, non-silent speech verified.
+
+Added a protocol adapter to the verified live Gradio API and session-authorized transient WAV delivery through the existing website backend. Canonical STM assistant IDs authorize speech; arbitrary text/customer data do not enter this route. Caption-first playback uses Qwen by default, with explicit emergency browser fallback. Abort, source removal, blob revocation and stale-result guards cover questions, pause, exit, navigation and page-hide.
+
+Actual Qwen conversation/tour playback and interruption/cleanup browser checks passed; provider outage and delayed-request behavior were explicitly simulated. Fourteen integration tests and customer-page isolation regression passed. Also corrected an observed unsupported-platform claim by supplying explicit Windows-only/unconfirmed-platform facts; live answers then respected those facts. Production-bundle regression evidence is recorded separately. Production, checkout and native application remain unchanged.

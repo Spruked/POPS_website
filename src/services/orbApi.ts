@@ -15,6 +15,7 @@ export interface OrbResponse {
   tts_audio_url: string | null;
   tts_provider: string | null;
   tts_error: string | null;
+  speech_id?: string | null;
   action?:OrbAction;
   development_only?:boolean;
 }

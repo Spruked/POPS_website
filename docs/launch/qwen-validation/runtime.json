@@ -1,0 +1,46 @@
+{
+  "status": "passed",
+  "installedEngine": "qwen-tts 0.1.1, Python 3.11",
+  "endpoint": "http://127.0.0.1:8020",
+  "api": "POST /gradio_api/call/v2/run_instruct followed by GET /gradio_api/call/run_instruct/{event_id}",
+  "voice": "Vivian",
+  "language": "English",
+  "model": "Qwen3-TTS-12Hz-0.6B-CustomVoice",
+  "dtype": "bfloat16",
+  "device": "NVIDIA GeForce RTX 5060",
+  "probeDurationSeconds": 4.32,
+  "probePeakAmplitude": 32767,
+  "repairedDependency": "huggingface-hub 2.2.0 to 0.36.2 (required by installed Transformers 4.57.3 and Gradio)",
+  "restoredMissingMetadata": [
+    {
+      "file": "speech_tokenizer/config.json",
+      "localSource": "C:\\Users\\bryan\\Qwen3-TTS-12Hz-1.7B-CustomVoice\\speech_tokenizer\\config.json",
+      "bytes": 2430,
+      "sha256": "0affab27d655d056e0b3b213a398cef2dcf1d3bc41bec28a202e2127ef6c1789"
+    },
+    {
+      "file": "vocab.json",
+      "localSource": "C:\\Users\\bryan\\Qwen3-TTS-12Hz-1.7B-CustomVoice\\vocab.json",
+      "bytes": 2776833,
+      "sha256": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+    }
+  ],
+  "tokenizerVerification": "Tokenizer/preprocessor JSON identical; all 151387 BPE merge lines identical after whitespace normalization; text vocab size 151936 in both local checkpoints.",
+  "modelWeightsDownloadedOrReplaced": false,
+  "newEngineInstalled": false,
+  "newWindowsServiceOrTask": false,
+  "startup": "Existing packaged CLI launched hidden; no reboot autostart configured for TTS.",
+  "websiteWavProbe": {
+    "status": "passed",
+    "provider": "qwen",
+    "voice": "Vivian",
+    "language": "English",
+    "model": "Qwen3-TTS-12Hz-0.6B-CustomVoice",
+    "bytes": 268844,
+    "sampleRate": 24000,
+    "duration": 5.6,
+    "channels": 1
+  },
+  "captionDelivery": "Model text is returned to the conversation immediately; audio prepares independently.",
+  "startupPriorityCheck": "A live browser probe confirmed that no delayed greeting starts after an active question."
+}

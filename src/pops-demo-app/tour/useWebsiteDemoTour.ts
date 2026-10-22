@@ -3,6 +3,8 @@ import {admitDemoCommand,DEMO_ORB_EVENT,demoOrbStatus,findDemoTarget,narrationUr
 import type {DemoOrbCommand} from './orbBridge';
 import type {WebsiteOrbGuideRequest} from '../../orb/websiteOrbTargetTypes';
 import {sendWebsiteOrbText} from '../../services/orbApi';
+import type {OrbResponse} from '../../services/orbApi';
+import {prepareOrbSpeech} from '../../orb/orbSpeech';
 import {dispatchOrbAction} from '../../orb/visitorSession';
 import type {OrbAction} from '../../orb/visitorSession';
 
@@ -15,10 +17,12 @@ export function useWebsiteDemoTour(callbacks:BridgeCallbacks){
  const stopRef=useRef<(interrupted?:boolean)=>void>(()=>{});
  useEffect(()=>{
   let audio:HTMLAudioElement|null=null,utterance:SpeechSynthesisUtterance|null=null,owned=false,generation=0,request:AbortController|null=null;
+  let releaseAudio:(()=>void)|null=null;
   let activeTarget:HTMLElement|null=null;const timers=new Set<ReturnType<typeof setTimeout>>();
   const later=(callback:()=>void,delay:number)=>{const timer=setTimeout(()=>{timers.delete(timer);callback();},delay);timers.add(timer);};
   const cleanup=(reason:string,interrupted=false)=>{
    generation++;request?.abort();request=null;timers.forEach(clearTimeout);timers.clear();
+   releaseAudio?.();releaseAudio=null;
    if(audio){audio.pause();audio.removeAttribute('src');audio.load();audio=null;}
    if(utterance){window.speechSynthesis?.cancel();utterance=null;}
    activeTarget?.classList.remove('demo-target-active');activeTarget=null;
@@ -36,11 +40,11 @@ export function useWebsiteDemoTour(callbacks:BridgeCallbacks){
    callbacksRef.current.guide({targetId:step.targetId,reason:'user-started-local-llm-tour',message:step.caption});
    activeTarget=findDemoTarget(step.selector);activeTarget?.classList.add('demo-target-active');
    demoOrbStatus('Pops is preparing this screen with the local model…','preparing');
-   let text=step.narration,action:OrbAction={type:'stay'},model=false;
+   let text=step.narration,action:OrbAction={type:'stay'},model=false,speechResponse:OrbResponse|null=null;
    try{
     const answer=await sendWebsiteOrbText(`Current screen: ${step.title} (${step.screen}). Approved screen brief: ${step.narration} Connect this screen to the fictional record and what we discussed. Explain this screen briefly, then emit the permitted transition after narration.`,{event:'tour_stop',demo_screen:step.screen},request.signal);
     if(token!==generation)return;
-    text=answer.spoken_output;action=answer.action||{type:'stay'};model=answer.llm_source==='local-llama.cpp';
+    text=answer.spoken_output;action=answer.action||{type:'stay'};model=answer.llm_source==='local-llama.cpp';speechResponse=answer;
    }catch(error){if(token!==generation)return;demoOrbStatus('Local model unavailable. Playing the authored example only; automatic progression is paused. Resume to retry.','offline',text);}
    if(token!==generation)return;
    callbacksRef.current.caption(text,step.targetId,model?'local-llama.cpp-demo':'scripted-demo');
@@ -49,24 +53,41 @@ export function useWebsiteDemoTour(callbacks:BridgeCallbacks){
    const readingDelay=Math.min(16000,Math.max(6000,text.length*35));
    const complete=()=>{if(token!==generation)return;callbacksRef.current.activity(false);demoOrbStatus(model?'Narration complete. Pops is guiding the demonstration.':'Offline example complete. Resume to retry the local model.','complete',text);later(advance,900);};
    if(command.muted){callbacksRef.current.activity(false);later(advance,readingDelay);return;}
-   if(model&&'speechSynthesis' in window){
-    utterance=new SpeechSynthesisUtterance(text);utterance.lang='en-US';utterance.rate=.98;
-    let finished=false;const finish=()=>{if(finished||token!==generation)return;finished=true;utterance=null;complete();};
-    utterance.onstart=()=>{if(token===generation)callbacksRef.current.activity(true);};
-    utterance.onend=finish;utterance.onerror=()=>{if(token===generation)demoOrbStatus('Browser voice unavailable. Read the caption while Pops guides the screens.','voice-unavailable',text);later(finish,readingDelay);};
-    try{window.speechSynthesis.speak(utterance);}catch{later(finish,readingDelay);}
-    // Browser engines can fail without reporting an event. Captions remain usable.
-    later(finish,Math.max(20000,readingDelay+10000));return;
+   const emergencyVoice=()=>{
+    if(token!==generation)return;
+    releaseAudio?.();releaseAudio=null;audio=null;
+    demoOrbStatus('Qwen voice unavailable. Using emergency browser speech; the caption remains available.','voice-fallback',text);
+    if('speechSynthesis' in window){
+     utterance=new SpeechSynthesisUtterance(text);utterance.lang='en-US';utterance.rate=.98;
+     let finished=false;const finish=()=>{if(finished||token!==generation)return;finished=true;utterance=null;complete();};
+     utterance.onstart=()=>{if(token===generation)callbacksRef.current.activity(true);};
+     utterance.onend=finish;utterance.onerror=()=>{if(token===generation)demoOrbStatus('Voice unavailable. Read the caption while Pops guides the screens.','voice-unavailable',text);later(finish,readingDelay);};
+     try{window.speechSynthesis.speak(utterance);}catch{later(finish,readingDelay);}
+     later(finish,Math.max(20000,readingDelay+10000));
+    }else later(complete,readingDelay);
+   };
+   if(model&&speechResponse?.speech_id){
+    demoOrbStatus('Preparing the Qwen voice. You can read the caption now.','preparing-voice',text);
+    try{
+     const prepared=await prepareOrbSpeech(speechResponse,request!.signal);
+     if(token!==generation){prepared.release();return;}
+     audio=prepared.audio;releaseAudio=prepared.release;audio.dataset.demoTarget=step.targetId;
+     audio.onplaying=()=>{if(token===generation){callbacksRef.current.activity(true);demoOrbStatus('Pops is narrating with Qwen TTS.','speaking',text);}};
+     audio.onended=complete;audio.onerror=emergencyVoice;
+     await audio.play().catch(()=>{if(token===generation)emergencyVoice();});
+    }catch{if(token===generation)emergencyVoice();}
+    return;
    }
-   if(model){later(complete,readingDelay);return;}
+   if(model){emergencyVoice();return;}
    audio=new Audio(narrationUrls[step.screen]);audio.volume=.85;audio.dataset.demoTarget=step.targetId;
    audio.onplaying=()=>{if(token===generation)callbacksRef.current.activity(true);};audio.onended=complete;
    audio.onerror=()=>{if(token===generation){callbacksRef.current.activity(false);demoOrbStatus('Voice unavailable. Read the authored transcript and Resume to retry the model.','voice-unavailable',text);}};
    audio.play().catch(()=>{if(token===generation){callbacksRef.current.activity(false);demoOrbStatus('Press Resume narration to enable audio or retry the local model.','audio-blocked',text);}});
   };
   const visibility=()=>{if(document.hidden&&owned)cleanup('visibility',true);};
-  window.addEventListener(DEMO_ORB_EVENT,handler);document.addEventListener('visibilitychange',visibility);
-  return()=>{cleanup('exit');window.removeEventListener(DEMO_ORB_EVENT,handler);document.removeEventListener('visibilitychange',visibility);};
+  const pagehide=()=>cleanup('pagehide',true);
+  window.addEventListener(DEMO_ORB_EVENT,handler);document.addEventListener('visibilitychange',visibility);window.addEventListener('pagehide',pagehide);
+  return()=>{cleanup('exit');window.removeEventListener(DEMO_ORB_EVENT,handler);document.removeEventListener('visibilitychange',visibility);window.removeEventListener('pagehide',pagehide);};
  },[]);
  return()=>stopRef.current(true);
 }

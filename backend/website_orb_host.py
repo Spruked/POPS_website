@@ -4,6 +4,7 @@ from contextlib import asynccontextmanager
 import json
 import os
 import secrets
+import re
 from pathlib import Path
 from fastapi import FastAPI, Request, Response, HTTPException
 from pydantic import BaseModel, Field, ConfigDict
@@ -27,7 +28,7 @@ async def lifespan(app):
 
 # Extend the existing website backend and preserve its supported read surfaces.
 app=existing_orb.app
-app.router.routes=[route for route in app.router.routes if getattr(route,'path','') not in {'/api/orb/website-text','/api/orb/website-voice','/api/orb/capabilities','/docs','/redoc','/docs/oauth2-redirect','/openapi.json'}]
+app.router.routes=[route for route in app.router.routes if getattr(route,'path','') not in {'/api/orb/website-text','/api/orb/website-voice','/api/orb/capabilities','/api/orb/tts/{audio_id}','/docs','/redoc','/docs/oauth2-redirect','/openapi.json'}]
 app.router.lifespan_context=lifespan
 
 @app.middleware('http')
@@ -71,6 +72,56 @@ class Question(BaseModel):
     demo_screen:str|None=Field(default=None,max_length=30)
     synthesize_tts:bool=False
 
+class Speech(BaseModel):
+    model_config=ConfigDict(extra='forbid')
+    response_id:str=Field(min_length=36,max_length=36)
+    route:str=Field(max_length=150)
+
+class Intro(BaseModel):
+    model_config=ConfigDict(extra='forbid')
+    route:str=Field(max_length=150)
+
+@app.post('/api/orb/speech/intro')
+async def intro(payload:Intro,request:Request):
+    _,item,_=visitor(request)
+    harness=request.app.state.harness
+    if payload.route not in harness.routes:raise HTTPException(400,'Private pages are excluded from ORB speech.')
+    if item.route!=payload.route:harness.event(item,'page',payload.route)
+    caption="Hi, I'm Pops. Say Pops when you need me, and I'll listen."
+    turn=harness.observe(item,{'kind':'conversation','role':'assistant','content':caption,'source':'authored-website-intro'})
+    return {'transcript':'','spoken_output':caption,'speech_id':turn.item_id,'cognitive_pulse':{'cognitive_mode':'WEBSITE_INTRO','glow_intensity':.5},'llm_source':'website-intro','tts_provider':'qwen','tts_audio_url':None,'tts_error':None,'memory_context':None}
+
+speech_lock=asyncio.Lock()
+
+@app.post('/api/orb/speech')
+async def speech(payload:Speech,request:Request):
+    _,item,_=visitor(request)
+    if payload.route not in request.app.state.harness.routes or item.route!=payload.route:
+        raise HTTPException(400,'Speech is available only for the active public page.')
+    turn=item.memory.get(payload.response_id)
+    if not turn or turn.content.get('role')!='assistant':raise HTTPException(404,'Response is not in this visitor session.')
+    revision=item.revision
+    # Serialize the existing provider/cache contract, then remove transient audio.
+    async with speech_lock:
+        if revision!=item.revision or await request.is_disconnected():raise HTTPException(409,'Speech request interrupted.')
+        provider='qwen'
+        try:
+            if os.getenv('ORB_TTS_QWEN_PAYLOAD_MODE')=='gradio-custom-voice':
+                from .orb_qwen_tts import synthesize
+                audio=await synthesize(turn.content['content'])
+            else:
+                audio_url,provider,error=await existing_orb._synthesize_orb_tts(turn.content['content'],provider='qwen')
+                if error or not audio_url:raise ValueError('Existing Qwen provider unavailable.')
+                filename=audio_url.rsplit('/',1)[-1]
+                if not re.fullmatch(r'[a-f0-9]{32}\.wav',filename):raise ValueError('Invalid provider audio reference.')
+                path=existing_orb.TTS_CACHE_DIR/filename
+                try:audio=path.read_bytes()
+                finally:path.unlink(missing_ok=True)
+        except Exception:raise HTTPException(503,'Existing Qwen TTS is unavailable. Captions and emergency browser speech remain available.')
+        if revision!=item.revision or await request.is_disconnected():raise HTTPException(409,'Speech request interrupted.')
+        if len(audio)<=44 or audio[:4]!=b'RIFF' or audio[8:12]!=b'WAVE':raise HTTPException(502,'Qwen did not return WAV audio.')
+        return Response(audio,media_type='audio/wav',headers={'Cache-Control':'no-store','X-Orb-Speech-Provider':provider})
+
 @app.get('/api/orb/session')
 async def session(request:Request,response:Response):
     key,item,created=visitor(request,csrf=False)
@@ -106,12 +157,12 @@ async def text(payload:Question,request:Request):
     action=result['action']
     pulse={'cognitive_mode':'DEVELOPMENT_CONVERSATION','glow_intensity':.72}
     if action['type']=='point':pulse['semantic_target_id']=action['target_id']
-    return {'transcript':payload.transcript,'spoken_output':result['spoken_output'],'cognitive_pulse':pulse,'llm_source':result['llm_source'],'memory_context':'Relevant public copy and temporary visitor context from supplied A.I.M.S.','tts_audio_url':None,'tts_provider':'browser-session-voice','tts_error':None,'action':action,'development_only':True}
+    return {'transcript':payload.transcript,'spoken_output':result['spoken_output'],'speech_id':result.get('speech_id'),'cognitive_pulse':pulse,'llm_source':result['llm_source'],'memory_context':'Relevant public copy and temporary visitor context from supplied A.I.M.S.','tts_audio_url':None,'tts_provider':'qwen','tts_error':None,'action':action,'development_only':True}
 
 @app.get('/api/orb/capabilities')
 async def capabilities():
     original=await existing_orb.capabilities()
-    return {**original,'status':'development-only','local_llm':{'configured':True,'url':os.getenv('POPS_LLAMA_BASE_URL','http://127.0.0.1:16520'),'model':'discovered from /v1/models'},'memory':{'canonical':'Vault-Logic-System-Template/AIMS/memory_core','visitor_storage':'volatile short-term memory','durable_storage':'public published website copy only'},'governance':'Production TPC/Correspondence/Doctrine integration deferred by owner; local action validation only.'}
+    return {**original,'status':'development-only','tts':{**original.get('tts',{}),'provider':'qwen','configured':bool(os.getenv('ORB_TTS_QWEN_URL')),'voice':os.getenv('ORB_TTS_QWEN_VOICE','Vivian'),'transport':'session-authorized transient WAV; browser speech emergency fallback'},'local_llm':{'configured':True,'url':os.getenv('POPS_LLAMA_BASE_URL','http://127.0.0.1:16520'),'model':'discovered from /v1/models'},'memory':{'canonical':'Vault-Logic-System-Template/AIMS/memory_core','visitor_storage':'volatile short-term memory','durable_storage':'public published website copy only'},'governance':'Production TPC/Correspondence/Doctrine integration deferred by owner; local action validation only.'}
 
 @app.post('/api/orb/website-voice')
 async def voice(request:Request):

@@ -3,7 +3,7 @@
   "files": [
     {
       "path": "src/orb/WebsiteFloatingOrb.tsx",
-      "sha256LF": "fcf7025ebdb17cf541eb274ce4f9bd6c85de58b140c8024bb13d2c6ab5c97621"
+      "sha256LF": "64bd6a500cad1b8193890b66b2e717b95be5b88e6f69207a5dedb365a651d235"
     },
     {
       "path": "src/orb/WebsiteOrbPointerOverlay.tsx",
@@ -23,7 +23,7 @@
     },
     {
       "path": "src/services/orbApi.ts",
-      "sha256LF": "31fe65e6fef8dfe1b92dc31a25fd7205d9d9cae294d36c17f66bac36e7e10ab8"
+      "sha256LF": "abb8abcc31a2572547a0bbcc834959b5ad4556b0573f9c1eb9bdba77d13d6d03"
     }
   ]
 }

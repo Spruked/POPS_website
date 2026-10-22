@@ -20,9 +20,10 @@ import "./WebsiteFloatingOrb.css";
 import { useWebsiteDemoTour } from '../pops-demo-app/tour/useWebsiteDemoTour';
 import { getDemoVisibleRect, DEMO_HOST_ID } from '../pops-demo-app/tour/orbBridge';
 import WebsiteOrbConversation from './WebsiteOrbConversation';
-import {reportOrbEvent,isPrivateOrbPage,dispatchOrbAction} from './visitorSession';
+import {reportOrbEvent,isPrivateOrbPage,dispatchOrbAction,orbPost} from './visitorSession';
 import type {OrbAction} from './visitorSession';
 import {applyOrbAction} from './orbActions';
+import {prepareOrbSpeech} from './orbSpeech';
 
 type VoiceRecognitionResultEvent = {
   resultIndex: number;
@@ -127,6 +128,10 @@ export default function WebsiteFloatingOrb() {
   const interruptTourRef = useRef<() => void>(() => {});
   const introSpeechRef = useRef<SpeechSynthesisUtterance | null>(null);
   const responseSpeechRef = useRef<SpeechSynthesisUtterance | null>(null);
+  const speechRequestRef=useRef<AbortController|null>(null);
+  const releaseFinalRef=useRef<(()=>void)|null>(null);
+  const introActiveRef=useRef(false);
+  const introAllowedRef=useRef(true);
   const tourSuspendedActivationRef = useRef(false);
 
   const glow = glowFromPulse(lastResponse);
@@ -146,10 +151,14 @@ export default function WebsiteFloatingOrb() {
   }, []);
 
   const stopFinalAudio = useCallback(() => {
+    introActiveRef.current=false;
+    speechRequestRef.current?.abort();speechRequestRef.current=null;
+    releaseFinalRef.current?.();releaseFinalRef.current=null;
     if (responseSpeechRef.current) { responseSpeechRef.current.onend=null; responseSpeechRef.current.onerror=null; window.speechSynthesis?.cancel(); responseSpeechRef.current=null; }
     if (finalAudioRef.current) {
       finalAudioRef.current.pause();
-      finalAudioRef.current.currentTime = 0;
+      finalAudioRef.current.onended=null;finalAudioRef.current.onerror=null;
+      finalAudioRef.current.removeAttribute("src");finalAudioRef.current.load();
       finalAudioRef.current = null;
     }
   }, []);
@@ -167,51 +176,47 @@ export default function WebsiteFloatingOrb() {
 
   const speakOutput = useCallback(
     async (response: OrbResponse) => {
-      stopFiller();
-      stopFinalAudio();
-      setLastResponse(response);
-      const guideRequest = guideRequestFromPulse(response.cognitive_pulse);
-      if (guideRequest) setPendingGuide(guideRequest);
-
-      if (!response.tts_audio_url) {
-        if (response.llm_source === 'local-llama.cpp' && 'speechSynthesis' in window) {
-          const speech=new SpeechSynthesisUtterance(response.spoken_output);
-          responseSpeechRef.current=speech;
-          let finished=false;
-          const finish=()=>{if(finished||responseSpeechRef.current!==speech)return;finished=true;responseSpeechRef.current=null;setOrbState('idle');if(response.action)dispatchOrbAction(response.action);};
-          speech.onend=finish;speech.onerror=finish;speech.lang='en-US';speech.rate=.98;
-          setOrbState('speaking');window.speechSynthesis.speak(speech);
-          window.setTimeout(finish,Math.max(12000,response.spoken_output.length*55));
-          return;
-        }
-        setOrbState(response.tts_error ? "error" : "idle");
+      stopFiller();stopFinalAudio();introActiveRef.current=response.llm_source==='website-intro';setLastResponse(response);
+      const guideRequest=guideRequestFromPulse(response.cognitive_pulse);
+      if(guideRequest)setPendingGuide(guideRequest);
+      const request=new AbortController(),run=runIdRef.current;
+      speechRequestRef.current=request;
+      const current=()=>!request.signal.aborted&&runIdRef.current===run;
+      let finished=false;
+      const finish=()=>{
+        if(finished||!current())return;finished=true;stopFinalAudio();setOrbState('idle');
         if(response.action)dispatchOrbAction(response.action);
-        if (voiceResumeAfterResponseRef.current) {
-          voiceResumeAfterResponseRef.current = false;
-          window.setTimeout(() => startVoiceActivationRef.current?.(), 250);
-        }
-        return;
-      }
-
-      const audio = new Audio(response.tts_audio_url);
-      finalAudioRef.current = audio;
-      audio.onended = () => {
-        setOrbState("idle");
-        if(response.action)dispatchOrbAction(response.action);
-        if (voiceResumeAfterResponseRef.current) {
-          voiceResumeAfterResponseRef.current = false;
-          window.setTimeout(() => startVoiceActivationRef.current?.(), 250);
-        }
+        if(voiceResumeAfterResponseRef.current){voiceResumeAfterResponseRef.current=false;window.setTimeout(()=>startVoiceActivationRef.current?.(),250);}
       };
-      audio.onerror = () => setOrbState("error");
-      setOrbState("speaking");
-      await audio.play().catch(() => setOrbState("error"));
+      const emergency=()=>{
+        if(!current())return;
+        releaseFinalRef.current?.();releaseFinalRef.current=null;finalAudioRef.current=null;
+        setLastResponse({...response,tts_provider:'emergency-browser-speech',tts_error:'Qwen audio unavailable; captions preserved.'});
+        if(['local-llama.cpp','website-intro'].includes(response.llm_source)&&'speechSynthesis' in window){
+          const speech=new SpeechSynthesisUtterance(response.spoken_output);responseSpeechRef.current=speech;
+          speech.onend=finish;speech.onerror=finish;speech.lang='en-US';speech.rate=.98;setOrbState('speaking');
+          try{window.speechSynthesis.speak(speech);}catch{finish();}
+          window.setTimeout(finish,Math.max(12000,response.spoken_output.length*55));
+        }else finish();
+      };
+      let audio:HTMLAudioElement;
+      try{
+        if(response.speech_id){
+          setOrbState('thinking');const prepared=await prepareOrbSpeech(response,request.signal);
+          if(!current()){prepared.release();return;}audio=prepared.audio;releaseFinalRef.current=prepared.release;
+        }else if(response.tts_audio_url){audio=new Audio(response.tts_audio_url);releaseFinalRef.current=()=>{audio.onended=null;audio.onerror=null;audio.pause();audio.removeAttribute('src');audio.load();};}
+        else{emergency();return;}
+      }catch{if(current())emergency();return;}
+      finalAudioRef.current=audio;
+      audio.onended=finish;audio.onerror=emergency;audio.onplaying=()=>{if(current())setOrbState('speaking');};
+      await audio.play().catch(()=>{if(current())emergency();});
     },
-    [stopFiller, stopFinalAudio],
+    [stopFiller,stopFinalAudio],
   );
 
   const handleOrbResponse = useCallback(
     async (request: Promise<OrbResponse>) => {
+      introAllowedRef.current=false;
       interruptTourRef.current();
       if(voiceRecognitionRef.current){voiceActivationEnabledRef.current=false;voiceRecognitionRef.current.abort();voiceRecognitionRef.current=null;}
       const runId = runIdRef.current + 1;
@@ -389,19 +394,17 @@ export default function WebsiteFloatingOrb() {
   }, [handleOrbResponse, orbState, stopFinalAudio]);
 
   useEffect(() => {
-    const beginVoiceSession = () => {
-      if (document.getElementById(DEMO_HOST_ID)?.dataset.tourActive === 'true') return;
-      const speakIntro = "Hi, I'm Pops. Say Pops when you need me, and I'll listen.";
-      if (!("speechSynthesis" in window)) {
-        startVoiceActivation();
-        return;
-      }
-      window.speechSynthesis.cancel();
-      const intro = new SpeechSynthesisUtterance(speakIntro);
-      introSpeechRef.current = intro;
-      intro.onend = () => { introSpeechRef.current = null; startVoiceActivation(); };
-      intro.onerror = () => { introSpeechRef.current = null; startVoiceActivation(); };
-      window.speechSynthesis.speak(intro);
+    const beginVoiceSession = async () => {
+      if(!introAllowedRef.current||isPrivateOrbPage()||document.getElementById(DEMO_HOST_ID)?.dataset.demoContextActive==='true')return;
+      introAllowedRef.current=false;
+      const run=runIdRef.current;
+      introActiveRef.current=true;
+      try{
+        const intro=await orbPost<OrbResponse>('speech/intro',{route:location.pathname});
+        if(runIdRef.current!==run||document.getElementById(DEMO_HOST_ID)?.dataset.demoContextActive==='true')return;
+        voiceResumeAfterResponseRef.current=true;
+        await speakOutput(intro);
+      }catch{if(runIdRef.current===run)startVoiceActivation();}
     };
     const handleStartupComplete = () => beginVoiceSession();
     window.addEventListener("pops:startup-complete", handleStartupComplete);
@@ -416,7 +419,7 @@ export default function WebsiteFloatingOrb() {
       voiceRecognitionRef.current = null;
       window.speechSynthesis?.cancel();
     };
-  }, [startVoiceActivation]);
+  }, [startVoiceActivation,speakOutput]);
 
   useEffect(() => {
     const splashTimer = window.setTimeout(() => setSplashActive(false), 1500);
@@ -620,6 +623,9 @@ export default function WebsiteFloatingOrb() {
 
   const interruptDemoTour = useWebsiteDemoTour({
     available: () => {
+      introAllowedRef.current=false;
+      const interruptedIntro=introActiveRef.current;
+      if(interruptedIntro){runIdRef.current++;stopFinalAudio();voiceResumeAfterResponseRef.current=false;tourSuspendedActivationRef.current=true;}
       if (introSpeechRef.current) { introSpeechRef.current.onend = null; introSpeechRef.current.onerror = null; window.speechSynthesis?.cancel(); introSpeechRef.current = null; }
       if (voiceRecognitionRef.current && !voiceQueryActiveRef.current) {
         tourSuspendedActivationRef.current = voiceActivationEnabledRef.current;
@@ -627,10 +633,10 @@ export default function WebsiteFloatingOrb() {
         voiceRecognitionRef.current.abort();
         voiceRecognitionRef.current = null;
       }
-      return orbState !== 'thinking' && orbState !== 'speaking' && mediaRecorderRef.current?.state !== 'recording' && !voiceQueryActiveRef.current && (!finalAudioRef.current || finalAudioRef.current.paused);
+      return interruptedIntro || (orbState !== 'thinking' && orbState !== 'speaking' && mediaRecorderRef.current?.state !== 'recording' && !voiceQueryActiveRef.current && (!finalAudioRef.current || finalAudioRef.current.paused));
     },
     guide: setPendingGuide,
-    caption: (text, targetId, source='scripted-demo') => setLastResponse({transcript:'', spoken_output:text, cognitive_pulse:{cognitive_mode:'GUIDED_DEMO',glow_intensity:.72,semantic_target_id:targetId},llm_source:source,memory_context:null,tts_audio_url:null,tts_provider:source==='scripted-demo'?'bundled-scripted-narration':'browser-session-voice',tts_error:null}),
+    caption: (text, targetId, source='scripted-demo') => setLastResponse({transcript:'', spoken_output:text, cognitive_pulse:{cognitive_mode:'GUIDED_DEMO',glow_intensity:.72,semantic_target_id:targetId},llm_source:source,memory_context:null,tts_audio_url:null,tts_provider:source==='scripted-demo'?'bundled-scripted-narration':'qwen',tts_error:null}),
     activity: (speaking) => setOrbState(speaking ? 'speaking' : 'idle'),
     released: (reason) => {
       if (reason === 'exit' && tourSuspendedActivationRef.current) {
@@ -646,9 +652,18 @@ export default function WebsiteFloatingOrb() {
   });
   interruptTourRef.current = interruptDemoTour;
 
-  useEffect(()=>{if(!isPrivateOrbPage(location.pathname))void reportOrbEvent('page').catch(()=>{});},[location.pathname]);
+  useEffect(()=>{
+    runIdRef.current++;stopFinalAudio();stopFiller();setOrbState('idle');
+    if(!isPrivateOrbPage(location.pathname))void reportOrbEvent('page').catch(()=>{});
+  },[location.pathname,stopFinalAudio,stopFiller]);
+  useEffect(()=>{
+    const cancel=()=>{runIdRef.current++;stopFinalAudio();stopFiller();setOrbState('idle');};
+    const demo=(event:Event)=>{const command=(event as CustomEvent<{action:string;reason:string}>).detail;if(command?.action==='stop'&&command.reason==='exit')cancel();};
+    window.addEventListener('pagehide',cancel);window.addEventListener('pops:demo-orb-presentation',demo);
+    return()=>{window.removeEventListener('pagehide',cancel);window.removeEventListener('pops:demo-orb-presentation',demo);cancel();};
+  },[stopFinalAudio,stopFiller]);
   useEffect(()=>{const handle=(event:Event)=>applyOrbAction((event as CustomEvent<OrbAction>).detail,navigate);window.addEventListener('pops:orb-validated-action',handle);return()=>window.removeEventListener('pops:orb-validated-action',handle);},[navigate]);
-  async function askPops(question:string){const pending=sendWebsiteOrbText(question);await handleOrbResponse(pending);return pending;}
+  async function askPops(question:string){const pending=sendWebsiteOrbText(question);void handleOrbResponse(pending);return pending;}
 
   return (
     <>
