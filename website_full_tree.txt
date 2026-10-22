@@ -104,6 +104,7 @@ POPS_website-main/
 │   │   ├── DEVELOPMENT_RELEASE.md
 │   │   ├── IMPLEMENTATION_REPORT.md
 │   │   ├── IMPORTED_COMPONENTS.json
+│   │   ├── integration-reproducibility-results.json
 │   │   ├── LAUNCH_READINESS.md
 │   │   ├── MARKETING_PLAN.md
 │   │   ├── MEMORY_INTEGRATION.md
