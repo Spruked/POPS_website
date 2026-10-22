@@ -69,3 +69,5 @@ Fresh GitHub clone verification at `df411de49ddc08e5a78746edbf06eb56ddff86fc`: n
 Current voice default is the installed Qwen CLI, cached 0.6B CustomVoice, Vivian/English on loopback 8020. Backend delivery is session-authorized transient WAV; browser speech is emergency fallback. Native model/supervisor recovery passed after the one-minute retry correction. See QWEN_TTS.md and native-llama-recovery.json. TTS is a hidden development process, with no new reboot task/service.
 
 The current production-bundle regression passed with Qwen audio at all desktop stops and initial tablet/mobile playback; all responsive screens/pointers progressed using actual muted reading timers. Caption-first conversation, interruption, refresh, Back/Restart/Exit and all nine asset checks passed. See the updated production test-results.json and qwen-validation/results.json.
+
+Fresh GitHub clone of `1726618f903010e483a52d4b8ce50cdb4b66ac27` passed install/build, 84 normal imported-source checks, protected-file checks, fourteen backend tests and nine production-asset hash comparisons. Current Qwen/source reproduction evidence: qwen-validation/reproducibility.json.
