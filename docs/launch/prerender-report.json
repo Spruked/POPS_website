@@ -28,7 +28,7 @@
     {
       "path": "/product-demo",
       "kind": "public",
-      "bytes": 14307
+      "bytes": 14473
     },
     {
       "path": "/see-pops-in-action",
@@ -163,17 +163,17 @@
     {
       "path": "/account",
       "kind": "signed-out-noindex-shell",
-      "bytes": 13007
+      "bytes": 13166
     },
     {
       "path": "/account/verify",
       "kind": "signed-out-noindex-shell",
-      "bytes": 12806
+      "bytes": 13108
     },
     {
       "path": "/account/reset",
       "kind": "signed-out-noindex-shell",
-      "bytes": 13184
+      "bytes": 13483
     },
     {
       "path": "/cart",
@@ -184,6 +184,26 @@
       "path": "/checkout",
       "kind": "signed-out-noindex-shell",
       "bytes": 11788
+    },
+    {
+      "path": "/account/profile",
+      "kind": "signed-out-noindex-shell",
+      "bytes": 13315
+    },
+    {
+      "path": "/account/preferences",
+      "kind": "signed-out-noindex-shell",
+      "bytes": 13356
+    },
+    {
+      "path": "/account/admin",
+      "kind": "signed-out-noindex-shell",
+      "bytes": 13307
+    },
+    {
+      "path": "/account/email/verify",
+      "kind": "signed-out-noindex-shell",
+      "bytes": 13260
     }
   ],
   "publicPageDefinitions": 22

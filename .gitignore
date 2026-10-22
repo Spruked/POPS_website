@@ -8,6 +8,7 @@ __pycache__/
 .idea
 .local/
 .venv-customer/
+.venv-orb/
 *.sqlite3
 *.sqlite3-*
 *.pyc

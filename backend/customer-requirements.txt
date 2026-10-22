@@ -1,3 +1,5 @@
 Django==5.2.18
 argon2-cffi==25.1.0
 waitress==3.0.2
+phonenumbers==9.0.41
+pycountry==26.2.16

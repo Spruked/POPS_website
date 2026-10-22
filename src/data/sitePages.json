@@ -133,5 +133,25 @@
     "path": "/checkout",
     "intent": "Private customer or transactional action",
     "indexable": false
+  },
+  {
+    "path": "/account/profile",
+    "intent": "Private customer profile, preferences or administration",
+    "indexable": false
+  },
+  {
+    "path": "/account/preferences",
+    "intent": "Private customer profile, preferences or administration",
+    "indexable": false
+  },
+  {
+    "path": "/account/admin",
+    "intent": "Private customer profile, preferences or administration",
+    "indexable": false
+  },
+  {
+    "path": "/account/email/verify",
+    "intent": "Private customer profile, preferences or administration",
+    "indexable": false
   }
 ]

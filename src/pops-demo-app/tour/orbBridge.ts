@@ -8,7 +8,7 @@ export const DEMO_HOST_ID='pops-demo-root';
 export interface DemoOrbCommand{action:'present'|'stop';targetId?:string;muted?:boolean;resume?:boolean;reason?:string}
 export function dispatchTourStop(step:TourStep,muted:boolean,resume=false){window.dispatchEvent(new CustomEvent<DemoOrbCommand>(DEMO_ORB_EVENT,{detail:{action:'present',targetId:step.targetId,muted,resume}}));}
 export function stopDemoOrb(reason='replace'){window.dispatchEvent(new CustomEvent<DemoOrbCommand>(DEMO_ORB_EVENT,{detail:{action:'stop',reason}}));}
-export function demoOrbStatus(message:string,code:string){window.dispatchEvent(new CustomEvent(DEMO_ORB_STATUS_EVENT,{detail:{message,code}}));}
+export function demoOrbStatus(message:string,code:string,text?:string){window.dispatchEvent(new CustomEvent(DEMO_ORB_STATUS_EVENT,{detail:{message,code,text}}));}
 export function demoStepFromTarget(id:string|undefined){return tourSteps.find(step=>step.targetId===id)||null;}
 export function findDemoTarget(selector:string):HTMLElement|null{
  const root=document.getElementById(DEMO_HOST_ID)?.shadowRoot;
@@ -33,7 +33,7 @@ export function scrollDemoTargetIntoView(element:HTMLElement){
 export function getDemoPointerTarget(id:string|undefined):WebsiteOrbTarget|null{
  const step=demoStepFromTarget(id);if(!step)return null;
  const host=document.getElementById(DEMO_HOST_ID);
- if(location.pathname!=='/product-demo'||host?.dataset.tourActive!=='true'||host.dataset.demoScreen!==step.screen)return null;
+ if(location.pathname!=='/product-demo'||(host?.dataset.tourActive!=='true'&&host?.dataset.demoContextActive!=='true')||host.dataset.demoScreen!==step.screen)return null;
  return {id:step.targetId,route:'/product-demo',selector:step.selector,label:step.title,description:step.caption,actions:['scroll_to_target','ping','explain'],guideOnly:true};
 }
 // Presentation gate: desired tour state ∩ runtime availability ∩ bounded policy.

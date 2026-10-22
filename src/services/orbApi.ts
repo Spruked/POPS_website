@@ -1,3 +1,5 @@
+import {orbPost,orbAudio} from '../orb/visitorSession';
+import type {OrbAction} from '../orb/visitorSession';
 export interface OrbCognitivePulse {
   cognitive_mode: string;
   glow_intensity: number;
@@ -13,6 +15,8 @@ export interface OrbResponse {
   tts_audio_url: string | null;
   tts_provider: string | null;
   tts_error: string | null;
+  action?:OrbAction;
+  development_only?:boolean;
 }
 
 export interface OrbCapabilities {
@@ -73,25 +77,14 @@ async function parseOrbResponse(response: Response): Promise<OrbResponse> {
 }
 
 export async function sendWebsiteOrbAudio(blob: Blob): Promise<OrbResponse> {
-  const formData = new FormData();
-  formData.append("audio", blob, "website-orb.webm");
-
-  const response = await fetch("/api/orb/website-voice", {
-    method: "POST",
-    body: formData,
-  });
-
+  const response=await orbAudio(blob);
   return parseOrbResponse(response);
 }
 
-export async function sendWebsiteOrbText(transcript: string): Promise<OrbResponse> {
-  const response = await fetch("/api/orb/website-text", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ transcript }),
-  });
-
-  return parseOrbResponse(response);
+export async function sendWebsiteOrbText(transcript:string,options:{event?:string;demo_screen?:string}={},signal?:AbortSignal):Promise<OrbResponse>{
+ const host=document.getElementById('pops-demo-root');
+ const demoScreen=host?.dataset.demoContextActive==='true'&&host.dataset.demoScreen!=='calendar'?host.dataset.demoScreen:undefined;
+ return orbPost<OrbResponse>('website-text',{transcript,route:location.pathname,event:options.event||'question',...(options.demo_screen||demoScreen?{demo_screen:options.demo_screen||demoScreen}:{}),synthesize_tts:false},signal);
 }
 
 export async function getOrbCapabilities(): Promise<OrbCapabilities> {

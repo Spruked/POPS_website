@@ -12,12 +12,17 @@
     "sitemap": "node scripts/generate-sitemap.mjs",
     "build:crawl": "npm run build && node scripts/prerender.mjs",
     "test:browser": "node scripts/verify-launch.cjs",
-    "test:customers": ".venv-customer/Scripts/python backend/manage_customers.py test customer_site",
+    "test:customers": "node scripts/test-python.mjs customer",
     "report:launch": "node scripts/report-launch.mjs",
     "test:navigation": "node scripts/verify-navigation.cjs",
     "test:demo": "node src/pops-demo-app/scripts/test-demo.cjs",
     "test:demo:production": "node src/pops-demo-app/scripts/test-production.cjs",
-    "test:protected": "node scripts/verify-protected.cjs"
+    "test:protected": "node scripts/verify-protected.cjs",
+    "dev:orb": "powershell -NoProfile -ExecutionPolicy Bypass -File ./start-orb-dev.ps1",
+    "test:customer-browser": "node scripts/verify-customers.cjs",
+    "test:orb": "node scripts/test-python.mjs orb",
+    "context:orb": "node scripts/generate-orb-context.mjs",
+    "test:imports": "node scripts/verify-imports.cjs --tracked"
   },
   "dependencies": {
     "framer-motion": "^11.0.0",

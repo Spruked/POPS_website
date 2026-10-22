@@ -6,7 +6,7 @@ function verifyProtected() {
   const originals = JSON.parse(fs.readFileSync('docs/launch/protected-baseline.json', 'utf8'));
   const portable = JSON.parse(fs.readFileSync('docs/launch/protected-portable-baseline.json', 'utf8'));
   const approval = JSON.parse(fs.readFileSync('src/pops-demo-app/validation/authorized-orb-changes.json', 'utf8'));
-  const allowed = ['WebsiteFloatingOrb.tsx', 'WebsiteOrbPointerOverlay.tsx', 'pointerGuideController.ts', 'pointerTargetRegistry.ts', 'websiteOrbTargetTypes.ts'].map(name => 'src/orb/' + name);
+  const allowed = [...['WebsiteFloatingOrb.tsx', 'WebsiteOrbPointerOverlay.tsx', 'pointerGuideController.ts', 'pointerTargetRegistry.ts', 'websiteOrbTargetTypes.ts'].map(name => 'src/orb/' + name),'src/services/orbApi.ts'];
   assert.deepEqual(approval.files.map(item => item.path).sort(), allowed.sort());
   assert.equal(portable.length, originals.length);
   for (const entry of portable) {

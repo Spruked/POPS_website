@@ -1,0 +1,98 @@
+{
+  "routes": [
+    "/",
+    "/about",
+    "/desktop-app",
+    "/android",
+    "/how-you-use-it",
+    "/product-demo",
+    "/see-pops-in-action",
+    "/access",
+    "/beta",
+    "/early-adopters",
+    "/installation",
+    "/faq",
+    "/support",
+    "/counsel-handoff",
+    "/events",
+    "/attorney-referral",
+    "/declaration",
+    "/pledge",
+    "/lexicon",
+    "/terms",
+    "/privacy",
+    "/policies-procedures",
+    "/lexicon/culpable",
+    "/lexicon/exculpatory",
+    "/lexicon/pro-se",
+    "/lexicon/prima-facie",
+    "/lexicon/estoppel",
+    "/lexicon/habeas-corpus",
+    "/lexicon/fifth-amendment",
+    "/lexicon/fourteenth-amendment",
+    "/lexicon/due-process",
+    "/lexicon/equal-protection"
+  ],
+  "targets": [
+    {
+      "id": "pops.nav.access",
+      "route": "/"
+    },
+    {
+      "id": "pops.nav.get-pops",
+      "route": "/"
+    },
+    {
+      "id": "pops.home.what-is-pops",
+      "route": "/"
+    },
+    {
+      "id": "pops.home.capture",
+      "route": "/"
+    },
+    {
+      "id": "pops.home.evidence-vault",
+      "route": "/"
+    },
+    {
+      "id": "pops.home.records",
+      "route": "/"
+    },
+    {
+      "id": "pops.home.local-first",
+      "route": "/"
+    },
+    {
+      "id": "pops.access.options",
+      "route": "/access"
+    },
+    {
+      "id": "pops.access.standard",
+      "route": "/access"
+    },
+    {
+      "id": "pops.access.hardship",
+      "route": "/access"
+    },
+    {
+      "id": "pops.access.sponsor",
+      "route": "/access"
+    },
+    {
+      "id": "pops.access.membership",
+      "route": "/access"
+    },
+    {
+      "id": "pops.access.checkout",
+      "route": "/access"
+    },
+    {
+      "id": "pops.access.activation",
+      "route": "/access"
+    },
+    {
+      "id": "pops.access.local-first",
+      "route": "/access"
+    }
+  ]
+}

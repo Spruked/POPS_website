@@ -14,12 +14,15 @@ from django.core.validators import validate_email
 from django.core.exceptions import ValidationError
 from django.db import transaction, IntegrityError
 from django.db.models import F
+from django.utils import timezone
 from django.http import JsonResponse
 from django.middleware.csrf import get_token
 from django.views.decorators.cache import never_cache
 from django.views.decorators.http import require_GET, require_POST
 from .forms import RegistrationForm, BetaForm, SupportForm
-from .models import BetaApplication, SupportRequest, RequestLimit
+from .models import BetaApplication, SupportRequest, RequestLimit, CustomerProfile, CustomerEmail
+from .profile_service import ensure_customer, profile_payload, update_details, record_preferences
+from .profile_forms import normalize_email
 
 logger = logging.getLogger(__name__)
 
@@ -48,6 +51,8 @@ def endpoint(view):
             try:
                 request.payload = json.loads(request.body or '{}')
                 if not isinstance(request.payload, dict):
+                    raise ValueError()
+                if any(isinstance(value,(list,dict)) for value in request.payload.values()):
                     raise ValueError()
             except (ValueError, UnicodeDecodeError):
                 return JsonResponse({'error': 'Invalid request.'}, status=400)
@@ -85,8 +90,15 @@ def delivery_note():
 @endpoint
 def session(request):
     user = request.user
-    beta = BetaApplication.objects.filter(email=user.email).values('status', 'platform').first() if user.is_authenticated else None
-    return JsonResponse({'csrfToken': get_token(request), 'user': {'name': user.first_name, 'email': user.email, 'verified': user.is_active, 'beta': beta} if user.is_authenticated else None, 'development': settings.DEVELOPMENT, 'emailDelivery': 'local-outbox' if settings.DEVELOPMENT else 'smtp'})
+    beta = BetaApplication.objects.filter(user=user).values('status', 'platform').first() if user.is_authenticated else None
+    if user.is_authenticated and not beta:
+        beta = BetaApplication.objects.filter(email__iexact=user.email).values('status','platform').first()
+    details = {**profile_payload(user), 'beta':beta, 'permissions':{
+        'geography':user.is_staff and user.has_perm('customer_site.view_geography'),
+        'customer_profiles':user.is_staff and user.has_perm('customer_site.view_customerprofile'),
+        'account_status':user.is_staff and user.has_perm('customer_site.manage_customer_status'),
+    }} if user.is_authenticated else None
+    return JsonResponse({'csrfToken': get_token(request), 'user':details, 'development': settings.DEVELOPMENT, 'emailDelivery': 'local-outbox' if settings.DEVELOPMENT else 'smtp'})
 
 
 @require_POST
@@ -96,10 +108,14 @@ def register(request):
     if not form.is_valid():
         return invalid(form)
     data = form.cleaned_data
-    if not User.objects.filter(username=data['email']).exists():
+    CustomerEmail.objects.filter(kind='pending',expires_at__lte=timezone.now()).delete()
+    if not CustomerEmail.objects.filter(address__iexact=data['email']).exists() and not User.objects.filter(email__iexact=data['email']).exists():
         try:
             with transaction.atomic():
-                user = User.objects.create_user(username=data['email'], email=data['email'], first_name=data['name'], password=data['password1'], is_active=False)
+                import uuid
+                user = User.objects.create_user(username='customer-'+uuid.uuid4().hex, email=data['email'], first_name=data['first_name'], last_name=data['last_name'], password=data['password1'], is_active=False)
+                update_details(user,data,registration=True)
+                record_preferences(user,data,'registration')
                 mail_link(user, 'verify')
         except IntegrityError:
             pass
@@ -109,14 +125,19 @@ def register(request):
 @require_POST
 @endpoint
 def sign_in(request):
-    email = str(request.payload.get('email', '')).strip().casefold()
+    try: email = normalize_email(str(request.payload.get('email', '')))
+    except (ValueError,UnicodeError): email = ''
     password = request.payload.get('password', '')
     if not isinstance(password, str):
         return JsonResponse({'error': 'Enter your email and password.'}, status=400)
-    user = authenticate(request, username=email, password=password)
+    identity = CustomerEmail.objects.filter(address=email,kind='current').select_related('user').first()
+    candidate = identity.user if identity else User.objects.filter(email__iexact=email).first()
+    user = authenticate(request, username=candidate.username if candidate else email, password=password)
+    if user and (ensure_customer(user).status!='active' or not ensure_customer(user).email_verified):user=None
     if user is None:
         return JsonResponse({'error': 'Unable to sign in. Check your credentials and verify your email first.'}, status=400)
     login(request, user)
+    request.session['customer_auth_version']=user.customer_profile.auth_version
     return JsonResponse({'message': 'Signed in.', 'csrfToken': get_token(request)})
 
 
@@ -132,23 +153,34 @@ def sign_out(request):
 def verify(request):
     try:
         data = signing.loads(str(request.payload.get('token', '')), salt='pops-verify-email', max_age=3600)
-        user = User.objects.get(pk=data['user'], email=data['email'], is_active=False)
+        with transaction.atomic():
+            user = User.objects.select_for_update().get(pk=data['user'], email=data['email'], is_active=False)
+            profile=ensure_customer(user)
+            if profile.status!='unverified' or profile.email_verified:raise ValueError()
+            profile.status='active'
+            profile.email_verified=True
+            profile.email_verified_at=timezone.now()
+            profile.save(update_fields=['status','email_verified','email_verified_at','updated_at'])
+            user.is_active=True
+            user.save(update_fields=['is_active'])
     except (signing.BadSignature, User.DoesNotExist, KeyError, ValueError):
         return JsonResponse({'error': 'This verification link is invalid, expired, or already used. Request a new link if needed.'}, status=400)
-    user.is_active = True
-    user.save(update_fields=['is_active'])
     return JsonResponse({'message': 'Email verified. You can now sign in.'})
 
 
 @require_POST
 @endpoint
 def request_link(request, kind):
-    email = str(request.payload.get('email', '')).strip().casefold()
+    try: email=normalize_email(str(request.payload.get('email','')))
+    except (ValueError,UnicodeError):email=''
     try:
         validate_email(email)
     except ValidationError:
         return JsonResponse({'error': 'Enter a valid email address.'}, status=400)
-    user = User.objects.filter(username=email, is_active=(kind == 'reset')).first()
+    user = User.objects.filter(email__iexact=email, is_active=(kind == 'reset')).first()
+    if user:
+        profile=ensure_customer(user)
+        if profile.status not in (['active'] if kind=='reset' else ['unverified']):user=None
     if user:
         mail_link(user, kind)
     return JsonResponse({'message': 'If an eligible account exists, a link has been prepared. ' + delivery_note()})
@@ -179,7 +211,8 @@ def beta(request):
     if form.cleaned_data['website']:
         return JsonResponse({'error': 'Unable to accept this request.'}, status=400)
     data = form.cleaned_data
-    _, created = BetaApplication.objects.get_or_create(email=data['email'].strip().casefold(), defaults={key: data[key] for key in ['name', 'platform', 'experience', 'updates']})
+    owner=request.user if request.user.is_authenticated and request.user.email.casefold()==data['email'].strip().casefold() else None
+    _, created = BetaApplication.objects.get_or_create(email=data['email'].strip().casefold(), defaults={**{key: data[key] for key in ['name', 'platform', 'experience', 'updates']},'user':owner})
     return JsonResponse({'message': 'Your interest has been recorded for review. This is not a beta invitation or a license. ' + ('This development entry is stored locally and will not reach the production team.' if settings.DEVELOPMENT else 'Invitations depend on testing needs and available places.')}, status=201 if created else 200)
 
 

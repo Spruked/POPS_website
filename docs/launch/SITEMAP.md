@@ -28,7 +28,7 @@ Canonical base: https://pops.spruked.com. Local preview uses http://localhost:51
 | /policies-procedures | Read existing operating and access policies |
 | /lexicon/:slug | Ten existing educational term pages |
 
-Private/noindex: /account, /account/verify, /account/reset, /cart, /checkout.
+Private/noindex: /account, /account/verify, /account/reset, /account/profile, /account/preferences, /account/admin, /account/email/verify, /cart, /checkout.
 
 Aliases: /pricing and /download → /access; /contact → /support.
 

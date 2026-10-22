@@ -2,7 +2,7 @@ import {tourSteps} from './tourSteps';
 import type {DemoScreen} from './tourSteps';
 export const TOUR_STORAGE_KEY='pops:mini-app-tour:v1';
 export interface TourState{active:boolean;index:number;muted:boolean;paused:boolean}
-export type TourAction={type:'start'|'restart'|'next'|'back'|'exit'|'pause'|'resume'|'mute'}|{type:'go';screen:DemoScreen};
+export type TourAction={type:'start'|'restart'|'next'|'back'|'exit'|'pause'|'resume'|'mute'}|{type:'go'|'guided';screen:DemoScreen};
 export const initialTourState:TourState={active:false,index:0,muted:false,paused:false};
 export function tourReducer(state:TourState,action:TourAction):TourState{
  switch(action.type){
@@ -14,6 +14,7 @@ export function tourReducer(state:TourState,action:TourAction):TourState{
   case 'resume':return {...state,paused:false};
   case 'mute':return {...state,muted:!state.muted};
   case 'go':return {...state,index:Math.max(0,tourSteps.findIndex(step=>step.screen===action.screen))};
+  case 'guided':return {...state,index:Math.max(0,tourSteps.findIndex(step=>step.screen===action.screen)),paused:false};
  }
 }
 export function restoreTourState():TourState{

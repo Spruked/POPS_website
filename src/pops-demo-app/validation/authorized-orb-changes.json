@@ -1,9 +1,9 @@
 {
-  "authorization": "Owner explicitly authorized website ORB narration, targeting, sequencing and interaction changes for the mini application; preserve normal operation and TPC/Correspondence/Doctrine architecture.",
+  "authorization": "Owner authorized website ORB narration, conversational demo integration and local llama.cpp development testing. Production TPC/Correspondence/Doctrine integration is explicitly deferred; no replacement governance is created.",
   "files": [
     {
       "path": "src/orb/WebsiteFloatingOrb.tsx",
-      "sha256LF": "964194b37a50addc2586e1f83ca78f4f67355333e0e7e759685917eaffdedc0a"
+      "sha256LF": "fcf7025ebdb17cf541eb274ce4f9bd6c85de58b140c8024bb13d2c6ab5c97621"
     },
     {
       "path": "src/orb/WebsiteOrbPointerOverlay.tsx",
@@ -20,6 +20,10 @@
     {
       "path": "src/orb/websiteOrbTargetTypes.ts",
       "sha256LF": "598c12799537b34b2ff1f06d99b063d73be4105efb8dfed0ef7381e5ae60abfc"
+    },
+    {
+      "path": "src/services/orbApi.ts",
+      "sha256LF": "31fe65e6fef8dfe1b92dc31a25fd7205d9d9cae294d36c17f66bac36e7e10ab8"
     }
   ]
 }

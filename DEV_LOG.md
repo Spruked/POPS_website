@@ -63,3 +63,13 @@ Applied compatible dependency security lockfile updates including Vite 7.3.7; tw
 
 
 Clean-source reproduction also passed from a staged Git export with no installed dependencies and no application copy available: locked npm install, production build, portable protected-file checks and complete production tour/asset validation. Evidence: `docs/launch/reproducibility-results.json`. Only documentation/evidence changed after that tested source tree.
+
+## 2026-10-22 — customer completion, canonical memory and native inference
+
+Extended existing Django authentication with complete contact/geographic profiles, international phone/country validation, verified email changes, status/session enforcement, independent consent history, least-privilege reporting and audited support access. Preserved legacy accounts and creation dates through migrations; backed up local SQLite before migration. 25 backend tests and real customer browser flow passed.
+
+Imported the 84 original Vault/A.I.M.S. source files intact, moving only nested Git metadata into ignored reversible backups. Integration uses their actual Vault/ShortTermMemory contracts, with public-only durable retrieval and isolated ephemeral visitor conversations. Supplied Windows multi-writer test incompatibility is documented, not patched; host uses one worker.
+
+Connected normal ORB conversation and the no-Next guided mini-app to existing Qwen llama.cpp. Real local inference, contextual interruption/resumption, all eight stops, desktop/tablet/mobile pointer alignment and production assets passed browser checks. Tests instrument speech timing, not HTTP model replies. Customer data, payments, native app and production remain separate.
+
+Repaired the existing native ORB Qwen 7B Server task in place: S4U, boot/logon/retry triggers, battery allowances, persistent recovery supervisor and clean logs. Inference verified on 16520. Historical exit was cancellation with insufficient retained history to identify its initiator. Forced-crash verification awaits elevation after canceled UAC; actual reboot remains untested. See docs/launch/NATIVE_LLAMA_REPAIR.md.

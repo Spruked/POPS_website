@@ -1,4 +1,5 @@
-import { useEffect } from "react";
+import { useLayoutEffect } from "react";
+import {useLocation} from 'react-router-dom';
 
 const GA_MEASUREMENT_ID = import.meta.env.VITE_GA_MEASUREMENT_ID;
 
@@ -10,8 +11,15 @@ declare global {
 }
 
 export default function Analytics() {
-  useEffect(() => {
-    if (/^\/account(?:\/|$)/.test(window.location.pathname) || !GA_MEASUREMENT_ID || document.querySelector(`[src*="${GA_MEASUREMENT_ID}"]`)) return;
+  const location=useLocation();
+  useLayoutEffect(() => {
+    if(!GA_MEASUREMENT_ID)return;
+    const privatePage=/^\/(?:account|cart|checkout)(?:\/|$)/.test(location.pathname);
+    (window as unknown as Record<string,unknown>)[`ga-disable-${GA_MEASUREMENT_ID}`]=privatePage;
+    if(privatePage)return;
+    if(document.querySelector(`[src*="${GA_MEASUREMENT_ID}"]`)){
+      window.gtag?.('event','page_view',{page_location:window.location.origin+location.pathname,page_path:location.pathname});return;
+    }
 
     const script = document.createElement("script");
     script.async = true;
@@ -23,8 +31,9 @@ export default function Analytics() {
       window.dataLayer.push(args);
     };
     window.gtag("js", new Date());
-    window.gtag("config", GA_MEASUREMENT_ID);
-  }, []);
+    window.gtag("config", GA_MEASUREMENT_ID,{send_page_view:false,allow_google_signals:false,allow_ad_personalization_signals:false});
+    window.gtag('event','page_view',{page_location:window.location.origin+location.pathname,page_path:location.pathname});
+  }, [location.pathname]);
 
   return null;
 }

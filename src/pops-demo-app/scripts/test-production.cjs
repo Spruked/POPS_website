@@ -1,5 +1,5 @@
 // Serves only dist and runs the complete tour against the real production bundle.
-// No source server, application checkout, native API, credentials or hosting access.
+// Local ORB proxy only; customer, checkout and native-tool APIs remain unavailable.
 const fs = require('node:fs');
 const path = require('node:path');
 const http = require('node:http');
@@ -26,6 +26,11 @@ const server = http.createServer((request, response) => {
   let pathname;
   try { pathname = decodeURIComponent(new URL(request.url, 'http://localhost').pathname); } catch { response.writeHead(400).end(); return; }
   requested.add(pathname);
+  if (pathname.startsWith('/api/orb/') && !pathname.includes('/tools/') && !pathname.includes('/tts')) {
+    // This private test origin forwards to the already-running local development host.
+    const upstream = http.request({hostname:'127.0.0.1',port:8001,path:request.url,method:request.method,headers:{...request.headers,host:'127.0.0.1:8001',origin:'http://localhost:5173'}}, result=>{response.writeHead(result.statusCode,result.headers);result.pipe(response);});
+    upstream.on('error',()=>response.writeHead(503).end());request.pipe(upstream);return;
+  }
   if (pathname.startsWith('/api/')) { response.writeHead(503, { 'Content-Type': 'application/json' }).end('{"error":"Unavailable in isolated production test"}'); return; }
   let file = path.resolve(root, '.' + pathname);
   if (file !== root && !file.startsWith(root + path.sep)) { response.writeHead(403).end(); return; }
@@ -47,11 +52,11 @@ const server = http.createServer((request, response) => {
   await new Promise(resolve => server.listen(0, '127.0.0.1', resolve));
   try {
     const origin = `http://127.0.0.1:${server.address().port}`;
-    const child = spawn(process.execPath, [path.join(demo, 'scripts/test-demo.cjs')], { env: { ...process.env, DEMO_BASE_URL: origin }, stdio: 'inherit' });
+    const child = spawn(process.execPath, [path.join(demo, 'scripts/test-demo.cjs')], { env: { ...process.env, DEMO_BASE_URL: origin, DEMO_ASSET_URLS: JSON.stringify(inventory) }, stdio: 'inherit' });
     const code = await new Promise((resolve, reject) => { child.once('error', reject); child.once('exit', resolve); });
     assert.equal(code, 0, 'Production tour regression failed');
     for (const item of inventory) assert.ok(requested.has(item.url), `Browser never requested production asset: ${item.url}`);
-    fs.writeFileSync(path.join(demo, 'validation/production-assets.json'), JSON.stringify({ status: 'passed', serving: 'dist only; APIs unavailable', assets: inventory, allRequestedByBrowser: true }, null, 2) + '\n');
+    fs.writeFileSync(path.join(demo, 'validation/production-assets.json'), JSON.stringify({ status: 'passed', serving: 'dist; loopback ORB host only; other APIs unavailable', assets: inventory, allRequestedByBrowser: true, audioDecodedByBrowser:true, liveNarration:'real local llama.cpp responses; browser speech lifecycle instrumented' }, null, 2) + '\n');
     console.log(`Verified all ${inventory.length} demo assets byte-for-byte in dist and requested by the production browser.`);
   } finally { await new Promise(resolve => server.close(resolve)); }
 })().catch(error => { console.error(error); process.exitCode = 1; });

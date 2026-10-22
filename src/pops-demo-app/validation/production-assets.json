@@ -1,6 +1,6 @@
 {
   "status": "passed",
-  "serving": "dist only; APIs unavailable",
+  "serving": "dist; loopback ORB host only; other APIs unavailable",
   "assets": [
     {
       "source": "assets/narration/dashboard.wav",
@@ -57,5 +57,7 @@
       "sha256": "66d740841c55d9ea3ad3db4b63f7c288c7e98dbe1efc36aa00e23b7c9c50489b"
     }
   ],
-  "allRequestedByBrowser": true
+  "allRequestedByBrowser": true,
+  "audioDecodedByBrowser": true,
+  "liveNarration": "real local llama.cpp responses; browser speech lifecycle instrumented"
 }

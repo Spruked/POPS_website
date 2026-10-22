@@ -196,12 +196,12 @@
     "intent": "Explore a representative Windows workspace",
     "indexable": true,
     "title": "Pops! Interactive Application Demo | Guided Fictional Case Tour",
-    "description": "Tour real Pops! application screens adapted for a fictional case: dossier, relationships, incident, evidence, timeline, and review, with scripted Pops narration.",
+    "description": "Tour real Pops! application screens adapted for a fictional case: dossier, relationships, incident, evidence, timeline, and review, with local-model Pops narration.",
     "robots": "index, follow, max-image-preview:large",
     "canonical": "https://pops.spruked.com/product-demo",
     "descriptionCount": 1,
     "h1s": 1,
-    "words": 379,
+    "words": 394,
     "ids": [
       "demo-workspace",
       "demo-workspace-title",
@@ -758,12 +758,12 @@
     "intent": "Private customer or transactional action",
     "indexable": false,
     "title": "P.O.P.S. Customer Account | Sign In, Register & Recover",
-    "description": "Create or access your P.O.P.S. website account, verify your email, and recover your password. Website accounts remain separate from local application evidence.",
+    "description": "Create or manage your P.O.P.S. customer account, verified email, mailing profile and optional communication preferences. Account information stays separate from evidence and ORB memory.",
     "robots": "noindex, nofollow",
     "canonical": "https://pops.spruked.com/account",
     "descriptionCount": 1,
     "h1s": 1,
-    "words": 179,
+    "words": 178,
     "ids": [
       "account-access",
       "account-access-title",
@@ -797,12 +797,12 @@
     "intent": "Private customer or transactional action",
     "indexable": false,
     "title": "P.O.P.S. Customer Account | Sign In, Register & Recover",
-    "description": "Create or access your P.O.P.S. website account, verify your email, and recover your password. Website accounts remain separate from local application evidence.",
+    "description": "Create or manage your P.O.P.S. customer account, verified email, mailing profile and optional communication preferences. Account information stays separate from evidence and ORB memory.",
     "robots": "noindex, nofollow",
-    "canonical": "https://pops.spruked.com/account",
+    "canonical": "https://pops.spruked.com/account/verify",
     "descriptionCount": 1,
     "h1s": 1,
-    "words": 194,
+    "words": 191,
     "ids": [
       "account-access",
       "account-access-title",
@@ -834,12 +834,12 @@
     "intent": "Private customer or transactional action",
     "indexable": false,
     "title": "P.O.P.S. Customer Account | Sign In, Register & Recover",
-    "description": "Create or access your P.O.P.S. website account, verify your email, and recover your password. Website accounts remain separate from local application evidence.",
+    "description": "Create or manage your P.O.P.S. customer account, verified email, mailing profile and optional communication preferences. Account information stays separate from evidence and ORB memory.",
     "robots": "noindex, nofollow",
-    "canonical": "https://pops.spruked.com/account",
+    "canonical": "https://pops.spruked.com/account/reset",
     "descriptionCount": 1,
     "h1s": 1,
-    "words": 194,
+    "words": 193,
     "ids": [
       "account-access",
       "account-access-title",
@@ -919,5 +919,159 @@
     ],
     "overflow": false,
     "beforeWords": 67
+  },
+  {
+    "path": "/account/profile",
+    "intent": "Private customer profile, preferences or administration",
+    "indexable": false,
+    "title": "P.O.P.S. Customer Account | Sign In, Register & Recover",
+    "description": "Create or manage your P.O.P.S. customer account, verified email, mailing profile and optional communication preferences. Account information stays separate from evidence and ORB memory.",
+    "robots": "noindex, nofollow",
+    "canonical": "https://pops.spruked.com/account/profile",
+    "descriptionCount": 1,
+    "h1s": 1,
+    "words": 177,
+    "ids": [
+      "account-access",
+      "account-access-title",
+      "customer-email",
+      "customer-password",
+      "account-boundaries",
+      "account-boundaries-title"
+    ],
+    "hooks": [
+      "pops.nav.access",
+      "pops.nav.get-pops"
+    ],
+    "links": [
+      "/account",
+      "/account?mode=register",
+      "/account?mode=recovery",
+      "/account?mode=verification",
+      "/support",
+      "/desktop-app",
+      "/android",
+      "/beta",
+      "/early-adopters",
+      "/faq",
+      "/support"
+    ],
+    "overflow": false,
+    "beforeWords": 0
+  },
+  {
+    "path": "/account/preferences",
+    "intent": "Private customer profile, preferences or administration",
+    "indexable": false,
+    "title": "P.O.P.S. Customer Account | Sign In, Register & Recover",
+    "description": "Create or manage your P.O.P.S. customer account, verified email, mailing profile and optional communication preferences. Account information stays separate from evidence and ORB memory.",
+    "robots": "noindex, nofollow",
+    "canonical": "https://pops.spruked.com/account/preferences",
+    "descriptionCount": 1,
+    "h1s": 1,
+    "words": 177,
+    "ids": [
+      "account-access",
+      "account-access-title",
+      "customer-email",
+      "customer-password",
+      "account-boundaries",
+      "account-boundaries-title"
+    ],
+    "hooks": [
+      "pops.nav.access",
+      "pops.nav.get-pops"
+    ],
+    "links": [
+      "/account",
+      "/account?mode=register",
+      "/account?mode=recovery",
+      "/account?mode=verification",
+      "/support",
+      "/desktop-app",
+      "/android",
+      "/beta",
+      "/early-adopters",
+      "/faq",
+      "/support"
+    ],
+    "overflow": false,
+    "beforeWords": 0
+  },
+  {
+    "path": "/account/admin",
+    "intent": "Private customer profile, preferences or administration",
+    "indexable": false,
+    "title": "P.O.P.S. Customer Account | Sign In, Register & Recover",
+    "description": "Create or manage your P.O.P.S. customer account, verified email, mailing profile and optional communication preferences. Account information stays separate from evidence and ORB memory.",
+    "robots": "noindex, nofollow",
+    "canonical": "https://pops.spruked.com/account/admin",
+    "descriptionCount": 1,
+    "h1s": 1,
+    "words": 177,
+    "ids": [
+      "account-access",
+      "account-access-title",
+      "customer-email",
+      "customer-password",
+      "account-boundaries",
+      "account-boundaries-title"
+    ],
+    "hooks": [
+      "pops.nav.access",
+      "pops.nav.get-pops"
+    ],
+    "links": [
+      "/account",
+      "/account?mode=register",
+      "/account?mode=recovery",
+      "/account?mode=verification",
+      "/support",
+      "/desktop-app",
+      "/android",
+      "/beta",
+      "/early-adopters",
+      "/faq",
+      "/support"
+    ],
+    "overflow": false,
+    "beforeWords": 0
+  },
+  {
+    "path": "/account/email/verify",
+    "intent": "Private customer profile, preferences or administration",
+    "indexable": false,
+    "title": "P.O.P.S. Customer Account | Sign In, Register & Recover",
+    "description": "Create or manage your P.O.P.S. customer account, verified email, mailing profile and optional communication preferences. Account information stays separate from evidence and ORB memory.",
+    "robots": "noindex, nofollow",
+    "canonical": "https://pops.spruked.com/account/email/verify",
+    "descriptionCount": 1,
+    "h1s": 1,
+    "words": 194,
+    "ids": [
+      "account-access",
+      "account-access-title",
+      "account-boundaries",
+      "account-boundaries-title"
+    ],
+    "hooks": [
+      "pops.nav.access",
+      "pops.nav.get-pops"
+    ],
+    "links": [
+      "/account",
+      "/account?mode=register",
+      "/account?mode=recovery",
+      "/account?mode=verification",
+      "/support",
+      "/desktop-app",
+      "/android",
+      "/beta",
+      "/early-adopters",
+      "/faq",
+      "/support"
+    ],
+    "overflow": false,
+    "beforeWords": 0
   }
 ]

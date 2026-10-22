@@ -37,4 +37,12 @@ Use a local user account and OS permissions to protect the workspace. The develo
 
 Verification/recovery links expire in one hour. The local email outbox can be opened on this PC to test a link; it is not exposed by a web endpoint. Password reset invalidates existing sessions and consumes the reset token. General support is not an evidence upload or emergency channel.
 
-Production, the real application, ORB styles and governance sources, Declaration, Pledge and policy sources were not modified. The later owner authorization permits five website ORB TypeScript integrations and a website development-branch push. The miniature application and bundled narration are documented in src/pops-demo-app/README.md; deployment remains approval-gated.
+Production, the real application, ORB styles and governance sources, Declaration, Pledge and policy sources were not modified. The later owner authorization permits six existing website ORB presentation/transport integrations and a website development-branch push. The miniature application and bundled narration are documented in src/pops-demo-app/README.md; deployment remains approval-gated.
+
+## Current local integration status
+
+Customer profile and preference management, verified email changes, account-status/session controls and permission-restricted current-state/registration-cohort reporting are implemented. Unknown legacy profile data is not invented. Paying counts require verified payment records and are unavailable otherwise; carts do not establish customers. See CUSTOMER_ACCOUNTS.md.
+
+Canonical supplied Vault/A.I.M.S. source is imported intact as ordinary files. Session transcripts are temporary and separate from customer data; public copy alone enters durable retrieval. The local one-worker restriction and supplied Windows concurrent-writer test failure are documented in MEMORY_INTEGRATION.md. Production governance is deferred for development, not replaced.
+
+Existing llama.cpp native task is repaired and live-model conversation/demo tests pass. Forced-crash recovery and actual reboot remain unverified after canceled administrator elevation. See NATIVE_LLAMA_REPAIR.md. Recorded-audio STT is not configured; generated speech uses the browser service, with complete captions. Do not publish this development host or imply production readiness from its tests.

@@ -57,6 +57,10 @@ function App() {
           <Route path="/account" element={<AccountPortalPage />} />
           <Route path="/account/verify" element={<AccountPortalPage />} />
           <Route path="/account/reset" element={<AccountPortalPage />} />
+          <Route path="/account/profile" element={<AccountPortalPage />} />
+          <Route path="/account/preferences" element={<AccountPortalPage />} />
+          <Route path="/account/admin" element={<AccountPortalPage />} />
+          <Route path="/account/email/verify" element={<AccountPortalPage />} />
           <Route path="/declaration" element={<DeclarationPage />} />
           <Route path="/pledge" element={<PledgePage />} />
           <Route path="/lexicon" element={<LexiconPage />} />

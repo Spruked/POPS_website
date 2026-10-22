@@ -2,13 +2,26 @@ POPS_website-main/
 [Generated source/artifact tree; dependency, runtime-private, build-output and Git metadata directories excluded.]
 ├── backend/
 │   ├── customer_site/
+│   │   ├── management/
+│   │   │   ├── commands/
+│   │   │   │   ├── __init__.py
+│   │   │   │   └── customer_roles.py
+│   │   │   └── __init__.py
 │   │   ├── migrations/
 │   │   │   ├── __init__.py
-│   │   │   └── 0001_initial.py
+│   │   │   ├── 0001_initial.py
+│   │   │   ├── 0002_betaapplication_user_communicationpreferences_and_more.py
+│   │   │   └── 0003_preserve_existing_customers.py
 │   │   ├── __init__.py
 │   │   ├── forms.py
+│   │   ├── geography.py
+│   │   ├── middleware.py
 │   │   ├── models.py
+│   │   ├── profile_forms.py
+│   │   ├── profile_service.py
+│   │   ├── profile_views.py
 │   │   ├── settings.py
+│   │   ├── test_profiles.py
 │   │   ├── tests.py
 │   │   ├── urls.py
 │   │   ├── views.py
@@ -17,7 +30,12 @@ POPS_website-main/
 │   ├── customer-requirements.txt
 │   ├── main.py
 │   ├── manage_customers.py
-│   └── requirements.txt
+│   ├── orb_harness.py
+│   ├── orb-requirements.lock
+│   ├── orb-requirements.txt
+│   ├── requirements.txt
+│   ├── test_orb_harness.py
+│   └── website_orb_host.py
 ├── cali_orb_machine/
 │   ├── cali_skg_INTEGRATION.py
 │   ├── floating_assistant_orb_main_INTEGRATION.py
@@ -34,6 +52,8 @@ POPS_website-main/
 │   ├── README_v4.md
 │   └── requirements.txt
 ├── data/
+│   ├── orb-context/
+│   │   └── website.json
 │   └── orb-weaver/
 │       └── crawl-8/
 │           ├── commercial_catalog.json
@@ -49,6 +69,11 @@ POPS_website-main/
 │           └── source_validation.json
 ├── docs/
 │   ├── launch/
+│   │   ├── customer-validation/
+│   │   │   ├── geographic-report.png
+│   │   │   ├── profile-desktop.png
+│   │   │   ├── profile-mobile.png
+│   │   │   └── results.json
 │   │   ├── screenshots/
 │   │   │   ├── access.png
 │   │   │   ├── account.png
@@ -75,10 +100,15 @@ POPS_website-main/
 │   │   ├── after-pages.json
 │   │   ├── before-pages.json
 │   │   ├── browser-results.json
+│   │   ├── CUSTOMER_ACCOUNTS.md
 │   │   ├── DEVELOPMENT_RELEASE.md
 │   │   ├── IMPLEMENTATION_REPORT.md
+│   │   ├── IMPORTED_COMPONENTS.json
 │   │   ├── LAUNCH_READINESS.md
 │   │   ├── MARKETING_PLAN.md
+│   │   ├── MEMORY_INTEGRATION.md
+│   │   ├── NATIVE_LLAMA_REPAIR.md
+│   │   ├── native-llama-validation.json
 │   │   ├── navigation-results.json
 │   │   ├── prerender-report.json
 │   │   ├── protected-baseline.json
@@ -130,10 +160,18 @@ POPS_website-main/
 │   ├── site.webmanifest
 │   └── sitemap.xml
 ├── scripts/
+│   ├── windows/
+│   │   ├── Repair-WindowsLlama.ps1
+│   │   ├── Start-ORB-LLM.ps1
+│   │   └── Test-WindowsLlamaRecovery.ps1
 │   ├── capture-before.cjs
+│   ├── generate-orb-context.mjs
 │   ├── generate-sitemap.mjs
 │   ├── prerender.mjs
 │   ├── report-launch.mjs
+│   ├── test-python.mjs
+│   ├── verify-customers.cjs
+│   ├── verify-imports.cjs
 │   ├── verify-launch.cjs
 │   ├── verify-navigation.cjs
 │   └── verify-protected.cjs
@@ -144,7 +182,10 @@ POPS_website-main/
 │   │   │   ├── P.O.P.S. Startup Splash.html
 │   │   │   └── P.O.P.S. Startup Splash.md
 │   │   ├── Analytics.tsx
+│   │   ├── CustomerAdminPanel.tsx
+│   │   ├── CustomerDetailsFields.tsx
 │   │   ├── CustomerForms.tsx
+│   │   ├── CustomerProfilePanel.tsx
 │   │   ├── DesktopAppPreview.tsx
 │   │   ├── LandingSplash.css
 │   │   ├── LandingSplash.tsx
@@ -160,10 +201,15 @@ POPS_website-main/
 │   │   ├── sitePages.json
 │   │   └── validatePopsLexicon.ts
 │   ├── orb/
+│   │   ├── orbActions.ts
 │   │   ├── pointerGuideController.ts
 │   │   ├── pointerTargetRegistry.ts
+│   │   ├── registeredDestinations.json
+│   │   ├── visitorSession.ts
 │   │   ├── WebsiteFloatingOrb.css
 │   │   ├── WebsiteFloatingOrb.tsx
+│   │   ├── WebsiteOrbConversation.css
+│   │   ├── WebsiteOrbConversation.tsx
 │   │   ├── WebsiteOrbPointerOverlay.tsx
 │   │   └── websiteOrbTargetTypes.ts
 │   ├── pages/
@@ -290,6 +336,121 @@ POPS_website-main/
 ├── vault_system/
 │   └── posteriori/
 │       └── a4c08c75417e5dc5e8c7c449a1ab10424c231cf26dc5911ad7fce32cafe1d0e0.json
+├── Vault-Logic-System-Template/
+│   ├── AIMS/
+│   │   ├── .github/
+│   │   │   └── workflows/
+│   │   │       └── tests.yml
+│   │   ├── memory_core/
+│   │   │   ├── skg/
+│   │   │   │   ├── __init__.py
+│   │   │   │   ├── backend.py
+│   │   │   │   ├── domain.py
+│   │   │   │   ├── trio.py
+│   │   │   │   └── types.py
+│   │   │   ├── __init__.py
+│   │   │   ├── glyph_trace.py
+│   │   │   ├── indexes.py
+│   │   │   ├── long_term.py
+│   │   │   ├── memory_layer.py
+│   │   │   ├── retrieval_ledger.py
+│   │   │   ├── short_term.py
+│   │   │   ├── temporal.py
+│   │   │   ├── vault.py
+│   │   │   └── writer_lock.py
+│   │   ├── tests/
+│   │   │   ├── test_complete_cognitive_memory_cycle.py
+│   │   │   ├── test_core_integrity.py
+│   │   │   ├── test_graphqlite_backend.py
+│   │   │   ├── test_service_security.py
+│   │   │   └── test_three_skgs.py
+│   │   ├── .gitignore
+│   │   ├── DEV_LOG.md
+│   │   ├── HARDENING_CONTRACT.md
+│   │   ├── LICENSE
+│   │   ├── pyproject.toml
+│   │   ├── README.md
+│   │   ├── requirements.txt
+│   │   ├── service.py
+│   │   └── system_outline.md
+│   ├── config/
+│   │   ├── environments/
+│   │   │   ├── dev.yaml
+│   │   │   ├── prod.yaml
+│   │   │   └── test.yaml
+│   │   ├── telemetry.yaml
+│   │   └── vault_config.yaml
+│   ├── docs/
+│   │   ├── architecture.md
+│   │   ├── glyph_guide.md
+│   │   ├── memory_matrix.md
+│   │   ├── migration_guide.md
+│   │   ├── telemetry_best_practices.md
+│   │   └── vault_types.md
+│   ├── engine/
+│   │   ├── integration_hooks/
+│   │   │   ├── on_vault_apply.py
+│   │   │   └── post_resolution.yaml
+│   │   ├── evaluator.py
+│   │   ├── resolver.js
+│   │   └── signal_map.json
+│   ├── examples/
+│   │   ├── input_career_change.json
+│   │   ├── input_game_quest.json
+│   │   └── input_medical_triage.json
+│   ├── glyphs/
+│   │   ├── _template/
+│   │   │   └── custom_glyph.json
+│   │   ├── glyph_map.json
+│   │   └── trace_engine.js
+│   ├── interfaces/
+│   │   ├── api/
+│   │   │   └── openapi.yaml
+│   │   └── cli/
+│   │       └── commands.md
+│   ├── memory/
+│   │   ├── _template/
+│   │   │   └── custom_matrix.json
+│   │   ├── domains/
+│   │   │   ├── long_term.json
+│   │   │   ├── sensory.json
+│   │   │   └── short_term.json
+│   │   ├── consolidation.py
+│   │   └── matrix_store.yaml
+│   ├── scripts/
+│   │   ├── consolidate_memory.py
+│   │   ├── export_telemetry.js
+│   │   ├── export_to_json.lua
+│   │   ├── generate_glyph_report.py
+│   │   └── validate_vaults.sh
+│   ├── telemetry/
+│   │   ├── dashboard/
+│   │   │   ├── anomaly_detector.js
+│   │   │   └── metrics_dashboard.md
+│   │   ├── traces/
+│   │   │   ├── agent_decisions.json
+│   │   │   └── latency_buckets.json
+│   │   ├── alerts.yaml
+│   │   ├── collector.py
+│   │   └── telemetry.yaml
+│   ├── tests/
+│   │   ├── integration/
+│   │   │   ├── test_ethical_dilemma.json
+│   │   │   ├── test_glyph_drift.json
+│   │   │   ├── test_memory_consolidation.json
+│   │   │   └── test_pricing_edge_case.json
+│   │   └── unit/
+│   │       ├── test_telemetry_alerts.json
+│   │       └── vault_template_test.json
+│   ├── vaults/
+│   │   └── _template/
+│   │       ├── rules/
+│   │       │   └── condition.js
+│   │       ├── logic.md
+│   │       └── vault.json
+│   ├── .gitignore
+│   ├── README.md
+│   └── tree.txt
 ├── .env.example
 ├── .gitattributes
 ├── .gitignore
@@ -300,6 +461,7 @@ POPS_website-main/
 ├── README.md
 ├── start-customer-dev.ps1
 ├── start-local-dev.ps1
+├── start-orb-dev.ps1
 ├── state-estimated-fathers-denied-visitation-50.csv
 ├── tree.txt
 ├── tsconfig.json

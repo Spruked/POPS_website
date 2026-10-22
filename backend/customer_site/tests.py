@@ -18,7 +18,7 @@ class CustomerTests(TestCase):
         return browser.post('/api/customer/' + action, json.dumps(data), content_type='application/json', HTTP_X_CSRFTOKEN=token)
 
     def register(self):
-        return self.post('register', {'name': 'Test Parent', 'email': 'Parent@Example.com', 'password1': 'Proof-presence-test!483', 'password2': 'Proof-presence-test!483', 'consent': True})
+        return self.post('register', {'first_name':'Test','last_name':'Parent','phone':'+12025550123','street_address':'100 Fictional Lane','city':'Austin','state':'TX','postal_code':'78701','country':'US','email':'Parent@Example.com','password1':'Proof-presence-test!483','password2':'Proof-presence-test!483','consent':True})
 
     def test_csrf_is_required(self):
         response = self.client.post('/api/customer/register', '{}', content_type='application/json')

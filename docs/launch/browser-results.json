@@ -10,7 +10,7 @@
     "Account registration, local verification email, email verification, login, session after refresh, linked beta status, logout, recovery email, reset, and login with new password.",
     "Support request saved with reference and no upload field.",
     "Mobile route rendering at 390px and conventional navigation menu.",
-    "32 original protected files preserved; 5 explicitly authorized website ORB integrations verified (LF-normalized for Windows/WSL).",
+    "31 original protected files preserved; 6 explicitly authorized website ORB integrations verified (LF-normalized for Windows/WSL).",
     "No uncaught page errors or payment requests."
   ],
   "pageErrors": [],

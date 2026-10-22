@@ -1,48 +1,34 @@
 # Pops! miniature application
 
-This entire browser adaptation lives in `src/pops-demo-app/`. Open `/product-demo` and select **Start Tour**. It uses the real application screen structure and blue/gold visual foundation with one consistent fictional Morgan family case. The relationship visualization is explicitly a **conceptual preview**.
+All adapted application screens, fictional records, styles, tour logic, narration fallback assets and mini-app tests live in `src/pops-demo-app/`. The website mounts its isolated Shadow DOM workspace at `/product-demo`. The real application is a read-only visual foundation and is not required to build or run this copy.
 
-## Reproduce
+Dashboard → Dossier → Relationship Tree → Incident → Evidence Vault → Timeline → Review → Get Pops!
 
-From the website root, install Node 22.12+ and run:
+The Morgan family, Jordan Lee, Riley Chen, incident, three exact UTF-8 evidence fixtures, timeline and report are fictional and use consistent IDs. SHA-256 checks compare bundled fixture bytes; they do not establish an actual event, identity, custody history or admissibility. The relationship tree is labeled conceptual. Native files, storage, Tauri, SQLite, external research and export operations are replaced or disabled only in this copy.
+
+## Conversational tour
+
+Start Tour requests actual narration and the permitted transition from local llama.cpp through the existing website ORB host. Supplied A.I.M.S. session memory retains relevant visitor context. The same canonical memory infrastructure serves ordinary public-site conversation. The LLM receives only public copy, fictional records, current screen and registered actions. Customer information is excluded.
+
+There is no Next button. Speech completion (or muted reading time) triggers a validated adjacent transition. Back, Pause/Resume, Mute, Restart and Exit remain available. Ask Pops interrupts the tour for questions; Resume returns to the current stop. Screen changes cancel stale replies/actions. Refresh restores position and mute preference paused, with fresh fictional records. Exit/navigation cleans up tour speech, timers and pointer state.
+
+Local host files under backend/ and the existing src/orb/ transport are website-wide integration seams, not duplicated mini-app logic. Production governance integration is explicitly deferred for the local test; no substitute TPC, Correspondence Engine or Doctrine was created.
+
+## Build and test
+
+From the website root, use Node 22.12+ and the separately configured customer/ORB Python environments. Run `npm ci`, start the existing local model task, `start-orb-dev.ps1`, and Vite on 5173. Then run:
 
 ```sh
-npm ci
-npm run dev
-# In a second terminal:
 npm run test:demo
-npm run build
+npm run build:crawl
+npm run context:orb
 npm run test:demo:production
 npm run test:protected
 ```
 
-The tests default to installed Google Chrome. Alternatively run `npx playwright install chromium`, then set `PLAYWRIGHT_CHANNEL=chromium`. The production test starts and stops its own loopback server, serving only `dist`. It supports byte-range requests for audio seeking and exposes no live APIs. Set `DEMO_BASE_URL` when running `scripts/test-demo.cjs` against another local preview.
+The tests default to installed Chrome; set PLAYWRIGHT_CHANNEL=chromium for an installed Playwright browser. Production tests serve only the built frontend plus a test-only proxy to the existing loopback ORB host. No production server, native application or payment system is accessed. Tests instrument browser speech completion for repeatable timing; actual model HTTP replies drive transitions. This does not certify audible pronunciation or recorded-audio transcription.
 
-**The real application is not needed to install, build, run or test this demo.** `source-manifest.json` records the original read-only copy's paths and SHA-256 hashes for provenance. When that copy exists locally, the browser test optionally confirms the recorded originals remain unchanged. `POPS_APPLICATION_SOURCE` can specify an alternate read-only copy; an absent source skips only this optional comparison.
-
-## Screen and record flow
-
-Dashboard → Dossier → Relationship Tree → Incident → Evidence Vault → Timeline → Review → Get Pops!
-
-Alex Morgan, Jamie Morgan, Casey, Jordan Lee and Riley Chen are fictional. One October 10 exchange connects the same contact IDs, incident, three bundled text fixtures, chronological entries and report. The three text fixtures have genuine SHA-256 fingerprints computed over their exact UTF-8 strings. A match verifies only those strings against their fixture references. It does not establish a real event, identity, provenance, custody history or admissibility.
-
-Contacts can be selected and example fields edited. Relationship selections open the matching dossier. The incident exposes the same evidence IDs. Evidence details support a real Web Crypto comparison. The derived timeline links the fictional context; the report is previewable. Calendar exploration pauses the scripted tour. Native export, file selection, sealing and research requests are unavailable or replaced with local fictional results in the demo copies.
-
-## Isolation and integration
-
-- `App.tsx` mounts into an open ShadowRoot. The copied application CSS and demo overrides stay inside that root; the original website styling remains outside it.
-- `data/demoRuntime.ts` is an explicit in-memory action adapter. It has no fetch, Tauri, SQLite, filesystem, evidence storage, account access or payment capability. Unsupported native actions fail closed. Store and helper replacements stay in this directory.
-- No real case records are copied. File inputs and native output operations are disabled. Example changes reset on refresh or Restart. Only tour position and mute preference are kept in sessionStorage; refresh restores a paused tour.
-- `tour/tourController.ts` controls deterministic navigation. `tour/tourSteps.ts` is the authored source of captions, narration and selectors. Targets must match the active route, screen and step. Events cannot provide arbitrary narration or selectors.
-- `tour/useWebsiteDemoTour.ts` owns its media, speech fallback and highlighting. Normal microphone interaction pauses the tour; cleanup affects tour-owned presentation state. Exit or route departure clears it. Passive voice activation suspended by the tour can resume after Exit.
-- The host seams are `pages/ProductDemoPage.tsx`, the existing header Demo destination, and five files under `src/orb/`: `WebsiteFloatingOrb.tsx`, `WebsiteOrbPointerOverlay.tsx`, `pointerGuideController.ts`, `pointerTargetRegistry.ts`, `websiteOrbTargetTypes.ts`. These support authored captions, availability, semantic targets inside Shadow DOM, clipped geometry, scroll/resize/modal tracking and cleanup.
-- Scripted narration is an explicitly identified presentation source. It does not impersonate a generated cognitive response. TPC, Correspondence Engine, Doctrine and the existing conversation backend remain intact. Live normal conversation requires its existing backend; the authored tour does not.
-
-## Narration assets
-
-Eight committed WAV files under `assets/narration/` contain the exact authored narration. `manifest.json` records text, voice and audio hashes. The Windows-only `scripts/generate-narration.ps1` is an optional authoring tool using Microsoft David Desktop; **it is never run by the website or Linux build**. Builds simply bundle the committed files. Regenerate and review the audio if narration text changes.
-
-Playback begins after Start Tour. Pause/Resume retains position, Mute stops audio while keeping guidance, and every stop has a complete transcript. Browser voice fallback is available if bundled playback fails. Autoplay denial pauses the tour and offers Resume. Refresh never starts narration automatically. Progression is deliberately controlled with Back/Next so visitors can explore each screen.
+Eight committed authored WAVs in assets/narration/ remain an explicitly labeled offline fallback. If live inference fails, the fallback plays the matching explanation and pauses progression. The optional Windows generation script is an authoring tool, never a runtime/build dependency. Browser tests verify emitted asset bytes and decode all WAVs.
 
 ## Original application files
 
@@ -64,8 +50,6 @@ All remaining dependencies are local adapters or the website's existing React, R
 
 ## Validation artifacts
 
-`validation/development/test-results.json` and `validation/production/test-results.json` record the complete flow. Checks cover all eight real audio clips, SHA-256 comparisons, exact person selection, linked records, report preview, Back/Next/Restart/Exit, refresh, calendar and microphone interruptions, normal guide recovery, rejected inactive requests, modal pointer geometry and zero API/payment requests. All eight pointer targets are measured at 1440px, 1024px and 390px; screenshots are stored alongside each result. Audio playback was measured in the browser; no claim of a human listening review or full assistive-technology certification is made.
+`validation/development/test-results.json` and `validation/production/test-results.json` record all eight screens, actual model replies/actions, conversation context, controls, refresh and measured pointer geometry at 1440, 1024 and 390 pixels. Modal pointers and linked evidence/report are exercised. No customer, checkout or native-tool requests occur. `validation/production-assets.json` records the nine emitted assets and browser decoding. New tests do not claim the old scripted Next flow.
 
-`validation/production-assets.json` verifies the eight WAVs and badge byte-for-byte in the production build and confirms browser requests. `validation/authorized-orb-changes.json` records only the five authorized ORB integration files; the original protected baseline remains under `docs/launch/` with a portable LF comparison.
-
-`tree.txt` lists this directory. The website root README and `docs/launch/DEVELOPMENT_RELEASE.md` cover build and future deployment requirements. Checkout remains disabled, the real application is untouched, and production deployment requires owner approval.
+`source-manifest.json` preserves original read-only source hashes. `validation/authorized-orb-changes.json` and the original protected baselines explicitly distinguish six authorized existing ORB transport/presentation files from 31 preserved originals. `tree.txt` lists the complete mini-app directory. See the root README and docs/launch for exact memory contracts, setup, customer boundaries and remaining native recovery/reboot verification.

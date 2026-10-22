@@ -1,0 +1,15 @@
+{
+  "status": "passed",
+  "checks": [
+    "Registration requires the complete profile, defaults country to US, and leaves both optional preferences unchecked.",
+    "Signed-in customers can open password recovery without losing their account session.",
+    "Profile update persists current state while preserving the original creation timestamp.",
+    "Independent marketing/research changes and withdrawal history work in the customer interface.",
+    "New email remains pending until verification; verified change preserves identity/preferences and permits sign-in only with the new email.",
+    "Administrator geography is aggregated; state filtering and purpose-audited individual access work; suspension revokes the customer session.",
+    "Customer screens make zero ORB requests and render without desktop/mobile overflow or uncaught errors."
+  ],
+  "errors": [],
+  "privateOrbRequests": [],
+  "fixtures": "Synthetic example.com identities only; no real customer details captured."
+}

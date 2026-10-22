@@ -13,7 +13,7 @@ Counts are approximate visible main-content words captured in a fresh browser. N
 | /desktop-app | 222 | 867 | Evaluate Windows evidence organization software | P.O.P.S. Windows Software \| Evidence, Events & Timelines | Explore P.O.P.S. Windows desktop software for parenting-time records, evidence organization, timelines, integrity checks, and release-qualified review outputs. |
 | /android | 0 | 460 | Understand Android capture development status | P.O.P.S. Android Companion \| Development & Capture Plans | Explore the forthcoming P.O.P.S. Android companion: intended evidence capture, provenance validation, offline-first work, and planned Windows synchronization. |
 | /how-you-use-it | 127 | 678 | Learn the event-to-record workflow | How P.O.P.S. Works \| From Parenting-Time Event to Organized Record | Follow a fictional missed-exchange example through event notes, supporting files, source context, chronology, review, and release-qualified outputs. |
-| /product-demo | 297 | 379 | Explore a representative Windows workspace | Pops! Interactive Application Demo \| Guided Fictional Case Tour | Tour real Pops! application screens adapted for a fictional case: dossier, relationships, incident, evidence, timeline, and review, with scripted Pops narration. |
+| /product-demo | 297 | 394 | Explore a representative Windows workspace | Pops! Interactive Application Demo \| Guided Fictional Case Tour | Tour real Pops! application screens adapted for a fictional case: dossier, relationships, incident, evidence, timeline, and review, with local-model Pops narration. |
 | /see-pops-in-action | 182 | 382 | Find actual application demonstration availability | P.O.P.S. Walkthrough \| Official Recording Status & Demo Guide | Check the P.O.P.S. walkthrough recording status and follow the planned real-product demonstration of an event, supporting files, timeline, and review. |
 | /access | 418 | 538 | Compare Windows license and access paths | Get P.O.P.S. \| Windows License, Membership & Access Options | Review the existing P.O.P.S. Windows offer, included membership, reviewed assistance, and sponsorship options. Save a selection; checkout is not yet available. |
 | /beta | 0 | 498 | Express interest in active beta participation | P.O.P.S. Beta Program \| Seeking 50 Active Test Participants | Express interest in P.O.P.S. beta testing. Learn the 50-participant goal, expected activities, feedback process, privacy precautions, and invitation limitations. |
@@ -30,11 +30,15 @@ Counts are approximate visible main-content words captured in a fresh browser. N
 | /terms | 189 | 189 | Read existing service terms | POPS Terms of Service \| Proof of Presence System | Terms for using the POPS website and desktop application, including scope, user responsibility, access, payment, and disclaimers. |
 | /privacy | 1230 | 1230 | Read existing privacy notice | POPS Privacy Notice \| Local-First Records | Read the POPS privacy and operational notice covering local-first records, website forms, user control, and sensitive evidence boundaries. |
 | /policies-procedures | 1337 | 1337 | Read existing operating and access policies | POPS Policies and Procedures \| Operating Standards | POPS policies and procedures for acceptable use, Open Door Access, evidence organization, record integrity, and Noted Counsel recognition. |
-| /account | 71 | 179 | Private customer or transactional action | P.O.P.S. Customer Account \| Sign In, Register & Recover | Create or access your P.O.P.S. website account, verify your email, and recover your password. Website accounts remain separate from local application evidence. |
-| /account/verify | 0 | 194 | Private customer or transactional action | P.O.P.S. Customer Account \| Sign In, Register & Recover | Create or access your P.O.P.S. website account, verify your email, and recover your password. Website accounts remain separate from local application evidence. |
-| /account/reset | 0 | 194 | Private customer or transactional action | P.O.P.S. Customer Account \| Sign In, Register & Recover | Create or access your P.O.P.S. website account, verify your email, and recover your password. Website accounts remain separate from local application evidence. |
+| /account | 71 | 178 | Private customer or transactional action | P.O.P.S. Customer Account \| Sign In, Register & Recover | Create or manage your P.O.P.S. customer account, verified email, mailing profile and optional communication preferences. Account information stays separate from evidence and ORB memory. |
+| /account/verify | 0 | 191 | Private customer or transactional action | P.O.P.S. Customer Account \| Sign In, Register & Recover | Create or manage your P.O.P.S. customer account, verified email, mailing profile and optional communication preferences. Account information stays separate from evidence and ORB memory. |
+| /account/reset | 0 | 193 | Private customer or transactional action | P.O.P.S. Customer Account \| Sign In, Register & Recover | Create or manage your P.O.P.S. customer account, verified email, mailing profile and optional communication preferences. Account information stays separate from evidence and ORB memory. |
 | /cart | 67 | 73 | Private customer or transactional action | Cart \| POPS | Review your POPS cart before completing secure checkout through Square. |
 | /checkout | 67 | 136 | Private customer or transactional action | Checkout Unavailable \| P.O.P.S. | P.O.P.S. checkout is not active. Review your saved selection; no payment, billing record, order, or license is created. |
+| /account/profile | 0 | 177 | Private customer profile, preferences or administration | P.O.P.S. Customer Account \| Sign In, Register & Recover | Create or manage your P.O.P.S. customer account, verified email, mailing profile and optional communication preferences. Account information stays separate from evidence and ORB memory. |
+| /account/preferences | 0 | 177 | Private customer profile, preferences or administration | P.O.P.S. Customer Account \| Sign In, Register & Recover | Create or manage your P.O.P.S. customer account, verified email, mailing profile and optional communication preferences. Account information stays separate from evidence and ORB memory. |
+| /account/admin | 0 | 177 | Private customer profile, preferences or administration | P.O.P.S. Customer Account \| Sign In, Register & Recover | Create or manage your P.O.P.S. customer account, verified email, mailing profile and optional communication preferences. Account information stays separate from evidence and ORB memory. |
+| /account/email/verify | 0 | 194 | Private customer profile, preferences or administration | P.O.P.S. Customer Account \| Sign In, Register & Recover | Create or manage your P.O.P.S. customer account, verified email, mailing profile and optional communication preferences. Account information stays separate from evidence and ORB memory. |
 
 ## Navigation, sections and discovery
 
@@ -65,6 +69,10 @@ New layout IDs: site-menu-control, site-navigation-title, site-main-content. Nav
 - /account/reset: `account-access`, `account-access-title`, `customer-new_password1`, `customer-new_password2`, `account-boundaries`, `account-boundaries-title`
 - /cart: No new section IDs.
 - /checkout: `checkout-selection`, `checkout-selection-title`, `checkout-next-steps`, `checkout-next-steps-title`
+- /account/profile: `account-access`, `account-access-title`, `customer-email`, `customer-password`, `account-boundaries`, `account-boundaries-title`
+- /account/preferences: `account-access`, `account-access-title`, `customer-email`, `customer-password`, `account-boundaries`, `account-boundaries-title`
+- /account/admin: `account-access`, `account-access-title`, `customer-email`, `customer-password`, `account-boundaries`, `account-boundaries-title`
+- /account/email/verify: `account-access`, `account-access-title`, `account-boundaries`, `account-boundaries-title`
 
 ## Existing hooks preserved
 
@@ -73,7 +81,7 @@ New layout IDs: site-menu-control, site-navigation-title, site-main-content. Nav
 
 The access activation target, `pops.access.activation`, remains present on the assistance section; it was previously conditional. All original data-orb-target values in the homepage, access cards, access sections, and primary navigation remain unchanged. The eight authored mini-application targets use the authorized website ORB presentation integration; the original target hooks remain available.
 
-Protected-file verification: 32 original protected files remain unchanged, including backend/main.py, the startup splash, Declaration, Pledge, Terms, Privacy, Policies, ORB styles, and governance sources. Five website ORB TypeScript files carry owner-authorized tour integration. Original baseline retained; portable LF hashes and explicit authorized hashes are checked by npm run test:protected. This does not certify the external voice backend.
+Protected-file verification: 31 original protected files remain unchanged, including backend/main.py, the startup splash, Declaration, Pledge, Terms, Privacy, Policies, ORB styles, and governance sources. Six website ORB TypeScript integration/transport files carry owner-authorized tour integration. Original baseline retained; portable LF hashes and explicit authorized hashes are checked by npm run test:protected. Live llama.cpp HTTP inference and tour progression are tested separately; external recorded-audio STT is not configured.
 
 ## Sitemap, indexing and structured data
 
@@ -81,11 +89,11 @@ public/sitemap.xml contains 32 canonical public URLs, including the ten existing
 
 PageSeo provides unique public titles/descriptions and canonical URLs. Duplicate static head metadata was removed. Organization/WebSite/WebPage/Breadcrumb schema is retained; unsupported sameAs identity links were removed. SoftwareApplication describes Windows without speculative offers, ratings, version, download URL, or release date. FAQPage matches visible answers; no rich-result or ranking guarantee is made.
 
-npm run build:crawl produces route-specific public HTML with readable content, internal links and head metadata before JavaScript executes. It captures the Layout surface only, not runtime overlays, customer responses or private data. Five clean signed-out private-route shells also contain noindex metadata, with no customer records captured. The production host must serve those shells or explicit noindex headers for private routes. No hosting configuration was activated.
+npm run build:crawl produces route-specific public HTML with readable content, internal links and head metadata before JavaScript executes. It captures the Layout surface only, not runtime overlays, customer responses or private data. Nine clean signed-out private-route shells also contain noindex metadata, with no customer records captured. The production host must serve those shells or explicit noindex headers for private routes. No hosting configuration was activated.
 
 ## Accessibility and visual checks
 
-All listed routes have exactly one main H1. New content uses section headings, descriptive IDs, explicit form labels, input types, autocomplete, field error associations, status/alert messages, keyboard focus styles, clear link names, responsive layouts and no evidence uploads. Consent checkboxes are required; optional updates are separate. Images retain descriptive labels; representative previews are explicitly identified. Captures were taken after main-page animation settled.
+All listed routes have exactly one main H1. New content uses section headings, descriptive IDs, explicit form labels, input types, autocomplete, field error associations, status/alert messages, keyboard focus styles, clear link names, responsive layouts and no evidence uploads. Terms acknowledgement is required; marketing and research preferences are independently optional and unchecked. Images retain descriptive labels; representative previews are explicitly identified. Captures were taken after main-page animation settled.
 
 Desktop 1440×1000 and mobile 390×844 were checked for document overflow. Original policy heading hierarchies and wording were preserved under the explicit restriction. Automated checks and screenshot review are not a full screen-reader, keyboard, or WCAG certification.
 
@@ -93,7 +101,7 @@ Desktop 1440×1000 and mobile 390×844 were checked for document overflow. Origi
 
 - npm run build: TypeScript and Vite passed.
 - npm run build:crawl: static public HTML generated.
-- Customer backend: 11 Django tests passed (CSRF, password validation, email verification, sessions, reset, duplicate accounts, persistent forms, throttling, deferred checkout).
+- Customer backend: 25 Django tests passed (CSRF, password validation, email verification, sessions, reset, duplicate accounts, persistent forms, throttling, deferred checkout).
 - All route definitions: desktop rendering, one H1, unique description element, metadata, noindex, preserved hooks, no horizontal overflow.
 - Public titles and descriptions unique; main-content internal destinations recognized.
 - Cart refresh, duplicate Guardian, included membership, sponsor quantity and integer-cents totals, removals, corrupt storage, canonical-price restoration.
@@ -103,7 +111,7 @@ Desktop 1440×1000 and mobile 390×844 were checked for document overflow. Origi
 - Account registration, local verification email, email verification, login, session after refresh, linked beta status, logout, recovery email, reset, and login with new password.
 - Support request saved with reference and no upload field.
 - Mobile route rendering at 390px and conventional navigation menu.
-- 32 original protected files preserved; 5 explicitly authorized website ORB integrations verified (LF-normalized for Windows/WSL).
+- 31 original protected files preserved; 6 explicitly authorized website ORB integrations verified (LF-normalized for Windows/WSL).
 - No uncaught page errors or payment requests.
 
 ## Boundaries and launch dependencies
@@ -127,6 +135,10 @@ See LAUNCH_READINESS.md and MARKETING_PLAN.md for decisions and demonstration as
 
 All mini-application screens, fictional data, narration assets, isolated CSS, tour controller, bridge and test scripts live in src/pops-demo-app/. ProductDemoPage mounts the lazy-loaded Shadow DOM application at /product-demo. Header Demo links directly there. The eight stops are Dashboard → Dossier → Relationship Tree → Incident → Evidence Vault → Timeline → Review → Get Pops!.
 
-The tour uses bundled WAV narration, captions, the existing semantic guide controller, and authored screen/target admission. It does not send scripted text through cognition or bypass TPC, Correspondence or Doctrine; those sources are preserved. Active normal microphone/conversation work takes priority. Pause, mute, interruption, route departure and Exit release tour-owned media and highlights. Refresh restores only the position and mute preference, paused, with fresh fictional records.
+The development tour uses real local llama.cpp responses, browser speech, canonical A.I.M.S. session context and locally validated registered actions. No Next button is present. Bundled WAVs remain an explicitly identified offline fallback that pauses progression. Canonical governance integration is deferred by owner instruction for development; existing architecture is preserved. Pause, mute, interruption, route departure and Exit clean up tour presentation. Refresh restores a paused position. Browser speech lifecycle is instrumented in repeatable tests; HTTP model replies are real.
 
 See src/pops-demo-app/README.md, tree.txt, validation/development/test-results.json, validation/production/test-results.json and validation/production-assets.json for exact behavior, checks and asset hashes. See docs/launch/DEVELOPMENT_RELEASE.md for repository, branch, reproducible build instructions and approval-gated WSL deployment requirements.
+
+## Customer, memory and native inference update
+
+See CUSTOMER_ACCOUNTS.md, MEMORY_INTEGRATION.md and NATIVE_LLAMA_REPAIR.md for the current contracts, verification and limitations. Customer profiles/preferences/geography remain separate from ORB memory. The 84 original Vault/A.I.M.S. source files are ordinary source directories without nested Git metadata. Native task repair is installed; forced-crash recovery awaits administrator elevation, and actual reboot startup remains untested.

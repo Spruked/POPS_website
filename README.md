@@ -6,13 +6,13 @@ This workspace is `C:\Users\bryan\Desktop\POPS\POPS_website-main`. Development p
 
 ## Scope and protected surfaces
 
-Website content, product presentation, customer accounts, beta interest, support intake, persistent cart, and crawl readiness. The application repository and other developers' work are out of scope. The owner authorized website ORB changes needed for the scripted mini-application tour. Normal behavior outside the tour and the TPC, Correspondence Engine and Doctrine architecture remain required. Five website ORB TypeScript integration files changed; the original ORB styles and governance sources are preserved. Original Declaration, Pledge and policy wording are preserved. Protected-file hashes are recorded in `docs/launch/protected-baseline.json`.
+Website content, product presentation, customer accounts, beta interest, support intake, persistent cart, and crawl readiness. The application repository and other developers' work are out of scope. The owner authorized website ORB changes needed for the scripted mini-application tour. Normal behavior outside the tour is preserved. Production TPC, Correspondence Engine and Doctrine integration is deferred for the explicitly authorized local LLM test; no replacement governance is created. Six existing website ORB integration/transport files changed; the original ORB styles and governance sources are preserved. Original Declaration, Pledge and policy wording are preserved. Protected-file hashes are recorded in `docs/launch/protected-baseline.json`.
 
-Primary desktop navigation is flat: Home, Windows, Android, Demo, Beta, Pricing, Sign In, Cart, plus Get P.O.P.S. A reserved-width sidebar exposes secondary destinations. Tablet/mobile uses a visibly labeled Menu with 23 direct links and no nested menus. Existing navigation hooks and `data-orb-target` values remain. Website content uses semantic section IDs. Eight bounded mini-application targets are registered only for the active authored tour.
+Primary desktop navigation is flat: Home, Windows, Android, Demo, Beta, Pricing, Sign In, Cart, plus Get P.O.P.S. A reserved-width sidebar exposes secondary destinations. Tablet/mobile uses a visibly labeled Menu with 23 direct links and no nested menus. Existing navigation hooks and `data-orb-target` values remain. Website content uses semantic section IDs. Eight bounded mini-application targets are registered for the active demo context.
 
 ## Start local development
 
-Requirements: Node 22.12+ (Node 24 tested), npm, and a Playwright-compatible browser for browser checks. Python 3.11+ is needed only for the customer service; PowerShell launchers are provided for Windows. The mini application runs entirely in the frontend.
+Requirements: Node 22.12+ (Node 24 tested), npm, and a Playwright-compatible browser for browser checks. Python 3.11+ is needed for the customer and local ORB services; PowerShell launchers are provided for Windows. The mini application renders in the frontend; live conversation and tour narration use the local ORB service.
 
 First setup, from this folder:
 
@@ -34,7 +34,7 @@ Start or reuse both local services:
 - Customer migrations run before service startup. `start-customer-dev.ps1` starts/reuses just that service.
 - Customer logs and private runtime state: `.local/customers/`.
 - Vite logs when launched by the script: `%LOCALAPPDATA%/POPS/local-dev/`.
-- Backend Python changes require restarting the customer service; frontend changes update through Vite.
+- Backend Python changes require restarting the corresponding service; frontend changes update through Vite.
 
 To stop a service, inspect its listening PID with `Get-NetTCPConnection -LocalPort 5173,8787 -State Listen` and stop only the process you intend to stop. Do not stop unrelated services.
 
@@ -42,10 +42,12 @@ The original `npm run dev:backend` command remains a legacy command and is **not
 
 ## Accounts, beta and support
 
-Django's established authentication components provide Argon2 password hashing, validators, server-side sessions, CSRF protection, login/logout, email verification and password recovery/reset. Account identity is separate from local application evidence. No paid identity provider is used.
+Django's established authentication components provide Argon2 password hashing, validators, server-side sessions, CSRF protection, login/logout, email verification and password recovery/reset. Account identity is separate from local application evidence and ORB conversational memory. No paid identity provider is used.
 
 - `/account?mode=register`: create an inactive website account and prepare verification email.
-- `/account`: sign in after verification; view identity and beta interest status associated with the verified email.
+- `/account`: sign in after verification; view identity and beta interest status.
+- `/account/profile`, `/account/preferences`: complete mailing/contact profile, verified email changes and independent marketing/research consent history.
+- `/account/admin`: permission-restricted aggregate state reporting and purpose-audited individual access.
 - `/account?mode=verification`: request another verification link.
 - `/account?mode=recovery`: request password reset.
 - `/account/verify` and `/account/reset`: one-hour link actions.
@@ -113,7 +115,7 @@ Navigation correction validation: seven widths (1440, 1280, 1100, 1024, 820, 390
 
 ## Interactive application demonstration
 
-Open **/product-demo** and choose **Start Tour**. Source: [`src/pops-demo-app/`](src/pops-demo-app/README.md). It adapts real application screens and connects fictional dossiers, relationships, an incident, evidence, timeline and review. Relationship Tree is labeled a conceptual preview. No Tauri, SQLite, uploaded evidence, native storage, payment or live narration API is used by the mini application.
+Open **/product-demo** and choose **Start Tour**. Source: [`src/pops-demo-app/`](src/pops-demo-app/README.md). It adapts real application screens and connects fictional dossiers, relationships, an incident, evidence, timeline and review. Relationship Tree is labeled a conceptual preview. No Tauri, SQLite, uploaded evidence, native storage or payment operation is available in the mini application. Live narration uses the separate local ORB host.
 
 All eight narration WAV files and the application badge are committed source assets. Vite emits hashed assets; Linux builds do not generate speech or read `POPS_Application`. Edits affect only in-memory fixtures; sessionStorage holds only tour position/mute preference. Refresh pauses the tour and resets fictional edits.
 
@@ -127,8 +129,36 @@ npm run test:demo:production
 npm run test:protected
 ```
 
-The production test serves only `dist` on an ephemeral loopback port, checks byte-identical assets, exercises actual audio at every stop, verifies pointer geometry at three widths, and runs lifecycle regression checks. Browser audio autoplay restrictions are handled by Resume and captions. The normal live ORB conversation still requires its existing backend; bundled tour speech does not.
+The production test serves dist on a private loopback port, proxies only the existing ORB host, checks byte-identical assets and decoded fallback audio, and verifies real-model narration, pointer geometry and lifecycle controls. Browser speech timing is instrumented; captions remain visible. The live tour and normal conversation require the local model/ORB host.
 
 For an installed Playwright Chromium instead of Google Chrome, run `npx playwright install chromium` and set `PLAYWRIGHT_CHANNEL=chromium`. On PowerShell use `$env:PLAYWRIGHT_CHANNEL='chromium'`; on Linux prefix the command with `PLAYWRIGHT_CHANNEL=chromium`. The crawl/navigation scripts accept installed browser channel names such as `chrome`; default Chrome was used for the recorded crawl/navigation checks.
 
 See the demo README for the full copied-source inventory, architecture and test artifacts. Read `docs/launch/DEVELOPMENT_RELEASE.md` before any future production rollout. Checkout remains disabled until separately configured and authorized.
+
+## Local llama.cpp and canonical memory update
+
+The existing native Windows scheduled task **ORB Qwen 7B Server** now runs the installed Qwen 2.5 7B Q4_K_M model on `http://127.0.0.1:16520`. No model installation, download or competing service was created. See [native repair evidence and pending recovery checks](docs/launch/NATIVE_LLAMA_REPAIR.md). Boot startup is configured; an actual reboot and forced-crash recovery are not yet verified because the recovery test's administrator prompt was canceled.
+
+Set up the separate local host once:
+
+```powershell
+python -m venv .venv-orb
+.venv-orb\Scripts\python.exe -m pip install -r backend/orb-requirements.txt
+.\start-orb-dev.ps1
+```
+
+The host extends the existing ORB backend on loopback port 8001, one worker, with an explicit development flag. Ask Pops provides ordinary typed conversation. Start Tour uses real generated replies, browser speech, registered pointers and locally validated model-emitted screen transitions. There is no Next button. Questions pause the tour; Resume continues. Bundled WAVs remain an identified offline fallback that pauses progression. Recorded-audio STT is not configured.
+
+The original supplied `Vault-Logic-System-Template/` and `AIMS/` are ordinary source directories, not submodules. The adapter uses canonical AIMSMemorySystem/Vault for published copy and canonical ShortTermMemory per visitor. Visitor transcripts stay ephemeral and isolated; customer data is excluded. See [memory contracts and the Windows concurrent-writer limitation](docs/launch/MEMORY_INTEGRATION.md) and [customer schema, permissions and reporting](docs/launch/CUSTOMER_ACCOUNTS.md).
+
+```powershell
+npm run test:orb
+npm run test:customer-browser
+npm run test:demo
+npm run build:crawl
+npm run context:orb
+npm run test:demo:production
+npm run test:imports
+```
+
+Live-model browser tests require the existing model and local ORB host. Production-bundle tests serve `dist` privately and proxy only the local ORB host; they do not deploy. Speech timing is instrumented for repeatability; model replies and pointer measurements are real. The regular build requires no application checkout, model file or customer database. Windows service/task scripts are never run by a frontend build.

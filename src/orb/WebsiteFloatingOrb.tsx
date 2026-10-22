@@ -19,6 +19,10 @@ import type { WebsiteOrbGuideRequest, WebsiteOrbGuideState } from "./websiteOrbT
 import "./WebsiteFloatingOrb.css";
 import { useWebsiteDemoTour } from '../pops-demo-app/tour/useWebsiteDemoTour';
 import { getDemoVisibleRect, DEMO_HOST_ID } from '../pops-demo-app/tour/orbBridge';
+import WebsiteOrbConversation from './WebsiteOrbConversation';
+import {reportOrbEvent,isPrivateOrbPage,dispatchOrbAction} from './visitorSession';
+import type {OrbAction} from './visitorSession';
+import {applyOrbAction} from './orbActions';
 
 type VoiceRecognitionResultEvent = {
   resultIndex: number;
@@ -122,6 +126,7 @@ export default function WebsiteFloatingOrb() {
   const guidePulseRef = useRef(0);
   const interruptTourRef = useRef<() => void>(() => {});
   const introSpeechRef = useRef<SpeechSynthesisUtterance | null>(null);
+  const responseSpeechRef = useRef<SpeechSynthesisUtterance | null>(null);
   const tourSuspendedActivationRef = useRef(false);
 
   const glow = glowFromPulse(lastResponse);
@@ -141,6 +146,7 @@ export default function WebsiteFloatingOrb() {
   }, []);
 
   const stopFinalAudio = useCallback(() => {
+    if (responseSpeechRef.current) { responseSpeechRef.current.onend=null; responseSpeechRef.current.onerror=null; window.speechSynthesis?.cancel(); responseSpeechRef.current=null; }
     if (finalAudioRef.current) {
       finalAudioRef.current.pause();
       finalAudioRef.current.currentTime = 0;
@@ -168,7 +174,18 @@ export default function WebsiteFloatingOrb() {
       if (guideRequest) setPendingGuide(guideRequest);
 
       if (!response.tts_audio_url) {
+        if (response.llm_source === 'local-llama.cpp' && 'speechSynthesis' in window) {
+          const speech=new SpeechSynthesisUtterance(response.spoken_output);
+          responseSpeechRef.current=speech;
+          let finished=false;
+          const finish=()=>{if(finished||responseSpeechRef.current!==speech)return;finished=true;responseSpeechRef.current=null;setOrbState('idle');if(response.action)dispatchOrbAction(response.action);};
+          speech.onend=finish;speech.onerror=finish;speech.lang='en-US';speech.rate=.98;
+          setOrbState('speaking');window.speechSynthesis.speak(speech);
+          window.setTimeout(finish,Math.max(12000,response.spoken_output.length*55));
+          return;
+        }
         setOrbState(response.tts_error ? "error" : "idle");
+        if(response.action)dispatchOrbAction(response.action);
         if (voiceResumeAfterResponseRef.current) {
           voiceResumeAfterResponseRef.current = false;
           window.setTimeout(() => startVoiceActivationRef.current?.(), 250);
@@ -180,6 +197,7 @@ export default function WebsiteFloatingOrb() {
       finalAudioRef.current = audio;
       audio.onended = () => {
         setOrbState("idle");
+        if(response.action)dispatchOrbAction(response.action);
         if (voiceResumeAfterResponseRef.current) {
           voiceResumeAfterResponseRef.current = false;
           window.setTimeout(() => startVoiceActivationRef.current?.(), 250);
@@ -195,6 +213,7 @@ export default function WebsiteFloatingOrb() {
   const handleOrbResponse = useCallback(
     async (request: Promise<OrbResponse>) => {
       interruptTourRef.current();
+      if(voiceRecognitionRef.current){voiceActivationEnabledRef.current=false;voiceRecognitionRef.current.abort();voiceRecognitionRef.current=null;}
       const runId = runIdRef.current + 1;
       runIdRef.current = runId;
       stopFinalAudio();
@@ -467,7 +486,13 @@ export default function WebsiteFloatingOrb() {
     demoRoot?.addEventListener('scroll', refreshGuide, true);
     const observer = demoRoot ? new ResizeObserver(refreshGuide) : null;
     const mutations = demoRoot ? new MutationObserver(refreshGuide) : null;
-    if (demoRoot) mutations?.observe(demoRoot, {childList:true,subtree:true});
+    if (demoRoot) mutations?.observe(demoRoot, {childList:true,characterData:true,subtree:true});
+    if (demoRoot) {
+      const controls=demoRoot.querySelector('.demo-tour');
+      const viewport=demoRoot.querySelector('.demo-screen-scroll');
+      if(controls)observer?.observe(controls);
+      if(viewport)observer?.observe(viewport);
+    }
     const targetElement = findPointerTargetElement(guide.target);
     if (targetElement) observer?.observe(targetElement);
     return () => {
@@ -605,7 +630,7 @@ export default function WebsiteFloatingOrb() {
       return orbState !== 'thinking' && orbState !== 'speaking' && mediaRecorderRef.current?.state !== 'recording' && !voiceQueryActiveRef.current && (!finalAudioRef.current || finalAudioRef.current.paused);
     },
     guide: setPendingGuide,
-    caption: (text, targetId) => setLastResponse({transcript:'', spoken_output:text, cognitive_pulse:{cognitive_mode:'GUIDED_DEMO',glow_intensity:.72,semantic_target_id:targetId},llm_source:'scripted-demo',memory_context:null,tts_audio_url:null,tts_provider:'bundled-scripted-narration',tts_error:null}),
+    caption: (text, targetId, source='scripted-demo') => setLastResponse({transcript:'', spoken_output:text, cognitive_pulse:{cognitive_mode:'GUIDED_DEMO',glow_intensity:.72,semantic_target_id:targetId},llm_source:source,memory_context:null,tts_audio_url:null,tts_provider:source==='scripted-demo'?'bundled-scripted-narration':'browser-session-voice',tts_error:null}),
     activity: (speaking) => setOrbState(speaking ? 'speaking' : 'idle'),
     released: (reason) => {
       if (reason === 'exit' && tourSuspendedActivationRef.current) {
@@ -616,13 +641,18 @@ export default function WebsiteFloatingOrb() {
     clear: () => {
       setGuide(current => current?.target.id.startsWith('pops.demo.') ? null : current);
       setPendingGuide(current => current?.targetId.startsWith('pops.demo.') ? null : current);
-      setLastResponse(current => current?.llm_source === 'scripted-demo' ? null : current);
+      setLastResponse(current => ['scripted-demo','local-llama.cpp-demo'].includes(current?.llm_source||'') ? null : current);
     },
   });
   interruptTourRef.current = interruptDemoTour;
 
+  useEffect(()=>{if(!isPrivateOrbPage(location.pathname))void reportOrbEvent('page').catch(()=>{});},[location.pathname]);
+  useEffect(()=>{const handle=(event:Event)=>applyOrbAction((event as CustomEvent<OrbAction>).detail,navigate);window.addEventListener('pops:orb-validated-action',handle);return()=>window.removeEventListener('pops:orb-validated-action',handle);},[navigate]);
+  async function askPops(question:string){const pending=sendWebsiteOrbText(question);await handleOrbResponse(pending);return pending;}
+
   return (
     <>
+      <WebsiteOrbConversation ask={askPops} onOpen={()=>interruptDemoTour()} visible={!isPrivateOrbPage(location.pathname)} />
       <WebsiteOrbPointerOverlay guide={guide} onDismiss={() => setGuide(null)} />
       <div className="website-orb" style={{ transform: `translate3d(${position.x}px, ${position.y}px, 0)` }}>
       <button

@@ -22,7 +22,7 @@ export default defineConfig({
     strictPort: true,
     allowedHosts: ["pops.spruked.com"],
     fs: {
-      deny: [".env", ".env.*", "*.{crt,pem}", "**/.git/**", "**/.local/**", "**/.venv-customer/**", "**/backend/**"]
+      deny: [".env", ".env.*", "*.{crt,pem}", "**/.git/**", "**/.local/**", "**/.venv-customer/**", "**/.venv-orb/**", "**/backend/**"]
     },
     proxy: {
       "/api/customer": {

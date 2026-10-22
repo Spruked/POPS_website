@@ -4,7 +4,8 @@ from django.core.management.utils import get_random_secret_key
 
 ROOT = Path(__file__).resolve().parents[2]
 STATE = ROOT / '.local' / 'customers'
-STATE.mkdir(parents=True, exist_ok=True)
+if os.name != 'nt': os.umask(0o077)
+STATE.mkdir(parents=True, exist_ok=True, mode=0o700)
 DEVELOPMENT = os.environ.get('CUSTOMER_ENV', 'development') == 'development'
 if not DEVELOPMENT and not os.environ.get('CUSTOMER_SECRET_KEY'):
     raise RuntimeError('CUSTOMER_SECRET_KEY is required outside isolated development.')
@@ -29,6 +30,7 @@ MIDDLEWARE = [
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
+    'customer_site.middleware.CustomerSessionSecurity',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 DATABASES = {'default': {'ENGINE': 'django.db.backends.sqlite3', 'NAME': os.environ.get('CUSTOMER_DATABASE', str(STATE / 'customers.sqlite3')), 'OPTIONS': {'timeout': 20}}}

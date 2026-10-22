@@ -3,17 +3,7 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 
 
-class RegistrationForm(UserCreationForm):
-    name = forms.CharField(max_length=100)
-    email = forms.EmailField(max_length=150)
-    consent = forms.BooleanField()
-
-    class Meta:
-        model = User
-        fields = ('email', 'name', 'password1', 'password2', 'consent')
-
-    def clean_email(self):
-        return self.cleaned_data['email'].strip().casefold()
+from .profile_forms import CustomerRegistrationForm as RegistrationForm
 
 
 class BetaForm(forms.Form):

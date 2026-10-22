@@ -27,9 +27,9 @@ npm run test:demo:production
 npm run test:protected
 ```
 
-For Playwright Chromium, first run `npx playwright install --with-deps chromium` in the review environment, then use `PLAYWRIGHT_CHANNEL=chromium npm run test:demo:production`. No application copy, speech-generation program, voice-service credentials or evidence data is required. The audio and badge are versioned source assets emitted with hashed names under `dist/assets/`. The production test serves `dist` privately on an ephemeral loopback port and validates audio playback/seek, every pointer, controls and cleanup at desktop/tablet/mobile widths. It also verifies each asset's bytes and browser request.
+For Playwright Chromium, first run `npx playwright install --with-deps chromium` in the review environment, then use `PLAYWRIGHT_CHANNEL=chromium npm run test:demo:production`. No application copy, speech-generation program, voice-service credentials or evidence data is required. The audio and badge are versioned source assets emitted with hashed names under `dist/assets/`. The production test serves dist privately on an ephemeral loopback port, proxies only the existing local ORB service, validates actual model replies, speech lifecycle, every pointer and controls at desktop/tablet/mobile widths, and verifies shipped asset bytes and audio decoding. See the local-host setup below.
 
-`npm run build:crawl` additionally creates 32 public route HTML files and five clean noindex transactional shells. This command requires a Playwright browser. The interactive Shadow DOM workspace mounts in JavaScript; its public explanation and metadata remain crawlable.
+`npm run build:crawl` additionally creates 32 public route HTML files and nine clean noindex transactional shells. This command requires a Playwright browser. The interactive Shadow DOM workspace mounts in JavaScript; its public explanation and metadata remain crawlable.
 
 ## Approval-gated old-PC WSL rollout requirements
 
@@ -41,7 +41,7 @@ These are preparation notes, **not instructions to run now**:
 4. Confirm the actual service and reverse proxy on the old PC. The source unit currently names `pops-website.service`, working directory `/home/bryan/projects/POPS_website`, preview port `18030`. These are repository configuration facts, **not verified live server state**. Restart only the confirmed website service after approval; do not touch the application service.
 5. Deny `/api/checkout` and descendants at the public proxy while payments are deferred. The new checkout page is informational, but the preserved legacy backend has dormant payment code that must not be exposed. No Square or Stripe activation is part of this release.
 6. Customer functionality requires a separately configured Python/Django service from `backend/customer-requirements.txt`, protected persistent database, migrations, HTTPS, a secret, trusted hosts/origins, SMTP, proxy handling and backups. The local `.local/customers` directory and its mail/secrets must never be copied to production. Until the service is approved and configured, forms display unavailable errors rather than imply successful submission.
-7. Preserve the current normal ORB conversation backend configuration. Bundled scripted tour audio works independently; live microphone/conversation depends on the existing service. Test the tour, ordinary navigation, account availability and disabled checkout through the public host after the approved restart.
+7. The new live ORB harness is development-only and must not be published as a production service. Production governance/inference and origin/security configuration need separate review. Bundled WAVs remain an offline fallback; they pause progression. Test the tour, ordinary navigation, account availability and disabled checkout through the public host after the approved restart.
 
 See `LAUNCH_READINESS.md` for remaining product/release confirmations. This development branch does not approve installer delivery, Android availability, legal outcomes, refunds, payment processing or production activation.
 
@@ -53,3 +53,13 @@ Compatible lockfile security updates were applied during portability preparation
 ## Clean-source reproduction result
 
 A clean export of the staged Git files was installed and built in an isolated local directory without an application checkout or existing dependencies. The complete production tour, actual narration at every stop, nine asset checks and portable protected-file checks all passed. `reproducibility-results.json` records the tested Git tree and checks. This verifies source portability on Windows with LF-normalized files; the future WSL host has not been accessed or tested.
+
+## Current customer and live-inference release
+
+The current branch extends the included work with complete customer profiles, verified email changes, communication preferences/audits, staff geographic reporting, the original 84 Vault/A.I.M.S. files and real local llama.cpp conversation/tour guidance. Customer data is separate from ephemeral visitor context. No Next button is present.
+
+Before the live tour checks in the build instructions above, create `.venv-orb`, install `backend/orb-requirements.txt`, and start `start-orb-dev.ps1` against the already-installed model. For customer checks create `.venv-customer`, install its requirements and run `start-customer-dev.ps1`. Ordinary npm builds need neither service, customer records nor the native application. A clean clone contains canonical source without submodule initialization, but does not contain local models, secrets or runtime records.
+
+Current validation: 25 customer tests; customer browser flow; 11 ORB integration tests; flat navigation across seven widths; real-model tour/conversation and pointer geometry across three widths in development and production bundle; nine shipped assets; preserved source hashes. Browser speech timing is instrumented. Recorded-audio STT is not configured. The original A.I.M.S. suite has a Windows concurrent-writer failure (14 pass, 2 skip, 1 fail); the unchanged implementation is used with one worker. See MEMORY_INTEGRATION.md.
+
+The existing native scheduled task has been repaired and inference works on 16520. Forced-crash recovery is pending because administrator elevation was canceled; actual reboot startup is not verified. A boot trigger is configured. See NATIVE_LLAMA_REPAIR.md for evidence and prepared verification. Do not treat this development release as production operational certification.

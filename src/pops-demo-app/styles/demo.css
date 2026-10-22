@@ -29,8 +29,9 @@
 .demo-screen-scroll .form-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
 .demo-screen-scroll .table-container { overflow: auto; }
 .modal-overlay { position: fixed; inset: 0; z-index: 80; padding: 12px; }
-.modal { max-height: 95%; width: min(740px,100%); }
-.modal-body { overflow: auto; }
+.modal { display: flex; flex-direction: column; overflow: hidden; max-height: 95%; width: min(740px,100%); }
+.modal-header,.modal-footer { flex-shrink: 0; }
+.modal-body { overflow: auto; min-height: 0; flex: 1; }
 .modal-close { min-width: 36px; min-height: 36px; }
 .toast { position: absolute; bottom: 20px; right: 20px; z-index: 90; max-width: calc(100% - 40px); }
 .btn:disabled { opacity: .45; cursor: not-allowed; }

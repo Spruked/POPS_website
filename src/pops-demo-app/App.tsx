@@ -22,6 +22,7 @@ import type {TourAction} from './tour/tourController';
 import {tourSteps} from './tour/tourSteps';
 import type {DemoScreen} from './tour/tourSteps';
 import {dispatchTourStop,stopDemoOrb,DEMO_ORB_STATUS_EVENT} from './tour/orbBridge';
+import {reportOrbEvent} from '../orb/visitorSession';
 import appCss from './styles/index.css?inline';
 import demoCss from './styles/demo.css?inline';
 
@@ -32,6 +33,7 @@ export default function PopsDemoApp(){
  const [screen,setScreen]=useState<DemoScreen|'calendar'>(()=>tourSteps[tour.index].screen);
  const [category,setCategory]=useState<DossierCategory>('all'),[focusedPerson,setFocusedPerson]=useState<string|undefined>();
  const [voiceStatus,setVoiceStatus]=useState(tour.active?'Tour restored. Resume narration when you are ready.':'Narration begins only after Start Tour.');
+ const [narration,setNarration]=useState('');
  const [toasts,setToasts]=useState<Toast[]>([]),[sessionKey,setSessionKey]=useState(0);
  const toastTimers=useRef<ReturnType<typeof setTimeout>[]>([]);
  const resumeRequested=useRef(false);
@@ -40,7 +42,7 @@ export default function PopsDemoApp(){
  useEffect(()=>{resetDemoRecords();return ()=>{stopDemoOrb('exit');toastTimers.current.forEach(clearTimeout);};},[]);
  useEffect(()=>{saveTourState(tour);},[tour]);
  useEffect(()=>{setScreen(tourSteps[tour.index].screen);},[tour.index,tour.active]);
- useEffect(()=>{const handler=(event:Event)=>{const status=(event as CustomEvent<{message:string;code:string}>).detail;if(status?.message)setVoiceStatus(status.message);if(status?.code==='interrupted'||status?.code==='audio-blocked')reduce({type:'pause'});};window.addEventListener(DEMO_ORB_STATUS_EVENT,handler);return ()=>window.removeEventListener(DEMO_ORB_STATUS_EVENT,handler);},[]);
+ useEffect(()=>{const handler=(event:Event)=>{const status=(event as CustomEvent<{message:string;code:string;text?:string}>).detail;if(status?.message)setVoiceStatus(status.message);if(status?.text)setNarration(status.text);if(status?.code==='interrupted'||status?.code==='audio-blocked')reduce({type:'pause'});};window.addEventListener(DEMO_ORB_STATUS_EVENT,handler);return ()=>window.removeEventListener(DEMO_ORB_STATUS_EVENT,handler);},[]);
  useEffect(()=>{
   if(!shadow||!tour.active||tour.paused){stopDemoOrb();return;}
   let cancelled=false;
@@ -48,6 +50,15 @@ export default function PopsDemoApp(){
   return ()=>{cancelled=true;clearTimeout(timer);stopDemoOrb();};
  },[shadow,tour.active,tour.index,tour.muted,tour.paused,sessionKey]);
  useEffect(()=>{shadow?.querySelector('.demo-screen-scroll')?.scrollTo({top:0});},[shadow,screen,sessionKey]);
+ useEffect(()=>{setNarration('');},[tour.index]);
+ useEffect(()=>{if(tour.active)void reportOrbEvent('start_demo',tourSteps[tour.index].screen).catch(()=>{});else void reportOrbEvent('exit_demo').catch(()=>{});},[tour.active,sessionKey]);
+ useEffect(()=>{if(tour.active&&tourSteps.some(step=>step.screen===screen))void reportOrbEvent('screen',screen).catch(()=>{});},[screen]);
+ useEffect(()=>{
+  const guide=(event:Event)=>{const action=(event as CustomEvent<{screen:string;target_id:string}>).detail;const step=tourSteps.find(item=>item.screen===action?.screen&&item.targetId===action?.target_id);if(tour.active&&step){setScreen(step.screen);reduce({type:'guided',screen:step.screen});}};
+  const exit=()=>{if(tour.active)dispatch({type:'exit'});};
+  window.addEventListener('pops:demo-llm-screen',guide);window.addEventListener('pops:demo-llm-exit',exit);
+  return()=>{window.removeEventListener('pops:demo-llm-screen',guide);window.removeEventListener('pops:demo-llm-exit',exit);};
+ },[tour.active]);
  function dispatch(action:TourAction){
   if(action.type==='pause'){stopDemoOrb('pause');setVoiceStatus('Narration paused. Resume continues this stop when you are ready.');}
   if(action.type==='exit'){stopDemoOrb('exit');setVoiceStatus('Tour exited. Pops is available for normal website guidance.');}
@@ -70,5 +81,5 @@ export default function PopsDemoApp(){
   else openScreen('dashboard');
  }
  const screens={dashboard:<CaseOverview/>,dossier:<ContactsDossier category={category} focusContactId={focusedPerson}/>,relationships:<RelationshipTree onOpenDossier={id=>{setFocusedPerson(id);setCategory('all');openScreen('dossier');}}/>,incident:<Incidents/>,evidence:<EvidenceVault/>,calendar:<VisitationCalendar/>,timeline:<><div className="page-header"><h2>Derived Timeline</h2><p>One fictional record, in chronological order.</p></div><DerivedTimeline events={demoTimeline}/><button className="btn btn-primary" onClick={()=>openScreen('evidence')}>Open linked evidence</button></>,review:<><section className="card" data-demo-review-summary><h2>Review the selected record</h2><p>Alex Morgan · October 10 exchange · three linked fictional text fixtures · Jordan Lee’s review context.</p><p>No legal finding, real case export, or guarantee of admissibility is implied.</p></section><Reports/></>,'get-pops':<section className="card demo-get-pops"><span className="badge badge-blue">Preserve. Protect. Prove.</span><h2>From a moment to an organized record.</h2><p>You followed the same fictional people, exchange, evidence and chronology through the adapted application screens.</p><p>Windows features and delivery remain subject to release verification. The relationship tree is a conceptual preview; Android and synchronization are developing separately.</p><p>Checkout is unavailable. This tour does not create a license, order, account, or evidence record.</p><div className="demo-end-links"><Link className="btn btn-primary" to="/access" onClick={()=>dispatch({type:'exit'})}>Get Pops! — view access</Link><Link className="btn btn-ghost" to="/beta" onClick={()=>dispatch({type:'exit'})}>Explore beta participation</Link><button className="btn btn-ghost" onClick={start}>Restart tour</button></div><details><summary>Fictional review recap</summary><pre>{demoReports[0].content}</pre></details></section>};
- return <div id="pops-demo-root" ref={hostRef} data-tour-active={tour.active&&!tour.paused?'true':'false'} data-tour-step={tour.index} data-demo-screen={screen} aria-label="Isolated Pops fictional application demonstration">{shadow&&createPortal(<DemoToastContext.Provider value={{toasts,show}}><style>{appCss+'\n'+demoCss}</style><DemoTour state={tour} dispatch={dispatch} voiceStatus={voiceStatus} onStart={start}/><div className="demo-disclosure"><strong>Fictional data only.</strong> No native services, uploads, private records or evidence storage. Refresh restores the tour position paused and resets all example edits.</div><div className="app-container" key={sessionKey}><div className="field-bg"/><Sidebar currentPage={screenPages[screen]} onNavigate={navigate}/><section className="main-content pops-main-content demo-screen-scroll" aria-label={`Mini application: ${screen}`} tabIndex={-1}><div data-demo-target={screen}><div className="demo-screen-content">{screens[screen]}</div></div></section><ToastContainer toasts={toasts}/></div></DemoToastContext.Provider>,shadow)}</div>;
+ return <div id="pops-demo-root" ref={hostRef} data-demo-context-active={tour.active?'true':'false'} data-tour-active={tour.active&&!tour.paused?'true':'false'} data-tour-step={tour.index} data-demo-screen={screen} aria-label="Isolated Pops fictional application demonstration">{shadow&&createPortal(<DemoToastContext.Provider value={{toasts,show}}><style>{appCss+'\n'+demoCss}</style><DemoTour narration={narration} state={tour} dispatch={dispatch} voiceStatus={voiceStatus} onStart={start}/><div className="demo-disclosure"><strong>Fictional data only.</strong> No native application services, uploads, private records or evidence storage. Refresh restores the tour position paused and resets all example edits.</div><div className="app-container" key={sessionKey}><div className="field-bg"/><Sidebar currentPage={screenPages[screen]} onNavigate={navigate}/><section className="main-content pops-main-content demo-screen-scroll" aria-label={`Mini application: ${screen}`} tabIndex={-1}><div data-demo-target={screen}><div className="demo-screen-content">{screens[screen]}</div></div></section><ToastContainer toasts={toasts}/></div></DemoToastContext.Provider>,shadow)}</div>;
 }

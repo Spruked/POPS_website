@@ -52,4 +52,11 @@
 .launch-page th, .launch-page td { border-bottom: 1px solid #334155; text-align: left; padding: 15px; line-height: 1.7; }
 .launch-table-wrap { overflow-x: auto; }
 .launch-card .btn { white-space: normal; text-align: center; }
+.customer-fieldset { border: 1px solid #334155; border-radius: 8px; padding: 18px; margin: 22px 0; min-width: 0; }
+.customer-fieldset legend { padding: 0 8px; font-weight: 700; }
+.customer-fields-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 0 18px; }
+.customer-fields-grid > div { min-width: 0; }
+.customer-field-help { font-size: 13px; }
+.customer-admin-detail { margin-top: 24px; }
+@media(max-width:600px) { .customer-fields-grid { grid-template-columns: 1fr; } .customer-fieldset { padding: 12px; } }
 @media(max-width: 800px) { .launch-grid { grid-template-columns: 1fr; } .launch-page { padding-top: 128px; } .launch-form { padding: 20px; } .launch-intro h1 { font-size: 38px; } .launch-lede { font-size: 17px; } .launch-section { margin-top: 40px; } .launch-section .hero-actions { flex-direction: column; align-items: stretch; } }
