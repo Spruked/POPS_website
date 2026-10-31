@@ -21,6 +21,50 @@ import textwrap
 from urllib.parse import urlparse
 import httpx
 
+_WINDOWS_LLAMA_BRIDGE = r'''
+import json
+import sys
+import urllib.request
+
+url = sys.argv[1]
+body = sys.stdin.buffer.read()
+request = urllib.request.Request(
+    url,
+    data=body or None,
+    headers={'Content-Type': 'application/json'} if body else {},
+)
+with urllib.request.urlopen(request, timeout=240) as response:
+    if response.headers.get_content_type() != 'application/json':
+        raise ValueError('llama.cpp did not return JSON')
+    payload = response.read(2_097_153)
+if len(payload) > 2_097_152:
+    raise ValueError('llama.cpp response exceeds the limit')
+sys.stdout.buffer.write(payload)
+'''
+
+
+async def _windows_llama_json(url: str, payload: dict | None = None) -> dict:
+    parsed = urlparse(url)
+    if (parsed.scheme, parsed.hostname, parsed.port) != ('http', '127.0.0.1', 16520):
+        raise ValueError('The Windows llama.cpp bridge must remain on 127.0.0.1:16520.')
+    python = os.environ.get('POPS_LLAMA_WINDOWS_PYTHON', '/mnt/c/Users/bryan/AppData/Local/Programs/Python/Python312/python.exe')
+    process = await asyncio.create_subprocess_exec(
+        python, '-c', _WINDOWS_LLAMA_BRIDGE, url,
+        stdin=asyncio.subprocess.PIPE,
+        stdout=asyncio.subprocess.PIPE,
+        stderr=asyncio.subprocess.PIPE,
+    )
+    body = json.dumps(payload, ensure_ascii=False).encode('utf-8') if payload is not None else b''
+    try:
+        output, _ = await asyncio.wait_for(process.communicate(body), timeout=245)
+    except TimeoutError:
+        process.kill()
+        await process.wait()
+        raise RuntimeError('Windows llama.cpp timed out.') from None
+    if process.returncode != 0:
+        raise RuntimeError('Windows llama.cpp request failed.')
+    return json.loads(output)
+
 ROOT=Path(__file__).resolve().parents[1]
 CANONICAL=ROOT/'Vault-Logic-System-Template'/'AIMS'
 sys.path.insert(0,str(CANONICAL))
@@ -168,12 +212,31 @@ class WebsiteHarness:
                 action_schema={'type':'object','properties':{key:{'const':value} for key,value in permitted.items()},'required':list(permitted),'additionalProperties':False}
             else:
                 action_schema={'type':'object','properties':{'type':{'enum':['stay','show_screen','point','navigate','exit_demo']},'screen':{'type':['string','null'],'enum':list(self.steps)+[None]},'target_id':{'type':['string','null'],'enum':list(self.targets)+[step['targetId'] for step in self.steps.values()]+[None]},'route':{'type':['string','null'],'enum':sorted(self.routes)+[None]}},'required':['type'],'additionalProperties':False}
-            schema={'type':'object','properties':{'spoken_output':{'type':'string'},'action':action_schema,'objective':{'type':'string'},'unresolved_question':{'type':'string'}},'required':['spoken_output','action'],'additionalProperties':False}
+            schema={'type':'object','properties':{'spoken_output':{'type':'string','maxLength':80},'action':action_schema},'required':['spoken_output','action'],'additionalProperties':False}
+            model_context={
+                'role':'You are Pops, the website guide. Answer in at most 10 words from the page excerpt. Windows is presented; Android and sync are planned. Never invent facts. Return the required JSON.',
+                'page':visitor.route,
+                'event':event,
+                'published_context':next(page['text'][:320] for page in self.catalog['pages'] if page['route']==visitor.route),
+            }
+            if visitor.demo_active:
+                model_context['fictional_demo']={
+                    'screen':visitor.screen,
+                    'next_screen':instructions['next_logical_screen'],
+                    'incident':compact_demo['incident'],
+                    'people':[person.get('name',person.get('id','')) for person in compact_demo['people']],
+                }
             try:
-                models=await client.get(base+'/v1/models');models.raise_for_status()
-                model=models.json()['data'][0]['id']
-                response=await client.post(base+'/v1/chat/completions',json={'model':model,'messages':[{'role':'system','content':json.dumps(instructions,ensure_ascii=False)},*history,{'role':'user','content':query[:2000]}],'response_format':{'type':'json_schema','json_schema':{'name':'pops_website_response','strict':True,'schema':schema}},'temperature':.25,'max_tokens':380})
-                response.raise_for_status();payload=response.json()
+                request_payload={'messages':[{'role':'system','content':json.dumps(model_context,ensure_ascii=False)},*history[-4:],{'role':'user','content':query[:1000]}],'response_format':{'type':'json_schema','json_schema':{'name':'pops_website_response','strict':True,'schema':schema}},'temperature':.25,'max_tokens':80}
+                if os.getenv('POPS_LLAMA_WINDOWS_BRIDGE') == '1':
+                    models=await _windows_llama_json(base+'/v1/models')
+                    request_payload['model']=models['data'][0]['id']
+                    payload=await _windows_llama_json(base+'/v1/chat/completions',request_payload)
+                else:
+                    models=await client.get(base+'/v1/models');models.raise_for_status()
+                    request_payload['model']=models.json()['data'][0]['id']
+                    response=await client.post(base+'/v1/chat/completions',json=request_payload)
+                    response.raise_for_status();payload=response.json()
                 raw=payload['choices'][0]['message']['content'];result=json.loads(raw)
                 text=' '.join(str(result.get('spoken_output','')).split())[:1000]
                 if not text:raise ValueError('The local model returned no answer.')
