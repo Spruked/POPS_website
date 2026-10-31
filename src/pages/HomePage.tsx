@@ -77,6 +77,26 @@ export default function HomePage() {
       </section>
 
       <div className="launch-home"><div className="container">
+        <ContentSection id="home-narrated-overview" title="Why P.O.P.S. Exists">
+          <p>Watch how the Proof of Presence System helps bring structure to your records.</p>
+          <figure className="home-overview-video">
+            <video
+              controls
+              autoPlay
+              playsInline
+              preload="metadata"
+              poster="/media/pops-narrated-overview.jpg"
+              aria-label="Why P.O.P.S. Exists — narrated overview"
+              aria-describedby="home-overview-caption"
+              width={1920}
+              height={1080}
+            >
+              <source src="/media/pops-narrated-overview.mp4" type="video/mp4" />
+              Your browser does not support embedded video. <a href="/media/pops-narrated-overview.mp4">Watch the narrated overview</a>.
+            </video>
+            <figcaption id="home-overview-caption">Narrated overview · 1 minute 40 seconds · Use the sound control to mute. If playback does not start automatically, press Play.</figcaption>
+          </figure>
+        </ContentSection>
         <ContentSection id="home-product-purpose" title="Your presence matters. Give the details a place to stay.">
           <p>A missed exchange is more than a date on a calendar. There may be an unanswered message, a receipt from the trip, a photo, or a note about what you personally observed. When those pieces stay scattered, preparing for a conversation means searching again and relying on memory.</p>
           <p>P.O.P.S. — Proof of Presence System — is designed to make that work repeatable. Document an event, connect its supporting material, and review it in context. The purpose remains personal: presence, accountability, and a factual record. Preserve. Protect. Prove.</p>

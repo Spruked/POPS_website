@@ -1,4 +1,6 @@
 node_modules
+# Original upload; the identical deployable video is tracked in public/media/.
+/POPS - Full Narration - 9.4 Second Slides.mp4
 dist
 data/tts_cache/
 __pycache__/
