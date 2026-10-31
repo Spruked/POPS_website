@@ -1,0 +1,425 @@
+{
+  "description": "84 original supplied source files. Raw hashes identify the untouched Windows originals; LF hashes support Git portability. Nested Git metadata is excluded, not source.",
+  "files": [
+    {
+      "path": "Vault-Logic-System-Template/.gitignore",
+      "sha256": "2224ac57f60e733cd4fea20d30e0dee832ebff707cd3a848c843968b63e1434c",
+      "sha256LF": "d033cdb71a0699dbf97470cb02714112e97df6101fa041efddee455ff23cf716"
+    },
+    {
+      "path": "Vault-Logic-System-Template/README.md",
+      "sha256": "1f0617e9559c95a8dbe18f0260dd229723e7e60d9d6958988859b80673ba27ee",
+      "sha256LF": "08393458c6677ace095b74abe8fa3c38ddf0e7cfeda693aaf2041489bcd3f1ec"
+    },
+    {
+      "path": "Vault-Logic-System-Template/tree.txt",
+      "sha256": "db734c851f27063a8d0de340e7dc5796ed9bafcfd0f58c7f0f41d765de87cfb9",
+      "sha256LF": "c72d0a5fb57fc8af457153de093926e5933eb581cc62720269953e4e64093d57"
+    },
+    {
+      "path": "Vault-Logic-System-Template/AIMS/.gitignore",
+      "sha256": "7610e25b0c74b0bfe3787ab2620c862c0e43689814ef5569648d3644f39c60fc",
+      "sha256LF": "76f56503412644f60ab238dca37d6de5aa81e4570c077be44c083dfe90437cc8"
+    },
+    {
+      "path": "Vault-Logic-System-Template/AIMS/DEV_LOG.md",
+      "sha256": "904aaaddf9eef0d0776bee36fec0e858b153ce38bcca4aa8bd062dd8c1dd0385",
+      "sha256LF": "ba050f414acd3201c5cbd09d4170c303be1056b4629fe8c163c3c9e89c8bdb93"
+    },
+    {
+      "path": "Vault-Logic-System-Template/AIMS/HARDENING_CONTRACT.md",
+      "sha256": "eb2271be01634e902013c4b8c4c7ab15b0044e09d1a6271cc182a3cb28ea8b60",
+      "sha256LF": "55ac0bf4d5ea6d5315a78426496d92a840f799e939e9e0b9367b740ac58b7b33"
+    },
+    {
+      "path": "Vault-Logic-System-Template/AIMS/LICENSE",
+      "sha256": "5a31378bfbefbfbe8417d696495b543b6f543b7ff214aeb7745cb5e855e89516",
+      "sha256LF": "56f29088e67d0678956341d9600eb3d6464517fe5fc3dd6615ef509d11be6a6c"
+    },
+    {
+      "path": "Vault-Logic-System-Template/AIMS/pyproject.toml",
+      "sha256": "5d065ec6fd0aa58001c9e8261fb1c26688cc11a076e677a8d5e10fb2484edf1a",
+      "sha256LF": "6814f31b8e3b7ba477c79ce388b28bf44e2940497568d021622df6090b6c2a67"
+    },
+    {
+      "path": "Vault-Logic-System-Template/AIMS/README.md",
+      "sha256": "20a81131bca0619f84a08071899b5c8fc23a834816affce98190711628525338",
+      "sha256LF": "8b53498cc820915cc418d2ef9883ed9e14b5f2283216b81e7c29339270cd090b"
+    },
+    {
+      "path": "Vault-Logic-System-Template/AIMS/requirements.txt",
+      "sha256": "3a0bbcb9662947d00d63ddc5e6fe446aea624269581816f7b66aecc0d4bad8be",
+      "sha256LF": "6c14e4a13f482d40d0990f92f7fc3ecac47d70b174bf37ef035cb416d7e68cc8"
+    },
+    {
+      "path": "Vault-Logic-System-Template/AIMS/service.py",
+      "sha256": "3be43c6830229f9ca801882e3044756371f5334adb39bc4a4efd88ce6bf41bd1",
+      "sha256LF": "d96fe41bea843dd82c566544365594551496d372b624f939551232a9cbe16efe"
+    },
+    {
+      "path": "Vault-Logic-System-Template/AIMS/system_outline.md",
+      "sha256": "5ec1db4238f151f398d12fc13701452f3442e80b213e10f27966a5957ded45a0",
+      "sha256LF": "da3e68ff2323b00c6335706be4aed08608205cae0354c701c4fe1b5de657fde0"
+    },
+    {
+      "path": "Vault-Logic-System-Template/AIMS/.github/workflows/tests.yml",
+      "sha256": "6a57f054045c40c212d4fa163788aad27a12ee0bd424623cfbaa0b33cc6133fe",
+      "sha256LF": "73e901d3f364a54fd4ca9e4c5ffc48ae1029d52c9fcca9f5ff53e6b874d02683"
+    },
+    {
+      "path": "Vault-Logic-System-Template/AIMS/memory_core/glyph_trace.py",
+      "sha256": "da967a84b0139724c6c287cacc75f43a06fd1c9632e49e511a9c761b7a3435c1",
+      "sha256LF": "aedac48a17345c0bf85c24a53822f9832cfa13f4a3ed0d633b19cff0b700e9e4"
+    },
+    {
+      "path": "Vault-Logic-System-Template/AIMS/memory_core/indexes.py",
+      "sha256": "f4a2f4595498b749d90cba48767dde983d238ec04e611ee0f01dfaef33fed4f0",
+      "sha256LF": "bdce79e9db39068ec07696eb6a807abd9e1e8bebb801487a51e55746b35e141e"
+    },
+    {
+      "path": "Vault-Logic-System-Template/AIMS/memory_core/long_term.py",
+      "sha256": "d988a540a32dab1d95fd56602ffe78a54988cd0f179d818b8ff85d3ddfe0b58b",
+      "sha256LF": "334a91268d0aab7c54a38713677b90959598bd0e0904cc6e7f0c69a06424c82d"
+    },
+    {
+      "path": "Vault-Logic-System-Template/AIMS/memory_core/memory_layer.py",
+      "sha256": "83d590cbb625b14c52b71021c197dd096fa854a17fadc6953d8729c22a2a18a8",
+      "sha256LF": "e58bae06eda92dff8ee55747f8223f8c23e1a5a973332b4877af97a761f7ae0f"
+    },
+    {
+      "path": "Vault-Logic-System-Template/AIMS/memory_core/retrieval_ledger.py",
+      "sha256": "3fe8d89f09eb82f051ab8f0318f87b13fe9d2257ba3dfcf45d727afd7ed93e65",
+      "sha256LF": "e43cdc8c70f9324d3c708534ffdc403fb939028cb3eacecd5494b1a82eba1934"
+    },
+    {
+      "path": "Vault-Logic-System-Template/AIMS/memory_core/short_term.py",
+      "sha256": "0698fdc8521b527730f682d309ac69e0e78818f2d9e399d6317b14c2b400fdaa",
+      "sha256LF": "ccd6dd6da205b366f3d71ba9624593bc3028a826872c83066c97b7fe96c4ab3c"
+    },
+    {
+      "path": "Vault-Logic-System-Template/AIMS/memory_core/temporal.py",
+      "sha256": "f14a2f4b305c13af421387d905ce84f33fb1b5be93b43d05473280c9ddcb5c89",
+      "sha256LF": "9e84cac800e91e96490e3b3fff3dbb3bbf3dd00e9dbad26f6a5bbd12b8a1dbf9"
+    },
+    {
+      "path": "Vault-Logic-System-Template/AIMS/memory_core/vault.py",
+      "sha256": "80ffb9d94b0d5e18b76e084e730bd719ed92316d43879028595ce321d93abd2a",
+      "sha256LF": "41f83c25f2a2ab26b2b0b59647e42d8ddc308ade44a70ba005265822533eff9c"
+    },
+    {
+      "path": "Vault-Logic-System-Template/AIMS/memory_core/writer_lock.py",
+      "sha256": "364409314f8c11d756211847d6bca45533bb5099f824cd41b8bf36ffd86dceb6",
+      "sha256LF": "7a7680c15dbb24eebe0f9a4d942744106728b05cd6740fddb7ba5a2eba94b07f"
+    },
+    {
+      "path": "Vault-Logic-System-Template/AIMS/memory_core/__init__.py",
+      "sha256": "839e46290d510d1e302bf3eb8d56f22cfdab0fac9e6a2b60cb928f25eb67a15f",
+      "sha256LF": "7170acff1a4526dcf76d15b9c89d067352a83bc5511ba9810c3bdb61d6985e25"
+    },
+    {
+      "path": "Vault-Logic-System-Template/AIMS/memory_core/skg/backend.py",
+      "sha256": "abeda95ced4d5bb9a2c47891b9955ff58d53bd1a77d5cdf9f02dda1c25ee9973",
+      "sha256LF": "7a61cd7b7de778b1fc09318016e3c9c06808b22ebbd2894614237e40c710b615"
+    },
+    {
+      "path": "Vault-Logic-System-Template/AIMS/memory_core/skg/domain.py",
+      "sha256": "a08fad5c1894334cc27533b674668ad22a9d75ea608e7087fde073e77809b8fd",
+      "sha256LF": "bbafcf8c242868cbd65029da85c6584a68db285891f86bac15f29a717c315f03"
+    },
+    {
+      "path": "Vault-Logic-System-Template/AIMS/memory_core/skg/trio.py",
+      "sha256": "1e805a977220ecebeccbb6fae520d71e6921964dde7cbf89eaa771a271daab03",
+      "sha256LF": "073a39b05c17f27112e0420ca7482c85b55c4ff0bfe28a0c98a2a95046c2d80e"
+    },
+    {
+      "path": "Vault-Logic-System-Template/AIMS/memory_core/skg/types.py",
+      "sha256": "b9458dc885aeb89e1dbf28479b1928f4d572e9a46679a13977122b7fff5797ef",
+      "sha256LF": "4a14ae691ad1cf96d54e1e206946433fbf40567f0aa0164a78d85db1e2c1a857"
+    },
+    {
+      "path": "Vault-Logic-System-Template/AIMS/memory_core/skg/__init__.py",
+      "sha256": "24077c4b2f19f31c1a5f04082fc043228e4e16d52edde93545223fb9539e5f2d",
+      "sha256LF": "67d48dfc256e62b1909e692dfc68e866eae4b4d1530749f31b90b66a7bd18919"
+    },
+    {
+      "path": "Vault-Logic-System-Template/AIMS/tests/test_complete_cognitive_memory_cycle.py",
+      "sha256": "af6e6e7c78a9a5d6af87b91fc5081200523c55dcaf28236f319b273d4657e53f",
+      "sha256LF": "6e149ac4fa76d53f7d2225ddb0e5c4afd2739442c1c5c331bf492737dbadfcea"
+    },
+    {
+      "path": "Vault-Logic-System-Template/AIMS/tests/test_core_integrity.py",
+      "sha256": "7975c742a95cb8fcb310c9f1ffb193b6e7415179d65c246c63e095481411ef91",
+      "sha256LF": "2ec763a6e0dc4473d4fdecbc650cf8c40c18144b299cd701211b77996c28bffc"
+    },
+    {
+      "path": "Vault-Logic-System-Template/AIMS/tests/test_graphqlite_backend.py",
+      "sha256": "e4a3cb2ef4ea8a4882f3629f07b148e94eeace637c2a67053149b7a513202e2c",
+      "sha256LF": "6c5b9eb2dcdea2f8490ea1fc4f47aa95a2d5ab8a8b910129efb3e783bdc3d110"
+    },
+    {
+      "path": "Vault-Logic-System-Template/AIMS/tests/test_service_security.py",
+      "sha256": "c7a9f9bd8ee0a511c28789e9a2c531c88d471f7af4749c95b5c886c4e1cb8189",
+      "sha256LF": "9e10e0c039bd90fa8b46e778c89fa8f507696d772e440f4a88248863cbda8dd4"
+    },
+    {
+      "path": "Vault-Logic-System-Template/AIMS/tests/test_three_skgs.py",
+      "sha256": "136948122eed00ae5a24f5c44ebf83d628c95576defd2641f6f1f9ab71b87cee",
+      "sha256LF": "bd89bbceec98648b19ffd943528881eb7ebb77c3646e70c599d6d847a9070bdc"
+    },
+    {
+      "path": "Vault-Logic-System-Template/config/telemetry.yaml",
+      "sha256": "5b281fccbe95187ea002cc892755616ca815442d6cc70e4c5b437511197ec12f",
+      "sha256LF": "546f102989832686ef3f565de0895b89678ffe5decfecc6a9acde8c8b6eaab25"
+    },
+    {
+      "path": "Vault-Logic-System-Template/config/vault_config.yaml",
+      "sha256": "07858f1655207cc4981ee0e6dc0dac3a64c497ffb7ebb46a53d0cbbd82507f2e",
+      "sha256LF": "28cc50ff40905b0b1616abb8229aa23b31640e2121895bf7e1e9d740c6acc447"
+    },
+    {
+      "path": "Vault-Logic-System-Template/config/environments/dev.yaml",
+      "sha256": "0456136ef4483c79636bb7e164ca7b79b2f2a38164d3c6f8070db5d677ec47be",
+      "sha256LF": "47e8b4dcc912888ef6d17382b3fe70b4bd97cfaf980e29134cb1e4b93b0ead05"
+    },
+    {
+      "path": "Vault-Logic-System-Template/config/environments/prod.yaml",
+      "sha256": "1eb17e285e7c8d1e1e1a90da027905f88c64aecd2b5956340cd1acc778ad71e0",
+      "sha256LF": "6e028cb3a59ea35a31764393101f168f464baedf04ed6b4eb2d768c30f6019b4"
+    },
+    {
+      "path": "Vault-Logic-System-Template/config/environments/test.yaml",
+      "sha256": "f31e5ef9645874db5ecef53f6dd105dc10bdfa6fc4edac6fdb595e5e2ab2a9f8",
+      "sha256LF": "b103c01275460651f17cd3d684991e1f9b73ba46c0971b99460c972e29f24302"
+    },
+    {
+      "path": "Vault-Logic-System-Template/docs/architecture.md",
+      "sha256": "4b9a82c1da03c73aff2852227ce941f858d911e5974584c088627043a4c9b62f",
+      "sha256LF": "6e2132cadfa9d56b7a90cfcbbd20e763e6ed5d6c1863367033c184ef48e32bd5"
+    },
+    {
+      "path": "Vault-Logic-System-Template/docs/glyph_guide.md",
+      "sha256": "f7c1c5c990ec6a13736fa20eedba5e154986671979119b92fe99657d9cb35663",
+      "sha256LF": "9a9bd1205a0fecfe865e8ae1e1a6a4f31b07c0ab2cbbfcee1d394127da199890"
+    },
+    {
+      "path": "Vault-Logic-System-Template/docs/memory_matrix.md",
+      "sha256": "1521d7a79c2646ed5c885de3b02b8e0f02272edf7f5f288658a40deac5b42b3d",
+      "sha256LF": "240f19eb654ef5d934d9cc1f578afcd52c9c277f4d862ca451e7ee04937c5618"
+    },
+    {
+      "path": "Vault-Logic-System-Template/docs/migration_guide.md",
+      "sha256": "80ef5fa0c441ca7b3db8b2c82a05f8132b73f4d6be4b9f3546adc09bc8ffd1ff",
+      "sha256LF": "00bdb18ff160da3b72b2262c6b94a3a0e0da97aa3553d48fac5635e74de4ed52"
+    },
+    {
+      "path": "Vault-Logic-System-Template/docs/telemetry_best_practices.md",
+      "sha256": "0d673eda957b870f3b09062436bafbce56df03b277a919ea7e79207b479ad7ef",
+      "sha256LF": "bd3786dfd342f6760eb061740379a1721d0463d23a414a71e91491eb4523b9e9"
+    },
+    {
+      "path": "Vault-Logic-System-Template/docs/vault_types.md",
+      "sha256": "17fd268a924d79e382b654c1617c9a2a1908af021e747ec46624ee6a09c9584d",
+      "sha256LF": "0b5a3a4091fbdbb12b1dbd3aa6a82da636cc969720c8b6b9613f89c45c3e9b04"
+    },
+    {
+      "path": "Vault-Logic-System-Template/engine/evaluator.py",
+      "sha256": "dd40a0f8c81d724968801cbd03e8ab329cbedf235ceeb85cd699c6303f316009",
+      "sha256LF": "36ea1ef97ed75e2959ab4d59de1cca3f258c68028d94c937429848a31e76bd45"
+    },
+    {
+      "path": "Vault-Logic-System-Template/engine/resolver.js",
+      "sha256": "22885001d7b9aca3d49c1213834985a8c6b70cfb5ca342ae12b30183461b789f",
+      "sha256LF": "33db216766b757df449648ab8f885e59d29e16546e98a958577e2c2d5fe22468"
+    },
+    {
+      "path": "Vault-Logic-System-Template/engine/signal_map.json",
+      "sha256": "fb90f7529540314e2629c581e85342cc15f910a0145a0be5d1807ed62140702e",
+      "sha256LF": "4511e0cb958b05f661f36780d80a6640d31e841bf8da9148cea0cea8aacd211a"
+    },
+    {
+      "path": "Vault-Logic-System-Template/engine/integration_hooks/on_vault_apply.py",
+      "sha256": "52757b2241421892047ee1102392cb5ba9da20e741ae81c637c154801a52b4a7",
+      "sha256LF": "5185fb10591f55cecc550e5160fc89236f6f90df3a296f57b5c9df306e4824d3"
+    },
+    {
+      "path": "Vault-Logic-System-Template/engine/integration_hooks/post_resolution.yaml",
+      "sha256": "42c52b92bd703d8e7a0156a7b9439c379bf99619dbbc1ec3d1a9e691a6568261",
+      "sha256LF": "57afc294c3efc0dc7a56b763231dbd0b072c931375ef3ae1f7f9bfdc0893c49a"
+    },
+    {
+      "path": "Vault-Logic-System-Template/examples/input_career_change.json",
+      "sha256": "954a1468681b6c0203f4524358d767d109c16395d1feb2588a2cff149cdffe75",
+      "sha256LF": "1256b59ee997e440084a2ecf892cefb712528768887401d7ff143cc11f68b5b6"
+    },
+    {
+      "path": "Vault-Logic-System-Template/examples/input_game_quest.json",
+      "sha256": "17234fd44a83dcc9e03f4622b005df67995139c8e4f424914e990de0f7e8a991",
+      "sha256LF": "56e4e0fbf05c2e42e5d38792dbc47fd169a6da0cba917208b9beff951a60e073"
+    },
+    {
+      "path": "Vault-Logic-System-Template/examples/input_medical_triage.json",
+      "sha256": "de51a75d5345db6dd3a8390fd8ad7f54b041cff7f8a87621c2faa5d048b048af",
+      "sha256LF": "93968f761d7837a61c8a3fd7e4b2d54a0c2be6e027b2218d8e676a039c9af51d"
+    },
+    {
+      "path": "Vault-Logic-System-Template/glyphs/glyph_map.json",
+      "sha256": "be24600e05f1949b5276f0c80d3142aba0fe75e947f06c59730fd53bbeace1af",
+      "sha256LF": "360d5af0020b3a54355080076a23a810b6287a264960df636e7f5a95c3b60ceb"
+    },
+    {
+      "path": "Vault-Logic-System-Template/glyphs/trace_engine.js",
+      "sha256": "8943511470c569641716b14a8639782f2c231dead07f081fcb3db025711c10e9",
+      "sha256LF": "8f5bfc9031dda0e4473e66ddb5987ae9a63ce4cd780faaba99db9b82861e9e90"
+    },
+    {
+      "path": "Vault-Logic-System-Template/glyphs/_template/custom_glyph.json",
+      "sha256": "56e354828e84de319187e2ede69c31f57bfd93b30a5f8990435aced013a8572e",
+      "sha256LF": "56e354828e84de319187e2ede69c31f57bfd93b30a5f8990435aced013a8572e"
+    },
+    {
+      "path": "Vault-Logic-System-Template/interfaces/api/openapi.yaml",
+      "sha256": "573d8370d8467f5d4f4368d33e0b1daaf2ac9ba16d580a1329a88c0a7be7a8af",
+      "sha256LF": "a4001b0f7753f9a0e609e4f628c146f8a8dc21f4124bc38be1084e32b4c51f8b"
+    },
+    {
+      "path": "Vault-Logic-System-Template/interfaces/cli/commands.md",
+      "sha256": "b8302bfc18af60ea80cfec1387b6c53bf5c0f350cf155e7bf27e1c8a448c4946",
+      "sha256LF": "2b8297b2f5196a75129dadae2d890032b9ffc54c8908d99f50f0e92f8a6cae51"
+    },
+    {
+      "path": "Vault-Logic-System-Template/memory/consolidation.py",
+      "sha256": "e4f2239480535165786097005f53e0999ca8d155acdfd6befd44e3aa11a2d943",
+      "sha256LF": "e5a105f745a63fea9dde8102c9f453df0ce1de6611b2ebf90f4f7067baf1ff3f"
+    },
+    {
+      "path": "Vault-Logic-System-Template/memory/matrix_store.yaml",
+      "sha256": "f50882e33d9809e4d3a4ebebab28a6fb69edc997db39bdb47cd63b11cdfe8db1",
+      "sha256LF": "0b68d0c218fb96540dad671eaa8cb343f9741a41c8986bcef82caa23cff09eb2"
+    },
+    {
+      "path": "Vault-Logic-System-Template/memory/domains/long_term.json",
+      "sha256": "e93e54d8c44971c2a2eed05a76b0112d200b44963988dd9a78dd1304995faacd",
+      "sha256LF": "49e4cf1f50ea39f2ea2fc9ac8f3e842e0f1b486e0ead10e69ce4d94a59b7ab63"
+    },
+    {
+      "path": "Vault-Logic-System-Template/memory/domains/sensory.json",
+      "sha256": "6b257b81d02d878c16219103a8c57c4d63a65a2631f8419824473e1b21fd2b9c",
+      "sha256LF": "0838c0110d20a332f8c345e5604c2591b36f06d8519b55133bdeee1c73953bbb"
+    },
+    {
+      "path": "Vault-Logic-System-Template/memory/domains/short_term.json",
+      "sha256": "8bd81bc8b88561d361d3ae41c6f8d02ba84f73315fde6891962ff79746b5daff",
+      "sha256LF": "345180333f3b3d31f42cb572959ab34cf05f3f99435641b7d93d61dd95793782"
+    },
+    {
+      "path": "Vault-Logic-System-Template/memory/_template/custom_matrix.json",
+      "sha256": "2ff5f6d40b55b3389b865104e82688e39b0125db940f74dcfc6c7db34f5c334b",
+      "sha256LF": "2ff5f6d40b55b3389b865104e82688e39b0125db940f74dcfc6c7db34f5c334b"
+    },
+    {
+      "path": "Vault-Logic-System-Template/scripts/consolidate_memory.py",
+      "sha256": "d8fbc0b6ae66b3e0b35b134196c3f84d00aa1dd59c7e3b28d62cb974df436b4d",
+      "sha256LF": "8777b040b9fa0b3f07a5c4deb74f514175cfcbaa332bae7141b2159f7496a0eb"
+    },
+    {
+      "path": "Vault-Logic-System-Template/scripts/export_telemetry.js",
+      "sha256": "ab61a9baf7c742bf0bb1267a2c4367f35b8d28314cd68d3309af09c1aacb8ccc",
+      "sha256LF": "017e4d27846211f2858aba1190b2659483eebd708b7f5506614205a657b6ebba"
+    },
+    {
+      "path": "Vault-Logic-System-Template/scripts/export_to_json.lua",
+      "sha256": "669e458582f85e6c62ed9a6c2c2edcf598f5c4a906b4c77cdc39d369fe4e5949",
+      "sha256LF": "fec51ef64434f3164e3c02d16fdd96d35013b6d04a13b1a82180d6e6dc2f0b1f"
+    },
+    {
+      "path": "Vault-Logic-System-Template/scripts/generate_glyph_report.py",
+      "sha256": "ef08a04882d86de2271c948fafa3bdac3438ffdce4f519fdc98c1f20578b54ce",
+      "sha256LF": "3a6701c8bae29ca7b59bb7cbf99330379895978bd2ece45554c909735981f24c"
+    },
+    {
+      "path": "Vault-Logic-System-Template/scripts/validate_vaults.sh",
+      "sha256": "90654ee248bb0bf7b81f187efd258286a34acaff2a2cee8b49c9421145b8e71f",
+      "sha256LF": "4f069396db9896aec0c251a4e106f2e9bbc3321071785607c38311e3ac50be79"
+    },
+    {
+      "path": "Vault-Logic-System-Template/telemetry/alerts.yaml",
+      "sha256": "9c3e92e9e0806ff77d5c463784ac545951f8435043e8fb141203a49b8f6f079a",
+      "sha256LF": "9c3e92e9e0806ff77d5c463784ac545951f8435043e8fb141203a49b8f6f079a"
+    },
+    {
+      "path": "Vault-Logic-System-Template/telemetry/collector.py",
+      "sha256": "f1ae3e261b87126cdf6715b4d8a23b973bd5d3383d9649becf3173b39830388b",
+      "sha256LF": "0112694bab165f18160a7df484659d981fb69443771212427b8dbc1374fb1958"
+    },
+    {
+      "path": "Vault-Logic-System-Template/telemetry/telemetry.yaml",
+      "sha256": "5b281fccbe95187ea002cc892755616ca815442d6cc70e4c5b437511197ec12f",
+      "sha256LF": "546f102989832686ef3f565de0895b89678ffe5decfecc6a9acde8c8b6eaab25"
+    },
+    {
+      "path": "Vault-Logic-System-Template/telemetry/dashboard/anomaly_detector.js",
+      "sha256": "2ed586b85d17c61ca726d33a7014c8931679e78f74178952747eb2c87a64dbae",
+      "sha256LF": "628d1abf75803c2604b12558fdb51b91e6237ae4322b55e4dc5f94640ff4108a"
+    },
+    {
+      "path": "Vault-Logic-System-Template/telemetry/dashboard/metrics_dashboard.md",
+      "sha256": "cdb372c83039ff7b0db357430a6979aa171dc3664d735d4da641f8de6c513b55",
+      "sha256LF": "4942fe983f0e656c29a1f60f26c87ee6902ba7b9ef6f5e7724d41d7084c9ec7f"
+    },
+    {
+      "path": "Vault-Logic-System-Template/telemetry/traces/agent_decisions.json",
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "sha256LF": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "path": "Vault-Logic-System-Template/telemetry/traces/latency_buckets.json",
+      "sha256": "7933cfbc45255dfa5615bad1341446a297854d809b284afa0f3f771468626019",
+      "sha256LF": "99f6166006d386fd3689a03672c36e9102c97795a317ff42217a6cfdd26b0fb6"
+    },
+    {
+      "path": "Vault-Logic-System-Template/tests/integration/test_ethical_dilemma.json",
+      "sha256": "c8cf05f010ce2cb6d1d05c13ec63f408583fa24cfe1678a014c5ee15818c5fc4",
+      "sha256LF": "737db9ebc92dbee9c715acba2f90d20b42b2671e1c3d4e9aedc8764f9b89fa1a"
+    },
+    {
+      "path": "Vault-Logic-System-Template/tests/integration/test_glyph_drift.json",
+      "sha256": "c8132fbe4e576f6e8f5de99c26eec8dc7c580d054da8fd069c14e7b56ad8ba13",
+      "sha256LF": "3c8b56aa50fcb8dd0579f23e395c2e7fc46535803c5c63b6d3efc212d8f99459"
+    },
+    {
+      "path": "Vault-Logic-System-Template/tests/integration/test_memory_consolidation.json",
+      "sha256": "95447cb252e0862b62fdabe18615f3dba3e69ecdf2ab1ad1b4ac4dc42c2bd8b5",
+      "sha256LF": "ee80c12c11892e5c6e1138c2a1ea50fd5ae87e366288fbf52b28b1a34d0d04ee"
+    },
+    {
+      "path": "Vault-Logic-System-Template/tests/integration/test_pricing_edge_case.json",
+      "sha256": "c0cc61ba7323ccb905ecafe786cee3448d0932c9930f5e7f6ed55d1846f11685",
+      "sha256LF": "c6cd61355fe94b152dc0ac7481b4bba8f64ec99077eb2a9630c02823c68aa9c8"
+    },
+    {
+      "path": "Vault-Logic-System-Template/tests/unit/test_telemetry_alerts.json",
+      "sha256": "6bf7e9923b75b81178b9a5bba662ea23a59825151ecd483d2857cd1dd94d606d",
+      "sha256LF": "11b9eab828e641c849a85d5ca8a9e30a139adb1b2cdb4a090c65b891c80d231b"
+    },
+    {
+      "path": "Vault-Logic-System-Template/tests/unit/vault_template_test.json",
+      "sha256": "8810c1f3a73e209fb0ef51465dedbb1139c60375dc78b868091b5ccee2716c17",
+      "sha256LF": "80bb9d5a2f8fe940a0d5a1e2696ae0fe0aca104dc41ef8f9edd37ae44acc1d97"
+    },
+    {
+      "path": "Vault-Logic-System-Template/vaults/_template/logic.md",
+      "sha256": "5e42f57d3c9a24c06a8489bd0fa97cb2b68e28dc6b90abd737ec97e3cc876ea5",
+      "sha256LF": "620a38b74ffc5bf0dbac49cf95719d8c1cc23ab79859ab99d5ca6f446a4074aa"
+    },
+    {
+      "path": "Vault-Logic-System-Template/vaults/_template/vault.json",
+      "sha256": "ec8c5020a09daa02af5da961e5bc02c43210a719116326c1bd2f117dd24367a3",
+      "sha256LF": "6ed07ac6bf3804ade6a361b949b3f955dd78f94ceb7b8fa3c8a9ec487d68cd3f"
+    },
+    {
+      "path": "Vault-Logic-System-Template/vaults/_template/rules/condition.js",
+      "sha256": "94128106d52382285623349f76ac2996664e0f9ee76d96945f3c952e725cd5ab",
+      "sha256LF": "81a7cf859b84e089fc1e5d36f72a7592d76b70e32a70a570f7bdd7d90cafa423"
+    }
+  ]
+}

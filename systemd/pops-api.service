@@ -7,6 +7,14 @@ Wants=network-online.target
 Type=simple
 User=bryan
 WorkingDirectory=/home/bryan/projects/POPS_website
+Environment=FASTER_WHISPER_STT_URL=http://172.17.0.1:13000/stt
+Environment=LOCAL_LLM_URL=http://127.0.0.1:16520/v1
+Environment=LOCAL_LLM_MODEL=Qwen2.5-7B-Instruct
+Environment=LOCAL_LLM_NUM_PREDICT=512
+Environment=LOCAL_LLM_TIMEOUT_SECONDS=90
+Environment=ORB_TTS_PROVIDER=kokoro
+Environment=ORB_TTS_KOKORO_URL=http://127.0.0.1:8880/speak
+Environment=ORB_TTS_KOKORO_VOICE=am_echo
 ExecStart=/home/bryan/.venvs/pops-website/bin/uvicorn backend.main:app --host 0.0.0.0 --port 8001
 Restart=always
 RestartSec=5

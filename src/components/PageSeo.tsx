@@ -43,12 +43,6 @@ export default function PageSeo({ title, description, path, image, indexable = t
         name: "P.O.P.S. - Proof of Presence System",
         url: SITE_URL,
         logo: `${SITE_URL}/popsbadge.png`,
-        sameAs: [
-          "https://spruked.com/",
-          "https://orbweaver.spruked.com/",
-          "https://certsig.com/",
-          "https://truemarkmint.com/"
-        ]
       },
       {
         "@type": "WebSite",
@@ -75,6 +69,15 @@ export default function PageSeo({ title, description, path, image, indexable = t
         "@type": "BreadcrumbList",
         "@id": `${canonicalUrl}#breadcrumb`,
         itemListElement: breadcrumbs,
+      }] : []),
+      ...(path === '/desktop-app' ? [{
+        '@type': 'SoftwareApplication',
+        name: 'P.O.P.S. — Proof of Presence System',
+        operatingSystem: 'Windows',
+        applicationCategory: 'UtilitiesApplication',
+        description,
+        url: canonicalUrl,
+        publisher: {'@id': `${SITE_URL}/#organization`}
       }] : []),
     ]
   };

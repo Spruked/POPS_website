@@ -44,12 +44,28 @@ TTS_CACHE_DIR = Path(os.getenv("ORB_TTS_CACHE_DIR", str(REPO_ROOT / "data" / "tt
 TTS_CACHE_DIR.mkdir(parents=True, exist_ok=True)
 ORB_WEAVER_CONTEXT_PATH = Path(os.getenv(
   "ORB_WEAVER_CONTEXT_PATH",
-  str(REPO_ROOT / "data" / "orb-weaver" / "crawl-8" / "latest_context.json"),
+  str(REPO_ROOT / "data" / "orb-weaver" / "pops.spruked.com" / "website_orb_context" / "latest_context.json"),
 ))
 
 app = FastAPI(title="Pops Website ORB API")
 
 _tts_locks: dict[str, asyncio.Lock] = {}
+
+
+def _wsl_windows_host_gateway() -> str:
+  try:
+    for line in Path("/etc/resolv.conf").read_text(encoding="utf-8").splitlines():
+      parts = line.split()
+      if len(parts) >= 2 and parts[0] == "nameserver":
+        return parts[1]
+  except OSError:
+    pass
+  return "127.0.0.1"
+
+
+def _local_llm_url() -> str:
+  configured = os.getenv("LOCAL_LLM_URL", "").strip()
+  return configured or f"http://{_wsl_windows_host_gateway()}:40343/v1"
 _mcp_tool_name_pattern = re.compile(r'"name"\s*:\s*"([^"]+)"')
 
 
@@ -110,8 +126,9 @@ def _memory_context(_transcript: str) -> str | None:
 
   crawl = context.get("pointer_plot_map", {})
   diagnostics = crawl.get("diagnostics", {}) if isinstance(crawl, dict) else {}
+  crawl_id = crawl.get("source_crawl_job_id", "latest") if isinstance(crawl, dict) else "latest"
   return (
-    "Orb Weaver Crawl 8 context loaded: 28 validated pages; "
+    f"Orb Weaver crawl {crawl_id} context loaded with "
     f"{diagnostics.get('unique_verified_guidance_targets', 0)} guidance-eligible targets; "
     f"{diagnostics.get('unresolved_guidance_targets', 0)} targets still require verification; "
     f"{diagnostics.get('route_locator_conflict_count', 0)} route/locator conflicts. "
@@ -193,21 +210,30 @@ def _validated_square_line_items(items: list[CheckoutItem]) -> list[dict[str, An
   return line_items
 
 
-async def _transcribe_with_faster_whisper(audio_bytes: bytes, filename: str) -> str:
+async def _transcribe_with_faster_whisper(audio_bytes: bytes, filename: str, content_type: str = "audio/webm") -> str:
   if not audio_bytes:
     raise HTTPException(status_code=400, detail="No audio was received.")
 
   stt_url = os.getenv("FASTER_WHISPER_STT_URL", "http://127.0.0.1:13000/stt")
-  try:
-    async with httpx.AsyncClient(timeout=45) as client:
-      response = await client.post(
-        stt_url,
-        files={"file": (filename or "website-orb.webm", audio_bytes, "audio/webm")},
-      )
-      response.raise_for_status()
-      payload = response.json()
-  except Exception as exc:
-    raise HTTPException(status_code=502, detail=f"STT failed: {exc}") from exc
+  last_error: Exception | None = None
+  for attempt in range(2):
+    try:
+      async with httpx.AsyncClient(timeout=45) as client:
+        response = await client.post(
+          stt_url,
+          files={"file": (filename or "website-orb.webm", audio_bytes, content_type)},
+        )
+        response.raise_for_status()
+        payload = response.json()
+        if not isinstance(payload, dict):
+          raise ValueError("STT returned an invalid response.")
+      break
+    except Exception as exc:
+      last_error = exc
+      if attempt == 0:
+        await asyncio.sleep(0.35)
+  else:
+    raise HTTPException(status_code=502, detail=f"STT failed: {last_error}") from last_error
 
   text = str(payload.get("text", "")).strip()
   if not text:
@@ -254,11 +280,11 @@ def _local_fallback_answer(transcript: str) -> str:
 
 
 async def _llm_orb_spoken_output(transcript: str, pulse: dict[str, Any]) -> tuple[str, str]:
-  llm_url = os.getenv("LOCAL_LLM_URL", "").strip()
+  llm_url = _local_llm_url()
   model = os.getenv("LOCAL_LLM_MODEL", "").strip()
-  timeout = float(os.getenv("LOCAL_LLM_TIMEOUT_SECONDS", "60"))
+  timeout = float(os.getenv("LOCAL_LLM_TIMEOUT_SECONDS", "90"))
   if not llm_url:
-    return _local_fallback_answer(transcript), "local-fallback"
+    return "The POPS language model is unavailable right now.", "llm-error"
 
   memory_context = _memory_context(transcript) or "No Orb Weaver crawl context is available."
   prompt = (
@@ -271,9 +297,17 @@ async def _llm_orb_spoken_output(transcript: str, pulse: dict[str, Any]) -> tupl
 
   try:
     async with httpx.AsyncClient(timeout=timeout) as client:
-      if llm_url.rstrip("/").endswith("/v1/chat/completions"):
+      normalized_llm_url = llm_url.rstrip("/")
+      if normalized_llm_url.endswith("/v1"):
+        completions_url = f"{normalized_llm_url}/chat/completions"
+      elif normalized_llm_url.endswith("/v1/chat/completions"):
+        completions_url = normalized_llm_url
+      else:
+        completions_url = None
+
+      if completions_url:
         response = await client.post(
-          llm_url,
+          completions_url,
           json={
             "model": model,
             "messages": [{"role": "user", "content": prompt}],
@@ -299,7 +333,7 @@ async def _llm_orb_spoken_output(transcript: str, pulse: dict[str, Any]) -> tupl
       payload = response.json()
   except Exception as exc:
     print(f"Pops LLM fallback: {exc}")
-    return _local_fallback_answer(transcript), "local-fallback"
+    return "The POPS language model is unavailable right now.", "llm-error"
 
   text = ""
   if isinstance(payload.get("choices"), list) and payload["choices"]:
@@ -308,7 +342,9 @@ async def _llm_orb_spoken_output(transcript: str, pulse: dict[str, Any]) -> tupl
     text = payload.get("response", "") or payload.get("text", "")
 
   text = " ".join(str(text).strip().split())
-  return (text or _local_fallback_answer(transcript))[:360], "local-llm"
+  if not text:
+    return "The POPS language model did not return a final answer.", "llm-error"
+  return text[:360], "local-llm"
 
 
 def _tts_digest(text: str, provider: str, voice: str, model: str) -> str:
@@ -429,7 +465,9 @@ async def _build_orb_response(transcript: str, synthesize_tts: bool = True) -> d
 @app.post("/api/orb/website-voice")
 async def website_voice(audio: UploadFile = File(...)) -> dict[str, Any]:
   audio_bytes = await audio.read()
-  transcript = await _transcribe_with_faster_whisper(audio_bytes, audio.filename or "website-orb.webm")
+  transcript = await _transcribe_with_faster_whisper(
+    audio_bytes, audio.filename or "website-orb.webm", audio.content_type or "audio/webm"
+  )
   return await _build_orb_response(transcript)
 
 
@@ -551,6 +589,7 @@ async def capabilities() -> dict[str, Any]:
   stt_url = os.getenv("FASTER_WHISPER_STT_URL", "http://127.0.0.1:13000/stt")
   tts_provider = os.getenv("ORB_TTS_PROVIDER", "kokoro").lower()
   tts_url = os.getenv("ORB_TTS_QWEN_URL" if tts_provider == "qwen" else "ORB_TTS_KOKORO_URL", "http://127.0.0.1:8880/speak")
+  local_llm_url = _local_llm_url()
 
   return {
     "status": "ok",
@@ -569,8 +608,8 @@ async def capabilities() -> dict[str, Any]:
       "cache_dir": str(TTS_CACHE_DIR),
     },
     "local_llm": {
-      "configured": bool(os.getenv("LOCAL_LLM_URL", "").strip()),
-      "url": os.getenv("LOCAL_LLM_URL") or None,
+      "configured": bool(local_llm_url),
+      "url": local_llm_url,
       "model": os.getenv("LOCAL_LLM_MODEL") or None,
     },
     "desktop_mcp": {

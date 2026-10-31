@@ -4,9 +4,9 @@ import PageSeo from "../components/PageSeo";
 import { formatCurrency, PRODUCTS, useCart } from "../cart";
 
 export default function CartPage() {
-  const { addItem, itemCount, items, removeItem, subtotal, updateQuantity } = useCart();
+  const { addItem, itemCount, items, removeItem, subtotal, updateQuantity, persistenceAvailable } = useCart();
   const suggestedProducts = PRODUCTS.filter(
-    (product) => !product.requiresReview && !items.some((item) => item.id === product.id)
+    (product) => !product.requiresReview && !items.some((item) => item.id === product.id) && !(product.id === 'membership' && items.some(item => item.id === 'guardian'))
   );
 
   return (
@@ -27,9 +27,11 @@ export default function CartPage() {
             </Link>
             <h1>Your Cart</h1>
             <p>
-              POPS website purchases are separate from the desktop application. Guardian Access delivers the Windows installer and license activation instructions after Square checkout.
+              Save a Windows license, membership, or sponsorship selection for later. Checkout is unavailable: no order, payment, license, or first-100 position is created. Guardian already includes lifetime POPS Membership.
             </p>
           </div>
+
+          {!persistenceAvailable && <p className="launch-feedback is-error" role="alert">Browser storage is unavailable. Your cart works for this visit but cannot be saved after refresh.</p>}
 
           {items.length === 0 ? (
             <div className="commerce-empty">
@@ -57,7 +59,7 @@ export default function CartPage() {
                           <button
                             type="button"
                             onClick={() => updateQuantity(item.id, item.quantity - 1)}
-                            disabled={item.quantity === 1}
+                            disabled={item.quantity === 1 || item.id !== 'sponsor'}
                             aria-label={`Decrease ${item.name} quantity`}
                           >
                             <Minus size={14} />
@@ -66,6 +68,7 @@ export default function CartPage() {
                           <button
                             type="button"
                             onClick={() => updateQuantity(item.id, item.quantity + 1)}
+                            disabled={item.id !== 'sponsor' || item.quantity >= 99}
                             aria-label={`Increase ${item.name} quantity`}
                           >
                             <Plus size={14} />
@@ -101,16 +104,16 @@ export default function CartPage() {
                 </div>
                 <div className="summary-row muted">
                   <span>Tax</span>
-                  <strong>Calculated by Square</strong>
+                  <strong>Not yet determined</strong>
                 </div>
                 <div className="summary-total">
-                  <span>Due today</span>
+                  <span>Subtotal before tax</span>
                   <strong>{formatCurrency(subtotal)}</strong>
                 </div>
                 <Link to="/checkout" className="btn btn-primary summary-button">
-                  Checkout with Square
+                  Checkout availability
                 </Link>
-                <p>Secure payment is completed through your Square checkout.</p>
+                <p>No payment is collected. License and membership selections are limited to one each. Sponsorship quantity represents multiples of $25, not a custom amount.</p>
               </aside>
             </div>
           )}

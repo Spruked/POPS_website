@@ -1,0 +1,95 @@
+{
+  "readOnlySource": "C:\\Users\\bryan\\Desktop\\POPS\\POPS_Application",
+  "files": [
+    {
+      "source": "src/App.tsx",
+      "copiedTo": "App.tsx",
+      "sha256": "fd36330097d64e2b15b717a8cc556c22247aa6d2fcc7af07161697fb5faf0c49"
+    },
+    {
+      "source": "src/types.ts",
+      "copiedTo": "types.ts",
+      "sha256": "39d7916735963625cd9000619be1e9276698da1f09efcf509f09b78b3cc2b456"
+    },
+    {
+      "source": "src/components/Sidebar.tsx",
+      "copiedTo": "components/Sidebar.tsx",
+      "sha256": "c502e6023a5d6de51f87421203406dff2ae11042bcd009503ca984cdc1861394"
+    },
+    {
+      "source": "src/components/DerivedTimeline.tsx",
+      "copiedTo": "components/DerivedTimeline.tsx",
+      "sha256": "8890df48d6263dbe7d87beddb2084ec0e89efbdc4fdc59034f18c121f4aee1c4"
+    },
+    {
+      "source": "src/pages/CaseOverview.tsx",
+      "copiedTo": "pages/CaseOverview.tsx",
+      "sha256": "f2dd0b50e8d06de9bfc8d82f6ee90933a425e4690ee294240f2af911e9a3a9e2"
+    },
+    {
+      "source": "src/pages/ContactsDossier.tsx",
+      "copiedTo": "pages/ContactsDossier.tsx",
+      "sha256": "2187b2f8116ec11a552460ce37ea08a8c305113113644511e5750e23c2453307"
+    },
+    {
+      "source": "src/pages/PlayersDossier.tsx",
+      "copiedTo": "pages/PlayersDossier.tsx",
+      "sha256": "9875dcdedc8e38c6f107e5bcc528633a083c938d65e8bc07a2413e9ef86aa6b5"
+    },
+    {
+      "source": "src/pages/Incidents.tsx",
+      "copiedTo": "pages/Incidents.tsx",
+      "sha256": "b2b972662931955e1c440b4fbb929d061adccd0ddc94b3c34a4e382ac6638d35"
+    },
+    {
+      "source": "src/pages/EvidenceVault.tsx",
+      "copiedTo": "pages/EvidenceVault.tsx",
+      "sha256": "8c422dbb0ea61a1a185b736660e534b123ca31976b94d8956106da43927dde84"
+    },
+    {
+      "source": "src/pages/VisitationCalendar.tsx",
+      "copiedTo": "pages/VisitationCalendar.tsx",
+      "sha256": "dad21d2f24a1fa1197e234ff6c1a16a55b2fafb4b5bca8e056cb48e8830e8f8f"
+    },
+    {
+      "source": "src/pages/Reports.tsx",
+      "copiedTo": "pages/Reports.tsx",
+      "sha256": "a0908928bfeaad19c520e5e824b90c65aa021c13b38d5650be1869d3546955d1"
+    },
+    {
+      "source": "src/styles/index.css",
+      "copiedTo": "styles/index.css",
+      "sha256": "7aed787c3e073d2b691a8daf2873b2b5f9c7d8b7165d45a891fcd00805797050"
+    },
+    {
+      "source": "src/components/Modal.tsx",
+      "copiedTo": "components/Modal.tsx",
+      "sha256": "15b93013e434b96b9b935fdf7c0e42aa9957201e465ea6a0f9bbe2cea5b6ebad"
+    },
+    {
+      "source": "src/components/ContactResearchPanel.tsx",
+      "copiedTo": "components/ContactResearchPanel.tsx",
+      "sha256": "6b1060c8b9978ac50d8e9a920b890a9ad33d1af3ad511b9f3770f1cbe3ba2f97"
+    },
+    {
+      "source": "src/components/FullCaseBundleExport.tsx",
+      "copiedTo": "components/FullCaseBundleExport.tsx",
+      "sha256": "4d6decb3d9c931a1583434f9b7312531c1e4f0c7bf112c703caf6295f915e407"
+    },
+    {
+      "source": "src/components/evidence/ReviewCommitPanel.tsx",
+      "copiedTo": "components/evidence/ReviewCommitPanel.tsx",
+      "sha256": "a30d91b899de05a29094d4aaf6010b763e25255b65bd503e04cd972c90fb555e"
+    },
+    {
+      "source": "src/components/ToastContainer.tsx",
+      "copiedTo": "components/ToastContainer.tsx",
+      "sha256": "5432b311aa2f52e2580154c38759716ab47592915a914af4aa14db7e2427fd53"
+    },
+    {
+      "source": "public/popsbadge.png",
+      "copiedTo": "assets/popsbadge.png",
+      "sha256": "66d740841c55d9ea3ad3db4b63f7c288c7e98dbe1efc36aa00e23b7c9c50489b"
+    }
+  ]
+}

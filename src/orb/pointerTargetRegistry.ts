@@ -1,6 +1,7 @@
 import type { WebsiteOrbTarget, WebsiteOrbTargetId } from "./websiteOrbTargetTypes";
+import { getDemoPointerTarget } from '../pops-demo-app/tour/orbBridge';
 
-export const POINTER_TARGETS: Record<WebsiteOrbTargetId, WebsiteOrbTarget> = {
+export const POINTER_TARGETS: Partial<Record<WebsiteOrbTargetId, WebsiteOrbTarget>> = {
   "pops.nav.access": {
     id: "pops.nav.access",
     route: "/",
@@ -140,6 +141,6 @@ export const POINTER_TARGETS: Record<WebsiteOrbTargetId, WebsiteOrbTarget> = {
 
 export function getPointerTarget(targetId: string | undefined): WebsiteOrbTarget | null {
   if (!targetId) return null;
-  return POINTER_TARGETS[targetId as WebsiteOrbTargetId] || null;
+  return POINTER_TARGETS[targetId as WebsiteOrbTargetId] || getDemoPointerTarget(targetId);
 }
 

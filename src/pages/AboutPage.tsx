@@ -5,7 +5,7 @@ const PILLARS = [
   {
     icon: <Shield size={22} />,
     title: "Presence",
-    body: "Presence is not just standing in a place. Presence is the call made, the message sent, the arrival at the exchange, the request for records, the follow-up after silence, and the lawful attempt when the door does not open. POPS preserves those attempts so they cannot be erased.",
+    body: "Presence is not just standing in a place. Presence is the call made, the message sent, the arrival at the exchange, the request for records, the follow-up after silence, and the lawful attempt when the door does not open. POPS is designed to help preserve a record of those attempts for later review.",
   },
   {
     icon: <Lock size={22} />,
@@ -129,7 +129,7 @@ export default function AboutPage() {
 
         <section className="doctrine-block doctrine-stroke-4">
           <h3>How the System Thinks</h3>
-          <p>POPS follows a disciplined six-step path. No revenge. No chaos. No guessing. Just proof.</p>
+          <p>POPS follows a disciplined six-step product direction. The steps below describe intended behavior; extraction, sealing, custody logs, and report outputs require verification against the release supplied. The application organizes user-provided information and does not independently verify events.</p>
           <div className="about-steps">
             {STEPS.map((step) => (
               <div key={step.title} className="about-step-card">
@@ -189,7 +189,7 @@ export default function AboutPage() {
             Evidence files are preserved, hashed with SHA-256, and connected to timelines, incidents, court orders, communications, and
             reports.
           </p>
-          <p><strong>The system is designed to support:</strong></p>
+          <p><strong>Product direction — availability requires release verification:</strong></p>
           <ul className="about-bullets about-bullets-two-col">
             <li>Local SQLite record storage</li>
             <li>Evidence preservation</li>
@@ -203,7 +203,7 @@ export default function AboutPage() {
             <li>Encrypted backup and export paths as the security layer matures</li>
           </ul>
           <p>POPS is built to be auditable, portable, and court-friendly.</p>
-          <p>The user controls what leaves the machine. Local records stay local until the user chooses to export or share them.</p>
+          <p>The local-first design aims to keep records under user control. Specific network behavior, backup, encryption, and export features must be confirmed for the supplied release.</p>
         </section>
 
         <section className="about-signoff doctrine-block doctrine-stroke-4">

@@ -1,9 +1,16 @@
 import { useEffect, useRef, useState } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 import "./LandingSplash.css";
+import splashSoundUrl from "./robotgrovebeat.mp3";
 
 const SPLASH_KEY = "pops:startup-splash-seen";
 const FULL_DURATION = 14;
 const REDUCED_DURATION = 7;
+
+function shouldShowSplash(pathname: string) {
+  const forced = new URLSearchParams(window.location.search).get("splash") === "1";
+  return forced || (pathname === "/" && !window.sessionStorage.getItem(SPLASH_KEY));
+}
 
 type Point = { x: number; y: number };
 type Fragment = { x: number; y: number; targetX: number; targetY: number; phase: number; kind: number };
@@ -97,23 +104,54 @@ function drawOrbIdentity(context: CanvasRenderingContext2D, image: HTMLImageElem
 }
 
 export default function LandingSplash() {
+  const location = useLocation();
+  const navigate = useNavigate();
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
-  const [visible, setVisible] = useState(true);
+  const splashAudioRef = useRef<HTMLAudioElement | null>(null);
+  const animationStartRef = useRef<number | null>(null);
+  const [visible, setVisible] = useState(() => shouldShowSplash(location.pathname));
   const [complete, setComplete] = useState(false);
-  const [reducedMotion, setReducedMotion] = useState(false);
+  const [reducedMotion] = useState(() => window.matchMedia("(prefers-reduced-motion: reduce)").matches);
   const [hintReady, setHintReady] = useState(false);
+  const [soundEnabled, setSoundEnabled] = useState(false);
 
   useEffect(() => {
-    const forceSplash = window.location.search.includes("splash=1");
-    const seen = window.sessionStorage.getItem(SPLASH_KEY);
-    if (seen && !forceSplash) {
+    if (!shouldShowSplash(location.pathname)) {
       setVisible(false);
       return;
     }
-    setReducedMotion(window.matchMedia("(prefers-reduced-motion: reduce)").matches);
+    if (!visible) return;
+    const splashAudio = new Audio(splashSoundUrl);
+    splashAudio.preload = "auto";
+    splashAudio.volume = 0.36;
+    splashAudioRef.current = splashAudio;
+    void splashAudio.play().then(() => {
+      if (splashAudioRef.current === splashAudio && !splashAudio.paused) setSoundEnabled(true);
+    }).catch(() => {
+      // Browsers may block autoplay until the visitor uses the sound control.
+    });
     const hintTimer = window.setTimeout(() => setHintReady(true), 5000);
-    return () => window.clearTimeout(hintTimer);
-  }, []);
+    return () => {
+      window.clearTimeout(hintTimer);
+      splashAudio.pause();
+      splashAudio.currentTime = 0;
+      splashAudioRef.current = null;
+    };
+  }, [location.pathname, visible]);
+
+  const toggleSound = () => {
+    const splashAudio = splashAudioRef.current;
+    if (!splashAudio) return;
+    if (soundEnabled) {
+      splashAudio.pause();
+      setSoundEnabled(false);
+      return;
+    }
+    const elapsed = animationStartRef.current === null ? 0 : (performance.now() - animationStartRef.current) / 1000;
+    const storyTime = reducedMotion ? elapsed * (FULL_DURATION / REDUCED_DURATION) : elapsed;
+    splashAudio.currentTime = Math.min(storyTime, FULL_DURATION - 0.25);
+    void splashAudio.play().then(() => setSoundEnabled(true)).catch(() => undefined);
+  };
 
   useEffect(() => {
     if (!visible) return;
@@ -121,7 +159,7 @@ export default function LandingSplash() {
     if (!canvas) return;
     const context = canvas.getContext("2d");
     if (!context) return;
-    const motionReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const motionReduced = reducedMotion;
     const duration = motionReduced ? REDUCED_DURATION : FULL_DURATION;
     const random = seededRandom(11);
     const orbImage = new Image();
@@ -153,12 +191,8 @@ export default function LandingSplash() {
       context.setTransform(ratio, 0, 0, ratio, 0, 0);
       scale = clamp(Math.min(width, height * 1.6) / 1000, 0.5, 1.3);
     };
-    const finish = () => {
-      setComplete(true);
-    };
     const skip = () => {
       skipped = true;
-      elapsed = duration - 0.6;
       setComplete(true);
     };
     const draw = (now: number) => {
@@ -329,8 +363,8 @@ export default function LandingSplash() {
         }
       }
 
-      if (t >= duration) finish();
-      if (elapsed < duration) frame = requestAnimationFrame(draw);
+      if (elapsed >= duration) setComplete(true);
+      else frame = requestAnimationFrame(draw);
     };
 
     resize();
@@ -345,18 +379,24 @@ export default function LandingSplash() {
     window.addEventListener("keydown", keyDown);
     frame = requestAnimationFrame((now) => {
       start = now;
+      animationStartRef.current = now;
       frame = requestAnimationFrame(draw);
     });
     return () => {
       cancelAnimationFrame(frame);
+      animationStartRef.current = null;
       window.removeEventListener("resize", resize);
       window.removeEventListener("pointerdown", pointerDown);
       window.removeEventListener("keydown", keyDown);
     };
-  }, [visible]);
+  }, [visible, reducedMotion]);
 
   const enterSite = () => {
     window.sessionStorage.setItem(SPLASH_KEY, "1");
+    if (location.pathname === "/pricing") {
+      navigate("/", { replace: true });
+    }
+    window.dispatchEvent(new CustomEvent("pops:startup-complete"));
     setVisible(false);
   };
 
@@ -378,6 +418,9 @@ export default function LandingSplash() {
           {reducedMotion ? "Continue" : "Enter"}
         </button>
       </div>
+      <button type="button" className="pops-startup-splash-sound" onClick={toggleSound}>
+        {soundEnabled ? "Sound off" : "Play intro sound"}
+      </button>
       <p className={`pops-startup-splash-hint ${complete || !hintReady ? "is-hidden" : ""}`}>Click or press a key to skip</p>
     </div>
   );

@@ -6,7 +6,7 @@ interface WebsiteOrbPointerOverlayProps {
 }
 
 export default function WebsiteOrbPointerOverlay({ guide }: WebsiteOrbPointerOverlayProps) {
-  if (!guide) return null;
+  if (!guide || guide.hidden) return null;
 
   const pad = 8;
   const top = Math.max(8, guide.rect.top - pad);
@@ -18,6 +18,7 @@ export default function WebsiteOrbPointerOverlay({ guide }: WebsiteOrbPointerOve
       <div
         key={guide.pulseKey}
         className="website-orb-target-ring"
+        data-orb-target-id={guide.target.id}
         style={{ top, left, width, height }}
       />
     </div>

@@ -1,0 +1,273 @@
+import { useEffect, useMemo, useState, type ElementType } from 'react';
+import {
+  Activity,
+  AlertTriangle,
+  CalendarDays,
+  ChevronDown,
+  Database,
+  FileText,
+  Gavel,
+  GitBranch,
+  LayoutDashboard,
+  Monitor,
+  Settings,
+  Shield,
+  Users,
+} from 'lucide-react';
+import type { Page } from '../types';
+
+import demoBadge from '../assets/popsbadge.png';
+
+interface SidebarProps {
+  currentPage: Page;
+  onNavigate: (page: Page) => void;
+}
+
+interface NavItem {
+  page: Page;
+  label: string;
+  badge?: string;
+}
+
+interface NavSection {
+  title: string;
+  icon: ElementType;
+  page?: Page;
+  items?: NavItem[];
+}
+
+const originalNavSections: NavSection[] = [
+  { title: 'Case Overview', icon: LayoutDashboard, page: 'dashboard' },
+  { title: 'Audit Trail', icon: GitBranch, page: 'glyphTrace' },
+  {
+    title: 'People & Dossiers',
+    icon: Users,
+    page: 'contacts',
+    items: [
+      { page: 'contactsAll', label: 'All People' },
+      { page: 'contactsAttorneys', label: 'Attorneys' },
+      { page: 'contactsCourtClerk', label: 'Court / Clerk' },
+      { page: 'contactsJudges', label: 'Judges' },
+      { page: 'contactsOtherParent', label: 'Other Parent' },
+      { page: 'contactsChildren', label: 'Children' },
+      { page: 'contactsMedical', label: 'Medical' },
+      { page: 'contactsSchool', label: 'School' },
+      { page: 'contactsWitnesses', label: 'Witnesses' },
+      { page: 'contactsSupportAgency', label: 'Support Agency' },
+      { page: 'contactsLawEnforcement', label: 'Law Enforcement' },
+      { page: 'contactsAdvocates', label: 'Advocates' },
+      { page: 'contactsRequired', label: 'Required Contacts', badge: 'Due' },
+      { page: 'contactsHistory', label: 'Dossier History' },
+    ],
+  },
+  {
+    title: 'Case Calendar',
+    icon: CalendarDays,
+    page: 'calendar',
+    items: [
+      { page: 'calendar', label: 'Case Calendar' },
+      { page: 'visitation', label: 'Parenting Time & Exchanges' },
+      { page: 'calendarCourtDates', label: 'Court Dates & Filing Deadlines' },
+      { page: 'calendarAppointments', label: 'Appointments' },
+      { page: 'calendarMedical', label: 'Medical Records' },
+      { page: 'calendarSchool', label: 'School Records' },
+      { page: 'calendarAttorneyMeetings', label: 'Attorney & Case Meetings' },
+      { page: 'calendarSupportDeadlines', label: 'Support Deadlines' },
+      { page: 'calendarRequiredContacts', label: 'Contact Commitments' },
+      { page: 'calendarReminders', label: 'Reminders' },
+      { page: 'calendarFollowUps', label: 'Follow-Ups' },
+    ],
+  },
+  {
+    title: 'Legal',
+    icon: Gavel,
+    page: 'legal',
+    items: [
+      { page: 'orders', label: 'Court Orders' },
+      { page: 'violations', label: 'Violations', badge: 'Risk' },
+      { page: 'childSupportLedger', label: 'Child Support Ledger' },
+      { page: 'legalFilings', label: 'Filings' },
+      { page: 'legalMotions', label: 'Motions' },
+      { page: 'legalServiceRecords', label: 'Service Records' },
+      { page: 'legalCourtNotes', label: 'Court Notes' },
+      { page: 'legalAttorneyPackets', label: 'Attorney Packets' },
+    ],
+  },
+  {
+    title: 'Events',
+    icon: Activity,
+    page: 'events',
+    items: [
+      { page: 'events', label: 'Timeline' },
+      { page: 'eventsDeniedVisits', label: 'Denied Visits' },
+      { page: 'incidents', label: 'Incidents' },
+      { page: 'eventsCommunication', label: 'Communication' },
+      { page: 'eventsGoodFaith', label: 'Good-Faith Attempts' },
+      { page: 'eventsCaseNotes', label: 'Case Notes' },
+    ],
+  },
+  {
+    title: 'Evidence',
+    icon: Shield,
+    page: 'evidence',
+    items: [
+      { page: 'evidence', label: 'Evidence Vault', badge: 'SHA' },
+      { page: 'evidenceHashCheck', label: 'Hash Check' },
+      { page: 'evidenceChainOfCustody', label: 'Chain of Custody' },
+      { page: 'evidenceUploads', label: 'Uploads' },
+      { page: 'evidenceExhibits', label: 'Exhibits' },
+      { page: 'evidenceMetadata', label: 'Metadata' },
+      { page: 'evidenceRiskReview', label: 'Risk Review' },
+    ],
+  },
+  {
+    title: 'Account & Access',
+    icon: Monitor,
+    page: 'member',
+    items: [
+      { page: 'member', label: 'Account & Access' },
+      { page: 'membersLicense', label: 'License' },
+      { page: 'membersAccount', label: 'Account' },
+    ],
+  },
+  {
+    title: 'Reports',
+    icon: FileText,
+    page: 'reports',
+    items: [
+      { page: 'reports', label: 'Reports' },
+      { page: 'reportsAttorneyPacket', label: 'Attorney Packet' },
+      { page: 'reportsCourtPacket', label: 'Court Packet' },
+      { page: 'reportsEvidenceIndex', label: 'Evidence Index' },
+      { page: 'reportsTimelineSummary', label: 'Timeline Summary' },
+      { page: 'reportsExport', label: 'Export' },
+      { page: 'reportsPrint', label: 'Print' },
+      { page: 'reportsReviewFlags', label: 'Review Flags' },
+    ],
+  },
+  {
+    title: 'Settings',
+    icon: Settings,
+    page: 'settings',
+    items: [
+      { page: 'settings', label: 'Settings' },
+      { page: 'settingsChatAssistant', label: 'Chat Assistant' },
+      { page: 'diagnostics', label: 'Diagnostics' },
+      { page: 'settingsDataBackup', label: 'Data Backup' },
+      { page: 'settingsSecurity', label: 'Security' },
+      { page: 'settingsLocalStorage', label: 'Local Storage' },
+      { page: 'settingsPreferences', label: 'Preferences' },
+    ],
+  },
+];
+
+const supported = new Set<Page>(['dashboard','contacts','contactsAll','contactsAttorneys','contactsOtherParent','contactsChildren','contactsWitnesses','contactsHistory','calendar','visitation','events','incidents','evidence','evidenceHashCheck','evidenceChainOfCustody','reports','reportsAttorneyPacket','reportsTimelineSummary','relationshipTree']);
+const navSections: NavSection[] = originalNavSections.filter(section => section.page && supported.has(section.page)).map(section=>({...section,items:section.items?.filter(item=>supported.has(item.page))}));
+navSections.splice(2,0,{title:'Relationship Tree',icon:Users,page:'relationshipTree'});
+
+function sectionHasPage(section: NavSection, page: Page) {
+  return section.page === page || section.items?.some((item) => item.page === page) || false;
+}
+
+export const APP_NAV_LABELS = navSections.reduce<Record<string, { title: string; section: string }>>(
+  (labels, section) => {
+    if (section.page) labels[section.page] = { title: section.title, section: section.title };
+    section.items?.forEach((item) => {
+      labels[item.page] = { title: item.label, section: section.title };
+    });
+    return labels;
+  },
+  {}
+);
+
+export default function Sidebar({ currentPage, onNavigate }: SidebarProps) {
+  const initialOpen = useMemo(
+    () => navSections.filter((section) => sectionHasPage(section, currentPage)).map((section) => section.title),
+    [currentPage]
+  );
+  const [openSections, setOpenSections] = useState<string[]>(initialOpen);
+
+  useEffect(() => {
+    setOpenSections(initialOpen);
+  }, [initialOpen]);
+
+  function toggleSection(section: NavSection) {
+    if (!section.items?.length) {
+      if (section.page) onNavigate(section.page);
+      return;
+    }
+
+    setOpenSections((current) =>
+      current.includes(section.title)
+        ? current.filter((title) => title !== section.title)
+        : [...current, section.title]
+    );
+
+    if (section.page && !sectionHasPage(section, currentPage)) onNavigate(section.page);
+  }
+
+  return (
+    <aside className="sidebar">
+      <div className="sidebar-header">
+        <div className="orb-brand">
+          <img src={demoBadge} alt="POPS logo" className="orb-logo" />
+          <div className="orb-brand-text">
+            <h3>P.O.P.S.</h3>
+            <span>Case Command</span>
+          </div>
+        </div>
+
+        <div className="beam-status">
+          <div className="beam-dot locke" title="Evidence beam" />
+          <div className="beam-dot hume" title="Events beam" />
+          <div className="beam-dot kant" title="Orders beam" />
+          <div className="beam-dot spinoza" title="Violations beam" />
+          <span className="beam-version">Fictional demo</span>
+        </div>
+      </div>
+
+      <nav className="sidebar-nav" aria-label="Mini application screens">
+        {navSections.map((section) => {
+          const Icon = section.icon;
+          const active = sectionHasPage(section, currentPage);
+          const open = openSections.includes(section.title);
+
+          return (
+            <div className="nav-section" key={section.title}>
+              <button className={`nav-item nav-section-button ${active ? 'active' : ''}`} aria-expanded={section.items?.length ? open : undefined} onClick={() => toggleSection(section)}>
+                <Icon size={18} />
+                <span>{section.title}</span>
+                {section.items?.length ? <ChevronDown className={`nav-chevron ${open ? 'open' : ''}`} size={15} /> : null}
+              </button>
+
+              {section.items?.length && open && (
+                <div className="nav-subitems">
+                  {section.items.map((item) => (
+                    <button key={item.page} className={`nav-item nav-subitem ${currentPage === item.page ? 'active' : ''}`} onClick={() => onNavigate(item.page)}>
+                      <span>{item.label}</span>
+                      {item.badge && <span className="nav-badge">{item.badge}</span>}
+                    </button>
+                  ))}
+                </div>
+              )}
+            </div>
+          );
+        })}
+      </nav>
+
+      <div className="sidebar-footer">
+        <div className="orb-mini">
+          <div className="orb-mini-dot" />
+          <div>
+            <div className="orb-mini-text">Pops!</div>
+            <div className="orb-mini-subtext">Private guide</div>
+          </div>
+        </div>
+        <div className="annotation-chip-wrap">
+          <span className="annotation-chip annotation-chip-soft"><Database size={12} /> Demo Data</span>
+          <span className="annotation-chip"><AlertTriangle size={12} /> Review Gates</span>
+        </div>
+      </div>
+    </aside>
+  );
+}
