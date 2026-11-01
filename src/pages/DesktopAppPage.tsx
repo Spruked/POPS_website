@@ -37,7 +37,7 @@ export default function DesktopAppPage() {
       <Section id="windows-offer" title="Discover the Windows Offer">
         <div className="launch-card">
           <div className="launch-price">$99.00 one time</div>
-          <p>POPS Desktop Access is a Windows application license with lifetime POPS Membership included. Membership alone is not an application license, and POPS Desktop buyers should not add membership separately.</p>
+          <p>POPS Desktop Access is a Windows application license with lifetime POPS Membership and the completed Android app included once Google Play testing is complete. Membership alone is not an application license, and POPS Desktop buyers should not add membership separately.</p>
           <p>Purchasing will open with verified installation, activation, licensing, and refund information. You can explore the application and save the published offer for reference in the meantime.</p>
           <div className="hero-actions">
             <Link className="btn btn-primary" to="/access">Review access options</Link>
@@ -56,7 +56,7 @@ export default function DesktopAppPage() {
       </Section>
 
       <Section id="other-platforms" title="Other POPS platforms">
-        <p>POPS Android is in Google Play testing, and an iPhone edition is planned. Each platform will have its own published release and access details.</p>
+        <p>We’re excited to announce the Android app is finished and completing Google Play testing. Android will be included with your POPS desktop purchase when testing is complete. An iPhone edition is planned.</p>
         <Link to="/access#platforms">See platform release status</Link>
       </Section>
       <LaunchLinks />
