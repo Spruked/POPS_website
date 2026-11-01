@@ -121,3 +121,41 @@
 }
 @media(max-width:600px) { .customer-fields-grid { grid-template-columns: 1fr; } .customer-fieldset { padding: 12px; } }
 @media(max-width: 800px) { .launch-grid,.missouri-case-list { grid-template-columns: 1fr; } .launch-page { padding-top: 128px; } .launch-form { padding: 20px; } .launch-intro h1 { font-size: 38px; } .launch-lede { font-size: 17px; } .launch-section { margin-top: 40px; } .launch-section .hero-actions { flex-direction: column; align-items: stretch; } .home-overview-feature { grid-template-columns: 1fr; gap: 22px; margin: 24px auto 34px; } }
+
+/* Bright, readable content panels throughout the site. */
+:is(.launch-lede,.launch-status,.launch-facts > div,.launch-capture,.launch-preview,.launch-information,.launch-feedback,.launch-card,.launch-faq,.home-overview-feature,.home-overview-copy,.home-record-quote,.access-promise,.missouri-research-nav,.missouri-case-list article,.feature-card,.step,.pricing-card,.platform-card,.cart-item,.checkout-panel,.order-summary,.commerce-empty,.suggestion-card,.about-step-card,.declaration-article,.pledge-card,.creed-block,.lexicon-document-card,.doctrine-cta,.product-hero-note,.beta-platform-notice,.workflow-step) {
+  background: #fff;
+  color: #202b39;
+  box-shadow: 0 8px 24px rgba(5, 17, 31, .12);
+}
+:is(.launch-lede,.launch-status,.launch-facts > div,.launch-capture,.launch-preview,.launch-information,.launch-feedback,.launch-card,.launch-faq,.home-overview-feature,.home-overview-copy,.home-record-quote,.access-promise,.missouri-research-nav,.missouri-case-list article,.feature-card,.step,.pricing-card,.platform-card,.cart-item,.checkout-panel,.order-summary,.commerce-empty,.suggestion-card,.about-step-card,.declaration-article,.pledge-card,.creed-block,.lexicon-document-card,.doctrine-cta,.product-hero-note,.beta-platform-notice,.workflow-step) :is(p,li,dd,figcaption,span) {
+  color: #3b4858;
+}
+:is(.launch-status,.launch-facts > div,.launch-capture,.launch-preview,.launch-information,.launch-feedback,.launch-card,.launch-faq,.home-overview-feature,.home-overview-copy,.home-record-quote,.access-promise,.missouri-research-nav,.missouri-case-list article,.feature-card,.step,.pricing-card,.platform-card,.cart-item,.checkout-panel,.order-summary,.commerce-empty,.suggestion-card,.about-step-card,.declaration-article,.pledge-card,.creed-block,.lexicon-document-card,.doctrine-cta,.product-hero-note,.beta-platform-notice,.workflow-step) h1,
+:is(.launch-status,.launch-facts > div,.launch-capture,.launch-preview,.launch-information,.launch-feedback,.launch-card,.launch-faq,.home-overview-feature,.home-overview-copy,.home-record-quote,.access-promise,.missouri-research-nav,.missouri-case-list article,.feature-card,.step,.pricing-card,.platform-card,.cart-item,.checkout-panel,.order-summary,.commerce-empty,.suggestion-card,.about-step-card,.declaration-article,.pledge-card,.creed-block,.lexicon-document-card,.doctrine-cta,.product-hero-note,.beta-platform-notice,.workflow-step) h2,
+:is(.launch-status,.launch-facts > div,.launch-capture,.launch-preview,.launch-information,.launch-feedback,.launch-card,.launch-faq,.home-overview-feature,.home-overview-copy,.home-record-quote,.access-promise,.missouri-research-nav,.missouri-case-list article,.feature-card,.step,.pricing-card,.platform-card,.cart-item,.checkout-panel,.order-summary,.commerce-empty,.suggestion-card,.about-step-card,.declaration-article,.pledge-card,.creed-block,.lexicon-document-card,.doctrine-cta,.product-hero-note,.beta-platform-notice,.workflow-step) h3,
+:is(.launch-status,.launch-facts > div,.launch-capture,.launch-preview,.launch-information,.launch-feedback,.launch-card,.launch-faq,.home-overview-feature,.home-overview-copy,.home-record-quote,.access-promise,.missouri-research-nav,.missouri-case-list article,.feature-card,.step,.pricing-card,.platform-card,.cart-item,.checkout-panel,.order-summary,.commerce-empty,.suggestion-card,.about-step-card,.declaration-article,.pledge-card,.creed-block,.lexicon-document-card,.doctrine-cta,.product-hero-note,.beta-platform-notice,.workflow-step) h4 {
+  color: #172334;
+}
+.launch-lede { color: #263548; }
+.launch-status p,.launch-facts dd,.launch-capture figcaption,.launch-preview figcaption,.launch-information,.launch-feedback,.launch-card p,.launch-faq p,.home-overview-copy p,.home-record-quote p + p,.access-promise p,.missouri-case-list p,.feature-card p,.step p,.pricing-desc,.pricing-features li,.platform-card,.cart-item p,.checkout-panel p,.order-summary p,.commerce-empty p,.suggestion-card p,.about-step-card p,.declaration-article p,.pledge-card p,.creed-block p,.lexicon-document-card p,.product-hero-note p,.beta-platform-notice p,.workflow-step p { color: #3b4858; }
+.launch-information { border: 1px solid #d9e2eb; border-left: 4px solid #d3a43b; border-radius: 14px; padding: 22px 26px; margin: 22px 0 28px; line-height: 1.7; }
+.launch-information-label { font-weight: 700; letter-spacing: .08em; text-transform: uppercase; font-size: 12px; color: #536274; margin-bottom: 10px; }
+.launch-preview { border-radius: 16px; padding: 28px 30px; margin: 24px 0; border: 1px solid #d9e2eb; }
+.launch-status strong { color: #172334; }
+.launch-card .mono,.declaration-article span { color: #775819; }
+.pricing-tier,.pricing-price,.pricing-price span { color: #172334; }
+.missouri-research-nav { border-left-color: #d3a43b; }
+.missouri-source-note { color: #566477; }
+.home-record-quote { background: #fff; }
+.launch-feedback.is-error { border-color: #c94343; }
+.launch-form { background: #fff; color: #202b39; border-color: #d9e2eb; }
+.launch-form label { color: #263548; }
+.launch-form input:not([type=checkbox]),.launch-form select,.launch-form textarea { background: #fff; color: #172334; border-color: #9baabc; }
+.launch-form input::placeholder,.launch-form textarea::placeholder { color: #68778a; }
+.launch-page a:not(.btn),.launch-home a:not(.btn),.launch-card a:not(.btn) { color: #174d91; }
+.launch-page a:not(.btn):hover,.launch-home a:not(.btn):hover,.launch-card a:not(.btn):hover { color: #0d376b; }
+.launch-card .btn,.launch-form .btn,.home-overview-feature .btn { color: #fff; }
+.document-body blockquote { background: #fff; color: #273548; border-radius: 8px; }
+.lexicon-sensitivity.high { color: #8e2020; background: #fff2f2; }
+.lexicon-sensitivity.medium { color: #735400; background: #fff9e8; }
