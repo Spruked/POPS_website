@@ -70,10 +70,10 @@ export default function DownloadPage() {
             </button>
           </article>
           <article id="opendoor-access" className="launch-card" data-orb-target={targets.opendoor}>
-            <span className="mono">Personally reviewed financial assistance</span>
-            <h3>Open Door</h3>
-            <p>For fathers who cannot afford the full Windows license price, Open Door is a personally reviewed assistance route, subject to eligibility and available funding.</p>
-            <p>Open Door review applications will open when the assistance process and available funding are ready.</p>
+            <span className="mono">An open door for every father</span>
+            <h3>Pay What You Can</h3>
+            <p>We realize these situations can be trying and financially burdensome. That is why we are dedicated to helping every father we can through Pay What You Can. Create a POPS account and choose a contribution greater than zero.</p>
+            <p>We believe careful records can help you remember important details, organize your experience for an attorney, recognize patterns you may have missed, and show the efforts you have made. Those records may help support your account when allegations or events are disputed. POPS helps preserve the facts; legal findings belong to the appropriate authorities. Pay What You Can enrollment will open with the approved purchase process.</p>
             <Link className="btn btn-ghost" to="/policies-procedures">Review program policy</Link>
           </article>
           <article id="sponsor-access" className="launch-card" data-orb-target={targets.sponsor}>
@@ -108,12 +108,12 @@ export default function DownloadPage() {
       </section>
 
       <section id="access-assistance" className="launch-section" data-orb-target="pops.access.activation" aria-labelledby="access-assistance-title">
-        <h2 id="access-assistance-title">Open Door review and sponsorship</h2>
-        <p>Open Door is intended to provide personally reviewed financial assistance toward the POPS Desktop for Windows offer, subject to program rules and available reserve capacity. The application and approval workflow is not active.</p>
+        <h2 id="access-assistance-title">Pay What You Can. Pay It Forward.</h2>
+        <p>All of us were once children. POPS is here for parents and their children, because every family's story deserves the chance to be documented. Pay what you can, share how POPS helps you, and when life has settled and you find the peace you and your children deserve, consider paying it forward by sponsoring the next father. God willing, better days are ahead. An account and a contribution greater than zero are the intended participation requirements; enrollment and payment are not yet active.</p>
         <p>Do not send private court details or family evidence to explain a financial need. Contact support for general availability information; that request is not an application or approval.</p>
         <div className="hero-actions">
           <Link className="btn btn-ghost" to="/policies-procedures">Read the existing program policy</Link>
-          <Link className="btn btn-primary" to="/support">Ask about Windows access</Link>
+          <Link className="btn btn-primary" to="/support">Get involved with POPS</Link>
         </div>
       </section>
 
