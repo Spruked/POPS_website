@@ -166,7 +166,6 @@ export default function AboutPage() {
             <li>It is not a social network.</li>
             <li>It is not a revenge tool.</li>
             <li>It is not a surveillance system.</li>
-            <li>It does not guarantee admissibility.</li>
           </ul>
           <p><strong>POPS is a disciplined evidence system.</strong></p>
           <p>
