@@ -8,14 +8,14 @@ export default function DesktopAppPage() {
       description="Organize parenting-time records with POPS Desktop for Windows. Explore the one-time license and release information."
       path="/desktop-app"
       eyebrow="POPS Desktop · Windows Desktop"
-      heading="A clearer record of parental involvement."
-      intro="POPS Desktop is a Windows application designed to organize parenting-time notes, supporting material, and a chronological history for personal review and appropriate professional discussions."
+      heading="We’re Proud to Introduce P.O.P.S. for Windows."
+      intro="We built P.O.P.S. for Windows to give parents a practical place for their important records. Bring dated notes, supporting material, and a chronological history together in one workspace, ready for your own review and informed conversations with counsel."
     >
       <StatusNote>
         Explore the guided demonstration now. Official Windows download and purchase options will follow the verified release.
       </StatusNote>
 
-      <Section id="windows-benefits" title="Keep the details together">
+      <Section id="windows-benefits" title="Bring Every Important Detail Together">
         <div className="launch-grid">
           <article className="launch-card">
             <h3>Record involvement</h3>
@@ -34,7 +34,7 @@ export default function DesktopAppPage() {
         <Link to="/how-you-use-it">Explore a five-step demonstration</Link>
       </Section>
 
-      <Section id="windows-offer" title="The published Windows offer">
+      <Section id="windows-offer" title="Discover the Windows Offer">
         <div className="launch-card">
           <div className="launch-price">$99.00 one time</div>
           <p>POPS Desktop Access is a Windows application license with lifetime POPS Membership included. Membership alone is not an application license, and POPS Desktop buyers should not add membership separately.</p>
