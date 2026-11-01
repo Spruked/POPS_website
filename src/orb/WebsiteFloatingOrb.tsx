@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useRef, useState } from "react";
+import { Volume2 } from "lucide-react";
 import { useLocation, useNavigate } from "react-router-dom";
 import {
   sendWebsiteOrbAudio,
@@ -165,6 +166,30 @@ export default function WebsiteFloatingOrb() {
       finalAudioRef.current = null;
     }
   }, []);
+
+  const replayCaption = useCallback(() => {
+    const text=lastResponse?.spoken_output?.trim();
+    if(!text)return;
+    if(!('speechSynthesis' in window)){
+      setVoiceStatus('Voice playback is not supported by this browser.');
+      return;
+    }
+    stopFinalAudio();
+    const utterance=new SpeechSynthesisUtterance(text);
+    utterance.lang='en-US';utterance.rate=.96;utterance.pitch=.94;
+    browserSpeechRef.current=utterance;
+    utterance.onstart=()=>setVoiceStatus('Pops is speaking with your browser voice.');
+    utterance.onend=()=>{
+      if(browserSpeechRef.current===utterance)browserSpeechRef.current=null;
+      setOrbState('idle');setVoiceStatus('');
+    };
+    utterance.onerror=(event)=>{
+      if(browserSpeechRef.current===utterance)browserSpeechRef.current=null;
+      if(event.error!=='canceled'){setOrbState('error');setVoiceStatus(`Browser voice could not start (${event.error}).`);}
+    };
+    setOrbState('speaking');setVoiceStatus('Starting Pops voice…');
+    window.speechSynthesis.speak(utterance);
+  },[lastResponse,stopFinalAudio]);
 
   const followSpeechLevel = useCallback(async (audio: HTMLAudioElement) => {
     try {
@@ -814,6 +839,7 @@ export default function WebsiteFloatingOrb() {
       {speechText && (
         <div className={`website-orb-speech ${speechSide}`} role="status" aria-live="polite">
           {speechText}{voiceStatus&&voiceStatus!==speechText&&<p>{voiceStatus}</p>}
+          {lastResponse?.spoken_output?.trim()&&<button type="button" className="website-orb-replay" onClick={(event)=>{event.stopPropagation();replayCaption();}} aria-label="Hear Pops speak this response"><Volume2 size={14}/> Hear Pops</button>}
         </div>
       )}
       </div>

@@ -549,3 +549,32 @@
   object-position: center;
   transform: none;
 }
+
+.website-orb-speech {
+  pointer-events: auto;
+}
+
+.website-orb-replay {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 8px;
+  padding: 5px 9px;
+  border: 1px solid rgba(105,183,255,.58);
+  border-radius: 999px;
+  color: #e7fbff;
+  background: rgba(4,16,32,.88);
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.website-orb-replay:hover {
+  border-color: rgba(55,214,180,.8);
+  background: rgba(10,34,43,.96);
+}
+
+.website-orb-replay:focus-visible {
+  outline: 2px solid #a7d4ff;
+  outline-offset: 3px;
+}
