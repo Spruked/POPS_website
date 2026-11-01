@@ -123,3 +123,6 @@
 .mo-forms-paths li { margin-top: 10px !important; }
 .mo-forms-paths a, .mo-forms-list a { color: #f2c46d; text-decoration-color: rgba(242, 196, 109, .45); }
 .mo-forms-note { font-size: 14px; margin-top: 28px !important; opacity: .8; }
+.mo-forms-state-note { margin-top: 40px; padding: 28px 32px; border: 1px solid rgba(242, 196, 109, .55); border-radius: 14px; background: linear-gradient(135deg, rgba(242, 196, 109, .12), rgba(16, 23, 33, .9)); box-shadow: 0 0 28px rgba(242, 196, 109, .08); }
+.mo-forms-state-note h2 { font-size: clamp(22px, 2.4vw, 28px); color: #f6d58f; margin-bottom: 10px; }
+.mo-forms-state-note p { color: #dbe3ee; line-height: 1.7; margin-bottom: 18px; max-width: 760px; }
