@@ -27,9 +27,7 @@ export default function PoliciesProceduresPage() {
               materials for attorney or court review.
             </p>
             <p>
-              POPS is not a law firm. POPS does not provide legal advice, legal
-              representation, legal strategy, or a guarantee of any court result,
-              attorney acceptance, evidence admissibility, or case outcome.
+              POPS helps parents keep factual, organized documentation for personal use and informed conversations with professionals. The legal disclaimer is provided in the Terms of Service.
             </p>
 
             <h3>1.1 Core Principle</h3>
