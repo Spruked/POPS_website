@@ -73,5 +73,36 @@
 .customer-fields-grid > div { min-width: 0; }
 .customer-field-help { font-size: 13px; }
 .customer-admin-detail { margin-top: 24px; }
+/* Give the site's content blocks distinct edge colors and a gentle lift. */
+:is(.launch-status,.launch-capture,.creed-block,.app-preview-panel) {
+  transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;
+}
+:is(.launch-status,.launch-capture,.creed-block,.app-preview-panel):hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(0,0,0,.25), 0 0 22px rgba(105,183,255,.14);
+}
+:is(.launch-status,.launch-capture,.creed-block,.app-preview-panel):nth-of-type(4n + 1) { border-color: rgba(105,183,255,.68); }
+:is(.launch-status,.launch-capture,.creed-block,.app-preview-panel):nth-of-type(4n + 2) { border-color: rgba(55,214,180,.7); }
+:is(.launch-status,.launch-capture,.creed-block,.app-preview-panel):nth-of-type(4n + 3) { border-color: rgba(190,125,255,.72); }
+:is(.launch-status,.launch-capture,.creed-block,.app-preview-panel):nth-of-type(4n + 4) { border-color: rgba(255,184,77,.72); }
+:is(.launch-card,.launch-facts > div,.launch-faq,.feature-card,.pricing-card,.platform-card,.suggestion-card,.about-step-card,.lexicon-document-card,.pledge-card,.declaration-article,.launch-page .card,.home-overview-feature,.home-overview-copy) {
+  transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;
+}
+:is(.launch-card,.launch-facts > div,.launch-faq,.feature-card,.pricing-card,.platform-card,.suggestion-card,.about-step-card,.lexicon-document-card,.pledge-card,.declaration-article,.launch-page .card,.home-overview-feature,.home-overview-copy):hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(0,0,0,.25), 0 0 22px rgba(105,183,255,.14);
+}
+:is(.launch-grid,.launch-facts,.launch-section,.features-grid,.about-steps,.pricing-grid,.download-platforms,.suggestion-grid,.pledge-list,.article-list) > :is(.launch-card,.launch-facts > div,.launch-faq,.feature-card,.pricing-card,.platform-card,.suggestion-card,.about-step-card,.lexicon-document-card,.pledge-card,.declaration-article,.launch-page .card):nth-child(4n + 1) { border-color: rgba(105,183,255,.68); }
+:is(.launch-grid,.launch-facts,.launch-section,.features-grid,.about-steps,.pricing-grid,.download-platforms,.suggestion-grid,.pledge-list,.article-list) > :is(.launch-card,.launch-facts > div,.launch-faq,.feature-card,.pricing-card,.platform-card,.suggestion-card,.about-step-card,.lexicon-document-card,.pledge-card,.declaration-article,.launch-page .card):nth-child(4n + 2) { border-color: rgba(55,214,180,.7); }
+:is(.launch-grid,.launch-facts,.launch-section,.features-grid,.about-steps,.pricing-grid,.download-platforms,.suggestion-grid,.pledge-list,.article-list) > :is(.launch-card,.launch-facts > div,.launch-faq,.feature-card,.pricing-card,.platform-card,.suggestion-card,.about-step-card,.lexicon-document-card,.pledge-card,.declaration-article,.launch-page .card):nth-child(4n + 3) { border-color: rgba(190,125,255,.72); }
+:is(.launch-grid,.launch-facts,.launch-section,.features-grid,.about-steps,.pricing-grid,.download-platforms,.suggestion-grid,.pledge-list,.article-list) > :is(.launch-card,.launch-facts > div,.launch-faq,.feature-card,.pricing-card,.platform-card,.suggestion-card,.about-step-card,.lexicon-document-card,.pledge-card,.declaration-article,.launch-page .card):nth-child(4n + 4) { border-color: rgba(255,184,77,.72); }
+.launch-home .home-overview-feature { border-color: rgba(105,183,255,.68); }
+.launch-home .home-overview-copy { border-color: rgba(55,214,180,.7); }
+@media (prefers-reduced-motion: reduce) {
+  :is(.launch-status,.launch-capture,.creed-block,.app-preview-panel) { transition: none; }
+  :is(.launch-status,.launch-capture,.creed-block,.app-preview-panel):hover { transform: none; }
+  :is(.launch-card,.launch-facts > div,.launch-faq,.feature-card,.pricing-card,.platform-card,.suggestion-card,.about-step-card,.lexicon-document-card,.pledge-card,.declaration-article,.launch-page .card,.home-overview-feature,.home-overview-copy) { transition: none; }
+  :is(.launch-card,.launch-facts > div,.launch-faq,.feature-card,.pricing-card,.platform-card,.suggestion-card,.about-step-card,.lexicon-document-card,.pledge-card,.declaration-article,.launch-page .card,.home-overview-feature,.home-overview-copy):hover { transform: none; }
+}
 @media(max-width:600px) { .customer-fields-grid { grid-template-columns: 1fr; } .customer-fieldset { padding: 12px; } }
 @media(max-width: 800px) { .launch-grid { grid-template-columns: 1fr; } .launch-page { padding-top: 128px; } .launch-form { padding: 20px; } .launch-intro h1 { font-size: 38px; } .launch-lede { font-size: 17px; } .launch-section { margin-top: 40px; } .launch-section .hero-actions { flex-direction: column; align-items: stretch; } .home-overview-feature { grid-template-columns: 1fr; gap: 22px; margin: 24px auto 34px; } }

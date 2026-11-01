@@ -90,13 +90,11 @@ async def intro(payload:Intro,request:Request):
     harness=request.app.state.harness
     if payload.route not in harness.routes:raise HTTPException(400,'Private pages are excluded from ORB speech.')
     if item.route!=payload.route:harness.event(item,'page',payload.route)
-    if payload.first_visit:
-        prompt=('Give a natural introduction in exactly two concise spoken sentences, 20–24 words total. Identify yourself as Pops, say you help parents organize involvement records and timelines for appropriate review, name this page, and mention one specific section/detail you like or find useful and why. Include every item in two sentences; do not add a third sentence or use a vague page reference. Use only supplied facts.')
-    else:
-        prompt=('The visitor has just opened a new page. Do not repeat your introduction. Use exactly two concise spoken sentences to name this page and mention one concrete section/detail you like or find useful and why. Use only current facts and do not substitute "this page" for its name.')
-    try:result=await harness.answer(item,prompt,event='page_intro',record_user=False,include_history=False)
-    except Exception:raise HTTPException(503,'Pops could not prepare this page introduction. The page remains available.')
-    return {'transcript':'','spoken_output':result['spoken_output'],'speech_id':result.get('speech_id'),'cognitive_pulse':{'cognitive_mode':'WEBSITE_INTRO','glow_intensity':.5},'llm_source':result['llm_source'],'tts_provider':os.getenv('ORB_TTS_PROVIDER','kokoro').lower(),'tts_audio_url':None,'tts_error':None,'memory_context':None,'action':{'type':'stay'}}
+    page=next(page for page in harness.catalog['pages'] if page['route']==payload.route)
+    page_name='POPS homepage' if payload.route=='/' else page['title'].split('|',1)[0].strip()
+    spoken_output=(f"Hi, I'm Pops. Welcome to the {page_name} page; I can help you explore POPS and find answers here.")
+    turn=harness.observe(item,{'kind':'conversation','role':'assistant','content':spoken_output,'event':'page_intro'})
+    return {'transcript':'','spoken_output':spoken_output,'speech_id':turn.item_id,'cognitive_pulse':{'cognitive_mode':'WEBSITE_INTRO','glow_intensity':.5},'llm_source':'website-intro','tts_provider':os.getenv('ORB_TTS_PROVIDER','kokoro').lower(),'tts_audio_url':None,'tts_error':None,'memory_context':None,'action':{'type':'stay'}}
 
 speech_lock=asyncio.Lock()
 

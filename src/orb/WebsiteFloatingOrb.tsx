@@ -1,5 +1,4 @@
 import { useCallback, useEffect, useRef, useState } from "react";
-import { Mic } from "lucide-react";
 import { useLocation, useNavigate } from "react-router-dom";
 import {
   sendWebsiteOrbAudio,
@@ -52,7 +51,7 @@ type VoiceRecognitionWindow = Window & {
 type OrbState = "idle" | "listening" | "thinking" | "speaking" | "error";
 type TravelLook = { x: number; y: number };
 
-const ORB_SKIN_SRC = "/orb/skins/average_dadblkleatherjacket.png";
+const ORB_SKIN_SRC = "/orb/skins/average-dad-leather-jacket-cutout.png";
 const ORB_MAX_SIZE = 200;
 const ORB_MIN_SIZE = 80;
 const ORB_MOBILE_MAX_SIZE = 175;
@@ -135,6 +134,7 @@ export default function WebsiteFloatingOrb() {
   const interruptTourRef = useRef<() => void>(() => {});
   const speechRequestRef=useRef<AbortController|null>(null);
   const releaseFinalRef=useRef<(()=>void)|null>(null);
+  const browserSpeechRef=useRef<SpeechSynthesisUtterance|null>(null);
   const introActiveRef=useRef(false);
   const introAllowedRef=useRef(true);
   const pageArrivalNarrationRef=useRef(false);
@@ -157,6 +157,7 @@ export default function WebsiteFloatingOrb() {
     coreRef.current?.style.setProperty('--orb-speech-level', '0');
     speechAudioContextRef.current?.close().catch(() => undefined);
     speechAudioContextRef.current = null;
+    if(browserSpeechRef.current){window.speechSynthesis?.cancel();browserSpeechRef.current=null;}
     if (finalAudioRef.current) {
       finalAudioRef.current.pause();
       finalAudioRef.current.onended=null;finalAudioRef.current.onerror=null;
@@ -230,19 +231,32 @@ export default function WebsiteFloatingOrb() {
         setLastResponse({...response,tts_provider:speechProvider,tts_error:'Pops audio unavailable. Click Pops to retry.'});
         setVoiceStatus('Pops voice unavailable. Click Pops to retry.');setOrbState('error');
       };
+      const playBrowserVoice=()=>{
+        if(!('speechSynthesis' in window)||!response.spoken_output.trim()){voiceUnavailable();return;}
+        releaseFinalRef.current?.();releaseFinalRef.current=null;finalAudioRef.current=null;
+        window.speechSynthesis.cancel();
+        const utterance=new SpeechSynthesisUtterance(response.spoken_output);
+        utterance.lang='en-US';utterance.rate=.96;utterance.pitch=.94;
+        browserSpeechRef.current=utterance;
+        utterance.onstart=()=>{if(current()){setOrbState('speaking');setVoiceStatus('Pops is speaking with your browser voice.');}};
+        utterance.onend=()=>{if(browserSpeechRef.current===utterance)browserSpeechRef.current=null;finish();};
+        utterance.onerror=(event)=>{if(browserSpeechRef.current===utterance)browserSpeechRef.current=null;if(event.error!=='canceled'&&current())voiceUnavailable();};
+        setOrbState('speaking');setVoiceStatus('Starting Pops voice…');
+        window.speechSynthesis.speak(utterance);
+      };
       let speechProvider=response.tts_provider||'qwen';
       let audio:HTMLAudioElement;
       try{
         if(response.speech_id){
-          setOrbState('thinking');setVoiceStatus('Preparing Qwen TTS… The caption is ready; local synthesis can take several seconds.');const prepared=await prepareOrbSpeech(response,request.signal);
+          setOrbState('thinking');setVoiceStatus('Preparing Pops voice… The caption is ready.');const prepared=await prepareOrbSpeech(response,request.signal);
           if(!current()){prepared.release();return;}audio=prepared.audio;speechProvider=prepared.provider;releaseFinalRef.current=prepared.release;
           setLastResponse({...response,tts_provider:speechProvider,tts_error:speechProvider==='kokoro-fallback'?'Qwen TTS unavailable; playing the Kokoro fallback.':null});
         }else if(response.tts_audio_url){audio=new Audio(response.tts_audio_url);releaseFinalRef.current=()=>{audio.onended=null;audio.onerror=null;audio.pause();audio.removeAttribute('src');audio.load();};}
         else{voiceUnavailable();return;}
-      }catch{if(current())voiceUnavailable();return;}
+      }catch{if(current())playBrowserVoice();return;}
       finalAudioRef.current=audio;
       audio.onended=finish;audio.onerror=voiceUnavailable;audio.onplaying=()=>{if(current()){setOrbState('speaking');setVoiceStatus(speechProvider==='qwen'?'Pops is speaking with Qwen TTS.':speechProvider==='kokoro-fallback'?'Pops is speaking with the Kokoro fallback.':'Pops is speaking.');void followSpeechLevel(audio);}};
-      await audio.play().catch(()=>{if(current())voiceUnavailable();});
+      await audio.play().catch(()=>{if(current())playBrowserVoice();});
     },
     [followSpeechLevel, stopFinalAudio],
   );
@@ -473,7 +487,7 @@ export default function WebsiteFloatingOrb() {
         if(runIdRef.current!==run||document.getElementById(DEMO_HOST_ID)?.dataset.demoContextActive==='true')return;
         voiceResumeAfterResponseRef.current=true;
         await speakOutput(intro);
-      }catch{if(runIdRef.current===run)startVoiceActivation();}
+      }catch(error){if(runIdRef.current===run){setVoiceStatus(`${error instanceof Error?error.message:'Pops could not prepare the page introduction.'} Click Pops to retry.`);startVoiceActivation();}}
     };
     const handleStartupComplete = () => beginVoiceSession();
     window.addEventListener("pops:startup-complete", handleStartupComplete);
@@ -662,9 +676,9 @@ export default function WebsiteFloatingOrb() {
             y: (targetDy / targetDistance) * desiredSpeed,
           }
         : { x: 0, y: 0 };
-      const repelRadius = size * 1.35;
+      const repelRadius = size * 1.15;
       const repelStrength = cursorDistance < repelRadius
-        ? ((repelRadius - cursorDistance) / repelRadius) * 210
+        ? ((repelRadius - cursorDistance) / repelRadius) * 14
         : 0;
       const repelVelocity = repelStrength
         ? {
@@ -676,8 +690,8 @@ export default function WebsiteFloatingOrb() {
         x: desiredVelocity.x + repelVelocity.x,
         y: desiredVelocity.y + repelVelocity.y,
       };
-      const acceleration = guideTarget ? 4.2 : isAddressed ? 5.5 : 1.15;
-      const drag = isAddressed ? 0.86 : 0.992;
+      const acceleration = guideTarget ? 4.2 : isAddressed ? 5.5 : repelStrength ? 1.8 : 1.15;
+      const drag = isAddressed ? 0.86 : repelStrength ? 0.9 : 0.992;
       const nextVelocity = {
         x: (velocity.x + (intentVelocity.x - velocity.x) * acceleration * dt) * drag,
         y: (velocity.y + (intentVelocity.y - velocity.y) * acceleration * dt) * drag,
@@ -764,7 +778,7 @@ export default function WebsiteFloatingOrb() {
       void orbPost<OrbResponse>('speech/intro',{route,first_visit:false}).then(async arrival=>{
         if(runIdRef.current!==run||document.getElementById(DEMO_HOST_ID)?.dataset.demoContextActive==='true')return;
         await speakOutput({...arrival,action:{type:'stay'}});
-      }).catch(()=>{if(runIdRef.current===run)setVoiceStatus('Pops could not prepare this page introduction. Click Pops to retry.');});
+      }).catch(error=>{if(runIdRef.current===run){setVoiceStatus(`${error instanceof Error?error.message:'Pops could not prepare this page introduction.'} Click Pops to retry.`);}});
     },350);
     return()=>window.clearTimeout(timer);
   },[location.pathname,stopFinalAudio,stopVoiceInput,speakOutput]);
@@ -792,23 +806,10 @@ export default function WebsiteFloatingOrb() {
         aria-label="Talk to Pops"
         title="Pops — voice assistant"
       >
-        <span className="website-orb-splash" />
-        <span className="website-orb-pulse" />
-        <span className="website-orb-orbit" />
-        <span className="website-orb-beam" />
-        <span className="website-orb-glow" />
-        <span className="website-orb-ring">
-          <span className="website-orb-node website-orb-node-a" />
-          <span className="website-orb-node website-orb-node-b" />
-        </span>
         <span className="website-orb-skin-wrap">
           <img className="website-orb-skin" src={ORB_SKIN_SRC} alt="" aria-hidden="true" draggable={false} />
         </span>
-        <span className="website-orb-eye-glow" />
-        <span className="website-orb-eye-ring" />
-        <span className="website-orb-lens"><Mic size={16} /></span>
       </button>
-      <span className="website-orb-name" aria-hidden="true">Pops</span>
 
       {speechText && (
         <div className={`website-orb-speech ${speechSide}`} role="status" aria-live="polite">

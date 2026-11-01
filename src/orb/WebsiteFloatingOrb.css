@@ -515,3 +515,37 @@
   }
 
 }
+
+/* The POPS character is the orb. Keep its transparent silhouette unmasked. */
+.website-orb-core {
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  opacity: 1;
+  overflow: visible;
+}
+
+.website-orb-core:hover,
+.website-orb-core.is-error {
+  border: 0;
+  box-shadow: none;
+}
+
+.website-orb-skin-wrap {
+  inset: 0;
+  overflow: visible;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.website-orb-skin-wrap::after {
+  display: none;
+}
+
+.website-orb-skin {
+  object-fit: contain;
+  object-position: center;
+  transform: none;
+}
