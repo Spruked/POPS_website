@@ -135,7 +135,6 @@ export default function WebsiteFloatingOrb() {
   const interruptTourRef = useRef<() => void>(() => {});
   const speechRequestRef=useRef<AbortController|null>(null);
   const releaseFinalRef=useRef<(()=>void)|null>(null);
-  const browserSpeechRef=useRef<SpeechSynthesisUtterance|null>(null);
   const introActiveRef=useRef(false);
   const introAllowedRef=useRef(true);
   const pageArrivalNarrationRef=useRef(false);
@@ -158,7 +157,6 @@ export default function WebsiteFloatingOrb() {
     coreRef.current?.style.setProperty('--orb-speech-level', '0');
     speechAudioContextRef.current?.close().catch(() => undefined);
     speechAudioContextRef.current = null;
-    if(browserSpeechRef.current){window.speechSynthesis?.cancel();browserSpeechRef.current=null;}
     if (finalAudioRef.current) {
       finalAudioRef.current.pause();
       finalAudioRef.current.onended=null;finalAudioRef.current.onerror=null;
@@ -166,30 +164,6 @@ export default function WebsiteFloatingOrb() {
       finalAudioRef.current = null;
     }
   }, []);
-
-  const replayCaption = useCallback(() => {
-    const text=lastResponse?.spoken_output?.trim();
-    if(!text)return;
-    if(!('speechSynthesis' in window)){
-      setVoiceStatus('Voice playback is not supported by this browser.');
-      return;
-    }
-    stopFinalAudio();
-    const utterance=new SpeechSynthesisUtterance(text);
-    utterance.lang='en-US';utterance.rate=.96;utterance.pitch=.94;
-    browserSpeechRef.current=utterance;
-    utterance.onstart=()=>setVoiceStatus('Pops is speaking with your browser voice.');
-    utterance.onend=()=>{
-      if(browserSpeechRef.current===utterance)browserSpeechRef.current=null;
-      setOrbState('idle');setVoiceStatus('');
-    };
-    utterance.onerror=(event)=>{
-      if(browserSpeechRef.current===utterance)browserSpeechRef.current=null;
-      if(event.error!=='canceled'){setOrbState('error');setVoiceStatus(`Browser voice could not start (${event.error}).`);}
-    };
-    setOrbState('speaking');setVoiceStatus('Starting Pops voice…');
-    window.speechSynthesis.speak(utterance);
-  },[lastResponse,stopFinalAudio]);
 
   const followSpeechLevel = useCallback(async (audio: HTMLAudioElement) => {
     try {
@@ -256,32 +230,19 @@ export default function WebsiteFloatingOrb() {
         setLastResponse({...response,tts_provider:speechProvider,tts_error:'Pops audio unavailable. Click Pops to retry.'});
         setVoiceStatus('Pops voice unavailable. Click Pops to retry.');setOrbState('error');
       };
-      const playBrowserVoice=()=>{
-        if(!('speechSynthesis' in window)||!response.spoken_output.trim()){voiceUnavailable();return;}
-        releaseFinalRef.current?.();releaseFinalRef.current=null;finalAudioRef.current=null;
-        window.speechSynthesis.cancel();
-        const utterance=new SpeechSynthesisUtterance(response.spoken_output);
-        utterance.lang='en-US';utterance.rate=.96;utterance.pitch=.94;
-        browserSpeechRef.current=utterance;
-        utterance.onstart=()=>{if(current()){setOrbState('speaking');setVoiceStatus('Pops is speaking with your browser voice.');}};
-        utterance.onend=()=>{if(browserSpeechRef.current===utterance)browserSpeechRef.current=null;finish();};
-        utterance.onerror=(event)=>{if(browserSpeechRef.current===utterance)browserSpeechRef.current=null;if(event.error!=='canceled'&&current())voiceUnavailable();};
-        setOrbState('speaking');setVoiceStatus('Starting Pops voice…');
-        window.speechSynthesis.speak(utterance);
-      };
       let speechProvider=response.tts_provider||'qwen';
       let audio:HTMLAudioElement;
       try{
         if(response.speech_id){
           setOrbState('thinking');setVoiceStatus('Preparing Pops voice… The caption is ready.');const prepared=await prepareOrbSpeech(response,request.signal);
           if(!current()){prepared.release();return;}audio=prepared.audio;speechProvider=prepared.provider;releaseFinalRef.current=prepared.release;
-          setLastResponse({...response,tts_provider:speechProvider,tts_error:speechProvider==='kokoro-fallback'?'Qwen TTS unavailable; playing the Kokoro fallback.':null});
+          setLastResponse({...response,tts_provider:speechProvider,tts_error:null});
         }else if(response.tts_audio_url){audio=new Audio(response.tts_audio_url);releaseFinalRef.current=()=>{audio.onended=null;audio.onerror=null;audio.pause();audio.removeAttribute('src');audio.load();};}
         else{voiceUnavailable();return;}
-      }catch{if(current())playBrowserVoice();return;}
+      }catch{if(current())voiceUnavailable();return;}
       finalAudioRef.current=audio;
-      audio.onended=finish;audio.onerror=voiceUnavailable;audio.onplaying=()=>{if(current()){setOrbState('speaking');setVoiceStatus(speechProvider==='qwen'?'Pops is speaking with Qwen TTS.':speechProvider==='kokoro-fallback'?'Pops is speaking with the Kokoro fallback.':'Pops is speaking.');void followSpeechLevel(audio);}};
-      await audio.play().catch(()=>{if(current())playBrowserVoice();});
+      audio.onended=finish;audio.onerror=voiceUnavailable;audio.onplaying=()=>{if(current()){setOrbState('speaking');setVoiceStatus(speechProvider==='qwen'?'Pops is speaking with Qwen TTS.':'Pops is speaking.');void followSpeechLevel(audio);}};
+      await audio.play().catch(()=>{if(current())voiceUnavailable();});
     },
     [followSpeechLevel, stopFinalAudio],
   );
@@ -839,7 +800,6 @@ export default function WebsiteFloatingOrb() {
       {speechText && (
         <div className={`website-orb-speech ${speechSide}`} role="status" aria-live="polite">
           {speechText}{voiceStatus&&voiceStatus!==speechText&&<p>{voiceStatus}</p>}
-          {lastResponse?.spoken_output?.trim()&&<button type="button" className="website-orb-replay" onClick={(event)=>{event.stopPropagation();replayCaption();}} aria-label="Hear Pops speak this response"><Volume2 size={14}/> Hear Pops</button>}
         </div>
       )}
       </div>
