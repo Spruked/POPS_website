@@ -8,6 +8,20 @@
   transition: filter 180ms ease;
 }
 
+.website-orb-motion-trail {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: var(--orb-size, 200px);
+  object-fit: contain;
+  opacity: var(--orb-trail-opacity, 0);
+  filter: blur(2px);
+  transform: translate3d(var(--orb-trail-x, 0px), var(--orb-trail-y, 0px), 0);
+  pointer-events: none;
+  user-select: none;
+}
+
 .website-orb-core,
 .website-orb-speech {
   pointer-events: auto;
@@ -247,8 +261,8 @@
 }
 
 .website-orb-eye-ring::after {
-  width: 24%;
-  height: 24%;
+  width: 32%;
+  height: 32%;
   left: 50%;
   top: 50%;
   background: rgba(74, 186, 215, 0.96);

@@ -100,6 +100,7 @@ export default function WebsiteFloatingOrb() {
     const size = activeOrbSize();
     return { x: window.innerWidth - size - 24, y: 150 };
   });
+  const [motionTrail, setMotionTrail] = useState({ x: 0, y: 0, opacity: 0 });
   const [guide, setGuide] = useState<WebsiteOrbGuideState | null>(null);
   const [orbSize, setOrbSize] = useState(activeOrbSize);
   const [pendingGuide, setPendingGuide] = useState<WebsiteOrbGuideRequest | null>(null);
@@ -734,6 +735,13 @@ export default function WebsiteFloatingOrb() {
         y: clamp(current.y + nextVelocity.y * dt, 92, window.innerHeight - size - 18),
       };
       velocityRef.current = nextVelocity;
+      const speed = Math.hypot(nextVelocity.x, nextVelocity.y);
+      const trailStrength = clamp((speed - 24) / 120, 0, 0.1);
+      setMotionTrail({
+        x: speed > 0 ? (-nextVelocity.x / speed) * Math.min(speed * 0.12, 9) : 0,
+        y: speed > 0 ? (-nextVelocity.y / speed) * Math.min(speed * 0.12, 9) : 0,
+        opacity: trailStrength,
+      });
       const hasPointer = cursor.x >= 0 && cursor.y >= 0 && cursor.x <= window.innerWidth && cursor.y <= window.innerHeight;
       const lensCenter = { x: center.x, y: current.y + size * 0.16 };
       const gazeTarget = hasPointer
@@ -831,7 +839,8 @@ export default function WebsiteFloatingOrb() {
     <>
       <WebsiteOrbPointerOverlay guide={guide} onDismiss={() => setGuide(null)} />
       {cursorPing&&<span key={cursorPing.key} className="website-orb-cursor-ping" style={{left:cursorPing.x,top:cursorPing.y}} aria-hidden="true" />}
-      <div className="website-orb" style={{ transform: `translate3d(${position.x}px, ${position.y}px, 0)`, ["--orb-size" as string]: `${orbSize}px` }}>
+      <div className="website-orb" style={{ transform: `translate3d(${position.x}px, ${position.y}px, 0)`, ["--orb-size" as string]: `${orbSize}px`, ["--orb-trail-x" as string]: `${motionTrail.x}px`, ["--orb-trail-y" as string]: `${motionTrail.y}px`, ["--orb-trail-opacity" as string]: motionTrail.opacity }}>
+      <img className="website-orb-motion-trail" src={ORB_SKIN_SRC} alt="" aria-hidden="true" draggable={false} />
       <button
         ref={coreRef}
         className={`website-orb-core is-${orbState} ${splashActive ? "has-splash" : ""}`}
