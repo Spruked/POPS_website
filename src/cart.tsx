@@ -32,11 +32,11 @@ const CartContext = createContext<CartContextValue | undefined>(undefined);
 export const PRODUCTS: Product[] = [
   {
     id: "guardian",
-    name: "Guardian Access",
+    name: "POPS Desktop Access",
     price: 99,
     priceLabel: "$99",
     period: "one-time Windows app license",
-    description: "Published $99.00 one-time Windows Guardian license; lifetime POPS Membership included.",
+    description: "Published $99.00 one-time POPS Desktop for Windows license; lifetime POPS Membership included.",
     fulfillment: "Saved selection only. Checkout is disabled; no installer or license is delivered.",
   },
   {
@@ -45,7 +45,7 @@ export const PRODUCTS: Product[] = [
     price: 1,
     priceLabel: "Custom",
     period: "reviewed contribution",
-    description: "Personally reviewed financial assistance toward the Windows Guardian offer, subject to program rules and funding.",
+    description: "Personally reviewed financial assistance toward the POPS Desktop for Windows offer, subject to program rules and funding.",
     fulfillment: "Not a cart product. The Open Door application and approval workflow are not active on this website.",
     requiresReview: true,
   },
