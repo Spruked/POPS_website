@@ -41,11 +41,11 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: "opendoor",
-    name: "Open Door Access",
+    name: "Pay What You Can",
     price: 1,
     priceLabel: "Custom",
     period: "reviewed contribution",
-    description: "Personally reviewed financial assistance toward the POPS Desktop for Windows offer, subject to program rules and funding.",
+    description: "Account-based Pay What You Can desktop access, with a contribution greater than zero; enrollment is not active yet.",
     fulfillment: "Not a cart product. The Open Door application and approval workflow are not active on this website.",
     requiresReview: true,
   },
