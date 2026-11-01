@@ -72,9 +72,12 @@ export default function DownloadPage() {
           <article id="opendoor-access" className="launch-card" data-orb-target={targets.opendoor}>
             <span className="mono">An open door for every father</span>
             <h3>Pay What You Can</h3>
-            <p>We realize these situations can be trying and financially burdensome. That is why we are dedicated to helping every father we can through Pay What You Can. Create a POPS account and choose a contribution greater than zero.</p>
-            <p>We believe careful records can help you remember important details, organize your experience for an attorney, recognize patterns you may have missed, and show the efforts you have made. Those records may help support your account when allegations or events are disputed. POPS helps preserve the facts; legal findings belong to the appropriate authorities. Pay What You Can enrollment will open with the approved purchase process.</p>
-            <Link className="btn btn-ghost" to="/policies-procedures">Review program policy</Link>
+            <p>WE REALIZRE THAT THESE SITUATIONS CAN BE TRYING AND FINANCIALLY BURDENSOME. THAT IS WHY WE ARE DEDICATED TO HELPING EVERY FATHER WE CAN BY OFFERING A PAY WHAT YOU CAN OPTION.</p>
+            <p>IT JUST REQUIRES YOU SIGN UP FOR AN ACCOUNT AND MUST BE MORE THAN ZERO.</p>
+            <p>WE KNOW THAT IF THIS IS USED PROPERLY AND GOOD RECORDS ARE KEPT THAT THIS APPLICATION WILL HELP YOU. WHETHER IT HELPS YOU REMEMBER, ORGANIZES THINGS SO AN ATTORNEY CAN SEE YOUR SITUATION BETTER, REVEALS THINGS YOU MIGHT HAVE MISSED, PROVES INNOCENCE, PROVES GUILT WHEN YOU HAVE BEEN WRONGED OR LIED ABOUT OR SIMPLY SHOW THAT YOU HAVE BEEN TRYING AND RECORDS THAT EFFORT.</p>
+            <p>P.O.P.S. WILL NOT LEAVE YOU WITH NO WAY TO PROTECT YOURSELVES. ALL OF US WERE ONCE CHILDREN AND POPS IS HERE TO LOOK AFTER US AND OUR CHILDREN.</p>
+            <p>SO PAY WHAT YOU CAN NOW TELL OTHERS HOW IT HELPS YOU AND PAY IT FORWARD BUY SPONSORING THE NEXT GUY LATER WHEN THINGS HAVE GOD WILLING SETTLED DOWN AND YOU FIND THE PEACE YOU ANHD YOUR CHILDREN DESERVE.</p>
+            <Link className="btn btn-ghost" to="/account">Create a POPS account</Link>
           </article>
           <article id="sponsor-access" className="launch-card" data-orb-target={targets.sponsor}>
             <span className="mono">Sponsor-funded Windows access</span>
