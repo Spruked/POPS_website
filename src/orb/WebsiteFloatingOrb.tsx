@@ -472,7 +472,7 @@ export default function WebsiteFloatingOrb() {
         if(runIdRef.current!==run||document.getElementById(DEMO_HOST_ID)?.dataset.demoContextActive==='true')return;
         voiceResumeAfterResponseRef.current=true;
         await speakOutput(intro);
-      }catch(error){if(runIdRef.current===run){setVoiceStatus(`${error instanceof Error?error.message:'Pops could not prepare the page introduction.'} Click Pops to retry.`);startVoiceActivation();}}
+      }catch{if(runIdRef.current===run){setVoiceStatus('Pops could not prepare the page introduction. Pops can still listen for your voice.');startVoiceActivation();}}
     };
     const handleStartupComplete = () => beginVoiceSession();
     window.addEventListener("pops:startup-complete", handleStartupComplete);
@@ -763,7 +763,7 @@ export default function WebsiteFloatingOrb() {
       void orbPost<OrbResponse>('speech/intro',{route,first_visit:false}).then(async arrival=>{
         if(runIdRef.current!==run||document.getElementById(DEMO_HOST_ID)?.dataset.demoContextActive==='true')return;
         await speakOutput({...arrival,action:{type:'stay'}});
-      }).catch(error=>{if(runIdRef.current===run){setVoiceStatus(`${error instanceof Error?error.message:'Pops could not prepare this page introduction.'} Click Pops to retry.`);}});
+      }).catch(()=>{if(runIdRef.current===run){setVoiceStatus('Pops could not prepare the page introduction. Pops can still listen for your voice.');}});
     },350);
     return()=>window.clearTimeout(timer);
   },[location.pathname,stopFinalAudio,stopVoiceInput,speakOutput]);

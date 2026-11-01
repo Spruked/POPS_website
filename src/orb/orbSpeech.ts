@@ -7,7 +7,7 @@ export async function prepareOrbSpeech(response:OrbResponse,signal:AbortSignal){
  const controller=new AbortController();
  const abort=()=>controller.abort();signal.addEventListener('abort',abort,{once:true});
  // Keep the caption useful even when a local voice provider stalls.
- const timeout=window.setTimeout(abort,18000);
+ const timeout=window.setTimeout(abort,175000);
  try{
   if(signal.aborted)throw new DOMException('Speech interrupted.','AbortError');
   const {audio:blob,provider}=await orbSpeech(response.speech_id,controller.signal);

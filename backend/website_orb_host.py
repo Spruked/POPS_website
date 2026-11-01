@@ -125,21 +125,9 @@ async def speech(payload:Speech,request:Request):
                 path=existing_orb.TTS_CACHE_DIR/filename
                 try:audio=path.read_bytes()
                 finally:path.unlink(missing_ok=True)
-        except Exception as primary_error:
-            fallback=os.getenv('ORB_TTS_FALLBACK_PROVIDER','').lower()
-            if provider!='qwen' or fallback!='kokoro':
-                raise HTTPException(503,'Configured voice synthesis is unavailable. Captions remain available; retry narration when ready.')
-            logger.warning('Qwen TTS unavailable; using configured Kokoro fallback: %s',primary_error)
-            try:
-                audio_url,fallback_provider,error=await existing_orb._synthesize_orb_tts(turn.content['content'],provider=fallback)
-                if error or not audio_url:raise ValueError('Kokoro fallback unavailable.')
-                filename=audio_url.rsplit('/',1)[-1]
-                if not re.fullmatch(r'[a-f0-9]{32}\.wav',filename):raise ValueError('Invalid fallback audio reference.')
-                path=existing_orb.TTS_CACHE_DIR/filename
-                try:audio=path.read_bytes()
-                finally:path.unlink(missing_ok=True)
-                provider=f'{fallback_provider or fallback}-fallback'
-            except Exception:raise HTTPException(503,'Qwen TTS and the configured fallback are unavailable. Captions remain available; retry narration when ready.')
+        except Exception as error:
+            logger.warning('Configured %s voice synthesis failed (%s).',provider,type(error).__name__)
+            raise HTTPException(503,'Pops natural voice is unavailable. Captions remain available; voice was not substituted.') from None
         if revision!=item.revision or await request.is_disconnected():raise HTTPException(409,'Speech request interrupted.')
         if len(audio)<=44 or audio[:4]!=b'RIFF' or audio[8:12]!=b'WAVE':raise HTTPException(502,'Voice provider did not return WAV audio.')
         return Response(audio,media_type='audio/wav',headers={'Cache-Control':'no-store','X-Orb-Speech-Provider':provider})
@@ -192,7 +180,7 @@ async def capabilities():
     tts_provider=os.getenv('ORB_TTS_PROVIDER','kokoro').lower()
     tts_url=os.getenv('ORB_TTS_QWEN_URL','') if tts_provider=='qwen' else os.getenv('ORB_TTS_KOKORO_URL','http://127.0.0.1:8880/speak')
     tts_voice=os.getenv('ORB_TTS_QWEN_VOICE','Vivian') if tts_provider=='qwen' else os.getenv('ORB_TTS_KOKORO_VOICE','am_echo')
-    return {**original,'status':'development-only','website_context':crawl,'tts':{**original.get('tts',{}),'provider':tts_provider,'configured':bool(tts_url),'voice':tts_voice,'fallback_provider':os.getenv('ORB_TTS_FALLBACK_PROVIDER') or None,'transport':'session-authorized transient WAV; browser speech emergency fallback'},'local_llm':{'configured':True,'url':os.getenv('POPS_LLAMA_BASE_URL','http://127.0.0.1:16520'),'model':os.getenv('POPS_LLAMA_MODEL') or 'discovered from /v1/models'},'memory':{'canonical':'Vault-Logic-System-Template/AIMS/memory_core','visitor_storage':'volatile short-term memory','durable_storage':'public published website copy only'},'governance':'Production TPC/Correspondence/Doctrine integration deferred by owner; local action validation only.'}
+    return {**original,'status':'development-only','website_context':crawl,'tts':{**original.get('tts',{}),'provider':tts_provider,'configured':bool(tts_url),'voice':tts_voice,'fallback_provider':None,'transport':'session-authorized transient WAV; configured natural voice only; synthesis failure returns no audio'},'local_llm':{'configured':True,'url':os.getenv('POPS_LLAMA_BASE_URL','http://127.0.0.1:16520'),'model':os.getenv('POPS_LLAMA_MODEL') or 'discovered from /v1/models'},'memory':{'canonical':'Vault-Logic-System-Template/AIMS/memory_core','visitor_storage':'volatile short-term memory','durable_storage':'public published website copy only'},'governance':'Production TPC/Correspondence/Doctrine integration deferred by owner; local action validation only.'}
 
 def requested_crawl_metadata(harness):
     scan=getattr(harness,'crawl30',None)

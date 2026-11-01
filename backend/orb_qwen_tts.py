@@ -66,11 +66,17 @@ async def _synthesize_windows_bridge(text: str, base: str) -> bytes:
 
 async def synthesize(text:str)->bytes:
     base=os.environ.get('ORB_TTS_QWEN_URL','').rstrip('/')
-    if os.environ.get('ORB_TTS_QWEN_PAYLOAD_MODE') == 'windows-bridge':
-        return await _synthesize_windows_bridge(text, base)
     origin=urlparse(base)
     if origin.scheme!='http' or origin.hostname not in {'localhost','127.0.0.1','::1'} or origin.path:
         raise ValueError('Qwen CLI must use a configured loopback origin.')
+    if os.environ.get('ORB_TTS_QWEN_PAYLOAD_MODE') == 'windows-bridge':
+        # Some older deployments label the Windows-hosted Gradio UI as a
+        # bridge, though it does not expose the custom /synthesize route.
+        # Probe that route before falling through to the same Qwen Gradio API.
+        async with httpx.AsyncClient(timeout=5,trust_env=False) as probe:
+            bridge=await probe.get(base+'/synthesize')
+        if bridge.status_code != 404:
+            return await _synthesize_windows_bridge(text, base)
     voice=os.environ.get('ORB_TTS_QWEN_VOICE','Vivian')
     language=os.environ.get('ORB_TTS_QWEN_LANGUAGE','English')
     instruct=os.environ.get('ORB_TTS_QWEN_INSTRUCT','')
