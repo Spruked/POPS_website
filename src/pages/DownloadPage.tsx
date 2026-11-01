@@ -70,13 +70,12 @@ export default function DownloadPage() {
             </button>
           </article>
           <article id="opendoor-access" className="launch-card" data-orb-target={targets.opendoor}>
-            <span className="mono">An open door for every father</span>
+            <span className="mono">An Open Door for Every Father</span>
             <h3>Pay What You Can</h3>
-            <p>WE REALIZRE THAT THESE SITUATIONS CAN BE TRYING AND FINANCIALLY BURDENSOME. THAT IS WHY WE ARE DEDICATED TO HELPING EVERY FATHER WE CAN BY OFFERING A PAY WHAT YOU CAN OPTION.</p>
-            <p>IT JUST REQUIRES YOU SIGN UP FOR AN ACCOUNT AND MUST BE MORE THAN ZERO.</p>
-            <p>WE KNOW THAT IF THIS IS USED PROPERLY AND GOOD RECORDS ARE KEPT THAT THIS APPLICATION WILL HELP YOU. WHETHER IT HELPS YOU REMEMBER, ORGANIZES THINGS SO AN ATTORNEY CAN SEE YOUR SITUATION BETTER, REVEALS THINGS YOU MIGHT HAVE MISSED, PROVES INNOCENCE, PROVES GUILT WHEN YOU HAVE BEEN WRONGED OR LIED ABOUT OR SIMPLY SHOW THAT YOU HAVE BEEN TRYING AND RECORDS THAT EFFORT.</p>
-            <p>P.O.P.S. WILL NOT LEAVE YOU WITH NO WAY TO PROTECT YOURSELVES. ALL OF US WERE ONCE CHILDREN AND POPS IS HERE TO LOOK AFTER US AND OUR CHILDREN.</p>
-            <p>SO PAY WHAT YOU CAN NOW TELL OTHERS HOW IT HELPS YOU AND PAY IT FORWARD BUY SPONSORING THE NEXT GUY LATER WHEN THINGS HAVE GOD WILLING SETTLED DOWN AND YOU FIND THE PEACE YOU ANHD YOUR CHILDREN DESERVE.</p>
+            <p>We realize that these situations can be trying and financially burdensome. That is why we are dedicated to helping every father we can by offering a Pay What You Can option. Simply sign up for a POPS account and contribute any amount greater than zero.</p>
+            <p>We know that when POPS is used properly and good records are kept, it can help you remember, organize your situation so an attorney can understand it better, reveal details you might have missed, preserve evidence that can establish what happened when you have been wronged or falsely accused, and show the efforts you have made.</p>
+            <p>P.O.P.S. will not leave you without a way to protect yourself. All of us were once children, and POPS is here to look after us and our children.</p>
+            <p>Pay what you can now. Tell others how POPS helps you. Then, when things have, God willing, settled down and you have found the peace you and your children deserve, pay it forward by sponsoring the next father.</p>
             <Link className="btn btn-ghost" to="/account">Create a POPS account</Link>
           </article>
           <article id="sponsor-access" className="launch-card" data-orb-target={targets.sponsor}>
