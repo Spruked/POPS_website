@@ -54,7 +54,7 @@ type TravelLook = { x: number; y: number };
 const ORB_SKIN_SRC = "/orb/skins/average-dad-leather-jacket-cutout.png";
 const ORB_MAX_SIZE = 200;
 const ORB_MIN_SIZE = 80;
-const ORB_MOBILE_MAX_SIZE = 175;
+const ORB_MOBILE_MAX_SIZE = 220;
 const ORB_RESIZE_INTERVAL = 320;
 
 function clamp(value: number, min: number, max: number) {
