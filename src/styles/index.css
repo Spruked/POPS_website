@@ -13,9 +13,9 @@
   --pops-blue-soft: rgba(30, 96, 255, 0.14);
   --pops-gold: #fbbf24;
   --pops-gold-soft: rgba(251, 191, 36, 0.14);
-  --pops-text: #e8edf5;
-  --pops-text-soft: #94a3b8;
-  --pops-text-muted: #64748b;
+  --pops-text: #ffffff;
+  --pops-text-soft: #f3f6fb;
+  --pops-text-muted: #e1e8f0;
   --pops-danger: #ff3b3b;
   --pops-danger-soft: rgba(255, 59, 59, 0.14);
   --pops-success: #10b981;
@@ -34,10 +34,10 @@
   --crimson-alert: #FF3B3B;
 
   /* Functional */
-  --text-primary: #E8EDF5;
-  --text-secondary: #94A3B8;
-  --text-muted: #64748B;
-  --text-dim: #475569;
+  --text-primary: #FFFFFF;
+  --text-secondary: #F3F6FB;
+  --text-muted: #E1E8F0;
+  --text-dim: #CCD6E2;
   --border-dim: #1E293B;
   --border-glow: #334155;
 
