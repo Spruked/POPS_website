@@ -137,6 +137,10 @@ export default function HomePage() {
         <ContentSection id="home-product-purpose" title="Your presence matters. Give the details a place to stay.">
           <p>A missed exchange is more than a date on a calendar. There may be an unanswered message, a receipt from the trip, a photo, or a note about what you personally observed. When those pieces stay scattered, preparing for a conversation means searching again and relying on memory.</p>
           <p>P.O.P.S. — Proof of Presence System — helps organize a parent’s record of involvement: record an event, preserve supporting material, and review a chronological history in context. Use your organized history for personal review or conversations with a legal professional. POPS is a recordkeeping tool, not a legal decision-maker.</p>
+          <blockquote className="home-record-quote">
+            <p>“The law starts you at equal time, but only once you’re in front of a judge. File, and keep the record that keeps you there.”</p>
+            <p>The record matters because the other side’s way to overcome the presumption is evidence, and a father’s dated history of showing up is the counter-evidence.</p>
+          </blockquote>
           <div className="launch-grid">
             <div className="launch-card"><h3>Organize involvement</h3><p>Bring dates, event notes, people, and relevant context together for a clearer personal review.</p><Link to="/desktop-app">Explore POPS Desktop for Windows</Link></div>
             <div className="launch-card"><h3>Keep supporting material connected</h3><p>Associate files with the records they relate to and review them in chronological context. Keep related material and its context connected for easier review.</p><Link to="/how-you-use-it">See the documented workflow</Link></div>
