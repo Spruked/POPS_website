@@ -13,6 +13,7 @@ const secondaryLinks = [
   ["/early-adopters", "Early Adopters"], ["/how-you-use-it", "How It Works"],
   ["/installation", "Installation"], ["/faq", "FAQs"],
   ["/support", "Contact & Support"], ["/counsel-handoff", "Counsel Handoff"],
+  ["/missouri-forms", "Missouri Court Forms"],
   ["/events", "Events"], ["/attorney-referral", "Noted Counsel"],
   ["/policies-procedures", "Policies & Procedures"], ["/terms", "Terms of Service"],
   ["/privacy", "Privacy Notice"],
@@ -129,6 +130,7 @@ export default function Layout({ children }: LayoutProps) {
             <Link to="/cart">Cart</Link>
             <Link to="/events">Events</Link>
             <Link to="/counsel-handoff">Counsel Handoff</Link>
+            <Link to="/missouri-forms">Missouri Court Forms</Link>
             <Link to="/attorney-referral">Noted Counsel</Link>
             <Link to="/privacy">Privacy</Link>
             <Link to="/terms">Terms</Link>
