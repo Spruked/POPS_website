@@ -91,8 +91,8 @@ async def intro(payload:Intro,request:Request):
     if payload.route not in harness.routes:raise HTTPException(400,'Private pages are excluded from ORB speech.')
     if item.route!=payload.route:harness.event(item,'page',payload.route)
     page=next(page for page in harness.catalog['pages'] if page['route']==payload.route)
-    page_name='POPS homepage' if payload.route=='/' else page['title'].split('|',1)[0].strip()
-    spoken_output=(f"Hi, I'm Pops. Welcome to the {page_name} page; I can help you explore POPS and find answers here.")
+    page_name='the POPS homepage' if payload.route=='/' else f"the {page['title'].split('|',1)[0].strip()} page"
+    spoken_output=f"Hi, I'm Pops. Welcome to {page_name}; I can help you explore POPS and find answers here."
     turn=harness.observe(item,{'kind':'conversation','role':'assistant','content':spoken_output,'event':'page_intro'})
     return {'transcript':'','spoken_output':spoken_output,'speech_id':turn.item_id,'cognitive_pulse':{'cognitive_mode':'WEBSITE_INTRO','glow_intensity':.5},'llm_source':'website-intro','tts_provider':os.getenv('ORB_TTS_PROVIDER','kokoro').lower(),'tts_audio_url':None,'tts_error':None,'memory_context':None,'action':{'type':'stay'}}
 
