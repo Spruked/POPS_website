@@ -124,7 +124,6 @@ export default function Layout({ children }: LayoutProps) {
           </div>
           <div className="footer-network" aria-label="Spruked network">
             <a href="https://spruked.com/" target="_blank" rel="noopener">Spruked</a>
-            <a href="https://orbweaver.spruked.com/" target="_blank" rel="noopener">OrbWeaver</a>
             <a href="https://certsig.com/" target="_blank" rel="noopener">CertSig</a>
             <a href="https://truemarkmint.com/" target="_blank" rel="noopener">TrueMarkMint</a>
           </div>
