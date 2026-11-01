@@ -24,6 +24,7 @@ import DesktopAppPage from "./pages/DesktopAppPage";
 import HowYouUseItPage from "./pages/HowYouUseItPage";
 import { AndroidPage, EarlyAdoptersPage, InstallationPage, FaqPage, NotFoundPage } from "./pages/LaunchPages";
 import { BetaPage, SupportPage } from "./pages/ParticipationPages";
+import { MissouriCustodyPage, MissouriParentagePage } from "./pages/MissouriFamilyLawPages";
 
 function App() {
   return (
@@ -47,6 +48,8 @@ function App() {
           <Route path="/support" element={<SupportPage />} />
           <Route path="/contact" element={<Navigate to="/support" replace />} />
           <Route path="/how-you-use-it" element={<HowYouUseItPage />} />
+          <Route path="/missouri-fathers-rights" element={<MissouriCustodyPage />} />
+          <Route path="/missouri-fathers-rights/paternity-enforcement" element={<MissouriParentagePage />} />
           <Route path="/access" element={<DownloadPage />} />
           <Route path="/download" element={<Navigate to="/access" replace />} />
           <Route path="/cart" element={<CartPage />} />

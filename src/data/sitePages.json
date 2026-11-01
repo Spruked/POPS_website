@@ -25,6 +25,16 @@
     "indexable": true
   },
   {
+    "path": "/missouri-fathers-rights",
+    "intent": "Read Missouri custody law and selected decisions",
+    "indexable": true
+  },
+  {
+    "path": "/missouri-fathers-rights/paternity-enforcement",
+    "intent": "Read Missouri paternity and parenting-time enforcement law",
+    "indexable": true
+  },
+  {
     "path": "/product-demo",
     "intent": "Explore a representative Windows workspace",
     "indexable": true

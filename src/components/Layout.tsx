@@ -14,6 +14,7 @@ const secondaryLinks = [
   ["/installation", "Installation"], ["/faq", "FAQs"],
   ["/support", "Contact & Support"], ["/counsel-handoff", "Counsel Handoff"],
   ["/events", "Events"], ["/attorney-referral", "Noted Counsel"],
+  ["/missouri-fathers-rights", "Missouri custody law"], ["/missouri-fathers-rights/paternity-enforcement", "Missouri paternity & enforcement"],
   ["/policies-procedures", "Policies & Procedures"], ["/terms", "Terms of Service"],
   ["/privacy", "Privacy Notice"],
 ];
@@ -133,6 +134,8 @@ export default function Layout({ children }: LayoutProps) {
             <Link to="/privacy">Privacy</Link>
             <Link to="/terms">Terms</Link>
             <Link to="/policies-procedures">Policies &amp; Procedures</Link>
+            <Link to="/missouri-fathers-rights">Missouri custody law</Link>
+            <Link to="/missouri-fathers-rights/paternity-enforcement">Missouri paternity &amp; enforcement</Link>
           </div>
           <div className="footer-network" aria-label="Spruked network">
             <a href="https://spruked.com/" target="_blank" rel="noopener">Spruked</a>
