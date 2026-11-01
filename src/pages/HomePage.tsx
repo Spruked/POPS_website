@@ -5,7 +5,7 @@ import { ContentSection, LaunchLinks, StatusNote } from "../components/LaunchCon
 
 const FLOW = [
   {
-    title: "What POPS Does",
+    title: "Discover What P.O.P.S. Can Do",
     body: "POPS helps fathers organize parenting-time records, court-order context, communication attempts, supporting files, and a chronology for review.",
     href: "#what-pops-does",
   },
@@ -41,16 +41,16 @@ export default function HomePage() {
 
         <div className="hero-content">
           <div className="hero-badge">
-            <span>Your Story. Your Records. Your Voice.</span>
+            <span>Introducing P.O.P.S. — Proof of Presence</span>
           </div>
 
           <h1>
-            Proof of Presence.<br />
+            We’re Proud to Introduce P.O.P.S.<br />
             <span className="accent">Preserve. Protect. Prove.</span>
           </h1>
 
           <p className="hero-subtitle">
-            When parenting time matters, details matter. POPS helps you record important events, keep supporting material together, and build a clear chronological history. Explore the Windows experience and join the next chapter of POPS.
+            We’re excited to introduce Proof of Presence, a new way to bring your parenting-time records together. Capture important moments, organize supporting material, and build a chronological history you can revisit with confidence. Discover the POPS Windows experience, see it in action, and join us as the mobile editions take shape.
           </p>
 
           <div className="hero-actions">
@@ -95,8 +95,8 @@ export default function HomePage() {
         </figure>
         <div className="home-overview-copy">
           <span className="mono">Android testing · Beta recruitment</span>
-          <h2 id="home-beta-opportunity-title">Be Part of the Beginning</h2>
-          <h3>Help Us Bring P.O.P.S. to Life</h3>
+          <h2 id="home-beta-opportunity-title">We’re Excited to Invite You In</h2>
+          <h3>Help Shape the Future of P.O.P.S.</h3>
           <p>We're inviting <strong>20 Android testers and up to 50 beta testers</strong> to help us evaluate, refine, and prepare P.O.P.S. for its wider release.</p>
           <p>Your participation is an opportunity to experience the system firsthand, provide meaningful feedback, and help shape a product built to make a difference for parents and families.</p>
           <p><strong>Watch the video to learn about the opportunity and how you can get involved.</strong></p>
@@ -106,8 +106,8 @@ export default function HomePage() {
       <section className="section section-alt" aria-labelledby="home-app-family-title">
         <div className="container">
           <div className="section-header">
-            <span className="mono">The POPS Application Family</span>
-            <h2 id="home-app-family-title">Three platforms. Clear release status.</h2>
+            <span className="mono">Meet the P.O.P.S. Application Family</span>
+            <h2 id="home-app-family-title">We’re Building P.O.P.S. for the Way You Live.</h2>
             <p>Discover how POPS works, explore an interactive demonstration, and find the version that fits your needs.</p>
           </div>
           <div className="launch-grid">
@@ -152,7 +152,7 @@ export default function HomePage() {
           <p>Record the scheduled exchange and what you observed. Associate a relevant photo or message with that event. Keep the source and collection context. Review related entries in date order, then prepare the material supported by your release for your own review or discussion with counsel.</p>
           <p>POPS helps organize the evidence and context you provide. Legal conclusions and court decisions remain with the appropriate professionals and authorities.</p>
         </ContentSection>
-        <ContentSection id="home-participate" title="Choose how you take part.">
+        <ContentSection id="home-participate" title="We’d Love for You to Be Part of P.O.P.S.">
           <p>POPS Desktop Access is the published $99 one-time Windows desktop license and includes lifetime POPS Membership. Open Door is personally reviewed financial assistance for the Windows offer; sponsor contributions can support that Windows access. Neither route currently issues Android or iOS access. Purchase and fulfillment options will open with the verified release. Until then, you can explore the offers and save a selection for reference.</p>
           <StatusNote>We are seeking interest toward 50 active beta participants. The founding-customer program targets the first 100 qualifying paying customers, with special benefits still awaiting approval. Neither a signup nor a saved cart reserves paid-customer status.</StatusNote>
           <LaunchLinks/>
@@ -162,8 +162,8 @@ export default function HomePage() {
       <section id="what-pops-does" className="section" data-orb-target="pops.home.what-is-pops">
         <div className="container">
           <div className="section-header">
-            <span className="mono">What POPS Does</span>
-            <h2>From scattered proof to structured record.</h2>
+            <span className="mono">Discover What P.O.P.S. Can Do</span>
+            <h2>Important Moments Deserve an Organized Record.</h2>
             <p>
               POPS is built for the moments when parenting time is blocked, messages go unanswered, orders are disputed, or proof is scattered across screenshots, receipts, PDFs, and memories.
             </p>
