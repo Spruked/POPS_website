@@ -227,15 +227,15 @@ export default function WebsiteFloatingOrb() {
       const voiceUnavailable=()=>{
         if(!current())return;
         releaseFinalRef.current?.();releaseFinalRef.current=null;finalAudioRef.current=null;
-        setLastResponse({...response,tts_provider:speechProvider,tts_error:'Pops audio unavailable. Click Pops to retry.'});
-        setVoiceStatus('Pops voice unavailable. Click Pops to retry.');setOrbState('error');
+        setLastResponse({...response,tts_provider:'qwen',tts_error:'Pops natural voice is temporarily unavailable.'});
+        setVoiceStatus('Pops natural voice is temporarily unavailable.');setOrbState('error');
       };
       let speechProvider=response.tts_provider||'qwen';
       let audio:HTMLAudioElement;
       try{
         if(response.speech_id){
           setOrbState('thinking');setVoiceStatus('Preparing Pops voice… The caption is ready.');const prepared=await prepareOrbSpeech(response,request.signal);
-          if(!current()){prepared.release();return;}audio=prepared.audio;speechProvider=prepared.provider;releaseFinalRef.current=prepared.release;
+          if(!current()){prepared.release();return;}audio=prepared.audio;speechProvider=prepared.provider;releaseFinalRef.current=prepared.release;if(speechProvider!=='qwen'){prepared.release();voiceUnavailable();return;}
           setLastResponse({...response,tts_provider:speechProvider,tts_error:null});
         }else if(response.tts_audio_url){audio=new Audio(response.tts_audio_url);releaseFinalRef.current=()=>{audio.onended=null;audio.onerror=null;audio.pause();audio.removeAttribute('src');audio.load();};}
         else{voiceUnavailable();return;}
