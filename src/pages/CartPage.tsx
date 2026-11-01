@@ -13,7 +13,7 @@ export default function CartPage() {
     <div className="commerce-page">
       <PageSeo
         title="Cart | POPS"
-        description="Review saved Windows Guardian, membership, or sponsor selections. POPS checkout is currently disabled."
+        description="Review saved POPS Desktop for Windows, membership, or sponsor selections. POPS checkout is currently disabled."
         path="/cart"
         indexable={false}
       />
@@ -27,7 +27,7 @@ export default function CartPage() {
             </Link>
             <h1>Your Cart</h1>
             <p>
-              Save the Windows Guardian offer, separate lifetime membership, or a sponsor contribution for later. Checkout is disabled: no order, payment, license, or first-100 position is created. Guardian already includes lifetime POPS Membership. Android and iOS are not cart products.
+              Save the POPS Desktop for Windows offer, separate lifetime membership, or a sponsor contribution for later. Checkout is disabled: no order, payment, license, or first-100 position is created. POPS Desktop already includes lifetime POPS Membership. Android and iOS are not cart products.
             </p>
           </div>
 
@@ -37,7 +37,7 @@ export default function CartPage() {
             <div className="commerce-empty">
               <ShoppingBag size={42} />
               <h2>Your cart is empty.</h2>
-              <p>Choose the Windows Guardian offer, POPS Membership, or a Windows access sponsorship to save a selection.</p>
+              <p>Choose the POPS Desktop for Windows offer, POPS Membership, or a Windows access sponsorship to save a selection.</p>
               <Link to="/access" className="btn btn-primary">Choose POPS Access</Link>
             </div>
           ) : (
@@ -113,7 +113,7 @@ export default function CartPage() {
                 <Link to="/checkout" className="btn btn-primary summary-button">
                   Checkout availability
                 </Link>
-                <p>Checkout is disabled; no payment is collected. Guardian is the $99 one-time Windows offer and includes membership. Membership is not an application license. Sponsorship is a contribution toward approved Windows access, not a license. Quantity represents $25 multiples, not a custom amount.</p>
+                <p>Checkout is disabled; no payment is collected. POPS Desktop is the $99 one-time Windows offer and includes membership. Membership is not an application license. Sponsorship is a contribution toward approved Windows access, not a license. Quantity represents $25 multiples, not a custom amount.</p>
               </aside>
             </div>
           )}
