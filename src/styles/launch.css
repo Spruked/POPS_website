@@ -115,3 +115,11 @@
 }
 @media(max-width:600px) { .customer-fields-grid { grid-template-columns: 1fr; } .customer-fieldset { padding: 12px; } }
 @media(max-width: 800px) { .launch-grid { grid-template-columns: 1fr; } .launch-page { padding-top: 128px; } .launch-form { padding: 20px; } .launch-intro h1 { font-size: 38px; } .launch-lede { font-size: 17px; } .launch-section { margin-top: 40px; } .launch-section .hero-actions { flex-direction: column; align-items: stretch; } .home-overview-feature { grid-template-columns: 1fr; gap: 22px; margin: 24px auto 34px; } }
+
+/* Missouri court forms page */
+.mo-forms-list, .mo-forms-paths { list-style: none; padding-left: 0 !important; }
+.mo-forms-list li { padding: 14px 0; border-bottom: 1px solid rgba(183, 197, 216, .12); margin-top: 0 !important; }
+.mo-forms-list li strong, .mo-forms-list li strong a { color: #e8edf5; }
+.mo-forms-paths li { margin-top: 10px !important; }
+.mo-forms-paths a, .mo-forms-list a { color: #f2c46d; text-decoration-color: rgba(242, 196, 109, .45); }
+.mo-forms-note { font-size: 14px; margin-top: 28px !important; opacity: .8; }

@@ -9,6 +9,7 @@ import DownloadPage from "./pages/DownloadPage";
 import CartPage from "./pages/CartPage";
 import CheckoutPage from "./pages/CheckoutPage";
 import CounselHandoffPage from "./pages/CounselHandoffPage";
+import MissouriFormsPage from "./pages/MissouriFormsPage";
 import EventsPage from "./pages/EventsPage";
 import AccountPortalPage from "./pages/AccountPortalPage";
 import DeclarationPage from "./pages/DeclarationPage";
@@ -53,6 +54,7 @@ function App() {
           <Route path="/checkout" element={<CheckoutPage />} />
           <Route path="/attorney-referral" element={<NotedAttorneysPage />} />
           <Route path="/counsel-handoff" element={<CounselHandoffPage />} />
+          <Route path="/missouri-forms" element={<MissouriFormsPage />} />
           <Route path="/events" element={<EventsPage />} />
           <Route path="/account" element={<AccountPortalPage />} />
           <Route path="/account/verify" element={<AccountPortalPage />} />
