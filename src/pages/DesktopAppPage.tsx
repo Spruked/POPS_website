@@ -4,15 +4,15 @@ import { ContentSection as Section, LaunchLinks, LaunchPage, StatusNote } from "
 export default function DesktopAppPage() {
   return (
     <LaunchPage
-      title="POPS Guardian for Windows | $99 Desktop Application"
-      description="POPS Guardian is the published $99 one-time Windows desktop offer with lifetime POPS Membership included. Checkout and app delivery remain disabled."
+      title="POPS Desktop for Windows | $99 Desktop Application"
+      description="POPS Desktop is the published $99 one-time Windows desktop offer with lifetime POPS Membership included. Checkout and app delivery remain disabled."
       path="/desktop-app"
-      eyebrow="POPS Guardian · Windows Desktop"
+      eyebrow="POPS Desktop · Windows Desktop"
       heading="A clearer record of parental involvement."
-      intro="POPS Guardian is a Windows application designed to organize parenting-time notes, supporting material, and a chronological history for personal review and appropriate professional discussions."
+      intro="POPS Desktop is a Windows application designed to organize parenting-time notes, supporting material, and a chronological history for personal review and appropriate professional discussions."
     >
       <StatusNote>
-        The website and its fictional browser demonstration are separate from the downloadable Windows application. No Guardian installer is currently provided here, and checkout is disabled while release, license, and delivery details are finalized.
+        The website and its fictional browser demonstration are separate from the downloadable Windows application. No POPS Desktop installer is currently provided here, and checkout is disabled while release, license, and delivery details are finalized.
       </StatusNote>
 
       <Section id="windows-benefits" title="Keep the details together">
@@ -37,7 +37,7 @@ export default function DesktopAppPage() {
       <Section id="windows-offer" title="The published Windows offer">
         <div className="launch-card">
           <div className="launch-price">$99.00 one time</div>
-          <p>Guardian Access is a Windows application license with lifetime POPS Membership included. Membership alone is not an application license, and Guardian buyers should not add membership separately.</p>
+          <p>POPS Desktop Access is a Windows application license with lifetime POPS Membership included. Membership alone is not an application license, and POPS Desktop buyers should not add membership separately.</p>
           <p>Checkout is unavailable, so saving a cart selection does not create an order or license. Installer delivery, activation, refund terms, and final release details must be confirmed before purchases open.</p>
           <div className="hero-actions">
             <Link className="btn btn-primary" to="/access">Review access options</Link>
