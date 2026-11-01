@@ -31,7 +31,7 @@ export default function HomePage() {
     <div>
       <PageSeo
         title="POPS | Proof of Presence System for Fathers"
-        description="POPS helps fathers organize records of parenting-time involvement. Explore the Windows Guardian app, Android Google Play testing, and planned iOS application."
+        description="POPS helps fathers organize records of parenting-time involvement. Explore the POPS Desktop for Windows app, Android Google Play testing, and planned iOS application."
         path="/"
       />
 
@@ -50,7 +50,7 @@ export default function HomePage() {
           </h1>
 
           <p className="hero-subtitle">
-            POPS helps fathers organize records of parenting-time involvement: event notes, supporting material, and a chronological history for personal review and appropriate professional discussions. Windows Guardian is the published $99 one-time desktop offer. Android is progressing through Google Play testing; iOS is planned.
+            POPS helps fathers organize records of parenting-time involvement: event notes, supporting material, and a chronological history for personal review and appropriate professional discussions. POPS Desktop for Windows is the published $99 one-time desktop offer. Android is progressing through Google Play testing; iOS is planned.
           </p>
 
           <div className="hero-actions">
@@ -113,9 +113,9 @@ export default function HomePage() {
           <div className="launch-grid">
             <article className="launch-card">
               <span className="mono">Windows Desktop · Published offer</span>
-              <h3>POPS Guardian</h3>
+              <h3>POPS Desktop</h3>
               <p>The downloadable desktop application is offered for $99 one time, with lifetime POPS Membership included. The current website is not the installer; checkout and delivery remain disabled.</p>
-              <Link to="/desktop-app" className="btn btn-primary">Explore Windows Guardian</Link>
+              <Link to="/desktop-app" className="btn btn-primary">Explore POPS Desktop for Windows</Link>
             </article>
             <article className="launch-card" id="home-android-status">
               <span className="mono">Android · Google Play testing</span>
@@ -138,7 +138,7 @@ export default function HomePage() {
           <p>A missed exchange is more than a date on a calendar. There may be an unanswered message, a receipt from the trip, a photo, or a note about what you personally observed. When those pieces stay scattered, preparing for a conversation means searching again and relying on memory.</p>
           <p>P.O.P.S. — Proof of Presence System — helps organize a parent’s record of involvement: record an event, preserve supporting material, and review a chronological history in context. It helps prepare documentation for appropriate review; it does not prove a disputed event or guarantee a custody or court outcome.</p>
           <div className="launch-grid">
-            <div className="launch-card"><h3>Organize involvement</h3><p>Bring dates, event notes, people, and relevant context together for a clearer personal review.</p><Link to="/desktop-app">Explore Windows Guardian</Link></div>
+            <div className="launch-card"><h3>Organize involvement</h3><p>Bring dates, event notes, people, and relevant context together for a clearer personal review.</p><Link to="/desktop-app">Explore POPS Desktop for Windows</Link></div>
             <div className="launch-card"><h3>Keep supporting material connected</h3><p>Associate files with the records they relate to and review them in chronological context. The product does not independently verify what a file or note says.</p><Link to="/how-you-use-it">See the documented workflow</Link></div>
             <div className="launch-card"><h3>See the practical steps</h3><p>Follow a fictional missed exchange from an event note through supporting files and a chronology. Representative examples are labeled; actual release captures are still needed.</p><Link to="/how-you-use-it">Follow the record-building workflow</Link></div>
           </div>
@@ -153,7 +153,7 @@ export default function HomePage() {
           <p>The software organizes what you supply. It does not independently establish that an event occurred or decide whether a court order was violated. File integrity checks support the record; they do not guarantee admissibility or a legal result.</p>
         </ContentSection>
         <ContentSection id="home-participate" title="Choose how you take part.">
-          <p>Guardian Access is the published $99 one-time Windows desktop license and includes lifetime POPS Membership. Open Door is personally reviewed financial assistance for the Windows offer; sponsor contributions can support that Windows access. Neither route currently issues Android or iOS access. Checkout is unavailable, and saving a cart selection does not place an order.</p>
+          <p>POPS Desktop Access is the published $99 one-time Windows desktop license and includes lifetime POPS Membership. Open Door is personally reviewed financial assistance for the Windows offer; sponsor contributions can support that Windows access. Neither route currently issues Android or iOS access. Checkout is unavailable, and saving a cart selection does not place an order.</p>
           <StatusNote>We are seeking interest toward 50 active beta participants. The founding-customer program targets the first 100 qualifying paying customers, with special benefits still awaiting approval. Neither a signup nor a saved cart reserves paid-customer status.</StatusNote>
           <LaunchLinks/>
         </ContentSection>
