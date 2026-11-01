@@ -36,7 +36,7 @@ export default function TermsPage() {
             <p>POPS branding, software, and website content are protected intellectual property owned by POPS.</p>
 
             <h3>7. Disclaimer</h3>
-            <p>POPS does not guarantee legal outcomes or admissibility in court.</p>
+            <p>POPS is a recordkeeping and information-organization application, not a law firm or legal representative. It does not provide legal advice, determine the truth of disputed events, or make legal findings. The value, acceptance, and admissibility of any record or supporting material depend on the circumstances, applicable law, and decisions of the relevant legal professionals and authorities. No particular legal result is guaranteed. Users are responsible for lawful collection, factual accuracy, careful review, and appropriate use of their records.</p>
 
             <h3>8. Limitation of Liability</h3>
             <p>To the maximum extent allowed by law, POPS is not liable for indirect, incidental, or consequential damages.</p>
