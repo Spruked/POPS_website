@@ -1,5 +1,4 @@
 import { useCallback, useEffect, useRef, useState } from "react";
-import { Volume2 } from "lucide-react";
 import { useLocation, useNavigate } from "react-router-dom";
 import {
   sendWebsiteOrbAudio,
