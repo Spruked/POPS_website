@@ -27,7 +27,7 @@ export default function DownloadPage() {
       intro="We’re proud to introduce a practical way to bring parenting-time records together. Explore the Windows application, discover our Android testing program, and see what’s planned for iPhone."
     >
       <StatusNote>
-        Explore POPS for Windows, see the demonstration, and review the current release path. Purchases and installer delivery will open after final release preparation. Android and iOS follow separate release plans.
+        Explore POPS for Windows, see the demonstration, and review the current release path. Purchases and installer delivery will open after final release preparation. The completed Android app is included with a desktop purchase as soon as Google Play testing is complete. iOS remains planned.
       </StatusNote>
 
       <section id="platforms" className="launch-section" aria-labelledby="platforms-title">
@@ -43,8 +43,8 @@ export default function DownloadPage() {
           <article className="launch-card">
             <span className="mono">Android · Google Play testing</span>
             <h3>POPS Android</h3>
-            <p>POPS Android is in Google Play testing. Join the testing interest list to follow its path toward public release.</p>
-            <p>Windows purchase, Open Door assistance, and sponsor funding do not grant Android access.</p>
+            <p>We’re proud to share that POPS Android is finished and completing Google Play testing. It will be included with your POPS desktop purchase once testing is complete.</p>
+            <p>A POPS desktop purchase includes Android access when Google Play testing is completed. Android distribution will follow the approved Google Play release.</p>
             <Link className="btn btn-primary" to="/android">Android product status</Link>
           </article>
           <article className="launch-card">
@@ -57,13 +57,13 @@ export default function DownloadPage() {
 
       <section id="access-options" className="launch-section" data-orb-target="pops.access.options" aria-labelledby="access-options-title">
         <h2 id="access-options-title">Choose Your Path to P.O.P.S. for Windows</h2>
-        <p>Explore Windows desktop access and support programs below. Android and iOS have their own release plans.</p>
+        <p>Explore POPS desktop access and support programs below. Your desktop purchase will include Android once Google Play testing is complete; iOS remains planned.</p>
         <div className="launch-grid">
           <article id="guardian-access" className="launch-card" data-orb-target={targets.guardian}>
             <span className="mono">Standard purchase</span>
             <h3>POPS Desktop Access</h3>
             <div className="launch-price">$99.00 one time</div>
-            <p>A one-time Windows desktop license with lifetime POPS Membership included. No mandatory recurring subscription is published for this offer.</p>
+            <p>A one-time Windows desktop license with lifetime POPS Membership and the completed Android app included when Google Play testing is finished. No mandatory recurring subscription is published for this offer.</p>
             <p>Windows purchase and delivery will open with verified release details, license terms, and installation instructions.</p>
             <button className="btn btn-primary" onClick={() => { addItem(guardian); navigate('/cart'); }}>
               Save Windows offer to cart
