@@ -103,9 +103,6 @@ export default function Layout({ children }: LayoutProps) {
       </nav>
 
       <div className="site-frame">
-        <aside className="site-secondary" aria-labelledby="site-navigation-title">
-          <div className="site-secondary-inner"><h2 id="site-navigation-title">Explore P.O.P.S.</h2><p>Our purpose, your next steps.</p><nav aria-label="Site navigation">{secondaryLinks.map(([href,label])=><Link key={href} to={href} aria-current={location.pathname===href?'page':undefined}>{label}</Link>)}</nav></div>
-        </aside>
         <main id="site-main-content" key={location.pathname} className="animate-in">{children}</main>
       </div>
 
@@ -120,22 +117,10 @@ export default function Layout({ children }: LayoutProps) {
           </div>
           <div className="footer-links">
             <Link to="/">Landing</Link>
-            <Link to="/about">About</Link>
             <Link to="/see-pops-in-action">See POPS in Action</Link>
-            <Link to="/declaration">Declaration</Link>
-            <Link to="/pledge">Pledge</Link>
-            <Link to="/lexicon">Lexicon</Link>
             <Link to="/access">Access</Link>
             <Link to="/account">Account</Link>
             <Link to="/cart">Cart</Link>
-            <Link to="/events">Events</Link>
-            <Link to="/counsel-handoff">Counsel Handoff</Link>
-            <Link to="/attorney-referral">Noted Counsel</Link>
-            <Link to="/privacy">Privacy</Link>
-            <Link to="/terms">Terms</Link>
-            <Link to="/policies-procedures">Policies &amp; Procedures</Link>
-            <Link to="/missouri-fathers-rights">Missouri custody law</Link>
-            <Link to="/missouri-fathers-rights/paternity-enforcement">Missouri paternity &amp; enforcement</Link>
           </div>
           <div className="footer-network" aria-label="Spruked network">
             <a href="https://spruked.com/" target="_blank" rel="noopener">Spruked</a>
@@ -147,6 +132,10 @@ export default function Layout({ children }: LayoutProps) {
             Copyright 2026 Proof of Presence System. Pro Prime Series AI. All rights reserved.
           </div>
         </div>
+        <nav className="footer-secondary-nav" aria-label="Explore P.O.P.S.">
+          <h2>Explore P.O.P.S.</h2>
+          <div>{secondaryLinks.map(([href,label])=><Link key={href} to={href} aria-current={location.pathname===href?'page':undefined}>{label}</Link>)}</div>
+        </nav>
       </footer>
     </div>
   );

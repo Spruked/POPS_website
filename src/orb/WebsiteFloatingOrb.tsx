@@ -857,6 +857,11 @@ export default function WebsiteFloatingOrb() {
           <img className="website-orb-skin" src={ORB_SKIN_SRC} alt="" aria-hidden="true" draggable={false} />
           <span className="website-orb-eye-ring" aria-hidden="true" />
         </span>
+        <span className="website-orb-ring" aria-hidden="true">
+          <span className="website-orb-node website-orb-node-a" />
+          <span className="website-orb-node website-orb-node-b" />
+          <span className="website-orb-node website-orb-node-c" />
+        </span>
       </button>
 
       {speechText && (
