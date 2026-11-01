@@ -120,7 +120,7 @@ export default function HomePage() {
             <article className="launch-card" id="home-android-status">
               <span className="mono">Android · Google Play testing</span>
               <h3>POPS Android</h3>
-              <p>POPS Android is advancing through Google Play testing. Join the testing community and help shape the mobile experience.</p>
+              <p>We’re excited to announce that the POPS Android app is complete and in Google Play testing. Once testing is finished, Android access will be included with your POPS desktop purchase.</p>
               <Link to="/android" className="btn btn-primary">See Android status</Link>
             </article>
             <article className="launch-card">
@@ -153,7 +153,7 @@ export default function HomePage() {
           <p>POPS helps organize the evidence and context you provide. Legal conclusions and court decisions remain with the appropriate professionals and authorities.</p>
         </ContentSection>
         <ContentSection id="home-participate" title="We’d Love for You to Be Part of P.O.P.S.">
-          <p>POPS Desktop Access is the published $99 one-time Windows desktop license and includes lifetime POPS Membership. Open Door is personally reviewed financial assistance for the Windows offer; sponsor contributions can support that Windows access. Neither route currently issues Android or iOS access. Purchase and fulfillment options will open with the verified release. Until then, you can explore the offers and save a selection for reference.</p>
+          <p>POPS Desktop Access is the published $99 one-time Windows desktop license and includes lifetime POPS Membership and the Android app upon completion of Google Play testing. Open Door is personally reviewed financial assistance for the Windows offer; sponsor contributions can support that Windows access. The desktop purchase includes the completed Android app once Google Play testing is complete. iOS remains a separate future release. Purchase and fulfillment options will open with the verified release. Until then, you can explore the offers and save a selection for reference.</p>
           <StatusNote>We are seeking interest toward 50 active beta participants. The founding-customer program targets the first 100 qualifying paying customers, with special benefits still awaiting approval. Neither a signup nor a saved cart reserves paid-customer status.</StatusNote>
           <LaunchLinks/>
         </ContentSection>
