@@ -109,6 +109,7 @@ export default function WebsiteFloatingOrb() {
   const cursorPingKeyRef = useRef(0);
   const cursorPingAtRef = useRef(0);
   const cursorPingTimeoutRef = useRef<number | null>(null);
+  const cursorNudgeRef = useRef({ x: 0, y: 0 });
   const coreRef = useRef<HTMLButtonElement | null>(null);
   const positionRef = useRef(position);
   const orbSizeRef = useRef(orbSize);
@@ -618,7 +619,7 @@ export default function WebsiteFloatingOrb() {
       const size=orbSizeRef.current,current=positionRef.current;
       const distance=Math.hypot(event.clientX-(current.x+size/2),event.clientY-(current.y+size/2));
       const now=performance.now();
-      if(distance<size*1.35&&now-cursorPingAtRef.current>1100){
+      if(distance<size*1.75&&now-cursorPingAtRef.current>750){
         cursorPingAtRef.current=now;
         setCursorPing({x:event.clientX,y:event.clientY,key:++cursorPingKeyRef.current});
         if(cursorPingTimeoutRef.current!==null)window.clearTimeout(cursorPingTimeoutRef.current);
@@ -710,30 +711,30 @@ export default function WebsiteFloatingOrb() {
             y: (targetDy / targetDistance) * desiredSpeed,
           }
         : { x: 0, y: 0 };
-      const repelRadius = size * 1.15;
-      const repelStrength = cursorDistance < repelRadius
-        ? ((repelRadius - cursorDistance) / repelRadius) * 14
-        : 0;
-      const repelVelocity = repelStrength
+      const nudgeRadius = size * 1.15;
+      const nudgeAmount = cursorDistance < nudgeRadius ? 1 - cursorDistance / nudgeRadius : 0;
+      const nudgeTarget = nudgeAmount > 0
         ? {
-            x: (cursorDx / Math.max(cursorDistance, 1)) * repelStrength,
-            y: (cursorDy / Math.max(cursorDistance, 1)) * repelStrength,
+            x: ((cursorDx || 1) / Math.max(cursorDistance, 1)) * nudgeAmount * 6,
+            y: (cursorDy / Math.max(cursorDistance, 1)) * nudgeAmount * 6,
           }
         : { x: 0, y: 0 };
-      const intentVelocity = {
-        x: desiredVelocity.x + repelVelocity.x,
-        y: desiredVelocity.y + repelVelocity.y,
+      const nudgeEase = clamp(dt * 7, 0, 0.24);
+      const nextNudge = {
+        x: cursorNudgeRef.current.x + (nudgeTarget.x - cursorNudgeRef.current.x) * nudgeEase,
+        y: cursorNudgeRef.current.y + (nudgeTarget.y - cursorNudgeRef.current.y) * nudgeEase,
       };
-      const acceleration = guideTarget ? 4.2 : isAddressed ? 5.5 : repelStrength ? 1.8 : 1.15;
-      const drag = isAddressed ? 0.86 : repelStrength ? 0.9 : 0.992;
+      const acceleration = guideTarget ? 4.2 : isAddressed ? 5.5 : 1.15;
+      const drag = isAddressed ? 0.86 : 0.992;
       const nextVelocity = {
-        x: (velocity.x + (intentVelocity.x - velocity.x) * acceleration * dt) * drag,
-        y: (velocity.y + (intentVelocity.y - velocity.y) * acceleration * dt) * drag,
+        x: (velocity.x + (desiredVelocity.x - velocity.x) * acceleration * dt) * drag,
+        y: (velocity.y + (desiredVelocity.y - velocity.y) * acceleration * dt) * drag,
       };
       const next = {
-        x: clamp(current.x + nextVelocity.x * dt, 18, window.innerWidth - size - 18),
-        y: clamp(current.y + nextVelocity.y * dt, 92, window.innerHeight - size - 18),
+        x: clamp(current.x + nextVelocity.x * dt + nextNudge.x - cursorNudgeRef.current.x, 18, window.innerWidth - size - 18),
+        y: clamp(current.y + nextVelocity.y * dt + nextNudge.y - cursorNudgeRef.current.y, 92, window.innerHeight - size - 18),
       };
+      cursorNudgeRef.current = nextNudge;
       velocityRef.current = nextVelocity;
       const speed = Math.hypot(nextVelocity.x, nextVelocity.y);
       const trailStrength = clamp((speed - 24) / 120, 0, 0.1);

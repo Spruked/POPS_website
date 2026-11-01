@@ -348,25 +348,35 @@
 .website-orb-cursor-ping {
   position: fixed;
   z-index: 1201;
-  width: 10px;
-  height: 10px;
-  border: 1px solid rgba(119, 232, 255, .9);
+  width: 18px;
+  height: 18px;
+  border: 2px solid rgba(164, 242, 255, 1);
   border-radius: 50%;
-  box-shadow: 0 0 12px rgba(65, 205, 255, .55);
+  background: rgba(80, 211, 255, .18);
+  box-shadow: 0 0 18px rgba(65, 205, 255, .9), inset 0 0 8px rgba(65, 205, 255, .42);
   pointer-events: none;
   transform: translate(-50%, -50%);
-  animation: website-orb-cursor-ping 820ms ease-out both;
+  animation: website-orb-cursor-ping 760ms cubic-bezier(.16,.72,.25,1) both;
 }
 
 .website-orb-target-ring {
   position: fixed;
-  border: 2px solid rgba(251, 191, 36, 0.94);
+  border: 3px solid rgba(255, 204, 72, 1);
   border-radius: 8px;
   box-shadow:
-    0 0 0 9999px rgba(7, 10, 15, 0.18),
-    0 0 34px rgba(251, 191, 36, 0.42),
-    inset 0 0 20px rgba(251, 191, 36, 0.16);
-  animation: website-orb-target-ping 1.18s ease-out 2;
+    0 0 22px rgba(255, 184, 45, 0.72),
+    inset 0 0 18px rgba(255, 184, 45, 0.2);
+  animation: website-orb-target-ping 900ms ease-out 2;
+}
+
+.website-orb-target-ring::after {
+  content: "";
+  position: absolute;
+  inset: -8px;
+  border: 2px solid rgba(255, 219, 121, .8);
+  border-radius: 12px;
+  pointer-events: none;
+  animation: website-orb-target-ring-pulse 900ms ease-out 2;
 }
 
 @keyframes website-orb-breathe {
@@ -467,13 +477,19 @@
 }
 
 @keyframes website-orb-target-ping {
-  0% { outline: 0 solid rgba(251, 191, 36, 0.62); }
-  100% { outline: 18px solid rgba(251, 191, 36, 0); }
+  0% { outline: 0 solid rgba(255, 184, 45, .8); }
+  100% { outline: 20px solid rgba(255, 184, 45, 0); }
+}
+
+@keyframes website-orb-target-ring-pulse {
+  0% { opacity: .95; transform: scale(.96); }
+  100% { opacity: 0; transform: scale(1.08); }
 }
 
 @keyframes website-orb-cursor-ping {
-  0% { opacity: .95; transform: translate(-50%, -50%) scale(.35); }
-  100% { opacity: 0; transform: translate(-50%, -50%) scale(4.2); }
+  0% { opacity: 1; transform: translate(-50%, -50%) scale(.45); }
+  70% { opacity: .82; }
+  100% { opacity: 0; transform: translate(-50%, -50%) scale(3.4); }
 }
 
 @media (max-width: 720px) {
