@@ -5,14 +5,14 @@ export default function DesktopAppPage() {
   return (
     <LaunchPage
       title="POPS Desktop for Windows | $99 Desktop Application"
-      description="POPS Desktop is the published $99 one-time Windows desktop offer with lifetime POPS Membership included. Checkout and app delivery remain disabled."
+      description="Organize parenting-time records with POPS Desktop for Windows. Explore the one-time license and release information."
       path="/desktop-app"
       eyebrow="POPS Desktop · Windows Desktop"
       heading="A clearer record of parental involvement."
       intro="POPS Desktop is a Windows application designed to organize parenting-time notes, supporting material, and a chronological history for personal review and appropriate professional discussions."
     >
       <StatusNote>
-        The website and its fictional browser demonstration are separate from the downloadable Windows application. No POPS Desktop installer is currently provided here, and checkout is disabled while release, license, and delivery details are finalized.
+        Explore the guided demonstration now. Official Windows download and purchase options will follow the verified release.
       </StatusNote>
 
       <Section id="windows-benefits" title="Keep the details together">
@@ -30,15 +30,15 @@ export default function DesktopAppPage() {
             <p>Use an organized history as a starting point for personal review or discussion with counsel.</p>
           </article>
         </div>
-        <p>POPS organizes information a parent records. It does not independently prove a disputed event, provide legal advice, or guarantee a custody outcome. Specific file handling and report features depend on the verified release.</p>
-        <Link to="/how-you-use-it">See a fictional five-step example</Link>
+        <p>POPS brings your records into a clearer history for personal review and conversations with counsel. It supports factual organization rather than making legal determinations. Available workflows are described in each release.</p>
+        <Link to="/how-you-use-it">Explore a five-step demonstration</Link>
       </Section>
 
       <Section id="windows-offer" title="The published Windows offer">
         <div className="launch-card">
           <div className="launch-price">$99.00 one time</div>
           <p>POPS Desktop Access is a Windows application license with lifetime POPS Membership included. Membership alone is not an application license, and POPS Desktop buyers should not add membership separately.</p>
-          <p>Checkout is unavailable, so saving a cart selection does not create an order or license. Installer delivery, activation, refund terms, and final release details must be confirmed before purchases open.</p>
+          <p>Purchasing will open with verified installation, activation, licensing, and refund information. You can explore the application and save the published offer for reference in the meantime.</p>
           <div className="hero-actions">
             <Link className="btn btn-primary" to="/access">Review access options</Link>
             <Link className="btn btn-ghost" to="/faq">Read buying FAQs</Link>
@@ -46,9 +46,9 @@ export default function DesktopAppPage() {
         </div>
       </Section>
 
-      <Section id="windows-privacy" title="Your private entries stay outside website tracking">
-        <p>POPS does not track users’ private documentation entries. Website accounts and forms are separate from records in the Windows application.</p>
-        <p>Do not assume encryption, automatic backup, or cloud synchronization; confirm storage and recovery behavior for the specific release.</p>
+      <Section id="windows-privacy" title="Private records, in your control">
+        <p>Your personal case documentation belongs in your local POPS workspace, separate from website accounts and general forms.</p>
+        <p>See the release notes for supported security, backup, and recovery features.</p>
         <div className="hero-actions">
           <Link className="btn btn-ghost" to="/privacy">Read the privacy notice</Link>
           <Link className="btn btn-ghost" to="/installation">Installation preparation</Link>
@@ -56,7 +56,7 @@ export default function DesktopAppPage() {
       </Section>
 
       <Section id="other-platforms" title="Other POPS platforms">
-        <p>Android is progressing through Google Play testing and is not publicly available or ready to purchase. iOS is planned. Neither platform is included with the Windows license.</p>
+        <p>POPS Android is in Google Play testing, and an iPhone edition is planned. Each platform will have its own published release and access details.</p>
         <Link to="/access#platforms">See platform release status</Link>
       </Section>
       <LaunchLinks />
