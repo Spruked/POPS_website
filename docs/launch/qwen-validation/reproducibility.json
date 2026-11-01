@@ -1,0 +1,23 @@
+{
+  "status": "passed",
+  "checkedAtUtc": "2026-10-22T12:20:53.589263+00:00",
+  "repository": "https://github.com/Spruked/POPS_website",
+  "branch": "dev/pops-demo-launch-20261022",
+  "testedSourceCommit": "1726618f903010e483a52d4b8ce50cdb4b66ac27",
+  "freshCloneFromGitHub": true,
+  "submoduleInitialization": false,
+  "checks": [
+    "npm ci and TypeScript/Vite production build",
+    "84 unchanged original imported files tracked as ordinary source",
+    "31 preserved original files and 6 authorized integration hashes",
+    "14 backend tests against clone source with existing dependency environment",
+    "Nine built assets match production-tested hashes",
+    "Local llama health and installed Qwen API remain available"
+  ],
+  "liveSpeechEvidence": "results.json; actual Qwen WAV playback, explicit fallback/outage simulation",
+  "limits": [
+    "Actual Windows reboot is untested.",
+    "TTS has no new Windows boot task or service.",
+    "Existing two moderate React Router findings remain documented separately."
+  ]
+}

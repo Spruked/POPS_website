@@ -1,0 +1,13 @@
+{
+  "job_type": "POINTER_RECOVERY",
+  "config": {
+    "crawl_job_id": "30",
+    "trigger": "crawl_completed",
+    "render_passes": 2,
+    "batch_size": 8,
+    "resumable": true,
+    "automatic_attempt": 1,
+    "automatic_attempts_maximum": 1
+  },
+  "source_job_id": null
+}

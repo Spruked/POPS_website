@@ -1,0 +1,11 @@
+{
+  "batch": 3,
+  "routes": [
+    "/pledge",
+    "/about"
+  ],
+  "status": "complete",
+  "resumed": false,
+  "error": null,
+  "completed_at": "2026-10-31T14:59:01.074834+00:00"
+}

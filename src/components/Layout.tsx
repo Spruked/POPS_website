@@ -71,6 +71,7 @@ export default function Layout({ children }: LayoutProps) {
             <Link to="/" className="nav-link" aria-current={location.pathname==='/'?'page':undefined}>Home</Link>
             <Link to="/desktop-app" className="nav-link" aria-current={location.pathname==='/desktop-app'?'page':undefined}>Windows</Link>
             <Link to="/android" className="nav-link" aria-current={location.pathname==='/android'?'page':undefined}>Android</Link>
+            <Link to="/access#platforms" className="nav-link">iOS (planned)</Link>
             <Link to="/product-demo" className="nav-link" aria-current={location.pathname==='/product-demo'?'page':undefined}>Demo</Link>
             <Link to="/beta" className="nav-link" aria-current={location.pathname==='/beta'?'page':undefined}>Beta</Link>
             <Link to="/access" className="nav-link" data-orb-target="pops.nav.access" aria-current={location.pathname==='/access'?'page':undefined}>Pricing</Link>
@@ -108,7 +109,7 @@ export default function Layout({ children }: LayoutProps) {
       </div>
 
       <footer className="footer">
-        <div className="container"><nav className="launch-links" aria-label="Products, participation and help"><Link to="/desktop-app">Windows</Link><Link to="/android">Android</Link><Link to="/beta">Beta program</Link><Link to="/early-adopters">Early adopters</Link><Link to="/installation">Installation</Link><Link to="/faq">FAQs</Link><Link to="/support">Contact & privacy support</Link></nav></div>
+        <div className="container"><nav className="launch-links" aria-label="Products, participation and help"><Link to="/desktop-app">Windows</Link><Link to="/android">Android testing</Link><Link to="/access#platforms">iOS (planned)</Link><Link to="/beta">Beta program</Link><Link to="/early-adopters">Early adopters</Link><Link to="/installation">Installation</Link><Link to="/faq">FAQs</Link><Link to="/support">Contact & privacy support</Link></nav></div>
         <div className="footer-inner">
           <div className="footer-brand">
             <img src="/popsbadge.png" alt="POPS badge" className="footer-badge" />

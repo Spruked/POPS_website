@@ -31,7 +31,7 @@ export default function HomePage() {
     <div>
       <PageSeo
         title="POPS | Proof of Presence System for Fathers"
-        description="Explore P.O.P.S. Windows software for fathers organizing parenting-time notes, supporting files, and timelines. Learn about Android plans, beta testing, and access."
+        description="POPS helps fathers organize records of parenting-time involvement. Explore the Windows Guardian app, Android Google Play testing, and planned iOS application."
         path="/"
       />
 
@@ -50,7 +50,7 @@ export default function HomePage() {
           </h1>
 
           <p className="hero-subtitle">
-            Installable Windows software for fathers documenting parenting-time experiences. Bring event notes, supporting files, and a chronological record together for personal review and discussions with counsel.
+            POPS helps fathers organize records of parenting-time involvement: event notes, supporting material, and a chronological history for personal review and appropriate professional discussions. Windows Guardian is the published $99 one-time desktop offer. Android is progressing through Google Play testing; iOS is planned.
           </p>
 
           <div className="hero-actions">
@@ -76,42 +76,84 @@ export default function HomePage() {
         </div>
       </section>
 
+      <section id="home-beta-opportunity" className="home-overview-feature container" aria-labelledby="home-beta-opportunity-title">
+        <figure className="home-overview-video">
+          <video
+            controls
+            playsInline
+            preload="metadata"
+            poster="/media/pops-narrated-overview.jpg"
+            aria-label="POPS beta and Android tester invitation"
+            aria-describedby="home-overview-caption"
+            width={1920}
+            height={1080}
+          >
+            <source src="/media/pops-narrated-overview.mp4" type="video/mp4" />
+            Your browser does not support embedded video. <a href="/media/pops-narrated-overview.mp4">Watch the narrated overview</a>.
+          </video>
+          <figcaption id="home-overview-caption">Beta and Android tester invitation · Press Play to begin.</figcaption>
+        </figure>
+        <div className="home-overview-copy">
+          <span className="mono">Android testing · Beta recruitment</span>
+          <h2 id="home-beta-opportunity-title">Be Part of the Beginning</h2>
+          <h3>Help Us Bring P.O.P.S. to Life</h3>
+          <p>We're inviting <strong>20 Android testers and up to 50 beta testers</strong> to help us evaluate, refine, and prepare P.O.P.S. for its wider release.</p>
+          <p>Your participation is an opportunity to experience the system firsthand, provide meaningful feedback, and help shape a product built to make a difference for parents and families.</p>
+          <p><strong>Watch the video to learn about the opportunity and how you can get involved.</strong></p>
+        </div>
+      </section>
+
+      <section className="section section-alt" aria-labelledby="home-app-family-title">
+        <div className="container">
+          <div className="section-header">
+            <span className="mono">The POPS Application Family</span>
+            <h2 id="home-app-family-title">Three platforms. Clear release status.</h2>
+            <p>The website explains POPS and offers a fictional browser demonstration. It is separate from the installable Windows application and does not contain your private Evidence Vault.</p>
+          </div>
+          <div className="launch-grid">
+            <article className="launch-card">
+              <span className="mono">Windows Desktop · Published offer</span>
+              <h3>POPS Guardian</h3>
+              <p>The downloadable desktop application is offered for $99 one time, with lifetime POPS Membership included. The current website is not the installer; checkout and delivery remain disabled.</p>
+              <Link to="/desktop-app" className="btn btn-primary">Explore Windows Guardian</Link>
+            </article>
+            <article className="launch-card" id="home-android-status">
+              <span className="mono">Android · Google Play testing</span>
+              <h3>POPS Android</h3>
+              <p>The mobile companion is progressing through Google Play testing. It is not publicly available, approved for production, or ready to purchase. No public Play Store listing or price is offered here.</p>
+              <Link to="/android" className="btn btn-primary">See Android status</Link>
+            </article>
+            <article className="launch-card">
+              <span className="mono">iOS · Planned</span>
+              <h3>POPS for iPhone</h3>
+              <p>An iOS application is planned. It is not available for download or purchase, and no release date, price, or license inclusion has been announced.</p>
+              <Link to="/access#platforms" className="btn btn-ghost">View platform plans</Link>
+            </article>
+          </div>
+        </div>
+      </section>
+
       <div className="launch-home"><div className="container">
-        <ContentSection id="home-narrated-overview" title="Why P.O.P.S. Exists">
-          <p>Watch how the Proof of Presence System helps bring structure to your records.</p>
-          <figure className="home-overview-video">
-            <video
-              controls
-              autoPlay
-              playsInline
-              preload="metadata"
-              poster="/media/pops-narrated-overview.jpg"
-              aria-label="Why P.O.P.S. Exists — narrated overview"
-              aria-describedby="home-overview-caption"
-              width={1920}
-              height={1080}
-            >
-              <source src="/media/pops-narrated-overview.mp4" type="video/mp4" />
-              Your browser does not support embedded video. <a href="/media/pops-narrated-overview.mp4">Watch the narrated overview</a>.
-            </video>
-            <figcaption id="home-overview-caption">Narrated overview · 1 minute 40 seconds · Use the sound control to mute. If playback does not start automatically, press Play.</figcaption>
-          </figure>
-        </ContentSection>
         <ContentSection id="home-product-purpose" title="Your presence matters. Give the details a place to stay.">
           <p>A missed exchange is more than a date on a calendar. There may be an unanswered message, a receipt from the trip, a photo, or a note about what you personally observed. When those pieces stay scattered, preparing for a conversation means searching again and relying on memory.</p>
-          <p>P.O.P.S. — Proof of Presence System — is designed to make that work repeatable. Document an event, connect its supporting material, and review it in context. The purpose remains personal: presence, accountability, and a factual record. Preserve. Protect. Prove.</p>
+          <p>P.O.P.S. — Proof of Presence System — helps organize a parent’s record of involvement: record an event, preserve supporting material, and review a chronological history in context. It helps prepare documentation for appropriate review; it does not prove a disputed event or guarantee a custody or court outcome.</p>
           <div className="launch-grid">
-            <div className="launch-card"><h3>Windows is the workspace</h3><p>Understand how the Evidence Vault, events, timelines, and case context are intended to work together, and which release details still need verification.</p><Link to="/desktop-app">Explore the Windows software</Link></div>
-            <div className="launch-card"><h3>Android is being prepared</h3><p>Mobile capture, photo and location provenance, offline work, and synchronization are development or validation work. Android availability and license inclusion are not announced.</p><Link to="/android">Read Android development status</Link></div>
+            <div className="launch-card"><h3>Organize involvement</h3><p>Bring dates, event notes, people, and relevant context together for a clearer personal review.</p><Link to="/desktop-app">Explore Windows Guardian</Link></div>
+            <div className="launch-card"><h3>Keep supporting material connected</h3><p>Associate files with the records they relate to and review them in chronological context. The product does not independently verify what a file or note says.</p><Link to="/how-you-use-it">See the documented workflow</Link></div>
             <div className="launch-card"><h3>See the practical steps</h3><p>Follow a fictional missed exchange from an event note through supporting files and a chronology. Representative examples are labeled; actual release captures are still needed.</p><Link to="/how-you-use-it">Follow the record-building workflow</Link></div>
           </div>
+        </ContentSection>
+        <ContentSection id="home-private-records" title="Your private documentation stays yours.">
+          <p>POPS does not track users’ private documentation entries. The Windows app’s private notes and supporting records are separate from this public website and its account, support, or beta forms. Do not submit case documents or family evidence through general website forms.</p>
+          <p>The app is designed around local-first records. Encryption, automatic backup, and cloud synchronization are not promised unless an active release documents and verifies them.</p>
+          <Link to="/privacy">Read the privacy notice</Link>
         </ContentSection>
         <ContentSection id="home-practical-example" title="A missed exchange becomes an organized record.">
           <p>Record the scheduled exchange and what you observed. Associate a relevant photo or message with that event. Keep the source and collection context. Review related entries in date order, then prepare the material supported by your release for your own review or discussion with counsel.</p>
           <p>The software organizes what you supply. It does not independently establish that an event occurred or decide whether a court order was violated. File integrity checks support the record; they do not guarantee admissibility or a legal result.</p>
         </ContentSection>
         <ContentSection id="home-participate" title="Choose how you take part.">
-          <p>The published Guardian offer describes a one-time Windows license with lifetime P.O.P.S. Membership included and no mandatory recurring subscription. Checkout is unavailable while commercial delivery and release details are finalized. Saving a cart selection does not place an order.</p>
+          <p>Guardian Access is the published $99 one-time Windows desktop license and includes lifetime POPS Membership. Open Door is personally reviewed financial assistance for the Windows offer; sponsor contributions can support that Windows access. Neither route currently issues Android or iOS access. Checkout is unavailable, and saving a cart selection does not place an order.</p>
           <StatusNote>We are seeking interest toward 50 active beta participants. The founding-customer program targets the first 100 qualifying paying customers, with special benefits still awaiting approval. Neither a signup nor a saved cart reserves paid-customer status.</StatusNote>
           <LaunchLinks/>
         </ContentSection>

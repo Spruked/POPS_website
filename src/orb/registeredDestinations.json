@@ -93,6 +93,258 @@
     {
       "id": "pops.access.local-first",
       "route": "/access"
+    },
+    {
+      "id": "target_d4e5419da248",
+      "route": "/pledge"
+    },
+    {
+      "id": "target_b4a724d5b5d4",
+      "route": "/pledge"
+    },
+    {
+      "id": "target_3f51aacd2eee",
+      "route": "/pledge"
+    },
+    {
+      "id": "target_253198cd2ed7",
+      "route": "/pledge"
+    },
+    {
+      "id": "target_beea7e5c8dcb",
+      "route": "/pledge"
+    },
+    {
+      "id": "target_bc75af38f31b",
+      "route": "/pledge"
+    },
+    {
+      "id": "target_e1fa822a904a",
+      "route": "/pledge"
+    },
+    {
+      "id": "target_9d2f2207ab68",
+      "route": "/pledge"
+    },
+    {
+      "id": "target_936e846b78d9",
+      "route": "/pledge"
+    },
+    {
+      "id": "target_54e299ce8517",
+      "route": "/pledge"
+    },
+    {
+      "id": "target_fea66d15156d",
+      "route": "/pledge"
+    },
+    {
+      "id": "target_0423b5882703",
+      "route": "/pledge"
+    },
+    {
+      "id": "target_82bc6437bd37",
+      "route": "/pledge"
+    },
+    {
+      "id": "target_b00150c355ba",
+      "route": "/pledge"
+    },
+    {
+      "id": "target_0f71025722b3",
+      "route": "/pledge"
+    },
+    {
+      "id": "target_26b0315fe2ec",
+      "route": "/pledge"
+    },
+    {
+      "id": "target_aa645df25b8f",
+      "route": "/pledge"
+    },
+    {
+      "id": "target_2f95a9477409",
+      "route": "/pledge"
+    },
+    {
+      "id": "target_cbd47fe1bb4a",
+      "route": "/pledge"
+    },
+    {
+      "id": "target_d2b38a8fe071",
+      "route": "/pledge"
+    },
+    {
+      "id": "target_e44abd209c6c",
+      "route": "/pledge"
+    },
+    {
+      "id": "target_d7afa698791d",
+      "route": "/pledge"
+    },
+    {
+      "id": "target_f420323b1288",
+      "route": "/pledge"
+    },
+    {
+      "id": "target_ff3bc51fac53",
+      "route": "/pledge"
+    },
+    {
+      "id": "target_dbde952c2a33",
+      "route": "/pledge"
+    },
+    {
+      "id": "target_48f23f5e8689",
+      "route": "/pledge"
+    },
+    {
+      "id": "target_cbb197a8e80f",
+      "route": "/pledge"
+    },
+    {
+      "id": "target_31d5d900b0bb",
+      "route": "/pledge"
+    },
+    {
+      "id": "target_f2afdf04d204",
+      "route": "/pledge"
+    },
+    {
+      "id": "target_c92cdf9c3d62",
+      "route": "/pledge"
+    },
+    {
+      "id": "target_a8fe28e3e5d0",
+      "route": "/pledge"
+    },
+    {
+      "id": "target_172abe96673f",
+      "route": "/about"
+    },
+    {
+      "id": "target_9d88e82463e3",
+      "route": "/about"
+    },
+    {
+      "id": "target_daa846352ed0",
+      "route": "/about"
+    },
+    {
+      "id": "target_354702d28734",
+      "route": "/about"
+    },
+    {
+      "id": "target_0e1157db4c15",
+      "route": "/about"
+    },
+    {
+      "id": "target_97d2033f4fcf",
+      "route": "/about"
+    },
+    {
+      "id": "target_89d1d9f15114",
+      "route": "/about"
+    },
+    {
+      "id": "target_131b94e871c1",
+      "route": "/about"
+    },
+    {
+      "id": "target_6a91f7723ea6",
+      "route": "/about"
+    },
+    {
+      "id": "target_5a9832caceaf",
+      "route": "/about"
+    },
+    {
+      "id": "target_db54ad2375ec",
+      "route": "/about"
+    },
+    {
+      "id": "target_621ccb01e759",
+      "route": "/about"
+    },
+    {
+      "id": "target_fa96d0651c1e",
+      "route": "/about"
+    },
+    {
+      "id": "target_785fe4bbb7e7",
+      "route": "/about"
+    },
+    {
+      "id": "target_8a735ba60348",
+      "route": "/about"
+    },
+    {
+      "id": "target_3feeb158f58d",
+      "route": "/about"
+    },
+    {
+      "id": "target_e022b0c3c8a9",
+      "route": "/about"
+    },
+    {
+      "id": "target_c954edcccef0",
+      "route": "/about"
+    },
+    {
+      "id": "target_619bce6b0982",
+      "route": "/about"
+    },
+    {
+      "id": "target_4db9dcc50f19",
+      "route": "/about"
+    },
+    {
+      "id": "target_c14877d252b9",
+      "route": "/about"
+    },
+    {
+      "id": "target_dffb0c8c25e2",
+      "route": "/about"
+    },
+    {
+      "id": "target_fa80f8482b9b",
+      "route": "/about"
+    },
+    {
+      "id": "target_7ae833fa1d00",
+      "route": "/about"
+    },
+    {
+      "id": "target_673db52176e1",
+      "route": "/about"
+    },
+    {
+      "id": "target_75b0c68cf93f",
+      "route": "/about"
+    },
+    {
+      "id": "target_701c1f402eef",
+      "route": "/about"
+    },
+    {
+      "id": "target_e717d2768a61",
+      "route": "/about"
+    },
+    {
+      "id": "target_dfa34ec60752",
+      "route": "/about"
+    },
+    {
+      "id": "target_bdec67eb039e",
+      "route": "/about"
+    },
+    {
+      "id": "target_5d9ef5eeb851",
+      "route": "/about"
+    },
+    {
+      "id": "target_0c939a7a33b4",
+      "route": "/about"
     }
   ]
 }

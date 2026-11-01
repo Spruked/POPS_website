@@ -1,0 +1,11 @@
+{
+  "schema": "orb_weaver.pointer_authority_reconciliation.v1",
+  "reconciled_at": "2026-10-31T14:59:06.258364+00:00",
+  "previous_owner_verified_count": 0,
+  "previous_owner_rejected_count": 0,
+  "previous_owner_authority_count": 0,
+  "retained_count": 0,
+  "retained_verified_count": 0,
+  "retained_rejected_count": 0,
+  "demoted_count": 0
+}

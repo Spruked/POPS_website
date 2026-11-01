@@ -493,80 +493,10 @@ async def synthesize_tts(request: TTSRequest) -> dict[str, Any]:
 
 @app.post("/api/checkout/square")
 async def create_square_checkout(request: SquareCheckoutRequest) -> dict[str, Any]:
-  access_token = os.getenv("SQUARE_ACCESS_TOKEN", "").strip()
-  location_id = os.getenv("SQUARE_LOCATION_ID", "").strip()
-  square_version = os.getenv("SQUARE_VERSION", "2026-07-15").strip()
-
-  if not access_token or not location_id:
-    raise HTTPException(
-      status_code=503,
-      detail="Square checkout is not configured. Set SQUARE_ACCESS_TOKEN and SQUARE_LOCATION_ID.",
-    )
-
-  line_items = _validated_square_line_items(request.items)
-  note_parts = ["POPS website checkout"]
-  if request.name.strip():
-    note_parts.append(f"Name: {request.name.strip()}")
-  if request.email.strip():
-    note_parts.append(f"Email: {request.email.strip()}")
-  if request.note.strip():
-    note_parts.append(f"Note: {request.note.strip()}")
-
-  checkout_options: dict[str, Any] = {}
-  redirect_url = os.getenv("SQUARE_REDIRECT_URL", "").strip()
-  if redirect_url:
-    checkout_options["redirect_url"] = redirect_url
-
-  payload: dict[str, Any] = {
-    "idempotency_key": str(uuid.uuid4()),
-    "description": "POPS website order",
-    "order": {
-      "location_id": location_id,
-      "source": {
-        "name": "POPS Website",
-      },
-      "line_items": line_items,
-    },
-    "payment_note": " | ".join(note_parts)[:500],
-  }
-  if checkout_options:
-    payload["checkout_options"] = checkout_options
-
-  try:
-    async with httpx.AsyncClient(timeout=30) as client:
-      response = await client.post(
-        f"{_square_api_base()}/v2/online-checkout/payment-links",
-        headers={
-          "Authorization": f"Bearer {access_token}",
-          "Square-Version": square_version,
-          "Content-Type": "application/json",
-        },
-        json=payload,
-      )
-  except Exception as exc:
-    raise HTTPException(status_code=502, detail=f"Square checkout request failed: {exc}") from exc
-
-  if response.status_code >= 400:
-    detail = "Square checkout returned an error."
-    try:
-      square_payload = response.json()
-      if square_payload.get("errors"):
-        detail = square_payload["errors"][0].get("detail") or square_payload["errors"][0].get("code") or detail
-    except ValueError:
-      detail = response.text or detail
-    raise HTTPException(status_code=response.status_code, detail=detail)
-
-  square_payload = response.json()
-  payment_link = square_payload.get("payment_link") or {}
-  checkout_url = payment_link.get("long_url") or payment_link.get("url")
-  if not checkout_url:
-    raise HTTPException(status_code=502, detail="Square did not return a checkout URL.")
-
-  return {
-    "checkout_url": checkout_url,
-    "payment_link_id": payment_link.get("id"),
-    "order_id": payment_link.get("order_id"),
-  }
+  # Retire the unauthenticated, caller-priced legacy route. Authenticated, durable
+  # Guardian sandbox checkout lives behind the customer session boundary.
+  del request
+  raise HTTPException(status_code=503, detail="Checkout is disabled on this development API.")
 
 
 @app.get("/api/orb/tts/{audio_id}")

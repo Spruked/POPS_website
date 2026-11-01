@@ -1,0 +1,42 @@
+{
+  "status": "passed",
+  "results": [
+    {
+      "width": 1440,
+      "mode": "direct desktop header and reserved-width sidebar",
+      "passed": true
+    },
+    {
+      "width": 1280,
+      "mode": "direct desktop header and reserved-width sidebar",
+      "passed": true
+    },
+    {
+      "width": 1100,
+      "mode": "direct desktop header and reserved-width sidebar",
+      "passed": true
+    },
+    {
+      "width": 1024,
+      "mode": "labeled Menu and 23 direct flat destinations",
+      "passed": true
+    },
+    {
+      "width": 820,
+      "mode": "labeled Menu and 23 direct flat destinations",
+      "passed": true
+    },
+    {
+      "width": 390,
+      "mode": "labeled Menu and 23 direct flat destinations",
+      "passed": true
+    },
+    {
+      "width": 320,
+      "mode": "labeled Menu and 23 direct flat destinations",
+      "passed": true
+    }
+  ],
+  "accountActions": "Create account and Forgot password visible; existing account routes preserved",
+  "dropdowns": 0
+}

@@ -1,0 +1,17 @@
+{
+  "batch": 1,
+  "routes": [
+    "/android",
+    "/early-adopters",
+    "/see-pops-in-action",
+    "/counsel-handoff",
+    "/product-demo",
+    "/how-you-use-it",
+    "/installation",
+    "/admin"
+  ],
+  "status": "failed",
+  "resumed": false,
+  "error": "Command '['/usr/bin/node', '/app/backend/app/orb/pointer_recovery_capture.js', '[\"https://www.popsproof.com/android\", \"https://www.popsproof.com/early-adopters\", \"https://www.popsproof.com/see-pops-in-action\", \"https://www.popsproof.com/counsel-handoff\", \"https://www.popsproof.com/product-demo\", \"https://www.popsproof.com/how-you-use-it\", \"https://www.popsproof.com/installation\", \"https://www.popsproof.com/admin\"]', '/app/vault_system/clients/www.popsproof.com/runs/4/verification/orb/pointer_recovery_capture/batch_001/browser_capture.json', '2', '/app/vault_system/clients/www.popsproof.com/runs/4/verification/orb/pointer_recovery_capture/batch_001']' timed out after 300 seconds",
+  "completed_at": "2026-10-31T14:50:55.047003+00:00"
+}

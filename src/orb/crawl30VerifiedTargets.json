@@ -1,0 +1,1703 @@
+[
+  {
+    "id": "target_d4e5419da248",
+    "route": "/pledge",
+    "selector": "a[href=\"\\/\"]",
+    "label": "P.O.P.S. TM",
+    "description": "nav: P.O.P.S. TM. Crawl #30 verification is historical evidence; confirm the active DOM before pointing.",
+    "actions": [
+      "scroll_to_target",
+      "ping",
+      "explain"
+    ],
+    "guideOnly": true,
+    "runtimeVerification": {
+      "sourceCrawlId": "30",
+      "sourceDomain": "www.popsproof.com",
+      "sourceTargetId": "target_d4e5419da248",
+      "findingClass": "CONFIRMED",
+      "confidenceClass": "STABLE",
+      "verifiedAt": "2026-10-31T14:59:03.301325+00:00",
+      "expectedText": "P.O.P.S. TM",
+      "targetType": "nav",
+      "landmark": "nav",
+      "ordinalInParent": 1,
+      "parentLocator": "nav:nth-of-type(1)",
+      "sourceRevision": "0d710cc0cf62bcae"
+    }
+  },
+  {
+    "id": "target_b4a724d5b5d4",
+    "route": "/pledge",
+    "selector": "a[href=\"\\/\"]",
+    "label": "Home",
+    "description": "nav: Home. Crawl #30 verification is historical evidence; confirm the active DOM before pointing.",
+    "actions": [
+      "scroll_to_target",
+      "ping",
+      "explain"
+    ],
+    "guideOnly": true,
+    "runtimeVerification": {
+      "sourceCrawlId": "30",
+      "sourceDomain": "www.popsproof.com",
+      "sourceTargetId": "target_b4a724d5b5d4",
+      "findingClass": "CONFIRMED",
+      "confidenceClass": "STABLE",
+      "verifiedAt": "2026-10-31T14:59:03.306095+00:00",
+      "expectedText": "Home",
+      "targetType": "nav",
+      "landmark": "nav",
+      "ordinalInParent": 1,
+      "parentLocator": "nav:nth-of-type(1)",
+      "sourceRevision": "4ea140588150773c"
+    }
+  },
+  {
+    "id": "target_3f51aacd2eee",
+    "route": "/pledge",
+    "selector": "a[href=\"\\/desktop-app\"]",
+    "label": "Windows",
+    "description": "nav: Windows. Crawl #30 verification is historical evidence; confirm the active DOM before pointing.",
+    "actions": [
+      "scroll_to_target",
+      "ping",
+      "explain"
+    ],
+    "guideOnly": true,
+    "runtimeVerification": {
+      "sourceCrawlId": "30",
+      "sourceDomain": "www.popsproof.com",
+      "sourceTargetId": "target_3f51aacd2eee",
+      "findingClass": "CONFIRMED",
+      "confidenceClass": "STABLE",
+      "verifiedAt": "2026-10-31T14:59:03.309003+00:00",
+      "expectedText": "Windows",
+      "targetType": "nav",
+      "landmark": "nav",
+      "ordinalInParent": 2,
+      "parentLocator": "nav:nth-of-type(1)",
+      "sourceRevision": "340d600392818df2"
+    }
+  },
+  {
+    "id": "target_253198cd2ed7",
+    "route": "/pledge",
+    "selector": "a[href=\"\\/android\"]",
+    "label": "Android",
+    "description": "nav: Android. Crawl #30 verification is historical evidence; confirm the active DOM before pointing.",
+    "actions": [
+      "scroll_to_target",
+      "ping",
+      "explain"
+    ],
+    "guideOnly": true,
+    "runtimeVerification": {
+      "sourceCrawlId": "30",
+      "sourceDomain": "www.popsproof.com",
+      "sourceTargetId": "target_253198cd2ed7",
+      "findingClass": "CONFIRMED",
+      "confidenceClass": "STABLE",
+      "verifiedAt": "2026-10-31T14:59:03.311855+00:00",
+      "expectedText": "Android",
+      "targetType": "nav",
+      "landmark": "nav",
+      "ordinalInParent": 3,
+      "parentLocator": "nav:nth-of-type(1)",
+      "sourceRevision": "f60ed56a9c827589"
+    }
+  },
+  {
+    "id": "target_beea7e5c8dcb",
+    "route": "/pledge",
+    "selector": "a[href=\"\\/access\\#platforms\"]",
+    "label": "iOS (planned)",
+    "description": "nav: iOS (planned). Crawl #30 verification is historical evidence; confirm the active DOM before pointing.",
+    "actions": [
+      "scroll_to_target",
+      "ping",
+      "explain"
+    ],
+    "guideOnly": true,
+    "runtimeVerification": {
+      "sourceCrawlId": "30",
+      "sourceDomain": "www.popsproof.com",
+      "sourceTargetId": "target_beea7e5c8dcb",
+      "findingClass": "CONFIRMED",
+      "confidenceClass": "STABLE",
+      "verifiedAt": "2026-10-31T14:59:03.315067+00:00",
+      "expectedText": "iOS (planned)",
+      "targetType": "nav",
+      "landmark": "nav",
+      "ordinalInParent": 4,
+      "parentLocator": "nav:nth-of-type(1)",
+      "sourceRevision": "2ce5428fed90d086"
+    }
+  },
+  {
+    "id": "target_bc75af38f31b",
+    "route": "/pledge",
+    "selector": "a[href=\"\\/product-demo\"]",
+    "label": "Demo",
+    "description": "nav: Demo. Crawl #30 verification is historical evidence; confirm the active DOM before pointing.",
+    "actions": [
+      "scroll_to_target",
+      "ping",
+      "explain"
+    ],
+    "guideOnly": true,
+    "runtimeVerification": {
+      "sourceCrawlId": "30",
+      "sourceDomain": "www.popsproof.com",
+      "sourceTargetId": "target_bc75af38f31b",
+      "findingClass": "CONFIRMED",
+      "confidenceClass": "STABLE",
+      "verifiedAt": "2026-10-31T14:59:03.318661+00:00",
+      "expectedText": "Demo",
+      "targetType": "nav",
+      "landmark": "nav",
+      "ordinalInParent": 5,
+      "parentLocator": "nav:nth-of-type(1)",
+      "sourceRevision": "2a97516c354b6884"
+    }
+  },
+  {
+    "id": "target_e1fa822a904a",
+    "route": "/pledge",
+    "selector": "a[href=\"\\/beta\"]",
+    "label": "Beta",
+    "description": "nav: Beta. Crawl #30 verification is historical evidence; confirm the active DOM before pointing.",
+    "actions": [
+      "scroll_to_target",
+      "ping",
+      "explain"
+    ],
+    "guideOnly": true,
+    "runtimeVerification": {
+      "sourceCrawlId": "30",
+      "sourceDomain": "www.popsproof.com",
+      "sourceTargetId": "target_e1fa822a904a",
+      "findingClass": "CONFIRMED",
+      "confidenceClass": "STABLE",
+      "verifiedAt": "2026-10-31T14:59:03.321750+00:00",
+      "expectedText": "Beta",
+      "targetType": "nav",
+      "landmark": "nav",
+      "ordinalInParent": 6,
+      "parentLocator": "nav:nth-of-type(1)",
+      "sourceRevision": "f44e64e75f3948e9"
+    }
+  },
+  {
+    "id": "target_9d2f2207ab68",
+    "route": "/pledge",
+    "selector": "a[href=\"\\/access\"]",
+    "label": "Pricing",
+    "description": "nav: Pricing. Crawl #30 verification is historical evidence; confirm the active DOM before pointing.",
+    "actions": [
+      "scroll_to_target",
+      "ping",
+      "explain"
+    ],
+    "guideOnly": true,
+    "runtimeVerification": {
+      "sourceCrawlId": "30",
+      "sourceDomain": "www.popsproof.com",
+      "sourceTargetId": "target_9d2f2207ab68",
+      "findingClass": "CONFIRMED",
+      "confidenceClass": "STABLE",
+      "verifiedAt": "2026-10-31T14:59:03.324657+00:00",
+      "expectedText": "Pricing",
+      "targetType": "nav",
+      "landmark": "nav",
+      "ordinalInParent": 7,
+      "parentLocator": "nav:nth-of-type(1)",
+      "sourceRevision": "1e2ea6d9b72e685b"
+    }
+  },
+  {
+    "id": "target_936e846b78d9",
+    "route": "/pledge",
+    "selector": "a[href=\"\\/account\"]",
+    "label": "Sign In",
+    "description": "nav: Sign In. Crawl #30 verification is historical evidence; confirm the active DOM before pointing.",
+    "actions": [
+      "scroll_to_target",
+      "ping",
+      "explain"
+    ],
+    "guideOnly": true,
+    "runtimeVerification": {
+      "sourceCrawlId": "30",
+      "sourceDomain": "www.popsproof.com",
+      "sourceTargetId": "target_936e846b78d9",
+      "findingClass": "CONFIRMED",
+      "confidenceClass": "STABLE",
+      "verifiedAt": "2026-10-31T14:59:03.327662+00:00",
+      "expectedText": "Sign In",
+      "targetType": "nav",
+      "landmark": "nav",
+      "ordinalInParent": 8,
+      "parentLocator": "nav:nth-of-type(1)",
+      "sourceRevision": "2456d866eeb3ff92"
+    }
+  },
+  {
+    "id": "target_54e299ce8517",
+    "route": "/pledge",
+    "selector": "a[href=\"\\/about\"]",
+    "label": "About / Our Mission",
+    "description": "nav: About / Our Mission. Crawl #30 verification is historical evidence; confirm the active DOM before pointing.",
+    "actions": [
+      "scroll_to_target",
+      "ping",
+      "explain"
+    ],
+    "guideOnly": true,
+    "runtimeVerification": {
+      "sourceCrawlId": "30",
+      "sourceDomain": "www.popsproof.com",
+      "sourceTargetId": "target_54e299ce8517",
+      "findingClass": "CONFIRMED",
+      "confidenceClass": "STABLE",
+      "verifiedAt": "2026-10-31T14:59:03.338056+00:00",
+      "expectedText": "About / Our Mission",
+      "targetType": "nav",
+      "landmark": "nav",
+      "ordinalInParent": 1,
+      "parentLocator": "nav:nth-of-type(1)",
+      "sourceRevision": "727c458d54be44c0"
+    }
+  },
+  {
+    "id": "target_fea66d15156d",
+    "route": "/pledge",
+    "selector": "a[href=\"\\/early-adopters\"]",
+    "label": "Early Adopters",
+    "description": "nav: Early Adopters. Crawl #30 verification is historical evidence; confirm the active DOM before pointing.",
+    "actions": [
+      "scroll_to_target",
+      "ping",
+      "explain"
+    ],
+    "guideOnly": true,
+    "runtimeVerification": {
+      "sourceCrawlId": "30",
+      "sourceDomain": "www.popsproof.com",
+      "sourceTargetId": "target_fea66d15156d",
+      "findingClass": "CONFIRMED",
+      "confidenceClass": "STABLE",
+      "verifiedAt": "2026-10-31T14:59:03.366255+00:00",
+      "expectedText": "Early Adopters",
+      "targetType": "nav",
+      "landmark": "nav",
+      "ordinalInParent": 5,
+      "parentLocator": "nav:nth-of-type(1)",
+      "sourceRevision": "5e38768ce5282e0b"
+    }
+  },
+  {
+    "id": "target_0423b5882703",
+    "route": "/pledge",
+    "selector": "a[href=\"\\/how-you-use-it\"]",
+    "label": "How It Works",
+    "description": "nav: How It Works. Crawl #30 verification is historical evidence; confirm the active DOM before pointing.",
+    "actions": [
+      "scroll_to_target",
+      "ping",
+      "explain"
+    ],
+    "guideOnly": true,
+    "runtimeVerification": {
+      "sourceCrawlId": "30",
+      "sourceDomain": "www.popsproof.com",
+      "sourceTargetId": "target_0423b5882703",
+      "findingClass": "CONFIRMED",
+      "confidenceClass": "STABLE",
+      "verifiedAt": "2026-10-31T14:59:03.369712+00:00",
+      "expectedText": "How It Works",
+      "targetType": "nav",
+      "landmark": "nav",
+      "ordinalInParent": 6,
+      "parentLocator": "nav:nth-of-type(1)",
+      "sourceRevision": "5e61e86cdc3e3476"
+    }
+  },
+  {
+    "id": "target_82bc6437bd37",
+    "route": "/pledge",
+    "selector": "a[href=\"\\/installation\"]",
+    "label": "Installation",
+    "description": "nav: Installation. Crawl #30 verification is historical evidence; confirm the active DOM before pointing.",
+    "actions": [
+      "scroll_to_target",
+      "ping",
+      "explain"
+    ],
+    "guideOnly": true,
+    "runtimeVerification": {
+      "sourceCrawlId": "30",
+      "sourceDomain": "www.popsproof.com",
+      "sourceTargetId": "target_82bc6437bd37",
+      "findingClass": "CONFIRMED",
+      "confidenceClass": "STABLE",
+      "verifiedAt": "2026-10-31T14:59:03.372861+00:00",
+      "expectedText": "Installation",
+      "targetType": "nav",
+      "landmark": "nav",
+      "ordinalInParent": 7,
+      "parentLocator": "nav:nth-of-type(1)",
+      "sourceRevision": "561f0a3d84e3c5cf"
+    }
+  },
+  {
+    "id": "target_b00150c355ba",
+    "route": "/pledge",
+    "selector": "a[href=\"\\/faq\"]",
+    "label": "FAQs",
+    "description": "nav: FAQs. Crawl #30 verification is historical evidence; confirm the active DOM before pointing.",
+    "actions": [
+      "scroll_to_target",
+      "ping",
+      "explain"
+    ],
+    "guideOnly": true,
+    "runtimeVerification": {
+      "sourceCrawlId": "30",
+      "sourceDomain": "www.popsproof.com",
+      "sourceTargetId": "target_b00150c355ba",
+      "findingClass": "CONFIRMED",
+      "confidenceClass": "STABLE",
+      "verifiedAt": "2026-10-31T14:59:03.375851+00:00",
+      "expectedText": "FAQs",
+      "targetType": "nav",
+      "landmark": "nav",
+      "ordinalInParent": 8,
+      "parentLocator": "nav:nth-of-type(1)",
+      "sourceRevision": "ca09c15aeac1a7b5"
+    }
+  },
+  {
+    "id": "target_0f71025722b3",
+    "route": "/pledge",
+    "selector": "a[href=\"\\/support\"]",
+    "label": "Contact & Support",
+    "description": "nav: Contact & Support. Crawl #30 verification is historical evidence; confirm the active DOM before pointing.",
+    "actions": [
+      "scroll_to_target",
+      "ping",
+      "explain"
+    ],
+    "guideOnly": true,
+    "runtimeVerification": {
+      "sourceCrawlId": "30",
+      "sourceDomain": "www.popsproof.com",
+      "sourceTargetId": "target_0f71025722b3",
+      "findingClass": "CONFIRMED",
+      "confidenceClass": "STABLE",
+      "verifiedAt": "2026-10-31T14:59:03.384948+00:00",
+      "expectedText": "Contact & Support",
+      "targetType": "nav",
+      "landmark": "nav",
+      "ordinalInParent": 9,
+      "parentLocator": "nav:nth-of-type(1)",
+      "sourceRevision": "a74ab53c30f1e34e"
+    }
+  },
+  {
+    "id": "target_26b0315fe2ec",
+    "route": "/pledge",
+    "selector": "a[href=\"\\/terms\"]",
+    "label": "Terms of Service",
+    "description": "nav: Terms of Service. Crawl #30 verification is historical evidence; confirm the active DOM before pointing.",
+    "actions": [
+      "scroll_to_target",
+      "ping",
+      "explain"
+    ],
+    "guideOnly": true,
+    "runtimeVerification": {
+      "sourceCrawlId": "30",
+      "sourceDomain": "www.popsproof.com",
+      "sourceTargetId": "target_26b0315fe2ec",
+      "findingClass": "CONFIRMED",
+      "confidenceClass": "STABLE",
+      "verifiedAt": "2026-10-31T14:59:03.434967+00:00",
+      "expectedText": "Terms of Service",
+      "targetType": "nav",
+      "landmark": "nav",
+      "ordinalInParent": 14,
+      "parentLocator": "nav:nth-of-type(1)",
+      "sourceRevision": "529f0e5f4761eca4"
+    }
+  },
+  {
+    "id": "target_aa645df25b8f",
+    "route": "/pledge",
+    "selector": "a[href=\"\\/privacy\"]",
+    "label": "Privacy Notice",
+    "description": "nav: Privacy Notice. Crawl #30 verification is historical evidence; confirm the active DOM before pointing.",
+    "actions": [
+      "scroll_to_target",
+      "ping",
+      "explain"
+    ],
+    "guideOnly": true,
+    "runtimeVerification": {
+      "sourceCrawlId": "30",
+      "sourceDomain": "www.popsproof.com",
+      "sourceTargetId": "target_aa645df25b8f",
+      "findingClass": "CONFIRMED",
+      "confidenceClass": "STABLE",
+      "verifiedAt": "2026-10-31T14:59:03.439648+00:00",
+      "expectedText": "Privacy Notice",
+      "targetType": "nav",
+      "landmark": "nav",
+      "ordinalInParent": 15,
+      "parentLocator": "nav:nth-of-type(1)",
+      "sourceRevision": "f18dccf66b7c5e5b"
+    }
+  },
+  {
+    "id": "target_2f95a9477409",
+    "route": "/pledge",
+    "selector": "a[href=\"\\/android\"]",
+    "label": "Android testing",
+    "description": "nav: Android testing. Crawl #30 verification is historical evidence; confirm the active DOM before pointing.",
+    "actions": [
+      "scroll_to_target",
+      "ping",
+      "explain"
+    ],
+    "guideOnly": true,
+    "runtimeVerification": {
+      "sourceCrawlId": "30",
+      "sourceDomain": "www.popsproof.com",
+      "sourceTargetId": "target_2f95a9477409",
+      "findingClass": "CONFIRMED",
+      "confidenceClass": "STABLE",
+      "verifiedAt": "2026-10-31T14:59:03.456049+00:00",
+      "expectedText": "Android testing",
+      "targetType": "nav",
+      "landmark": "nav",
+      "ordinalInParent": 2,
+      "parentLocator": "nav:nth-of-type(1)",
+      "sourceRevision": "8ed0c435914344a8"
+    }
+  },
+  {
+    "id": "target_cbd47fe1bb4a",
+    "route": "/pledge",
+    "selector": "a[href=\"\\/beta\"]",
+    "label": "Beta program",
+    "description": "nav: Beta program. Crawl #30 verification is historical evidence; confirm the active DOM before pointing.",
+    "actions": [
+      "scroll_to_target",
+      "ping",
+      "explain"
+    ],
+    "guideOnly": true,
+    "runtimeVerification": {
+      "sourceCrawlId": "30",
+      "sourceDomain": "www.popsproof.com",
+      "sourceTargetId": "target_cbd47fe1bb4a",
+      "findingClass": "CONFIRMED",
+      "confidenceClass": "STABLE",
+      "verifiedAt": "2026-10-31T14:59:03.459096+00:00",
+      "expectedText": "Beta program",
+      "targetType": "nav",
+      "landmark": "nav",
+      "ordinalInParent": 4,
+      "parentLocator": "nav:nth-of-type(1)",
+      "sourceRevision": "1fa42b9f1d129386"
+    }
+  },
+  {
+    "id": "target_d2b38a8fe071",
+    "route": "/pledge",
+    "selector": "a[href=\"\\/support\"]",
+    "label": "Contact & privacy support",
+    "description": "nav: Contact & privacy support. Crawl #30 verification is historical evidence; confirm the active DOM before pointing.",
+    "actions": [
+      "scroll_to_target",
+      "ping",
+      "explain"
+    ],
+    "guideOnly": true,
+    "runtimeVerification": {
+      "sourceCrawlId": "30",
+      "sourceDomain": "www.popsproof.com",
+      "sourceTargetId": "target_d2b38a8fe071",
+      "findingClass": "CONFIRMED",
+      "confidenceClass": "STABLE",
+      "verifiedAt": "2026-10-31T14:59:03.462271+00:00",
+      "expectedText": "Contact & privacy support",
+      "targetType": "nav",
+      "landmark": "nav",
+      "ordinalInParent": 8,
+      "parentLocator": "nav:nth-of-type(1)",
+      "sourceRevision": "90c0048b5a816644"
+    }
+  },
+  {
+    "id": "target_e44abd209c6c",
+    "route": "/pledge",
+    "selector": "a[href=\"\\/\"]",
+    "label": "Landing",
+    "description": "button: Landing. Crawl #30 verification is historical evidence; confirm the active DOM before pointing.",
+    "actions": [
+      "scroll_to_target",
+      "ping",
+      "explain"
+    ],
+    "guideOnly": true,
+    "runtimeVerification": {
+      "sourceCrawlId": "30",
+      "sourceDomain": "www.popsproof.com",
+      "sourceTargetId": "target_e44abd209c6c",
+      "findingClass": "CONFIRMED",
+      "confidenceClass": "STABLE",
+      "verifiedAt": "2026-10-31T14:59:03.487285+00:00",
+      "expectedText": "Landing",
+      "targetType": "button",
+      "landmark": "footer",
+      "ordinalInParent": 1,
+      "parentLocator": "footer:nth-of-type(1)",
+      "sourceRevision": "d6709cd49ed87966"
+    }
+  },
+  {
+    "id": "target_d7afa698791d",
+    "route": "/pledge",
+    "selector": "a[href=\"\\/about\"]",
+    "label": "About",
+    "description": "button: About. Crawl #30 verification is historical evidence; confirm the active DOM before pointing.",
+    "actions": [
+      "scroll_to_target",
+      "ping",
+      "explain"
+    ],
+    "guideOnly": true,
+    "runtimeVerification": {
+      "sourceCrawlId": "30",
+      "sourceDomain": "www.popsproof.com",
+      "sourceTargetId": "target_d7afa698791d",
+      "findingClass": "CONFIRMED",
+      "confidenceClass": "STABLE",
+      "verifiedAt": "2026-10-31T14:59:03.490332+00:00",
+      "expectedText": "About",
+      "targetType": "button",
+      "landmark": "footer",
+      "ordinalInParent": 2,
+      "parentLocator": "footer:nth-of-type(1)",
+      "sourceRevision": "a4262e1c9bcbc172"
+    }
+  },
+  {
+    "id": "target_f420323b1288",
+    "route": "/pledge",
+    "selector": "a[href=\"\\/see-pops-in-action\"]",
+    "label": "See POPS in Action",
+    "description": "button: See POPS in Action. Crawl #30 verification is historical evidence; confirm the active DOM before pointing.",
+    "actions": [
+      "scroll_to_target",
+      "ping",
+      "explain"
+    ],
+    "guideOnly": true,
+    "runtimeVerification": {
+      "sourceCrawlId": "30",
+      "sourceDomain": "www.popsproof.com",
+      "sourceTargetId": "target_f420323b1288",
+      "findingClass": "CONFIRMED",
+      "confidenceClass": "STABLE",
+      "verifiedAt": "2026-10-31T14:59:03.493452+00:00",
+      "expectedText": "See POPS in Action",
+      "targetType": "button",
+      "landmark": "footer",
+      "ordinalInParent": 3,
+      "parentLocator": "footer:nth-of-type(1)",
+      "sourceRevision": "f3e1ac0195c085d9"
+    }
+  },
+  {
+    "id": "target_ff3bc51fac53",
+    "route": "/pledge",
+    "selector": "a[href=\"\\/access\"]",
+    "label": "Access",
+    "description": "button: Access. Crawl #30 verification is historical evidence; confirm the active DOM before pointing.",
+    "actions": [
+      "scroll_to_target",
+      "ping",
+      "explain"
+    ],
+    "guideOnly": true,
+    "runtimeVerification": {
+      "sourceCrawlId": "30",
+      "sourceDomain": "www.popsproof.com",
+      "sourceTargetId": "target_ff3bc51fac53",
+      "findingClass": "CONFIRMED",
+      "confidenceClass": "STABLE",
+      "verifiedAt": "2026-10-31T14:59:03.518642+00:00",
+      "expectedText": "Access",
+      "targetType": "button",
+      "landmark": "footer",
+      "ordinalInParent": 7,
+      "parentLocator": "footer:nth-of-type(1)",
+      "sourceRevision": "a0561fd649cdb6ba"
+    }
+  },
+  {
+    "id": "target_dbde952c2a33",
+    "route": "/pledge",
+    "selector": "a[href=\"\\/account\"]",
+    "label": "Account",
+    "description": "button: Account. Crawl #30 verification is historical evidence; confirm the active DOM before pointing.",
+    "actions": [
+      "scroll_to_target",
+      "ping",
+      "explain"
+    ],
+    "guideOnly": true,
+    "runtimeVerification": {
+      "sourceCrawlId": "30",
+      "sourceDomain": "www.popsproof.com",
+      "sourceTargetId": "target_dbde952c2a33",
+      "findingClass": "CONFIRMED",
+      "confidenceClass": "STABLE",
+      "verifiedAt": "2026-10-31T14:59:03.521968+00:00",
+      "expectedText": "Account",
+      "targetType": "button",
+      "landmark": "footer",
+      "ordinalInParent": 8,
+      "parentLocator": "footer:nth-of-type(1)",
+      "sourceRevision": "9af211329b2fc82e"
+    }
+  },
+  {
+    "id": "target_48f23f5e8689",
+    "route": "/pledge",
+    "selector": "a[href=\"\\/privacy\"]",
+    "label": "Privacy",
+    "description": "button: Privacy. Crawl #30 verification is historical evidence; confirm the active DOM before pointing.",
+    "actions": [
+      "scroll_to_target",
+      "ping",
+      "explain"
+    ],
+    "guideOnly": true,
+    "runtimeVerification": {
+      "sourceCrawlId": "30",
+      "sourceDomain": "www.popsproof.com",
+      "sourceTargetId": "target_48f23f5e8689",
+      "findingClass": "CONFIRMED",
+      "confidenceClass": "STABLE",
+      "verifiedAt": "2026-10-31T14:59:03.556313+00:00",
+      "expectedText": "Privacy",
+      "targetType": "button",
+      "landmark": "footer",
+      "ordinalInParent": 13,
+      "parentLocator": "footer:nth-of-type(1)",
+      "sourceRevision": "a4cc6bc01a927e2a"
+    }
+  },
+  {
+    "id": "target_cbb197a8e80f",
+    "route": "/pledge",
+    "selector": "a[href=\"\\/terms\"]",
+    "label": "Terms",
+    "description": "button: Terms. Crawl #30 verification is historical evidence; confirm the active DOM before pointing.",
+    "actions": [
+      "scroll_to_target",
+      "ping",
+      "explain"
+    ],
+    "guideOnly": true,
+    "runtimeVerification": {
+      "sourceCrawlId": "30",
+      "sourceDomain": "www.popsproof.com",
+      "sourceTargetId": "target_cbb197a8e80f",
+      "findingClass": "CONFIRMED",
+      "confidenceClass": "STABLE",
+      "verifiedAt": "2026-10-31T14:59:03.559267+00:00",
+      "expectedText": "Terms",
+      "targetType": "button",
+      "landmark": "footer",
+      "ordinalInParent": 14,
+      "parentLocator": "footer:nth-of-type(1)",
+      "sourceRevision": "51d2361f4faea3bc"
+    }
+  },
+  {
+    "id": "target_31d5d900b0bb",
+    "route": "/pledge",
+    "selector": "a[href=\"https\\:\\/\\/spruked\\.com\\/\"]",
+    "label": "Spruked",
+    "description": "button: Spruked. Crawl #30 verification is historical evidence; confirm the active DOM before pointing.",
+    "actions": [
+      "scroll_to_target",
+      "ping",
+      "explain"
+    ],
+    "guideOnly": true,
+    "runtimeVerification": {
+      "sourceCrawlId": "30",
+      "sourceDomain": "www.popsproof.com",
+      "sourceTargetId": "target_31d5d900b0bb",
+      "findingClass": "CONFIRMED",
+      "confidenceClass": "STABLE",
+      "verifiedAt": "2026-10-31T14:59:03.574073+00:00",
+      "expectedText": "Spruked",
+      "targetType": "button",
+      "landmark": "footer",
+      "ordinalInParent": 1,
+      "parentLocator": "footer:nth-of-type(1)",
+      "sourceRevision": "376996a32373e4e7"
+    }
+  },
+  {
+    "id": "target_f2afdf04d204",
+    "route": "/pledge",
+    "selector": "a[href=\"https\\:\\/\\/orbweaver\\.spruked\\.com\\/\"]",
+    "label": "OrbWeaver",
+    "description": "button: OrbWeaver. Crawl #30 verification is historical evidence; confirm the active DOM before pointing.",
+    "actions": [
+      "scroll_to_target",
+      "ping",
+      "explain"
+    ],
+    "guideOnly": true,
+    "runtimeVerification": {
+      "sourceCrawlId": "30",
+      "sourceDomain": "www.popsproof.com",
+      "sourceTargetId": "target_f2afdf04d204",
+      "findingClass": "CONFIRMED",
+      "confidenceClass": "STABLE",
+      "verifiedAt": "2026-10-31T14:59:03.577295+00:00",
+      "expectedText": "OrbWeaver",
+      "targetType": "button",
+      "landmark": "footer",
+      "ordinalInParent": 2,
+      "parentLocator": "footer:nth-of-type(1)",
+      "sourceRevision": "a2fac0b77126c55e"
+    }
+  },
+  {
+    "id": "target_c92cdf9c3d62",
+    "route": "/pledge",
+    "selector": "a[href=\"https\\:\\/\\/certsig\\.com\\/\"]",
+    "label": "CertSig",
+    "description": "button: CertSig. Crawl #30 verification is historical evidence; confirm the active DOM before pointing.",
+    "actions": [
+      "scroll_to_target",
+      "ping",
+      "explain"
+    ],
+    "guideOnly": true,
+    "runtimeVerification": {
+      "sourceCrawlId": "30",
+      "sourceDomain": "www.popsproof.com",
+      "sourceTargetId": "target_c92cdf9c3d62",
+      "findingClass": "CONFIRMED",
+      "confidenceClass": "STABLE",
+      "verifiedAt": "2026-10-31T14:59:03.585648+00:00",
+      "expectedText": "CertSig",
+      "targetType": "button",
+      "landmark": "footer",
+      "ordinalInParent": 3,
+      "parentLocator": "footer:nth-of-type(1)",
+      "sourceRevision": "a37eefb8a4abaa57"
+    }
+  },
+  {
+    "id": "target_a8fe28e3e5d0",
+    "route": "/pledge",
+    "selector": "a[href=\"https\\:\\/\\/truemarkmint\\.com\\/\"]",
+    "label": "TrueMarkMint",
+    "description": "button: TrueMarkMint. Crawl #30 verification is historical evidence; confirm the active DOM before pointing.",
+    "actions": [
+      "scroll_to_target",
+      "ping",
+      "explain"
+    ],
+    "guideOnly": true,
+    "runtimeVerification": {
+      "sourceCrawlId": "30",
+      "sourceDomain": "www.popsproof.com",
+      "sourceTargetId": "target_a8fe28e3e5d0",
+      "findingClass": "CONFIRMED",
+      "confidenceClass": "STABLE",
+      "verifiedAt": "2026-10-31T14:59:03.588709+00:00",
+      "expectedText": "TrueMarkMint",
+      "targetType": "button",
+      "landmark": "footer",
+      "ordinalInParent": 4,
+      "parentLocator": "footer:nth-of-type(1)",
+      "sourceRevision": "39f0845a0dd172b4"
+    }
+  },
+  {
+    "id": "target_172abe96673f",
+    "route": "/about",
+    "selector": "a[href=\"\\/\"]",
+    "label": "P.O.P.S. TM",
+    "description": "nav: P.O.P.S. TM. Crawl #30 verification is historical evidence; confirm the active DOM before pointing.",
+    "actions": [
+      "scroll_to_target",
+      "ping",
+      "explain"
+    ],
+    "guideOnly": true,
+    "runtimeVerification": {
+      "sourceCrawlId": "30",
+      "sourceDomain": "www.popsproof.com",
+      "sourceTargetId": "target_172abe96673f",
+      "findingClass": "CONFIRMED",
+      "confidenceClass": "STABLE",
+      "verifiedAt": "2026-10-31T14:59:04.361999+00:00",
+      "expectedText": "P.O.P.S. TM",
+      "targetType": "nav",
+      "landmark": "nav",
+      "ordinalInParent": 1,
+      "parentLocator": "nav:nth-of-type(1)",
+      "sourceRevision": "0d710cc0cf62bcae"
+    }
+  },
+  {
+    "id": "target_9d88e82463e3",
+    "route": "/about",
+    "selector": "a[href=\"\\/\"]",
+    "label": "Home",
+    "description": "nav: Home. Crawl #30 verification is historical evidence; confirm the active DOM before pointing.",
+    "actions": [
+      "scroll_to_target",
+      "ping",
+      "explain"
+    ],
+    "guideOnly": true,
+    "runtimeVerification": {
+      "sourceCrawlId": "30",
+      "sourceDomain": "www.popsproof.com",
+      "sourceTargetId": "target_9d88e82463e3",
+      "findingClass": "CONFIRMED",
+      "confidenceClass": "STABLE",
+      "verifiedAt": "2026-10-31T14:59:04.370746+00:00",
+      "expectedText": "Home",
+      "targetType": "nav",
+      "landmark": "nav",
+      "ordinalInParent": 1,
+      "parentLocator": "nav:nth-of-type(1)",
+      "sourceRevision": "4ea140588150773c"
+    }
+  },
+  {
+    "id": "target_daa846352ed0",
+    "route": "/about",
+    "selector": "a[href=\"\\/desktop-app\"]",
+    "label": "Windows",
+    "description": "nav: Windows. Crawl #30 verification is historical evidence; confirm the active DOM before pointing.",
+    "actions": [
+      "scroll_to_target",
+      "ping",
+      "explain"
+    ],
+    "guideOnly": true,
+    "runtimeVerification": {
+      "sourceCrawlId": "30",
+      "sourceDomain": "www.popsproof.com",
+      "sourceTargetId": "target_daa846352ed0",
+      "findingClass": "CONFIRMED",
+      "confidenceClass": "STABLE",
+      "verifiedAt": "2026-10-31T14:59:04.374002+00:00",
+      "expectedText": "Windows",
+      "targetType": "nav",
+      "landmark": "nav",
+      "ordinalInParent": 2,
+      "parentLocator": "nav:nth-of-type(1)",
+      "sourceRevision": "340d600392818df2"
+    }
+  },
+  {
+    "id": "target_354702d28734",
+    "route": "/about",
+    "selector": "a[href=\"\\/android\"]",
+    "label": "Android",
+    "description": "nav: Android. Crawl #30 verification is historical evidence; confirm the active DOM before pointing.",
+    "actions": [
+      "scroll_to_target",
+      "ping",
+      "explain"
+    ],
+    "guideOnly": true,
+    "runtimeVerification": {
+      "sourceCrawlId": "30",
+      "sourceDomain": "www.popsproof.com",
+      "sourceTargetId": "target_354702d28734",
+      "findingClass": "CONFIRMED",
+      "confidenceClass": "STABLE",
+      "verifiedAt": "2026-10-31T14:59:04.377150+00:00",
+      "expectedText": "Android",
+      "targetType": "nav",
+      "landmark": "nav",
+      "ordinalInParent": 3,
+      "parentLocator": "nav:nth-of-type(1)",
+      "sourceRevision": "f60ed56a9c827589"
+    }
+  },
+  {
+    "id": "target_0e1157db4c15",
+    "route": "/about",
+    "selector": "a[href=\"\\/access\\#platforms\"]",
+    "label": "iOS (planned)",
+    "description": "nav: iOS (planned). Crawl #30 verification is historical evidence; confirm the active DOM before pointing.",
+    "actions": [
+      "scroll_to_target",
+      "ping",
+      "explain"
+    ],
+    "guideOnly": true,
+    "runtimeVerification": {
+      "sourceCrawlId": "30",
+      "sourceDomain": "www.popsproof.com",
+      "sourceTargetId": "target_0e1157db4c15",
+      "findingClass": "CONFIRMED",
+      "confidenceClass": "STABLE",
+      "verifiedAt": "2026-10-31T14:59:04.380702+00:00",
+      "expectedText": "iOS (planned)",
+      "targetType": "nav",
+      "landmark": "nav",
+      "ordinalInParent": 4,
+      "parentLocator": "nav:nth-of-type(1)",
+      "sourceRevision": "2ce5428fed90d086"
+    }
+  },
+  {
+    "id": "target_97d2033f4fcf",
+    "route": "/about",
+    "selector": "a[href=\"\\/product-demo\"]",
+    "label": "Demo",
+    "description": "nav: Demo. Crawl #30 verification is historical evidence; confirm the active DOM before pointing.",
+    "actions": [
+      "scroll_to_target",
+      "ping",
+      "explain"
+    ],
+    "guideOnly": true,
+    "runtimeVerification": {
+      "sourceCrawlId": "30",
+      "sourceDomain": "www.popsproof.com",
+      "sourceTargetId": "target_97d2033f4fcf",
+      "findingClass": "CONFIRMED",
+      "confidenceClass": "STABLE",
+      "verifiedAt": "2026-10-31T14:59:04.389703+00:00",
+      "expectedText": "Demo",
+      "targetType": "nav",
+      "landmark": "nav",
+      "ordinalInParent": 5,
+      "parentLocator": "nav:nth-of-type(1)",
+      "sourceRevision": "2a97516c354b6884"
+    }
+  },
+  {
+    "id": "target_89d1d9f15114",
+    "route": "/about",
+    "selector": "a[href=\"\\/beta\"]",
+    "label": "Beta",
+    "description": "nav: Beta. Crawl #30 verification is historical evidence; confirm the active DOM before pointing.",
+    "actions": [
+      "scroll_to_target",
+      "ping",
+      "explain"
+    ],
+    "guideOnly": true,
+    "runtimeVerification": {
+      "sourceCrawlId": "30",
+      "sourceDomain": "www.popsproof.com",
+      "sourceTargetId": "target_89d1d9f15114",
+      "findingClass": "CONFIRMED",
+      "confidenceClass": "STABLE",
+      "verifiedAt": "2026-10-31T14:59:04.393085+00:00",
+      "expectedText": "Beta",
+      "targetType": "nav",
+      "landmark": "nav",
+      "ordinalInParent": 6,
+      "parentLocator": "nav:nth-of-type(1)",
+      "sourceRevision": "f44e64e75f3948e9"
+    }
+  },
+  {
+    "id": "target_131b94e871c1",
+    "route": "/about",
+    "selector": "a[href=\"\\/access\"]",
+    "label": "Pricing",
+    "description": "nav: Pricing. Crawl #30 verification is historical evidence; confirm the active DOM before pointing.",
+    "actions": [
+      "scroll_to_target",
+      "ping",
+      "explain"
+    ],
+    "guideOnly": true,
+    "runtimeVerification": {
+      "sourceCrawlId": "30",
+      "sourceDomain": "www.popsproof.com",
+      "sourceTargetId": "target_131b94e871c1",
+      "findingClass": "CONFIRMED",
+      "confidenceClass": "STABLE",
+      "verifiedAt": "2026-10-31T14:59:04.396237+00:00",
+      "expectedText": "Pricing",
+      "targetType": "nav",
+      "landmark": "nav",
+      "ordinalInParent": 7,
+      "parentLocator": "nav:nth-of-type(1)",
+      "sourceRevision": "1e2ea6d9b72e685b"
+    }
+  },
+  {
+    "id": "target_6a91f7723ea6",
+    "route": "/about",
+    "selector": "a[href=\"\\/account\"]",
+    "label": "Sign In",
+    "description": "nav: Sign In. Crawl #30 verification is historical evidence; confirm the active DOM before pointing.",
+    "actions": [
+      "scroll_to_target",
+      "ping",
+      "explain"
+    ],
+    "guideOnly": true,
+    "runtimeVerification": {
+      "sourceCrawlId": "30",
+      "sourceDomain": "www.popsproof.com",
+      "sourceTargetId": "target_6a91f7723ea6",
+      "findingClass": "CONFIRMED",
+      "confidenceClass": "STABLE",
+      "verifiedAt": "2026-10-31T14:59:04.399562+00:00",
+      "expectedText": "Sign In",
+      "targetType": "nav",
+      "landmark": "nav",
+      "ordinalInParent": 8,
+      "parentLocator": "nav:nth-of-type(1)",
+      "sourceRevision": "2456d866eeb3ff92"
+    }
+  },
+  {
+    "id": "target_5a9832caceaf",
+    "route": "/about",
+    "selector": "a[href=\"\\/about\"]",
+    "label": "About / Our Mission",
+    "description": "nav: About / Our Mission. Crawl #30 verification is historical evidence; confirm the active DOM before pointing.",
+    "actions": [
+      "scroll_to_target",
+      "ping",
+      "explain"
+    ],
+    "guideOnly": true,
+    "runtimeVerification": {
+      "sourceCrawlId": "30",
+      "sourceDomain": "www.popsproof.com",
+      "sourceTargetId": "target_5a9832caceaf",
+      "findingClass": "CONFIRMED",
+      "confidenceClass": "STABLE",
+      "verifiedAt": "2026-10-31T14:59:04.411397+00:00",
+      "expectedText": "About / Our Mission",
+      "targetType": "nav",
+      "landmark": "nav",
+      "ordinalInParent": 1,
+      "parentLocator": "nav:nth-of-type(1)",
+      "sourceRevision": "727c458d54be44c0"
+    }
+  },
+  {
+    "id": "target_db54ad2375ec",
+    "route": "/about",
+    "selector": "a[href=\"\\/early-adopters\"]",
+    "label": "Early Adopters",
+    "description": "nav: Early Adopters. Crawl #30 verification is historical evidence; confirm the active DOM before pointing.",
+    "actions": [
+      "scroll_to_target",
+      "ping",
+      "explain"
+    ],
+    "guideOnly": true,
+    "runtimeVerification": {
+      "sourceCrawlId": "30",
+      "sourceDomain": "www.popsproof.com",
+      "sourceTargetId": "target_db54ad2375ec",
+      "findingClass": "CONFIRMED",
+      "confidenceClass": "STABLE",
+      "verifiedAt": "2026-10-31T14:59:04.441742+00:00",
+      "expectedText": "Early Adopters",
+      "targetType": "nav",
+      "landmark": "nav",
+      "ordinalInParent": 5,
+      "parentLocator": "nav:nth-of-type(1)",
+      "sourceRevision": "5e38768ce5282e0b"
+    }
+  },
+  {
+    "id": "target_621ccb01e759",
+    "route": "/about",
+    "selector": "a[href=\"\\/how-you-use-it\"]",
+    "label": "How It Works",
+    "description": "nav: How It Works. Crawl #30 verification is historical evidence; confirm the active DOM before pointing.",
+    "actions": [
+      "scroll_to_target",
+      "ping",
+      "explain"
+    ],
+    "guideOnly": true,
+    "runtimeVerification": {
+      "sourceCrawlId": "30",
+      "sourceDomain": "www.popsproof.com",
+      "sourceTargetId": "target_621ccb01e759",
+      "findingClass": "CONFIRMED",
+      "confidenceClass": "STABLE",
+      "verifiedAt": "2026-10-31T14:59:04.445099+00:00",
+      "expectedText": "How It Works",
+      "targetType": "nav",
+      "landmark": "nav",
+      "ordinalInParent": 6,
+      "parentLocator": "nav:nth-of-type(1)",
+      "sourceRevision": "5e61e86cdc3e3476"
+    }
+  },
+  {
+    "id": "target_fa96d0651c1e",
+    "route": "/about",
+    "selector": "a[href=\"\\/installation\"]",
+    "label": "Installation",
+    "description": "nav: Installation. Crawl #30 verification is historical evidence; confirm the active DOM before pointing.",
+    "actions": [
+      "scroll_to_target",
+      "ping",
+      "explain"
+    ],
+    "guideOnly": true,
+    "runtimeVerification": {
+      "sourceCrawlId": "30",
+      "sourceDomain": "www.popsproof.com",
+      "sourceTargetId": "target_fa96d0651c1e",
+      "findingClass": "CONFIRMED",
+      "confidenceClass": "STABLE",
+      "verifiedAt": "2026-10-31T14:59:04.449874+00:00",
+      "expectedText": "Installation",
+      "targetType": "nav",
+      "landmark": "nav",
+      "ordinalInParent": 7,
+      "parentLocator": "nav:nth-of-type(1)",
+      "sourceRevision": "561f0a3d84e3c5cf"
+    }
+  },
+  {
+    "id": "target_785fe4bbb7e7",
+    "route": "/about",
+    "selector": "a[href=\"\\/faq\"]",
+    "label": "FAQs",
+    "description": "nav: FAQs. Crawl #30 verification is historical evidence; confirm the active DOM before pointing.",
+    "actions": [
+      "scroll_to_target",
+      "ping",
+      "explain"
+    ],
+    "guideOnly": true,
+    "runtimeVerification": {
+      "sourceCrawlId": "30",
+      "sourceDomain": "www.popsproof.com",
+      "sourceTargetId": "target_785fe4bbb7e7",
+      "findingClass": "CONFIRMED",
+      "confidenceClass": "STABLE",
+      "verifiedAt": "2026-10-31T14:59:04.453278+00:00",
+      "expectedText": "FAQs",
+      "targetType": "nav",
+      "landmark": "nav",
+      "ordinalInParent": 8,
+      "parentLocator": "nav:nth-of-type(1)",
+      "sourceRevision": "ca09c15aeac1a7b5"
+    }
+  },
+  {
+    "id": "target_8a735ba60348",
+    "route": "/about",
+    "selector": "a[href=\"\\/support\"]",
+    "label": "Contact & Support",
+    "description": "nav: Contact & Support. Crawl #30 verification is historical evidence; confirm the active DOM before pointing.",
+    "actions": [
+      "scroll_to_target",
+      "ping",
+      "explain"
+    ],
+    "guideOnly": true,
+    "runtimeVerification": {
+      "sourceCrawlId": "30",
+      "sourceDomain": "www.popsproof.com",
+      "sourceTargetId": "target_8a735ba60348",
+      "findingClass": "CONFIRMED",
+      "confidenceClass": "STABLE",
+      "verifiedAt": "2026-10-31T14:59:04.456892+00:00",
+      "expectedText": "Contact & Support",
+      "targetType": "nav",
+      "landmark": "nav",
+      "ordinalInParent": 9,
+      "parentLocator": "nav:nth-of-type(1)",
+      "sourceRevision": "a74ab53c30f1e34e"
+    }
+  },
+  {
+    "id": "target_3feeb158f58d",
+    "route": "/about",
+    "selector": "a[href=\"\\/terms\"]",
+    "label": "Terms of Service",
+    "description": "nav: Terms of Service. Crawl #30 verification is historical evidence; confirm the active DOM before pointing.",
+    "actions": [
+      "scroll_to_target",
+      "ping",
+      "explain"
+    ],
+    "guideOnly": true,
+    "runtimeVerification": {
+      "sourceCrawlId": "30",
+      "sourceDomain": "www.popsproof.com",
+      "sourceTargetId": "target_3feeb158f58d",
+      "findingClass": "CONFIRMED",
+      "confidenceClass": "STABLE",
+      "verifiedAt": "2026-10-31T14:59:04.505915+00:00",
+      "expectedText": "Terms of Service",
+      "targetType": "nav",
+      "landmark": "nav",
+      "ordinalInParent": 14,
+      "parentLocator": "nav:nth-of-type(1)",
+      "sourceRevision": "529f0e5f4761eca4"
+    }
+  },
+  {
+    "id": "target_e022b0c3c8a9",
+    "route": "/about",
+    "selector": "a[href=\"\\/privacy\"]",
+    "label": "Privacy Notice",
+    "description": "nav: Privacy Notice. Crawl #30 verification is historical evidence; confirm the active DOM before pointing.",
+    "actions": [
+      "scroll_to_target",
+      "ping",
+      "explain"
+    ],
+    "guideOnly": true,
+    "runtimeVerification": {
+      "sourceCrawlId": "30",
+      "sourceDomain": "www.popsproof.com",
+      "sourceTargetId": "target_e022b0c3c8a9",
+      "findingClass": "CONFIRMED",
+      "confidenceClass": "STABLE",
+      "verifiedAt": "2026-10-31T14:59:04.509256+00:00",
+      "expectedText": "Privacy Notice",
+      "targetType": "nav",
+      "landmark": "nav",
+      "ordinalInParent": 15,
+      "parentLocator": "nav:nth-of-type(1)",
+      "sourceRevision": "f18dccf66b7c5e5b"
+    }
+  },
+  {
+    "id": "target_c954edcccef0",
+    "route": "/about",
+    "selector": "a[href=\"\\/access\"]",
+    "label": "Get P.O.P.S.",
+    "description": "nav: Get P.O.P.S.. Crawl #30 verification is historical evidence; confirm the active DOM before pointing.",
+    "actions": [
+      "scroll_to_target",
+      "ping",
+      "explain"
+    ],
+    "guideOnly": true,
+    "runtimeVerification": {
+      "sourceCrawlId": "30",
+      "sourceDomain": "www.popsproof.com",
+      "sourceTargetId": "target_c954edcccef0",
+      "findingClass": "CONFIRMED",
+      "confidenceClass": "STABLE",
+      "verifiedAt": "2026-10-31T14:59:04.512630+00:00",
+      "expectedText": "Get P.O.P.S.",
+      "targetType": "nav",
+      "landmark": "nav",
+      "ordinalInParent": 2,
+      "parentLocator": "nav:nth-of-type(1)",
+      "sourceRevision": "b5461ad354898894"
+    }
+  },
+  {
+    "id": "target_619bce6b0982",
+    "route": "/about",
+    "selector": "a[href=\"\\/android\"]",
+    "label": "Android testing",
+    "description": "nav: Android testing. Crawl #30 verification is historical evidence; confirm the active DOM before pointing.",
+    "actions": [
+      "scroll_to_target",
+      "ping",
+      "explain"
+    ],
+    "guideOnly": true,
+    "runtimeVerification": {
+      "sourceCrawlId": "30",
+      "sourceDomain": "www.popsproof.com",
+      "sourceTargetId": "target_619bce6b0982",
+      "findingClass": "CONFIRMED",
+      "confidenceClass": "STABLE",
+      "verifiedAt": "2026-10-31T14:59:04.519700+00:00",
+      "expectedText": "Android testing",
+      "targetType": "nav",
+      "landmark": "nav",
+      "ordinalInParent": 2,
+      "parentLocator": "nav:nth-of-type(1)",
+      "sourceRevision": "8ed0c435914344a8"
+    }
+  },
+  {
+    "id": "target_4db9dcc50f19",
+    "route": "/about",
+    "selector": "a[href=\"\\/beta\"]",
+    "label": "Beta program",
+    "description": "nav: Beta program. Crawl #30 verification is historical evidence; confirm the active DOM before pointing.",
+    "actions": [
+      "scroll_to_target",
+      "ping",
+      "explain"
+    ],
+    "guideOnly": true,
+    "runtimeVerification": {
+      "sourceCrawlId": "30",
+      "sourceDomain": "www.popsproof.com",
+      "sourceTargetId": "target_4db9dcc50f19",
+      "findingClass": "CONFIRMED",
+      "confidenceClass": "STABLE",
+      "verifiedAt": "2026-10-31T14:59:04.522979+00:00",
+      "expectedText": "Beta program",
+      "targetType": "nav",
+      "landmark": "nav",
+      "ordinalInParent": 4,
+      "parentLocator": "nav:nth-of-type(1)",
+      "sourceRevision": "1fa42b9f1d129386"
+    }
+  },
+  {
+    "id": "target_c14877d252b9",
+    "route": "/about",
+    "selector": "a[href=\"\\/support\"]",
+    "label": "Contact & privacy support",
+    "description": "nav: Contact & privacy support. Crawl #30 verification is historical evidence; confirm the active DOM before pointing.",
+    "actions": [
+      "scroll_to_target",
+      "ping",
+      "explain"
+    ],
+    "guideOnly": true,
+    "runtimeVerification": {
+      "sourceCrawlId": "30",
+      "sourceDomain": "www.popsproof.com",
+      "sourceTargetId": "target_c14877d252b9",
+      "findingClass": "CONFIRMED",
+      "confidenceClass": "STABLE",
+      "verifiedAt": "2026-10-31T14:59:04.526250+00:00",
+      "expectedText": "Contact & privacy support",
+      "targetType": "nav",
+      "landmark": "nav",
+      "ordinalInParent": 8,
+      "parentLocator": "nav:nth-of-type(1)",
+      "sourceRevision": "90c0048b5a816644"
+    }
+  },
+  {
+    "id": "target_dffb0c8c25e2",
+    "route": "/about",
+    "selector": "a[href=\"\\/\"]",
+    "label": "Landing",
+    "description": "button: Landing. Crawl #30 verification is historical evidence; confirm the active DOM before pointing.",
+    "actions": [
+      "scroll_to_target",
+      "ping",
+      "explain"
+    ],
+    "guideOnly": true,
+    "runtimeVerification": {
+      "sourceCrawlId": "30",
+      "sourceDomain": "www.popsproof.com",
+      "sourceTargetId": "target_dffb0c8c25e2",
+      "findingClass": "CONFIRMED",
+      "confidenceClass": "STABLE",
+      "verifiedAt": "2026-10-31T14:59:04.537407+00:00",
+      "expectedText": "Landing",
+      "targetType": "button",
+      "landmark": "footer",
+      "ordinalInParent": 1,
+      "parentLocator": "footer:nth-of-type(1)",
+      "sourceRevision": "d6709cd49ed87966"
+    }
+  },
+  {
+    "id": "target_fa80f8482b9b",
+    "route": "/about",
+    "selector": "a[href=\"\\/about\"]",
+    "label": "About",
+    "description": "button: About. Crawl #30 verification is historical evidence; confirm the active DOM before pointing.",
+    "actions": [
+      "scroll_to_target",
+      "ping",
+      "explain"
+    ],
+    "guideOnly": true,
+    "runtimeVerification": {
+      "sourceCrawlId": "30",
+      "sourceDomain": "www.popsproof.com",
+      "sourceTargetId": "target_fa80f8482b9b",
+      "findingClass": "CONFIRMED",
+      "confidenceClass": "STABLE",
+      "verifiedAt": "2026-10-31T14:59:04.540631+00:00",
+      "expectedText": "About",
+      "targetType": "button",
+      "landmark": "footer",
+      "ordinalInParent": 2,
+      "parentLocator": "footer:nth-of-type(1)",
+      "sourceRevision": "a4262e1c9bcbc172"
+    }
+  },
+  {
+    "id": "target_7ae833fa1d00",
+    "route": "/about",
+    "selector": "a[href=\"\\/see-pops-in-action\"]",
+    "label": "See POPS in Action",
+    "description": "button: See POPS in Action. Crawl #30 verification is historical evidence; confirm the active DOM before pointing.",
+    "actions": [
+      "scroll_to_target",
+      "ping",
+      "explain"
+    ],
+    "guideOnly": true,
+    "runtimeVerification": {
+      "sourceCrawlId": "30",
+      "sourceDomain": "www.popsproof.com",
+      "sourceTargetId": "target_7ae833fa1d00",
+      "findingClass": "CONFIRMED",
+      "confidenceClass": "STABLE",
+      "verifiedAt": "2026-10-31T14:59:04.543965+00:00",
+      "expectedText": "See POPS in Action",
+      "targetType": "button",
+      "landmark": "footer",
+      "ordinalInParent": 3,
+      "parentLocator": "footer:nth-of-type(1)",
+      "sourceRevision": "f3e1ac0195c085d9"
+    }
+  },
+  {
+    "id": "target_673db52176e1",
+    "route": "/about",
+    "selector": "a[href=\"\\/access\"]",
+    "label": "Access",
+    "description": "button: Access. Crawl #30 verification is historical evidence; confirm the active DOM before pointing.",
+    "actions": [
+      "scroll_to_target",
+      "ping",
+      "explain"
+    ],
+    "guideOnly": true,
+    "runtimeVerification": {
+      "sourceCrawlId": "30",
+      "sourceDomain": "www.popsproof.com",
+      "sourceTargetId": "target_673db52176e1",
+      "findingClass": "CONFIRMED",
+      "confidenceClass": "STABLE",
+      "verifiedAt": "2026-10-31T14:59:04.569235+00:00",
+      "expectedText": "Access",
+      "targetType": "button",
+      "landmark": "footer",
+      "ordinalInParent": 7,
+      "parentLocator": "footer:nth-of-type(1)",
+      "sourceRevision": "a0561fd649cdb6ba"
+    }
+  },
+  {
+    "id": "target_75b0c68cf93f",
+    "route": "/about",
+    "selector": "a[href=\"\\/account\"]",
+    "label": "Account",
+    "description": "button: Account. Crawl #30 verification is historical evidence; confirm the active DOM before pointing.",
+    "actions": [
+      "scroll_to_target",
+      "ping",
+      "explain"
+    ],
+    "guideOnly": true,
+    "runtimeVerification": {
+      "sourceCrawlId": "30",
+      "sourceDomain": "www.popsproof.com",
+      "sourceTargetId": "target_75b0c68cf93f",
+      "findingClass": "CONFIRMED",
+      "confidenceClass": "STABLE",
+      "verifiedAt": "2026-10-31T14:59:04.572583+00:00",
+      "expectedText": "Account",
+      "targetType": "button",
+      "landmark": "footer",
+      "ordinalInParent": 8,
+      "parentLocator": "footer:nth-of-type(1)",
+      "sourceRevision": "9af211329b2fc82e"
+    }
+  },
+  {
+    "id": "target_701c1f402eef",
+    "route": "/about",
+    "selector": "a[href=\"\\/privacy\"]",
+    "label": "Privacy",
+    "description": "button: Privacy. Crawl #30 verification is historical evidence; confirm the active DOM before pointing.",
+    "actions": [
+      "scroll_to_target",
+      "ping",
+      "explain"
+    ],
+    "guideOnly": true,
+    "runtimeVerification": {
+      "sourceCrawlId": "30",
+      "sourceDomain": "www.popsproof.com",
+      "sourceTargetId": "target_701c1f402eef",
+      "findingClass": "CONFIRMED",
+      "confidenceClass": "STABLE",
+      "verifiedAt": "2026-10-31T14:59:04.617646+00:00",
+      "expectedText": "Privacy",
+      "targetType": "button",
+      "landmark": "footer",
+      "ordinalInParent": 13,
+      "parentLocator": "footer:nth-of-type(1)",
+      "sourceRevision": "a4cc6bc01a927e2a"
+    }
+  },
+  {
+    "id": "target_e717d2768a61",
+    "route": "/about",
+    "selector": "a[href=\"\\/terms\"]",
+    "label": "Terms",
+    "description": "button: Terms. Crawl #30 verification is historical evidence; confirm the active DOM before pointing.",
+    "actions": [
+      "scroll_to_target",
+      "ping",
+      "explain"
+    ],
+    "guideOnly": true,
+    "runtimeVerification": {
+      "sourceCrawlId": "30",
+      "sourceDomain": "www.popsproof.com",
+      "sourceTargetId": "target_e717d2768a61",
+      "findingClass": "CONFIRMED",
+      "confidenceClass": "STABLE",
+      "verifiedAt": "2026-10-31T14:59:04.621992+00:00",
+      "expectedText": "Terms",
+      "targetType": "button",
+      "landmark": "footer",
+      "ordinalInParent": 14,
+      "parentLocator": "footer:nth-of-type(1)",
+      "sourceRevision": "51d2361f4faea3bc"
+    }
+  },
+  {
+    "id": "target_dfa34ec60752",
+    "route": "/about",
+    "selector": "a[href=\"https\\:\\/\\/spruked\\.com\\/\"]",
+    "label": "Spruked",
+    "description": "button: Spruked. Crawl #30 verification is historical evidence; confirm the active DOM before pointing.",
+    "actions": [
+      "scroll_to_target",
+      "ping",
+      "explain"
+    ],
+    "guideOnly": true,
+    "runtimeVerification": {
+      "sourceCrawlId": "30",
+      "sourceDomain": "www.popsproof.com",
+      "sourceTargetId": "target_dfa34ec60752",
+      "findingClass": "CONFIRMED",
+      "confidenceClass": "STABLE",
+      "verifiedAt": "2026-10-31T14:59:04.637902+00:00",
+      "expectedText": "Spruked",
+      "targetType": "button",
+      "landmark": "footer",
+      "ordinalInParent": 1,
+      "parentLocator": "footer:nth-of-type(1)",
+      "sourceRevision": "376996a32373e4e7"
+    }
+  },
+  {
+    "id": "target_bdec67eb039e",
+    "route": "/about",
+    "selector": "a[href=\"https\\:\\/\\/orbweaver\\.spruked\\.com\\/\"]",
+    "label": "OrbWeaver",
+    "description": "button: OrbWeaver. Crawl #30 verification is historical evidence; confirm the active DOM before pointing.",
+    "actions": [
+      "scroll_to_target",
+      "ping",
+      "explain"
+    ],
+    "guideOnly": true,
+    "runtimeVerification": {
+      "sourceCrawlId": "30",
+      "sourceDomain": "www.popsproof.com",
+      "sourceTargetId": "target_bdec67eb039e",
+      "findingClass": "CONFIRMED",
+      "confidenceClass": "STABLE",
+      "verifiedAt": "2026-10-31T14:59:04.641107+00:00",
+      "expectedText": "OrbWeaver",
+      "targetType": "button",
+      "landmark": "footer",
+      "ordinalInParent": 2,
+      "parentLocator": "footer:nth-of-type(1)",
+      "sourceRevision": "a2fac0b77126c55e"
+    }
+  },
+  {
+    "id": "target_5d9ef5eeb851",
+    "route": "/about",
+    "selector": "a[href=\"https\\:\\/\\/certsig\\.com\\/\"]",
+    "label": "CertSig",
+    "description": "button: CertSig. Crawl #30 verification is historical evidence; confirm the active DOM before pointing.",
+    "actions": [
+      "scroll_to_target",
+      "ping",
+      "explain"
+    ],
+    "guideOnly": true,
+    "runtimeVerification": {
+      "sourceCrawlId": "30",
+      "sourceDomain": "www.popsproof.com",
+      "sourceTargetId": "target_5d9ef5eeb851",
+      "findingClass": "CONFIRMED",
+      "confidenceClass": "STABLE",
+      "verifiedAt": "2026-10-31T14:59:04.644154+00:00",
+      "expectedText": "CertSig",
+      "targetType": "button",
+      "landmark": "footer",
+      "ordinalInParent": 3,
+      "parentLocator": "footer:nth-of-type(1)",
+      "sourceRevision": "a37eefb8a4abaa57"
+    }
+  },
+  {
+    "id": "target_0c939a7a33b4",
+    "route": "/about",
+    "selector": "a[href=\"https\\:\\/\\/truemarkmint\\.com\\/\"]",
+    "label": "TrueMarkMint",
+    "description": "button: TrueMarkMint. Crawl #30 verification is historical evidence; confirm the active DOM before pointing.",
+    "actions": [
+      "scroll_to_target",
+      "ping",
+      "explain"
+    ],
+    "guideOnly": true,
+    "runtimeVerification": {
+      "sourceCrawlId": "30",
+      "sourceDomain": "www.popsproof.com",
+      "sourceTargetId": "target_0c939a7a33b4",
+      "findingClass": "CONFIRMED",
+      "confidenceClass": "STABLE",
+      "verifiedAt": "2026-10-31T14:59:04.647239+00:00",
+      "expectedText": "TrueMarkMint",
+      "targetType": "button",
+      "landmark": "footer",
+      "ordinalInParent": 4,
+      "parentLocator": "footer:nth-of-type(1)",
+      "sourceRevision": "39f0845a0dd172b4"
+    }
+  }
+]

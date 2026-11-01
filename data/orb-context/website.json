@@ -1,12 +1,12 @@
 {
   "version": 1,
-  "source": "Local public crawl build; no customer or visitor data",
+  "source": "Current canonical POPS repository public build; no customer or visitor data",
   "pages": [
     {
       "route": "/",
       "title": "POPS | Proof of Presence System for Fathers",
-      "text": "Local-First Evidence Workstation Proof of Presence. A record that stands. Installable Windows software for fathers documenting parenting-time experiences. Bring event notes, supporting files, and a chronological record together for personal review and discussions with counsel. Get POPS See POPS in Action Read the Declaration Local-first SHA-256 hashing Factual recordkeeping Lexicon guided Your presence matters. Give the details a place to stay. A missed exchange is more than a date on a calendar. There may be an unanswered message, a receipt from the trip, a photo, or a note about what you personally observed. When those pieces stay scattered, preparing for a conversation means searching again and relying on memory. P.O.P.S. — Proof of Presence System — is designed to make that work repeatable. Document an event, connect its supporting material, and review it in context. The purpose remains personal: presence, accountability, and a factual record. Preserve. Protect. Prove. Windows is the workspace Understand how the Evidence Vault, events, timelines, and case context are intended to work together, and which release details still need verification. Explore the Windows software Android is being prepared Mobile capture, photo and location provenance, offline work, and synchronization are development or validation work. Android availability and license inclusion are not announced. Read Android development status See the practical steps Follow a fictional missed exchange from an event note through supporting files and a chronology. Representative examples are labeled; actual release captures are still needed. Follow the record-building workflow A missed exchange becomes an organized record. Record the scheduled exchange and what you observed. Associate a relevant photo or message with that event. Keep the source and collection context. Review related entries in date order, then prepare the material supported by your release for your own review or discussion with counsel. The software organizes what you supply. It does not independently establish that an event occurred or decide whether a court order was violated. File integrity checks support the record; they do not guarantee admissibility or a legal result. Choose how you take part. The published Guardian offer describes a one-time Windows license with lifetime P.O.P.S. Membership included and no mandatory recurring subscription. Checkout is unavailable while commercial delivery and release details are finalized. Saving a cart selection does not place an order. Release clarity We are seeking interest toward 50 active beta participants. The founding-customer program targets the first 100 qualifying paying customers, with special benefits still awaiting approval. Neither a signup nor a saved cart reserves paid-customer status. Windows software Android development Beta participation First 100 customers Buying FAQs Contact & support What POPS Does From scattered proof to structured record. POPS is built for the moments when parenting time is blocked, messages go unanswered, orders are disputed, or proof is scattered across screenshots, receipts, PDFs, and memories. Capture Record incidents, denied exchanges, messages, files, dates, people, and court-order context. Preserve Preserve source context and compare file contents with recorded SHA-256 hashes where supported by the release. Organize Connect event notes and supporting material in a chronology. Specific reports and attorney handoff exports remain subject to release verification. Site Path Doctrine, commitment, language, access. The public website is short by design. The app and ORB carry the deeper working structure. What POPS Does POPS helps fathers organize parenting-time records, court-order context, communication attempts, supporting files, and a chronology for review. Open Declaration The Declaration anchors the doctrine: presence, protection, duty, and the record. Open Pledge The Pledge turns the doctrine into commitment: Preserve. Protect. Prove. Open Lexicon The Lexicon teaches court-safe language and plain-English legal terms. Open Public Site vs App ORB Two audiences. One doctrine. The website explains POPS clearly. The desktop app applies POPS locally with the evidence vault, timeline tools, lexicon guidance, rewrite rules, and ORB support. Website Lexicon Core terms, court-safe highlights, rewrite examples, annotation labels, legal terms, constitutional terms, and FAQ-style education. App / ORB Lexicon Deeper working context for doctrine, rewrite rules, annotation labels, evidence terms, support terms, visitation terms, and risk classification. Local Authority The app remains local-first. Evidence storage, SQLite records, ORB runtime behavior, and exports stay with the downloadable desktop application. Proof of Presence requires a record. The Declaration and Pledge establish the standard. The desktop application helps preserve evidence, organize timelines, verify files, and prepare a court-safe record for attorney review. Get P.O.P.S.",
-      "sha256": "dae505ef656c55cb66daaaf9236435d0ff751f2c691afc0479f7aff526045cdf"
+      "text": "Local-First Evidence Workstation Proof of Presence. A record that stands. POPS helps fathers organize records of parenting-time involvement: event notes, supporting material, and a chronological history for personal review and appropriate professional discussions. Windows Guardian is the published $99 one-time desktop offer. Android is progressing through Google Play testing; iOS is planned. Get POPS See POPS in Action Read the Declaration Local-first SHA-256 hashing Factual recordkeeping Lexicon guided The POPS Application Family Three platforms. Clear release status. The website explains POPS and offers a fictional browser demonstration. It is separate from the installable Windows application and does not contain your private Evidence Vault. Windows Desktop · Published offer POPS Guardian The downloadable desktop application is offered for $99 one time, with lifetime POPS Membership included. The current website is not the installer; checkout and delivery remain disabled. Explore Windows Guardian Android · Google Play testing POPS Android The mobile companion is progressing through Google Play testing. It is not publicly available, approved for production, or ready to purchase. No public Play Store listing or price is offered here. See Android status iOS · Planned POPS for iPhone An iOS application is planned. It is not available for download or purchase, and no release date, price, or license inclusion has been announced. View platform plans Why P.O.P.S. Exists Watch how the Proof of Presence System helps bring structure to your records. Your browser does not support embedded video. Watch the narrated overview . Narrated overview · 1 minute 40 seconds · Use the sound control to mute. If playback does not start automatically, press Play. Your presence matters. Give the details a place to stay. A missed exchange is more than a date on a calendar. There may be an unanswered message, a receipt from the trip, a photo, or a note about what you personally observed. When those pieces stay scattered, preparing for a conversation means searching again and relying on memory. P.O.P.S. — Proof of Presence System — helps organize a parent’s record of involvement: record an event, preserve supporting material, and review a chronological history in context. It helps prepare documentation for appropriate review; it does not prove a disputed event or guarantee a custody or court outcome. Organize involvement Bring dates, event notes, people, and relevant context together for a clearer personal review. Explore Windows Guardian Keep supporting material connected Associate files with the records they relate to and review them in chronological context. The product does not independently verify what a file or note says. See the documented workflow See the practical steps Follow a fictional missed exchange from an event note through supporting files and a chronology. Representative examples are labeled; actual release captures are still needed. Follow the record-building workflow Your private documentation stays yours. POPS does not track users’ private documentation entries. The Windows app’s private notes and supporting records are separate from this public website and its account, support, or beta forms. Do not submit case documents or family evidence through general website forms. The app is designed around local-first records. Encryption, automatic backup, and cloud synchronization are not promised unless an active release documents and verifies them. Read the privacy notice A missed exchange becomes an organized record. Record the scheduled exchange and what you observed. Associate a relevant photo or message with that event. Keep the source and collection context. Review related entries in date order, then prepare the material supported by your release for your own review or discussion with counsel. The software organizes what you supply. It does not independently establish that an event occurred or decide whether a court order was violated. File integrity checks support the record; they do not guarantee admissibility or a legal result. Choose how you take part. Guardian Access is the published $99 one-time Windows desktop license and includes lifetime POPS Membership. Open Door is personally reviewed financial assistance for the Windows offer; sponsor contributions can support that Windows access. Neither route currently issues Android or iOS access. Checkout is unavailable, and saving a cart selection does not place an order. Release clarity We are seeking interest toward 50 active beta participants. The founding-customer program targets the first 100 qualifying paying customers, with special benefits still awaiting approval. Neither a signup nor a saved cart reserves paid-customer status. Windows software Android testing iOS (planned) Beta participation First 100 customers Buying FAQs Contact & support What POPS Does From scattered proof to structured record. POPS is built for the moments when parenting time is blocked, messages go unanswered, orders are disputed, or proof is scattered across screenshots, receipts, PDFs, and memories. Capture Record incidents, denied exchanges, messages, files, dates, people, and court-order context. Preserve Preserve source context and compare file contents with recorded SHA-256 hashes where supported by the release. Organize Connect event notes and supporting material in a chronology. Specific reports and attorney handoff exports remain subject to release verification. Site Path Doctrine, commitment, language, access. The public website is short by design. The app and ORB carry the deeper working structure. What POPS Does POPS helps fathers organize parenting-time records, court-order context, communication attempts, supporting files, and a chronology for review. Open Declaration The Declaration anchors the doctrine: presence, protection, duty, and the record. Open Pledge The Pledge turns the doctrine into commitment: Preserve. Protect. Prove. Open Lexicon The Lexicon teaches court-safe language and plain-English legal terms. Open Public Site vs App ORB Two audiences. One doctrine. The website explains POPS clearly. The desktop app applies POPS locally with the evidence vault, timeline tools, lexicon guidance, rewrite rules, and ORB support. Website Lexicon Core terms, court-safe highlights, rewrite examples, annotation labels, legal terms, constitutional terms, and FAQ-style education. App / ORB Lexicon Deeper working context for doctrine, rewrite rules, annotation labels, evidence terms, support terms, visitation terms, and risk classification. Local Authority The app remains local-first. Evidence storage, SQLite records, ORB runtime behavior, and exports stay with the downloadable desktop application. Proof of Presence requires a record. The Declaration and Pledge establish the standard. The desktop application helps preserve evidence, organize timelines, verify files, and prepare a court-safe record for attorney review. Get P.O.P.S.",
+      "sha256": "c09b6d637c28d86975a83824022328cd466730bf6be50d2b367ce08762183eca"
     },
     {
       "route": "/about",
@@ -16,75 +16,75 @@
     },
     {
       "route": "/desktop-app",
-      "title": "P.O.P.S. Windows Software | Evidence, Events & Timelines",
-      "text": "Windows desktop • Product overview Your records belong together. Your presence deserves context. P.O.P.S. is installable Windows software designed primarily for fathers documenting parenting-time experiences. Bring supporting files, event notes, dates, people, and case context into a workspace built for careful review. Release clarity The website describes the Windows beta direction. The exact downloadable build, supported Windows versions, and feature checklist must be verified before commercial delivery. Checkout is unavailable; this page is not a download or activation service. Less searching. A clearer record to review. When an exchange does not happen, the context may be spread across messages, a calendar entry, a receipt, and photos on a phone. Reconstructing that sequence later takes attention away from the decisions you need to make. P.O.P.S. is designed to give each event a place and connect its supporting material. The practical benefit is a record you can navigate: find the event, see what you documented, and review the related files. It supports your preparation for personal review and conversations with counsel. It does not decide the truth of a dispute or determine what legal action to take. The emotional purpose has not changed. A father who shows up needs a disciplined way to preserve the details of that effort. Preserve. Protect. Prove. is the foundation; the workspace is the working method. What the workspace is designed to help you do Evidence Vault: connect files with context Keep supporting material associated with the events it relates to. Preserve source context and distinguish an original source from a screenshot, copy, annotation, or summary. Original-file handling and accepted formats require confirmation for the supplied build. Events and timelines: review the sequence Record what you observed and organize events chronologically. Connect dates and relevant people so a later review starts from structured information rather than an unlabelled folder. Court-order context: keep references alongside observations Associate the relevant order reference with a documented event where supported. A user-entered violation label is not a legal finding. Keep the source language available for professional review. Review outputs: prepare selected material Timelines, evidence indexes, manifests, and attorney packet exports are subject to release verification. The final feature list must state exact formats, selection controls, and output contents. Follow one missed-exchange example In the fictional walkthrough, Alex records the planned exchange date and notes that the exchange did not take place. Alex associates a harmless example message and a travel receipt, labels their source, and reviews the event alongside related entries. This illustrates the value of organization without turning notes into independent verification. The record should distinguish what Alex personally observed from what a file contains or another person reported. When a supported export is available, Alex reviews it before deciding what to share. Actual application screenshot pending Evidence Vault, linked event details, and the same event in a timeline. Each capture needs the demonstrated build and fictional-data label. This space is reserved for a verified capture of the release being offered. No application image has been fabricated. Follow the five-step workflow Integrity checks support careful recordkeeping SHA-256 creates a fingerprint from a file’s contents. Comparing a later fingerprint with a previously recorded value helps check whether those contents have changed. A match does not independently establish who created the file, when an event happened, or whether the information is true. Provenance records where material came from and how it was collected. Chain of custody documents its handling over time. A hash can support that history, but cannot replace it. Keep source material, record context accurately, and distinguish your own notes from system-recorded information. P.O.P.S. supports organization and review. It does not independently verify real-world events, provide legal advice, or guarantee that a file or report will be admitted in court. What the published Windows offer includes Guardian Access is currently described as a $99 one-time Windows app license with lifetime P.O.P.S. Membership included. The standard license does not require a mandatory recurring subscription. Membership is not a second desktop application, and a Guardian buyer should not need to add it again. Optional yearly maintenance is listed at $19.99, with precise scope and availability awaiting confirmation. Device limits, update rights, support coverage, refund terms, activation requirements, and installer delivery timing must be approved before purchases open. No lifetime upgrade promise is made here. Android is a forthcoming companion, not a confirmed inclusion in the Windows license. Offline-first synchronization is planned; pairing, transfer, conflict handling, and security behavior remain to be validated. There is no promise of automatic cloud backup or a working mobile sync service. Choose your next step with clear expectations Read the installation preparation guide before relying on a release. It identifies requirements still needing confirmation and explains how to begin with fictional material. Beta applicants help test specified workflows; a beta application is not a commercial license or guaranteed invitation. If you want to purchase later, review the access options and save your selection in the cart. No payment is collected and no order is created. Use the FAQs or support page to resolve questions about an entitlement before checkout becomes available. View Windows access options Installation & onboarding Walkthrough availability Windows software Android development Beta participation First 100 customers Buying FAQs Contact & support",
-      "sha256": "99063f07d968aa1ff55ed1d28530b457ac6933369f3861044e348b782caa694c"
+      "title": "POPS Guardian for Windows | $99 Desktop Application",
+      "text": "POPS Guardian · Windows Desktop A Windows workspace for a parent’s record of involvement. POPS Guardian is installable Windows software designed to organize parenting-time notes, supporting material, and a chronological history for personal review and appropriate professional discussions. The published offer is $99.00 one time, with lifetime POPS Membership included. Release clarity The public website, account, and fictional browser demonstration are not the downloadable Windows application. No Guardian installer is currently linked or delivered here. Checkout is disabled while the supplied build, license terms, and fulfillment are finalized. Less searching. A clearer record to review. When an exchange does not happen, the context may be spread across messages, a calendar entry, a receipt, and photos on a phone. Reconstructing that sequence later takes attention away from the decisions you need to make. P.O.P.S. is designed to give each event a place and connect its supporting material. The practical benefit is a record you can navigate: find the event, see what you documented, and review the related files. It supports your preparation for personal review and conversations with counsel. It does not decide the truth of a dispute or determine what legal action to take. The emotional purpose has not changed. A father who shows up needs a disciplined way to preserve the details of that effort. Preserve. Protect. Prove. is the foundation; the workspace is the working method. What the workspace is designed to help you do Evidence Vault: connect files with context Keep supporting material associated with the events it relates to. Preserve source context and distinguish an original source from a screenshot, copy, annotation, or summary. Original-file handling and accepted formats require confirmation for the supplied build. Events and timelines: review the sequence Record what you observed and organize events chronologically. Connect dates and relevant people so a later review starts from structured information rather than an unlabelled folder. Court-order context: keep references alongside observations Associate the relevant order reference with a documented event where supported. A user-entered violation label is not a legal finding. Keep the source language available for professional review. Review outputs: prepare selected material Timelines, evidence indexes, manifests, and attorney packet exports are subject to release verification. The final feature list must state exact formats, selection controls, and output contents. Follow one missed-exchange example In the fictional walkthrough, Alex records the planned exchange date and notes that the exchange did not take place. Alex associates a harmless example message and a travel receipt, labels their source, and reviews the event alongside related entries. This illustrates the value of organization without turning notes into independent verification. The record should distinguish what Alex personally observed from what a file contains or another person reported. When a supported export is available, Alex reviews it before deciding what to share. Actual application screenshot pending Evidence Vault, linked event details, and the same event in a timeline. Each capture needs the demonstrated build and fictional-data label. This space is reserved for a verified capture of the release being offered. No application image has been fabricated. Follow the five-step workflow Integrity checks support careful recordkeeping SHA-256 creates a fingerprint from a file’s contents. Comparing a later fingerprint with a previously recorded value helps check whether those contents have changed. A match does not independently establish who created the file, when an event happened, or whether the information is true. Provenance records where material came from and how it was collected. Chain of custody documents its handling over time. A hash can support that history, but cannot replace it. Keep source material, record context accurately, and distinguish your own notes from system-recorded information. P.O.P.S. supports organization and review. It does not independently verify real-world events, provide legal advice, or guarantee that a file or report will be admitted in court. What the published Windows offer includes Guardian Access is a $99.00 one-time Windows app license with lifetime POPS Membership included. The standard license does not require a mandatory recurring subscription. Membership is not a second desktop application, and a Guardian buyer should not add it again. Optional yearly maintenance is listed at $19.99, with precise scope and availability awaiting confirmation. Device limits, update rights, support coverage, refund terms, activation requirements, and installer delivery timing must be approved before purchases open. No lifetime upgrade promise is made here. Android is progressing through Google Play testing. It is not publicly available, approved for production, or ready to purchase. It is not included with the Windows license. A separate iOS application is planned; no iOS release date, price, or entitlement has been announced. Windows synchronization remains planned and unverified. Private records stay outside website tracking POPS does not track users’ private documentation entries. Windows Guardian’s intended local records are separate from website accounts and forms. The current website cannot see or retrieve entries in the installed application. Local-first does not by itself mean encrypted storage, automatic backup, or cloud synchronization. Confirm storage and recovery capabilities against the specific release before relying on them. Read the privacy notice Choose your next step with clear expectations Read the installation preparation guide before relying on a release. It identifies requirements still needing confirmation and explains how to begin with fictional material. Beta applicants help test specified workflows; a beta application is not a commercial license or guaranteed invitation. If you want to purchase later, review the access options and save your selection in the cart. No payment is collected and no order is created. Use the FAQs or support page to resolve questions about an entitlement before checkout becomes available. View Windows access options Installation & onboarding Walkthrough availability Windows software Android testing iOS (planned) Beta participation First 100 customers Buying FAQs Contact & support",
+      "sha256": "b37b49a0eb04012f3637fa5620700a5daa16b245b805d82c8c285faa59586fd7"
     },
     {
       "route": "/android",
-      "title": "P.O.P.S. Android Companion | Development & Capture Plans",
-      "text": "Android • In development Keep the details close. Bring the record together. The forthcoming P.O.P.S. Android companion is intended to help fathers document parenting-time experiences while details are still available, then connect that work with the Windows workspace. Release clarity Android is being prepared and tested. No public Android release, availability date, supported-device list, or inclusion with a Windows license is confirmed on this website. Capture the context while it is fresh After a missed exchange, important details can end up in several places: a photo on your phone, a message in another app, and a note you intend to write later. The mobile direction is to make collecting and organizing that context easier without turning an observation into an unsupported conclusion. Intended workflows include creating a dated note, associating a photo with an event, and keeping source context alongside the material. Exact supported file types, permissions, and capture steps will be published after testing. Do not rely on this page as confirmation that a particular capture workflow is available today. What is under validation, and what is planned Photo and location provenance — under validation Testing must establish what metadata is recorded, how permissions work, and how user-supplied details differ from device-recorded information. A recorded location is not independent proof that an exchange occurred. Offline-first mobile work — development direction The intent is to support useful documentation without a continuous connection. Storage, recovery, and the precise offline scope remain subject to release validation. Windows synchronization — planned Transfer methods, supported record types, conflict handling, device pairing, and security details have not been confirmed. This is not an announcement of live cloud sync. One event, with its supporting context In a fictional test, a participant records an unsuccessful exchange attempt, notes what they personally observed, and associates an example photo or message. The proposed next step is to review that information with related records on Windows. This is an intended scenario, not a claim that end-to-end synchronization is complete. Actual application screenshot pending Android capture screen and permission explanation, using fictional data. This space is reserved for a verified capture of the release being offered. No application image has been fabricated. Help test the mobile direction The beta program is seeking interest toward a goal of 50 active participants across the testing needs of the product. Android interest does not guarantee an Android build or invitation. Tell us which platform you can test; do not submit family evidence. Android pricing, distribution, and its relationship to the Windows license will be announced only after those decisions are approved. Buying Windows today must not be understood as a promise of Android access or future synchronization. Express beta interest Windows software Android development Beta participation First 100 customers Buying FAQs Contact & support",
-      "sha256": "cf2555c6506c75e500b575d26d0fc7007898fb0a2712a5b72290a71afd5a6bd3"
+      "title": "POPS Android | Google Play Testing Status",
+      "text": "Android companion • Google Play testing POPS Android is progressing through Google Play testing. The Android companion is being prepared to help parents organize an involvement record while details are fresh. Its current progress is testing; this page is not a release announcement. Release clarity POPS Android is progressing through Google Play testing. It is not publicly available, approved for production, or ready to purchase. There is no public Play Store listing or Android price. A Windows Guardian purchase does not include Android access. A mobile companion for a parent’s record After a missed exchange, details may be spread across a phone photo, a message in another app, and a note written later. The Android app is intended to help a parent organize dated notes and supporting material, then review a chronological history. POPS helps organize what a parent records. It does not independently establish that a disputed event occurred or guarantee a custody or court outcome. Intended product workflows Planned workflow Record an event Create a dated note that distinguishes a parent’s own observation from other information. Under validation Associate supporting material Testing is needed to confirm supported file types, permissions, and what photo or location context is recorded. Device data is not independent proof of an event. Planned Review a chronology The intended companion experience connects dated records for review. Windows transfer and synchronization details are not yet confirmed. These are product goals, not a claim that each workflow is available in a public or production release. Release status and platform boundaries Google Play Progressing through testing. No public listing, production approval, purchase option, or release date is announced. Availability and price Not publicly available or ready to purchase. No Android price has been published. Windows relationship Android is a separate application. A Windows Guardian license does not grant Android access. No Open Door or sponsor-funded Android access is currently offered. iOS A separate iOS application is planned. No iOS release date, price, or entitlement has been announced. Windows synchronization Transfer methods, supported record types, conflict handling, device pairing, and security details are unconfirmed. No cloud-sync service is being announced. Private documentation is not tracked POPS does not track users’ private documentation entries. The Android app’s intended records are separate from this website’s account and general support forms. Do not send family evidence through those forms. Storage, recovery, encryption, and backup behavior must be confirmed for an actual release. Do not assume automatic cloud backup or continuous synchronization. Read the privacy notice Help test the mobile direction People interested in Android testing can express beta interest. This does not provide an Android build, guarantee an invitation, or grant a license. Do not submit private family evidence. Express beta interest Windows software Android testing iOS (planned) Beta participation First 100 customers Buying FAQs Contact & support",
+      "sha256": "d911b12040ac78a1df648ed8608d4404f22fbf9a0bd49ef67432141894685158"
     },
     {
       "route": "/how-you-use-it",
       "title": "How P.O.P.S. Works | From Parenting-Time Event to Organized Record",
-      "text": "One fictional example • Five practical steps From a difficult moment to a record you can review. This walkthrough follows Alex, a fictional father documenting an exchange that did not take place. The example explains the intended workflow without claiming that a demonstration is a real case or proof of an event. Release clarity Steps describe the product workflow. Exact screens, supported file types, integrity checks, and export functions depend on the tested release. Actual release captures will be added after verification. 1. Capture what you personally observed Alex starts with the scheduled exchange date, the agreed place, and a short factual note about what happened. A useful entry separates the planned event from the observed result. It avoids guessing about another person's motives or turning a disagreement into a legal conclusion. The benefit is context while the details are fresh. Instead of returning weeks later to reconstruct a confusing afternoon, Alex has an identifiable event to review. If a detail is uncertain, the note should say so rather than invent precision. Use fictional records while learning the software. The website beta form is for contact and platform information, not for submitting the exchange details or the supporting evidence. 2. Keep supporting material and its source context Alex associates a harmless example message and receipt with the event. Source notes explain where each item came from and whether it is an original export, screenshot, or other copy. A screenshot can be useful without being equivalent to the underlying source record. Where supported by the release, file hashing creates a reference fingerprint for later comparison. It can help identify a change in file contents. It does not establish that Alex was at a location or that the account of the exchange is true. Original-file preservation, metadata retention, and custody logging must be verified before relying on a specific build. Keep independent source material and appropriate backups. 3. Connect the pieces in a chronology Alex connects the event with its supporting files and relevant order reference. The timeline gives the event a place among other dated records. That makes it easier to find the right material when preparing for a discussion. Organization is useful even when a record is incomplete. A missing attachment or uncertain date should remain visible as a gap. The software should not be presented as filling gaps with independently verified facts. The Windows workspace is the primary product. Mobile capture and Windows–Android synchronization are forthcoming work; this example does not depend on an announced synchronization feature. 4. Review the record before interpreting it Alex reads the event in sequence, checks the attached material, and corrects any inaccurate notes. Dates, source labels, names, and the distinction between observation and inference all matter. A repeated sequence can prompt a question without establishing a legal finding. The practical benefit is a clearer starting point for review. A lawyer can ask about a specific event and its source context instead of receiving an unexplained collection of images. P.O.P.S. does not replace that professional judgment. Actual application screenshot pending One fictional event, the associated files, and its position in the timeline, captured from the same verified build. This space is reserved for a verified capture of the release being offered. No application image has been fabricated. 5. Prepare only the material you mean to share If the release supports the required export, Alex selects a scope, reviews the output, and checks that the intended files and context are included. Exact timeline, evidence-index, manifest, and verification-report formats are still subject to release confirmation. The user chooses what to share and how to deliver it. A website account is not a case upload portal. Neither an organized packet nor a matching hash guarantees admissibility, counsel acceptance, or any court result. Before using the workflow with sensitive material, review the installation guide and release limitations. If a step is unclear or fails, report the build and steps with fictional data through support. Understand review & handoff Explore the Windows product Windows software Android development Beta participation First 100 customers Buying FAQs Contact & support",
-      "sha256": "bb14e0bccc0ee440c132f5c0dc06d2de5f9368efaaeae31ceced3fe02692b4df"
+      "text": "One fictional example • Five practical steps From a difficult moment to a record you can review. This walkthrough follows Alex, a fictional father documenting an exchange that did not take place. The example explains the intended workflow without claiming that a demonstration is a real case or proof of an event. Release clarity Steps describe the product workflow. Exact screens, supported file types, integrity checks, and export functions depend on the tested release. Actual release captures will be added after verification. 1. Capture what you personally observed Alex starts with the scheduled exchange date, the agreed place, and a short factual note about what happened. A useful entry separates the planned event from the observed result. It avoids guessing about another person's motives or turning a disagreement into a legal conclusion. The benefit is context while the details are fresh. Instead of returning weeks later to reconstruct a confusing afternoon, Alex has an identifiable event to review. If a detail is uncertain, the note should say so rather than invent precision. Use fictional records while learning the software. The website beta form is for contact and platform information, not for submitting the exchange details or the supporting evidence. 2. Keep supporting material and its source context Alex associates a harmless example message and receipt with the event. Source notes explain where each item came from and whether it is an original export, screenshot, or other copy. A screenshot can be useful without being equivalent to the underlying source record. Where supported by the release, file hashing creates a reference fingerprint for later comparison. It can help identify a change in file contents. It does not establish that Alex was at a location or that the account of the exchange is true. Original-file preservation, metadata retention, and custody logging must be verified before relying on a specific build. Keep independent source material and appropriate backups. 3. Connect the pieces in a chronology Alex connects the event with its supporting files and relevant order reference. The timeline gives the event a place among other dated records. That makes it easier to find the right material when preparing for a discussion. Organization is useful even when a record is incomplete. A missing attachment or uncertain date should remain visible as a gap. The software should not be presented as filling gaps with independently verified facts. The Windows workspace is the primary product. Mobile capture and Windows–Android synchronization are forthcoming work; this example does not depend on an announced synchronization feature. 4. Review the record before interpreting it Alex reads the event in sequence, checks the attached material, and corrects any inaccurate notes. Dates, source labels, names, and the distinction between observation and inference all matter. A repeated sequence can prompt a question without establishing a legal finding. The practical benefit is a clearer starting point for review. A lawyer can ask about a specific event and its source context instead of receiving an unexplained collection of images. P.O.P.S. does not replace that professional judgment. Actual application screenshot pending One fictional event, the associated files, and its position in the timeline, captured from the same verified build. This space is reserved for a verified capture of the release being offered. No application image has been fabricated. 5. Prepare only the material you mean to share If the release supports the required export, Alex selects a scope, reviews the output, and checks that the intended files and context are included. Exact timeline, evidence-index, manifest, and verification-report formats are still subject to release confirmation. The user chooses what to share and how to deliver it. A website account is not a case upload portal. Neither an organized packet nor a matching hash guarantees admissibility, counsel acceptance, or any court result. Before using the workflow with sensitive material, review the installation guide and release limitations. If a step is unclear or fails, report the build and steps with fictional data through support. Understand review & handoff Explore the Windows product Windows software Android testing iOS (planned) Beta participation First 100 customers Buying FAQs Contact & support",
+      "sha256": "cfb10243aea9eb17ef3307a0725de44359739b5d08fc930e3d27a6b8b9391c4d"
     },
     {
       "route": "/product-demo",
       "title": "Pops! Interactive Application Demo | Guided Fictional Case Tour",
-      "text": "Pops! mini application • Interactive fictional demonstration Follow one record. See how the pieces connect. Explore a miniature Pops! application inside the website. The interface is adapted from the real Windows source, with consistent fictional people and records. Pops guides you from the dashboard to a reviewable chronology. Start the Pops! application tour A guided tour you can explore Choose Start Tour for eight stops: Dashboard, Dossier, Relationship Tree, Incident, Evidence Vault, Timeline, Review, and Get Pops! Pops advances through the approved screen sequence after narration. Pause to explore, ask a question through Ask Pops, use Back, or restart with the same fictional records. There is no Next button. Select people in the dossier and relationship view. Inspect the October 10 exchange incident, open its supporting text fixtures, and compare a bundled file’s SHA-256 fingerprint. The timeline and review screens refer to the same people, dates, incident, and evidence. The application sidebar lets you explore the supported screens. Opening the calendar pauses the guided sequence; Resume returns to the current stop. Opening Ask Pops or talking to Pops pauses tour narration. The local-model conversation retains relevant fictional context; Resume continues the guide. Exit stops narration and clears tour highlighting. Real interface. Fictional records. Clear boundaries. This is a browser adaptation, not the installed native application or a release acceptance test. It runs no Tauri commands, SQLite database, native services, or evidence storage. Uploads and exports are disabled. Do not enter private family information. Example edits stay in memory and reset on refresh or Restart. The relationship visualization is labeled a conceptual preview because its availability in the current application release is not confirmed. Simulated handling-history entries are not a real chain of custody. The hash comparison checks only bundled fictional text; it does not verify a real event or guarantee admissibility. Refreshing restores only the tour position and voice preference in a paused state. No case data, notes, contact edits, or evidence is saved by the demo. The website customer account and shopping cart remain separate. Windows release features, installer delivery, Android plans, and purchase inclusions require their published release qualifications. The demo does not issue a license or place an order, and checkout remains unavailable. Explore the Windows product Review access options Official recording status Windows software Android development Beta participation First 100 customers Buying FAQs Contact & support",
-      "sha256": "ea22b5cdf8dd25f023b73764851bbfe43cdb840bceb63e3f1b264fb1ab1f92ee"
+      "text": "Pops! mini application • Interactive fictional demonstration Follow one record. See how the pieces connect. Explore a miniature Pops! application inside the website. The interface is adapted from the real Windows source, with consistent fictional people and records. Pops guides you from the dashboard to a reviewable chronology. Start the Pops! application tour A guided tour you can explore Choose Start Tour for eight stops: Dashboard, Dossier, Relationship Tree, Incident, Evidence Vault, Timeline, Review, and Get Pops! Pops advances through the approved screen sequence after narration. Pause to explore, ask a question through Ask Pops, use Back, or restart with the same fictional records. There is no Next button. Select people in the dossier and relationship view. Inspect the October 10 exchange incident, open its supporting text fixtures, and compare a bundled file’s SHA-256 fingerprint. The timeline and review screens refer to the same people, dates, incident, and evidence. The application sidebar lets you explore the supported screens. Opening the calendar pauses the guided sequence; Resume returns to the current stop. Opening Ask Pops or talking to Pops pauses tour narration. The local-model conversation retains relevant fictional context; Resume continues the guide. Exit stops narration and clears tour highlighting. Real interface. Fictional records. Clear boundaries. This is a browser adaptation, not the installed native application or a release acceptance test. It runs no Tauri commands, SQLite database, native services, or evidence storage. Uploads and exports are disabled. Do not enter private family information. Example edits stay in memory and reset on refresh or Restart. The relationship visualization is labeled a conceptual preview because its availability in the current application release is not confirmed. Simulated handling-history entries are not a real chain of custody. The hash comparison checks only bundled fictional text; it does not verify a real event or guarantee admissibility. Refreshing restores only the tour position and voice preference in a paused state. No case data, notes, contact edits, or evidence is saved by the demo. The website customer account and shopping cart remain separate. Windows release features, installer delivery, Android plans, and purchase inclusions require their published release qualifications. The demo does not issue a license or place an order, and checkout remains unavailable. Explore the Windows product Review access options Official recording status Windows software Android testing iOS (planned) Beta participation First 100 customers Buying FAQs Contact & support",
+      "sha256": "c2929133f6645caf3d517f7865325858b21a03a41c31aa4874f60957e51c0d4f"
     },
     {
       "route": "/see-pops-in-action",
       "title": "P.O.P.S. Walkthrough | Official Recording Status & Demo Guide",
-      "text": "Actual product demonstration • Recording pending Watch the record take shape—when the verified recording is ready. The official application recording is not yet bundled with this website. We will publish a real click-through of an identified build, using fictional records. The representative product overview remains available separately. Official walkthrough: not yet available Actual application video pending A continuous recording will follow one fictional missed exchange through the verified Windows build, with captions and a written transcript. No video is claimed to exist here. This space is reserved for a verified capture of the release being offered. No application image has been fabricated. The final recording needs to identify the build, show the actions performed, and state any limitations demonstrated. It must use fictional or fully sanitized material. Marketing captions should describe what is visible rather than imply that a menu item proves a working feature. The demonstration we are preparing The reason: a father needs to preserve the details of an unsuccessful exchange attempt without relying on memory. The event: create a factual note and distinguish scheduled details from observations. The supporting material: associate a harmless example message and receipt, then inspect the recorded source context. The chronology: find the event among other dated records and review related material. The integrity check: where supported, compare file contents with a recorded SHA-256 reference and explain its limits. The output: show a real supported report or export, or clearly say that it is not yet validated. What a demonstration can establish A recording can show a particular build completing a particular task with example data. It does not independently verify a family's events, establish a complete chain of custody before collection, or guarantee that a court will accept an output. Android capture and synchronization belong to a separate development and testing track. They will be demonstrated only when the relevant workflow has been validated. No release date or license inclusion is implied by this recording plan. If you prefer to read the workflow now, follow the step-by-step fictional scenario. For purchase inclusions and availability, use the Windows product page and access options rather than treating this recording plan as a feature commitment. Read the practical walkthrough View the representative overview Windows software Android development Beta participation First 100 customers Buying FAQs Contact & support",
-      "sha256": "d1403f478941a86f6ec4cc69f7c1049bcaa08318de2ca1d022faf966fe2b2182"
+      "text": "Actual product demonstration • Recording pending Watch the record take shape—when the verified recording is ready. The official application recording is not yet bundled with this website. We will publish a real click-through of an identified build, using fictional records. The representative product overview remains available separately. Official walkthrough: not yet available Actual application video pending A continuous recording will follow one fictional missed exchange through the verified Windows build, with captions and a written transcript. No video is claimed to exist here. This space is reserved for a verified capture of the release being offered. No application image has been fabricated. The final recording needs to identify the build, show the actions performed, and state any limitations demonstrated. It must use fictional or fully sanitized material. Marketing captions should describe what is visible rather than imply that a menu item proves a working feature. The demonstration we are preparing The reason: a father needs to preserve the details of an unsuccessful exchange attempt without relying on memory. The event: create a factual note and distinguish scheduled details from observations. The supporting material: associate a harmless example message and receipt, then inspect the recorded source context. The chronology: find the event among other dated records and review related material. The integrity check: where supported, compare file contents with a recorded SHA-256 reference and explain its limits. The output: show a real supported report or export, or clearly say that it is not yet validated. What a demonstration can establish A recording can show a particular build completing a particular task with example data. It does not independently verify a family's events, establish a complete chain of custody before collection, or guarantee that a court will accept an output. Android capture and synchronization belong to a separate development and testing track. They will be demonstrated only when the relevant workflow has been validated. No release date or license inclusion is implied by this recording plan. If you prefer to read the workflow now, follow the step-by-step fictional scenario. For purchase inclusions and availability, use the Windows product page and access options rather than treating this recording plan as a feature commitment. Read the practical walkthrough View the representative overview Windows software Android testing iOS (planned) Beta participation First 100 customers Buying FAQs Contact & support",
+      "sha256": "49399a4ba77cd14dfb96c29f15f5f7970bc663e962e0f4a2f2ccfc0796aa81bd"
     },
     {
       "route": "/access",
-      "title": "Get P.O.P.S. | Windows License, Membership & Access Options",
-      "text": "Get P.O.P.S. • Purchase preparation Choose the access path that fits your situation. The Windows desktop license is the software purchase. Open Door is a separately reviewed assistance path. Sponsorship supports access, while membership is a community offering—not another desktop license. Release clarity Checkout is unavailable. Existing published prices are shown without adding discounts or new entitlements. A saved selection is not an order. Release features, delivery, license scope, and commercial terms must be finalized before payment opens. Windows licensing and ways to participate Guardian is the standard one-time Windows offer with no mandatory recurring subscription. Android is in development and is not promised as an inclusion. The website is available on mobile; it is not the Android evidence application. Standard Windows offer Guardian Access $99 Full POPS desktop app access with lifetime POPS Membership included. Published price: $99 one time. Lifetime POPS Membership is included. Optional annual maintenance is listed at $19.99; its coverage and availability require approval. No lifetime upgrade promise is made. Save Guardian Access to cart Reviewed assistance Open Door Access Reviewed contribution Reviewed access request for fathers who cannot carry the full license price today. Manual review and available funding determine approval. A website account is not an approval or a license. No automatic approval code is generated here. Read Open Door availability Support contribution Sponsor a Father $25+ Help fund approved Open Door license capacity. The current cart supports $25 multiples only. Custom contributions are not implemented. No sponsorship payment is accepted today. Save Sponsor a Father to cart Community membership POPS Membership $12.99 Lifetime community membership for updates, education, events, and resource drops. Published price: $12.99 one time. Guardian already includes this membership. Newsletter, community rooms, Q&A, and event availability require confirmation; these are not all represented as active services. Save POPS Membership to cart Open Door: reviewed access, with dignity Open Door is intended to help fathers who cannot carry the full license price. Existing program policy describes a non-zero contribution and review subject to reserve capacity. The approval and fulfillment workflow is not yet active on this website. Do not send private court details or family evidence to explain a financial need. You may ask a general availability question through support, but that request is not an Open Door application or approval. Published reserve commitments remain in the existing policy; no new eligibility or funding promise is introduced here. Read the existing program policy Ask about access availability Understand what stays local The Windows product is designed around local records and user-controlled sharing. Local-first does not automatically mean encrypted storage, automatic backups, full offline functionality, or Android synchronization. Those details must match the supplied release. SHA-256 compares file contents against a recorded reference; it does not verify that an event happened. Backup, recovery, chain-of-custody logging, and export functions require release-specific verification. Your website account is separate from your private Evidence Vault. Before purchases open The final offer must identify supported Windows versions, device rights, delivery and activation steps, update coverage, support, and refund terms. No Android entitlement or founding-customer benefit is included by implication. Review saved cart First-100 program status Read buying FAQs Checkout availability Windows software Android development Beta participation First 100 customers Buying FAQs Contact & support",
-      "sha256": "55cac43a275a8532ddee5aaa1dd97779a4ed99d497a85a3646eb87ceb621b000"
+      "title": "POPS Access | Windows Guardian, Android Testing & iOS Plans",
+      "text": "POPS applications & access Choose your platform. Understand your access. POPS helps fathers organize a record of parenting-time involvement, supporting material, and a chronological history for personal review and appropriate professional discussions. The Windows offer is published; Android is in Google Play testing; iOS is planned. Release clarity Checkout is disabled. The website cannot accept payment or deliver an app license. A saved cart selection is not an order. Android and iOS are separate applications and are not included with Windows Guardian. The POPS application family Windows Desktop · Published offer POPS Guardian The downloadable Windows application has a published price of $99.00 one time . Lifetime POPS Membership is included. The website and its fictional browser demonstration are available to explore. They are not the installable Guardian application or a download service. Windows Guardian details Android · Google Play testing POPS Android The Android companion is progressing through Google Play testing. It is not publicly available, approved for production, or ready to purchase. No public Play Store listing or price is provided. Windows purchase, Open Door assistance, and sponsor funding do not grant Android access. Android product status iOS · Planned POPS for iPhone An iOS application is planned. No public release, date, price, or connection to another platform’s license has been announced. Three ways to access the Windows application These routes apply to Windows Guardian only. They do not promise access to an unreleased Android or planned iOS application. Standard purchase Guardian Access $99.00 one time A one-time Windows desktop license with lifetime POPS Membership included. No mandatory recurring subscription is published for this offer. Installer delivery, activation, release-specific features, support, update coverage, and refund terms still need to be finalized. Checkout remains disabled. Save Windows offer to cart Personally reviewed financial assistance Open Door For fathers who cannot afford the full Windows license price, Open Door is a personally reviewed assistance route, subject to eligibility and available funding. The review and approval workflow is not active on this website. An account or support message is not an application, approval, or license. This route is not offered for Android or iOS. Review program policy Sponsor-funded Windows access Sponsor a Father $25 contribution increments Sponsor contributions are intended to support approved Open Door capacity for Windows Guardian. A contribution does not itself grant the sponsor or another person an application license. Payment, custom contribution amounts, and sponsorship fulfillment are unavailable. Sponsorship does not fund Android or iOS access. Save sponsorship selection Website experience and Windows app are different This website provides product information, support and beta-interest forms, a customer account, and a browser demonstration using fictional records. The demonstration is not the installed desktop application and does not store a real Evidence Vault. Guardian is a separate downloadable Windows application. No installer is linked here, and the website does not currently deliver or activate a license. Explore the fictional browser demo Read Windows product details POPS Membership is a separate offering $12.99 one time for the published lifetime membership. Membership alone is not a Windows, Android, or iOS application license. Guardian includes lifetime membership, so Guardian buyers should not add membership separately. The availability of community services, events, and resource drops still requires confirmation. Save membership selection Open Door review and sponsorship Open Door is intended to provide personally reviewed financial assistance toward the Windows Guardian offer, subject to program rules and available reserve capacity. The application and approval workflow is not active. Do not send private court details or family evidence to explain a financial need. Contact support for general availability information; that request is not an application or approval. Read the existing program policy Ask about Windows access Your private documentation is not tracked POPS does not track users’ private documentation entries. The Windows app’s private notes and supporting records are separate from website accounts, forms, and the fictional browser demo. General website forms are not for case documents or family evidence. The app is designed around local-first records. Encryption, automatic backup, and cloud synchronization are not promised unless a specific active release documents and verifies them. Read the privacy notice Before purchasing License scope, supported Windows versions, device rights, delivery and activation, support, update coverage, and refund terms must be finalized before payment opens. Square checkout remains disabled. No order, payment, license, or platform entitlement is created by saving a selection. Review saved cart Read buying FAQs Checkout status Windows software Android testing iOS (planned) Beta participation First 100 customers Buying FAQs Contact & support",
+      "sha256": "7b32048fca59f85cddb4d9d079aa1fb73455e480d88d440368add6a26fba43e2"
     },
     {
       "route": "/beta",
       "title": "P.O.P.S. Beta Program | Seeking 50 Active Test Participants",
-      "text": "Help build a useful recordkeeping tool Seeking 50 active beta participants. Help test the practical work: documenting an event, organizing supporting material, finding the record again, and understanding what needs improvement. We are seeking active participation, not a large list of silent signups. Release clarity Fifty is a recruitment goal, not a live remaining-place counter. Enrollment records interest for review. It does not issue a license, guarantee an invitation, or promise a particular Windows or Android build. What participation means Invited participants will receive the supported build, testing instructions, known limitations, and participation terms. Those instructions must identify which workflows are ready to test and whether any access arrangement applies. No free license, payment requirement, discount, or commercial entitlement is promised by this form. You should be willing to follow a defined scenario, describe what happened, and return feedback. The cadence and test period will be supplied with an invitation rather than invented here. Windows is the primary desktop platform. Android interest helps identify testing needs; it does not mean an Android build is ready. The activities we want to learn from Create a fictional event and find it again in the chronology. Associate harmless example files and check whether source context is understandable. Review the integrity or reporting steps identified as available in the invitation. Describe confusing wording, errors, missing context, or a workflow that takes unnecessary effort. For an Android invitation, test only the supplied capture, permission, offline, or transfer tasks. Planned synchronization must not be assumed available. Report a problem without sharing your case Use Contact & Support and choose Beta feedback. Include the build, operating system, steps, expected result, and actual result. Reproduce the problem with fictional data where possible. The support form does not accept file uploads. Do not submit child names, court records, private messages, photos from a family case, passwords, or evidence files. Keep independent source records and appropriate backups. Testing is not a substitute for a dependable recordkeeping or recovery process. You can decline an invitation or ask support to withdraw your interest. A website account is separate from local application data and can later display the beta status associated with your verified email. Express your interest We need only a name, contact email, platform preference, and general testing experience. No account or detailed family history is required. A successful response confirms that the website service saved your interest, not that a place has been awarded. Name Email address Platform you could test Windows Android Windows and Android Software testing experience New to testing Some experience Experienced tester Leave this field empty I have read the Privacy Notice and agree to be contacted about this beta interest. I will not submit private case evidence. Also send optional product updates. This is not required for beta consideration. Submit beta interest Local development preview: entries are stored on this PC only and do not reach the production team. Windows software Android development Beta participation First 100 customers Buying FAQs Contact & support",
-      "sha256": "f21996b18619eff247de232f26bd0f9377bc88bc395b5a016354f23c0d808334"
+      "text": "Help build a useful recordkeeping tool Seeking 50 active beta participants. Help test the practical work: documenting an event, organizing supporting material, finding the record again, and understanding what needs improvement. We are seeking active participation, not a large list of silent signups. Release clarity Fifty is a recruitment goal, not a live remaining-place counter. Enrollment records interest for review. It does not issue a license, guarantee an invitation, or promise a particular Windows or Android build. What participation means Invited participants will receive the supported build, testing instructions, known limitations, and participation terms. Those instructions must identify which workflows are ready to test and whether any access arrangement applies. No free license, payment requirement, discount, or commercial entitlement is promised by this form. You should be willing to follow a defined scenario, describe what happened, and return feedback. The cadence and test period will be supplied with an invitation rather than invented here. Windows is the primary desktop platform. Android interest helps identify testing needs; it does not mean an Android build is ready. The activities we want to learn from Create a fictional event and find it again in the chronology. Associate harmless example files and check whether source context is understandable. Review the integrity or reporting steps identified as available in the invitation. Describe confusing wording, errors, missing context, or a workflow that takes unnecessary effort. For an Android invitation, test only the supplied capture, permission, offline, or transfer tasks. Planned synchronization must not be assumed available. Report a problem without sharing your case Use Contact & Support and choose Beta feedback. Include the build, operating system, steps, expected result, and actual result. Reproduce the problem with fictional data where possible. The support form does not accept file uploads. Do not submit child names, court records, private messages, photos from a family case, passwords, or evidence files. Keep independent source records and appropriate backups. Testing is not a substitute for a dependable recordkeeping or recovery process. You can decline an invitation or ask support to withdraw your interest. A website account is separate from local application data and can later display the beta status associated with your verified email. Express your interest We need only a name, contact email, platform preference, and general testing experience. No account or detailed family history is required. A successful response confirms that the website service saved your interest, not that a place has been awarded. Name Email address Platform you could test Windows Android Windows and Android Software testing experience New to testing Some experience Experienced tester Leave this field empty I have read the Privacy Notice and agree to be contacted about this beta interest. I will not submit private case evidence. Also send optional product updates. This is not required for beta consideration. Submit beta interest Local development preview: entries are stored on this PC only and do not reach the production team. Windows software Android testing iOS (planned) Beta participation First 100 customers Buying FAQs Contact & support",
+      "sha256": "6b2c69bd655a662cfd6d55b17b4eff7642b25e2a087919873cbfd6fa762520ee"
     },
     {
       "route": "/early-adopters",
       "title": "P.O.P.S. Founding Customers | First 100 Paid Adopters",
-      "text": "Founding customers • Offer preparation Be part of the first chapter. Know exactly what you are buying. P.O.P.S. was built around the importance of parental presence and a factual record. The first-100 customer program will recognize early paid adoption without asking buyers to rely on promises that have not been approved. Release clarity Checkout is not open. Founding-customer benefits and qualification rules are awaiting approval. No purchase, discount, additional entitlement, or first-100 position can be claimed here. Support useful software with a human purpose A missed exchange, an unanswered message, or a folder full of screenshots can be hard to explain later. P.O.P.S. is designed to connect those pieces: an event with a date, the supporting files, the relevant context, and a chronology you can review. The purpose is practical preparation. It is also personal: helping a father remain accountable, factual, and present when the record matters. Preserve. Protect. Prove. remains the foundation; the software gives that commitment a repeatable working process. One-time ownership, without a mandatory subscription The existing published Guardian offer is $99 for a one-time Windows desktop license, with lifetime P.O.P.S. Membership included. This page does not change that price or introduce a discount. The purchase model does not require a recurring subscription for the standard license. Optional annual maintenance is listed elsewhere at $19.99. Its scope, availability, and any future service or protection plans require separate approval. No automatic renewal, lifetime upgrades, expanded device rights, or Android license is promised. Buyers should receive finalized license terms before checkout opens. The release supplied will determine the available evidence, timeline, integrity, and reporting workflows. Review the Windows product page and release qualifications rather than assuming every planned feature is included. What “first 100” will mean The intended audience is the first 100 qualifying paying customers. Final eligibility rules must define which completed purchases qualify and how refunds or reversals are handled. Counting requires reliable completed-purchase records, which are not active here. An account, beta application, saved cart, support request, or expression of interest does not reserve a position. There is no live remaining-place counter. Approved recognition or additional benefits will be stated plainly here before they are offered. Program target First 100 qualifying paying customers; no qualification is issued today. Additional benefits Awaiting owner approval; none advertised or applied. Purchase availability Selection can be saved in the cart. Payment and fulfillment remain unavailable. Testing and purchasing are different commitments Beta participants help test specific workflows and report issues. Paid customers obtain the license described by the approved offer. One does not automatically grant the other. The beta program has a goal of 50 active participants and its own invitation process. Before choosing a license, read the product information, installation preparation, and buying FAQs. If an entitlement or policy is unclear, ask through support rather than assuming it is included. Review access & save a selection View saved cart Explore beta participation Windows software Android development Beta participation First 100 customers Buying FAQs Contact & support",
-      "sha256": "d9505307098c880dcb75832bf38a7f9caee4e8acdd608223aead52adc89bb75a"
+      "text": "Founding customers • Offer preparation Be part of the first chapter. Know exactly what you are buying. P.O.P.S. was built around the importance of parental presence and a factual record. The first-100 customer program will recognize early paid adoption without asking buyers to rely on promises that have not been approved. Release clarity Checkout is not open. Founding-customer benefits and qualification rules are awaiting approval. No purchase, discount, additional entitlement, or first-100 position can be claimed here. Support useful software with a human purpose A missed exchange, an unanswered message, or a folder full of screenshots can be hard to explain later. P.O.P.S. is designed to connect those pieces: an event with a date, the supporting files, the relevant context, and a chronology you can review. The purpose is practical preparation. It is also personal: helping a father remain accountable, factual, and present when the record matters. Preserve. Protect. Prove. remains the foundation; the software gives that commitment a repeatable working process. One-time ownership, without a mandatory subscription The existing published Guardian offer is $99 for a one-time Windows desktop license, with lifetime P.O.P.S. Membership included. This page does not change that price or introduce a discount. The purchase model does not require a recurring subscription for the standard license. Optional annual maintenance is listed elsewhere at $19.99. Its scope, availability, and any future service or protection plans require separate approval. No automatic renewal, lifetime upgrades, expanded device rights, or Android license is promised. Buyers should receive finalized license terms before checkout opens. The release supplied will determine the available evidence, timeline, integrity, and reporting workflows. Review the Windows product page and release qualifications rather than assuming every planned feature is included. What “first 100” will mean The intended audience is the first 100 qualifying paying customers. Final eligibility rules must define which completed purchases qualify and how refunds or reversals are handled. Counting requires reliable completed-purchase records, which are not active here. An account, beta application, saved cart, support request, or expression of interest does not reserve a position. There is no live remaining-place counter. Approved recognition or additional benefits will be stated plainly here before they are offered. Program target First 100 qualifying paying customers; no qualification is issued today. Additional benefits Awaiting owner approval; none advertised or applied. Purchase availability Selection can be saved in the cart. Payment and fulfillment remain unavailable. Testing and purchasing are different commitments Beta participants help test specific workflows and report issues. Paid customers obtain the license described by the approved offer. One does not automatically grant the other. The beta program has a goal of 50 active participants and its own invitation process. Before choosing a license, read the product information, installation preparation, and buying FAQs. If an entitlement or policy is unclear, ask through support rather than assuming it is included. Review access & save a selection View saved cart Explore beta participation Windows software Android testing iOS (planned) Beta participation First 100 customers Buying FAQs Contact & support",
+      "sha256": "1e0b7d53285c3b05c855b1c1c102bd4c3bbe664d0ce1e60b59d31030045d9a48"
     },
     {
       "route": "/installation",
       "title": "Install P.O.P.S. for Windows | Onboarding Preparation",
-      "text": "Windows • Getting started Start with a small, accurate record. This onboarding guide explains the intended path from receiving the Windows software to reviewing your first event. Installer delivery is not active, and release-specific requirements remain to be confirmed. Before downloading Confirm the supported Windows version, processor architecture, storage requirements, permissions, and release/build number in the final release notes. Those details are not yet supplied here. Android is a separate development effort; this is a Windows desktop application, not a mobile website installation. Use only the official delivery instructions associated with your approved license or test invitation. No verified installer is linked on this page. Do not substitute an unverified download or disable security software to bypass a warning. Ask support about unexpected publisher or installer messages. The intended setup sequence Receive the approved build. Review its release notes, known limitations, and license or beta terms. Install on a supported PC. Follow the instructions supplied with that exact build. Installation screens and paths will be added after verification. Activate if required. Use only issued instructions. A website account or cart item is not a license key. Begin with fictional material. Learn how records are created, located, reviewed, and removed before relying on a workflow. Check preservation and recovery. Confirm which original-file, backup, restore, and export functions actually work in your release. Your first practice event Create a fictional missed-exchange event. Enter the date, distinguish your notes from supporting material, and attach a harmless example file if the release supports it. Find the event again in the chronology and check how its source context is displayed. Review every generated summary before sharing it. If export is supported, open the output and check that the selected files and context are included. Do not treat a successful practice run as proof that your only copy is backed up. Actual application screenshot pending Verified installation screens and the first-record workflow will be placed beside these steps. This space is reserved for a verified capture of the release being offered. No application image has been fabricated. If something does not work Record the build, Windows version, affected step, and exact error. Reproduce the issue with fictional data where possible. Submit a sanitized description through support; do not attach your case files, passwords, or activation secrets. Website account recovery resets the website password only. It does not restore a local Evidence Vault or recover files from your Windows device. Get installation help Windows software Android development Beta participation First 100 customers Buying FAQs Contact & support",
-      "sha256": "6f2073309af1fd3905fcb45acc83eb5c2cf0fbbe4c6b3ccf2d619e77f30127a4"
+      "text": "Windows • Getting started Start with a small, accurate record. This onboarding guide explains the intended path from receiving the Windows software to reviewing your first event. Installer delivery is not active, and release-specific requirements remain to be confirmed. Before downloading Confirm the supported Windows version, processor architecture, storage requirements, permissions, and release/build number in the final release notes. Those details are not yet supplied here. Android is a separate development effort; this is a Windows desktop application, not a mobile website installation. Use only the official delivery instructions associated with your approved license or test invitation. No verified installer is linked on this page. Do not substitute an unverified download or disable security software to bypass a warning. Ask support about unexpected publisher or installer messages. The intended setup sequence Receive the approved build. Review its release notes, known limitations, and license or beta terms. Install on a supported PC. Follow the instructions supplied with that exact build. Installation screens and paths will be added after verification. Activate if required. Use only issued instructions. A website account or cart item is not a license key. Begin with fictional material. Learn how records are created, located, reviewed, and removed before relying on a workflow. Check preservation and recovery. Confirm which original-file, backup, restore, and export functions actually work in your release. Your first practice event Create a fictional missed-exchange event. Enter the date, distinguish your notes from supporting material, and attach a harmless example file if the release supports it. Find the event again in the chronology and check how its source context is displayed. Review every generated summary before sharing it. If export is supported, open the output and check that the selected files and context are included. Do not treat a successful practice run as proof that your only copy is backed up. Actual application screenshot pending Verified installation screens and the first-record workflow will be placed beside these steps. This space is reserved for a verified capture of the release being offered. No application image has been fabricated. If something does not work Record the build, Windows version, affected step, and exact error. Reproduce the issue with fictional data where possible. Submit a sanitized description through support; do not attach your case files, passwords, or activation secrets. Website account recovery resets the website password only. It does not restore a local Evidence Vault or recover files from your Windows device. Get installation help Windows software Android testing iOS (planned) Beta participation First 100 customers Buying FAQs Contact & support",
+      "sha256": "00da380aa3738dc63dbed10e208a8d1aa67b1ef35e2fd62dde3ceb36484889ad"
     },
     {
       "route": "/faq",
       "title": "P.O.P.S. Buying FAQs | Licensing, Beta, Android & Privacy",
-      "text": "Before you choose Clear answers before a purchase. Know what is available, what remains under validation, and what a website account or saved cart actually means. What is P.O.P.S.? P.O.P.S. means Proof of Presence System. It is installable Windows software designed primarily for fathers documenting parenting-time experiences. Its purpose is to bring event notes, supporting files, case context, and chronology together for personal review and discussions with counsel. The website is the product and customer-access surface; it is not your private Evidence Vault. Is there a mandatory subscription? The standard Windows license follows a one-time purchase model without a mandatory recurring subscription. The existing published Guardian price is $99. Optional annual maintenance is listed at $19.99, but its precise coverage and launch availability require confirmation. No new recurring plan, automatic renewal, or lifetime upgrade entitlement is promised here. Checkout is currently unavailable. What does Guardian Access include? The published offer describes a Windows desktop license with lifetime P.O.P.S. Membership included. Feature availability depends on the release supplied. Supported Windows versions, device limits, update rights, installation requirements, delivery timing, and refund terms must be finalized before purchases open. Android access is not promised as part of this license. How is beta participation different from buying? Beta enrollment expresses interest in testing and providing feedback. A saved application is not an invitation, a paid license, or a guaranteed place. The program aims for 50 active participants. Participation terms and any access arrangements will be supplied with an invitation. Purchasing does not automatically enroll you in testing. What is the first-100 customer program? The founding-customer presentation is intended for the first 100 qualifying paying customers. Special benefits and qualification rules are not yet approved. There is no discount or additional entitlement to claim today. A cart item or account registration does not establish first-100 status; that would require verified qualifying completed purchases. Is Android available? The Android companion is being prepared. Intended mobile capture, photo and location provenance, offline-first work, and synchronization with Windows are under development or validation. No download date, device compatibility list, transfer method, or Android license entitlement is promised. See the Android page for the current distinction between intended and available functions. Does a hash prove that an event happened? No. SHA-256 can help compare file contents with a recorded reference. It does not establish that an event occurred, that a statement is accurate, or that a location or timestamp is independently verified. Provenance and handling context are separate records. Users remain responsible for accuracy and lawful collection. Can I export an attorney-ready packet? Structured timelines, selected files, indexes, manifests, and integrity reports are intended handoff outputs. Exact formats and contents require verification against the release being supplied. Do not assume every listed output is available. Counsel decides what is useful for a matter; P.O.P.S. does not guarantee legal acceptance or admissibility. Will my case files be uploaded to my website account? Website accounts are separate from the local application workspace. Account registration, beta enrollment, and general support forms do not accept case evidence or Vault contents. Do not send court orders, private messages, child identifiers, or evidence files through these forms. Does local-first mean everything works offline? Local-first describes the intended ownership and storage model. The exact offline scope, activation requirements, recovery procedures, and any network-dependent features must be confirmed for the release. Do not assume that local-first means automatic backup, encryption, or cloud synchronization. How will I receive the installer and license? The planned purchase flow is payment confirmation followed by installer and license instructions through the approved delivery process. That process and its timing are not yet activated or verified. The current cart saves a selection only. No order is placed and no payment is taken. Where do I get help or request assistance? Use Contact & Support for installation questions, account help, beta feedback, licensing questions, or privacy requests. Include only technical information needed to explain the issue. Open Door remains a separately reviewed assistance path, subject to available capacity; creating an account is not approval. Windows software Android development Beta participation First 100 customers Buying FAQs Contact & support",
-      "sha256": "066b3f8466ed1598b53fbc08f10fd11d755b80e6bb38cc81fee90b427f03a64d"
+      "text": "Before you choose Clear answers before a purchase. Know what is available, what remains under validation, and what a website account or saved cart actually means. What is P.O.P.S.? P.O.P.S. means Proof of Presence System. It is installable Windows software designed primarily for fathers documenting parenting-time experiences. Its purpose is to bring event notes, supporting files, case context, and chronology together for personal review and discussions with counsel. The website is the product and customer-access surface; it is not your private Evidence Vault. Is there a mandatory subscription? The standard Windows license follows a one-time purchase model without a mandatory recurring subscription. The existing published Guardian price is $99. Optional annual maintenance is listed at $19.99, but its precise coverage and launch availability require confirmation. No new recurring plan, automatic renewal, or lifetime upgrade entitlement is promised here. Checkout is currently unavailable. What does Guardian Access include? The published offer describes a Windows desktop license with lifetime P.O.P.S. Membership included. Feature availability depends on the release supplied. Supported Windows versions, device limits, update rights, installation requirements, delivery timing, and refund terms must be finalized before purchases open. Android access is not promised as part of this license. How is beta participation different from buying? Beta enrollment expresses interest in testing and providing feedback. A saved application is not an invitation, a paid license, or a guaranteed place. The program aims for 50 active participants. Participation terms and any access arrangements will be supplied with an invitation. Purchasing does not automatically enroll you in testing. What is the first-100 customer program? The founding-customer presentation is intended for the first 100 qualifying paying customers. Special benefits and qualification rules are not yet approved. There is no discount or additional entitlement to claim today. A cart item or account registration does not establish first-100 status; that would require verified qualifying completed purchases. Is Android available? POPS Android is progressing through Google Play testing. It is not publicly available, approved for production, or ready to purchase. There is no public Play Store listing or Android price. A Windows Guardian license, Open Door assistance, or sponsor-funded Windows access does not grant Android access. See the Android page for testing status and planned workflows. Does a hash prove that an event happened? No. SHA-256 can help compare file contents with a recorded reference. It does not establish that an event occurred, that a statement is accurate, or that a location or timestamp is independently verified. Provenance and handling context are separate records. Users remain responsible for accuracy and lawful collection. Can I export an attorney-ready packet? Structured timelines, selected files, indexes, manifests, and integrity reports are intended handoff outputs. Exact formats and contents require verification against the release being supplied. Do not assume every listed output is available. Counsel decides what is useful for a matter; P.O.P.S. does not guarantee legal acceptance or admissibility. Does POPS track my private documentation entries? POPS does not track users’ private documentation entries. The Windows app’s intended local records are separate from website accounts, forms, and its fictional browser demo. Basic technical information about website requests may be processed as described in the Privacy Notice; it is not used to build profiles about a private family case. Will my case files be uploaded to my website account? Website accounts are separate from the Windows application workspace. Account registration, beta enrollment, and general support forms do not accept case evidence or Vault contents. Do not send court orders, private messages, child identifiers, or evidence files through these forms. Does local-first mean everything works offline? Local-first describes the intended ownership and storage model. The exact offline scope, activation requirements, recovery procedures, and any network-dependent features must be confirmed for the release. Do not assume that local-first means automatic backup, encryption, or cloud synchronization. How is the website different from Windows Guardian? The public website provides product information, account and support forms, and a fictional browser demonstration. It is not the downloadable Windows application and has no real Evidence Vault. Checkout is disabled; the website does not deliver or activate a Guardian license. What is POPS Membership? POPS Membership is a separate $12.99 one-time lifetime community offering, not an application license. The $99 Guardian Windows offer includes lifetime POPS Membership, so Guardian buyers should not add it separately. Community service availability still requires confirmation. What are the access routes? The published standard purchase is the $99 one-time Windows Guardian license. Open Door is personally reviewed financial assistance toward Windows access, subject to program rules and funding. Sponsor contributions can fund approved Windows Open Door capacity; a contribution does not itself grant a license. These routes are not offered for unreleased Android or planned iOS. Checkout and assistance applications are currently unavailable. How will I receive the installer and license? Installer and license delivery have not been activated or verified. The current cart saves a selection only. No order is placed and no payment is taken. Where do I get help or request assistance? Use Contact & Support for installation questions, account help, beta feedback, licensing questions, or privacy requests. Include only technical information needed to explain the issue. Open Door assistance is personally reviewed, subject to available capacity, and not currently accepting applications through this website. Windows software Android testing iOS (planned) Beta participation First 100 customers Buying FAQs Contact & support",
+      "sha256": "667f3a0b667f4f9fa2a3745adddcc52ee05ad5a01b75d18804bc3e4886728eb4"
     },
     {
       "route": "/support",
       "title": "Contact P.O.P.S. | Installation, Account & Beta Support",
-      "text": "Contact & support Get help with the software. Keep your private record private. Ask about installation, customer accounts, beta testing, licensing, or privacy. This is a general website support channel, not an evidence upload service or a source of legal advice. Release clarity This is an isolated development preview. Submitted requests are saved locally with a reference number. They are not delivered to the production support team. A monitored production support workflow must be configured before launch. A few details make a technical question easier to answer Include your application build, operating system, the step you were trying to complete, and the exact error message. Explain the expected result and actual result. For beta feedback, use fictional records to reproduce the issue. Do not include passwords, license secrets, payment-card details, or personal evidence. Account recovery is available on the website account page . It concerns your website account only. It does not recover a local Evidence Vault or reset application encryption. For access or delivery questions, read the buying FAQs . Checkout is unavailable, so a cart selection is not a paid order. Open Door assistance remains a reviewed program; the website does not currently issue approvals. Send a general support request Reply email What do you need help with? Installation Website account Beta feedback License or access information Privacy, correction, deletion, or withdrawal Other product question Technical question or request — no case evidence 10–2,000 characters. No children’s details, court documents, private messages, or emergency information. Leave this field empty I have read the Privacy Notice . My request contains no private case evidence. Save support request Know the boundary of this channel There is no file upload on this form. P.O.P.S. does not independently verify events, provide representation, or determine evidence admissibility. No response time is promised. Privacy and deletion requests can be identified using the Privacy category without sending the underlying sensitive material. Software-license giveaways and beta invitations, if offered, will use separately published terms. A support request does not reserve a license, first-100 position, or beta place. Windows software Android development Beta participation First 100 customers Buying FAQs Contact & support",
-      "sha256": "6dccdab4d455d7782c462445a177699e779f1448a758a040507e28412f658642"
+      "text": "Contact & support Get help with the software. Keep your private record private. Ask about installation, customer accounts, beta testing, licensing, or privacy. This is a general website support channel, not an evidence upload service or a source of legal advice. Release clarity This is an isolated development preview. Submitted requests are saved locally with a reference number. They are not delivered to the production support team. A monitored production support workflow must be configured before launch. A few details make a technical question easier to answer Include your application build, operating system, the step you were trying to complete, and the exact error message. Explain the expected result and actual result. For beta feedback, use fictional records to reproduce the issue. Do not include passwords, license secrets, payment-card details, or personal evidence. Account recovery is available on the website account page . It concerns your website account only. It does not recover a local Evidence Vault or reset application encryption. For access or delivery questions, read the buying FAQs . Checkout is unavailable, so a cart selection is not a paid order. Open Door assistance remains a reviewed program; the website does not currently issue approvals. Send a general support request Reply email What do you need help with? Installation Website account Beta feedback License or access information Privacy, correction, deletion, or withdrawal Other product question Technical question or request — no case evidence 10–2,000 characters. No children’s details, court documents, private messages, or emergency information. Leave this field empty I have read the Privacy Notice . My request contains no private case evidence. Save support request Know the boundary of this channel There is no file upload on this form. P.O.P.S. does not independently verify events, provide representation, or determine evidence admissibility. No response time is promised. Privacy and deletion requests can be identified using the Privacy category without sending the underlying sensitive material. Software-license giveaways and beta invitations, if offered, will use separately published terms. A support request does not reserve a license, first-100 position, or beta place. Windows software Android testing iOS (planned) Beta participation First 100 customers Buying FAQs Contact & support",
+      "sha256": "08f6d2686396a413454a592a14bea12aad66ca351be42f3e71b3c422ecdbc684"
     },
     {
       "route": "/counsel-handoff",
       "title": "P.O.P.S. Counsel Handoff | Review Materials & Export Validation",
-      "text": "Preparation for review • Release verification required Give the reviewer context, not a pile of unexplained files. An organized record can make a discussion more focused: what happened, when it was recorded, and which material supports the account. P.O.P.S. is designed to help prepare that material while leaving professional judgment with counsel. Release clarity Attorney packet exports, selection controls, report formats, manifests, and verification artifacts require confirmation against the release supplied. This page is informational, not a live upload portal or a promise that every described output is available. Start with a defined scope In the fictional missed-exchange example, the user identifies the relevant time window and supporting records before sharing. The goal is to make the relationship between an event note, a source file, and an order reference understandable. It is not to send every private record automatically. Review the release's actual export controls before assuming that a date filter, selected-file bundle, or summary format exists. Users remain responsible for checking accuracy, completeness, relevance, and privacy. Intended packet contents, subject to validation Chronology and notes Selected dated events and factual descriptions, with uncertainty and user-supplied information identifiable. Evidence index and files A clear relationship between listed items and the selected supporting files. Original sources, copies, and annotations should be distinguishable. Manifest and integrity information A map of included artifacts and recorded hash values where supported. Exact formats and independent verification steps must be demonstrated. Source and handling context Available provenance and chain-of-custody information, with gaps or unverified details left explicit rather than silently assumed. Actual application screenshot pending A sanitized, actual generated packet with an index, a selected file, and any verified integrity report. This is an asset requirement, not a fabricated sample. This space is reserved for a verified capture of the release being offered. No application image has been fabricated. What the integrity information means SHA-256 creates a fingerprint from a file’s contents. Comparing a later fingerprint with a previously recorded value helps check whether those contents have changed. A match does not independently establish who created the file, when an event happened, or whether the information is true. Provenance records where material came from and how it was collected. Chain of custody documents its handling over time. A hash can support that history, but cannot replace it. Keep source material, record context accurately, and distinguish your own notes from system-recorded information. P.O.P.S. supports organization and review. It does not independently verify real-world events, provide legal advice, or guarantee that a file or report will be admitted in court. Review locally, then choose how to share Where export is supported, open the resulting package and check it before delivery. The website customer account does not store application evidence. Do not send a packet through a general beta, contact, or account form. A future counsel portal remains a roadmap direction, not a current upload or sharing service. The specific release and the user's chosen delivery method determine what can be shared. Counsel decides what is relevant and useful for a matter. Review the record-building steps Ask about export availability Windows software Android development Beta participation First 100 customers Buying FAQs Contact & support",
-      "sha256": "729e1879a0673f5ce1bf5daf77f2d8dbd6a3a4c3bad461702928ed977c087f89"
+      "text": "Preparation for review • Release verification required Give the reviewer context, not a pile of unexplained files. An organized record can make a discussion more focused: what happened, when it was recorded, and which material supports the account. P.O.P.S. is designed to help prepare that material while leaving professional judgment with counsel. Release clarity Attorney packet exports, selection controls, report formats, manifests, and verification artifacts require confirmation against the release supplied. This page is informational, not a live upload portal or a promise that every described output is available. Start with a defined scope In the fictional missed-exchange example, the user identifies the relevant time window and supporting records before sharing. The goal is to make the relationship between an event note, a source file, and an order reference understandable. It is not to send every private record automatically. Review the release's actual export controls before assuming that a date filter, selected-file bundle, or summary format exists. Users remain responsible for checking accuracy, completeness, relevance, and privacy. Intended packet contents, subject to validation Chronology and notes Selected dated events and factual descriptions, with uncertainty and user-supplied information identifiable. Evidence index and files A clear relationship between listed items and the selected supporting files. Original sources, copies, and annotations should be distinguishable. Manifest and integrity information A map of included artifacts and recorded hash values where supported. Exact formats and independent verification steps must be demonstrated. Source and handling context Available provenance and chain-of-custody information, with gaps or unverified details left explicit rather than silently assumed. Actual application screenshot pending A sanitized, actual generated packet with an index, a selected file, and any verified integrity report. This is an asset requirement, not a fabricated sample. This space is reserved for a verified capture of the release being offered. No application image has been fabricated. What the integrity information means SHA-256 creates a fingerprint from a file’s contents. Comparing a later fingerprint with a previously recorded value helps check whether those contents have changed. A match does not independently establish who created the file, when an event happened, or whether the information is true. Provenance records where material came from and how it was collected. Chain of custody documents its handling over time. A hash can support that history, but cannot replace it. Keep source material, record context accurately, and distinguish your own notes from system-recorded information. P.O.P.S. supports organization and review. It does not independently verify real-world events, provide legal advice, or guarantee that a file or report will be admitted in court. Review locally, then choose how to share Where export is supported, open the resulting package and check it before delivery. The website customer account does not store application evidence. Do not send a packet through a general beta, contact, or account form. A future counsel portal remains a roadmap direction, not a current upload or sharing service. The specific release and the user's chosen delivery method determine what can be shared. Counsel decides what is relevant and useful for a matter. Review the record-building steps Ask about export availability Windows software Android testing iOS (planned) Beta participation First 100 customers Buying FAQs Contact & support",
+      "sha256": "2883a7bedcafdf48b4f8a8b15c51089b14ef818aefe12ccac961fec7e04a170a"
     },
     {
       "route": "/events",
@@ -125,8 +125,8 @@
     {
       "route": "/privacy",
       "title": "POPS Privacy Notice | Local-First Records",
-      "text": "POPS PRIVACY Privacy and Operational Notice What POPS handles, what stays under the user's control, and what should never be sent through general website forms. 1. Privacy Principle POPS is designed around a local-first principle: family records should remain under the user's control unless the user deliberately chooses to export, share, upload, submit, or transmit them. The POPS website and the POPS desktop application serve different functions. The website is a public information, support, and access channel. The desktop application is intended to help users organize their own case records locally. POPS does not promise automatic cloud backup, encrypted storage, attorney sharing, permanent evidence preservation, or remote access unless a specific active product feature clearly states that it is enabled and explains how it works. 2. Information POPS May Receive POPS may receive information that a person voluntarily enters through a website form, purchase process, account process, support request, Open Door Access request, or Noted Counsel submission. 2.1 Information You May Provide Name, email address, and contact message Purchase, license, or access-request information Support questions and product-feedback information Open Door Access information necessary to review an access request Noted Counsel Merit Recognition information submitted for review 2.2 Basic Technical Information Website hosting, security, email, payment, and analytics providers may process limited technical information needed to deliver the website, prevent abuse, maintain security, diagnose technical problems, or measure basic site performance. This may include information such as browser type, device type, IP address, page request information, timestamps, and referral source. POPS does not use this information to build profiles about a user's private family case, child, court matter, medical situation, or legal dispute. 3. Information POPS Does Not Request Through General Forms Do not send private case evidence through a general POPS contact form, social-media message, ordinary support email, Open Door request, or Noted Counsel submission. Unless POPS provides a clearly identified secure process, do not send: Child names, birth dates, addresses, or school identifiers Case numbers, court orders, pleadings, or attorney work product Medical records, school records, or therapy information Private texts, emails, screenshots, audio, video, or evidence files Passwords, account credentials, Social Security numbers, or bank information Emergency information or information requiring immediate legal action POPS may delete, redact, decline to process, or request removal of sensitive information submitted through an inappropriate channel. 4. Local Application Records POPS is intended to help users organize timelines, communications, evidence references, incident notes, court-order details, and reports on their own device. Users remain responsible for protecting their device, operating-system account, passwords, exported files, backups, and any information they choose to share with an attorney, court, advocate, family member, cloud provider, or another person. 4.1 Export Is a User Decision When POPS provides an export or report feature, the user decides what to export and where to send it. POPS does not control, monitor, retrieve, or delete files after they leave the user's device or are shared with another person or service. 4.2 Do Not Assume a Feature Exists The specific POPS release in use controls which storage, backup, file, hash, export, sharing, and security functions are actually available. Users should review the active product documentation before relying on a feature for sensitive records. 5. How POPS Uses Information POPS may use information it receives to: Operate and maintain the website and product-access processes Respond to support, purchase, and licensing requests Issue receipts, licenses, updates, and service communications Review Open Door Access requests under the published program rules Review and moderate Noted Counsel Merit Recognition submissions Prevent fraud, abuse, duplicate submissions, or security threats Meet legal, accounting, tax, recordkeeping, or compliance obligations Improve reliability, accessibility, and product clarity 6. Open Door Access Privacy Open Door Access is a hardship-access path. POPS seeks to collect only the information reasonably needed to review the request, prevent abuse, track reserve availability, and issue an approved license. Applicants should not be required to disclose private court facts, child medical information, evidence, screenshots, or detailed personal trauma to request hardship access. Open Door Access decisions are based on available reserve capacity and program rules. They are not a judgment about a person's worth, parenthood, legal case, or hardship. 7. POPS Noted Counsel Privacy POPS Noted Counsel submissions are private until reviewed. Only a POPS Noted User with a direct first-hand experience may submit a Merit Recognition. POPS may publish only a privacy-safe, edited commendation that the user authorized for publication. POPS may remove names, dates, locations, case details, and other identifying information before publication. 7.1 Positive-Only Merit Recognition POPS Noted Counsel is a curated positive-only Merit Recognition program. It is not a complete review database, public complaint forum, ranking system, referral service, paid attorney directory, or guarantee of legal quality or case results. POPS does not publish star ratings, negative reviews, case accusations, private attorney-client communications, child information, court records, or claims that an attorney guaranteed an outcome. 7.2 No Payment for Recognition Attorneys may not pay for recognition, placement, priority, visibility, commendations, or POPS user introductions. POPS Noted Users may not be paid, pressured, coached, or rewarded for submitting a Merit Recognition. 8. Sharing and Disclosure POPS does not sell or rent personal information or private case information. POPS may share limited information only when reasonably necessary: With service providers that operate hosting, email, payment, security, or support systems When the user expressly authorizes a requested transmission or action To prevent fraud, abuse, security threats, or unlawful activity To comply with a valid legal obligation, subpoena, court order, or legal process To protect the rights, safety, property, or operations of POPS, users, or others POPS does not share a user's local case records unless the user takes an action that deliberately exports, uploads, or shares those records through an available feature. 9. Security Limits POPS uses reasonable operational safeguards appropriate to the active website and product release. No website, device, email system, internet connection, browser, cloud provider, payment processor, or software product can guarantee absolute security. Users should use strong passwords, protect their device, keep software updated, preserve original records where possible, maintain appropriate backups, and avoid sending sensitive family information through unapproved channels. 10. Retention and Deletion POPS retains website, support, access, license, payment-confirmation, fraud-prevention, and operational records only as long as reasonably necessary for the purpose they were collected, subject to legal, accounting, security, and contractual obligations. A person may request correction or deletion of personal information they submitted directly to POPS, subject to applicable obligations and legitimate recordkeeping needs. POPS cannot delete information stored on a user's own device, browser, email account, cloud drive, downloaded export, attorney's records, court filing, or any service outside POPS control. 11. Children POPS is intended for adults, including parents, guardians, attorneys, advocates, and other authorized adults. POPS is not intended for children to create accounts, submit forms, purchase licenses, or use public POPS services. Users should use the minimum child-identifying information necessary for lawful documentation and should protect that information carefully. 12. Changes and Privacy Contact POPS may update this Privacy and Operational Notice as the product, website, security practices, service providers, or legal requirements change. Material changes will be posted with a revised effective date. For privacy questions, correction requests, deletion requests, or Noted Counsel concerns, contact POPS through the privacy contact listed in the site footer. Do not include case evidence, child-identifying information, court documents, medical records, passwords, or emergency details in your first privacy-contact message.",
-      "sha256": "78337c41c602f00555ecd62cbdc5ec1672ef7a9a45d28e0ff074dc219dc07f67"
+      "text": "POPS PRIVACY Privacy and Operational Notice What POPS handles, what stays under the user's control, and what should never be sent through general website forms. 1. Privacy Principle POPS is designed around a local-first principle: family records should remain under the user's control unless the user deliberately chooses to export, share, upload, submit, or transmit them. The POPS website and the POPS desktop application serve different functions. The website is a public information, support, and access channel. The desktop application is intended to help users organize their own case records locally. POPS does not promise automatic cloud backup, encrypted storage, attorney sharing, permanent evidence preservation, or remote access unless a specific active product feature clearly states that it is enabled and explains how it works. 2. Information POPS May Receive POPS may receive information that a person voluntarily enters through a website form, purchase process, account process, support request, Open Door Access request, or Noted Counsel submission. 2.1 Information You May Provide Name, email address, and contact message Purchase, license, or access-request information Support questions and product-feedback information Open Door Access information necessary to review an access request Noted Counsel Merit Recognition information submitted for review 2.2 Basic Technical Information Website hosting, security, email, payment, and analytics providers may process limited technical information needed to deliver the website, prevent abuse, maintain security, diagnose technical problems, or measure basic site performance. This may include information such as browser type, device type, IP address, page request information, timestamps, and referral source. POPS does not use this information to build profiles about a user's private family case, child, court matter, medical situation, or legal dispute. 3. Information POPS Does Not Request Through General Forms Do not send private case evidence through a general POPS contact form, social-media message, ordinary support email, Open Door request, or Noted Counsel submission. Unless POPS provides a clearly identified secure process, do not send: Child names, birth dates, addresses, or school identifiers Case numbers, court orders, pleadings, or attorney work product Medical records, school records, or therapy information Private texts, emails, screenshots, audio, video, or evidence files Passwords, account credentials, Social Security numbers, or bank information Emergency information or information requiring immediate legal action POPS may delete, redact, decline to process, or request removal of sensitive information submitted through an inappropriate channel. 4. Local Application Records POPS is intended to help users organize timelines, communications, evidence references, incident notes, court-order details, and reports on their own device. POPS does not track users' private documentation entries. The website does not receive those entries through account or general support forms. Basic technical website request information described above is separate and is not used to build private case profiles. Users remain responsible for protecting their device, operating-system account, passwords, exported files, backups, and any information they choose to share with an attorney, court, advocate, family member, cloud provider, or another person. 4.1 Export Is a User Decision When POPS provides an export or report feature, the user decides what to export and where to send it. POPS does not control, monitor, retrieve, or delete files after they leave the user's device or are shared with another person or service. 4.2 Do Not Assume a Feature Exists The specific POPS release in use controls which storage, backup, file, hash, export, sharing, and security functions are actually available. Users should review the active product documentation before relying on a feature for sensitive records. 5. How POPS Uses Information POPS may use information it receives to: Operate and maintain the website and product-access processes Respond to support, purchase, and licensing requests Issue receipts, licenses, updates, and service communications Review Open Door Access requests under the published program rules Review and moderate Noted Counsel Merit Recognition submissions Prevent fraud, abuse, duplicate submissions, or security threats Meet legal, accounting, tax, recordkeeping, or compliance obligations Improve reliability, accessibility, and product clarity 6. Open Door Access Privacy Open Door Access is a hardship-access path. POPS seeks to collect only the information reasonably needed to review the request, prevent abuse, track reserve availability, and issue an approved license. Applicants should not be required to disclose private court facts, child medical information, evidence, screenshots, or detailed personal trauma to request hardship access. Open Door Access decisions are based on available reserve capacity and program rules. They are not a judgment about a person's worth, parenthood, legal case, or hardship. 7. POPS Noted Counsel Privacy POPS Noted Counsel submissions are private until reviewed. Only a POPS Noted User with a direct first-hand experience may submit a Merit Recognition. POPS may publish only a privacy-safe, edited commendation that the user authorized for publication. POPS may remove names, dates, locations, case details, and other identifying information before publication. 7.1 Positive-Only Merit Recognition POPS Noted Counsel is a curated positive-only Merit Recognition program. It is not a complete review database, public complaint forum, ranking system, referral service, paid attorney directory, or guarantee of legal quality or case results. POPS does not publish star ratings, negative reviews, case accusations, private attorney-client communications, child information, court records, or claims that an attorney guaranteed an outcome. 7.2 No Payment for Recognition Attorneys may not pay for recognition, placement, priority, visibility, commendations, or POPS user introductions. POPS Noted Users may not be paid, pressured, coached, or rewarded for submitting a Merit Recognition. 8. Sharing and Disclosure POPS does not sell or rent personal information or private case information. POPS may share limited information only when reasonably necessary: With service providers that operate hosting, email, payment, security, or support systems When the user expressly authorizes a requested transmission or action To prevent fraud, abuse, security threats, or unlawful activity To comply with a valid legal obligation, subpoena, court order, or legal process To protect the rights, safety, property, or operations of POPS, users, or others POPS does not share a user's local case records unless the user takes an action that deliberately exports, uploads, or shares those records through an available feature. 9. Security Limits POPS uses reasonable operational safeguards appropriate to the active website and product release. No website, device, email system, internet connection, browser, cloud provider, payment processor, or software product can guarantee absolute security. Users should use strong passwords, protect their device, keep software updated, preserve original records where possible, maintain appropriate backups, and avoid sending sensitive family information through unapproved channels. 10. Retention and Deletion POPS retains website, support, access, license, payment-confirmation, fraud-prevention, and operational records only as long as reasonably necessary for the purpose they were collected, subject to legal, accounting, security, and contractual obligations. A person may request correction or deletion of personal information they submitted directly to POPS, subject to applicable obligations and legitimate recordkeeping needs. POPS cannot delete information stored on a user's own device, browser, email account, cloud drive, downloaded export, attorney's records, court filing, or any service outside POPS control. 11. Children POPS is intended for adults, including parents, guardians, attorneys, advocates, and other authorized adults. POPS is not intended for children to create accounts, submit forms, purchase licenses, or use public POPS services. Users should use the minimum child-identifying information necessary for lawful documentation and should protect that information carefully. 12. Changes and Privacy Contact POPS may update this Privacy and Operational Notice as the product, website, security practices, service providers, or legal requirements change. Material changes will be posted with a revised effective date. For privacy questions, correction requests, deletion requests, or Noted Counsel concerns, contact POPS through the privacy contact listed in the site footer. Do not include case evidence, child-identifying information, court documents, medical records, passwords, or emergency details in your first privacy-contact message.",
+      "sha256": "7ab90c83731b6088d216495f32dcd74ebbbc7515979cfd1989da7a7daeac1932"
     },
     {
       "route": "/policies-procedures",
@@ -300,6 +300,1707 @@
       "selector": "[data-orb-target=\"pops.access.local-first\"]",
       "label": "Local-first security",
       "description": "The access-page section explaining local storage, hashing, backups, and offline operation."
+    },
+    {
+      "id": "target_d4e5419da248",
+      "route": "/pledge",
+      "selector": "a[href=\"\\/\"]",
+      "label": "P.O.P.S. TM",
+      "description": "nav: P.O.P.S. TM. Crawl #30 verification is historical evidence; confirm the active DOM before pointing.",
+      "actions": [
+        "scroll_to_target",
+        "ping",
+        "explain"
+      ],
+      "guideOnly": true,
+      "runtimeVerification": {
+        "sourceCrawlId": "30",
+        "sourceDomain": "www.popsproof.com",
+        "sourceTargetId": "target_d4e5419da248",
+        "findingClass": "CONFIRMED",
+        "confidenceClass": "STABLE",
+        "verifiedAt": "2026-10-31T14:59:03.301325+00:00",
+        "expectedText": "P.O.P.S. TM",
+        "targetType": "nav",
+        "landmark": "nav",
+        "ordinalInParent": 1,
+        "parentLocator": "nav:nth-of-type(1)",
+        "sourceRevision": "0d710cc0cf62bcae"
+      }
+    },
+    {
+      "id": "target_b4a724d5b5d4",
+      "route": "/pledge",
+      "selector": "a[href=\"\\/\"]",
+      "label": "Home",
+      "description": "nav: Home. Crawl #30 verification is historical evidence; confirm the active DOM before pointing.",
+      "actions": [
+        "scroll_to_target",
+        "ping",
+        "explain"
+      ],
+      "guideOnly": true,
+      "runtimeVerification": {
+        "sourceCrawlId": "30",
+        "sourceDomain": "www.popsproof.com",
+        "sourceTargetId": "target_b4a724d5b5d4",
+        "findingClass": "CONFIRMED",
+        "confidenceClass": "STABLE",
+        "verifiedAt": "2026-10-31T14:59:03.306095+00:00",
+        "expectedText": "Home",
+        "targetType": "nav",
+        "landmark": "nav",
+        "ordinalInParent": 1,
+        "parentLocator": "nav:nth-of-type(1)",
+        "sourceRevision": "4ea140588150773c"
+      }
+    },
+    {
+      "id": "target_3f51aacd2eee",
+      "route": "/pledge",
+      "selector": "a[href=\"\\/desktop-app\"]",
+      "label": "Windows",
+      "description": "nav: Windows. Crawl #30 verification is historical evidence; confirm the active DOM before pointing.",
+      "actions": [
+        "scroll_to_target",
+        "ping",
+        "explain"
+      ],
+      "guideOnly": true,
+      "runtimeVerification": {
+        "sourceCrawlId": "30",
+        "sourceDomain": "www.popsproof.com",
+        "sourceTargetId": "target_3f51aacd2eee",
+        "findingClass": "CONFIRMED",
+        "confidenceClass": "STABLE",
+        "verifiedAt": "2026-10-31T14:59:03.309003+00:00",
+        "expectedText": "Windows",
+        "targetType": "nav",
+        "landmark": "nav",
+        "ordinalInParent": 2,
+        "parentLocator": "nav:nth-of-type(1)",
+        "sourceRevision": "340d600392818df2"
+      }
+    },
+    {
+      "id": "target_253198cd2ed7",
+      "route": "/pledge",
+      "selector": "a[href=\"\\/android\"]",
+      "label": "Android",
+      "description": "nav: Android. Crawl #30 verification is historical evidence; confirm the active DOM before pointing.",
+      "actions": [
+        "scroll_to_target",
+        "ping",
+        "explain"
+      ],
+      "guideOnly": true,
+      "runtimeVerification": {
+        "sourceCrawlId": "30",
+        "sourceDomain": "www.popsproof.com",
+        "sourceTargetId": "target_253198cd2ed7",
+        "findingClass": "CONFIRMED",
+        "confidenceClass": "STABLE",
+        "verifiedAt": "2026-10-31T14:59:03.311855+00:00",
+        "expectedText": "Android",
+        "targetType": "nav",
+        "landmark": "nav",
+        "ordinalInParent": 3,
+        "parentLocator": "nav:nth-of-type(1)",
+        "sourceRevision": "f60ed56a9c827589"
+      }
+    },
+    {
+      "id": "target_beea7e5c8dcb",
+      "route": "/pledge",
+      "selector": "a[href=\"\\/access\\#platforms\"]",
+      "label": "iOS (planned)",
+      "description": "nav: iOS (planned). Crawl #30 verification is historical evidence; confirm the active DOM before pointing.",
+      "actions": [
+        "scroll_to_target",
+        "ping",
+        "explain"
+      ],
+      "guideOnly": true,
+      "runtimeVerification": {
+        "sourceCrawlId": "30",
+        "sourceDomain": "www.popsproof.com",
+        "sourceTargetId": "target_beea7e5c8dcb",
+        "findingClass": "CONFIRMED",
+        "confidenceClass": "STABLE",
+        "verifiedAt": "2026-10-31T14:59:03.315067+00:00",
+        "expectedText": "iOS (planned)",
+        "targetType": "nav",
+        "landmark": "nav",
+        "ordinalInParent": 4,
+        "parentLocator": "nav:nth-of-type(1)",
+        "sourceRevision": "2ce5428fed90d086"
+      }
+    },
+    {
+      "id": "target_bc75af38f31b",
+      "route": "/pledge",
+      "selector": "a[href=\"\\/product-demo\"]",
+      "label": "Demo",
+      "description": "nav: Demo. Crawl #30 verification is historical evidence; confirm the active DOM before pointing.",
+      "actions": [
+        "scroll_to_target",
+        "ping",
+        "explain"
+      ],
+      "guideOnly": true,
+      "runtimeVerification": {
+        "sourceCrawlId": "30",
+        "sourceDomain": "www.popsproof.com",
+        "sourceTargetId": "target_bc75af38f31b",
+        "findingClass": "CONFIRMED",
+        "confidenceClass": "STABLE",
+        "verifiedAt": "2026-10-31T14:59:03.318661+00:00",
+        "expectedText": "Demo",
+        "targetType": "nav",
+        "landmark": "nav",
+        "ordinalInParent": 5,
+        "parentLocator": "nav:nth-of-type(1)",
+        "sourceRevision": "2a97516c354b6884"
+      }
+    },
+    {
+      "id": "target_e1fa822a904a",
+      "route": "/pledge",
+      "selector": "a[href=\"\\/beta\"]",
+      "label": "Beta",
+      "description": "nav: Beta. Crawl #30 verification is historical evidence; confirm the active DOM before pointing.",
+      "actions": [
+        "scroll_to_target",
+        "ping",
+        "explain"
+      ],
+      "guideOnly": true,
+      "runtimeVerification": {
+        "sourceCrawlId": "30",
+        "sourceDomain": "www.popsproof.com",
+        "sourceTargetId": "target_e1fa822a904a",
+        "findingClass": "CONFIRMED",
+        "confidenceClass": "STABLE",
+        "verifiedAt": "2026-10-31T14:59:03.321750+00:00",
+        "expectedText": "Beta",
+        "targetType": "nav",
+        "landmark": "nav",
+        "ordinalInParent": 6,
+        "parentLocator": "nav:nth-of-type(1)",
+        "sourceRevision": "f44e64e75f3948e9"
+      }
+    },
+    {
+      "id": "target_9d2f2207ab68",
+      "route": "/pledge",
+      "selector": "a[href=\"\\/access\"]",
+      "label": "Pricing",
+      "description": "nav: Pricing. Crawl #30 verification is historical evidence; confirm the active DOM before pointing.",
+      "actions": [
+        "scroll_to_target",
+        "ping",
+        "explain"
+      ],
+      "guideOnly": true,
+      "runtimeVerification": {
+        "sourceCrawlId": "30",
+        "sourceDomain": "www.popsproof.com",
+        "sourceTargetId": "target_9d2f2207ab68",
+        "findingClass": "CONFIRMED",
+        "confidenceClass": "STABLE",
+        "verifiedAt": "2026-10-31T14:59:03.324657+00:00",
+        "expectedText": "Pricing",
+        "targetType": "nav",
+        "landmark": "nav",
+        "ordinalInParent": 7,
+        "parentLocator": "nav:nth-of-type(1)",
+        "sourceRevision": "1e2ea6d9b72e685b"
+      }
+    },
+    {
+      "id": "target_936e846b78d9",
+      "route": "/pledge",
+      "selector": "a[href=\"\\/account\"]",
+      "label": "Sign In",
+      "description": "nav: Sign In. Crawl #30 verification is historical evidence; confirm the active DOM before pointing.",
+      "actions": [
+        "scroll_to_target",
+        "ping",
+        "explain"
+      ],
+      "guideOnly": true,
+      "runtimeVerification": {
+        "sourceCrawlId": "30",
+        "sourceDomain": "www.popsproof.com",
+        "sourceTargetId": "target_936e846b78d9",
+        "findingClass": "CONFIRMED",
+        "confidenceClass": "STABLE",
+        "verifiedAt": "2026-10-31T14:59:03.327662+00:00",
+        "expectedText": "Sign In",
+        "targetType": "nav",
+        "landmark": "nav",
+        "ordinalInParent": 8,
+        "parentLocator": "nav:nth-of-type(1)",
+        "sourceRevision": "2456d866eeb3ff92"
+      }
+    },
+    {
+      "id": "target_54e299ce8517",
+      "route": "/pledge",
+      "selector": "a[href=\"\\/about\"]",
+      "label": "About / Our Mission",
+      "description": "nav: About / Our Mission. Crawl #30 verification is historical evidence; confirm the active DOM before pointing.",
+      "actions": [
+        "scroll_to_target",
+        "ping",
+        "explain"
+      ],
+      "guideOnly": true,
+      "runtimeVerification": {
+        "sourceCrawlId": "30",
+        "sourceDomain": "www.popsproof.com",
+        "sourceTargetId": "target_54e299ce8517",
+        "findingClass": "CONFIRMED",
+        "confidenceClass": "STABLE",
+        "verifiedAt": "2026-10-31T14:59:03.338056+00:00",
+        "expectedText": "About / Our Mission",
+        "targetType": "nav",
+        "landmark": "nav",
+        "ordinalInParent": 1,
+        "parentLocator": "nav:nth-of-type(1)",
+        "sourceRevision": "727c458d54be44c0"
+      }
+    },
+    {
+      "id": "target_fea66d15156d",
+      "route": "/pledge",
+      "selector": "a[href=\"\\/early-adopters\"]",
+      "label": "Early Adopters",
+      "description": "nav: Early Adopters. Crawl #30 verification is historical evidence; confirm the active DOM before pointing.",
+      "actions": [
+        "scroll_to_target",
+        "ping",
+        "explain"
+      ],
+      "guideOnly": true,
+      "runtimeVerification": {
+        "sourceCrawlId": "30",
+        "sourceDomain": "www.popsproof.com",
+        "sourceTargetId": "target_fea66d15156d",
+        "findingClass": "CONFIRMED",
+        "confidenceClass": "STABLE",
+        "verifiedAt": "2026-10-31T14:59:03.366255+00:00",
+        "expectedText": "Early Adopters",
+        "targetType": "nav",
+        "landmark": "nav",
+        "ordinalInParent": 5,
+        "parentLocator": "nav:nth-of-type(1)",
+        "sourceRevision": "5e38768ce5282e0b"
+      }
+    },
+    {
+      "id": "target_0423b5882703",
+      "route": "/pledge",
+      "selector": "a[href=\"\\/how-you-use-it\"]",
+      "label": "How It Works",
+      "description": "nav: How It Works. Crawl #30 verification is historical evidence; confirm the active DOM before pointing.",
+      "actions": [
+        "scroll_to_target",
+        "ping",
+        "explain"
+      ],
+      "guideOnly": true,
+      "runtimeVerification": {
+        "sourceCrawlId": "30",
+        "sourceDomain": "www.popsproof.com",
+        "sourceTargetId": "target_0423b5882703",
+        "findingClass": "CONFIRMED",
+        "confidenceClass": "STABLE",
+        "verifiedAt": "2026-10-31T14:59:03.369712+00:00",
+        "expectedText": "How It Works",
+        "targetType": "nav",
+        "landmark": "nav",
+        "ordinalInParent": 6,
+        "parentLocator": "nav:nth-of-type(1)",
+        "sourceRevision": "5e61e86cdc3e3476"
+      }
+    },
+    {
+      "id": "target_82bc6437bd37",
+      "route": "/pledge",
+      "selector": "a[href=\"\\/installation\"]",
+      "label": "Installation",
+      "description": "nav: Installation. Crawl #30 verification is historical evidence; confirm the active DOM before pointing.",
+      "actions": [
+        "scroll_to_target",
+        "ping",
+        "explain"
+      ],
+      "guideOnly": true,
+      "runtimeVerification": {
+        "sourceCrawlId": "30",
+        "sourceDomain": "www.popsproof.com",
+        "sourceTargetId": "target_82bc6437bd37",
+        "findingClass": "CONFIRMED",
+        "confidenceClass": "STABLE",
+        "verifiedAt": "2026-10-31T14:59:03.372861+00:00",
+        "expectedText": "Installation",
+        "targetType": "nav",
+        "landmark": "nav",
+        "ordinalInParent": 7,
+        "parentLocator": "nav:nth-of-type(1)",
+        "sourceRevision": "561f0a3d84e3c5cf"
+      }
+    },
+    {
+      "id": "target_b00150c355ba",
+      "route": "/pledge",
+      "selector": "a[href=\"\\/faq\"]",
+      "label": "FAQs",
+      "description": "nav: FAQs. Crawl #30 verification is historical evidence; confirm the active DOM before pointing.",
+      "actions": [
+        "scroll_to_target",
+        "ping",
+        "explain"
+      ],
+      "guideOnly": true,
+      "runtimeVerification": {
+        "sourceCrawlId": "30",
+        "sourceDomain": "www.popsproof.com",
+        "sourceTargetId": "target_b00150c355ba",
+        "findingClass": "CONFIRMED",
+        "confidenceClass": "STABLE",
+        "verifiedAt": "2026-10-31T14:59:03.375851+00:00",
+        "expectedText": "FAQs",
+        "targetType": "nav",
+        "landmark": "nav",
+        "ordinalInParent": 8,
+        "parentLocator": "nav:nth-of-type(1)",
+        "sourceRevision": "ca09c15aeac1a7b5"
+      }
+    },
+    {
+      "id": "target_0f71025722b3",
+      "route": "/pledge",
+      "selector": "a[href=\"\\/support\"]",
+      "label": "Contact & Support",
+      "description": "nav: Contact & Support. Crawl #30 verification is historical evidence; confirm the active DOM before pointing.",
+      "actions": [
+        "scroll_to_target",
+        "ping",
+        "explain"
+      ],
+      "guideOnly": true,
+      "runtimeVerification": {
+        "sourceCrawlId": "30",
+        "sourceDomain": "www.popsproof.com",
+        "sourceTargetId": "target_0f71025722b3",
+        "findingClass": "CONFIRMED",
+        "confidenceClass": "STABLE",
+        "verifiedAt": "2026-10-31T14:59:03.384948+00:00",
+        "expectedText": "Contact & Support",
+        "targetType": "nav",
+        "landmark": "nav",
+        "ordinalInParent": 9,
+        "parentLocator": "nav:nth-of-type(1)",
+        "sourceRevision": "a74ab53c30f1e34e"
+      }
+    },
+    {
+      "id": "target_26b0315fe2ec",
+      "route": "/pledge",
+      "selector": "a[href=\"\\/terms\"]",
+      "label": "Terms of Service",
+      "description": "nav: Terms of Service. Crawl #30 verification is historical evidence; confirm the active DOM before pointing.",
+      "actions": [
+        "scroll_to_target",
+        "ping",
+        "explain"
+      ],
+      "guideOnly": true,
+      "runtimeVerification": {
+        "sourceCrawlId": "30",
+        "sourceDomain": "www.popsproof.com",
+        "sourceTargetId": "target_26b0315fe2ec",
+        "findingClass": "CONFIRMED",
+        "confidenceClass": "STABLE",
+        "verifiedAt": "2026-10-31T14:59:03.434967+00:00",
+        "expectedText": "Terms of Service",
+        "targetType": "nav",
+        "landmark": "nav",
+        "ordinalInParent": 14,
+        "parentLocator": "nav:nth-of-type(1)",
+        "sourceRevision": "529f0e5f4761eca4"
+      }
+    },
+    {
+      "id": "target_aa645df25b8f",
+      "route": "/pledge",
+      "selector": "a[href=\"\\/privacy\"]",
+      "label": "Privacy Notice",
+      "description": "nav: Privacy Notice. Crawl #30 verification is historical evidence; confirm the active DOM before pointing.",
+      "actions": [
+        "scroll_to_target",
+        "ping",
+        "explain"
+      ],
+      "guideOnly": true,
+      "runtimeVerification": {
+        "sourceCrawlId": "30",
+        "sourceDomain": "www.popsproof.com",
+        "sourceTargetId": "target_aa645df25b8f",
+        "findingClass": "CONFIRMED",
+        "confidenceClass": "STABLE",
+        "verifiedAt": "2026-10-31T14:59:03.439648+00:00",
+        "expectedText": "Privacy Notice",
+        "targetType": "nav",
+        "landmark": "nav",
+        "ordinalInParent": 15,
+        "parentLocator": "nav:nth-of-type(1)",
+        "sourceRevision": "f18dccf66b7c5e5b"
+      }
+    },
+    {
+      "id": "target_2f95a9477409",
+      "route": "/pledge",
+      "selector": "a[href=\"\\/android\"]",
+      "label": "Android testing",
+      "description": "nav: Android testing. Crawl #30 verification is historical evidence; confirm the active DOM before pointing.",
+      "actions": [
+        "scroll_to_target",
+        "ping",
+        "explain"
+      ],
+      "guideOnly": true,
+      "runtimeVerification": {
+        "sourceCrawlId": "30",
+        "sourceDomain": "www.popsproof.com",
+        "sourceTargetId": "target_2f95a9477409",
+        "findingClass": "CONFIRMED",
+        "confidenceClass": "STABLE",
+        "verifiedAt": "2026-10-31T14:59:03.456049+00:00",
+        "expectedText": "Android testing",
+        "targetType": "nav",
+        "landmark": "nav",
+        "ordinalInParent": 2,
+        "parentLocator": "nav:nth-of-type(1)",
+        "sourceRevision": "8ed0c435914344a8"
+      }
+    },
+    {
+      "id": "target_cbd47fe1bb4a",
+      "route": "/pledge",
+      "selector": "a[href=\"\\/beta\"]",
+      "label": "Beta program",
+      "description": "nav: Beta program. Crawl #30 verification is historical evidence; confirm the active DOM before pointing.",
+      "actions": [
+        "scroll_to_target",
+        "ping",
+        "explain"
+      ],
+      "guideOnly": true,
+      "runtimeVerification": {
+        "sourceCrawlId": "30",
+        "sourceDomain": "www.popsproof.com",
+        "sourceTargetId": "target_cbd47fe1bb4a",
+        "findingClass": "CONFIRMED",
+        "confidenceClass": "STABLE",
+        "verifiedAt": "2026-10-31T14:59:03.459096+00:00",
+        "expectedText": "Beta program",
+        "targetType": "nav",
+        "landmark": "nav",
+        "ordinalInParent": 4,
+        "parentLocator": "nav:nth-of-type(1)",
+        "sourceRevision": "1fa42b9f1d129386"
+      }
+    },
+    {
+      "id": "target_d2b38a8fe071",
+      "route": "/pledge",
+      "selector": "a[href=\"\\/support\"]",
+      "label": "Contact & privacy support",
+      "description": "nav: Contact & privacy support. Crawl #30 verification is historical evidence; confirm the active DOM before pointing.",
+      "actions": [
+        "scroll_to_target",
+        "ping",
+        "explain"
+      ],
+      "guideOnly": true,
+      "runtimeVerification": {
+        "sourceCrawlId": "30",
+        "sourceDomain": "www.popsproof.com",
+        "sourceTargetId": "target_d2b38a8fe071",
+        "findingClass": "CONFIRMED",
+        "confidenceClass": "STABLE",
+        "verifiedAt": "2026-10-31T14:59:03.462271+00:00",
+        "expectedText": "Contact & privacy support",
+        "targetType": "nav",
+        "landmark": "nav",
+        "ordinalInParent": 8,
+        "parentLocator": "nav:nth-of-type(1)",
+        "sourceRevision": "90c0048b5a816644"
+      }
+    },
+    {
+      "id": "target_e44abd209c6c",
+      "route": "/pledge",
+      "selector": "a[href=\"\\/\"]",
+      "label": "Landing",
+      "description": "button: Landing. Crawl #30 verification is historical evidence; confirm the active DOM before pointing.",
+      "actions": [
+        "scroll_to_target",
+        "ping",
+        "explain"
+      ],
+      "guideOnly": true,
+      "runtimeVerification": {
+        "sourceCrawlId": "30",
+        "sourceDomain": "www.popsproof.com",
+        "sourceTargetId": "target_e44abd209c6c",
+        "findingClass": "CONFIRMED",
+        "confidenceClass": "STABLE",
+        "verifiedAt": "2026-10-31T14:59:03.487285+00:00",
+        "expectedText": "Landing",
+        "targetType": "button",
+        "landmark": "footer",
+        "ordinalInParent": 1,
+        "parentLocator": "footer:nth-of-type(1)",
+        "sourceRevision": "d6709cd49ed87966"
+      }
+    },
+    {
+      "id": "target_d7afa698791d",
+      "route": "/pledge",
+      "selector": "a[href=\"\\/about\"]",
+      "label": "About",
+      "description": "button: About. Crawl #30 verification is historical evidence; confirm the active DOM before pointing.",
+      "actions": [
+        "scroll_to_target",
+        "ping",
+        "explain"
+      ],
+      "guideOnly": true,
+      "runtimeVerification": {
+        "sourceCrawlId": "30",
+        "sourceDomain": "www.popsproof.com",
+        "sourceTargetId": "target_d7afa698791d",
+        "findingClass": "CONFIRMED",
+        "confidenceClass": "STABLE",
+        "verifiedAt": "2026-10-31T14:59:03.490332+00:00",
+        "expectedText": "About",
+        "targetType": "button",
+        "landmark": "footer",
+        "ordinalInParent": 2,
+        "parentLocator": "footer:nth-of-type(1)",
+        "sourceRevision": "a4262e1c9bcbc172"
+      }
+    },
+    {
+      "id": "target_f420323b1288",
+      "route": "/pledge",
+      "selector": "a[href=\"\\/see-pops-in-action\"]",
+      "label": "See POPS in Action",
+      "description": "button: See POPS in Action. Crawl #30 verification is historical evidence; confirm the active DOM before pointing.",
+      "actions": [
+        "scroll_to_target",
+        "ping",
+        "explain"
+      ],
+      "guideOnly": true,
+      "runtimeVerification": {
+        "sourceCrawlId": "30",
+        "sourceDomain": "www.popsproof.com",
+        "sourceTargetId": "target_f420323b1288",
+        "findingClass": "CONFIRMED",
+        "confidenceClass": "STABLE",
+        "verifiedAt": "2026-10-31T14:59:03.493452+00:00",
+        "expectedText": "See POPS in Action",
+        "targetType": "button",
+        "landmark": "footer",
+        "ordinalInParent": 3,
+        "parentLocator": "footer:nth-of-type(1)",
+        "sourceRevision": "f3e1ac0195c085d9"
+      }
+    },
+    {
+      "id": "target_ff3bc51fac53",
+      "route": "/pledge",
+      "selector": "a[href=\"\\/access\"]",
+      "label": "Access",
+      "description": "button: Access. Crawl #30 verification is historical evidence; confirm the active DOM before pointing.",
+      "actions": [
+        "scroll_to_target",
+        "ping",
+        "explain"
+      ],
+      "guideOnly": true,
+      "runtimeVerification": {
+        "sourceCrawlId": "30",
+        "sourceDomain": "www.popsproof.com",
+        "sourceTargetId": "target_ff3bc51fac53",
+        "findingClass": "CONFIRMED",
+        "confidenceClass": "STABLE",
+        "verifiedAt": "2026-10-31T14:59:03.518642+00:00",
+        "expectedText": "Access",
+        "targetType": "button",
+        "landmark": "footer",
+        "ordinalInParent": 7,
+        "parentLocator": "footer:nth-of-type(1)",
+        "sourceRevision": "a0561fd649cdb6ba"
+      }
+    },
+    {
+      "id": "target_dbde952c2a33",
+      "route": "/pledge",
+      "selector": "a[href=\"\\/account\"]",
+      "label": "Account",
+      "description": "button: Account. Crawl #30 verification is historical evidence; confirm the active DOM before pointing.",
+      "actions": [
+        "scroll_to_target",
+        "ping",
+        "explain"
+      ],
+      "guideOnly": true,
+      "runtimeVerification": {
+        "sourceCrawlId": "30",
+        "sourceDomain": "www.popsproof.com",
+        "sourceTargetId": "target_dbde952c2a33",
+        "findingClass": "CONFIRMED",
+        "confidenceClass": "STABLE",
+        "verifiedAt": "2026-10-31T14:59:03.521968+00:00",
+        "expectedText": "Account",
+        "targetType": "button",
+        "landmark": "footer",
+        "ordinalInParent": 8,
+        "parentLocator": "footer:nth-of-type(1)",
+        "sourceRevision": "9af211329b2fc82e"
+      }
+    },
+    {
+      "id": "target_48f23f5e8689",
+      "route": "/pledge",
+      "selector": "a[href=\"\\/privacy\"]",
+      "label": "Privacy",
+      "description": "button: Privacy. Crawl #30 verification is historical evidence; confirm the active DOM before pointing.",
+      "actions": [
+        "scroll_to_target",
+        "ping",
+        "explain"
+      ],
+      "guideOnly": true,
+      "runtimeVerification": {
+        "sourceCrawlId": "30",
+        "sourceDomain": "www.popsproof.com",
+        "sourceTargetId": "target_48f23f5e8689",
+        "findingClass": "CONFIRMED",
+        "confidenceClass": "STABLE",
+        "verifiedAt": "2026-10-31T14:59:03.556313+00:00",
+        "expectedText": "Privacy",
+        "targetType": "button",
+        "landmark": "footer",
+        "ordinalInParent": 13,
+        "parentLocator": "footer:nth-of-type(1)",
+        "sourceRevision": "a4cc6bc01a927e2a"
+      }
+    },
+    {
+      "id": "target_cbb197a8e80f",
+      "route": "/pledge",
+      "selector": "a[href=\"\\/terms\"]",
+      "label": "Terms",
+      "description": "button: Terms. Crawl #30 verification is historical evidence; confirm the active DOM before pointing.",
+      "actions": [
+        "scroll_to_target",
+        "ping",
+        "explain"
+      ],
+      "guideOnly": true,
+      "runtimeVerification": {
+        "sourceCrawlId": "30",
+        "sourceDomain": "www.popsproof.com",
+        "sourceTargetId": "target_cbb197a8e80f",
+        "findingClass": "CONFIRMED",
+        "confidenceClass": "STABLE",
+        "verifiedAt": "2026-10-31T14:59:03.559267+00:00",
+        "expectedText": "Terms",
+        "targetType": "button",
+        "landmark": "footer",
+        "ordinalInParent": 14,
+        "parentLocator": "footer:nth-of-type(1)",
+        "sourceRevision": "51d2361f4faea3bc"
+      }
+    },
+    {
+      "id": "target_31d5d900b0bb",
+      "route": "/pledge",
+      "selector": "a[href=\"https\\:\\/\\/spruked\\.com\\/\"]",
+      "label": "Spruked",
+      "description": "button: Spruked. Crawl #30 verification is historical evidence; confirm the active DOM before pointing.",
+      "actions": [
+        "scroll_to_target",
+        "ping",
+        "explain"
+      ],
+      "guideOnly": true,
+      "runtimeVerification": {
+        "sourceCrawlId": "30",
+        "sourceDomain": "www.popsproof.com",
+        "sourceTargetId": "target_31d5d900b0bb",
+        "findingClass": "CONFIRMED",
+        "confidenceClass": "STABLE",
+        "verifiedAt": "2026-10-31T14:59:03.574073+00:00",
+        "expectedText": "Spruked",
+        "targetType": "button",
+        "landmark": "footer",
+        "ordinalInParent": 1,
+        "parentLocator": "footer:nth-of-type(1)",
+        "sourceRevision": "376996a32373e4e7"
+      }
+    },
+    {
+      "id": "target_f2afdf04d204",
+      "route": "/pledge",
+      "selector": "a[href=\"https\\:\\/\\/orbweaver\\.spruked\\.com\\/\"]",
+      "label": "OrbWeaver",
+      "description": "button: OrbWeaver. Crawl #30 verification is historical evidence; confirm the active DOM before pointing.",
+      "actions": [
+        "scroll_to_target",
+        "ping",
+        "explain"
+      ],
+      "guideOnly": true,
+      "runtimeVerification": {
+        "sourceCrawlId": "30",
+        "sourceDomain": "www.popsproof.com",
+        "sourceTargetId": "target_f2afdf04d204",
+        "findingClass": "CONFIRMED",
+        "confidenceClass": "STABLE",
+        "verifiedAt": "2026-10-31T14:59:03.577295+00:00",
+        "expectedText": "OrbWeaver",
+        "targetType": "button",
+        "landmark": "footer",
+        "ordinalInParent": 2,
+        "parentLocator": "footer:nth-of-type(1)",
+        "sourceRevision": "a2fac0b77126c55e"
+      }
+    },
+    {
+      "id": "target_c92cdf9c3d62",
+      "route": "/pledge",
+      "selector": "a[href=\"https\\:\\/\\/certsig\\.com\\/\"]",
+      "label": "CertSig",
+      "description": "button: CertSig. Crawl #30 verification is historical evidence; confirm the active DOM before pointing.",
+      "actions": [
+        "scroll_to_target",
+        "ping",
+        "explain"
+      ],
+      "guideOnly": true,
+      "runtimeVerification": {
+        "sourceCrawlId": "30",
+        "sourceDomain": "www.popsproof.com",
+        "sourceTargetId": "target_c92cdf9c3d62",
+        "findingClass": "CONFIRMED",
+        "confidenceClass": "STABLE",
+        "verifiedAt": "2026-10-31T14:59:03.585648+00:00",
+        "expectedText": "CertSig",
+        "targetType": "button",
+        "landmark": "footer",
+        "ordinalInParent": 3,
+        "parentLocator": "footer:nth-of-type(1)",
+        "sourceRevision": "a37eefb8a4abaa57"
+      }
+    },
+    {
+      "id": "target_a8fe28e3e5d0",
+      "route": "/pledge",
+      "selector": "a[href=\"https\\:\\/\\/truemarkmint\\.com\\/\"]",
+      "label": "TrueMarkMint",
+      "description": "button: TrueMarkMint. Crawl #30 verification is historical evidence; confirm the active DOM before pointing.",
+      "actions": [
+        "scroll_to_target",
+        "ping",
+        "explain"
+      ],
+      "guideOnly": true,
+      "runtimeVerification": {
+        "sourceCrawlId": "30",
+        "sourceDomain": "www.popsproof.com",
+        "sourceTargetId": "target_a8fe28e3e5d0",
+        "findingClass": "CONFIRMED",
+        "confidenceClass": "STABLE",
+        "verifiedAt": "2026-10-31T14:59:03.588709+00:00",
+        "expectedText": "TrueMarkMint",
+        "targetType": "button",
+        "landmark": "footer",
+        "ordinalInParent": 4,
+        "parentLocator": "footer:nth-of-type(1)",
+        "sourceRevision": "39f0845a0dd172b4"
+      }
+    },
+    {
+      "id": "target_172abe96673f",
+      "route": "/about",
+      "selector": "a[href=\"\\/\"]",
+      "label": "P.O.P.S. TM",
+      "description": "nav: P.O.P.S. TM. Crawl #30 verification is historical evidence; confirm the active DOM before pointing.",
+      "actions": [
+        "scroll_to_target",
+        "ping",
+        "explain"
+      ],
+      "guideOnly": true,
+      "runtimeVerification": {
+        "sourceCrawlId": "30",
+        "sourceDomain": "www.popsproof.com",
+        "sourceTargetId": "target_172abe96673f",
+        "findingClass": "CONFIRMED",
+        "confidenceClass": "STABLE",
+        "verifiedAt": "2026-10-31T14:59:04.361999+00:00",
+        "expectedText": "P.O.P.S. TM",
+        "targetType": "nav",
+        "landmark": "nav",
+        "ordinalInParent": 1,
+        "parentLocator": "nav:nth-of-type(1)",
+        "sourceRevision": "0d710cc0cf62bcae"
+      }
+    },
+    {
+      "id": "target_9d88e82463e3",
+      "route": "/about",
+      "selector": "a[href=\"\\/\"]",
+      "label": "Home",
+      "description": "nav: Home. Crawl #30 verification is historical evidence; confirm the active DOM before pointing.",
+      "actions": [
+        "scroll_to_target",
+        "ping",
+        "explain"
+      ],
+      "guideOnly": true,
+      "runtimeVerification": {
+        "sourceCrawlId": "30",
+        "sourceDomain": "www.popsproof.com",
+        "sourceTargetId": "target_9d88e82463e3",
+        "findingClass": "CONFIRMED",
+        "confidenceClass": "STABLE",
+        "verifiedAt": "2026-10-31T14:59:04.370746+00:00",
+        "expectedText": "Home",
+        "targetType": "nav",
+        "landmark": "nav",
+        "ordinalInParent": 1,
+        "parentLocator": "nav:nth-of-type(1)",
+        "sourceRevision": "4ea140588150773c"
+      }
+    },
+    {
+      "id": "target_daa846352ed0",
+      "route": "/about",
+      "selector": "a[href=\"\\/desktop-app\"]",
+      "label": "Windows",
+      "description": "nav: Windows. Crawl #30 verification is historical evidence; confirm the active DOM before pointing.",
+      "actions": [
+        "scroll_to_target",
+        "ping",
+        "explain"
+      ],
+      "guideOnly": true,
+      "runtimeVerification": {
+        "sourceCrawlId": "30",
+        "sourceDomain": "www.popsproof.com",
+        "sourceTargetId": "target_daa846352ed0",
+        "findingClass": "CONFIRMED",
+        "confidenceClass": "STABLE",
+        "verifiedAt": "2026-10-31T14:59:04.374002+00:00",
+        "expectedText": "Windows",
+        "targetType": "nav",
+        "landmark": "nav",
+        "ordinalInParent": 2,
+        "parentLocator": "nav:nth-of-type(1)",
+        "sourceRevision": "340d600392818df2"
+      }
+    },
+    {
+      "id": "target_354702d28734",
+      "route": "/about",
+      "selector": "a[href=\"\\/android\"]",
+      "label": "Android",
+      "description": "nav: Android. Crawl #30 verification is historical evidence; confirm the active DOM before pointing.",
+      "actions": [
+        "scroll_to_target",
+        "ping",
+        "explain"
+      ],
+      "guideOnly": true,
+      "runtimeVerification": {
+        "sourceCrawlId": "30",
+        "sourceDomain": "www.popsproof.com",
+        "sourceTargetId": "target_354702d28734",
+        "findingClass": "CONFIRMED",
+        "confidenceClass": "STABLE",
+        "verifiedAt": "2026-10-31T14:59:04.377150+00:00",
+        "expectedText": "Android",
+        "targetType": "nav",
+        "landmark": "nav",
+        "ordinalInParent": 3,
+        "parentLocator": "nav:nth-of-type(1)",
+        "sourceRevision": "f60ed56a9c827589"
+      }
+    },
+    {
+      "id": "target_0e1157db4c15",
+      "route": "/about",
+      "selector": "a[href=\"\\/access\\#platforms\"]",
+      "label": "iOS (planned)",
+      "description": "nav: iOS (planned). Crawl #30 verification is historical evidence; confirm the active DOM before pointing.",
+      "actions": [
+        "scroll_to_target",
+        "ping",
+        "explain"
+      ],
+      "guideOnly": true,
+      "runtimeVerification": {
+        "sourceCrawlId": "30",
+        "sourceDomain": "www.popsproof.com",
+        "sourceTargetId": "target_0e1157db4c15",
+        "findingClass": "CONFIRMED",
+        "confidenceClass": "STABLE",
+        "verifiedAt": "2026-10-31T14:59:04.380702+00:00",
+        "expectedText": "iOS (planned)",
+        "targetType": "nav",
+        "landmark": "nav",
+        "ordinalInParent": 4,
+        "parentLocator": "nav:nth-of-type(1)",
+        "sourceRevision": "2ce5428fed90d086"
+      }
+    },
+    {
+      "id": "target_97d2033f4fcf",
+      "route": "/about",
+      "selector": "a[href=\"\\/product-demo\"]",
+      "label": "Demo",
+      "description": "nav: Demo. Crawl #30 verification is historical evidence; confirm the active DOM before pointing.",
+      "actions": [
+        "scroll_to_target",
+        "ping",
+        "explain"
+      ],
+      "guideOnly": true,
+      "runtimeVerification": {
+        "sourceCrawlId": "30",
+        "sourceDomain": "www.popsproof.com",
+        "sourceTargetId": "target_97d2033f4fcf",
+        "findingClass": "CONFIRMED",
+        "confidenceClass": "STABLE",
+        "verifiedAt": "2026-10-31T14:59:04.389703+00:00",
+        "expectedText": "Demo",
+        "targetType": "nav",
+        "landmark": "nav",
+        "ordinalInParent": 5,
+        "parentLocator": "nav:nth-of-type(1)",
+        "sourceRevision": "2a97516c354b6884"
+      }
+    },
+    {
+      "id": "target_89d1d9f15114",
+      "route": "/about",
+      "selector": "a[href=\"\\/beta\"]",
+      "label": "Beta",
+      "description": "nav: Beta. Crawl #30 verification is historical evidence; confirm the active DOM before pointing.",
+      "actions": [
+        "scroll_to_target",
+        "ping",
+        "explain"
+      ],
+      "guideOnly": true,
+      "runtimeVerification": {
+        "sourceCrawlId": "30",
+        "sourceDomain": "www.popsproof.com",
+        "sourceTargetId": "target_89d1d9f15114",
+        "findingClass": "CONFIRMED",
+        "confidenceClass": "STABLE",
+        "verifiedAt": "2026-10-31T14:59:04.393085+00:00",
+        "expectedText": "Beta",
+        "targetType": "nav",
+        "landmark": "nav",
+        "ordinalInParent": 6,
+        "parentLocator": "nav:nth-of-type(1)",
+        "sourceRevision": "f44e64e75f3948e9"
+      }
+    },
+    {
+      "id": "target_131b94e871c1",
+      "route": "/about",
+      "selector": "a[href=\"\\/access\"]",
+      "label": "Pricing",
+      "description": "nav: Pricing. Crawl #30 verification is historical evidence; confirm the active DOM before pointing.",
+      "actions": [
+        "scroll_to_target",
+        "ping",
+        "explain"
+      ],
+      "guideOnly": true,
+      "runtimeVerification": {
+        "sourceCrawlId": "30",
+        "sourceDomain": "www.popsproof.com",
+        "sourceTargetId": "target_131b94e871c1",
+        "findingClass": "CONFIRMED",
+        "confidenceClass": "STABLE",
+        "verifiedAt": "2026-10-31T14:59:04.396237+00:00",
+        "expectedText": "Pricing",
+        "targetType": "nav",
+        "landmark": "nav",
+        "ordinalInParent": 7,
+        "parentLocator": "nav:nth-of-type(1)",
+        "sourceRevision": "1e2ea6d9b72e685b"
+      }
+    },
+    {
+      "id": "target_6a91f7723ea6",
+      "route": "/about",
+      "selector": "a[href=\"\\/account\"]",
+      "label": "Sign In",
+      "description": "nav: Sign In. Crawl #30 verification is historical evidence; confirm the active DOM before pointing.",
+      "actions": [
+        "scroll_to_target",
+        "ping",
+        "explain"
+      ],
+      "guideOnly": true,
+      "runtimeVerification": {
+        "sourceCrawlId": "30",
+        "sourceDomain": "www.popsproof.com",
+        "sourceTargetId": "target_6a91f7723ea6",
+        "findingClass": "CONFIRMED",
+        "confidenceClass": "STABLE",
+        "verifiedAt": "2026-10-31T14:59:04.399562+00:00",
+        "expectedText": "Sign In",
+        "targetType": "nav",
+        "landmark": "nav",
+        "ordinalInParent": 8,
+        "parentLocator": "nav:nth-of-type(1)",
+        "sourceRevision": "2456d866eeb3ff92"
+      }
+    },
+    {
+      "id": "target_5a9832caceaf",
+      "route": "/about",
+      "selector": "a[href=\"\\/about\"]",
+      "label": "About / Our Mission",
+      "description": "nav: About / Our Mission. Crawl #30 verification is historical evidence; confirm the active DOM before pointing.",
+      "actions": [
+        "scroll_to_target",
+        "ping",
+        "explain"
+      ],
+      "guideOnly": true,
+      "runtimeVerification": {
+        "sourceCrawlId": "30",
+        "sourceDomain": "www.popsproof.com",
+        "sourceTargetId": "target_5a9832caceaf",
+        "findingClass": "CONFIRMED",
+        "confidenceClass": "STABLE",
+        "verifiedAt": "2026-10-31T14:59:04.411397+00:00",
+        "expectedText": "About / Our Mission",
+        "targetType": "nav",
+        "landmark": "nav",
+        "ordinalInParent": 1,
+        "parentLocator": "nav:nth-of-type(1)",
+        "sourceRevision": "727c458d54be44c0"
+      }
+    },
+    {
+      "id": "target_db54ad2375ec",
+      "route": "/about",
+      "selector": "a[href=\"\\/early-adopters\"]",
+      "label": "Early Adopters",
+      "description": "nav: Early Adopters. Crawl #30 verification is historical evidence; confirm the active DOM before pointing.",
+      "actions": [
+        "scroll_to_target",
+        "ping",
+        "explain"
+      ],
+      "guideOnly": true,
+      "runtimeVerification": {
+        "sourceCrawlId": "30",
+        "sourceDomain": "www.popsproof.com",
+        "sourceTargetId": "target_db54ad2375ec",
+        "findingClass": "CONFIRMED",
+        "confidenceClass": "STABLE",
+        "verifiedAt": "2026-10-31T14:59:04.441742+00:00",
+        "expectedText": "Early Adopters",
+        "targetType": "nav",
+        "landmark": "nav",
+        "ordinalInParent": 5,
+        "parentLocator": "nav:nth-of-type(1)",
+        "sourceRevision": "5e38768ce5282e0b"
+      }
+    },
+    {
+      "id": "target_621ccb01e759",
+      "route": "/about",
+      "selector": "a[href=\"\\/how-you-use-it\"]",
+      "label": "How It Works",
+      "description": "nav: How It Works. Crawl #30 verification is historical evidence; confirm the active DOM before pointing.",
+      "actions": [
+        "scroll_to_target",
+        "ping",
+        "explain"
+      ],
+      "guideOnly": true,
+      "runtimeVerification": {
+        "sourceCrawlId": "30",
+        "sourceDomain": "www.popsproof.com",
+        "sourceTargetId": "target_621ccb01e759",
+        "findingClass": "CONFIRMED",
+        "confidenceClass": "STABLE",
+        "verifiedAt": "2026-10-31T14:59:04.445099+00:00",
+        "expectedText": "How It Works",
+        "targetType": "nav",
+        "landmark": "nav",
+        "ordinalInParent": 6,
+        "parentLocator": "nav:nth-of-type(1)",
+        "sourceRevision": "5e61e86cdc3e3476"
+      }
+    },
+    {
+      "id": "target_fa96d0651c1e",
+      "route": "/about",
+      "selector": "a[href=\"\\/installation\"]",
+      "label": "Installation",
+      "description": "nav: Installation. Crawl #30 verification is historical evidence; confirm the active DOM before pointing.",
+      "actions": [
+        "scroll_to_target",
+        "ping",
+        "explain"
+      ],
+      "guideOnly": true,
+      "runtimeVerification": {
+        "sourceCrawlId": "30",
+        "sourceDomain": "www.popsproof.com",
+        "sourceTargetId": "target_fa96d0651c1e",
+        "findingClass": "CONFIRMED",
+        "confidenceClass": "STABLE",
+        "verifiedAt": "2026-10-31T14:59:04.449874+00:00",
+        "expectedText": "Installation",
+        "targetType": "nav",
+        "landmark": "nav",
+        "ordinalInParent": 7,
+        "parentLocator": "nav:nth-of-type(1)",
+        "sourceRevision": "561f0a3d84e3c5cf"
+      }
+    },
+    {
+      "id": "target_785fe4bbb7e7",
+      "route": "/about",
+      "selector": "a[href=\"\\/faq\"]",
+      "label": "FAQs",
+      "description": "nav: FAQs. Crawl #30 verification is historical evidence; confirm the active DOM before pointing.",
+      "actions": [
+        "scroll_to_target",
+        "ping",
+        "explain"
+      ],
+      "guideOnly": true,
+      "runtimeVerification": {
+        "sourceCrawlId": "30",
+        "sourceDomain": "www.popsproof.com",
+        "sourceTargetId": "target_785fe4bbb7e7",
+        "findingClass": "CONFIRMED",
+        "confidenceClass": "STABLE",
+        "verifiedAt": "2026-10-31T14:59:04.453278+00:00",
+        "expectedText": "FAQs",
+        "targetType": "nav",
+        "landmark": "nav",
+        "ordinalInParent": 8,
+        "parentLocator": "nav:nth-of-type(1)",
+        "sourceRevision": "ca09c15aeac1a7b5"
+      }
+    },
+    {
+      "id": "target_8a735ba60348",
+      "route": "/about",
+      "selector": "a[href=\"\\/support\"]",
+      "label": "Contact & Support",
+      "description": "nav: Contact & Support. Crawl #30 verification is historical evidence; confirm the active DOM before pointing.",
+      "actions": [
+        "scroll_to_target",
+        "ping",
+        "explain"
+      ],
+      "guideOnly": true,
+      "runtimeVerification": {
+        "sourceCrawlId": "30",
+        "sourceDomain": "www.popsproof.com",
+        "sourceTargetId": "target_8a735ba60348",
+        "findingClass": "CONFIRMED",
+        "confidenceClass": "STABLE",
+        "verifiedAt": "2026-10-31T14:59:04.456892+00:00",
+        "expectedText": "Contact & Support",
+        "targetType": "nav",
+        "landmark": "nav",
+        "ordinalInParent": 9,
+        "parentLocator": "nav:nth-of-type(1)",
+        "sourceRevision": "a74ab53c30f1e34e"
+      }
+    },
+    {
+      "id": "target_3feeb158f58d",
+      "route": "/about",
+      "selector": "a[href=\"\\/terms\"]",
+      "label": "Terms of Service",
+      "description": "nav: Terms of Service. Crawl #30 verification is historical evidence; confirm the active DOM before pointing.",
+      "actions": [
+        "scroll_to_target",
+        "ping",
+        "explain"
+      ],
+      "guideOnly": true,
+      "runtimeVerification": {
+        "sourceCrawlId": "30",
+        "sourceDomain": "www.popsproof.com",
+        "sourceTargetId": "target_3feeb158f58d",
+        "findingClass": "CONFIRMED",
+        "confidenceClass": "STABLE",
+        "verifiedAt": "2026-10-31T14:59:04.505915+00:00",
+        "expectedText": "Terms of Service",
+        "targetType": "nav",
+        "landmark": "nav",
+        "ordinalInParent": 14,
+        "parentLocator": "nav:nth-of-type(1)",
+        "sourceRevision": "529f0e5f4761eca4"
+      }
+    },
+    {
+      "id": "target_e022b0c3c8a9",
+      "route": "/about",
+      "selector": "a[href=\"\\/privacy\"]",
+      "label": "Privacy Notice",
+      "description": "nav: Privacy Notice. Crawl #30 verification is historical evidence; confirm the active DOM before pointing.",
+      "actions": [
+        "scroll_to_target",
+        "ping",
+        "explain"
+      ],
+      "guideOnly": true,
+      "runtimeVerification": {
+        "sourceCrawlId": "30",
+        "sourceDomain": "www.popsproof.com",
+        "sourceTargetId": "target_e022b0c3c8a9",
+        "findingClass": "CONFIRMED",
+        "confidenceClass": "STABLE",
+        "verifiedAt": "2026-10-31T14:59:04.509256+00:00",
+        "expectedText": "Privacy Notice",
+        "targetType": "nav",
+        "landmark": "nav",
+        "ordinalInParent": 15,
+        "parentLocator": "nav:nth-of-type(1)",
+        "sourceRevision": "f18dccf66b7c5e5b"
+      }
+    },
+    {
+      "id": "target_c954edcccef0",
+      "route": "/about",
+      "selector": "a[href=\"\\/access\"]",
+      "label": "Get P.O.P.S.",
+      "description": "nav: Get P.O.P.S.. Crawl #30 verification is historical evidence; confirm the active DOM before pointing.",
+      "actions": [
+        "scroll_to_target",
+        "ping",
+        "explain"
+      ],
+      "guideOnly": true,
+      "runtimeVerification": {
+        "sourceCrawlId": "30",
+        "sourceDomain": "www.popsproof.com",
+        "sourceTargetId": "target_c954edcccef0",
+        "findingClass": "CONFIRMED",
+        "confidenceClass": "STABLE",
+        "verifiedAt": "2026-10-31T14:59:04.512630+00:00",
+        "expectedText": "Get P.O.P.S.",
+        "targetType": "nav",
+        "landmark": "nav",
+        "ordinalInParent": 2,
+        "parentLocator": "nav:nth-of-type(1)",
+        "sourceRevision": "b5461ad354898894"
+      }
+    },
+    {
+      "id": "target_619bce6b0982",
+      "route": "/about",
+      "selector": "a[href=\"\\/android\"]",
+      "label": "Android testing",
+      "description": "nav: Android testing. Crawl #30 verification is historical evidence; confirm the active DOM before pointing.",
+      "actions": [
+        "scroll_to_target",
+        "ping",
+        "explain"
+      ],
+      "guideOnly": true,
+      "runtimeVerification": {
+        "sourceCrawlId": "30",
+        "sourceDomain": "www.popsproof.com",
+        "sourceTargetId": "target_619bce6b0982",
+        "findingClass": "CONFIRMED",
+        "confidenceClass": "STABLE",
+        "verifiedAt": "2026-10-31T14:59:04.519700+00:00",
+        "expectedText": "Android testing",
+        "targetType": "nav",
+        "landmark": "nav",
+        "ordinalInParent": 2,
+        "parentLocator": "nav:nth-of-type(1)",
+        "sourceRevision": "8ed0c435914344a8"
+      }
+    },
+    {
+      "id": "target_4db9dcc50f19",
+      "route": "/about",
+      "selector": "a[href=\"\\/beta\"]",
+      "label": "Beta program",
+      "description": "nav: Beta program. Crawl #30 verification is historical evidence; confirm the active DOM before pointing.",
+      "actions": [
+        "scroll_to_target",
+        "ping",
+        "explain"
+      ],
+      "guideOnly": true,
+      "runtimeVerification": {
+        "sourceCrawlId": "30",
+        "sourceDomain": "www.popsproof.com",
+        "sourceTargetId": "target_4db9dcc50f19",
+        "findingClass": "CONFIRMED",
+        "confidenceClass": "STABLE",
+        "verifiedAt": "2026-10-31T14:59:04.522979+00:00",
+        "expectedText": "Beta program",
+        "targetType": "nav",
+        "landmark": "nav",
+        "ordinalInParent": 4,
+        "parentLocator": "nav:nth-of-type(1)",
+        "sourceRevision": "1fa42b9f1d129386"
+      }
+    },
+    {
+      "id": "target_c14877d252b9",
+      "route": "/about",
+      "selector": "a[href=\"\\/support\"]",
+      "label": "Contact & privacy support",
+      "description": "nav: Contact & privacy support. Crawl #30 verification is historical evidence; confirm the active DOM before pointing.",
+      "actions": [
+        "scroll_to_target",
+        "ping",
+        "explain"
+      ],
+      "guideOnly": true,
+      "runtimeVerification": {
+        "sourceCrawlId": "30",
+        "sourceDomain": "www.popsproof.com",
+        "sourceTargetId": "target_c14877d252b9",
+        "findingClass": "CONFIRMED",
+        "confidenceClass": "STABLE",
+        "verifiedAt": "2026-10-31T14:59:04.526250+00:00",
+        "expectedText": "Contact & privacy support",
+        "targetType": "nav",
+        "landmark": "nav",
+        "ordinalInParent": 8,
+        "parentLocator": "nav:nth-of-type(1)",
+        "sourceRevision": "90c0048b5a816644"
+      }
+    },
+    {
+      "id": "target_dffb0c8c25e2",
+      "route": "/about",
+      "selector": "a[href=\"\\/\"]",
+      "label": "Landing",
+      "description": "button: Landing. Crawl #30 verification is historical evidence; confirm the active DOM before pointing.",
+      "actions": [
+        "scroll_to_target",
+        "ping",
+        "explain"
+      ],
+      "guideOnly": true,
+      "runtimeVerification": {
+        "sourceCrawlId": "30",
+        "sourceDomain": "www.popsproof.com",
+        "sourceTargetId": "target_dffb0c8c25e2",
+        "findingClass": "CONFIRMED",
+        "confidenceClass": "STABLE",
+        "verifiedAt": "2026-10-31T14:59:04.537407+00:00",
+        "expectedText": "Landing",
+        "targetType": "button",
+        "landmark": "footer",
+        "ordinalInParent": 1,
+        "parentLocator": "footer:nth-of-type(1)",
+        "sourceRevision": "d6709cd49ed87966"
+      }
+    },
+    {
+      "id": "target_fa80f8482b9b",
+      "route": "/about",
+      "selector": "a[href=\"\\/about\"]",
+      "label": "About",
+      "description": "button: About. Crawl #30 verification is historical evidence; confirm the active DOM before pointing.",
+      "actions": [
+        "scroll_to_target",
+        "ping",
+        "explain"
+      ],
+      "guideOnly": true,
+      "runtimeVerification": {
+        "sourceCrawlId": "30",
+        "sourceDomain": "www.popsproof.com",
+        "sourceTargetId": "target_fa80f8482b9b",
+        "findingClass": "CONFIRMED",
+        "confidenceClass": "STABLE",
+        "verifiedAt": "2026-10-31T14:59:04.540631+00:00",
+        "expectedText": "About",
+        "targetType": "button",
+        "landmark": "footer",
+        "ordinalInParent": 2,
+        "parentLocator": "footer:nth-of-type(1)",
+        "sourceRevision": "a4262e1c9bcbc172"
+      }
+    },
+    {
+      "id": "target_7ae833fa1d00",
+      "route": "/about",
+      "selector": "a[href=\"\\/see-pops-in-action\"]",
+      "label": "See POPS in Action",
+      "description": "button: See POPS in Action. Crawl #30 verification is historical evidence; confirm the active DOM before pointing.",
+      "actions": [
+        "scroll_to_target",
+        "ping",
+        "explain"
+      ],
+      "guideOnly": true,
+      "runtimeVerification": {
+        "sourceCrawlId": "30",
+        "sourceDomain": "www.popsproof.com",
+        "sourceTargetId": "target_7ae833fa1d00",
+        "findingClass": "CONFIRMED",
+        "confidenceClass": "STABLE",
+        "verifiedAt": "2026-10-31T14:59:04.543965+00:00",
+        "expectedText": "See POPS in Action",
+        "targetType": "button",
+        "landmark": "footer",
+        "ordinalInParent": 3,
+        "parentLocator": "footer:nth-of-type(1)",
+        "sourceRevision": "f3e1ac0195c085d9"
+      }
+    },
+    {
+      "id": "target_673db52176e1",
+      "route": "/about",
+      "selector": "a[href=\"\\/access\"]",
+      "label": "Access",
+      "description": "button: Access. Crawl #30 verification is historical evidence; confirm the active DOM before pointing.",
+      "actions": [
+        "scroll_to_target",
+        "ping",
+        "explain"
+      ],
+      "guideOnly": true,
+      "runtimeVerification": {
+        "sourceCrawlId": "30",
+        "sourceDomain": "www.popsproof.com",
+        "sourceTargetId": "target_673db52176e1",
+        "findingClass": "CONFIRMED",
+        "confidenceClass": "STABLE",
+        "verifiedAt": "2026-10-31T14:59:04.569235+00:00",
+        "expectedText": "Access",
+        "targetType": "button",
+        "landmark": "footer",
+        "ordinalInParent": 7,
+        "parentLocator": "footer:nth-of-type(1)",
+        "sourceRevision": "a0561fd649cdb6ba"
+      }
+    },
+    {
+      "id": "target_75b0c68cf93f",
+      "route": "/about",
+      "selector": "a[href=\"\\/account\"]",
+      "label": "Account",
+      "description": "button: Account. Crawl #30 verification is historical evidence; confirm the active DOM before pointing.",
+      "actions": [
+        "scroll_to_target",
+        "ping",
+        "explain"
+      ],
+      "guideOnly": true,
+      "runtimeVerification": {
+        "sourceCrawlId": "30",
+        "sourceDomain": "www.popsproof.com",
+        "sourceTargetId": "target_75b0c68cf93f",
+        "findingClass": "CONFIRMED",
+        "confidenceClass": "STABLE",
+        "verifiedAt": "2026-10-31T14:59:04.572583+00:00",
+        "expectedText": "Account",
+        "targetType": "button",
+        "landmark": "footer",
+        "ordinalInParent": 8,
+        "parentLocator": "footer:nth-of-type(1)",
+        "sourceRevision": "9af211329b2fc82e"
+      }
+    },
+    {
+      "id": "target_701c1f402eef",
+      "route": "/about",
+      "selector": "a[href=\"\\/privacy\"]",
+      "label": "Privacy",
+      "description": "button: Privacy. Crawl #30 verification is historical evidence; confirm the active DOM before pointing.",
+      "actions": [
+        "scroll_to_target",
+        "ping",
+        "explain"
+      ],
+      "guideOnly": true,
+      "runtimeVerification": {
+        "sourceCrawlId": "30",
+        "sourceDomain": "www.popsproof.com",
+        "sourceTargetId": "target_701c1f402eef",
+        "findingClass": "CONFIRMED",
+        "confidenceClass": "STABLE",
+        "verifiedAt": "2026-10-31T14:59:04.617646+00:00",
+        "expectedText": "Privacy",
+        "targetType": "button",
+        "landmark": "footer",
+        "ordinalInParent": 13,
+        "parentLocator": "footer:nth-of-type(1)",
+        "sourceRevision": "a4cc6bc01a927e2a"
+      }
+    },
+    {
+      "id": "target_e717d2768a61",
+      "route": "/about",
+      "selector": "a[href=\"\\/terms\"]",
+      "label": "Terms",
+      "description": "button: Terms. Crawl #30 verification is historical evidence; confirm the active DOM before pointing.",
+      "actions": [
+        "scroll_to_target",
+        "ping",
+        "explain"
+      ],
+      "guideOnly": true,
+      "runtimeVerification": {
+        "sourceCrawlId": "30",
+        "sourceDomain": "www.popsproof.com",
+        "sourceTargetId": "target_e717d2768a61",
+        "findingClass": "CONFIRMED",
+        "confidenceClass": "STABLE",
+        "verifiedAt": "2026-10-31T14:59:04.621992+00:00",
+        "expectedText": "Terms",
+        "targetType": "button",
+        "landmark": "footer",
+        "ordinalInParent": 14,
+        "parentLocator": "footer:nth-of-type(1)",
+        "sourceRevision": "51d2361f4faea3bc"
+      }
+    },
+    {
+      "id": "target_dfa34ec60752",
+      "route": "/about",
+      "selector": "a[href=\"https\\:\\/\\/spruked\\.com\\/\"]",
+      "label": "Spruked",
+      "description": "button: Spruked. Crawl #30 verification is historical evidence; confirm the active DOM before pointing.",
+      "actions": [
+        "scroll_to_target",
+        "ping",
+        "explain"
+      ],
+      "guideOnly": true,
+      "runtimeVerification": {
+        "sourceCrawlId": "30",
+        "sourceDomain": "www.popsproof.com",
+        "sourceTargetId": "target_dfa34ec60752",
+        "findingClass": "CONFIRMED",
+        "confidenceClass": "STABLE",
+        "verifiedAt": "2026-10-31T14:59:04.637902+00:00",
+        "expectedText": "Spruked",
+        "targetType": "button",
+        "landmark": "footer",
+        "ordinalInParent": 1,
+        "parentLocator": "footer:nth-of-type(1)",
+        "sourceRevision": "376996a32373e4e7"
+      }
+    },
+    {
+      "id": "target_bdec67eb039e",
+      "route": "/about",
+      "selector": "a[href=\"https\\:\\/\\/orbweaver\\.spruked\\.com\\/\"]",
+      "label": "OrbWeaver",
+      "description": "button: OrbWeaver. Crawl #30 verification is historical evidence; confirm the active DOM before pointing.",
+      "actions": [
+        "scroll_to_target",
+        "ping",
+        "explain"
+      ],
+      "guideOnly": true,
+      "runtimeVerification": {
+        "sourceCrawlId": "30",
+        "sourceDomain": "www.popsproof.com",
+        "sourceTargetId": "target_bdec67eb039e",
+        "findingClass": "CONFIRMED",
+        "confidenceClass": "STABLE",
+        "verifiedAt": "2026-10-31T14:59:04.641107+00:00",
+        "expectedText": "OrbWeaver",
+        "targetType": "button",
+        "landmark": "footer",
+        "ordinalInParent": 2,
+        "parentLocator": "footer:nth-of-type(1)",
+        "sourceRevision": "a2fac0b77126c55e"
+      }
+    },
+    {
+      "id": "target_5d9ef5eeb851",
+      "route": "/about",
+      "selector": "a[href=\"https\\:\\/\\/certsig\\.com\\/\"]",
+      "label": "CertSig",
+      "description": "button: CertSig. Crawl #30 verification is historical evidence; confirm the active DOM before pointing.",
+      "actions": [
+        "scroll_to_target",
+        "ping",
+        "explain"
+      ],
+      "guideOnly": true,
+      "runtimeVerification": {
+        "sourceCrawlId": "30",
+        "sourceDomain": "www.popsproof.com",
+        "sourceTargetId": "target_5d9ef5eeb851",
+        "findingClass": "CONFIRMED",
+        "confidenceClass": "STABLE",
+        "verifiedAt": "2026-10-31T14:59:04.644154+00:00",
+        "expectedText": "CertSig",
+        "targetType": "button",
+        "landmark": "footer",
+        "ordinalInParent": 3,
+        "parentLocator": "footer:nth-of-type(1)",
+        "sourceRevision": "a37eefb8a4abaa57"
+      }
+    },
+    {
+      "id": "target_0c939a7a33b4",
+      "route": "/about",
+      "selector": "a[href=\"https\\:\\/\\/truemarkmint\\.com\\/\"]",
+      "label": "TrueMarkMint",
+      "description": "button: TrueMarkMint. Crawl #30 verification is historical evidence; confirm the active DOM before pointing.",
+      "actions": [
+        "scroll_to_target",
+        "ping",
+        "explain"
+      ],
+      "guideOnly": true,
+      "runtimeVerification": {
+        "sourceCrawlId": "30",
+        "sourceDomain": "www.popsproof.com",
+        "sourceTargetId": "target_0c939a7a33b4",
+        "findingClass": "CONFIRMED",
+        "confidenceClass": "STABLE",
+        "verifiedAt": "2026-10-31T14:59:04.647239+00:00",
+        "expectedText": "TrueMarkMint",
+        "targetType": "button",
+        "landmark": "footer",
+        "ordinalInParent": 4,
+        "parentLocator": "footer:nth-of-type(1)",
+        "sourceRevision": "39f0845a0dd172b4"
+      }
     }
   ],
   "demo": {
@@ -511,5 +2212,50 @@
         "task": "Review access information, restart the tour, or exit to explore the website."
       }
     ]
+  },
+  "product_facts": {
+    "source": "current canonical POPS repository pages",
+    "precedence": "These current repository facts override older crawl text and model assumptions.",
+    "facts": [
+      "Windows Guardian Access is the published $99.00 one-time Windows desktop application license; it includes lifetime POPS Membership.",
+      "The public website and fictional browser demonstration are separate from the downloadable Windows application. No verified installer is currently linked or delivered.",
+      "Checkout is disabled. A saved cart selection is not an order; no payment session, payment, license, or activation is created.",
+      "Android is progressing through Google Play testing. It is not publicly available, production approved, or ready to purchase. No public Play Store listing or Android price is published.",
+      "A separate iOS application is planned; no release date, price, or cross-platform entitlement is announced.",
+      "Open Door is personally reviewed financial assistance for the Windows Guardian offer. Its review and fulfillment workflow is not currently active, and it is not offered for Android or iOS.",
+      "Sponsor contributions can support approved Windows Open Door access; a contribution is not an application license. Sponsorship fulfillment is currently unavailable.",
+      "POPS Membership is a separate $12.99 one-time lifetime membership. Membership alone is not an application license; Guardian includes lifetime Membership.",
+      "POPS organizes a parent’s record of involvement, chronological history, and supporting material for personal review and appropriate professional discussion. It does not prove disputed events or guarantee a custody outcome.",
+      "POPS does not track users’ private documentation entries. Do not assume encryption, cloud synchronization, automatic backup, or other unverified capabilities."
+    ]
+  },
+  "orb_weaver_crawl": {
+    "source": "Orb Weaver project 8, Crawl Job 30",
+    "domain": "www.popsproof.com",
+    "projectId": "8",
+    "crawlId": "30",
+    "crawlCompletedAt": "2026-10-31T14:40:45.689622",
+    "verificationRunId": "4",
+    "verificationCompletedAt": "2026-10-31T14:59:07.046824",
+    "contextPath": "data/orb-weaver/www.popsproof.com/crawl-30/website_orb_context/latest_context.json",
+    "pointerMapPath": "data/orb-weaver/www.popsproof.com/crawl-30/verification/run_4/verification/orb/pointer_map.json",
+    "verificationOutcomePath": "data/orb-weaver/www.popsproof.com/crawl-30/verification/run_4/verification/orb/pointer_verification_outcome.json",
+    "pointerIdentityCount": 2291,
+    "publishedCandidateCount": 63,
+    "withheldCount": 1547,
+    "pageInventoryPath": "data/orb-weaver/www.popsproof.com/crawl-30/crawl.json",
+    "lexicalIndexPath": "data/orb-weaver/www.popsproof.com/crawl-30/website_orb_context/lexical_index.json",
+    "knowledgeGraphPath": "data/orb-weaver/www.popsproof.com/crawl-30/website_orb_context/latest_context.json#knowledge_graph",
+    "knowledgeChunksPath": "data/orb-weaver/www.popsproof.com/crawl-30/website_orb_context/knowledge_chunks.json",
+    "retrievalIndexPath": "data/orb-weaver/www.popsproof.com/crawl-30/website_orb_context/retrieval_index.json",
+    "routeClassificationPath": "data/orb-weaver/www.popsproof.com/crawl-30/website_orb_context/route_classification.json",
+    "sourceValidationPath": "data/orb-weaver/www.popsproof.com/crawl-30/website_orb_context/source_validation.json",
+    "runtimeCandidatePath": "src/orb/crawl30VerifiedTargets.json",
+    "runtimeCandidatesSelected": 63,
+    "withheldReasonCounts": {
+      "CAPTURE_FAILED": 1511,
+      "VERIFICATION_FAILED": 36
+    },
+    "sourceValidationStatus": "COMPLETE"
   }
 }

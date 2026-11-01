@@ -21,12 +21,12 @@ export async function orbPost<T>(path:string,payload:Record<string,unknown>,sign
 }
 export async function reportOrbEvent(kind:string,screen?:string){if(isPrivateOrbPage())return;await orbPost('session/event',{kind,route:location.pathname,...(screen?{screen}:{})});}
 export async function clearOrbSession(){await orbPost('session/clear',{});session=null;currentToken=null;}
-export async function orbSpeech(responseId:string,signal:AbortSignal):Promise<Blob>{
+export async function orbSpeech(responseId:string,signal:AbortSignal):Promise<{audio:Blob;provider:string}>{
  if(isPrivateOrbPage())throw Error('Customer pages are excluded from ORB speech.');
  const token=await bootstrap();
  const response=await fetch('/api/orb/speech',{method:'POST',credentials:'same-origin',headers:{'Content-Type':'application/json','X-Orb-CSRF':token.csrfToken},body:JSON.stringify({response_id:responseId,route:location.pathname}),signal});
- if(!response.ok)throw Error('Qwen server voice is unavailable. Retry when ready.');
- return response.blob();
+ if(!response.ok)throw Error('Pops voice is unavailable. Retry when ready.');
+ return {audio:await response.blob(),provider:response.headers.get('X-Orb-Speech-Provider')||'unknown'};
 }
 export async function orbAudio(blob:Blob):Promise<Response>{
  if(isPrivateOrbPage())throw Error('Customer pages are excluded from ORB conversation.');

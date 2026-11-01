@@ -108,6 +108,12 @@ export default function PrivacyPage() {
               evidence references, incident notes, court-order details, and reports on
               their own device.
             </p>
+            <p>
+              POPS does not track users&apos; private documentation entries. The
+              website does not receive those entries through account or general
+              support forms. Basic technical website request information described
+              above is separate and is not used to build private case profiles.
+            </p>
 
             <p>
               Users remain responsible for protecting their device, operating-system

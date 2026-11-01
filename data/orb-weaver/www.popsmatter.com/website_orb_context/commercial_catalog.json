@@ -1,0 +1,490 @@
+{
+  "schema": "orb_weaver.commercial_catalog.v1",
+  "entry_count": 17,
+  "product_count": 17,
+  "service_count": 0,
+  "priced_entry_count": 0,
+  "sku_model_count": 0,
+  "availability_count": 0,
+  "variant_count": 0,
+  "specification_count": 0,
+  "source_page_count": 14,
+  "data_quality": {
+    "status": "insufficient",
+    "public_source_only": true,
+    "fragment_entry_count": 0,
+    "missing_description_count": 17,
+    "missing_price_count": 17,
+    "missing_sku_count": 17,
+    "quality_gate": "marketing_claims_must_not_use_catalog_until_status_is_usable"
+  },
+  "entries": [
+    {
+      "catalog_id": "catalog_a420f711b24763e1",
+      "kind": "Product",
+      "name": "Presence System",
+      "description": null,
+      "sku": null,
+      "gtin": null,
+      "brand": null,
+      "category": null,
+      "url": "https://www.popsmatter.com",
+      "source_page": "https://www.popsmatter.com",
+      "offers": [],
+      "availability": null,
+      "variants": [],
+      "specifications": {},
+      "schema_types": [],
+      "evidence": [
+        "entity_extraction"
+      ],
+      "confidence": 0.62
+    },
+    {
+      "catalog_id": "catalog_d75b63241778e732",
+      "kind": "Product",
+      "name": "Presence System Preserve",
+      "description": null,
+      "sku": null,
+      "gtin": null,
+      "brand": null,
+      "category": null,
+      "url": "https://www.popsmatter.com",
+      "source_page": "https://www.popsmatter.com",
+      "offers": [],
+      "availability": null,
+      "variants": [],
+      "specifications": {},
+      "schema_types": [],
+      "evidence": [
+        "entity_extraction"
+      ],
+      "confidence": 0.62
+    },
+    {
+      "catalog_id": "catalog_33cc115687e5499f",
+      "kind": "Product",
+      "name": "Presence System The",
+      "description": null,
+      "sku": null,
+      "gtin": null,
+      "brand": null,
+      "category": null,
+      "url": "https://www.popsmatter.com/declaration",
+      "source_page": "https://www.popsmatter.com/declaration",
+      "offers": [],
+      "availability": null,
+      "variants": [],
+      "specifications": {},
+      "schema_types": [],
+      "evidence": [
+        "entity_extraction"
+      ],
+      "confidence": 0.62
+    },
+    {
+      "catalog_id": "catalog_196838a07725dc3c",
+      "kind": "Product",
+      "name": "Service Privacy Notice Actual",
+      "description": null,
+      "sku": null,
+      "gtin": null,
+      "brand": null,
+      "category": null,
+      "url": "https://www.popsmatter.com/see-pops-in-action",
+      "source_page": "https://www.popsmatter.com/see-pops-in-action",
+      "offers": [],
+      "availability": null,
+      "variants": [],
+      "specifications": {},
+      "schema_types": [],
+      "evidence": [
+        "entity_extraction"
+      ],
+      "confidence": 0.62
+    },
+    {
+      "catalog_id": "catalog_4a7a2da0121b3360",
+      "kind": "Product",
+      "name": "Service Privacy Notice Before",
+      "description": null,
+      "sku": null,
+      "gtin": null,
+      "brand": null,
+      "category": null,
+      "url": "https://www.popsmatter.com/faq",
+      "source_page": "https://www.popsmatter.com/faq",
+      "offers": [],
+      "availability": null,
+      "variants": [],
+      "specifications": {},
+      "schema_types": [],
+      "evidence": [
+        "entity_extraction"
+      ],
+      "confidence": 0.62
+    },
+    {
+      "catalog_id": "catalog_c4e8ec2b611f5051",
+      "kind": "Product",
+      "name": "Service Privacy Notice Contact",
+      "description": null,
+      "sku": null,
+      "gtin": null,
+      "brand": null,
+      "category": null,
+      "url": "https://www.popsmatter.com/support",
+      "source_page": "https://www.popsmatter.com/support",
+      "offers": [],
+      "availability": null,
+      "variants": [],
+      "specifications": {},
+      "schema_types": [],
+      "evidence": [
+        "entity_extraction"
+      ],
+      "confidence": 0.62
+    },
+    {
+      "catalog_id": "catalog_d89dd56443838096",
+      "kind": "Product",
+      "name": "Service Privacy Notice Events",
+      "description": null,
+      "sku": null,
+      "gtin": null,
+      "brand": null,
+      "category": null,
+      "url": "https://www.popsmatter.com/events",
+      "source_page": "https://www.popsmatter.com/events",
+      "offers": [],
+      "availability": null,
+      "variants": [],
+      "specifications": {},
+      "schema_types": [],
+      "evidence": [
+        "entity_extraction"
+      ],
+      "confidence": 0.62
+    },
+    {
+      "catalog_id": "catalog_6e21d612c6569dcd",
+      "kind": "Product",
+      "name": "Service Privacy Notice First",
+      "description": null,
+      "sku": null,
+      "gtin": null,
+      "brand": null,
+      "category": null,
+      "url": "https://www.popsmatter.com/pledge",
+      "source_page": "https://www.popsmatter.com/pledge",
+      "offers": [],
+      "availability": null,
+      "variants": [],
+      "specifications": {},
+      "schema_types": [],
+      "evidence": [
+        "entity_extraction"
+      ],
+      "confidence": 0.62
+    },
+    {
+      "catalog_id": "catalog_44e11b5d0abbeb33",
+      "kind": "Product",
+      "name": "Service Privacy Notice Founding",
+      "description": null,
+      "sku": null,
+      "gtin": null,
+      "brand": null,
+      "category": null,
+      "url": "https://www.popsmatter.com/early-adopters",
+      "source_page": "https://www.popsmatter.com/early-adopters",
+      "offers": [],
+      "availability": null,
+      "variants": [],
+      "specifications": {},
+      "schema_types": [],
+      "evidence": [
+        "entity_extraction"
+      ],
+      "confidence": 0.62
+    },
+    {
+      "catalog_id": "catalog_1bcf897d5bbf09c4",
+      "kind": "Product",
+      "name": "Service Privacy Notice Get",
+      "description": null,
+      "sku": null,
+      "gtin": null,
+      "brand": null,
+      "category": null,
+      "url": "https://www.popsmatter.com",
+      "source_page": "https://www.popsmatter.com",
+      "offers": [],
+      "availability": null,
+      "variants": [],
+      "specifications": {},
+      "schema_types": [],
+      "evidence": [
+        "entity_extraction"
+      ],
+      "confidence": 0.62
+    },
+    {
+      "catalog_id": "catalog_b6e1a52a65ba0c83",
+      "kind": "Product",
+      "name": "Service Privacy Notice Help",
+      "description": null,
+      "sku": null,
+      "gtin": null,
+      "brand": null,
+      "category": null,
+      "url": "https://www.popsmatter.com/beta",
+      "source_page": "https://www.popsmatter.com/beta",
+      "offers": [],
+      "availability": null,
+      "variants": [],
+      "specifications": {},
+      "schema_types": [],
+      "evidence": [
+        "entity_extraction"
+      ],
+      "confidence": 0.62
+    },
+    {
+      "catalog_id": "catalog_2ac9162b66dc0d96",
+      "kind": "Product",
+      "name": "Service Privacy Notice One",
+      "description": null,
+      "sku": null,
+      "gtin": null,
+      "brand": null,
+      "category": null,
+      "url": "https://www.popsmatter.com/how-you-use-it",
+      "source_page": "https://www.popsmatter.com/how-you-use-it",
+      "offers": [],
+      "availability": null,
+      "variants": [],
+      "specifications": {},
+      "schema_types": [],
+      "evidence": [
+        "entity_extraction"
+      ],
+      "confidence": 0.62
+    },
+    {
+      "catalog_id": "catalog_281625af0e036c0f",
+      "kind": "Product",
+      "name": "Service Privacy Notice Pops",
+      "description": null,
+      "sku": null,
+      "gtin": null,
+      "brand": null,
+      "category": null,
+      "url": "https://www.popsmatter.com/product-demo",
+      "source_page": "https://www.popsmatter.com/product-demo",
+      "offers": [],
+      "availability": null,
+      "variants": [],
+      "specifications": {},
+      "schema_types": [],
+      "evidence": [
+        "entity_extraction"
+      ],
+      "confidence": 0.62
+    },
+    {
+      "catalog_id": "catalog_0f25101750a18794",
+      "kind": "Product",
+      "name": "Service Privacy Notice Preparation",
+      "description": null,
+      "sku": null,
+      "gtin": null,
+      "brand": null,
+      "category": null,
+      "url": "https://www.popsmatter.com/counsel-handoff",
+      "source_page": "https://www.popsmatter.com/counsel-handoff",
+      "offers": [],
+      "availability": null,
+      "variants": [],
+      "specifications": {},
+      "schema_types": [],
+      "evidence": [
+        "entity_extraction"
+      ],
+      "confidence": 0.62
+    },
+    {
+      "catalog_id": "catalog_d849d82d676815b9",
+      "kind": "Product",
+      "name": "Service Privacy Notice Proof",
+      "description": null,
+      "sku": null,
+      "gtin": null,
+      "brand": null,
+      "category": null,
+      "url": "https://www.popsmatter.com/declaration",
+      "source_page": "https://www.popsmatter.com/declaration",
+      "offers": [],
+      "availability": null,
+      "variants": [],
+      "specifications": {},
+      "schema_types": [],
+      "evidence": [
+        "entity_extraction"
+      ],
+      "confidence": 0.62
+    },
+    {
+      "catalog_id": "catalog_08bef9efd4ac604f",
+      "kind": "Product",
+      "name": "Service Privacy Notice The",
+      "description": null,
+      "sku": null,
+      "gtin": null,
+      "brand": null,
+      "category": null,
+      "url": "https://www.popsmatter.com/about",
+      "source_page": "https://www.popsmatter.com/about",
+      "offers": [],
+      "availability": null,
+      "variants": [],
+      "specifications": {},
+      "schema_types": [],
+      "evidence": [
+        "entity_extraction"
+      ],
+      "confidence": 0.62
+    },
+    {
+      "catalog_id": "catalog_97149aba254526e1",
+      "kind": "Product",
+      "name": "Service Privacy Notice Windows",
+      "description": null,
+      "sku": null,
+      "gtin": null,
+      "brand": null,
+      "category": null,
+      "url": "https://www.popsmatter.com/installation",
+      "source_page": "https://www.popsmatter.com/installation",
+      "offers": [],
+      "availability": null,
+      "variants": [],
+      "specifications": {},
+      "schema_types": [],
+      "evidence": [
+        "entity_extraction"
+      ],
+      "confidence": 0.62
+    }
+  ],
+  "indexes": {
+    "by_name": {
+      "presence system": [
+        "catalog_a420f711b24763e1"
+      ],
+      "presence system preserve": [
+        "catalog_d75b63241778e732"
+      ],
+      "presence system the": [
+        "catalog_33cc115687e5499f"
+      ],
+      "service privacy notice actual": [
+        "catalog_196838a07725dc3c"
+      ],
+      "service privacy notice before": [
+        "catalog_4a7a2da0121b3360"
+      ],
+      "service privacy notice contact": [
+        "catalog_c4e8ec2b611f5051"
+      ],
+      "service privacy notice events": [
+        "catalog_d89dd56443838096"
+      ],
+      "service privacy notice first": [
+        "catalog_6e21d612c6569dcd"
+      ],
+      "service privacy notice founding": [
+        "catalog_44e11b5d0abbeb33"
+      ],
+      "service privacy notice get": [
+        "catalog_1bcf897d5bbf09c4"
+      ],
+      "service privacy notice help": [
+        "catalog_b6e1a52a65ba0c83"
+      ],
+      "service privacy notice one": [
+        "catalog_2ac9162b66dc0d96"
+      ],
+      "service privacy notice pops": [
+        "catalog_281625af0e036c0f"
+      ],
+      "service privacy notice preparation": [
+        "catalog_0f25101750a18794"
+      ],
+      "service privacy notice proof": [
+        "catalog_d849d82d676815b9"
+      ],
+      "service privacy notice the": [
+        "catalog_08bef9efd4ac604f"
+      ],
+      "service privacy notice windows": [
+        "catalog_97149aba254526e1"
+      ]
+    },
+    "by_sku_model": {},
+    "by_category": {},
+    "by_url": {
+      "https://www.popsmatter.com": [
+        "catalog_a420f711b24763e1",
+        "catalog_d75b63241778e732",
+        "catalog_1bcf897d5bbf09c4"
+      ],
+      "https://www.popsmatter.com/declaration": [
+        "catalog_33cc115687e5499f",
+        "catalog_d849d82d676815b9"
+      ],
+      "https://www.popsmatter.com/see-pops-in-action": [
+        "catalog_196838a07725dc3c"
+      ],
+      "https://www.popsmatter.com/faq": [
+        "catalog_4a7a2da0121b3360"
+      ],
+      "https://www.popsmatter.com/support": [
+        "catalog_c4e8ec2b611f5051"
+      ],
+      "https://www.popsmatter.com/events": [
+        "catalog_d89dd56443838096"
+      ],
+      "https://www.popsmatter.com/pledge": [
+        "catalog_6e21d612c6569dcd"
+      ],
+      "https://www.popsmatter.com/early-adopters": [
+        "catalog_44e11b5d0abbeb33"
+      ],
+      "https://www.popsmatter.com/beta": [
+        "catalog_b6e1a52a65ba0c83"
+      ],
+      "https://www.popsmatter.com/how-you-use-it": [
+        "catalog_2ac9162b66dc0d96"
+      ],
+      "https://www.popsmatter.com/product-demo": [
+        "catalog_281625af0e036c0f"
+      ],
+      "https://www.popsmatter.com/counsel-handoff": [
+        "catalog_0f25101750a18794"
+      ],
+      "https://www.popsmatter.com/about": [
+        "catalog_08bef9efd4ac604f"
+      ],
+      "https://www.popsmatter.com/installation": [
+        "catalog_97149aba254526e1"
+      ]
+    },
+    "prices": []
+  },
+  "runtime_policy": {
+    "deterministic_lookup_first": true,
+    "llm_required_for_exact_catalog_facts": false,
+    "source_evidence_required": true
+  }
+}

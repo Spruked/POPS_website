@@ -1,0 +1,340 @@
+{
+  "schema": "orb_weaver.commercial_catalog.v1",
+  "entry_count": 12,
+  "product_count": 12,
+  "service_count": 0,
+  "priced_entry_count": 0,
+  "sku_model_count": 0,
+  "availability_count": 0,
+  "variant_count": 0,
+  "specification_count": 0,
+  "source_page_count": 6,
+  "entries": [
+    {
+      "catalog_id": "catalog_09555830985e0f7f",
+      "kind": "Product",
+      "name": "Desktop App POPS Desktop",
+      "description": null,
+      "sku": null,
+      "gtin": null,
+      "brand": null,
+      "category": null,
+      "url": "https://pops.spruked.com/desktop-app",
+      "source_page": "https://pops.spruked.com/desktop-app",
+      "offers": [],
+      "availability": null,
+      "variants": [],
+      "specifications": {},
+      "schema_types": [],
+      "evidence": [
+        "entity_extraction"
+      ],
+      "confidence": 0.62
+    },
+    {
+      "catalog_id": "catalog_0da41c8cc8e494ab",
+      "kind": "Product",
+      "name": "Local-First Evidence System When",
+      "description": null,
+      "sku": null,
+      "gtin": null,
+      "brand": null,
+      "category": null,
+      "url": "https://pops.spruked.com/pricing",
+      "source_page": "https://pops.spruked.com/pricing",
+      "offers": [],
+      "availability": null,
+      "variants": [],
+      "specifications": {},
+      "schema_types": [],
+      "evidence": [
+        "entity_extraction"
+      ],
+      "confidence": 0.62
+    },
+    {
+      "catalog_id": "catalog_0d25b43b33e97bc0",
+      "kind": "Product",
+      "name": "POPS Desktop App",
+      "description": null,
+      "sku": null,
+      "gtin": null,
+      "brand": null,
+      "category": null,
+      "url": "https://pops.spruked.com/desktop-app",
+      "source_page": "https://pops.spruked.com/desktop-app",
+      "offers": [],
+      "availability": null,
+      "variants": [],
+      "specifications": {},
+      "schema_types": [],
+      "evidence": [
+        "entity_extraction"
+      ],
+      "confidence": 0.62
+    },
+    {
+      "catalog_id": "catalog_de33595f8b62c7cd",
+      "kind": "Product",
+      "name": "Presence System",
+      "description": null,
+      "sku": null,
+      "gtin": null,
+      "brand": null,
+      "category": null,
+      "url": "https://pops.spruked.com",
+      "source_page": "https://pops.spruked.com",
+      "offers": [],
+      "availability": null,
+      "variants": [],
+      "specifications": {},
+      "schema_types": [],
+      "evidence": [
+        "entity_extraction"
+      ],
+      "confidence": 0.62
+    },
+    {
+      "catalog_id": "catalog_d8a43c262ce60f70",
+      "kind": "Product",
+      "name": "Presence System Preserve",
+      "description": null,
+      "sku": null,
+      "gtin": null,
+      "brand": null,
+      "category": null,
+      "url": "https://pops.spruked.com",
+      "source_page": "https://pops.spruked.com",
+      "offers": [],
+      "availability": null,
+      "variants": [],
+      "specifications": {},
+      "schema_types": [],
+      "evidence": [
+        "entity_extraction"
+      ],
+      "confidence": 0.62
+    },
+    {
+      "catalog_id": "catalog_96db2b95392c3659",
+      "kind": "Product",
+      "name": "Presence System The",
+      "description": null,
+      "sku": null,
+      "gtin": null,
+      "brand": null,
+      "category": null,
+      "url": "https://pops.spruked.com/declaration",
+      "source_page": "https://pops.spruked.com/declaration",
+      "offers": [],
+      "availability": null,
+      "variants": [],
+      "specifications": {},
+      "schema_types": [],
+      "evidence": [
+        "entity_extraction"
+      ],
+      "confidence": 0.62
+    },
+    {
+      "catalog_id": "catalog_25323fb8ae4df2af",
+      "kind": "Product",
+      "name": "Presence System When",
+      "description": null,
+      "sku": null,
+      "gtin": null,
+      "brand": null,
+      "category": null,
+      "url": "https://pops.spruked.com/terms",
+      "source_page": "https://pops.spruked.com/terms",
+      "offers": [],
+      "availability": null,
+      "variants": [],
+      "specifications": {},
+      "schema_types": [],
+      "evidence": [
+        "entity_extraction"
+      ],
+      "confidence": 0.62
+    },
+    {
+      "catalog_id": "catalog_4fb22e8c429c9c17",
+      "kind": "Product",
+      "name": "Pro Prime Series",
+      "description": null,
+      "sku": null,
+      "gtin": null,
+      "brand": null,
+      "category": null,
+      "url": "https://pops.spruked.com/events",
+      "source_page": "https://pops.spruked.com/events",
+      "offers": [],
+      "availability": null,
+      "variants": [],
+      "specifications": {},
+      "schema_types": [],
+      "evidence": [
+        "entity_extraction"
+      ],
+      "confidence": 0.62
+    },
+    {
+      "catalog_id": "catalog_7856743b35e87c82",
+      "kind": "Product",
+      "name": "Service",
+      "description": null,
+      "sku": null,
+      "gtin": null,
+      "brand": null,
+      "category": null,
+      "url": "https://pops.spruked.com/terms",
+      "source_page": "https://pops.spruked.com/terms",
+      "offers": [],
+      "availability": null,
+      "variants": [],
+      "specifications": {},
+      "schema_types": [],
+      "evidence": [
+        "entity_extraction"
+      ],
+      "confidence": 0.62
+    },
+    {
+      "catalog_id": "catalog_f4b0e3043ffeaaef",
+      "kind": "Product",
+      "name": "Service Mission Statement POPS",
+      "description": null,
+      "sku": null,
+      "gtin": null,
+      "brand": null,
+      "category": null,
+      "url": "https://pops.spruked.com/declaration",
+      "source_page": "https://pops.spruked.com/declaration",
+      "offers": [],
+      "availability": null,
+      "variants": [],
+      "specifications": {},
+      "schema_types": [],
+      "evidence": [
+        "entity_extraction"
+      ],
+      "confidence": 0.62
+    },
+    {
+      "catalog_id": "catalog_ca961fc9743f0ad1",
+      "kind": "Product",
+      "name": "Service Scope POPS",
+      "description": null,
+      "sku": null,
+      "gtin": null,
+      "brand": null,
+      "category": null,
+      "url": "https://pops.spruked.com/terms",
+      "source_page": "https://pops.spruked.com/terms",
+      "offers": [],
+      "availability": null,
+      "variants": [],
+      "specifications": {},
+      "schema_types": [],
+      "evidence": [
+        "entity_extraction"
+      ],
+      "confidence": 0.62
+    },
+    {
+      "catalog_id": "catalog_a7956cdd4105bbe8",
+      "kind": "Product",
+      "name": "Service Standard",
+      "description": null,
+      "sku": null,
+      "gtin": null,
+      "brand": null,
+      "category": null,
+      "url": "https://pops.spruked.com/terms",
+      "source_page": "https://pops.spruked.com/terms",
+      "offers": [],
+      "availability": null,
+      "variants": [],
+      "specifications": {},
+      "schema_types": [],
+      "evidence": [
+        "entity_extraction"
+      ],
+      "confidence": 0.62
+    }
+  ],
+  "indexes": {
+    "by_name": {
+      "desktop app pops desktop": [
+        "catalog_09555830985e0f7f"
+      ],
+      "local-first evidence system when": [
+        "catalog_0da41c8cc8e494ab"
+      ],
+      "pops desktop app": [
+        "catalog_0d25b43b33e97bc0"
+      ],
+      "presence system": [
+        "catalog_de33595f8b62c7cd"
+      ],
+      "presence system preserve": [
+        "catalog_d8a43c262ce60f70"
+      ],
+      "presence system the": [
+        "catalog_96db2b95392c3659"
+      ],
+      "presence system when": [
+        "catalog_25323fb8ae4df2af"
+      ],
+      "pro prime series": [
+        "catalog_4fb22e8c429c9c17"
+      ],
+      "service": [
+        "catalog_7856743b35e87c82"
+      ],
+      "service mission statement pops": [
+        "catalog_f4b0e3043ffeaaef"
+      ],
+      "service scope pops": [
+        "catalog_ca961fc9743f0ad1"
+      ],
+      "service standard": [
+        "catalog_a7956cdd4105bbe8"
+      ]
+    },
+    "by_sku_model": {},
+    "by_category": {},
+    "by_url": {
+      "https://pops.spruked.com/desktop-app": [
+        "catalog_09555830985e0f7f",
+        "catalog_0d25b43b33e97bc0"
+      ],
+      "https://pops.spruked.com/pricing": [
+        "catalog_0da41c8cc8e494ab"
+      ],
+      "https://pops.spruked.com": [
+        "catalog_de33595f8b62c7cd",
+        "catalog_d8a43c262ce60f70"
+      ],
+      "https://pops.spruked.com/declaration": [
+        "catalog_96db2b95392c3659",
+        "catalog_f4b0e3043ffeaaef"
+      ],
+      "https://pops.spruked.com/terms": [
+        "catalog_25323fb8ae4df2af",
+        "catalog_7856743b35e87c82",
+        "catalog_ca961fc9743f0ad1",
+        "catalog_a7956cdd4105bbe8"
+      ],
+      "https://pops.spruked.com/events": [
+        "catalog_4fb22e8c429c9c17"
+      ]
+    },
+    "prices": []
+  },
+  "runtime_policy": {
+    "deterministic_lookup_first": true,
+    "llm_required_for_exact_catalog_facts": false,
+    "source_evidence_required": true
+  }
+}

@@ -9,7 +9,7 @@ export function ContentSection({ id, title, children }: {id: string; title: stri
   return <section id={id} className="launch-section" aria-labelledby={`${id}-title`}><h2 id={`${id}-title`}>{title}</h2>{children}</section>;
 }
 export function LaunchLinks() {
-  return <nav className="launch-links" aria-label="Product and launch information"><Link to="/desktop-app">Windows software</Link><Link to="/android">Android development</Link><Link to="/beta">Beta participation</Link><Link to="/early-adopters">First 100 customers</Link><Link to="/faq">Buying FAQs</Link><Link to="/support">Contact & support</Link></nav>;
+  return <nav className="launch-links" aria-label="Product and launch information"><Link to="/desktop-app">Windows software</Link><Link to="/android">Android testing</Link><Link to="/access#platforms">iOS (planned)</Link><Link to="/beta">Beta participation</Link><Link to="/early-adopters">First 100 customers</Link><Link to="/faq">Buying FAQs</Link><Link to="/support">Contact & support</Link></nav>;
 }
 export function StatusNote({ children }: {children: ReactNode}) { return <aside className="launch-status"><strong>Release clarity</strong><p>{children}</p></aside>; }
 export function MissingCapture({ kind = 'screenshot', children }: {kind?: string; children: ReactNode}) {return <figure className="launch-capture"><span className="mono">Actual application {kind} pending</span><figcaption>{children} This space is reserved for a verified capture of the release being offered. No application image has been fabricated.</figcaption></figure>;}

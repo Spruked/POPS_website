@@ -1,0 +1,807 @@
+{
+  "status": "passed",
+  "mode": "production",
+  "origin": "http://127.0.0.1:49821",
+  "checks": [
+    "Production browser fetched all nine shipped assets and decoded all eight fallback WAVs.",
+    "Mute suppresses generated speech while retaining captions; Pause cancels its pending progression and voice can be re-enabled.",
+    "Real local-model narration delivered as actual Qwen WAV audio; no Next button; Pause/Resume cleans up and re-enters the same screen.",
+    "All eight screens progressed from actual model-selected actions after Qwen audio completion; matching fictional people, incident, evidence, timeline, report and final access link inspected.",
+    "Back, Restart and paused refresh recovery passed; conversational interruption remembers Jordan and resumes normal website context after Exit and page navigation.",
+    "Every model-guided screen and measured pointer passed at 1440px, 1024px and 390px; all layouts avoid document overflow.",
+    "Zero uncaught browser errors, customer API requests, payment requests or native-tool requests during demo/conversation.",
+    "Qwen audio covered every desktop stop plus initial tablet/mobile playback; responsive muted progression used real caption-reading timers."
+  ],
+  "pointers": [
+    {
+      "name": "desktop-dashboard",
+      "visible": true,
+      "expected": {
+        "left": 553.5,
+        "top": 409.875,
+        "width": 762,
+        "height": 230
+      },
+      "actual": {
+        "left": 553.5,
+        "top": 409.875,
+        "width": 762,
+        "height": 230
+      }
+    },
+    {
+      "name": "desktop-resumed",
+      "visible": true,
+      "expected": {
+        "left": 553.5,
+        "top": 409.875,
+        "width": 762,
+        "height": 230
+      },
+      "actual": {
+        "left": 553.5,
+        "top": 409.875,
+        "width": 762,
+        "height": 230
+      }
+    },
+    {
+      "name": "desktop-dossier",
+      "visible": true,
+      "expected": {
+        "left": 821.640625,
+        "top": 409.875,
+        "width": 197.515625,
+        "height": 36
+      },
+      "actual": {
+        "left": 821.640625,
+        "top": 409.875,
+        "width": 197.515625,
+        "height": 36
+      }
+    },
+    {
+      "name": "desktop-relationships",
+      "visible": true,
+      "expected": {
+        "left": 526.5,
+        "top": 409.671875,
+        "width": 814,
+        "height": 396
+      },
+      "actual": {
+        "left": 526.5,
+        "top": 409.671875,
+        "width": 814,
+        "height": 396
+      }
+    },
+    {
+      "name": "desktop-incident",
+      "visible": true,
+      "expected": {
+        "left": 526.5,
+        "top": 582.875,
+        "width": 814,
+        "height": 192
+      },
+      "actual": {
+        "left": 526.5,
+        "top": 582.875,
+        "width": 814,
+        "height": 192
+      }
+    },
+    {
+      "name": "incident-modal",
+      "visible": true,
+      "expected": {
+        "left": 520.5,
+        "top": 497.078125,
+        "width": 614,
+        "height": 93
+      },
+      "actual": {
+        "left": 520.5,
+        "top": 497.078125,
+        "width": 614,
+        "height": 93
+      }
+    },
+    {
+      "name": "desktop-evidence",
+      "visible": true,
+      "expected": {
+        "left": 526.5,
+        "top": 497.171875,
+        "width": 814,
+        "height": 566.890625
+      },
+      "actual": {
+        "left": 526.5,
+        "top": 497.171875,
+        "width": 814,
+        "height": 566.890625
+      }
+    },
+    {
+      "name": "evidence-modal",
+      "visible": true,
+      "expected": {
+        "left": 520.5,
+        "top": 419.984375,
+        "width": 614,
+        "height": 93
+      },
+      "actual": {
+        "left": 520.5,
+        "top": 419.984375,
+        "width": 614,
+        "height": 93
+      }
+    },
+    {
+      "name": "desktop-timeline",
+      "visible": true,
+      "expected": {
+        "left": 526.5,
+        "top": 496.875,
+        "width": 814,
+        "height": 429.734375
+      },
+      "actual": {
+        "left": 526.5,
+        "top": 496.875,
+        "width": 814,
+        "height": 429.734375
+      }
+    },
+    {
+      "name": "desktop-review",
+      "visible": true,
+      "expected": {
+        "left": 526.5,
+        "top": 412.078125,
+        "width": 814,
+        "height": 125
+      },
+      "actual": {
+        "left": 526.5,
+        "top": 412.078125,
+        "width": 814,
+        "height": 125
+      }
+    },
+    {
+      "name": "review-modal",
+      "visible": true,
+      "expected": {
+        "left": 520.5,
+        "top": 497.796875,
+        "width": 614,
+        "height": 93
+      },
+      "actual": {
+        "left": 520.5,
+        "top": 497.796875,
+        "width": 614,
+        "height": 93
+      }
+    },
+    {
+      "name": "desktop-get-pops",
+      "visible": true,
+      "expected": {
+        "left": 526.5,
+        "top": 431.265625,
+        "width": 814,
+        "height": 404.5
+      },
+      "actual": {
+        "left": 526.5,
+        "top": 431.265625,
+        "width": 814,
+        "height": 404.5
+      }
+    },
+    {
+      "name": "1024-dashboard",
+      "visible": true,
+      "expected": {
+        "left": 286,
+        "top": 428.3125,
+        "width": 666,
+        "height": 230
+      },
+      "actual": {
+        "left": 286,
+        "top": 428.3125,
+        "width": 666,
+        "height": 230
+      }
+    },
+    {
+      "name": "1024-dossier",
+      "visible": true,
+      "expected": {
+        "left": 522.9375,
+        "top": 428.3125,
+        "width": 197.515625,
+        "height": 36
+      },
+      "actual": {
+        "left": 522.9375,
+        "top": 428.3125,
+        "width": 197.515625,
+        "height": 36
+      }
+    },
+    {
+      "name": "1024-relationships",
+      "visible": true,
+      "expected": {
+        "left": 259,
+        "top": 428.109375,
+        "width": 718,
+        "height": 396
+      },
+      "actual": {
+        "left": 259,
+        "top": 428.109375,
+        "width": 718,
+        "height": 396
+      }
+    },
+    {
+      "name": "1024-incident",
+      "visible": true,
+      "expected": {
+        "left": 259,
+        "top": 601.3125,
+        "width": 718,
+        "height": 202
+      },
+      "actual": {
+        "left": 259,
+        "top": 601.3125,
+        "width": 718,
+        "height": 202
+      }
+    },
+    {
+      "name": "1024-evidence",
+      "visible": true,
+      "expected": {
+        "left": 259,
+        "top": 515.609375,
+        "width": 718,
+        "height": 566.890625
+      },
+      "actual": {
+        "left": 259,
+        "top": 515.609375,
+        "width": 718,
+        "height": 566.890625
+      }
+    },
+    {
+      "name": "1024-timeline",
+      "visible": true,
+      "expected": {
+        "left": 259,
+        "top": 515.3125,
+        "width": 718,
+        "height": 429.734375
+      },
+      "actual": {
+        "left": 259,
+        "top": 515.3125,
+        "width": 718,
+        "height": 429.734375
+      }
+    },
+    {
+      "name": "1024-review",
+      "visible": true,
+      "expected": {
+        "left": 259,
+        "top": 411.328125,
+        "width": 718,
+        "height": 142
+      },
+      "actual": {
+        "left": 259,
+        "top": 411.328125,
+        "width": 718,
+        "height": 142
+      }
+    },
+    {
+      "name": "1024-get-pops",
+      "visible": true,
+      "expected": {
+        "left": 259,
+        "top": 430.515625,
+        "width": 718,
+        "height": 404.5
+      },
+      "actual": {
+        "left": 259,
+        "top": 430.515625,
+        "width": 718,
+        "height": 404.5
+      }
+    },
+    {
+      "name": "390-dashboard",
+      "visible": true,
+      "expected": {
+        "left": 66,
+        "top": 810.703125,
+        "width": 260,
+        "height": 275
+      },
+      "actual": {
+        "left": 66,
+        "top": 810.703125,
+        "width": 260,
+        "height": 275
+      }
+    },
+    {
+      "name": "390-dossier",
+      "visible": true,
+      "expected": {
+        "left": 64,
+        "top": 810.703125,
+        "width": 118.96875,
+        "height": 36
+      },
+      "actual": {
+        "left": 64,
+        "top": 810.703125,
+        "width": 118.96875,
+        "height": 36
+      }
+    },
+    {
+      "name": "390-relationships",
+      "visible": true,
+      "expected": {
+        "left": 39,
+        "top": 841.09375,
+        "width": 312,
+        "height": 266.90625
+      },
+      "actual": {
+        "left": 39,
+        "top": 841.09375,
+        "width": 312,
+        "height": 266.90625
+      }
+    },
+    {
+      "name": "390-incident",
+      "visible": true,
+      "expected": {
+        "left": 39,
+        "top": 995.703125,
+        "width": 312,
+        "height": 112.296875
+      },
+      "actual": {
+        "left": 39,
+        "top": 995.703125,
+        "width": 312,
+        "height": 112.296875
+      }
+    },
+    {
+      "name": "390-evidence",
+      "visible": true,
+      "expected": {
+        "left": 39,
+        "top": 840.796875,
+        "width": 312,
+        "height": 267.203125
+      },
+      "actual": {
+        "left": 39,
+        "top": 840.796875,
+        "width": 312,
+        "height": 267.203125
+      }
+    },
+    {
+      "name": "390-timeline",
+      "visible": true,
+      "expected": {
+        "left": 39,
+        "top": 810.90625,
+        "width": 312,
+        "height": 297.09375
+      },
+      "actual": {
+        "left": 39,
+        "top": 810.90625,
+        "width": 312,
+        "height": 297.09375
+      }
+    },
+    {
+      "name": "390-review",
+      "visible": true,
+      "expected": {
+        "left": 39,
+        "top": 805.109375,
+        "width": 312,
+        "height": 201
+      },
+      "actual": {
+        "left": 39,
+        "top": 805.109375,
+        "width": 312,
+        "height": 201
+      }
+    },
+    {
+      "name": "390-get-pops",
+      "visible": true,
+      "expected": {
+        "left": 39,
+        "top": 805.109375,
+        "width": 312,
+        "height": 302.890625
+      },
+      "actual": {
+        "left": 39,
+        "top": 805.109375,
+        "width": 312,
+        "height": 302.890625
+      }
+    }
+  ],
+  "modelReplies": [
+    {
+      "screen": "dashboard",
+      "text": "Welcome to the Pops dashboard for the fictional Morgan family case. Here, you can see the case overview, upcoming deadlines, and related records. Nothing displayed is based on real family records. Let's move forward to the next screen.",
+      "action": {
+        "type": "show_screen",
+        "screen": "dossier",
+        "target_id": "pops.demo.dossier"
+      }
+    },
+    {
+      "screen": "dashboard",
+      "text": "This is the Pops dashboard for the fictional Morgan family case. Here, you can view the case details, upcoming deadlines, and related records. Let's explore further.",
+      "action": {
+        "type": "show_screen",
+        "screen": "dossier",
+        "target_id": "pops.demo.dossier"
+      }
+    },
+    {
+      "screen": "dashboard",
+      "text": "Welcome to the Pops dashboard for the fictional Morgan family case. Here, you can see the case overview, upcoming deadlines, and related records. Nothing displayed is based on real events.",
+      "action": {
+        "type": "show_screen",
+        "screen": "dossier",
+        "target_id": "pops.demo.dossier"
+      }
+    },
+    {
+      "screen": "dossier",
+      "text": "The dossier keeps people and their context together. Here, Alex is documenting an exchange with Jamie. Jordan Lee is the fictional attorney, and Riley is a possible source of context. You can open any contact to inspect their linked records.",
+      "action": {
+        "type": "show_screen",
+        "screen": "relationships",
+        "target_id": "pops.demo.relationships"
+      }
+    },
+    {
+      "screen": "relationships",
+      "text": "This relationship tree shows the explicit connections between the people in the fictional case. For example, Alex is a parent of Casey, and Jamie is also a parent of Casey. Select a person to see their connections. Would you like to explore Alex's or Jamie's connections?",
+      "action": {
+        "type": "show_screen",
+        "screen": "incident",
+        "target_id": "pops.demo.incident"
+      }
+    },
+    {
+      "screen": "incident",
+      "text": "On October 10th, Alex recorded an unsuccessful exchange attempt. The incident includes the scheduled time, observed arrival, an example message, and linked files. Remember, this is a fictional record and not a legal finding.",
+      "action": {
+        "type": "show_screen",
+        "screen": "evidence",
+        "target_id": "pops.demo.evidence"
+      }
+    },
+    {
+      "screen": "evidence",
+      "text": "The Evidence Vault links three fictional text fixtures to the exchange on October 10th. Each file has a unique SHA-256 fingerprint. Let's open one to compare its fingerprint. This is a bundled example, so the fingerprint is real but cannot prove an actual exchange happened.",
+      "action": {
+        "type": "show_screen",
+        "screen": "timeline",
+        "target_id": "pops.demo.timeline"
+      }
+    },
+    {
+      "screen": "timeline",
+      "text": "The timeline shows the sequence of events for the fictional case. It includes the exchange arrangements, the attempt on October 10th, and the record prepared for review. Each entry keeps its source context and linked evidence, making it easier to review the chronology without verifying the events independently.",
+      "action": {
+        "type": "show_screen",
+        "screen": "review",
+        "target_id": "pops.demo.review"
+      }
+    },
+    {
+      "screen": "review",
+      "text": "This is the Review screen. Here, you can preview the fictional report and check its scope. The organized packet is for preparation, not a guarantee of admissibility or a court result. Let's proceed to the next step.",
+      "action": {
+        "type": "show_screen",
+        "screen": "get-pops",
+        "target_id": "pops.demo.get-pops"
+      }
+    },
+    {
+      "screen": "get-pops",
+      "text": "This is the Get Pops! screen. Here, you can explore Windows access or beta participation for the fictional Morgan family case. We've covered the people involved, the incident, supporting evidence, the chronology, and the review. Checkout is currently unavailable.",
+      "action": {
+        "type": "stay"
+      }
+    },
+    {
+      "screen": "get-pops",
+      "text": "This is the Get Pops! screen. Here, you can explore Windows access or beta participation for the fictional Morgan family case. We've covered the people involved, the incident, supporting evidence, chronology, and review. Checkout remains unavailable, and this demo does not create a license or an order.",
+      "action": {
+        "type": "stay"
+      }
+    },
+    {
+      "screen": "review",
+      "text": "This is the Review screen. Here, you can preview the fictional report and check its scope. Export is disabled here, as this packet is for preparation, not a guarantee of admissibility or a court result.",
+      "action": {
+        "type": "show_screen",
+        "screen": "get-pops",
+        "target_id": "pops.demo.get-pops"
+      }
+    },
+    {
+      "screen": "dashboard",
+      "text": "Welcome to Pops! This is a fictional Morgan family case. The dashboard connects the case, its order, deadlines, and supporting records. Nothing here is a real family record.",
+      "action": {
+        "type": "show_screen",
+        "screen": "dossier",
+        "target_id": "pops.demo.dossier"
+      }
+    },
+    {
+      "screen": "dashboard",
+      "text": "This is the Pops dashboard for the fictional Morgan family case. Here, you can see the case details, upcoming deadlines, and related records. Nothing here is a real family record.",
+      "action": {
+        "type": "show_screen",
+        "screen": "dossier",
+        "target_id": "pops.demo.dossier"
+      }
+    },
+    {
+      "screen": "dashboard",
+      "text": "Welcome to the Pops dashboard for the fictional Morgan family case. Here, you can see the case overview, upcoming deadlines, and related records. Let's focus on the key information for this case.",
+      "action": {
+        "type": "show_screen",
+        "screen": "dossier",
+        "target_id": "pops.demo.dossier"
+      }
+    },
+    {
+      "screen": "dashboard",
+      "text": "Welcome to the Pops dashboard for the fictional Morgan family case. Here, you can see the case overview, upcoming deadlines, and related records. The dashboard is designed to help you manage the case efficiently.",
+      "action": {
+        "type": "show_screen",
+        "screen": "dossier",
+        "target_id": "pops.demo.dossier"
+      }
+    },
+    {
+      "screen": "dossier",
+      "text": "The dossier is where you manage contacts and their related records. Currently, Alex is documenting an exchange with Jamie. Jordan Lee is the fictional attorney, and Riley is a possible source of context. You can open any contact to inspect their linked records.",
+      "action": {
+        "type": "show_screen",
+        "screen": "relationships",
+        "target_id": "pops.demo.relationships"
+      }
+    },
+    {
+      "screen": "relationships",
+      "text": "This relationship tree shows the explicit connections between the people in the fictional case. For example, Alex is a parent of Casey, and Jamie is also a parent of Casey. Select a person to see their connections. Would you like to explore the connections for Alex, Jamie, or Casey?",
+      "action": {
+        "type": "show_screen",
+        "screen": "incident",
+        "target_id": "pops.demo.incident"
+      }
+    },
+    {
+      "screen": "incident",
+      "text": "On October 10th, Alex documented an unsuccessful exchange attempt. The incident shows the scheduled time, observed arrival, an example message, and linked files. Remember, this is a fictional record and not a legal finding.",
+      "action": {
+        "type": "show_screen",
+        "screen": "evidence",
+        "target_id": "pops.demo.evidence"
+      }
+    },
+    {
+      "screen": "evidence",
+      "text": "The Evidence Vault links three fictional text fixtures to the exchange. Open a file to compare its SHA-256 fingerprint. Remember, this is only a bundled example and cannot prove an actual exchange occurred.",
+      "action": {
+        "type": "show_screen",
+        "screen": "timeline",
+        "target_id": "pops.demo.timeline"
+      }
+    },
+    {
+      "screen": "timeline",
+      "text": "The timeline shows the sequence of events, from the exchange arrangements on October 9th, to the documented attempt on October 10th, and the record prepared for review on October 21st. Each entry keeps its source context and linked evidence, making it easier to review the chronology without turning it into an independently verified account.",
+      "action": {
+        "type": "show_screen",
+        "screen": "review",
+        "target_id": "pops.demo.review"
+      }
+    },
+    {
+      "screen": "review",
+      "text": "Review the selected chronology and supporting items. Preview the fictional report and check its scope. Export is currently disabled here. An organized packet is preparation for review, not a guarantee of admissibility or a court result.",
+      "action": {
+        "type": "show_screen",
+        "screen": "get-pops",
+        "target_id": "pops.demo.get-pops"
+      }
+    },
+    {
+      "screen": "get-pops",
+      "text": "This is the complete fictional record for the Morgan family case, including people involved, the incident, supporting evidence, chronology, and review. When you're ready, you can explore Windows access or beta participation. Checkout is still unavailable in this demo.",
+      "action": {
+        "type": "stay"
+      }
+    },
+    {
+      "screen": "dashboard",
+      "text": "Welcome to the Pops dashboard for the fictional Morgan family case. Here, you can see the case overview, upcoming deadlines, and related records. Nothing displayed is based on real family records. Let's move to the next screen.",
+      "action": {
+        "type": "show_screen",
+        "screen": "dossier",
+        "target_id": "pops.demo.dossier"
+      }
+    },
+    {
+      "screen": "dashboard",
+      "text": "This is the Pops dashboard for the fictional Morgan family case. Here, you can see the case overview, upcoming deadlines, and related records. Nothing displayed is based on real family records.",
+      "action": {
+        "type": "show_screen",
+        "screen": "dossier",
+        "target_id": "pops.demo.dossier"
+      }
+    },
+    {
+      "screen": "dossier",
+      "text": "The dossier is where you manage contacts and their related records. Here, Alex is documenting an exchange with Jamie. Jordan Lee is the fictional attorney, and Riley is a possible source of context. You can open any contact to inspect their linked records.",
+      "action": {
+        "type": "show_screen",
+        "screen": "relationships",
+        "target_id": "pops.demo.relationships"
+      }
+    },
+    {
+      "screen": "relationships",
+      "text": "This relationship tree shows the explicit connections between the people in the case. For example, Alex is connected to Casey as a parent, and to Jamie as a parent. Select a person to see their connections. Would you like to explore these connections now?",
+      "action": {
+        "type": "show_screen",
+        "screen": "incident",
+        "target_id": "pops.demo.incident"
+      }
+    },
+    {
+      "screen": "incident",
+      "text": "On October 10th, Alex recorded an unsuccessful exchange attempt. Here, you can see the scheduled time, observed arrival, an example message, and linked files. Remember, this is a fictional record and not a legal finding.",
+      "action": {
+        "type": "show_screen",
+        "screen": "evidence",
+        "target_id": "pops.demo.evidence"
+      }
+    },
+    {
+      "screen": "evidence",
+      "text": "The Evidence Vault contains three fictional messages related to the exchange. Each file has a unique SHA-256 fingerprint for verification. These are examples, so the fingerprints are real but cannot prove an actual exchange occurred. Let's look at the first file.",
+      "action": {
+        "type": "show_screen",
+        "screen": "timeline",
+        "target_id": "pops.demo.timeline"
+      }
+    },
+    {
+      "screen": "timeline",
+      "text": "The timeline shows the sequence of events, from the exchange arrangements on October 9th to the preparation for review on October 21st. Each entry keeps its source context and linked evidence, making it easier to review the chronology without creating an independently verified account.",
+      "action": {
+        "type": "show_screen",
+        "screen": "review",
+        "target_id": "pops.demo.review"
+      }
+    },
+    {
+      "screen": "review",
+      "text": "This is the Review screen. Here, you can preview the fictional report and check its scope. The organized packet is for preparation, not a guarantee of admissibility or a court result. We'll discuss this further.",
+      "action": {
+        "type": "show_screen",
+        "screen": "get-pops",
+        "target_id": "pops.demo.get-pops"
+      }
+    },
+    {
+      "screen": "get-pops",
+      "text": "This is the Get Pops! screen. Here, you can explore Windows access or beta participation for the fictional Morgan family case. Checkout is currently unavailable.",
+      "action": {
+        "type": "stay"
+      }
+    }
+  ],
+  "errors": [],
+  "forbiddenRequests": [],
+  "speech": "Actual Qwen WAV decoding/playback at every desktop stop and the first tablet/mobile stop; other responsive stops use real muted reading-time progression. Clips seek near their end for regression timing. Emergency browser speech is instrumented only as a failure sentinel.",
+  "audio": [
+    {
+      "screen": "dashboard",
+      "duration": 17.2,
+      "currentTime": 0.007771
+    },
+    {
+      "screen": "dashboard",
+      "duration": 12.88,
+      "currentTime": 0.011139
+    },
+    {
+      "screen": "dossier",
+      "duration": 16.8,
+      "currentTime": 0.001678
+    },
+    {
+      "screen": "relationships",
+      "duration": 17.76,
+      "currentTime": 0.009749
+    },
+    {
+      "screen": "incident",
+      "duration": 19.92,
+      "currentTime": 0.014352
+    },
+    {
+      "screen": "evidence",
+      "duration": 19.76,
+      "currentTime": 0.014981
+    },
+    {
+      "screen": "timeline",
+      "duration": 21.36,
+      "currentTime": 0.013509
+    },
+    {
+      "screen": "review",
+      "duration": 16,
+      "currentTime": 0.004268
+    },
+    {
+      "screen": "get-pops",
+      "duration": 17.92,
+      "currentTime": 0.010072
+    },
+    {
+      "screen": "dashboard",
+      "duration": 15.12,
+      "currentTime": 0.004215
+    },
+    {
+      "screen": "dashboard",
+      "duration": 16.24,
+      "currentTime": 0.016089
+    }
+  ]
+}

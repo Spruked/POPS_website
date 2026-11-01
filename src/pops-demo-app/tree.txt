@@ -1,0 +1,84 @@
+src/pops-demo-app/
+├── assets/
+│   ├── narration/
+│   │   ├── dashboard.wav
+│   │   ├── dossier.wav
+│   │   ├── evidence.wav
+│   │   ├── get-pops.wav
+│   │   ├── incident.wav
+│   │   ├── manifest.json
+│   │   ├── relationships.wav
+│   │   ├── review.wav
+│   │   └── timeline.wav
+│   └── popsbadge.png
+├── components/
+│   ├── evidence/
+│   │   └── ReviewCommitPanel.tsx
+│   ├── ContactResearchPanel.tsx
+│   ├── DemoTour.tsx
+│   ├── DerivedTimeline.tsx
+│   ├── FullCaseBundleExport.tsx
+│   ├── Modal.tsx
+│   ├── RelationshipTree.tsx
+│   ├── Sidebar.tsx
+│   └── ToastContainer.tsx
+├── data/
+│   ├── demoRecords.ts
+│   └── demoRuntime.ts
+├── hooks/
+│   ├── useCase.ts
+│   ├── useStore.ts
+│   ├── useSystem.ts
+│   └── useToast.ts
+├── pages/
+│   ├── CaseOverview.tsx
+│   ├── ContactsDossier.tsx
+│   ├── EvidenceVault.tsx
+│   ├── Incidents.tsx
+│   ├── PlayersDossier.tsx
+│   ├── Reports.tsx
+│   └── VisitationCalendar.tsx
+├── scripts/
+│   ├── generate-narration.ps1
+│   ├── inspect-demo.cjs
+│   ├── test-demo.cjs
+│   └── test-production.cjs
+├── styles/
+│   ├── demo.css
+│   └── index.css
+├── tour/
+│   ├── orbBridge.ts
+│   ├── tourController.ts
+│   ├── tourSteps.ts
+│   └── useWebsiteDemoTour.ts
+├── utils/
+│   ├── annotationEngine.ts
+│   └── helpers.ts
+├── validation/
+│   ├── development/
+│   │   ├── screenshots/
+│   │   │   ├── 1024-dashboard.png
+│   │   │   ├── 1024-relationships.png
+│   │   │   ├── 390-dashboard.png
+│   │   │   ├── 390-relationships.png
+│   │   │   ├── desktop-dashboard.png
+│   │   │   ├── desktop-evidence-check.png
+│   │   │   └── desktop-relationships.png
+│   │   └── test-results.json
+│   ├── production/
+│   │   ├── screenshots/
+│   │   │   ├── 1024-dashboard.png
+│   │   │   ├── 1024-relationships.png
+│   │   │   ├── 390-dashboard.png
+│   │   │   ├── 390-relationships.png
+│   │   │   ├── desktop-dashboard.png
+│   │   │   ├── desktop-evidence-check.png
+│   │   │   └── desktop-relationships.png
+│   │   └── test-results.json
+│   ├── authorized-orb-changes.json
+│   └── production-assets.json
+├── App.tsx
+├── README.md
+├── source-manifest.json
+├── tree.txt
+└── types.ts

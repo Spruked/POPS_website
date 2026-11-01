@@ -1,0 +1,15 @@
+[Unit]
+Description=POPS llama.cpp Qwen2.5 7B Instruct
+After=network-online.target pops-qwen-tts.service
+Wants=network-online.target pops-qwen-tts.service
+
+[Service]
+Type=simple
+WorkingDirectory=/home/bryan/substrate/llm/llama.cpp
+ExecStart=/home/bryan/substrate/llm/llama.cpp/build-cuda/bin/llama-server --model /home/bryan/substrate/llm/models/Qwen2.5-7B-Instruct-GGUF/qwen2.5-7b-instruct-q4_k_m-00001-of-00002.gguf --alias Qwen2.5-7B-Instruct --host 127.0.0.1 --port 16520 --n-gpu-layers 8 --flash-attn on --cache-type-k q8_0 --cache-type-v q8_0 --ctx-size 4096 --parallel 1 --threads 4
+Restart=always
+RestartSec=5
+TimeoutStartSec=180
+
+[Install]
+WantedBy=default.target

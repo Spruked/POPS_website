@@ -1,0 +1,59 @@
+{
+  "recommendations": [
+    {
+      "severity": "warning",
+      "category": "content",
+      "title": "Thin Content",
+      "description": "3 pages have less than 300 words",
+      "affected_urls": [
+        "https://www.popsproof.com/see-pops-in-action",
+        "https://www.popsproof.com/terms",
+        "https://www.popsproof.com/events"
+      ],
+      "recommendation": "Expand thin pages with comprehensive, valuable content",
+      "impact_score": 65
+    },
+    {
+      "severity": "warning",
+      "category": "content",
+      "title": "Weak Semantic Coverage",
+      "description": "5 pages have shallow topical depth or low semantic coverage",
+      "affected_urls": [
+        "https://www.popsproof.com/see-pops-in-action",
+        "https://www.popsproof.com/pledge",
+        "https://www.popsproof.com/terms",
+        "https://www.popsproof.com/events",
+        "https://www.popsproof.com/attorney-referral"
+      ],
+      "recommendation": "Expand pages around the primary topic, related entities, questions, and supporting subtopics",
+      "impact_score": 62
+    },
+    {
+      "severity": "warning",
+      "category": "accessibility",
+      "title": "Images Missing Alt Text",
+      "description": "17 pages have images without alt text",
+      "affected_urls": [
+        "https://www.popsproof.com",
+        "https://www.popsproof.com/see-pops-in-action",
+        "https://www.popsproof.com/account",
+        "https://www.popsproof.com/pledge",
+        "https://www.popsproof.com/terms",
+        "https://www.popsproof.com/access",
+        "https://www.popsproof.com/events",
+        "https://www.popsproof.com/about",
+        "https://www.popsproof.com/counsel-handoff",
+        "https://www.popsproof.com/attorney-referral",
+        "https://www.popsproof.com/privacy",
+        "https://www.popsproof.com/policies-procedures",
+        "https://www.popsproof.com/lexicon",
+        "https://www.popsproof.com/cart",
+        "https://www.popsproof.com/declaration",
+        "https://www.popsproof.com/pricing",
+        "https://www.popsproof.com/admin"
+      ],
+      "recommendation": "Add descriptive alt text to all images for accessibility and SEO",
+      "impact_score": 45
+    }
+  ]
+}

@@ -16,7 +16,8 @@ export type WebsiteOrbTargetId =
   | "pops.access.membership"
   | "pops.access.checkout"
   | "pops.access.activation"
-  | "pops.access.local-first";
+  | "pops.access.local-first"
+  | `target_${string}`;
 
 export interface WebsiteOrbTarget {
   id: WebsiteOrbTargetId;
@@ -26,6 +27,12 @@ export interface WebsiteOrbTarget {
   description: string;
   actions: WebsiteOrbTargetAction[];
   guideOnly: true;
+  runtimeVerification?: {
+    sourceCrawlId: string;
+    sourceTargetId: string;
+    expectedText: string;
+    parentLocator?: string | null;
+  };
 }
 
 export interface WebsiteOrbGuideRequest {

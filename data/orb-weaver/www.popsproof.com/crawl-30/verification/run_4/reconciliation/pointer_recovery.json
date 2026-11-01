@@ -1,0 +1,41 @@
+{
+  "schema": "orb_weaver.pointer_recovery.v1",
+  "promoted_count": 63,
+  "unresolved_count": 1547,
+  "render_count": 8,
+  "routes": [
+    "/about",
+    "/pledge"
+  ],
+  "failed_routes": [
+    "/access",
+    "/account",
+    "/admin",
+    "/android",
+    "/attorney-referral",
+    "/beta",
+    "/cart",
+    "/checkout",
+    "/counsel-handoff",
+    "/declaration",
+    "/desktop-app",
+    "/early-adopters",
+    "/events",
+    "/faq",
+    "/how-you-use-it",
+    "/installation",
+    "/lexicon",
+    "/policies-procedures",
+    "/pricing",
+    "/privacy",
+    "/product-demo",
+    "/see-pops-in-action",
+    "/support",
+    "/terms"
+  ],
+  "eligible_route_count": 26,
+  "batch_count": 4,
+  "owner_review_required_count": 0,
+  "automatic_attempts_used": 1,
+  "automatic_attempts_maximum": 1
+}

@@ -1,0 +1,28 @@
+[Unit]
+Description=POPS Qwen3 TTS 0.6B CustomVoice Ryan
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+WorkingDirectory=/home/bryan/substrate/tts/qwen_3_tts
+Environment=HOME=/home/bryan
+Environment=PYTHONUNBUFFERED=1
+Environment=HF_HUB_OFFLINE=1
+Environment=TRANSFORMERS_OFFLINE=1
+Environment=CUDA_VISIBLE_DEVICES=0
+Environment=PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True
+Environment=GRADIO_TEMP_DIR=/home/bryan/projects/POPS_website/.local/qwen-tts/audio-temp
+Environment=OMP_NUM_THREADS=4
+Environment=MKL_NUM_THREADS=4
+Environment=LD_LIBRARY_PATH=/usr/local/cuda/lib64:/usr/lib/wsl/lib
+ExecStart=/home/bryan/substrate/tts/qwen_3_tts/.venv/bin/python -u -m qwen_tts.cli.demo /home/bryan/.cache/huggingface/hub/models--Qwen--Qwen3-TTS-12Hz-0.6B-CustomVoice/snapshots/85e237c12c027371202489a0ec509ded67b5e4b5 --ip 127.0.0.1 --port 8020 --device cuda:0 --dtype bfloat16 --no-flash-attn --no-share --concurrency 1 --max-new-tokens 128
+ExecStartPost=/bin/bash -c 'for i in $(seq 1 180); do /usr/bin/curl -fsS --max-time 1 http://127.0.0.1:8020/config >/dev/null 2>&1 && exit 0; sleep 1; done; exit 1'
+Restart=on-failure
+RestartSec=5
+TimeoutStartSec=240
+TimeoutStopSec=30
+MemoryMax=6G
+
+[Install]
+WantedBy=default.target

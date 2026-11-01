@@ -1,0 +1,195 @@
+{
+  "schema": "orb_weaver.source_validation.v1",
+  "status": "COMPLETE",
+  "input_count": 31,
+  "validated_count": 31,
+  "invalid_count": 0,
+  "checks": [
+    {
+      "chunk_id": "2825864c77024259cd14",
+      "source_url": "https://pops.spruked.com",
+      "status": "VALID",
+      "content_hash": "dcc1ab34f13fe2ca7d5cbe1a77766928"
+    },
+    {
+      "chunk_id": "8c82fc1c05f7f8f91cd6",
+      "source_url": "https://pops.spruked.com/pledge",
+      "status": "VALID",
+      "content_hash": "9985b67bee24df82dd1a8109766e74d5"
+    },
+    {
+      "chunk_id": "742be66d483b5339a7b5",
+      "source_url": "https://pops.spruked.com/terms",
+      "status": "VALID",
+      "content_hash": "c685a6d4b98b8dd1b97d6fa6802ee411"
+    },
+    {
+      "chunk_id": "9c779370bbdfc17fd4d2",
+      "source_url": "https://pops.spruked.com/cart",
+      "status": "VALID",
+      "content_hash": "008ea5a5424ddfe6b943ff0a767cf240"
+    },
+    {
+      "chunk_id": "c8fa4e748b2239a30b5b",
+      "source_url": "https://pops.spruked.com/access",
+      "status": "VALID",
+      "content_hash": "54ee021478643fd268054e1b32adf381"
+    },
+    {
+      "chunk_id": "1a1deddc91b2b7fa05ca",
+      "source_url": "https://pops.spruked.com/see-pops-in-action",
+      "status": "VALID",
+      "content_hash": "a9df201bcb20a42f42547218e4d90bee"
+    },
+    {
+      "chunk_id": "d598f629fbcac8a654a0",
+      "source_url": "https://pops.spruked.com/counsel-handoff",
+      "status": "VALID",
+      "content_hash": "4a62d25d3a700cd23ca0fa1fc40ea5ea"
+    },
+    {
+      "chunk_id": "691e73c362d32e60c19f",
+      "source_url": "https://pops.spruked.com/privacy",
+      "status": "VALID",
+      "content_hash": "413b0249de56e31503048b94f4cfea5e"
+    },
+    {
+      "chunk_id": "3a41de5299c2243bd8cb",
+      "source_url": "https://pops.spruked.com/account",
+      "status": "VALID",
+      "content_hash": "d55e8f47ed60ef160ea01bdf225805bf"
+    },
+    {
+      "chunk_id": "73ee93d44b14f3e1739b",
+      "source_url": "https://pops.spruked.com/lexicon",
+      "status": "VALID",
+      "content_hash": "43f9d46d228a0b3bed75adba3c3840a9"
+    },
+    {
+      "chunk_id": "14675b3f1f471d394f3a",
+      "source_url": "https://pops.spruked.com/about",
+      "status": "VALID",
+      "content_hash": "a5064d6417870eee2770de99d0f5ca11"
+    },
+    {
+      "chunk_id": "37c3ab5f62a86d3bd1a2",
+      "source_url": "https://pops.spruked.com/policies-procedures",
+      "status": "VALID",
+      "content_hash": "4b776233842249e863f96dad342868f9"
+    },
+    {
+      "chunk_id": "6f89e8eebdb223a8cecb",
+      "source_url": "https://pops.spruked.com/events",
+      "status": "VALID",
+      "content_hash": "b76fcec3047a8b227ab0dab3857e4012"
+    },
+    {
+      "chunk_id": "26b6a3917e50d4dd7994",
+      "source_url": "https://pops.spruked.com/pricing",
+      "status": "VALID",
+      "content_hash": "5443e30dfc57b0346e4a5c41029fbed8"
+    },
+    {
+      "chunk_id": "0abc75ae74dd3417f390",
+      "source_url": "https://pops.spruked.com/attorney-referral",
+      "status": "VALID",
+      "content_hash": "387afedb1f81a64f3e3fe57c77630200"
+    },
+    {
+      "chunk_id": "392417b11d28096a22fc",
+      "source_url": "https://pops.spruked.com/declaration",
+      "status": "VALID",
+      "content_hash": "4a40081ce0196fbe09717596649d8729"
+    },
+    {
+      "chunk_id": "8aa80f41b863fba9b8f9",
+      "source_url": "https://pops.spruked.com/sitemap.xml",
+      "status": "VALID",
+      "content_hash": "316de872c2391e644609f402e44614a6"
+    },
+    {
+      "chunk_id": "15e7abec1719af73f4f6",
+      "source_url": "https://pops.spruked.com/robots.txt",
+      "status": "VALID",
+      "content_hash": "90ca1c3a6812c038a14a1a66a520edcd"
+    },
+    {
+      "chunk_id": "b64da70f7a8b5227a6be",
+      "source_url": "https://pops.spruked.com/admin",
+      "status": "VALID",
+      "content_hash": "5ed74d6a604357f069cfdefc3abd8f9c"
+    },
+    {
+      "chunk_id": "f561aa467da376dc608b",
+      "source_url": "https://pops.spruked.com/desktop-app",
+      "status": "VALID",
+      "content_hash": "ae06424b602cbf697634f27644324ce9"
+    },
+    {
+      "chunk_id": "686b0055a9651f584299",
+      "source_url": "https://pops.spruked.com/how-you-use-it",
+      "status": "VALID",
+      "content_hash": "54ee021478643fd268054e1b32adf381"
+    },
+    {
+      "chunk_id": "0996f298554883b5edef",
+      "source_url": "https://pops.spruked.com/lexicon/culpable",
+      "status": "VALID",
+      "content_hash": "ceb7840d5d33d566c30f4ee4dc98de41"
+    },
+    {
+      "chunk_id": "7866a53ae4f942b7c99c",
+      "source_url": "https://pops.spruked.com/lexicon/due-process",
+      "status": "VALID",
+      "content_hash": "54ee021478643fd268054e1b32adf381"
+    },
+    {
+      "chunk_id": "6e6663ef1461b9f9761f",
+      "source_url": "https://pops.spruked.com/lexicon/equal-protection",
+      "status": "VALID",
+      "content_hash": "bbbfff1ec14b13d0727ceed12489a684"
+    },
+    {
+      "chunk_id": "a09f446faf4d643b80d0",
+      "source_url": "https://pops.spruked.com/lexicon/estoppel",
+      "status": "VALID",
+      "content_hash": "17d1bbf1917bd64202c80f1b28e688f3"
+    },
+    {
+      "chunk_id": "ece2b5376e37f3a6d1d7",
+      "source_url": "https://pops.spruked.com/lexicon/exculpatory",
+      "status": "VALID",
+      "content_hash": "4e0093bb55c9115d4a864238bac981a6"
+    },
+    {
+      "chunk_id": "bef7c5a035cee16d99ff",
+      "source_url": "https://pops.spruked.com/lexicon/fifth-amendment",
+      "status": "VALID",
+      "content_hash": "d5cafada7b9fb2b68a3d048b1203d4ea"
+    },
+    {
+      "chunk_id": "aa9ef5dda9cd0cd35afb",
+      "source_url": "https://pops.spruked.com/lexicon/fourteenth-amendment",
+      "status": "VALID",
+      "content_hash": "df509d803564f33427a5b376d7fc9f39"
+    },
+    {
+      "chunk_id": "682048e93517fe8af5e5",
+      "source_url": "https://pops.spruked.com/lexicon/habeas-corpus",
+      "status": "VALID",
+      "content_hash": "1660a782b5428023ae37d954b41ef170"
+    },
+    {
+      "chunk_id": "1df7e234cc427bc842ba",
+      "source_url": "https://pops.spruked.com/lexicon/prima-facie",
+      "status": "VALID",
+      "content_hash": "8522a5b3c83c03e071709ef54bc78267"
+    },
+    {
+      "chunk_id": "f4b45c66fc23541b9ab7",
+      "source_url": "https://pops.spruked.com/lexicon/pro-se",
+      "status": "VALID",
+      "content_hash": "8753e16d3d11a5b301680c7a9d406b7b"
+    }
+  ]
+}

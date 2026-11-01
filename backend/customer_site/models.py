@@ -5,6 +5,10 @@ from django.utils import timezone
 import uuid
 
 
+def new_square_idempotency_key():
+    return str(uuid.uuid4())
+
+
 class BetaApplication(models.Model):
     user = models.ForeignKey(settings.AUTH_USER_MODEL, null=True, blank=True, on_delete=models.SET_NULL, related_name='beta_applications')
     email = models.EmailField(unique=True)
@@ -131,6 +135,103 @@ class VerifiedPaymentRecord(models.Model):
 
     class Meta:
         constraints = [models.UniqueConstraint(fields=['provider', 'provider_payment_id'], name='customer_payment_reference_unique')]
+
+
+class GuardianOrder(models.Model):
+    """Durable server-priced Windows Guardian checkout order."""
+    class Status(models.TextChoices):
+        PENDING = 'pending', 'Pending'
+        PAID = 'paid', 'Paid'
+        FAILED = 'failed', 'Failed'
+        CANCELED = 'canceled', 'Canceled'
+        PARTIALLY_REFUNDED = 'partially_refunded', 'Partially refunded'
+        REFUNDED = 'refunded', 'Refunded'
+
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.PROTECT, related_name='guardian_orders')
+    product_code = models.CharField(max_length=40, default='guardian_windows')
+    amount_minor = models.PositiveIntegerField(default=9900)
+    currency = models.CharField(max_length=3, default='USD')
+    status = models.CharField(max_length=24, choices=Status.choices, default=Status.PENDING, db_index=True)
+    request_key = models.CharField(max_length=64)
+    square_idempotency_key = models.CharField(max_length=45, unique=True, default=new_square_idempotency_key)
+    square_payment_link_id = models.CharField(max_length=200, blank=True, null=True, unique=True)
+    square_checkout_url = models.URLField(max_length=1000, blank=True)
+    square_order_id = models.CharField(max_length=200, blank=True, null=True, unique=True)
+    square_payment_id = models.CharField(max_length=200, blank=True, null=True, db_index=True)
+    refunded_amount_minor = models.PositiveIntegerField(default=0)
+    reserve_balance_minor = models.IntegerField(default=0)
+    created_at = models.DateTimeField(default=timezone.now)
+    updated_at = models.DateTimeField(auto_now=True)
+    paid_at = models.DateTimeField(null=True, blank=True)
+    refunded_at = models.DateTimeField(null=True, blank=True)
+
+    class Meta:
+        constraints = [
+            models.UniqueConstraint(fields=['user', 'request_key'], name='guardian_order_user_request_unique'),
+            models.CheckConstraint(condition=models.Q(amount_minor=9900), name='guardian_order_price_is_9900'),
+            models.CheckConstraint(condition=models.Q(currency='USD'), name='guardian_order_currency_usd'),
+            models.CheckConstraint(condition=models.Q(refunded_amount_minor__lte=models.F('amount_minor')), name='guardian_refund_not_over_amount'),
+            models.CheckConstraint(condition=models.Q(reserve_balance_minor__gte=0, reserve_balance_minor__lte=1485), name='guardian_reserve_balance_valid'),
+        ]
+
+
+class GuardianOrderEvent(models.Model):
+    order = models.ForeignKey(GuardianOrder, on_delete=models.PROTECT, related_name='events')
+    event_type = models.CharField(max_length=48)
+    from_status = models.CharField(max_length=24, blank=True)
+    to_status = models.CharField(max_length=24, blank=True)
+    provider_event_id = models.CharField(max_length=200, blank=True)
+    details = models.JSONField(default=dict)
+    occurred_at = models.DateTimeField(default=timezone.now)
+
+
+class SquareWebhookEvent(models.Model):
+    event_id = models.CharField(max_length=200, unique=True)
+    event_type = models.CharField(max_length=100)
+    payload_sha256 = models.CharField(max_length=64)
+    status = models.CharField(max_length=20, default='received')
+    error_code = models.CharField(max_length=50, blank=True)
+    received_at = models.DateTimeField(default=timezone.now)
+    processed_at = models.DateTimeField(null=True, blank=True)
+
+
+class GuardianPaymentAttempt(models.Model):
+    """Every provider payment attempt, including a second charge that needs review."""
+    order = models.ForeignKey(GuardianOrder, on_delete=models.PROTECT, related_name='payment_attempts')
+    provider_payment_id = models.CharField(max_length=200, unique=True)
+    status = models.CharField(max_length=24, default='OBSERVED')
+    amount_minor = models.PositiveIntegerField()
+    currency = models.CharField(max_length=3)
+    refunded_amount_minor = models.PositiveIntegerField(default=0)
+    first_verified_at = models.DateTimeField(default=timezone.now)
+    last_verified_at = models.DateTimeField(default=timezone.now)
+
+
+class GuardianEntitlement(models.Model):
+    class Status(models.TextChoices):
+        ACTIVE = 'active', 'Active'
+        REVOKED = 'revoked', 'Revoked'
+
+    order = models.OneToOneField(GuardianOrder, on_delete=models.PROTECT, related_name='entitlement')
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.PROTECT, related_name='guardian_entitlements')
+    product_code = models.CharField(max_length=40, default='guardian_windows')
+    status = models.CharField(max_length=10, choices=Status.choices, default=Status.ACTIVE)
+    created_at = models.DateTimeField(default=timezone.now)
+    updated_at = models.DateTimeField(auto_now=True)
+    revoked_at = models.DateTimeField(null=True, blank=True)
+
+
+class GuardianReserveLedger(models.Model):
+    """Append-only signed reserve movements; positive allocates, negative reverses."""
+    order = models.ForeignKey(GuardianOrder, on_delete=models.PROTECT, related_name='reserve_entries')
+    reference_key = models.CharField(max_length=200)
+    amount_minor = models.IntegerField()
+    reason = models.CharField(max_length=30)
+    created_at = models.DateTimeField(default=timezone.now)
+
+    class Meta:
+        constraints = [models.UniqueConstraint(fields=['order', 'reference_key'], name='guardian_reserve_reference_unique')]
 
 
 class StateFeatureFeedback(models.Model):

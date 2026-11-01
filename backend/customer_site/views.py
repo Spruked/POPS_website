@@ -1,7 +1,9 @@
 import hashlib
+import hmac
 import json
 import logging
 import time
+import uuid
 from functools import wraps
 from django.conf import settings
 from django.contrib.auth import authenticate, login, logout
@@ -19,10 +21,13 @@ from django.http import JsonResponse
 from django.middleware.csrf import get_token
 from django.views.decorators.cache import never_cache
 from django.views.decorators.http import require_GET, require_POST
+from django.views.decorators.csrf import csrf_exempt
 from .forms import RegistrationForm, BetaForm, SupportForm
-from .models import BetaApplication, SupportRequest, RequestLimit, CustomerProfile, CustomerEmail
+from .models import (BetaApplication, SupportRequest, RequestLimit, CustomerProfile, CustomerEmail,
+                     GuardianOrder, GuardianOrderEvent, SquareWebhookEvent)
 from .profile_service import ensure_customer, profile_payload, update_details, record_preferences
 from .profile_forms import normalize_email
+from . import guardian_payments
 
 logger = logging.getLogger(__name__)
 
@@ -232,3 +237,129 @@ def support(request):
 @endpoint
 def checkout_unavailable(request):
     return JsonResponse({'error': 'Checkout is unavailable. No order or payment has been created.'}, status=503)
+
+
+def _guardian_order_payload(order, *, include_checkout=False):
+    result = {
+        'order_id': str(order.pk),
+        'product': 'guardian_windows',
+        'amount_minor': 9900,
+        'currency': 'USD',
+        'status': order.status,
+        'created_at': order.created_at.isoformat(),
+        'updated_at': order.updated_at.isoformat(),
+    }
+    if include_checkout and order.status == GuardianOrder.Status.PENDING and order.square_checkout_url:
+        result['checkout_url'] = order.square_checkout_url
+    return result
+
+
+def _checkout_unavailable_response():
+    return JsonResponse({'error': 'Guardian sandbox checkout is disabled. No payment has been taken.'}, status=503)
+
+
+@require_POST
+@endpoint
+def guardian_checkout(request):
+    if not guardian_payments.checkout_is_enabled():
+        return _checkout_unavailable_response()
+    if not request.user.is_authenticated:
+        return JsonResponse({'error': 'Sign in to start a Guardian checkout.'}, status=401)
+    if set(request.payload) != {'request_key'}:
+        return JsonResponse({'error': 'Only a checkout request key is accepted; prices and product details are server controlled.'}, status=400)
+    try:
+        request_key = str(uuid.UUID(str(request.payload['request_key'])))
+    except (ValueError, TypeError, AttributeError):
+        return JsonResponse({'error': 'A valid checkout request key is required.'}, status=400)
+    order, _ = guardian_payments.create_or_get_order(request.user, request_key)
+    if order.status != GuardianOrder.Status.PENDING:
+        return JsonResponse({'order': _guardian_order_payload(order)}, status=200)
+    had_checkout_url = bool(order.square_checkout_url)
+    try:
+        order = guardian_payments.ensure_payment_link(order)
+    except guardian_payments.SquareUnavailable:
+        logger.warning('Square sandbox checkout unavailable for Guardian order %s', order.pk)
+        return JsonResponse({'error': 'Secure checkout is temporarily unavailable. Retry this same request.'}, status=502)
+    return JsonResponse({'order': _guardian_order_payload(order, include_checkout=True)}, status=200 if had_checkout_url else 201)
+
+
+@require_GET
+@endpoint
+def guardian_order_status(request, order_id):
+    if not request.user.is_authenticated:
+        return JsonResponse({'error': 'Sign in to view this order.'}, status=401)
+    order = GuardianOrder.objects.filter(pk=order_id, user=request.user).first()
+    if not order:
+        return JsonResponse({'error': 'Order not found.'}, status=404)
+    return JsonResponse({'order': _guardian_order_payload(order, include_checkout=True)})
+
+
+@csrf_exempt
+@require_POST
+@never_cache
+def square_guardian_webhook(request):
+    """Accept only signed notices, then fetch payment/refund state directly from Square."""
+    if not guardian_payments.checkout_is_enabled():
+        return _checkout_unavailable_response()
+    raw_body = request.body
+    signature = request.headers.get('x-square-hmacsha256-signature', '')
+    if not guardian_payments.verify_webhook_signature(raw_body, signature):
+        return JsonResponse({'error': 'Invalid Square webhook signature.'}, status=403)
+    try:
+        payload = json.loads(raw_body)
+        event_id = str(payload['event_id'])
+        event_type = str(payload['type'])
+        if not event_id or len(event_id) > 200 or len(event_type) > 100:
+            raise ValueError()
+    except (ValueError, TypeError, KeyError, UnicodeDecodeError):
+        return JsonResponse({'error': 'Invalid Square webhook event.'}, status=400)
+
+    payload_hash = hashlib.sha256(raw_body).hexdigest()
+    try:
+        event, created = SquareWebhookEvent.objects.get_or_create(
+            event_id=event_id,
+            defaults={'event_type': event_type, 'payload_sha256': payload_hash},
+        )
+    except Exception:
+        logger.exception('Could not persist Square webhook receipt')
+        return JsonResponse({'error': 'Webhook could not be recorded.'}, status=503)
+    if not created and (event.event_type != event_type or not hmac.compare_digest(event.payload_sha256, payload_hash)):
+        return JsonResponse({'error': 'Square event identifier was reused with different content.'}, status=400)
+    if not created and event.status in {'processed', 'ignored', 'rejected'}:
+        return JsonResponse({'received': True, 'processed': event.status == 'processed'})
+
+    if event_type not in {'payment.created', 'payment.updated', 'refund.created', 'refund.updated'}:
+        event.status = 'ignored'
+        event.processed_at = timezone.now()
+        event.save(update_fields=['status', 'processed_at'])
+        return JsonResponse({'received': True, 'processed': False})
+    try:
+        data = payload.get('data') or {}
+        object_data = ((data.get('object') or {}).get('payment') or {}) if event_type.startswith('payment.') else ((data.get('object') or {}).get('refund') or {})
+        payment_id = object_data.get('id') if event_type.startswith('payment.') else object_data.get('payment_id')
+        if not isinstance(payment_id, str) or not payment_id or len(payment_id) > 200:
+            raise guardian_payments.PaymentMismatch('Square event did not identify a payment.')
+        order = guardian_payments.confirm_payment(payment_id, provider_event_id=event_id)
+    except guardian_payments.SquareUnavailable:
+        event.status = 'retryable_error'
+        event.error_code = 'provider_unavailable'
+        event.save(update_fields=['status', 'error_code'])
+        return JsonResponse({'error': 'Square status verification is temporarily unavailable.'}, status=503)
+    except guardian_payments.PaymentMismatch:
+        event.status = 'rejected'
+        event.error_code = 'payment_mismatch'
+        event.processed_at = timezone.now()
+        event.save(update_fields=['status', 'error_code', 'processed_at'])
+        return JsonResponse({'received': True, 'processed': False})
+    except Exception:
+        event.status = 'retryable_error'
+        event.error_code = 'processing_error'
+        event.save(update_fields=['status', 'error_code'])
+        logger.exception('Square webhook processing failed for event %s', event_id)
+        return JsonResponse({'error': 'Square event processing will be retried.'}, status=503)
+
+    event.status = 'processed'
+    event.error_code = ''
+    event.processed_at = timezone.now()
+    event.save(update_fields=['status', 'error_code', 'processed_at'])
+    return JsonResponse({'received': True, 'processed': True, 'order_id': str(order.pk), 'status': order.status})

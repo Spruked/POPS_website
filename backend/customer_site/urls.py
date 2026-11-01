@@ -25,5 +25,8 @@ urlpatterns = [
     path('api/customer/reset', views.reset),
     path('api/customer/beta', views.beta),
     path('api/customer/support', views.support),
+    path('api/checkout/guardian', views.guardian_checkout),
+    path('api/checkout/guardian/orders/<uuid:order_id>', views.guardian_order_status),
+    path('api/checkout/square/webhook', views.square_guardian_webhook),
     re_path(r'^api/checkout(?:/.*)?$', views.checkout_unavailable),
 ]

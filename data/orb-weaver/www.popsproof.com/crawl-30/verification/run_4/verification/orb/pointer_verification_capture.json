@@ -1,0 +1,99 @@
+{
+  "schema": "orb_weaver.pointer_verification_capture.v1",
+  "covered_routes": [
+    "/pledge",
+    "/about"
+  ],
+  "failed_routes": [
+    "/account",
+    "/access",
+    "/pricing",
+    "/lexicon",
+    "/beta",
+    "/faq",
+    "/desktop-app",
+    "/support",
+    "/android",
+    "/early-adopters",
+    "/see-pops-in-action",
+    "/counsel-handoff",
+    "/product-demo",
+    "/how-you-use-it",
+    "/installation",
+    "/admin",
+    "/checkout",
+    "/events",
+    "/attorney-referral",
+    "/cart",
+    "/policies-procedures",
+    "/privacy",
+    "/terms",
+    "/declaration"
+  ],
+  "eligible_route_count": 26,
+  "batch_count": 4,
+  "batches": [
+    {
+      "batch": 0,
+      "routes": [
+        "/account",
+        "/access",
+        "/pricing",
+        "/lexicon",
+        "/beta",
+        "/faq",
+        "/desktop-app",
+        "/support"
+      ],
+      "status": "failed",
+      "resumed": false,
+      "error": "Command '['/usr/bin/node', '/app/backend/app/orb/pointer_recovery_capture.js', '[\"https://www.popsproof.com/account\", \"https://www.popsproof.com/access\", \"https://www.popsproof.com/pricing\", \"https://www.popsproof.com/lexicon\", \"https://www.popsproof.com/beta\", \"https://www.popsproof.com/faq\", \"https://www.popsproof.com/desktop-app\", \"https://www.popsproof.com/support\"]', '/app/vault_system/clients/www.popsproof.com/runs/4/verification/orb/pointer_recovery_capture/batch_000/browser_capture.json', '2', '/app/vault_system/clients/www.popsproof.com/runs/4/verification/orb/pointer_recovery_capture/batch_000']' timed out after 300 seconds",
+      "completed_at": "2026-10-31T14:45:54.579923+00:00"
+    },
+    {
+      "batch": 1,
+      "routes": [
+        "/android",
+        "/early-adopters",
+        "/see-pops-in-action",
+        "/counsel-handoff",
+        "/product-demo",
+        "/how-you-use-it",
+        "/installation",
+        "/admin"
+      ],
+      "status": "failed",
+      "resumed": false,
+      "error": "Command '['/usr/bin/node', '/app/backend/app/orb/pointer_recovery_capture.js', '[\"https://www.popsproof.com/android\", \"https://www.popsproof.com/early-adopters\", \"https://www.popsproof.com/see-pops-in-action\", \"https://www.popsproof.com/counsel-handoff\", \"https://www.popsproof.com/product-demo\", \"https://www.popsproof.com/how-you-use-it\", \"https://www.popsproof.com/installation\", \"https://www.popsproof.com/admin\"]', '/app/vault_system/clients/www.popsproof.com/runs/4/verification/orb/pointer_recovery_capture/batch_001/browser_capture.json', '2', '/app/vault_system/clients/www.popsproof.com/runs/4/verification/orb/pointer_recovery_capture/batch_001']' timed out after 300 seconds",
+      "completed_at": "2026-10-31T14:50:55.047003+00:00"
+    },
+    {
+      "batch": 2,
+      "routes": [
+        "/checkout",
+        "/events",
+        "/attorney-referral",
+        "/cart",
+        "/policies-procedures",
+        "/privacy",
+        "/terms",
+        "/declaration"
+      ],
+      "status": "failed",
+      "resumed": false,
+      "error": "Command '['/usr/bin/node', '/app/backend/app/orb/pointer_recovery_capture.js', '[\"https://www.popsproof.com/checkout\", \"https://www.popsproof.com/events\", \"https://www.popsproof.com/attorney-referral\", \"https://www.popsproof.com/cart\", \"https://www.popsproof.com/policies-procedures\", \"https://www.popsproof.com/privacy\", \"https://www.popsproof.com/terms\", \"https://www.popsproof.com/declaration\"]', '/app/vault_system/clients/www.popsproof.com/runs/4/verification/orb/pointer_recovery_capture/batch_002/browser_capture.json', '2', '/app/vault_system/clients/www.popsproof.com/runs/4/verification/orb/pointer_recovery_capture/batch_002']' timed out after 300 seconds",
+      "completed_at": "2026-10-31T14:55:55.416044+00:00"
+    },
+    {
+      "batch": 3,
+      "routes": [
+        "/pledge",
+        "/about"
+      ],
+      "status": "complete",
+      "resumed": false,
+      "error": null,
+      "completed_at": "2026-10-31T14:59:01.074834+00:00"
+    }
+  ]
+}

@@ -1,0 +1,97 @@
+{
+  "schema": "orb_weaver.route_classification.v1",
+  "route_count": 17,
+  "category_counts": {
+    "public_content": 14,
+    "private": 1,
+    "transactional": 1,
+    "admin": 1
+  },
+  "routes": [
+    {
+      "url": "https://www.popsproof.com",
+      "route": "/",
+      "category": "public_content"
+    },
+    {
+      "url": "https://www.popsproof.com/see-pops-in-action",
+      "route": "/see-pops-in-action",
+      "category": "public_content"
+    },
+    {
+      "url": "https://www.popsproof.com/account",
+      "route": "/account",
+      "category": "private"
+    },
+    {
+      "url": "https://www.popsproof.com/pledge",
+      "route": "/pledge",
+      "category": "public_content"
+    },
+    {
+      "url": "https://www.popsproof.com/terms",
+      "route": "/terms",
+      "category": "public_content"
+    },
+    {
+      "url": "https://www.popsproof.com/access",
+      "route": "/access",
+      "category": "public_content"
+    },
+    {
+      "url": "https://www.popsproof.com/events",
+      "route": "/events",
+      "category": "public_content"
+    },
+    {
+      "url": "https://www.popsproof.com/about",
+      "route": "/about",
+      "category": "public_content"
+    },
+    {
+      "url": "https://www.popsproof.com/counsel-handoff",
+      "route": "/counsel-handoff",
+      "category": "public_content"
+    },
+    {
+      "url": "https://www.popsproof.com/attorney-referral",
+      "route": "/attorney-referral",
+      "category": "public_content"
+    },
+    {
+      "url": "https://www.popsproof.com/privacy",
+      "route": "/privacy",
+      "category": "public_content"
+    },
+    {
+      "url": "https://www.popsproof.com/policies-procedures",
+      "route": "/policies-procedures",
+      "category": "public_content"
+    },
+    {
+      "url": "https://www.popsproof.com/lexicon",
+      "route": "/lexicon",
+      "category": "public_content"
+    },
+    {
+      "url": "https://www.popsproof.com/cart",
+      "route": "/cart",
+      "category": "transactional"
+    },
+    {
+      "url": "https://www.popsproof.com/declaration",
+      "route": "/declaration",
+      "category": "public_content"
+    },
+    {
+      "url": "https://www.popsproof.com/pricing",
+      "route": "/pricing",
+      "category": "public_content"
+    },
+    {
+      "url": "https://www.popsproof.com/admin",
+      "route": "/admin",
+      "category": "admin"
+    }
+  ]
+}

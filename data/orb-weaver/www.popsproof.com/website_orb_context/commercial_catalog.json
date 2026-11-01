@@ -1,0 +1,326 @@
+{
+  "schema": "orb_weaver.commercial_catalog.v1",
+  "entry_count": 11,
+  "product_count": 11,
+  "service_count": 0,
+  "priced_entry_count": 0,
+  "sku_model_count": 0,
+  "availability_count": 0,
+  "variant_count": 0,
+  "specification_count": 0,
+  "source_page_count": 7,
+  "data_quality": {
+    "status": "insufficient",
+    "public_source_only": true,
+    "fragment_entry_count": 1,
+    "missing_description_count": 11,
+    "missing_price_count": 11,
+    "missing_sku_count": 11,
+    "quality_gate": "marketing_claims_must_not_use_catalog_until_status_is_usable"
+  },
+  "entries": [
+    {
+      "catalog_id": "catalog_1f0ce91f0a21a8af",
+      "kind": "Product",
+      "name": "Local-First Evidence System Pops",
+      "description": null,
+      "sku": null,
+      "gtin": null,
+      "brand": null,
+      "category": null,
+      "url": "https://www.popsproof.com/access",
+      "source_page": "https://www.popsproof.com/access",
+      "offers": [],
+      "availability": null,
+      "variants": [],
+      "specifications": {},
+      "schema_types": [],
+      "evidence": [
+        "entity_extraction"
+      ],
+      "confidence": 0.62
+    },
+    {
+      "catalog_id": "catalog_afdafde09f3e02b6",
+      "kind": "Product",
+      "name": "Presence System",
+      "description": null,
+      "sku": null,
+      "gtin": null,
+      "brand": null,
+      "category": null,
+      "url": "https://www.popsproof.com",
+      "source_page": "https://www.popsproof.com",
+      "offers": [],
+      "availability": null,
+      "variants": [],
+      "specifications": {},
+      "schema_types": [],
+      "evidence": [
+        "entity_extraction"
+      ],
+      "confidence": 0.62
+    },
+    {
+      "catalog_id": "catalog_b7c18311e0ed84c0",
+      "kind": "Product",
+      "name": "Presence System Pops",
+      "description": null,
+      "sku": null,
+      "gtin": null,
+      "brand": null,
+      "category": null,
+      "url": "https://www.popsproof.com/see-pops-in-action",
+      "source_page": "https://www.popsproof.com/see-pops-in-action",
+      "offers": [],
+      "availability": null,
+      "variants": [],
+      "specifications": {},
+      "schema_types": [],
+      "evidence": [
+        "entity_extraction"
+      ],
+      "confidence": 0.62
+    },
+    {
+      "catalog_id": "catalog_e3b59a30135dbcdd",
+      "kind": "Product",
+      "name": "Presence System Preserve",
+      "description": null,
+      "sku": null,
+      "gtin": null,
+      "brand": null,
+      "category": null,
+      "url": "https://www.popsproof.com",
+      "source_page": "https://www.popsproof.com",
+      "offers": [],
+      "availability": null,
+      "variants": [],
+      "specifications": {},
+      "schema_types": [],
+      "evidence": [
+        "entity_extraction"
+      ],
+      "confidence": 0.62
+    },
+    {
+      "catalog_id": "catalog_6c6bad4b3721ad08",
+      "kind": "Product",
+      "name": "Presence System The",
+      "description": null,
+      "sku": null,
+      "gtin": null,
+      "brand": null,
+      "category": null,
+      "url": "https://www.popsproof.com/declaration",
+      "source_page": "https://www.popsproof.com/declaration",
+      "offers": [],
+      "availability": null,
+      "variants": [],
+      "specifications": {},
+      "schema_types": [],
+      "evidence": [
+        "entity_extraction"
+      ],
+      "confidence": 0.62
+    },
+    {
+      "catalog_id": "catalog_ad7fc7b488e2abe6",
+      "kind": "Product",
+      "name": "Pro Prime Series",
+      "description": null,
+      "sku": null,
+      "gtin": null,
+      "brand": null,
+      "category": null,
+      "url": "https://www.popsproof.com/events",
+      "source_page": "https://www.popsproof.com/events",
+      "offers": [],
+      "availability": null,
+      "variants": [],
+      "specifications": {},
+      "schema_types": [],
+      "evidence": [
+        "entity_extraction"
+      ],
+      "confidence": 0.62
+    },
+    {
+      "catalog_id": "catalog_1233fce85c5b4f2a",
+      "kind": "Product",
+      "name": "Product Boundary POPS",
+      "description": null,
+      "sku": null,
+      "gtin": null,
+      "brand": null,
+      "category": null,
+      "url": "https://www.popsproof.com/policies-procedures",
+      "source_page": "https://www.popsproof.com/policies-procedures",
+      "offers": [],
+      "availability": null,
+      "variants": [],
+      "specifications": {},
+      "schema_types": [],
+      "evidence": [
+        "entity_extraction"
+      ],
+      "confidence": 0.62
+    },
+    {
+      "catalog_id": "catalog_af3a2f5df7565f53",
+      "kind": "Product",
+      "name": "Service",
+      "description": null,
+      "sku": null,
+      "gtin": null,
+      "brand": null,
+      "category": null,
+      "url": "https://www.popsproof.com/terms",
+      "source_page": "https://www.popsproof.com/terms",
+      "offers": [],
+      "availability": null,
+      "variants": [],
+      "specifications": {},
+      "schema_types": [],
+      "evidence": [
+        "entity_extraction"
+      ],
+      "confidence": 0.62
+    },
+    {
+      "catalog_id": "catalog_720070833971b2fc",
+      "kind": "Product",
+      "name": "Service Mission Statement POPS",
+      "description": null,
+      "sku": null,
+      "gtin": null,
+      "brand": null,
+      "category": null,
+      "url": "https://www.popsproof.com/declaration",
+      "source_page": "https://www.popsproof.com/declaration",
+      "offers": [],
+      "availability": null,
+      "variants": [],
+      "specifications": {},
+      "schema_types": [],
+      "evidence": [
+        "entity_extraction"
+      ],
+      "confidence": 0.62
+    },
+    {
+      "catalog_id": "catalog_e0ac9650a2a15f31",
+      "kind": "Product",
+      "name": "Service Scope POPS",
+      "description": null,
+      "sku": null,
+      "gtin": null,
+      "brand": null,
+      "category": null,
+      "url": "https://www.popsproof.com/terms",
+      "source_page": "https://www.popsproof.com/terms",
+      "offers": [],
+      "availability": null,
+      "variants": [],
+      "specifications": {},
+      "schema_types": [],
+      "evidence": [
+        "entity_extraction"
+      ],
+      "confidence": 0.62
+    },
+    {
+      "catalog_id": "catalog_41709961c8d9c83f",
+      "kind": "Product",
+      "name": "Service Standard",
+      "description": null,
+      "sku": null,
+      "gtin": null,
+      "brand": null,
+      "category": null,
+      "url": "https://www.popsproof.com/terms",
+      "source_page": "https://www.popsproof.com/terms",
+      "offers": [],
+      "availability": null,
+      "variants": [],
+      "specifications": {},
+      "schema_types": [],
+      "evidence": [
+        "entity_extraction"
+      ],
+      "confidence": 0.62
+    }
+  ],
+  "indexes": {
+    "by_name": {
+      "local-first evidence system pops": [
+        "catalog_1f0ce91f0a21a8af"
+      ],
+      "presence system": [
+        "catalog_afdafde09f3e02b6"
+      ],
+      "presence system pops": [
+        "catalog_b7c18311e0ed84c0"
+      ],
+      "presence system preserve": [
+        "catalog_e3b59a30135dbcdd"
+      ],
+      "presence system the": [
+        "catalog_6c6bad4b3721ad08"
+      ],
+      "pro prime series": [
+        "catalog_ad7fc7b488e2abe6"
+      ],
+      "product boundary pops": [
+        "catalog_1233fce85c5b4f2a"
+      ],
+      "service": [
+        "catalog_af3a2f5df7565f53"
+      ],
+      "service mission statement pops": [
+        "catalog_720070833971b2fc"
+      ],
+      "service scope pops": [
+        "catalog_e0ac9650a2a15f31"
+      ],
+      "service standard": [
+        "catalog_41709961c8d9c83f"
+      ]
+    },
+    "by_sku_model": {},
+    "by_category": {},
+    "by_url": {
+      "https://www.popsproof.com/access": [
+        "catalog_1f0ce91f0a21a8af"
+      ],
+      "https://www.popsproof.com": [
+        "catalog_afdafde09f3e02b6",
+        "catalog_e3b59a30135dbcdd"
+      ],
+      "https://www.popsproof.com/see-pops-in-action": [
+        "catalog_b7c18311e0ed84c0"
+      ],
+      "https://www.popsproof.com/declaration": [
+        "catalog_6c6bad4b3721ad08",
+        "catalog_720070833971b2fc"
+      ],
+      "https://www.popsproof.com/events": [
+        "catalog_ad7fc7b488e2abe6"
+      ],
+      "https://www.popsproof.com/policies-procedures": [
+        "catalog_1233fce85c5b4f2a"
+      ],
+      "https://www.popsproof.com/terms": [
+        "catalog_af3a2f5df7565f53",
+        "catalog_e0ac9650a2a15f31",
+        "catalog_41709961c8d9c83f"
+      ]
+    },
+    "prices": []
+  },
+  "runtime_policy": {
+    "deterministic_lookup_first": true,
+    "llm_required_for_exact_catalog_facts": false,
+    "source_evidence_required": true
+  }
+}

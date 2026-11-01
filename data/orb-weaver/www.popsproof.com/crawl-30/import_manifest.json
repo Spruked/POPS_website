@@ -1,0 +1,576 @@
+{
+  "source_project_id": "8",
+  "source_project_name": "Pro Prime Series (source metadata label)",
+  "domain": "www.popsproof.com",
+  "crawl_job_id": "30",
+  "crawl_completed_at": "2026-10-31T14:40:45.689622",
+  "pointer_verification_run_id": "4",
+  "pointer_verification_completed_at": "2026-10-31T14:59:07.046824",
+  "source_root": "/home/bryan/projects/Orb_Weaver/vault_system/clients/www.popsproof.com",
+  "files": [
+    {
+      "path": "crawl.json",
+      "bytes": 23336497,
+      "sha256": "5d1f95322d0190d60ab375ce9c6cb576da71b734bd916e28e8ffb3ac2ced7e9d",
+      "source_path": "/home/bryan/projects/Orb_Weaver/vault_system/clients/www.popsproof.com/history/crawl_30.json"
+    },
+    {
+      "path": "website_orb_context/retrieval_index.json",
+      "bytes": 218709,
+      "sha256": "08e5621fffba953808a3bce2e8406bf13a563fd033c5165e4b659af0ff083d5a",
+      "source_path": "/home/bryan/projects/Orb_Weaver/vault_system/clients/www.popsproof.com/website_orb_context/retrieval_index.json"
+    },
+    {
+      "path": "website_orb_context/knowledge_chunks.json",
+      "bytes": 152081,
+      "sha256": "fd590c4ced6d59fa9d45f85ba1e21e8be6a11d08664e4feb2ec933c3b2d2cb74",
+      "source_path": "/home/bryan/projects/Orb_Weaver/vault_system/clients/www.popsproof.com/website_orb_context/knowledge_chunks.json"
+    },
+    {
+      "path": "website_orb_context/commercial_catalog.json",
+      "bytes": 1619,
+      "sha256": "cafcf508566b7b388fe66e366b4f92e05ac445c9aeb6345b9626632cd684c5c1",
+      "source_path": "/home/bryan/projects/Orb_Weaver/vault_system/clients/www.popsproof.com/website_orb_context/commercial_catalog.json"
+    },
+    {
+      "path": "website_orb_context/scan_stage_execution.json",
+      "bytes": 7977,
+      "sha256": "0eb76432475f47e8c0231d0284f5157b546576fc97f296fde880ea6f81193ded",
+      "source_path": "/home/bryan/projects/Orb_Weaver/vault_system/clients/www.popsproof.com/website_orb_context/scan_stage_execution.json"
+    },
+    {
+      "path": "website_orb_context/lexical_index.json",
+      "bytes": 573520,
+      "sha256": "8e8e4250baab2e4275deaf35497e27de67675aaf9f49d9fc9d18b90f32bfa366",
+      "source_path": "/home/bryan/projects/Orb_Weaver/vault_system/clients/www.popsproof.com/website_orb_context/lexical_index.json"
+    },
+    {
+      "path": "website_orb_context/route_classification.json",
+      "bytes": 4051,
+      "sha256": "425b3b7ab6655fc56a5994c59a5d7b5f98da14721a908434dabd4592349e19c5",
+      "source_path": "/home/bryan/projects/Orb_Weaver/vault_system/clients/www.popsproof.com/website_orb_context/route_classification.json"
+    },
+    {
+      "path": "website_orb_context/pointer_plot_map.json",
+      "bytes": 5694240,
+      "sha256": "ab36e155e79322044e43ad04495d9929a1ee59a6d7668535b03600f82ac4b275",
+      "source_path": "/home/bryan/projects/Orb_Weaver/vault_system/clients/www.popsproof.com/website_orb_context/pointer_plot_map.json"
+    },
+    {
+      "path": "website_orb_context/source_validation.json",
+      "bytes": 6047,
+      "sha256": "b6e3ba3e3b1f7acaec5a4afbf4688afb8cb125c6e99330e78fa1a59aafbe4180",
+      "source_path": "/home/bryan/projects/Orb_Weaver/vault_system/clients/www.popsproof.com/website_orb_context/source_validation.json"
+    },
+    {
+      "path": "website_orb_context/latest_context.json",
+      "bytes": 7192764,
+      "sha256": "56b1e8f7d1912b31deb1c350584cf9de5f72f3661191c0bb94346e907a4fdcc3",
+      "source_path": "/home/bryan/projects/Orb_Weaver/vault_system/clients/www.popsproof.com/website_orb_context/latest_context.json"
+    },
+    {
+      "path": "verification/run_4/manifest.json",
+      "bytes": 4230,
+      "sha256": "5e004e66a1e34de7d2084a794ab1c40f5b6b8a150425cefe9e9c1889b5e01702",
+      "source_path": "/home/bryan/projects/Orb_Weaver/vault_system/clients/www.popsproof.com/runs/4/manifest.json"
+    },
+    {
+      "path": "verification/run_4/checksums.json",
+      "bytes": 63968,
+      "sha256": "f5e7d0345122c8d1522fc7a95d3aa8a5c1ee7777d417b36860f9f0abe0f40d91",
+      "source_path": "/home/bryan/projects/Orb_Weaver/vault_system/clients/www.popsproof.com/runs/4/checksums.json"
+    },
+    {
+      "path": "verification/run_4/scan_contract.json",
+      "bytes": 273,
+      "sha256": "fe14395efa78a5e07e99fe47013b563d2b9701897269e9f5417abbb19316dbf1",
+      "source_path": "/home/bryan/projects/Orb_Weaver/vault_system/clients/www.popsproof.com/runs/4/scan_contract.json"
+    },
+    {
+      "path": "verification/run_4/reconciliation/pointer_authority.json",
+      "bytes": 344,
+      "sha256": "0829e27fb4cdd1c3fbdaade2b4196086e8247af8f695a405c016da0b7d71bd06",
+      "source_path": "/home/bryan/projects/Orb_Weaver/vault_system/clients/www.popsproof.com/runs/4/reconciliation/pointer_authority.json"
+    },
+    {
+      "path": "verification/run_4/reconciliation/pointer_recovery.json",
+      "bytes": 789,
+      "sha256": "6d40258f992c0c8fefbfe6980148b5f1e464fdec1c8eb42e095ed686f3c5cab8",
+      "source_path": "/home/bryan/projects/Orb_Weaver/vault_system/clients/www.popsproof.com/runs/4/reconciliation/pointer_recovery.json"
+    },
+    {
+      "path": "verification/run_4/baseline/orb/pointer_map.json",
+      "bytes": 5351541,
+      "sha256": "a0f081882ea9bcc2a8c8c9ca45cc75cb7e270b9363502e1e564c959e4c7bb6e5",
+      "source_path": "/home/bryan/projects/Orb_Weaver/vault_system/clients/www.popsproof.com/runs/4/baseline/orb/pointer_map.json"
+    },
+    {
+      "path": "verification/run_4/verification/orb/pointer_map.json",
+      "bytes": 5694240,
+      "sha256": "ab36e155e79322044e43ad04495d9929a1ee59a6d7668535b03600f82ac4b275",
+      "source_path": "/home/bryan/projects/Orb_Weaver/vault_system/clients/www.popsproof.com/runs/4/verification/orb/pointer_map.json"
+    },
+    {
+      "path": "verification/run_4/verification/orb/pointer_verification_capture.json",
+      "bytes": 4004,
+      "sha256": "26d02452d3f83360176a66042545f0b377a499487478602b0d600ffc86048534",
+      "source_path": "/home/bryan/projects/Orb_Weaver/vault_system/clients/www.popsproof.com/runs/4/verification/orb/pointer_verification_capture.json"
+    },
+    {
+      "path": "verification/run_4/verification/orb/pointer_verification_outcome.json",
+      "bytes": 368301,
+      "sha256": "693c6a13834e131c6291d2524aada07b61298fd29c76530d355f982889d8b907",
+      "source_path": "/home/bryan/projects/Orb_Weaver/vault_system/clients/www.popsproof.com/runs/4/verification/orb/pointer_verification_outcome.json"
+    },
+    {
+      "path": "verification/run_4/verification/orb/pointer_recovery_capture/batch_000/batch_manifest.json",
+      "bytes": 926,
+      "sha256": "babb9430c27ec5206900f0d919bc1b5cc4fd674967af630fc25253bafbc14b2a",
+      "source_path": "/home/bryan/projects/Orb_Weaver/vault_system/clients/www.popsproof.com/runs/4/verification/orb/pointer_recovery_capture/batch_000/batch_manifest.json"
+    },
+    {
+      "path": "verification/run_4/verification/orb/pointer_recovery_capture/batch_001/batch_manifest.json",
+      "bytes": 1016,
+      "sha256": "ae7e8136976675080f4b6b79cddf2dc0d96506e24d898e5e9113f8fc9168f2ff",
+      "source_path": "/home/bryan/projects/Orb_Weaver/vault_system/clients/www.popsproof.com/runs/4/verification/orb/pointer_recovery_capture/batch_001/batch_manifest.json"
+    },
+    {
+      "path": "verification/run_4/verification/orb/pointer_recovery_capture/batch_002/batch_manifest.json",
+      "bytes": 976,
+      "sha256": "abd8550e36f23bf1b7ceab24e6902df271cd0638990a2bd2392bd8e05161018a",
+      "source_path": "/home/bryan/projects/Orb_Weaver/vault_system/clients/www.popsproof.com/runs/4/verification/orb/pointer_recovery_capture/batch_002/batch_manifest.json"
+    },
+    {
+      "path": "verification/run_4/verification/orb/pointer_recovery_capture/batch_003/batch_manifest.json",
+      "bytes": 178,
+      "sha256": "37faa967a6b9bf7b08041d2c7ac4b1b60d1268dab53358e7c5394af5a0af29f0",
+      "source_path": "/home/bryan/projects/Orb_Weaver/vault_system/clients/www.popsproof.com/runs/4/verification/orb/pointer_recovery_capture/batch_003/batch_manifest.json"
+    },
+    {
+      "path": "verification/run_4/verification/orb/pointer_recovery_capture/batch_003/browser_capture.json",
+      "bytes": 230164,
+      "sha256": "9d396766cbeb7a0294f91901ca62ec5bb7b6a32eb39140b86953a3a47fa3c1bc",
+      "source_path": "/home/bryan/projects/Orb_Weaver/vault_system/clients/www.popsproof.com/runs/4/verification/orb/pointer_recovery_capture/batch_003/browser_capture.json"
+    },
+    {
+      "path": "verification/run_4/verification/orb/pointer_recovery_capture/batch_003/route-_about-mobile-pass2-segment6.png",
+      "bytes": 240784,
+      "sha256": "4831e54e988d545c44c7c0acb19f9e954842607d825cd0e64727258655499c6e",
+      "source_path": "/home/bryan/projects/Orb_Weaver/vault_system/clients/www.popsproof.com/runs/4/verification/orb/pointer_recovery_capture/batch_003/route-_about-mobile-pass2-segment6.png"
+    },
+    {
+      "path": "verification/run_4/verification/orb/pointer_recovery_capture/batch_003/route-_about-mobile-pass2-segment14.png",
+      "bytes": 153578,
+      "sha256": "63d23da5a352596f3f8f57c49c57498dc86fe6a371210141a322bbe52d6838ef",
+      "source_path": "/home/bryan/projects/Orb_Weaver/vault_system/clients/www.popsproof.com/runs/4/verification/orb/pointer_recovery_capture/batch_003/route-_about-mobile-pass2-segment14.png"
+    },
+    {
+      "path": "verification/run_4/verification/orb/pointer_recovery_capture/batch_003/route-_about-desktop-pass2-segment7.png",
+      "bytes": 340352,
+      "sha256": "6136903249bcd6f728ae45cd1b6c225b8490c5e07bc5fa61da83257d2f6b1a6e",
+      "source_path": "/home/bryan/projects/Orb_Weaver/vault_system/clients/www.popsproof.com/runs/4/verification/orb/pointer_recovery_capture/batch_003/route-_about-desktop-pass2-segment7.png"
+    },
+    {
+      "path": "verification/run_4/verification/orb/pointer_recovery_capture/batch_003/route-_pledge-desktop-pass2-segment0.png",
+      "bytes": 515340,
+      "sha256": "bf16d2e50c21d7736fc5efd60080d3a94c59d5d02272ee020465043f000ea8f6",
+      "source_path": "/home/bryan/projects/Orb_Weaver/vault_system/clients/www.popsproof.com/runs/4/verification/orb/pointer_recovery_capture/batch_003/route-_pledge-desktop-pass2-segment0.png"
+    },
+    {
+      "path": "verification/run_4/verification/orb/pointer_recovery_capture/batch_003/route-_about-mobile-pass2-segment10.png",
+      "bytes": 262522,
+      "sha256": "77b7634bc6d2b21732a7e0239a7e5669013b89216c9d6dfd6d68ebe899f16d2b",
+      "source_path": "/home/bryan/projects/Orb_Weaver/vault_system/clients/www.popsproof.com/runs/4/verification/orb/pointer_recovery_capture/batch_003/route-_about-mobile-pass2-segment10.png"
+    },
+    {
+      "path": "verification/run_4/verification/orb/pointer_recovery_capture/batch_003/route-_pledge-desktop-pass2-segment4.png",
+      "bytes": 321568,
+      "sha256": "0dad5d2082385f1e72ab98a4f33c7588723c8fea0e6744422f5399b5fcee35ed",
+      "source_path": "/home/bryan/projects/Orb_Weaver/vault_system/clients/www.popsproof.com/runs/4/verification/orb/pointer_recovery_capture/batch_003/route-_pledge-desktop-pass2-segment4.png"
+    },
+    {
+      "path": "verification/run_4/verification/orb/pointer_recovery_capture/batch_003/route-_about-mobile-pass2-segment9.png",
+      "bytes": 239685,
+      "sha256": "82b1071f608f28e578e9bb1f1b1e0edf04c998a581ac7b6a25f868bc696e308b",
+      "source_path": "/home/bryan/projects/Orb_Weaver/vault_system/clients/www.popsproof.com/runs/4/verification/orb/pointer_recovery_capture/batch_003/route-_about-mobile-pass2-segment9.png"
+    },
+    {
+      "path": "verification/run_4/verification/orb/pointer_recovery_capture/batch_003/route-_about-mobile-pass1-segment13.png",
+      "bytes": 184308,
+      "sha256": "39615006dfe1f14924a844d96bf9b9f5857d741704a9d5d2a0902d5b705fd8ef",
+      "source_path": "/home/bryan/projects/Orb_Weaver/vault_system/clients/www.popsproof.com/runs/4/verification/orb/pointer_recovery_capture/batch_003/route-_about-mobile-pass1-segment13.png"
+    },
+    {
+      "path": "verification/run_4/verification/orb/pointer_recovery_capture/batch_003/route-_about-mobile-pass1-segment12.png",
+      "bytes": 248558,
+      "sha256": "a1c7a041864601b5cdfb4c72f1828d0f3a85c1a57b2ce3e59c6d7c8b77102d76",
+      "source_path": "/home/bryan/projects/Orb_Weaver/vault_system/clients/www.popsproof.com/runs/4/verification/orb/pointer_recovery_capture/batch_003/route-_about-mobile-pass1-segment12.png"
+    },
+    {
+      "path": "verification/run_4/verification/orb/pointer_recovery_capture/batch_003/route-_pledge-desktop-pass1-segment4.png",
+      "bytes": 324232,
+      "sha256": "83f92315f3d57de41ba9c8b9d0a39d32719b08bfb8d18c5036d869b631d0765e",
+      "source_path": "/home/bryan/projects/Orb_Weaver/vault_system/clients/www.popsproof.com/runs/4/verification/orb/pointer_recovery_capture/batch_003/route-_pledge-desktop-pass1-segment4.png"
+    },
+    {
+      "path": "verification/run_4/verification/orb/pointer_recovery_capture/batch_003/route-_about-desktop-pass1-segment0.png",
+      "bytes": 418844,
+      "sha256": "953e9d9366c2abffbf732d6ca30c716ecd6370f5ad95b57014de4d0df406b258",
+      "source_path": "/home/bryan/projects/Orb_Weaver/vault_system/clients/www.popsproof.com/runs/4/verification/orb/pointer_recovery_capture/batch_003/route-_about-desktop-pass1-segment0.png"
+    },
+    {
+      "path": "verification/run_4/verification/orb/pointer_recovery_capture/batch_003/route-_pledge-desktop-pass1-segment3.png",
+      "bytes": 390374,
+      "sha256": "5dee10f74ad8c49e4eba221fd6c5e99ef0a87868975cb8edea34d7394a2ef6e2",
+      "source_path": "/home/bryan/projects/Orb_Weaver/vault_system/clients/www.popsproof.com/runs/4/verification/orb/pointer_recovery_capture/batch_003/route-_pledge-desktop-pass1-segment3.png"
+    },
+    {
+      "path": "verification/run_4/verification/orb/pointer_recovery_capture/batch_003/route-_about-desktop-pass2-segment5.png",
+      "bytes": 566678,
+      "sha256": "038f5bd7476dcddd599ed7114ba43eff6748c7c29ad00b00744cb30fe0c29642",
+      "source_path": "/home/bryan/projects/Orb_Weaver/vault_system/clients/www.popsproof.com/runs/4/verification/orb/pointer_recovery_capture/batch_003/route-_about-desktop-pass2-segment5.png"
+    },
+    {
+      "path": "verification/run_4/verification/orb/pointer_recovery_capture/batch_003/route-_about-mobile-pass1-segment7.png",
+      "bytes": 253785,
+      "sha256": "6383471e298f2245c6872162a84939aa8ea869478e1b5159e1dfa1248822b739",
+      "source_path": "/home/bryan/projects/Orb_Weaver/vault_system/clients/www.popsproof.com/runs/4/verification/orb/pointer_recovery_capture/batch_003/route-_about-mobile-pass1-segment7.png"
+    },
+    {
+      "path": "verification/run_4/verification/orb/pointer_recovery_capture/batch_003/route-_about-mobile-pass1-segment0.png",
+      "bytes": 206087,
+      "sha256": "9799422eb633e988f572da93db17c7f16991c3d05126592d983ab2a3dfacc802",
+      "source_path": "/home/bryan/projects/Orb_Weaver/vault_system/clients/www.popsproof.com/runs/4/verification/orb/pointer_recovery_capture/batch_003/route-_about-mobile-pass1-segment0.png"
+    },
+    {
+      "path": "verification/run_4/verification/orb/pointer_recovery_capture/batch_003/route-_pledge-desktop-pass1-segment0.png",
+      "bytes": 518972,
+      "sha256": "6f0082b46bb6f169982079b4d2c9fba7cd78bdf7e68e44b0d764383af53e0545",
+      "source_path": "/home/bryan/projects/Orb_Weaver/vault_system/clients/www.popsproof.com/runs/4/verification/orb/pointer_recovery_capture/batch_003/route-_pledge-desktop-pass1-segment0.png"
+    },
+    {
+      "path": "verification/run_4/verification/orb/pointer_recovery_capture/batch_003/route-_pledge-mobile-pass2-segment2.png",
+      "bytes": 238493,
+      "sha256": "16de6c07df3894f376f6cd4708fa975d257e74ad2e37fab4d7d9c8abe46ef86a",
+      "source_path": "/home/bryan/projects/Orb_Weaver/vault_system/clients/www.popsproof.com/runs/4/verification/orb/pointer_recovery_capture/batch_003/route-_pledge-mobile-pass2-segment2.png"
+    },
+    {
+      "path": "verification/run_4/verification/orb/pointer_recovery_capture/batch_003/route-_pledge-mobile-pass1-segment6.png",
+      "bytes": 158580,
+      "sha256": "f4ec62da25a294ca253d7a526b90f9ad20df8e5fa09062c1d4ee4a68b90fae05",
+      "source_path": "/home/bryan/projects/Orb_Weaver/vault_system/clients/www.popsproof.com/runs/4/verification/orb/pointer_recovery_capture/batch_003/route-_pledge-mobile-pass1-segment6.png"
+    },
+    {
+      "path": "verification/run_4/verification/orb/pointer_recovery_capture/batch_003/route-_pledge-desktop-pass2-segment3.png",
+      "bytes": 388213,
+      "sha256": "b97d0fac086796fe3c19a86b31d8cf0b551853b0b774bf4dbac0851e38a31ad3",
+      "source_path": "/home/bryan/projects/Orb_Weaver/vault_system/clients/www.popsproof.com/runs/4/verification/orb/pointer_recovery_capture/batch_003/route-_pledge-desktop-pass2-segment3.png"
+    },
+    {
+      "path": "verification/run_4/verification/orb/pointer_recovery_capture/batch_003/route-_about-mobile-pass1-segment14.png",
+      "bytes": 155445,
+      "sha256": "2cd378fc7ac822a46b3933d78e7b4b0af7576c20b8d5effcfb7ecbd68e7b54b0",
+      "source_path": "/home/bryan/projects/Orb_Weaver/vault_system/clients/www.popsproof.com/runs/4/verification/orb/pointer_recovery_capture/batch_003/route-_about-mobile-pass1-segment14.png"
+    },
+    {
+      "path": "verification/run_4/verification/orb/pointer_recovery_capture/batch_003/route-_about-desktop-pass1-segment3.png",
+      "bytes": 548075,
+      "sha256": "1b0e843d0343c5a630a9e8b74e9766d1e029d4e06ccad6e6b0feeffc8df1a316",
+      "source_path": "/home/bryan/projects/Orb_Weaver/vault_system/clients/www.popsproof.com/runs/4/verification/orb/pointer_recovery_capture/batch_003/route-_about-desktop-pass1-segment3.png"
+    },
+    {
+      "path": "verification/run_4/verification/orb/pointer_recovery_capture/batch_003/route-_about-desktop-pass2-segment1.png",
+      "bytes": 526615,
+      "sha256": "7d3921810bd9d819facd5262c7b4807076c04807d02ca105166415b05219bcc2",
+      "source_path": "/home/bryan/projects/Orb_Weaver/vault_system/clients/www.popsproof.com/runs/4/verification/orb/pointer_recovery_capture/batch_003/route-_about-desktop-pass2-segment1.png"
+    },
+    {
+      "path": "verification/run_4/verification/orb/pointer_recovery_capture/batch_003/route-_about-mobile-pass2-segment0.png",
+      "bytes": 205688,
+      "sha256": "f4fcbaae394a1d022c0c6c76cda6dbcdb88b675afb4bc2aa28c962f7d352e6b1",
+      "source_path": "/home/bryan/projects/Orb_Weaver/vault_system/clients/www.popsproof.com/runs/4/verification/orb/pointer_recovery_capture/batch_003/route-_about-mobile-pass2-segment0.png"
+    },
+    {
+      "path": "verification/run_4/verification/orb/pointer_recovery_capture/batch_003/route-_about-desktop-pass2-segment3.png",
+      "bytes": 546346,
+      "sha256": "52079748b19c3f54bb11faae68576c0a746ce7a9c1e46619edcfbfd831bf2825",
+      "source_path": "/home/bryan/projects/Orb_Weaver/vault_system/clients/www.popsproof.com/runs/4/verification/orb/pointer_recovery_capture/batch_003/route-_about-desktop-pass2-segment3.png"
+    },
+    {
+      "path": "verification/run_4/verification/orb/pointer_recovery_capture/batch_003/route-_pledge-mobile-pass1-segment0.png",
+      "bytes": 240735,
+      "sha256": "f6571ccfc098a6ab977c25f49718840f0daad4c398e6dfaaaa28ac6275f7826b",
+      "source_path": "/home/bryan/projects/Orb_Weaver/vault_system/clients/www.popsproof.com/runs/4/verification/orb/pointer_recovery_capture/batch_003/route-_pledge-mobile-pass1-segment0.png"
+    },
+    {
+      "path": "verification/run_4/verification/orb/pointer_recovery_capture/batch_003/route-_about-mobile-pass1-segment10.png",
+      "bytes": 262610,
+      "sha256": "4b6867b32cd9d4223cd7400ece7828ee6f6c706900c378202f4653c4e95544f8",
+      "source_path": "/home/bryan/projects/Orb_Weaver/vault_system/clients/www.popsproof.com/runs/4/verification/orb/pointer_recovery_capture/batch_003/route-_about-mobile-pass1-segment10.png"
+    },
+    {
+      "path": "verification/run_4/verification/orb/pointer_recovery_capture/batch_003/route-_about-mobile-pass2-segment12.png",
+      "bytes": 247470,
+      "sha256": "9765b9878a43c5454fd1a754925bf28c594d1dff8ed4d4b8efb20dccdb3e356c",
+      "source_path": "/home/bryan/projects/Orb_Weaver/vault_system/clients/www.popsproof.com/runs/4/verification/orb/pointer_recovery_capture/batch_003/route-_about-mobile-pass2-segment12.png"
+    },
+    {
+      "path": "verification/run_4/verification/orb/pointer_recovery_capture/batch_003/route-_pledge-mobile-pass2-segment1.png",
+      "bytes": 241063,
+      "sha256": "fd2839a1958887d05c970d79edaf9bce0d2b24b5ef379b00fb53c7915013b69a",
+      "source_path": "/home/bryan/projects/Orb_Weaver/vault_system/clients/www.popsproof.com/runs/4/verification/orb/pointer_recovery_capture/batch_003/route-_pledge-mobile-pass2-segment1.png"
+    },
+    {
+      "path": "verification/run_4/verification/orb/pointer_recovery_capture/batch_003/route-_about-mobile-pass1-segment11.png",
+      "bytes": 249190,
+      "sha256": "09ced14b51e9526ceb5fa25d75976ea0eca376268c26b73e4da6129f7904049b",
+      "source_path": "/home/bryan/projects/Orb_Weaver/vault_system/clients/www.popsproof.com/runs/4/verification/orb/pointer_recovery_capture/batch_003/route-_about-mobile-pass1-segment11.png"
+    },
+    {
+      "path": "verification/run_4/verification/orb/pointer_recovery_capture/batch_003/route-_pledge-mobile-pass1-segment1.png",
+      "bytes": 238303,
+      "sha256": "069c8b430509d813b62dd94f51e17e723e17e43bc76a29da48ecd0ee3abe2e8a",
+      "source_path": "/home/bryan/projects/Orb_Weaver/vault_system/clients/www.popsproof.com/runs/4/verification/orb/pointer_recovery_capture/batch_003/route-_pledge-mobile-pass1-segment1.png"
+    },
+    {
+      "path": "verification/run_4/verification/orb/pointer_recovery_capture/batch_003/route-_pledge-mobile-pass1-segment5.png",
+      "bytes": 188667,
+      "sha256": "76152f83807d3d3d7fb34e10e98e3807fd31f900189eebd35a9fcea952a11345",
+      "source_path": "/home/bryan/projects/Orb_Weaver/vault_system/clients/www.popsproof.com/runs/4/verification/orb/pointer_recovery_capture/batch_003/route-_pledge-mobile-pass1-segment5.png"
+    },
+    {
+      "path": "verification/run_4/verification/orb/pointer_recovery_capture/batch_003/route-_pledge-desktop-pass2-segment2.png",
+      "bytes": 483373,
+      "sha256": "1254b67a512b8000c51af01da6b09eef151369a9194ff59c5a196ed4d445b4a9",
+      "source_path": "/home/bryan/projects/Orb_Weaver/vault_system/clients/www.popsproof.com/runs/4/verification/orb/pointer_recovery_capture/batch_003/route-_pledge-desktop-pass2-segment2.png"
+    },
+    {
+      "path": "verification/run_4/verification/orb/pointer_recovery_capture/batch_003/route-_about-mobile-pass1-segment2.png",
+      "bytes": 248358,
+      "sha256": "db49fcb9e6d9bd25fa7f0e02ed1ec97890923c2d52e6088d88cd485c504d6bdc",
+      "source_path": "/home/bryan/projects/Orb_Weaver/vault_system/clients/www.popsproof.com/runs/4/verification/orb/pointer_recovery_capture/batch_003/route-_about-mobile-pass1-segment2.png"
+    },
+    {
+      "path": "verification/run_4/verification/orb/pointer_recovery_capture/batch_003/route-_about-desktop-pass2-segment2.png",
+      "bytes": 511836,
+      "sha256": "d1c31b383c0998166a146c9d52b4178167e935add02333f48413f3294fd4abfc",
+      "source_path": "/home/bryan/projects/Orb_Weaver/vault_system/clients/www.popsproof.com/runs/4/verification/orb/pointer_recovery_capture/batch_003/route-_about-desktop-pass2-segment2.png"
+    },
+    {
+      "path": "verification/run_4/verification/orb/pointer_recovery_capture/batch_003/route-_about-desktop-pass1-segment5.png",
+      "bytes": 560814,
+      "sha256": "61affb9b8ad4d786b556fb1ae56f97d5f92be666476693fbb6c06980b9042052",
+      "source_path": "/home/bryan/projects/Orb_Weaver/vault_system/clients/www.popsproof.com/runs/4/verification/orb/pointer_recovery_capture/batch_003/route-_about-desktop-pass1-segment5.png"
+    },
+    {
+      "path": "verification/run_4/verification/orb/pointer_recovery_capture/batch_003/route-_about-mobile-pass2-segment11.png",
+      "bytes": 247750,
+      "sha256": "95eb17addb6262ce4a77bd40a7030d4c61a534f37379464eb4012719db70afea",
+      "source_path": "/home/bryan/projects/Orb_Weaver/vault_system/clients/www.popsproof.com/runs/4/verification/orb/pointer_recovery_capture/batch_003/route-_about-mobile-pass2-segment11.png"
+    },
+    {
+      "path": "verification/run_4/verification/orb/pointer_recovery_capture/batch_003/route-_pledge-mobile-pass2-segment0.png",
+      "bytes": 249767,
+      "sha256": "e863018d1e963016f95f6cd75295f92111568c47686e18e76d6cea536292e531",
+      "source_path": "/home/bryan/projects/Orb_Weaver/vault_system/clients/www.popsproof.com/runs/4/verification/orb/pointer_recovery_capture/batch_003/route-_pledge-mobile-pass2-segment0.png"
+    },
+    {
+      "path": "verification/run_4/verification/orb/pointer_recovery_capture/batch_003/route-_pledge-mobile-pass1-segment2.png",
+      "bytes": 236453,
+      "sha256": "c3685e0e039dd96cd2d7263f071e28e628e646b3d3a69f10a0ef36967286976e",
+      "source_path": "/home/bryan/projects/Orb_Weaver/vault_system/clients/www.popsproof.com/runs/4/verification/orb/pointer_recovery_capture/batch_003/route-_pledge-mobile-pass1-segment2.png"
+    },
+    {
+      "path": "verification/run_4/verification/orb/pointer_recovery_capture/batch_003/route-_about-mobile-pass2-segment7.png",
+      "bytes": 250145,
+      "sha256": "bc4a01b0a51755d9018a8b2fe1df68a58a340cf24a297f09c0f47932339ddb55",
+      "source_path": "/home/bryan/projects/Orb_Weaver/vault_system/clients/www.popsproof.com/runs/4/verification/orb/pointer_recovery_capture/batch_003/route-_about-mobile-pass2-segment7.png"
+    },
+    {
+      "path": "verification/run_4/verification/orb/pointer_recovery_capture/batch_003/route-_about-mobile-pass1-segment1.png",
+      "bytes": 260224,
+      "sha256": "9de10f46b0f4109ce617e031f9c3e101599fecf95a39d55e34cfac7a1140c078",
+      "source_path": "/home/bryan/projects/Orb_Weaver/vault_system/clients/www.popsproof.com/runs/4/verification/orb/pointer_recovery_capture/batch_003/route-_about-mobile-pass1-segment1.png"
+    },
+    {
+      "path": "verification/run_4/verification/orb/pointer_recovery_capture/batch_003/route-_about-desktop-pass2-segment6.png",
+      "bytes": 547786,
+      "sha256": "c839d841d2d63a442f5e9aa7a71bd2c651e5fe5ee4731d46a5ee665b6e818d60",
+      "source_path": "/home/bryan/projects/Orb_Weaver/vault_system/clients/www.popsproof.com/runs/4/verification/orb/pointer_recovery_capture/batch_003/route-_about-desktop-pass2-segment6.png"
+    },
+    {
+      "path": "verification/run_4/verification/orb/pointer_recovery_capture/batch_003/route-_pledge-mobile-pass2-segment4.png",
+      "bytes": 214360,
+      "sha256": "fd20b0d29efd362dd88c322d9936a4ed9ca064b044eafae1962a9420c67dbf9e",
+      "source_path": "/home/bryan/projects/Orb_Weaver/vault_system/clients/www.popsproof.com/runs/4/verification/orb/pointer_recovery_capture/batch_003/route-_pledge-mobile-pass2-segment4.png"
+    },
+    {
+      "path": "verification/run_4/verification/orb/pointer_recovery_capture/batch_003/route-_about-desktop-pass2-segment0.png",
+      "bytes": 416683,
+      "sha256": "e306ae459ea4ddf65348dee4746355cd85861c71603624e2110b28c59330cb1e",
+      "source_path": "/home/bryan/projects/Orb_Weaver/vault_system/clients/www.popsproof.com/runs/4/verification/orb/pointer_recovery_capture/batch_003/route-_about-desktop-pass2-segment0.png"
+    },
+    {
+      "path": "verification/run_4/verification/orb/pointer_recovery_capture/batch_003/route-_about-mobile-pass1-segment5.png",
+      "bytes": 226782,
+      "sha256": "014f776270753554a04d050be2be20b4789fbd174ec64444526efd6e6bae1aa4",
+      "source_path": "/home/bryan/projects/Orb_Weaver/vault_system/clients/www.popsproof.com/runs/4/verification/orb/pointer_recovery_capture/batch_003/route-_about-mobile-pass1-segment5.png"
+    },
+    {
+      "path": "verification/run_4/verification/orb/pointer_recovery_capture/batch_003/route-_pledge-desktop-pass2-segment1.png",
+      "bytes": 482286,
+      "sha256": "3049666fcc49a06f7c34ef84841a132e439caa3f7fce012f482d4d678a54d93a",
+      "source_path": "/home/bryan/projects/Orb_Weaver/vault_system/clients/www.popsproof.com/runs/4/verification/orb/pointer_recovery_capture/batch_003/route-_pledge-desktop-pass2-segment1.png"
+    },
+    {
+      "path": "verification/run_4/verification/orb/pointer_recovery_capture/batch_003/route-_about-mobile-pass2-segment3.png",
+      "bytes": 222267,
+      "sha256": "f0625d22b0aa6c1e0754eaaa694b88383d8455e256bcf1382ccf6c91b2e33a96",
+      "source_path": "/home/bryan/projects/Orb_Weaver/vault_system/clients/www.popsproof.com/runs/4/verification/orb/pointer_recovery_capture/batch_003/route-_about-mobile-pass2-segment3.png"
+    },
+    {
+      "path": "verification/run_4/verification/orb/pointer_recovery_capture/batch_003/route-_pledge-mobile-pass1-segment3.png",
+      "bytes": 246657,
+      "sha256": "dec80e6cbcd877ae8fe045c9b4e73e099912e388f7a0d86360c30514f37bfd41",
+      "source_path": "/home/bryan/projects/Orb_Weaver/vault_system/clients/www.popsproof.com/runs/4/verification/orb/pointer_recovery_capture/batch_003/route-_pledge-mobile-pass1-segment3.png"
+    },
+    {
+      "path": "verification/run_4/verification/orb/pointer_recovery_capture/batch_003/route-_pledge-desktop-pass1-segment1.png",
+      "bytes": 475356,
+      "sha256": "9d5ab9839a13bc3f8a40b9900b5a7c2427b53fd4340501be79b83f5c7d2040d8",
+      "source_path": "/home/bryan/projects/Orb_Weaver/vault_system/clients/www.popsproof.com/runs/4/verification/orb/pointer_recovery_capture/batch_003/route-_pledge-desktop-pass1-segment1.png"
+    },
+    {
+      "path": "verification/run_4/verification/orb/pointer_recovery_capture/batch_003/route-_about-mobile-pass1-segment4.png",
+      "bytes": 243160,
+      "sha256": "63651906dedd57642335afcc579735a251b266d775bc4eb4d487d7e7346853a2",
+      "source_path": "/home/bryan/projects/Orb_Weaver/vault_system/clients/www.popsproof.com/runs/4/verification/orb/pointer_recovery_capture/batch_003/route-_about-mobile-pass1-segment4.png"
+    },
+    {
+      "path": "verification/run_4/verification/orb/pointer_recovery_capture/batch_003/route-_about-mobile-pass2-segment4.png",
+      "bytes": 242959,
+      "sha256": "49d708efe4bb9978187d797e50d935f9a1d21918f9dc437101020c0c229c8e61",
+      "source_path": "/home/bryan/projects/Orb_Weaver/vault_system/clients/www.popsproof.com/runs/4/verification/orb/pointer_recovery_capture/batch_003/route-_about-mobile-pass2-segment4.png"
+    },
+    {
+      "path": "verification/run_4/verification/orb/pointer_recovery_capture/batch_003/route-_pledge-mobile-pass2-segment5.png",
+      "bytes": 189885,
+      "sha256": "7094ea7e3cefef36fe2763f76227023dd63090e02ab32065ec05cdbf96dd811f",
+      "source_path": "/home/bryan/projects/Orb_Weaver/vault_system/clients/www.popsproof.com/runs/4/verification/orb/pointer_recovery_capture/batch_003/route-_pledge-mobile-pass2-segment5.png"
+    },
+    {
+      "path": "verification/run_4/verification/orb/pointer_recovery_capture/batch_003/route-_about-mobile-pass2-segment8.png",
+      "bytes": 232659,
+      "sha256": "2a14240d92cfafa1e7a4053bb6dd7e6c99bd2d7c91002b5b9b479c471835bea9",
+      "source_path": "/home/bryan/projects/Orb_Weaver/vault_system/clients/www.popsproof.com/runs/4/verification/orb/pointer_recovery_capture/batch_003/route-_about-mobile-pass2-segment8.png"
+    },
+    {
+      "path": "verification/run_4/verification/orb/pointer_recovery_capture/batch_003/route-_pledge-desktop-pass1-segment2.png",
+      "bytes": 478119,
+      "sha256": "5b2f22ffea6d163eb458f5191fd7278ac439b33897f64d3904733f6fd080180c",
+      "source_path": "/home/bryan/projects/Orb_Weaver/vault_system/clients/www.popsproof.com/runs/4/verification/orb/pointer_recovery_capture/batch_003/route-_pledge-desktop-pass1-segment2.png"
+    },
+    {
+      "path": "verification/run_4/verification/orb/pointer_recovery_capture/batch_003/route-_about-mobile-pass1-segment9.png",
+      "bytes": 242996,
+      "sha256": "b74205adc69584b90aaa25ee630725ebee035f2e9eb89c7b1399c5c8ee7a9f54",
+      "source_path": "/home/bryan/projects/Orb_Weaver/vault_system/clients/www.popsproof.com/runs/4/verification/orb/pointer_recovery_capture/batch_003/route-_about-mobile-pass1-segment9.png"
+    },
+    {
+      "path": "verification/run_4/verification/orb/pointer_recovery_capture/batch_003/route-_about-mobile-pass2-segment2.png",
+      "bytes": 247002,
+      "sha256": "592d99185b51faf8561050db589e4b76a2dbd2b2044129d3bbb81a28c391445b",
+      "source_path": "/home/bryan/projects/Orb_Weaver/vault_system/clients/www.popsproof.com/runs/4/verification/orb/pointer_recovery_capture/batch_003/route-_about-mobile-pass2-segment2.png"
+    },
+    {
+      "path": "verification/run_4/verification/orb/pointer_recovery_capture/batch_003/route-_about-desktop-pass2-segment4.png",
+      "bytes": 538824,
+      "sha256": "e105e171ddc903f3aa42a5406895ea7a1c01d67477e50f00e98e13837a3f9659",
+      "source_path": "/home/bryan/projects/Orb_Weaver/vault_system/clients/www.popsproof.com/runs/4/verification/orb/pointer_recovery_capture/batch_003/route-_about-desktop-pass2-segment4.png"
+    },
+    {
+      "path": "verification/run_4/verification/orb/pointer_recovery_capture/batch_003/route-_about-mobile-pass2-segment1.png",
+      "bytes": 262569,
+      "sha256": "5546d05a947de994d92b90b77c1637c388e20c0d7578c24ee1a96b16d834d0f2",
+      "source_path": "/home/bryan/projects/Orb_Weaver/vault_system/clients/www.popsproof.com/runs/4/verification/orb/pointer_recovery_capture/batch_003/route-_about-mobile-pass2-segment1.png"
+    },
+    {
+      "path": "verification/run_4/verification/orb/pointer_recovery_capture/batch_003/route-_pledge-mobile-pass2-segment6.png",
+      "bytes": 152830,
+      "sha256": "4f1b2a5f3d2786bac77032f4af8bf807169b1b331861151ce544ca9edef47eda",
+      "source_path": "/home/bryan/projects/Orb_Weaver/vault_system/clients/www.popsproof.com/runs/4/verification/orb/pointer_recovery_capture/batch_003/route-_pledge-mobile-pass2-segment6.png"
+    },
+    {
+      "path": "verification/run_4/verification/orb/pointer_recovery_capture/batch_003/route-_about-desktop-pass1-segment7.png",
+      "bytes": 331525,
+      "sha256": "bac4f4f230098977920a33bf88e9328ffdb5344c841e18f7ba0ee2ecc694af89",
+      "source_path": "/home/bryan/projects/Orb_Weaver/vault_system/clients/www.popsproof.com/runs/4/verification/orb/pointer_recovery_capture/batch_003/route-_about-desktop-pass1-segment7.png"
+    },
+    {
+      "path": "verification/run_4/verification/orb/pointer_recovery_capture/batch_003/route-_pledge-mobile-pass1-segment4.png",
+      "bytes": 219364,
+      "sha256": "40ea9d60f0c8cf40e8e9b58f8dc6490863f3de13eb6c19b43dbbb6bf379d7b3e",
+      "source_path": "/home/bryan/projects/Orb_Weaver/vault_system/clients/www.popsproof.com/runs/4/verification/orb/pointer_recovery_capture/batch_003/route-_pledge-mobile-pass1-segment4.png"
+    },
+    {
+      "path": "verification/run_4/verification/orb/pointer_recovery_capture/batch_003/route-_about-desktop-pass1-segment1.png",
+      "bytes": 522719,
+      "sha256": "1962377ba57d96257799ba2250cd117377ad6215b0485652c1c644b88454571a",
+      "source_path": "/home/bryan/projects/Orb_Weaver/vault_system/clients/www.popsproof.com/runs/4/verification/orb/pointer_recovery_capture/batch_003/route-_about-desktop-pass1-segment1.png"
+    },
+    {
+      "path": "verification/run_4/verification/orb/pointer_recovery_capture/batch_003/route-_about-mobile-pass2-segment13.png",
+      "bytes": 177131,
+      "sha256": "46d4e32823408ff16f8bfafc9351bce292b01868c753714d70227b69ba5cee56",
+      "source_path": "/home/bryan/projects/Orb_Weaver/vault_system/clients/www.popsproof.com/runs/4/verification/orb/pointer_recovery_capture/batch_003/route-_about-mobile-pass2-segment13.png"
+    },
+    {
+      "path": "verification/run_4/verification/orb/pointer_recovery_capture/batch_003/route-_about-desktop-pass1-segment4.png",
+      "bytes": 530953,
+      "sha256": "7fb3d753e93d067d896373027da49b3acc6e93c3660d9c3831d7d44c687a9770",
+      "source_path": "/home/bryan/projects/Orb_Weaver/vault_system/clients/www.popsproof.com/runs/4/verification/orb/pointer_recovery_capture/batch_003/route-_about-desktop-pass1-segment4.png"
+    },
+    {
+      "path": "verification/run_4/verification/orb/pointer_recovery_capture/batch_003/route-_about-mobile-pass2-segment5.png",
+      "bytes": 232060,
+      "sha256": "3f7ef55bd72ed1c30d5c52c0fe800aeb1f362eab26edb125a6175650a0fb475e",
+      "source_path": "/home/bryan/projects/Orb_Weaver/vault_system/clients/www.popsproof.com/runs/4/verification/orb/pointer_recovery_capture/batch_003/route-_about-mobile-pass2-segment5.png"
+    },
+    {
+      "path": "verification/run_4/verification/orb/pointer_recovery_capture/batch_003/route-_about-mobile-pass1-segment3.png",
+      "bytes": 219997,
+      "sha256": "9a3fb57bf5c2916ed8e3a62db9b9be3216b2e4ba078502b42c87167eae118bb1",
+      "source_path": "/home/bryan/projects/Orb_Weaver/vault_system/clients/www.popsproof.com/runs/4/verification/orb/pointer_recovery_capture/batch_003/route-_about-mobile-pass1-segment3.png"
+    },
+    {
+      "path": "verification/run_4/verification/orb/pointer_recovery_capture/batch_003/route-_about-mobile-pass1-segment6.png",
+      "bytes": 235703,
+      "sha256": "c76b7de861139433c253d7368c2067bc6e4a1f7394c6fea657a225907bc2462c",
+      "source_path": "/home/bryan/projects/Orb_Weaver/vault_system/clients/www.popsproof.com/runs/4/verification/orb/pointer_recovery_capture/batch_003/route-_about-mobile-pass1-segment6.png"
+    },
+    {
+      "path": "verification/run_4/verification/orb/pointer_recovery_capture/batch_003/route-_about-desktop-pass1-segment2.png",
+      "bytes": 515079,
+      "sha256": "fafe8d3e750683bdd36c2d3bd71a2d62dcad6aa218dedce17c2abba7b6c202ad",
+      "source_path": "/home/bryan/projects/Orb_Weaver/vault_system/clients/www.popsproof.com/runs/4/verification/orb/pointer_recovery_capture/batch_003/route-_about-desktop-pass1-segment2.png"
+    },
+    {
+      "path": "verification/run_4/verification/orb/pointer_recovery_capture/batch_003/route-_about-mobile-pass1-segment8.png",
+      "bytes": 235460,
+      "sha256": "13f43ab7a97419ce01fba22be2b05dfe639855b9b11712a701cf190b40cc371a",
+      "source_path": "/home/bryan/projects/Orb_Weaver/vault_system/clients/www.popsproof.com/runs/4/verification/orb/pointer_recovery_capture/batch_003/route-_about-mobile-pass1-segment8.png"
+    },
+    {
+      "path": "verification/run_4/verification/orb/pointer_recovery_capture/batch_003/route-_pledge-mobile-pass2-segment3.png",
+      "bytes": 248100,
+      "sha256": "8b6fb0839bddd9cec6b9744dbe73d0d3d4f5f26b0255c59eb73d116c0ee97152",
+      "source_path": "/home/bryan/projects/Orb_Weaver/vault_system/clients/www.popsproof.com/runs/4/verification/orb/pointer_recovery_capture/batch_003/route-_pledge-mobile-pass2-segment3.png"
+    },
+    {
+      "path": "verification/run_4/verification/orb/pointer_recovery_capture/batch_003/route-_about-desktop-pass1-segment6.png",
+      "bytes": 544013,
+      "sha256": "d9fb833cb74de4074d4ad0104c9864c48736c6c7625b20847ec5230f4d7bc60a",
+      "source_path": "/home/bryan/projects/Orb_Weaver/vault_system/clients/www.popsproof.com/runs/4/verification/orb/pointer_recovery_capture/batch_003/route-_about-desktop-pass1-segment6.png"
+    }
+  ]
+}

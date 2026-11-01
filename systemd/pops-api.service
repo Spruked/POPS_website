@@ -11,8 +11,14 @@ Environment=FASTER_WHISPER_STT_URL=http://172.17.0.1:13000/stt
 Environment=LOCAL_LLM_URL=http://127.0.0.1:16520/v1
 Environment=LOCAL_LLM_MODEL=Qwen2.5-7B-Instruct
 Environment=LOCAL_LLM_NUM_PREDICT=512
-Environment=LOCAL_LLM_TIMEOUT_SECONDS=90
-Environment=ORB_TTS_PROVIDER=kokoro
+Environment=LOCAL_LLM_TIMEOUT_SECONDS=180
+Environment=ORB_TTS_PROVIDER=qwen
+Environment=ORB_TTS_QWEN_URL=http://127.0.0.1:8020
+Environment=ORB_TTS_QWEN_PAYLOAD_MODE=gradio-custom-voice
+Environment=ORB_TTS_QWEN_VOICE=Ryan
+Environment=ORB_TTS_QWEN_LANGUAGE=English
+Environment=ORB_TTS_QWEN_TOTAL_TIMEOUT_SECONDS=180
+Environment=ORB_TTS_FALLBACK_PROVIDER=kokoro
 Environment=ORB_TTS_KOKORO_URL=http://127.0.0.1:8880/speak
 Environment=ORB_TTS_KOKORO_VOICE=am_echo
 ExecStart=/home/bryan/.venvs/pops-website/bin/uvicorn backend.main:app --host 0.0.0.0 --port 8001

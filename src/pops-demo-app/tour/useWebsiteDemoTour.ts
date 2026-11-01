@@ -56,15 +56,15 @@ export function useWebsiteDemoTour(callbacks:BridgeCallbacks){
     if(token!==generation)return;
     releaseAudio?.();releaseAudio=null;audio=null;
     callbacksRef.current.activity(false);
-    demoOrbStatus('Qwen server voice is unavailable or playback was blocked. The tour is paused. Resume narration to retry.','audio-blocked',text);
+    demoOrbStatus('Qwen TTS is unavailable or playback was blocked. The tour is paused. Resume narration to retry.','audio-blocked',text);
    };
    if(model&&speechResponse?.speech_id){
-    demoOrbStatus('Preparing the Qwen voice. You can read the caption now.','preparing-voice',text);
+    demoOrbStatus('Preparing Qwen TTS. You can read the caption now.','preparing-voice',text);
     try{
      const prepared=await prepareOrbSpeech(speechResponse,request!.signal);
      if(token!==generation){prepared.release();return;}
      audio=prepared.audio;releaseAudio=prepared.release;audio.dataset.demoTarget=step.targetId;
-     audio.onplaying=()=>{if(token===generation){callbacksRef.current.activity(true);demoOrbStatus('Pops is narrating with Qwen TTS.','speaking',text);}};
+     audio.onplaying=()=>{if(token===generation){callbacksRef.current.activity(true);demoOrbStatus(prepared.provider==='qwen'?'Pops is narrating with Qwen TTS.':prepared.provider==='kokoro-fallback'?'Qwen TTS is offline; narrating with the Kokoro fallback.':'Pops is narrating.', 'speaking',text);}};
      audio.onended=complete;audio.onerror=voiceUnavailable;
      await audio.play().catch(()=>{if(token===generation)voiceUnavailable();});
     }catch{if(token===generation)voiceUnavailable();}

@@ -36,8 +36,8 @@ export const PRODUCTS: Product[] = [
     price: 99,
     priceLabel: "$99",
     period: "one-time Windows app license",
-    description: "Full POPS desktop app access with lifetime POPS Membership included.",
-    fulfillment: "Selection only. Installer delivery and activation instructions are not yet available.",
+    description: "Published $99.00 one-time Windows Guardian license; lifetime POPS Membership included.",
+    fulfillment: "Saved selection only. Checkout is disabled; no installer or license is delivered.",
   },
   {
     id: "opendoor",
@@ -45,8 +45,8 @@ export const PRODUCTS: Product[] = [
     price: 1,
     priceLabel: "Custom",
     period: "reviewed contribution",
-    description: "Reviewed access request for fathers who cannot carry the full license price today.",
-    fulfillment: "Manual review first, then approval code and Windows app download instructions if approved.",
+    description: "Personally reviewed financial assistance toward the Windows Guardian offer, subject to program rules and funding.",
+    fulfillment: "Not a cart product. The Open Door application and approval workflow are not active on this website.",
     requiresReview: true,
   },
   {
@@ -55,8 +55,8 @@ export const PRODUCTS: Product[] = [
     price: 25,
     priceLabel: "$25+",
     period: "support contribution",
-    description: "Help fund approved Open Door license capacity.",
-    fulfillment: "Selection only. Sponsorship payments are unavailable.",
+    description: "Contribute toward approved Windows Open Door access capacity.",
+    fulfillment: "Saved selection only. Checkout and sponsorship fulfillment are unavailable; this is not a software license.",
   },
   {
     id: "membership",
@@ -64,8 +64,8 @@ export const PRODUCTS: Product[] = [
     price: 12.99,
     priceLabel: "$12.99",
     period: "one-time lifetime membership",
-    description: "Lifetime community membership for updates, education, events, and resource drops.",
-    fulfillment: "Selection only. Membership payment and service availability remain to be confirmed.",
+    description: "Separate $12.99 one-time lifetime POPS Membership; not an application license.",
+    fulfillment: "Saved selection only. Payment and community service availability remain to be confirmed.",
   },
 ];
 

@@ -1,0 +1,183 @@
+{
+  "schema": "orb_weaver.source_validation.v1",
+  "status": "COMPLETE",
+  "input_count": 29,
+  "validated_count": 29,
+  "invalid_count": 0,
+  "checks": [
+    {
+      "chunk_id": "6ecc39474d38008d6de8",
+      "source_url": "https://www.popsmatter.com",
+      "status": "VALID",
+      "content_hash": "802e77772a22fdbc038a85ece9e76d3d"
+    },
+    {
+      "chunk_id": "e5f094ec39bb2c0694a7",
+      "source_url": "https://www.popsmatter.com/see-pops-in-action",
+      "status": "VALID",
+      "content_hash": "35ad0e76ac23efd1f7f42994133c5d0b"
+    },
+    {
+      "chunk_id": "4642aa34765b16b391f2",
+      "source_url": "https://www.popsmatter.com/product-demo",
+      "status": "VALID",
+      "content_hash": "cfdc7a7e56f80dd9b178aba3253ead28"
+    },
+    {
+      "chunk_id": "71d83925a1dfd5ba2177",
+      "source_url": "https://www.popsmatter.com/attorney-referral",
+      "status": "VALID",
+      "content_hash": "4209ab2c2e927e061194a3eac5779dfe"
+    },
+    {
+      "chunk_id": "5c90b70021f952014966",
+      "source_url": "https://www.popsmatter.com/access",
+      "status": "VALID",
+      "content_hash": "f85e4168f9d664f1538812249565b37f"
+    },
+    {
+      "chunk_id": "b7c1802bdc0e492f4b23",
+      "source_url": "https://www.popsmatter.com/checkout",
+      "status": "VALID",
+      "content_hash": "99c1c365c3aa364373f6471d57907829"
+    },
+    {
+      "chunk_id": "3776df5b86958746b095",
+      "source_url": "https://www.popsmatter.com/declaration",
+      "status": "VALID",
+      "content_hash": "922607008a6d46f2426443dfc95d2bbe"
+    },
+    {
+      "chunk_id": "559b07cf130b05edd9b1",
+      "source_url": "https://www.popsmatter.com/how-you-use-it",
+      "status": "VALID",
+      "content_hash": "60643ffddbe35aff538c811db6b320d2"
+    },
+    {
+      "chunk_id": "fcd215acacd163c51a5d",
+      "source_url": "https://www.popsmatter.com/pledge",
+      "status": "VALID",
+      "content_hash": "e49e89c840b8bcf956e3a956eb395a3f"
+    },
+    {
+      "chunk_id": "29893e0504f395af41e8",
+      "source_url": "https://www.popsmatter.com/lexicon",
+      "status": "VALID",
+      "content_hash": "6cd1c3661853fd8d10bc46716d799fff"
+    },
+    {
+      "chunk_id": "1a6f262cf12eebdcf226",
+      "source_url": "https://www.popsmatter.com/about",
+      "status": "VALID",
+      "content_hash": "3b6a74102a702a18d3d7adf697bb0143"
+    },
+    {
+      "chunk_id": "7c93f4b0d52ba87c0597",
+      "source_url": "https://www.popsmatter.com/counsel-handoff",
+      "status": "VALID",
+      "content_hash": "aa88ee4d5eef64108985676efaf0ece4"
+    },
+    {
+      "chunk_id": "7c06832b3b0ad17e3b96",
+      "source_url": "https://www.popsmatter.com/support",
+      "status": "VALID",
+      "content_hash": "f6c6bca9be50a1f059d6a803a339dcb3"
+    },
+    {
+      "chunk_id": "7990cd16987725feba26",
+      "source_url": "https://www.popsmatter.com/policies-procedures",
+      "status": "VALID",
+      "content_hash": "92816d4a6c99d8cd13900af4d073745f"
+    },
+    {
+      "chunk_id": "5db6a78a60b5d134ca57",
+      "source_url": "https://www.popsmatter.com/beta",
+      "status": "VALID",
+      "content_hash": "e60604b3149c0510277c571067dc6b3a"
+    },
+    {
+      "chunk_id": "ae3b722c2739a52f19d7",
+      "source_url": "https://www.popsmatter.com/privacy",
+      "status": "VALID",
+      "content_hash": "fa0ffd5163cb0b50c38e99b84dcbc1a5"
+    },
+    {
+      "chunk_id": "0c9c7ced1ce8c8c91904",
+      "source_url": "https://www.popsmatter.com/events",
+      "status": "VALID",
+      "content_hash": "64110bc31322718ddf53724d488877c5"
+    },
+    {
+      "chunk_id": "d9b28f343c08343e208b",
+      "source_url": "https://www.popsmatter.com/cart",
+      "status": "VALID",
+      "content_hash": "4672388817a03088ef12bbe2f89f8091"
+    },
+    {
+      "chunk_id": "d3fb197c02c78052f7a1",
+      "source_url": "https://www.popsmatter.com/early-adopters",
+      "status": "VALID",
+      "content_hash": "028a38bde6565a47f5f3603b4b6e4377"
+    },
+    {
+      "chunk_id": "f5fc3c376cab5d46845d",
+      "source_url": "https://www.popsmatter.com/android",
+      "status": "VALID",
+      "content_hash": "4c53adfd4d9e443275d4ccce6fb120fc"
+    },
+    {
+      "chunk_id": "1dc25cb5cf53330d468c",
+      "source_url": "https://www.popsmatter.com/installation",
+      "status": "VALID",
+      "content_hash": "4bbb562caa8959eaf9f0e57d65aad8fe"
+    },
+    {
+      "chunk_id": "a880e819228c0004f4f2",
+      "source_url": "https://www.popsmatter.com/faq",
+      "status": "VALID",
+      "content_hash": "a9546935b74cb8aa5ed99c2ed675d0bd"
+    },
+    {
+      "chunk_id": "a81cfe1d50eaa1ceb800",
+      "source_url": "https://www.popsmatter.com/terms",
+      "status": "VALID",
+      "content_hash": "54ee021478643fd268054e1b32adf381"
+    },
+    {
+      "chunk_id": "0423065c0581610c21d8",
+      "source_url": "https://www.popsmatter.com/account",
+      "status": "VALID",
+      "content_hash": "b9b5dc848e9bf6c235f08f626bf9b80c"
+    },
+    {
+      "chunk_id": "7372f676d5804f62a368",
+      "source_url": "https://www.popsmatter.com/desktop-app",
+      "status": "VALID",
+      "content_hash": "54ee021478643fd268054e1b32adf381"
+    },
+    {
+      "chunk_id": "60cacd7d14b47962e59f",
+      "source_url": "https://www.popsmatter.com/pricing",
+      "status": "VALID",
+      "content_hash": "f85e4168f9d664f1538812249565b37f"
+    },
+    {
+      "chunk_id": "55814a54686b9cc9e820",
+      "source_url": "https://www.popsmatter.com/sitemap.xml",
+      "status": "VALID",
+      "content_hash": "d5dc1cbdb7579cd9334247ecfe9e55e6"
+    },
+    {
+      "chunk_id": "390b704394ecce34452b",
+      "source_url": "https://www.popsmatter.com/robots.txt",
+      "status": "VALID",
+      "content_hash": "cbc03c519bc17f65cd15e8e29045bdca"
+    },
+    {
+      "chunk_id": "6a4f4207c6e74c7d7a5d",
+      "source_url": "https://www.popsmatter.com/admin",
+      "status": "VALID",
+      "content_hash": "672221c9a5db7e57d07d8621f6679dd9"
+    }
+  ]
+}

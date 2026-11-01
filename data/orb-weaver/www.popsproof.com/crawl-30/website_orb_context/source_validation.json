@@ -1,0 +1,189 @@
+{
+  "schema": "orb_weaver.source_validation.v1",
+  "status": "COMPLETE",
+  "input_count": 30,
+  "validated_count": 30,
+  "invalid_count": 0,
+  "checks": [
+    {
+      "chunk_id": "f4087623ad27795b5e8a",
+      "source_url": "https://www.popsproof.com",
+      "status": "VALID",
+      "content_hash": "54ee021478643fd268054e1b32adf381"
+    },
+    {
+      "chunk_id": "e6fdd92a01ad4deaf49c",
+      "source_url": "https://www.popsproof.com/sitemap.xml",
+      "status": "VALID",
+      "content_hash": "d5dc1cbdb7579cd9334247ecfe9e55e6"
+    },
+    {
+      "chunk_id": "8367d78808de10e42614",
+      "source_url": "https://www.popsproof.com/robots.txt",
+      "status": "VALID",
+      "content_hash": "cbc03c519bc17f65cd15e8e29045bdca"
+    },
+    {
+      "chunk_id": "8bc33b0d91874f145b36",
+      "source_url": "https://www.popsproof.com/admin",
+      "status": "VALID",
+      "content_hash": "cf6b28f94873f51c5837e1bd9075be07"
+    },
+    {
+      "chunk_id": "7adaee5659ccff3f1a39",
+      "source_url": "https://www.popsproof.com/installation",
+      "status": "VALID",
+      "content_hash": "dbae7d05a75f8c73315fc2fb45fbe2e6"
+    },
+    {
+      "chunk_id": "57c18bce6e408dd085ae",
+      "source_url": "https://www.popsproof.com/faq",
+      "status": "VALID",
+      "content_hash": "96d0108fc41404125fffeae8d0d33ea6"
+    },
+    {
+      "chunk_id": "777919ba714b5ddc20e6",
+      "source_url": "https://www.popsproof.com/events",
+      "status": "VALID",
+      "content_hash": "d42533a878632e78ef5db2673693f086"
+    },
+    {
+      "chunk_id": "e9088f58ac667837b4a1",
+      "source_url": "https://www.popsproof.com/privacy",
+      "status": "VALID",
+      "content_hash": "ebfce0e4fe7051e8b77924a779fd0f1b"
+    },
+    {
+      "chunk_id": "d427e5e75be200283ae8",
+      "source_url": "https://www.popsproof.com/attorney-referral",
+      "status": "VALID",
+      "content_hash": "f707f6867368828bf917d9b9f5dc144a"
+    },
+    {
+      "chunk_id": "e7cd8bc980c4b7197238",
+      "source_url": "https://www.popsproof.com/how-you-use-it",
+      "status": "VALID",
+      "content_hash": "74d795bfdd30f4e9ba983c2a4361038d"
+    },
+    {
+      "chunk_id": "0bbaa6fd60005cefe30f",
+      "source_url": "https://www.popsproof.com/support",
+      "status": "VALID",
+      "content_hash": "0d5d11598081ac3fb1ea4cae424a4eca"
+    },
+    {
+      "chunk_id": "f03d2bf13b1bf1c17a0c",
+      "source_url": "https://www.popsproof.com/lexicon",
+      "status": "VALID",
+      "content_hash": "85a8cee70e163a4be03233b963aedc99"
+    },
+    {
+      "chunk_id": "a7d258ac18bc111b6874",
+      "source_url": "https://www.popsproof.com/pledge",
+      "status": "VALID",
+      "content_hash": "4cf51aff514d0f2ecb7851fcd29adc07"
+    },
+    {
+      "chunk_id": "b9c5de1c4f869b027923",
+      "source_url": "https://www.popsproof.com/android",
+      "status": "VALID",
+      "content_hash": "cf3d495727625f9fab1369f71adf45fc"
+    },
+    {
+      "chunk_id": "dd29755b8f27d725a8ef",
+      "source_url": "https://www.popsproof.com/terms",
+      "status": "VALID",
+      "content_hash": "ab5198a5a9ca88d344e11c4ea2f7fe24"
+    },
+    {
+      "chunk_id": "dc625dc83290db1b7de7",
+      "source_url": "https://www.popsproof.com/cart",
+      "status": "VALID",
+      "content_hash": "5953a24a6f5d2b6e31316d24d6ba7e66"
+    },
+    {
+      "chunk_id": "6d226ff4eb20fb578b4a",
+      "source_url": "https://www.popsproof.com/account",
+      "status": "VALID",
+      "content_hash": "4fa39c8d22f567e80023ae36bfd32921"
+    },
+    {
+      "chunk_id": "f218721c136f6f8f7930",
+      "source_url": "https://www.popsproof.com/access",
+      "status": "VALID",
+      "content_hash": "5b3425461ae4f6304e5404c03dfb217e"
+    },
+    {
+      "chunk_id": "cc75fbab3ff2bc256c46",
+      "source_url": "https://www.popsproof.com/desktop-app",
+      "status": "VALID",
+      "content_hash": "27bb0a4e4f335b800daf28c882179d7d"
+    },
+    {
+      "chunk_id": "b6deab2934a75fed1a69",
+      "source_url": "https://www.popsproof.com/product-demo",
+      "status": "VALID",
+      "content_hash": "f775d058bef709fed64a32e01f8c2eda"
+    },
+    {
+      "chunk_id": "eac39cdd6038065fe9df",
+      "source_url": "https://www.popsproof.com/early-adopters",
+      "status": "VALID",
+      "content_hash": "4f860ede52b683e7c39d454c6f3f7eac"
+    },
+    {
+      "chunk_id": "5966eccb87f1bcd9bec3",
+      "source_url": "https://www.popsproof.com/about",
+      "status": "VALID",
+      "content_hash": "f732dd5ff27f8cf973044a7ab9e07c23"
+    },
+    {
+      "chunk_id": "f23c943703e568cf251e",
+      "source_url": "https://www.popsproof.com/beta",
+      "status": "VALID",
+      "content_hash": "afbd3be52993b43989cb6af6f0472d29"
+    },
+    {
+      "chunk_id": "29e236c3e50707844eab",
+      "source_url": "https://www.popsproof.com/account?mode=recovery",
+      "status": "VALID",
+      "content_hash": "82cb32a01a4ebb2fbfec15b44cc621ef"
+    },
+    {
+      "chunk_id": "d4b126c786b3ebe62258",
+      "source_url": "https://www.popsproof.com/counsel-handoff",
+      "status": "VALID",
+      "content_hash": "e5a2ea3ceeecb177a20add4792ab05d8"
+    },
+    {
+      "chunk_id": "c4eab1e2701a7e2bab65",
+      "source_url": "https://www.popsproof.com/declaration",
+      "status": "VALID",
+      "content_hash": "f3514a433f96d3c137287538032352cd"
+    },
+    {
+      "chunk_id": "b70e1cced8d81fb26412",
+      "source_url": "https://www.popsproof.com/see-pops-in-action",
+      "status": "VALID",
+      "content_hash": "afd2561a1169aa24e4870cb8c6334bab"
+    },
+    {
+      "chunk_id": "0c1f639ff0fd4d4d2755",
+      "source_url": "https://www.popsproof.com/policies-procedures",
+      "status": "VALID",
+      "content_hash": "bdd418bf0ae1b44dde7bcf0fb6f77364"
+    },
+    {
+      "chunk_id": "67b0131995b8f857f8bb",
+      "source_url": "https://www.popsproof.com/pricing",
+      "status": "VALID",
+      "content_hash": "5b3425461ae4f6304e5404c03dfb217e"
+    },
+    {
+      "chunk_id": "f2980459ecc2940224d2",
+      "source_url": "https://www.popsproof.com/checkout",
+      "status": "VALID",
+      "content_hash": "a387f264399cf63fd19e5d54d871ef9e"
+    }
+  ]
+}

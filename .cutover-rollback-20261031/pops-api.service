@@ -1,0 +1,25 @@
+[Unit]
+Description=POPS Website API
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=bryan
+WorkingDirectory=/home/bryan/projects/POPS_website-release-20261022
+Environment=FASTER_WHISPER_STT_URL=http://172.17.0.1:13000/stt
+Environment=POPS_ORB_DEVELOPMENT=1
+Environment=POPS_ORB_ALLOWED_ORIGINS=https://pops.spruked.com
+Environment=POPS_LLAMA_BASE_URL=http://127.0.0.1:16520
+Environment=POPS_LLAMA_WINDOWS_BRIDGE=1
+Environment=ORB_TTS_PROVIDER=qwen
+Environment=ORB_TTS_QWEN_URL=http://127.0.0.1:8020
+Environment=ORB_TTS_QWEN_PAYLOAD_MODE=windows-bridge
+Environment=ORB_TTS_QWEN_VOICE=Ryan
+Environment="ORB_TTS_QWEN_INSTRUCT=A warm, grounded adult male voice. Calm, confident, natural, and concise."
+ExecStart=/home/bryan/projects/POPS_website-release-20261022/.venv-orb/bin/uvicorn backend.website_orb_host:app --host 127.0.0.1 --port 8001
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=default.target

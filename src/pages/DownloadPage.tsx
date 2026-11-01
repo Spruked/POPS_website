@@ -1,10 +1,137 @@
 import { Link, useNavigate } from 'react-router-dom';
 import { ContentSection as Section, LaunchLinks, LaunchPage, StatusNote } from '../components/LaunchContent';
 import { PRODUCTS, useCart } from '../cart';
-const targets:Record<string,string>={guardian:'pops.access.standard',opendoor:'pops.access.hardship',sponsor:'pops.access.sponsor',membership:'pops.access.membership'};
-export default function DownloadPage(){const {addItem,items}=useCart();const navigate=useNavigate();const hasGuardian=items.some(item=>item.id==='guardian');return <LaunchPage title="Get P.O.P.S. | Windows License, Membership & Access Options" description="Review the existing P.O.P.S. Windows offer, included membership, reviewed assistance, and sponsorship options. Save a selection; checkout is not yet available." path="/access" eyebrow="Get P.O.P.S. • Purchase preparation" heading="Choose the access path that fits your situation." intro="The Windows desktop license is the software purchase. Open Door is a separately reviewed assistance path. Sponsorship supports access, while membership is a community offering—not another desktop license.">
- <StatusNote>Checkout is unavailable. Existing published prices are shown without adding discounts or new entitlements. A saved selection is not an order. Release features, delivery, license scope, and commercial terms must be finalized before payment opens.</StatusNote>
- <section id="access-options" className="launch-section" data-orb-target="pops.access.options" aria-labelledby="access-options-title"><h2 id="access-options-title">Windows licensing and ways to participate</h2><p>Guardian is the standard one-time Windows offer with no mandatory recurring subscription. Android is in development and is not promised as an inclusion. The website is available on mobile; it is not the Android evidence application.</p><div className="launch-grid">{PRODUCTS.map(product=><article key={product.id} id={product.id==='opendoor'?'opendoor-access':product.id==='sponsor'?'sponsor-access':`access-${product.id}`} className="launch-card" data-orb-target={targets[product.id]}><span className="mono">{product.id==='guardian'?'Standard Windows offer':product.id==='opendoor'?'Reviewed assistance':product.id==='sponsor'?'Support contribution':'Community membership'}</span><h3>{product.name}</h3><div className="launch-price">{product.id==='opendoor'?'Reviewed contribution':product.priceLabel}</div><p>{product.description}</p>{product.id==='guardian'&&<p>Published price: $99 one time. Lifetime POPS Membership is included. Optional annual maintenance is listed at $19.99; its coverage and availability require approval. No lifetime upgrade promise is made.</p>}{product.id==='membership'&&<p>Published price: $12.99 one time. Guardian already includes this membership. Newsletter, community rooms, Q&A, and event availability require confirmation; these are not all represented as active services.</p>}{product.id==='sponsor'&&<p>The current cart supports $25 multiples only. Custom contributions are not implemented. No sponsorship payment is accepted today.</p>}{product.id==='opendoor'?<><p>Manual review and available funding determine approval. A website account is not an approval or a license. No automatic approval code is generated here.</p><a className="btn btn-ghost" href="#access-assistance">Read Open Door availability</a></>:<button className="btn btn-primary" disabled={product.id==='membership'&&hasGuardian} onClick={()=>{addItem(product);navigate('/cart');}}>{product.id==='membership'&&hasGuardian?'Included with Guardian':`Save ${product.name} to cart`}</button>}</article>)}</div></section>
- <section id="access-assistance" className="launch-section" data-orb-target="pops.access.activation" aria-labelledby="access-assistance-title"><h2 id="access-assistance-title">Open Door: reviewed access, with dignity</h2><p>Open Door is intended to help fathers who cannot carry the full license price. Existing program policy describes a non-zero contribution and review subject to reserve capacity. The approval and fulfillment workflow is not yet active on this website.</p><p>Do not send private court details or family evidence to explain a financial need. You may ask a general availability question through support, but that request is not an Open Door application or approval. Published reserve commitments remain in the existing policy; no new eligibility or funding promise is introduced here.</p><div className="hero-actions"><Link className="btn btn-ghost" to="/policies-procedures">Read the existing program policy</Link><Link className="btn btn-primary" to="/support">Ask about access availability</Link></div></section>
- <section id="access-local-first" className="launch-section" data-orb-target="pops.access.local-first" aria-labelledby="access-local-first-title"><h2 id="access-local-first-title">Understand what stays local</h2><p>The Windows product is designed around local records and user-controlled sharing. Local-first does not automatically mean encrypted storage, automatic backups, full offline functionality, or Android synchronization. Those details must match the supplied release.</p><p>SHA-256 compares file contents against a recorded reference; it does not verify that an event happened. Backup, recovery, chain-of-custody logging, and export functions require release-specific verification. Your website account is separate from your private Evidence Vault.</p></section>
- <div data-orb-target="pops.access.checkout"><Section id="access-before-purchase" title="Before purchases open"><p>The final offer must identify supported Windows versions, device rights, delivery and activation steps, update coverage, support, and refund terms. No Android entitlement or founding-customer benefit is included by implication.</p><div className="hero-actions"><Link className="btn btn-primary" to="/cart">Review saved cart</Link><Link className="btn btn-ghost" to="/early-adopters">First-100 program status</Link><Link className="btn btn-ghost" to="/faq">Read buying FAQs</Link><Link className="btn btn-ghost" to="/checkout">Checkout availability</Link></div></Section></div><LaunchLinks/></LaunchPage>;}
+
+const targets: Record<string, string> = {
+  guardian: 'pops.access.standard',
+  opendoor: 'pops.access.hardship',
+  sponsor: 'pops.access.sponsor',
+  membership: 'pops.access.membership',
+};
+
+export default function DownloadPage() {
+  const { addItem, items } = useCart();
+  const navigate = useNavigate();
+  const hasGuardian = items.some((item) => item.id === 'guardian');
+  const membership = PRODUCTS.find((product) => product.id === 'membership')!;
+  const guardian = PRODUCTS.find((product) => product.id === 'guardian')!;
+  const sponsor = PRODUCTS.find((product) => product.id === 'sponsor')!;
+
+  return (
+    <LaunchPage
+      title="POPS Access | Windows Guardian, Android Testing & iOS Plans"
+      description="Compare POPS applications, the $99 Windows Guardian offer, Windows assistance routes, and separate lifetime membership. Checkout is disabled."
+      path="/access"
+      eyebrow="POPS applications & access"
+      heading="Choose your platform. Understand your access."
+      intro="POPS helps fathers organize a record of parenting-time involvement, supporting material, and a chronological history for personal review and appropriate professional discussions. The Windows offer is published; Android is in Google Play testing; iOS is planned."
+    >
+      <StatusNote>
+        Checkout is disabled. The website cannot accept payment or deliver an app license. A saved cart selection is not an order. Android and iOS are separate applications and are not included with Windows Guardian.
+      </StatusNote>
+
+      <section id="platforms" className="launch-section" aria-labelledby="platforms-title">
+        <h2 id="platforms-title">The POPS application family</h2>
+        <div className="launch-grid">
+          <article className="launch-card" data-orb-target="pops.access.standard">
+            <span className="mono">Windows Desktop · Published offer</span>
+            <h3>POPS Guardian</h3>
+            <p>The downloadable Windows application has a published price of <strong>$99.00 one time</strong>. Lifetime POPS Membership is included.</p>
+            <p>The website and its fictional browser demonstration are available to explore. They are not the installable Guardian application or a download service.</p>
+            <Link className="btn btn-primary" to="/desktop-app">Windows Guardian details</Link>
+          </article>
+          <article className="launch-card">
+            <span className="mono">Android · Google Play testing</span>
+            <h3>POPS Android</h3>
+            <p>The Android companion is progressing through Google Play testing. It is not publicly available, approved for production, or ready to purchase. No public Play Store listing or price is provided.</p>
+            <p>Windows purchase, Open Door assistance, and sponsor funding do not grant Android access.</p>
+            <Link className="btn btn-primary" to="/android">Android product status</Link>
+          </article>
+          <article className="launch-card">
+            <span className="mono">iOS · Planned</span>
+            <h3>POPS for iPhone</h3>
+            <p>An iOS application is planned. No public release, date, price, or connection to another platform’s license has been announced.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="access-options" className="launch-section" data-orb-target="pops.access.options" aria-labelledby="access-options-title">
+        <h2 id="access-options-title">Three ways to access the Windows application</h2>
+        <p>These routes apply to Windows Guardian only. They do not promise access to an unreleased Android or planned iOS application.</p>
+        <div className="launch-grid">
+          <article id="guardian-access" className="launch-card" data-orb-target={targets.guardian}>
+            <span className="mono">Standard purchase</span>
+            <h3>Guardian Access</h3>
+            <div className="launch-price">$99.00 one time</div>
+            <p>A one-time Windows desktop license with lifetime POPS Membership included. No mandatory recurring subscription is published for this offer.</p>
+            <p>Installer delivery, activation, release-specific features, support, update coverage, and refund terms still need to be finalized. Checkout remains disabled.</p>
+            <button className="btn btn-primary" onClick={() => { addItem(guardian); navigate('/cart'); }}>
+              Save Windows offer to cart
+            </button>
+          </article>
+          <article id="opendoor-access" className="launch-card" data-orb-target={targets.opendoor}>
+            <span className="mono">Personally reviewed financial assistance</span>
+            <h3>Open Door</h3>
+            <p>For fathers who cannot afford the full Windows license price, Open Door is a personally reviewed assistance route, subject to eligibility and available funding.</p>
+            <p>The review and approval workflow is not active on this website. An account or support message is not an application, approval, or license. This route is not offered for Android or iOS.</p>
+            <Link className="btn btn-ghost" to="/policies-procedures">Review program policy</Link>
+          </article>
+          <article id="sponsor-access" className="launch-card" data-orb-target={targets.sponsor}>
+            <span className="mono">Sponsor-funded Windows access</span>
+            <h3>Sponsor a Father</h3>
+            <div className="launch-price">$25 contribution increments</div>
+            <p>Sponsor contributions are intended to support approved Open Door capacity for Windows Guardian. A contribution does not itself grant the sponsor or another person an application license.</p>
+            <p>Payment, custom contribution amounts, and sponsorship fulfillment are unavailable. Sponsorship does not fund Android or iOS access.</p>
+            <button className="btn btn-ghost" onClick={() => { addItem(sponsor); navigate('/cart'); }}>
+              Save sponsorship selection
+            </button>
+          </article>
+        </div>
+      </section>
+
+      <Section id="website-vs-application" title="Website experience and Windows app are different">
+        <p>This website provides product information, support and beta-interest forms, a customer account, and a browser demonstration using fictional records. The demonstration is not the installed desktop application and does not store a real Evidence Vault.</p>
+        <p>Guardian is a separate downloadable Windows application. No installer is linked here, and the website does not currently deliver or activate a license.</p>
+        <div className="hero-actions">
+          <Link className="btn btn-primary" to="/product-demo">Explore the fictional browser demo</Link>
+          <Link className="btn btn-ghost" to="/desktop-app">Read Windows product details</Link>
+        </div>
+      </Section>
+
+      <section id="membership" className="launch-section" data-orb-target={targets.membership} aria-labelledby="membership-title">
+        <h2 id="membership-title">POPS Membership is a separate offering</h2>
+        <p><strong>$12.99 one time</strong> for the published lifetime membership. Membership alone is not a Windows, Android, or iOS application license.</p>
+        <p>Guardian includes lifetime membership, so Guardian buyers should not add membership separately. The availability of community services, events, and resource drops still requires confirmation.</p>
+        <button className="btn btn-ghost" disabled={hasGuardian} onClick={() => { addItem(membership); navigate('/cart'); }}>
+          {hasGuardian ? 'Membership included with Guardian' : 'Save membership selection'}
+        </button>
+      </section>
+
+      <section id="access-assistance" className="launch-section" data-orb-target="pops.access.activation" aria-labelledby="access-assistance-title">
+        <h2 id="access-assistance-title">Open Door review and sponsorship</h2>
+        <p>Open Door is intended to provide personally reviewed financial assistance toward the Windows Guardian offer, subject to program rules and available reserve capacity. The application and approval workflow is not active.</p>
+        <p>Do not send private court details or family evidence to explain a financial need. Contact support for general availability information; that request is not an application or approval.</p>
+        <div className="hero-actions">
+          <Link className="btn btn-ghost" to="/policies-procedures">Read the existing program policy</Link>
+          <Link className="btn btn-primary" to="/support">Ask about Windows access</Link>
+        </div>
+      </section>
+
+      <Section id="private-records" title="Your private documentation is not tracked">
+        <p>POPS does not track users’ private documentation entries. The Windows app’s private notes and supporting records are separate from website accounts, forms, and the fictional browser demo. General website forms are not for case documents or family evidence.</p>
+        <p>The app is designed around local-first records. Encryption, automatic backup, and cloud synchronization are not promised unless a specific active release documents and verifies them.</p>
+        <Link to="/privacy">Read the privacy notice</Link>
+      </Section>
+
+      <Section id="before-purchase" title="Before purchasing">
+        <p>License scope, supported Windows versions, device rights, delivery and activation, support, update coverage, and refund terms must be finalized before payment opens. Square checkout remains disabled. No order, payment, license, or platform entitlement is created by saving a selection.</p>
+        <div className="hero-actions">
+          <Link className="btn btn-primary" to="/cart">Review saved cart</Link>
+          <Link className="btn btn-ghost" to="/faq">Read buying FAQs</Link>
+          <Link className="btn btn-ghost" to="/checkout">Checkout status</Link>
+        </div>
+      </Section>
+      <LaunchLinks />
+    </LaunchPage>
+  );
+}

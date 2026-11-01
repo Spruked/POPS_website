@@ -1,0 +1,111 @@
+{
+  "schema": "orb_weaver.source_validation.v1",
+  "status": "COMPLETE",
+  "input_count": 17,
+  "validated_count": 17,
+  "invalid_count": 0,
+  "checks": [
+    {
+      "chunk_id": "2c19b6d7915bc58a326c",
+      "source_url": "https://www.popsproof.com",
+      "status": "VALID",
+      "content_hash": "8f0ce374dcf3a8fd2b0bbbe4f7a4ef0c"
+    },
+    {
+      "chunk_id": "790b0f764479f8b9f04c",
+      "source_url": "https://www.popsproof.com/see-pops-in-action",
+      "status": "VALID",
+      "content_hash": "5a5c18117490f182b785ef583790b057"
+    },
+    {
+      "chunk_id": "1cd95668edf3cd21815e",
+      "source_url": "https://www.popsproof.com/account",
+      "status": "VALID",
+      "content_hash": "983fcd3c08ab1859652e7a7bc6a473bb"
+    },
+    {
+      "chunk_id": "2b64a992c67bda0d5286",
+      "source_url": "https://www.popsproof.com/pledge",
+      "status": "VALID",
+      "content_hash": "2aa82a744f2cbabfb88210ea5a7a64f6"
+    },
+    {
+      "chunk_id": "2e2900902adb4ac08377",
+      "source_url": "https://www.popsproof.com/terms",
+      "status": "VALID",
+      "content_hash": "10c31b503d466f9b3fc73d26e81de2c8"
+    },
+    {
+      "chunk_id": "8bb8d8505884e10f65c8",
+      "source_url": "https://www.popsproof.com/access",
+      "status": "VALID",
+      "content_hash": "60e577ce132815353de027009642effd"
+    },
+    {
+      "chunk_id": "3879fb93d7f462bd5814",
+      "source_url": "https://www.popsproof.com/events",
+      "status": "VALID",
+      "content_hash": "1bd0a1568928d5581a59d188a33c5884"
+    },
+    {
+      "chunk_id": "3098076ab17d6c1bc898",
+      "source_url": "https://www.popsproof.com/about",
+      "status": "VALID",
+      "content_hash": "9ed96fcd2b2780cf7e8ddc0fbcadb681"
+    },
+    {
+      "chunk_id": "1053bcd8dc79e71ba089",
+      "source_url": "https://www.popsproof.com/counsel-handoff",
+      "status": "VALID",
+      "content_hash": "99f255cb2100e17a7d058c624e5db8c6"
+    },
+    {
+      "chunk_id": "44190d4bbaf7af50c953",
+      "source_url": "https://www.popsproof.com/attorney-referral",
+      "status": "VALID",
+      "content_hash": "2a7b206f1b24e6d7e351e31ae8fbe704"
+    },
+    {
+      "chunk_id": "6201c91c8b9cd1412633",
+      "source_url": "https://www.popsproof.com/privacy",
+      "status": "VALID",
+      "content_hash": "ca657d82ef55f8629075e9729c51bcb0"
+    },
+    {
+      "chunk_id": "9c15f086693342a503e7",
+      "source_url": "https://www.popsproof.com/policies-procedures",
+      "status": "VALID",
+      "content_hash": "75e1c2ecea875ded21c6bfcdb8093ca3"
+    },
+    {
+      "chunk_id": "c2a8c66f005b345ef2c3",
+      "source_url": "https://www.popsproof.com/lexicon",
+      "status": "VALID",
+      "content_hash": "ae0f7dc0587d3452b80e11c5bd288d41"
+    },
+    {
+      "chunk_id": "a519d0d1c3ce81828899",
+      "source_url": "https://www.popsproof.com/cart",
+      "status": "VALID",
+      "content_hash": "720ed94369ddd9655a43a8022c12d1c9"
+    },
+    {
+      "chunk_id": "865e23ba93352de1cd1e",
+      "source_url": "https://www.popsproof.com/declaration",
+      "status": "VALID",
+      "content_hash": "a8b4fc81ba50d33a273603b0eb4ba646"
+    },
+    {
+      "chunk_id": "7e392770d4ee260f173a",
+      "source_url": "https://www.popsproof.com/pricing",
+      "status": "VALID",
+      "content_hash": "60e577ce132815353de027009642effd"
+    },
+    {
+      "chunk_id": "ba32ce3edc8bd93a1967",
+      "source_url": "https://www.popsproof.com/admin",
+      "status": "VALID",
+      "content_hash": "185a2036fe415a4d48716b14f6dbab75"
+    }
+  ]
+}

@@ -1,0 +1,210 @@
+{
+  "pages": [
+    {
+      "path": "/",
+      "kind": "public",
+      "bytes": 26098
+    },
+    {
+      "path": "/about",
+      "kind": "public",
+      "bytes": 22813
+    },
+    {
+      "path": "/desktop-app",
+      "kind": "public",
+      "bytes": 19475
+    },
+    {
+      "path": "/android",
+      "kind": "public",
+      "bytes": 15233
+    },
+    {
+      "path": "/how-you-use-it",
+      "kind": "public",
+      "bytes": 16528
+    },
+    {
+      "path": "/product-demo",
+      "kind": "public",
+      "bytes": 14583
+    },
+    {
+      "path": "/see-pops-in-action",
+      "kind": "public",
+      "bytes": 14493
+    },
+    {
+      "path": "/access",
+      "kind": "public",
+      "bytes": 18887
+    },
+    {
+      "path": "/beta",
+      "kind": "public",
+      "bytes": 16150
+    },
+    {
+      "path": "/early-adopters",
+      "kind": "public",
+      "bytes": 15374
+    },
+    {
+      "path": "/installation",
+      "kind": "public",
+      "bytes": 14729
+    },
+    {
+      "path": "/faq",
+      "kind": "public",
+      "bytes": 25384
+    },
+    {
+      "path": "/support",
+      "kind": "public",
+      "bytes": 14949
+    },
+    {
+      "path": "/counsel-handoff",
+      "kind": "public",
+      "bytes": 15785
+    },
+    {
+      "path": "/events",
+      "kind": "public",
+      "bytes": 11064
+    },
+    {
+      "path": "/attorney-referral",
+      "kind": "public",
+      "bytes": 13693
+    },
+    {
+      "path": "/declaration",
+      "kind": "public",
+      "bytes": 16913
+    },
+    {
+      "path": "/pledge",
+      "kind": "public",
+      "bytes": 13460
+    },
+    {
+      "path": "/lexicon",
+      "kind": "public",
+      "bytes": 23342
+    },
+    {
+      "path": "/terms",
+      "kind": "public",
+      "bytes": 11961
+    },
+    {
+      "path": "/privacy",
+      "kind": "public",
+      "bytes": 20375
+    },
+    {
+      "path": "/policies-procedures",
+      "kind": "public",
+      "bytes": 20952
+    },
+    {
+      "path": "/lexicon/culpable",
+      "kind": "public",
+      "bytes": 12280
+    },
+    {
+      "path": "/lexicon/exculpatory",
+      "kind": "public",
+      "bytes": 12377
+    },
+    {
+      "path": "/lexicon/pro-se",
+      "kind": "public",
+      "bytes": 12218
+    },
+    {
+      "path": "/lexicon/prima-facie",
+      "kind": "public",
+      "bytes": 12324
+    },
+    {
+      "path": "/lexicon/estoppel",
+      "kind": "public",
+      "bytes": 12355
+    },
+    {
+      "path": "/lexicon/habeas-corpus",
+      "kind": "public",
+      "bytes": 12455
+    },
+    {
+      "path": "/lexicon/fifth-amendment",
+      "kind": "public",
+      "bytes": 12496
+    },
+    {
+      "path": "/lexicon/fourteenth-amendment",
+      "kind": "public",
+      "bytes": 12626
+    },
+    {
+      "path": "/lexicon/due-process",
+      "kind": "public",
+      "bytes": 12393
+    },
+    {
+      "path": "/lexicon/equal-protection",
+      "kind": "public",
+      "bytes": 12547
+    },
+    {
+      "path": "/account",
+      "kind": "signed-out-noindex-shell",
+      "bytes": 13276
+    },
+    {
+      "path": "/account/verify",
+      "kind": "signed-out-noindex-shell",
+      "bytes": 13218
+    },
+    {
+      "path": "/account/reset",
+      "kind": "signed-out-noindex-shell",
+      "bytes": 13593
+    },
+    {
+      "path": "/cart",
+      "kind": "signed-out-noindex-shell",
+      "bytes": 11896
+    },
+    {
+      "path": "/checkout",
+      "kind": "signed-out-noindex-shell",
+      "bytes": 11841
+    },
+    {
+      "path": "/account/profile",
+      "kind": "signed-out-noindex-shell",
+      "bytes": 13425
+    },
+    {
+      "path": "/account/preferences",
+      "kind": "signed-out-noindex-shell",
+      "bytes": 13466
+    },
+    {
+      "path": "/account/admin",
+      "kind": "signed-out-noindex-shell",
+      "bytes": 13417
+    },
+    {
+      "path": "/account/email/verify",
+      "kind": "signed-out-noindex-shell",
+      "bytes": 13370
+    }
+  ],
+  "publicPageDefinitions": 22
+}

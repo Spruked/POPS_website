@@ -1,0 +1,60 @@
+{
+  "schema": "orb_weaver.commercial_catalog.v1",
+  "entry_count": 1,
+  "product_count": 1,
+  "service_count": 0,
+  "priced_entry_count": 0,
+  "sku_model_count": 0,
+  "availability_count": 0,
+  "variant_count": 0,
+  "specification_count": 2,
+  "source_page_count": 1,
+  "entries": [
+    {
+      "catalog_id": "catalog_a001054f6fe6de26",
+      "kind": "SoftwareApplication",
+      "name": "P.O.P.S. \u2014 Proof of Presence System",
+      "description": "POPS Guardian is the published $99 one-time Windows desktop offer with lifetime POPS Membership included. Checkout and app delivery remain disabled.",
+      "sku": null,
+      "gtin": null,
+      "brand": null,
+      "category": null,
+      "url": "https://pops.spruked.com/desktop-app",
+      "source_page": "https://www.popsproof.com/desktop-app",
+      "offers": [],
+      "availability": null,
+      "variants": [],
+      "specifications": {
+        "operatingSystem": "Windows",
+        "applicationCategory": "UtilitiesApplication"
+      },
+      "schema_types": [
+        "SoftwareApplication"
+      ],
+      "evidence": [
+        "json_ld"
+      ],
+      "confidence": 0.98
+    }
+  ],
+  "indexes": {
+    "by_name": {
+      "p.o.p.s. \u2014 proof of presence system": [
+        "catalog_a001054f6fe6de26"
+      ]
+    },
+    "by_sku_model": {},
+    "by_category": {},
+    "by_url": {
+      "https://pops.spruked.com/desktop-app": [
+        "catalog_a001054f6fe6de26"
+      ]
+    },
+    "prices": []
+  },
+  "runtime_policy": {
+    "deterministic_lookup_first": true,
+    "llm_required_for_exact_catalog_facts": false,
+    "source_evidence_required": true
+  }
+}

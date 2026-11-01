@@ -1,12 +1,65 @@
 import { Link } from "react-router-dom";
-import { ContentSection as Section, LaunchLinks, LaunchPage, MissingCapture, StatusNote, IntegrityExplanation } from "../components/LaunchContent";
+import { ContentSection as Section, LaunchLinks, LaunchPage, StatusNote } from "../components/LaunchContent";
+
 export default function DesktopAppPage() {
- return <LaunchPage title="P.O.P.S. Windows Software | Evidence, Events & Timelines" description="Explore P.O.P.S. Windows desktop software for parenting-time records, evidence organization, timelines, integrity checks, and release-qualified review outputs." path="/desktop-app" eyebrow="Windows desktop • Product overview" heading="Your records belong together. Your presence deserves context." intro="P.O.P.S. is installable Windows software designed primarily for fathers documenting parenting-time experiences. Bring supporting files, event notes, dates, people, and case context into a workspace built for careful review.">
- <StatusNote>The website describes the Windows beta direction. The exact downloadable build, supported Windows versions, and feature checklist must be verified before commercial delivery. Checkout is unavailable; this page is not a download or activation service.</StatusNote>
- <Section id="windows-purpose" title="Less searching. A clearer record to review."><p>When an exchange does not happen, the context may be spread across messages, a calendar entry, a receipt, and photos on a phone. Reconstructing that sequence later takes attention away from the decisions you need to make. P.O.P.S. is designed to give each event a place and connect its supporting material.</p><p>The practical benefit is a record you can navigate: find the event, see what you documented, and review the related files. It supports your preparation for personal review and conversations with counsel. It does not decide the truth of a dispute or determine what legal action to take.</p><p>The emotional purpose has not changed. A father who shows up needs a disciplined way to preserve the details of that effort. Preserve. Protect. Prove. is the foundation; the workspace is the working method.</p></Section>
- <Section id="windows-workflows" title="What the workspace is designed to help you do"><dl className="launch-facts"><div><dt>Evidence Vault: connect files with context</dt><dd>Keep supporting material associated with the events it relates to. Preserve source context and distinguish an original source from a screenshot, copy, annotation, or summary. Original-file handling and accepted formats require confirmation for the supplied build.</dd></div><div><dt>Events and timelines: review the sequence</dt><dd>Record what you observed and organize events chronologically. Connect dates and relevant people so a later review starts from structured information rather than an unlabelled folder.</dd></div><div><dt>Court-order context: keep references alongside observations</dt><dd>Associate the relevant order reference with a documented event where supported. A user-entered violation label is not a legal finding. Keep the source language available for professional review.</dd></div><div><dt>Review outputs: prepare selected material</dt><dd>Timelines, evidence indexes, manifests, and attorney packet exports are subject to release verification. The final feature list must state exact formats, selection controls, and output contents.</dd></div></dl></Section>
- <Section id="windows-example" title="Follow one missed-exchange example"><p>In the fictional walkthrough, Alex records the planned exchange date and notes that the exchange did not take place. Alex associates a harmless example message and a travel receipt, labels their source, and reviews the event alongside related entries.</p><p>This illustrates the value of organization without turning notes into independent verification. The record should distinguish what Alex personally observed from what a file contains or another person reported. When a supported export is available, Alex reviews it before deciding what to share.</p><MissingCapture>Evidence Vault, linked event details, and the same event in a timeline. Each capture needs the demonstrated build and fictional-data label.</MissingCapture><Link to="/how-you-use-it">Follow the five-step workflow</Link></Section>
- <Section id="windows-integrity" title="Integrity checks support careful recordkeeping"><IntegrityExplanation/></Section>
- <Section id="windows-included" title="What the published Windows offer includes"><p>Guardian Access is currently described as a $99 one-time Windows app license with lifetime P.O.P.S. Membership included. The standard license does not require a mandatory recurring subscription. Membership is not a second desktop application, and a Guardian buyer should not need to add it again.</p><p>Optional yearly maintenance is listed at $19.99, with precise scope and availability awaiting confirmation. Device limits, update rights, support coverage, refund terms, activation requirements, and installer delivery timing must be approved before purchases open. No lifetime upgrade promise is made here.</p><p>Android is a forthcoming companion, not a confirmed inclusion in the Windows license. Offline-first synchronization is planned; pairing, transfer, conflict handling, and security behavior remain to be validated. There is no promise of automatic cloud backup or a working mobile sync service.</p></Section>
- <Section id="windows-start" title="Choose your next step with clear expectations"><p>Read the installation preparation guide before relying on a release. It identifies requirements still needing confirmation and explains how to begin with fictional material. Beta applicants help test specified workflows; a beta application is not a commercial license or guaranteed invitation.</p><p>If you want to purchase later, review the access options and save your selection in the cart. No payment is collected and no order is created. Use the FAQs or support page to resolve questions about an entitlement before checkout becomes available.</p><div className="hero-actions"><Link className="btn btn-primary" to="/access">View Windows access options</Link><Link className="btn btn-ghost" to="/installation">Installation & onboarding</Link><Link className="btn btn-ghost" to="/see-pops-in-action">Walkthrough availability</Link></div></Section><LaunchLinks/></LaunchPage>;
+  return (
+    <LaunchPage
+      title="POPS Guardian for Windows | $99 Desktop Application"
+      description="POPS Guardian is the published $99 one-time Windows desktop offer with lifetime POPS Membership included. Checkout and app delivery remain disabled."
+      path="/desktop-app"
+      eyebrow="POPS Guardian · Windows Desktop"
+      heading="A clearer record of parental involvement."
+      intro="POPS Guardian is a Windows application designed to organize parenting-time notes, supporting material, and a chronological history for personal review and appropriate professional discussions."
+    >
+      <StatusNote>
+        The website and its fictional browser demonstration are separate from the downloadable Windows application. No Guardian installer is currently provided here, and checkout is disabled while release, license, and delivery details are finalized.
+      </StatusNote>
+
+      <Section id="windows-benefits" title="Keep the details together">
+        <div className="launch-grid">
+          <article className="launch-card">
+            <h3>Record involvement</h3>
+            <p>Organize dated events and notes into a chronology you can return to and review.</p>
+          </article>
+          <article className="launch-card">
+            <h3>Connect supporting material</h3>
+            <p>Keep relevant files associated with an event and preserve context about what you recorded.</p>
+          </article>
+          <article className="launch-card">
+            <h3>Prepare for review</h3>
+            <p>Use an organized history as a starting point for personal review or discussion with counsel.</p>
+          </article>
+        </div>
+        <p>POPS organizes information a parent records. It does not independently prove a disputed event, provide legal advice, or guarantee a custody outcome. Specific file handling and report features depend on the verified release.</p>
+        <Link to="/how-you-use-it">See a fictional five-step example</Link>
+      </Section>
+
+      <Section id="windows-offer" title="The published Windows offer">
+        <div className="launch-card">
+          <div className="launch-price">$99.00 one time</div>
+          <p>Guardian Access is a Windows application license with lifetime POPS Membership included. Membership alone is not an application license, and Guardian buyers should not add membership separately.</p>
+          <p>Checkout is unavailable, so saving a cart selection does not create an order or license. Installer delivery, activation, refund terms, and final release details must be confirmed before purchases open.</p>
+          <div className="hero-actions">
+            <Link className="btn btn-primary" to="/access">Review access options</Link>
+            <Link className="btn btn-ghost" to="/faq">Read buying FAQs</Link>
+          </div>
+        </div>
+      </Section>
+
+      <Section id="windows-privacy" title="Your private entries stay outside website tracking">
+        <p>POPS does not track users’ private documentation entries. Website accounts and forms are separate from records in the Windows application.</p>
+        <p>Do not assume encryption, automatic backup, or cloud synchronization; confirm storage and recovery behavior for the specific release.</p>
+        <div className="hero-actions">
+          <Link className="btn btn-ghost" to="/privacy">Read the privacy notice</Link>
+          <Link className="btn btn-ghost" to="/installation">Installation preparation</Link>
+        </div>
+      </Section>
+
+      <Section id="other-platforms" title="Other POPS platforms">
+        <p>Android is progressing through Google Play testing and is not publicly available or ready to purchase. iOS is planned. Neither platform is included with the Windows license.</p>
+        <Link to="/access#platforms">See platform release status</Link>
+      </Section>
+      <LaunchLinks />
+    </LaunchPage>
+  );
 }

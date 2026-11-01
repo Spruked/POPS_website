@@ -1,0 +1,17 @@
+{
+  "batch": 0,
+  "routes": [
+    "/account",
+    "/access",
+    "/pricing",
+    "/lexicon",
+    "/beta",
+    "/faq",
+    "/desktop-app",
+    "/support"
+  ],
+  "status": "failed",
+  "resumed": false,
+  "error": "Command '['/usr/bin/node', '/app/backend/app/orb/pointer_recovery_capture.js', '[\"https://www.popsproof.com/account\", \"https://www.popsproof.com/access\", \"https://www.popsproof.com/pricing\", \"https://www.popsproof.com/lexicon\", \"https://www.popsproof.com/beta\", \"https://www.popsproof.com/faq\", \"https://www.popsproof.com/desktop-app\", \"https://www.popsproof.com/support\"]', '/app/vault_system/clients/www.popsproof.com/runs/4/verification/orb/pointer_recovery_capture/batch_000/browser_capture.json', '2', '/app/vault_system/clients/www.popsproof.com/runs/4/verification/orb/pointer_recovery_capture/batch_000']' timed out after 300 seconds",
+  "completed_at": "2026-10-31T14:45:54.579923+00:00"
+}

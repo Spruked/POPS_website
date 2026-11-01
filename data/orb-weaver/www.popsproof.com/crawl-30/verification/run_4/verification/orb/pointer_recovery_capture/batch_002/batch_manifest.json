@@ -1,0 +1,17 @@
+{
+  "batch": 2,
+  "routes": [
+    "/checkout",
+    "/events",
+    "/attorney-referral",
+    "/cart",
+    "/policies-procedures",
+    "/privacy",
+    "/terms",
+    "/declaration"
+  ],
+  "status": "failed",
+  "resumed": false,
+  "error": "Command '['/usr/bin/node', '/app/backend/app/orb/pointer_recovery_capture.js', '[\"https://www.popsproof.com/checkout\", \"https://www.popsproof.com/events\", \"https://www.popsproof.com/attorney-referral\", \"https://www.popsproof.com/cart\", \"https://www.popsproof.com/policies-procedures\", \"https://www.popsproof.com/privacy\", \"https://www.popsproof.com/terms\", \"https://www.popsproof.com/declaration\"]', '/app/vault_system/clients/www.popsproof.com/runs/4/verification/orb/pointer_recovery_capture/batch_002/browser_capture.json', '2', '/app/vault_system/clients/www.popsproof.com/runs/4/verification/orb/pointer_recovery_capture/batch_002']' timed out after 300 seconds",
+  "completed_at": "2026-10-31T14:55:55.416044+00:00"
+}

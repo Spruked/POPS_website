@@ -1,5 +1,6 @@
 import type { WebsiteOrbTarget, WebsiteOrbTargetId } from "./websiteOrbTargetTypes";
 import { getDemoPointerTarget } from '../pops-demo-app/tour/orbBridge';
+import crawl30Targets from './crawl30VerifiedTargets.json';
 
 export const POINTER_TARGETS: Partial<Record<WebsiteOrbTargetId, WebsiteOrbTarget>> = {
   "pops.nav.access": {
@@ -138,6 +139,10 @@ export const POINTER_TARGETS: Partial<Record<WebsiteOrbTargetId, WebsiteOrbTarge
     guideOnly: true,
   },
 };
+
+for (const target of crawl30Targets as WebsiteOrbTarget[]) {
+  POINTER_TARGETS[target.id] = target;
+}
 
 export function getPointerTarget(targetId: string | undefined): WebsiteOrbTarget | null {
   if (!targetId) return null;

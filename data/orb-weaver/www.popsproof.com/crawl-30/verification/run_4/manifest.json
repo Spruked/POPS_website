@@ -1,0 +1,150 @@
+{
+  "schema": "orb_weaver.run_manifest.v1",
+  "run_id": "4",
+  "project_id": "8",
+  "domain": "www.popsproof.com",
+  "job_type": "POINTER_RECOVERY",
+  "status": "COMPLETED",
+  "generated_at": "2026-10-31T14:59:12.166913+00:00",
+  "previous_run_id": null,
+  "previous_manifest_hash": null,
+  "evidence_root_hash": "5f30e8706b6c6198970c19d4b588ce9c8292a7224015f1b69361d930ac424914",
+  "artifact_count": 297,
+  "software": {
+    "orb_weaver_version": "1.0.0",
+    "python": "3.12.14",
+    "platform": "Linux-6.6.114.1-microsoft-standard-WSL2-x86_64-with-glibc2.41"
+  },
+  "metadata": {
+    "result": {
+      "source_orb_job_id": null,
+      "crawl_job_id": "30",
+      "operation": "POINTER_VERIFICATION_PASS",
+      "trigger": "crawl_completed",
+      "automatic_attempt": 1,
+      "automatic_attempts_maximum": 1,
+      "routes": [
+        "/account",
+        "/access",
+        "/pricing",
+        "/lexicon",
+        "/beta",
+        "/faq",
+        "/desktop-app",
+        "/support",
+        "/android",
+        "/early-adopters",
+        "/see-pops-in-action",
+        "/counsel-handoff",
+        "/product-demo",
+        "/how-you-use-it",
+        "/installation",
+        "/admin",
+        "/checkout",
+        "/events",
+        "/attorney-referral",
+        "/cart",
+        "/policies-procedures",
+        "/privacy",
+        "/terms",
+        "/declaration",
+        "/pledge",
+        "/about"
+      ],
+      "routes_covered": [
+        "/pledge",
+        "/about"
+      ],
+      "routes_failed": [
+        "/account",
+        "/access",
+        "/pricing",
+        "/lexicon",
+        "/beta",
+        "/faq",
+        "/desktop-app",
+        "/support",
+        "/android",
+        "/early-adopters",
+        "/see-pops-in-action",
+        "/counsel-handoff",
+        "/product-demo",
+        "/how-you-use-it",
+        "/installation",
+        "/admin",
+        "/checkout",
+        "/events",
+        "/attorney-referral",
+        "/cart",
+        "/policies-procedures",
+        "/privacy",
+        "/terms",
+        "/declaration"
+      ],
+      "batch_count": 4,
+      "render_count": 8,
+      "promoted_pointer_count": 63,
+      "unresolved_pointer_count": 1547,
+      "unresolved_reason_counts": {
+        "verification_capture_failed": 1511,
+        "duplicate_semantic_target": 34,
+        "selector_not_durable": 31,
+        "layout_not_stable": 2,
+        "element_not_visible": 2
+      },
+      "finding_class_counts": {
+        "UNVERIFIED": 2194,
+        "CONFIRMED": 63,
+        "CONFLICT": 34
+      },
+      "pointer_health_counts": {
+        "NEW": 2228,
+        "RECOVERED": 63
+      },
+      "pointer_quality": {
+        "schema": "orb_weaver.pointer_quality.v1",
+        "status": "POINTER_RECOVERY_REQUIRED",
+        "recovery_required": true,
+        "record_count": 1610,
+        "total_record_count": 2291,
+        "excluded_count": 0,
+        "reference_record_count": 681,
+        "guidance_record_count": 1610,
+        "stable_count": 63,
+        "uncertain_count": 1547,
+        "stable_ratio": 0.0391,
+        "uncertain_ratio": 0.9609,
+        "duplicate_conflict_count": 612,
+        "confidence_classes": {
+          "STABLE": 63,
+          "UNCERTAIN": 1547
+        },
+        "thresholds": {
+          "minimum_stable_ratio": 0.7,
+          "minimum_stable_pointers": 10,
+          "maximum_uncertain_ratio": 0.25,
+          "maximum_duplicate_conflicts": 3,
+          "maximum_automatic_recovery_attempts": 1
+        },
+        "triggers": [
+          "stable_ratio_below_threshold",
+          "uncertain_ratio_above_threshold",
+          "duplicate_conflicts_above_threshold"
+        ]
+      },
+      "verification_outcome": {
+        "schema": "orb_weaver.pointer_verification_outcome.v1",
+        "runtime_readiness": "READY_PARTIAL",
+        "eligible_target_count": 1610,
+        "published_count": 63,
+        "withheld_count": 1547,
+        "withheld_reason_counts": {
+          "CAPTURE_FAILED": 1511,
+          "VERIFICATION_FAILED": 36
+        }
+      },
+      "published_pointer_map": "/app/vault_system/clients/www.popsproof.com/website_orb_context/pointer_plot_map.json"
+    }
+  },
+  "manifest_hash": "564e1c8089eb1438b485ea324859e3505249ca87e5a5a56a92954c4e55b48740"
+}

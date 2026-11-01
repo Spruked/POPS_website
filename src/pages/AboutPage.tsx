@@ -79,6 +79,16 @@ export default function AboutPage() {
       </section>
 
       <div className="about-content">
+        <figure className="about-brand-artwork">
+          <img
+            src="/popsbanner1600.png"
+            alt="Proof of Presence System brand artwork with the POPS shield and four visual pillars: Protective, Forensic, Command, and Integrity."
+            loading="lazy"
+            width="1600"
+            height="1176"
+          />
+          <figcaption>POPS brand artwork. Product features and evidence handling depend on the verified release.</figcaption>
+        </figure>
         <section className="doctrine-block doctrine-stroke-1">
           <h3>The Doctrine</h3>
           <p><strong>POPS is not a support group.</strong></p>

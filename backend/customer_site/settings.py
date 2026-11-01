@@ -20,6 +20,9 @@ SECRET_KEY = os.environ.get('CUSTOMER_SECRET_KEY') or key_path.read_text()
 DEBUG = False
 ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'testserver'] if DEVELOPMENT else os.environ.get('CUSTOMER_ALLOWED_HOSTS', '').split(',')
 FRONTEND_URL = 'http://localhost:5173' if DEVELOPMENT else os.environ.get('CUSTOMER_FRONTEND_URL', '')
+SQUARE_ENVIRONMENT = os.environ.get('SQUARE_ENVIRONMENT', 'production').strip().lower()
+SQUARE_VERSION = os.environ.get('SQUARE_VERSION', '2026-07-15').strip()
+GUARDIAN_CHECKOUT_ENABLED = os.environ.get('POPS_GUARDIAN_CHECKOUT_ENABLED', '0') == '1'
 if not DEVELOPMENT and not FRONTEND_URL.startswith('https://'):
     raise RuntimeError('Set an HTTPS CUSTOMER_FRONTEND_URL before deployment.')
 ROOT_URLCONF = 'customer_site.urls'
