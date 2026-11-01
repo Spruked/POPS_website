@@ -41,22 +41,22 @@ export default function HomePage() {
 
         <div className="hero-content">
           <div className="hero-badge">
-            <span>Local-First Evidence Workstation</span>
+            <span>Your Story. Your Records. Your Voice.</span>
           </div>
 
           <h1>
             Proof of Presence.<br />
-            <span className="accent">A record that stands.</span>
+            <span className="accent">Preserve. Protect. Prove.</span>
           </h1>
 
           <p className="hero-subtitle">
-            POPS helps fathers organize records of parenting-time involvement: event notes, supporting material, and a chronological history for personal review and appropriate professional discussions. POPS Desktop for Windows is the published $99 one-time desktop offer. Android is progressing through Google Play testing; iOS is planned.
+            When parenting time matters, details matter. POPS helps you record important events, keep supporting material together, and build a clear chronological history. Explore the Windows experience and join the next chapter of POPS.
           </p>
 
           <div className="hero-actions">
             <Link to="/access" className="btn btn-primary">
               <Download size={18} />
-              Get POPS
+              Explore POPS
             </Link>
             <Link to="/see-pops-in-action" className="btn btn-ghost">
               <MonitorPlay size={18} />
@@ -108,25 +108,25 @@ export default function HomePage() {
           <div className="section-header">
             <span className="mono">The POPS Application Family</span>
             <h2 id="home-app-family-title">Three platforms. Clear release status.</h2>
-            <p>The website explains POPS and offers a fictional browser demonstration. It is separate from the installable Windows application and does not contain your private Evidence Vault.</p>
+            <p>Discover how POPS works, explore an interactive demonstration, and find the version that fits your needs.</p>
           </div>
           <div className="launch-grid">
             <article className="launch-card">
               <span className="mono">Windows Desktop · Published offer</span>
               <h3>POPS Desktop</h3>
-              <p>The downloadable desktop application is offered for $99 one time, with lifetime POPS Membership included. The current website is not the installer; checkout and delivery remain disabled.</p>
+              <p>Organize important events, supporting files, and records in one Windows desktop workspace. The published one-time offer is $99 with POPS Membership included. Explore the application ahead of its purchase release.</p>
               <Link to="/desktop-app" className="btn btn-primary">Explore POPS Desktop for Windows</Link>
             </article>
             <article className="launch-card" id="home-android-status">
               <span className="mono">Android · Google Play testing</span>
               <h3>POPS Android</h3>
-              <p>The mobile companion is progressing through Google Play testing. It is not publicly available, approved for production, or ready to purchase. No public Play Store listing or price is offered here.</p>
+              <p>POPS Android is advancing through Google Play testing. Join the testing community and help shape the mobile experience.</p>
               <Link to="/android" className="btn btn-primary">See Android status</Link>
             </article>
             <article className="launch-card">
               <span className="mono">iOS · Planned</span>
               <h3>POPS for iPhone</h3>
-              <p>An iOS application is planned. It is not available for download or purchase, and no release date, price, or license inclusion has been announced.</p>
+              <p>POPS for iPhone is planned. Follow product updates as the mobile family grows.</p>
               <Link to="/access#platforms" className="btn btn-ghost">View platform plans</Link>
             </article>
           </div>
@@ -136,24 +136,24 @@ export default function HomePage() {
       <div className="launch-home"><div className="container">
         <ContentSection id="home-product-purpose" title="Your presence matters. Give the details a place to stay.">
           <p>A missed exchange is more than a date on a calendar. There may be an unanswered message, a receipt from the trip, a photo, or a note about what you personally observed. When those pieces stay scattered, preparing for a conversation means searching again and relying on memory.</p>
-          <p>P.O.P.S. — Proof of Presence System — helps organize a parent’s record of involvement: record an event, preserve supporting material, and review a chronological history in context. It helps prepare documentation for appropriate review; it does not prove a disputed event or guarantee a custody or court outcome.</p>
+          <p>P.O.P.S. — Proof of Presence System — helps organize a parent’s record of involvement: record an event, preserve supporting material, and review a chronological history in context. Use your organized history for personal review or conversations with a legal professional. POPS is a recordkeeping tool, not a legal decision-maker.</p>
           <div className="launch-grid">
             <div className="launch-card"><h3>Organize involvement</h3><p>Bring dates, event notes, people, and relevant context together for a clearer personal review.</p><Link to="/desktop-app">Explore POPS Desktop for Windows</Link></div>
-            <div className="launch-card"><h3>Keep supporting material connected</h3><p>Associate files with the records they relate to and review them in chronological context. The product does not independently verify what a file or note says.</p><Link to="/how-you-use-it">See the documented workflow</Link></div>
-            <div className="launch-card"><h3>See the practical steps</h3><p>Follow a fictional missed exchange from an event note through supporting files and a chronology. Representative examples are labeled; actual release captures are still needed.</p><Link to="/how-you-use-it">Follow the record-building workflow</Link></div>
+            <div className="launch-card"><h3>Keep supporting material connected</h3><p>Associate files with the records they relate to and review them in chronological context. Keep related material and its context connected for easier review.</p><Link to="/how-you-use-it">See the documented workflow</Link></div>
+            <div className="launch-card"><h3>See the practical steps</h3><p>Explore an illustrative missed-exchange scenario, from the initial note to supporting files and a chronological record.</p><Link to="/how-you-use-it">Follow the record-building workflow</Link></div>
           </div>
         </ContentSection>
-        <ContentSection id="home-private-records" title="Your private documentation stays yours.">
-          <p>POPS does not track users’ private documentation entries. The Windows app’s private notes and supporting records are separate from this public website and its account, support, or beta forms. Do not submit case documents or family evidence through general website forms.</p>
-          <p>The app is designed around local-first records. Encryption, automatic backup, and cloud synchronization are not promised unless an active release documents and verifies them.</p>
+        <ContentSection id="home-private-records" title="Your records. Your control.">
+          <p>Your personal documentation belongs in your local POPS workspace, separate from public website forms and accounts. Keep sensitive material in your secure records.</p>
+          <p>The desktop experience is designed around local records and user-controlled review. Release notes explain the storage and recovery features available.</p>
           <Link to="/privacy">Read the privacy notice</Link>
         </ContentSection>
         <ContentSection id="home-practical-example" title="A missed exchange becomes an organized record.">
           <p>Record the scheduled exchange and what you observed. Associate a relevant photo or message with that event. Keep the source and collection context. Review related entries in date order, then prepare the material supported by your release for your own review or discussion with counsel.</p>
-          <p>The software organizes what you supply. It does not independently establish that an event occurred or decide whether a court order was violated. File integrity checks support the record; they do not guarantee admissibility or a legal result.</p>
+          <p>POPS helps organize the evidence and context you provide. Legal conclusions and court decisions remain with the appropriate professionals and authorities.</p>
         </ContentSection>
         <ContentSection id="home-participate" title="Choose how you take part.">
-          <p>POPS Desktop Access is the published $99 one-time Windows desktop license and includes lifetime POPS Membership. Open Door is personally reviewed financial assistance for the Windows offer; sponsor contributions can support that Windows access. Neither route currently issues Android or iOS access. Checkout is unavailable, and saving a cart selection does not place an order.</p>
+          <p>POPS Desktop Access is the published $99 one-time Windows desktop license and includes lifetime POPS Membership. Open Door is personally reviewed financial assistance for the Windows offer; sponsor contributions can support that Windows access. Neither route currently issues Android or iOS access. Purchase and fulfillment options will open with the verified release. Until then, you can explore the offers and save a selection for reference.</p>
           <StatusNote>We are seeking interest toward 50 active beta participants. The founding-customer program targets the first 100 qualifying paying customers, with special benefits still awaiting approval. Neither a signup nor a saved cart reserves paid-customer status.</StatusNote>
           <LaunchLinks/>
         </ContentSection>
@@ -180,7 +180,7 @@ export default function HomePage() {
             </div>
             <div className="feature-card" data-orb-target="pops.home.records">
               <h3>Organize</h3>
-              <p>Connect event notes and supporting material in a chronology. Specific reports and attorney handoff exports remain subject to release verification.</p>
+              <p>Connect event notes and supporting material in a chronology. Available reporting and export capabilities are identified in each release.</p>
             </div>
           </div>
         </div>
@@ -191,7 +191,7 @@ export default function HomePage() {
           <div className="section-header">
             <span className="mono">Site Path</span>
             <h2>Doctrine, commitment, language, access.</h2>
-            <p>The public website is short by design. The app and ORB carry the deeper working structure.</p>
+            <p>Start with what POPS can help you accomplish, then explore the principles and tools behind it.</p>
           </div>
 
           <div className="features-grid">
@@ -212,7 +212,7 @@ export default function HomePage() {
             <span className="mono">Public Site vs App ORB</span>
             <h2>Two audiences. One doctrine.</h2>
             <p>
-              The website explains POPS clearly. The desktop app applies POPS locally with the evidence vault, timeline tools, lexicon guidance, rewrite rules, and ORB support.
+              The website introduces POPS and its practical workflows. The desktop application brings the recordkeeping experience into a local workspace.
             </p>
           </div>
 
@@ -237,7 +237,7 @@ export default function HomePage() {
         <div className="container">
           <h2 style={{ marginBottom: 16 }}>Proof of Presence requires a record.</h2>
           <p style={{ color: "var(--text-secondary)", maxWidth: 620, margin: "0 auto 32px", fontSize: 17, lineHeight: 1.6 }}>
-            The Declaration and Pledge establish the standard. The desktop application helps preserve evidence, organize timelines, verify files, and prepare a court-safe record for attorney review.
+            Build a clearer history of your involvement with dated records, supporting material, and tools designed for factual review.
           </p>
           <Link to="/access" className="btn btn-primary" style={{ padding: "16px 40px", fontSize: 16 }}>
             <Download size={18} />
