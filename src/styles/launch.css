@@ -67,6 +67,12 @@
 .launch-page th, .launch-page td { border-bottom: 1px solid #334155; text-align: left; padding: 15px; line-height: 1.7; }
 .launch-table-wrap { overflow-x: auto; }
 .launch-card .btn { white-space: normal; text-align: center; }
+.access-options-grid > .launch-card { display: flex; flex-direction: column; }
+.access-options-grid > .launch-card > .btn { margin-top: auto; align-self: flex-start; }
+.access-promise { margin-top: 28px; padding: 26px; border: 1px solid rgba(255,184,77,.62); border-left: 4px solid #ffb84d; border-radius: 12px; background: rgba(24,27,31,.72); }
+.access-promise h3 { margin-top: 0; }
+.access-promise p { color: #b7c5d8; line-height: 1.8; max-width: 80ch; }
+.access-promise p + p { margin-top: 16px; }
 .customer-fieldset { border: 1px solid #334155; border-radius: 8px; padding: 18px; margin: 22px 0; min-width: 0; }
 .customer-fieldset legend { padding: 0 8px; font-weight: 700; }
 .customer-fields-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 0 18px; }

@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import "./LandingSplash.css";
 import splashSoundUrl from "./robotgrovebeat.mp3";
+import { ORB_SKIN_SRC } from "../orb/orbAssets";
 
 const SPLASH_KEY = "pops:startup-splash-seen";
 const FULL_DURATION = 14;
@@ -79,26 +80,11 @@ function drawActivationNode(context: CanvasRenderingContext2D, x: number, y: num
 
 function drawOrbIdentity(context: CanvasRenderingContext2D, image: HTMLImageElement, x: number, y: number, radius: number, alpha: number, build: number) {
   if (alpha <= 0) return;
-  drawGlow(context, x, y, radius * 3.7, "76,195,238", 0.2 * alpha * build);
   context.save();
   context.translate(x, y);
-  context.strokeStyle = `rgba(174,226,246,${0.7 * alpha * build})`;
-  context.lineWidth = 1.1;
-  context.beginPath();
-  context.arc(0, 0, radius * (1.35 - build * 0.08), -Math.PI * 0.86, Math.PI * 0.72);
-  context.stroke();
-  context.strokeStyle = `rgba(76,195,238,${0.54 * alpha * build})`;
-  context.beginPath();
-  context.arc(0, 0, radius * 1.62, Math.PI * 0.18, Math.PI * 1.12);
-  context.stroke();
-  context.globalAlpha = alpha * build;
   if (image.complete && image.naturalWidth > 0) {
+    context.globalAlpha = alpha * build;
     context.drawImage(image, -radius, -radius, radius * 2, radius * 2);
-  } else {
-    context.fillStyle = "#12161c";
-    context.beginPath();
-    context.arc(0, 0, radius, 0, Math.PI * 2);
-    context.fill();
   }
   context.restore();
 }
@@ -163,7 +149,7 @@ export default function LandingSplash() {
     const duration = motionReduced ? REDUCED_DURATION : FULL_DURATION;
     const random = seededRandom(11);
     const orbImage = new Image();
-    orbImage.src = "/orb/skins/average-dad-mode-transparent.png";
+    orbImage.src = ORB_SKIN_SRC;
     const fragments: Fragment[] = Array.from({ length: 30 }, (_, index) => ({
       x: 0,
       y: 0,
@@ -349,18 +335,6 @@ export default function LandingSplash() {
       const orbFade = ease(progress(t, 12.2, 13.7));
       if (orbBuild > 0) {
         drawOrbIdentity(context, orbImage, centerX, guardianY, (42 + 20 * orbBuild) * scale, orbFade, orbBuild);
-        if (orbBuild > 0.3) {
-          context.save();
-          context.strokeStyle = `rgba(178,230,249,${0.42 * orbBuild})`;
-          context.lineWidth = 1.2 * scale;
-          context.beginPath();
-          context.moveTo(centerX - 82 * scale, guardianY);
-          context.lineTo(centerX - 50 * scale, guardianY);
-          context.moveTo(centerX + 50 * scale, guardianY);
-          context.lineTo(centerX + 82 * scale, guardianY);
-          context.stroke();
-          context.restore();
-        }
       }
 
       if (elapsed >= duration) setComplete(true);

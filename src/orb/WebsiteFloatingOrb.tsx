@@ -23,6 +23,7 @@ import {reportOrbEvent,isPrivateOrbPage,dispatchOrbAction,orbPost} from './visit
 import type {OrbAction} from './visitorSession';
 import {applyOrbAction} from './orbActions';
 import {prepareOrbSpeech} from './orbSpeech';
+import { ORB_SKIN_SRC } from './orbAssets';
 
 type VoiceRecognitionResultEvent = {
   resultIndex: number;
@@ -52,7 +53,6 @@ type OrbState = "idle" | "listening" | "thinking" | "speaking" | "error";
 type CursorPing = { x: number; y: number; key: number };
 type PreparedWebsiteSpeech = Awaited<ReturnType<typeof prepareOrbSpeech>>;
 
-const ORB_SKIN_SRC = "/orb/skins/average-dad-leather-jacket-cutout.png";
 const ORB_MAX_SIZE = 200;
 const ORB_MIN_SIZE = 80;
 const ORB_MOBILE_MAX_SIZE = 220;

@@ -58,7 +58,7 @@ export default function DownloadPage() {
       <section id="access-options" className="launch-section" data-orb-target="pops.access.options" aria-labelledby="access-options-title">
         <h2 id="access-options-title">Choose Your Path to P.O.P.S. for Windows</h2>
         <p>Explore POPS desktop access and support programs below. Your desktop purchase will include Android once Google Play testing is complete; iOS remains planned.</p>
-        <div className="launch-grid">
+        <div className="launch-grid access-options-grid">
           <article id="guardian-access" className="launch-card" data-orb-target={targets.guardian}>
             <span className="mono">Standard purchase</span>
             <h3>POPS Desktop Access</h3>
@@ -72,11 +72,8 @@ export default function DownloadPage() {
           <article id="opendoor-access" className="launch-card" data-orb-target={targets.opendoor}>
             <span className="mono">An Open Door for Every Father</span>
             <h3>Pay What You Can</h3>
-            <p>We realize that these situations can be trying and financially burdensome. That is why we are dedicated to helping every father we can by offering a Pay What You Can option. Simply sign up for a POPS account and contribute any amount greater than zero.</p>
-            <p>We know that when POPS is used properly and good records are kept, it can help you remember, organize your situation so an attorney can understand it better, reveal details you might have missed, preserve evidence that can establish what happened when you have been wronged or falsely accused, and show the efforts you have made.</p>
-            <p>P.O.P.S. will not leave you without a way to protect yourself. All of us were once children, and POPS is here to look after us and our children.</p>
-            <p>Pay what you can now. Tell others how POPS helps you. Then, when things have, God willing, settled down and you have found the peace you and your children deserve, pay it forward by sponsoring the next father.</p>
-            <Link className="btn btn-ghost" to="/account">Create a POPS account</Link>
+            <p>Open Door assistance is planned for fathers who cannot afford the standard Windows offer. Enrollment and contributions are not yet active.</p>
+            <Link className="btn btn-ghost" to="#pay-it-forward">Read the Pay What You Can promise</Link>
           </article>
           <article id="sponsor-access" className="launch-card" data-orb-target={targets.sponsor}>
             <span className="mono">Sponsor-funded Windows access</span>
@@ -88,6 +85,12 @@ export default function DownloadPage() {
               Save sponsorship selection
             </button>
           </article>
+        </div>
+        <div id="pay-it-forward" className="access-promise" aria-labelledby="pay-it-forward-title">
+          <h3 id="pay-it-forward-title">The Pay What You Can promise</h3>
+          <p>We know that when POPS is used properly and good records are kept, it can help you remember, organize your situation so an attorney can understand it better, reveal details you might have missed, preserve evidence that can establish what happened when you have been wronged or falsely accused, and show the efforts you have made.</p>
+          <p>P.O.P.S. will not leave you without a way to protect yourself. All of us were once children, and POPS is here to look after us and our children.</p>
+          <p>Pay what you can now. Tell others how POPS helps you. Then, when things have, God willing, settled down and you have found the peace you and your children deserve, pay it forward by sponsoring the next father.</p>
         </div>
       </section>
 
@@ -110,8 +113,8 @@ export default function DownloadPage() {
       </section>
 
       <section id="access-assistance" className="launch-section" data-orb-target="pops.access.activation" aria-labelledby="access-assistance-title">
-        <h2 id="access-assistance-title">Pay What You Can. Pay It Forward.</h2>
-        <p>All of us were once children. POPS is here for parents and their children, because every family's story deserves the chance to be documented. Pay what you can, share how POPS helps you, and when life has settled and you find the peace you and your children deserve, consider paying it forward by sponsoring the next father. God willing, better days are ahead. An account and a contribution greater than zero are the intended participation requirements; enrollment and payment are not yet active.</p>
+        <h2 id="access-assistance-title">Open Door enrollment status</h2>
+        <p>Open Door enrollment and contributions are not yet active. The Pay What You Can promise and its intended purpose are described above.</p>
         <p>Do not send private court details or family evidence to explain a financial need. Contact support for general availability information; that request is not an application or approval.</p>
         <div className="hero-actions">
           <Link className="btn btn-ghost" to="/policies-procedures">Read the existing program policy</Link>
