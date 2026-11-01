@@ -23,15 +23,15 @@ export default function DownloadPage() {
       description="Compare POPS applications, the $99 POPS Desktop for Windows offer, Windows assistance routes, and separate lifetime membership. Purchasing opens after release preparation."
       path="/access"
       eyebrow="POPS applications & access"
-      heading="Choose your platform. Understand your access."
-      intro="POPS helps fathers organize a record of parenting-time involvement, supporting material, and a chronological history for personal review and appropriate professional discussions. The Windows offer is published; Android is in Google Play testing; iOS is planned."
+      heading="We’re Excited to Bring P.O.P.S. to More Families."
+      intro="We’re proud to introduce a practical way to bring parenting-time records together. Explore the Windows application, discover our Android testing program, and see what’s planned for iPhone."
     >
       <StatusNote>
         Explore POPS for Windows, see the demonstration, and review the current release path. Purchases and installer delivery will open after final release preparation. Android and iOS follow separate release plans.
       </StatusNote>
 
       <section id="platforms" className="launch-section" aria-labelledby="platforms-title">
-        <h2 id="platforms-title">The POPS application family</h2>
+        <h2 id="platforms-title">Discover the P.O.P.S. Family</h2>
         <div className="launch-grid">
           <article className="launch-card" data-orb-target="pops.access.standard">
             <span className="mono">Windows Desktop · Published offer</span>
@@ -56,7 +56,7 @@ export default function DownloadPage() {
       </section>
 
       <section id="access-options" className="launch-section" data-orb-target="pops.access.options" aria-labelledby="access-options-title">
-        <h2 id="access-options-title">Three ways to access the Windows application</h2>
+        <h2 id="access-options-title">Choose Your Path to P.O.P.S. for Windows</h2>
         <p>Explore Windows desktop access and support programs below. Android and iOS have their own release plans.</p>
         <div className="launch-grid">
           <article id="guardian-access" className="launch-card" data-orb-target={targets.guardian}>
@@ -99,7 +99,7 @@ export default function DownloadPage() {
       </Section>
 
       <section id="membership" className="launch-section" data-orb-target={targets.membership} aria-labelledby="membership-title">
-        <h2 id="membership-title">POPS Membership is a separate offering</h2>
+        <h2 id="membership-title">Join the P.O.P.S. Community</h2>
         <p><strong>$12.99 one time</strong> for the published lifetime membership. Membership alone is not a Windows, Android, or iOS application license.</p>
         <p>POPS Desktop includes lifetime membership, so POPS Desktop buyers should not add membership separately. Community services and resources will be described as they become available.</p>
         <button className="btn btn-ghost" disabled={hasDesktop} onClick={() => { addItem(membership); navigate('/cart'); }}>
