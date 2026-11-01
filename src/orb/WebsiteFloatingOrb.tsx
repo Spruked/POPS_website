@@ -49,7 +49,6 @@ type VoiceRecognitionWindow = Window & {
 };
 
 type OrbState = "idle" | "listening" | "thinking" | "speaking" | "error";
-type TravelLook = { x: number; y: number };
 
 const ORB_SKIN_SRC = "/orb/skins/average-dad-leather-jacket-cutout.png";
 const ORB_MAX_SIZE = 200;
@@ -94,7 +93,6 @@ export default function WebsiteFloatingOrb() {
   const [lastResponse, setLastResponse] = useState<OrbResponse | null>(null);
   const [voiceStatus,setVoiceStatus]=useState('');
   const [splashActive, setSplashActive] = useState(true);
-  const [travelLook, setTravelLook] = useState<TravelLook>({ x: 0, y: 0 });
   const [position, setPosition] = useState(() => {
     const size = activeOrbSize();
     return { x: window.innerWidth - size - 24, y: 150 };
@@ -108,7 +106,7 @@ export default function WebsiteFloatingOrb() {
   const positionRef = useRef(position);
   const orbSizeRef = useRef(orbSize);
   const velocityRef = useRef({ x: 0, y: 0 });
-  const travelLookRef = useRef<TravelLook>({ x: 0, y: 0 });
+  const gazeLookRef = useRef({ x: 0, y: 0 });
   const roamTargetRef = useRef(randomRoamTarget());
   const pauseUntilRef = useRef(0);
   const lastTimeRef = useRef(0);
@@ -686,21 +684,22 @@ export default function WebsiteFloatingOrb() {
         y: clamp(current.y + nextVelocity.y * dt, 92, window.innerHeight - size - 18),
       };
       velocityRef.current = nextVelocity;
-      const travelDx = next.x - current.x;
-      const travelDy = next.y - current.y;
-      const travelDistance = Math.hypot(travelDx, travelDy);
-      if (travelDistance > 0.015) {
-        const desiredLook = {
-          x: clamp(travelDx / Math.max(travelDistance, 1), -1, 1),
-          y: clamp(travelDy / Math.max(travelDistance, 1), -1, 1),
-        };
-        const smoothedLook = {
-          x: travelLookRef.current.x + (desiredLook.x - travelLookRef.current.x) * 0.035,
-          y: travelLookRef.current.y + (desiredLook.y - travelLookRef.current.y) * 0.035,
-        };
-        travelLookRef.current = smoothedLook;
-        setTravelLook(smoothedLook);
-      }
+      const hasPointer = cursor.x >= 0 && cursor.y >= 0 && cursor.x <= window.innerWidth && cursor.y <= window.innerHeight;
+      const lensCenter = { x: center.x, y: current.y + size * 0.16 };
+      const gazeTarget = hasPointer
+        ? {
+            x: clamp((cursor.x - lensCenter.x) / Math.max(window.innerWidth * 0.42, 120), -1, 1),
+            y: clamp((cursor.y - lensCenter.y) / Math.max(window.innerHeight * 0.42, 120), -1, 1),
+          }
+        : { x: 0, y: 0 };
+      const gazeEase = clamp(dt * 8, 0, 1);
+      const gazeLook = {
+        x: gazeLookRef.current.x + (gazeTarget.x - gazeLookRef.current.x) * gazeEase,
+        y: gazeLookRef.current.y + (gazeTarget.y - gazeLookRef.current.y) * gazeEase,
+      };
+      gazeLookRef.current = gazeLook;
+      coreRef.current?.style.setProperty("--orb-look-x", gazeLook.x.toFixed(3));
+      coreRef.current?.style.setProperty("--orb-look-y", gazeLook.y.toFixed(3));
 
       positionRef.current = next;
       setPosition(next);
@@ -785,14 +784,13 @@ export default function WebsiteFloatingOrb() {
         onClick={startVoiceCapture}
         style={{
           "--orb-glow": glow,
-          "--orb-look-x": travelLook.x,
-          "--orb-look-y": travelLook.y,
         } as React.CSSProperties}
         aria-label="Talk to Pops"
         title="Pops — voice assistant"
       >
         <span className="website-orb-skin-wrap">
           <img className="website-orb-skin" src={ORB_SKIN_SRC} alt="" aria-hidden="true" draggable={false} />
+          <span className="website-orb-eye-ring" aria-hidden="true" />
         </span>
       </button>
 
