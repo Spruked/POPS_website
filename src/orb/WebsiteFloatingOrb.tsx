@@ -49,6 +49,8 @@ type VoiceRecognitionWindow = Window & {
 };
 
 type OrbState = "idle" | "listening" | "thinking" | "speaking" | "error";
+type CursorPing = { x: number; y: number; key: number };
+type PreparedWebsiteSpeech = Awaited<ReturnType<typeof prepareOrbSpeech>>;
 
 const ORB_SKIN_SRC = "/orb/skins/average-dad-leather-jacket-cutout.png";
 const ORB_MAX_SIZE = 200;
@@ -93,6 +95,7 @@ export default function WebsiteFloatingOrb() {
   const [lastResponse, setLastResponse] = useState<OrbResponse | null>(null);
   const [voiceStatus,setVoiceStatus]=useState('');
   const [splashActive, setSplashActive] = useState(true);
+  const [cursorPing, setCursorPing] = useState<CursorPing | null>(null);
   const [position, setPosition] = useState(() => {
     const size = activeOrbSize();
     return { x: window.innerWidth - size - 24, y: 150 };
@@ -102,6 +105,9 @@ export default function WebsiteFloatingOrb() {
   const [pendingGuide, setPendingGuide] = useState<WebsiteOrbGuideRequest | null>(null);
 
   const cursorRef = useRef({ x: -1000, y: -1000 });
+  const cursorPingKeyRef = useRef(0);
+  const cursorPingAtRef = useRef(0);
+  const cursorPingTimeoutRef = useRef<number | null>(null);
   const coreRef = useRef<HTMLButtonElement | null>(null);
   const positionRef = useRef(position);
   const orbSizeRef = useRef(orbSize);
@@ -131,6 +137,8 @@ export default function WebsiteFloatingOrb() {
   const guidePulseRef = useRef(0);
   const interruptTourRef = useRef<() => void>(() => {});
   const speechRequestRef=useRef<AbortController|null>(null);
+  const startupSpeechRef=useRef<Promise<{response:OrbResponse;prepared:PreparedWebsiteSpeech}|null>|null>(null);
+  const startupSpeechAbortRef=useRef<AbortController|null>(null);
   const releaseFinalRef=useRef<(()=>void)|null>(null);
   const introActiveRef=useRef(false);
   const introAllowedRef=useRef(true);
@@ -146,14 +154,14 @@ export default function WebsiteFloatingOrb() {
     introActiveRef.current=false;
     speechRequestRef.current?.abort();speechRequestRef.current=null;
     releaseFinalRef.current?.();releaseFinalRef.current=null;
+    const hadAudio=finalAudioRef.current!==null;
     setVoiceStatus('');
     if (speechLevelFrameRef.current !== null) {
       window.cancelAnimationFrame(speechLevelFrameRef.current);
       speechLevelFrameRef.current = null;
     }
     coreRef.current?.style.setProperty('--orb-speech-level', '0');
-    speechAudioContextRef.current?.close().catch(() => undefined);
-    speechAudioContextRef.current = null;
+    if(hadAudio){speechAudioContextRef.current?.close().catch(() => undefined);speechAudioContextRef.current=null;}
     if (finalAudioRef.current) {
       finalAudioRef.current.pause();
       finalAudioRef.current.onended=null;finalAudioRef.current.onerror=null;
@@ -164,7 +172,9 @@ export default function WebsiteFloatingOrb() {
 
   const followSpeechLevel = useCallback(async (audio: HTMLAudioElement) => {
     try {
-      const context = new AudioContext();
+      const context = speechAudioContextRef.current?.state==='closed'||!speechAudioContextRef.current
+        ? new AudioContext()
+        : speechAudioContextRef.current;
       await context.resume();
       if (audio !== finalAudioRef.current) {
         await context.close();
@@ -199,6 +209,17 @@ export default function WebsiteFloatingOrb() {
     }
   }, []);
 
+  const warmStartupVoice = useCallback(() => {
+    if(startupSpeechRef.current||isPrivateOrbPage(location.pathname))return;
+    const controller=new AbortController();
+    startupSpeechAbortRef.current=controller;
+    startupSpeechRef.current=(async()=>{
+      const response=await orbPost<OrbResponse>('speech/intro',{route:location.pathname,first_visit:true});
+      const prepared=await prepareOrbSpeech(response,controller.signal);
+      return {response,prepared};
+    })().catch(()=>null);
+  },[location.pathname]);
+
   const stopVoiceInput=useCallback(()=>{
     voiceCaptureRef.current=false;voiceActivationEnabledRef.current=false;
     voiceQueryActiveRef.current=false;voiceQueryRef.current='';voiceResumeAfterResponseRef.current=false;
@@ -208,7 +229,7 @@ export default function WebsiteFloatingOrb() {
   },[]);
 
   const speakOutput = useCallback(
-    async (response: OrbResponse) => {
+    async (response: OrbResponse, warmedSpeech?: PreparedWebsiteSpeech) => {
       stopFinalAudio();introActiveRef.current=response.llm_source==='website-intro';setLastResponse(response);
       const guideRequest=guideRequestFromPulse(response.cognitive_pulse);
       if(guideRequest)setPendingGuide(guideRequest);
@@ -226,12 +247,13 @@ export default function WebsiteFloatingOrb() {
         releaseFinalRef.current?.();releaseFinalRef.current=null;finalAudioRef.current=null;
         setLastResponse({...response,tts_provider:'qwen',tts_error:'Pops natural voice is temporarily unavailable.'});
         setVoiceStatus('Pops natural voice is temporarily unavailable.');setOrbState('error');
+        if(voiceResumeAfterResponseRef.current){voiceResumeAfterResponseRef.current=false;voiceResumeTimerRef.current=window.setTimeout(()=>startVoiceActivationRef.current?.(),250);}
       };
       let speechProvider=response.tts_provider||'qwen';
       let audio:HTMLAudioElement;
       try{
         if(response.speech_id){
-          setOrbState('thinking');setVoiceStatus('Preparing Pops voice… The caption is ready.');const prepared=await prepareOrbSpeech(response,request.signal);
+          setOrbState('thinking');setVoiceStatus('Preparing Pops natural voice…');const prepared=warmedSpeech||await prepareOrbSpeech(response,request.signal);
           if(!current()){prepared.release();return;}audio=prepared.audio;speechProvider=prepared.provider;releaseFinalRef.current=prepared.release;if(speechProvider!=='qwen'){prepared.release();voiceUnavailable();return;}
           setLastResponse({...response,tts_provider:speechProvider,tts_error:null});
         }else if(response.tts_audio_url){audio=new Audio(response.tts_audio_url);releaseFinalRef.current=()=>{audio.onended=null;audio.onerror=null;audio.pause();audio.removeAttribute('src');audio.load();};}
@@ -246,6 +268,9 @@ export default function WebsiteFloatingOrb() {
 
   const handleOrbResponse = useCallback(
     async (request: Promise<OrbResponse>) => {
+      const abandonedWarmup=startupSpeechRef.current;
+      startupSpeechAbortRef.current?.abort();startupSpeechAbortRef.current=null;startupSpeechRef.current=null;
+      if(abandonedWarmup)void abandonedWarmup.then(warmed=>warmed?.prepared.release());
       introAllowedRef.current=false;
       pageArrivalNarrationRef.current=true;
       lastNarratedRouteRef.current=location.pathname;
@@ -458,6 +483,7 @@ export default function WebsiteFloatingOrb() {
   }, [handleOrbResponse, location.pathname, orbState, stopFinalAudio]);
 
   useEffect(() => {
+    if(document.querySelector('.pops-startup-splash'))warmStartupVoice();
     const beginVoiceSession = async () => {
       if(!introAllowedRef.current||isPrivateOrbPage()||document.getElementById(DEMO_HOST_ID)?.dataset.demoContextActive==='true')return;
       introAllowedRef.current=false;
@@ -465,14 +491,29 @@ export default function WebsiteFloatingOrb() {
       lastNarratedRouteRef.current=location.pathname;
       const run=runIdRef.current;
       introActiveRef.current=true;
+      setVoiceStatus('Preparing Pops during the startup sequence…');
       try{
-        const intro=await orbPost<OrbResponse>('speech/intro',{route:location.pathname,first_visit:true});
-        if(runIdRef.current!==run||document.getElementById(DEMO_HOST_ID)?.dataset.demoContextActive==='true')return;
+        const warmed=await startupSpeechRef.current;
+        const intro=warmed?.response||await orbPost<OrbResponse>('speech/intro',{route:location.pathname,first_visit:true});
+        if(runIdRef.current!==run||document.getElementById(DEMO_HOST_ID)?.dataset.demoContextActive==='true'){warmed?.prepared.release();return;}
+        const recognition=voiceRecognitionRef.current;
+        if(recognition&&!voiceQueryActiveRef.current){voiceActivationEnabledRef.current=false;voiceCaptureRef.current=false;recognition.onend=null;recognition.abort();voiceRecognitionRef.current=null;}
         voiceResumeAfterResponseRef.current=true;
-        await speakOutput(intro);
-      }catch{if(runIdRef.current===run){setVoiceStatus('Pops could not prepare the page introduction. Pops can still listen for your voice.');startVoiceActivation();}}
+        startupSpeechRef.current=null;startupSpeechAbortRef.current=null;
+        await speakOutput(intro,warmed?.prepared);
+      }catch(error){if(runIdRef.current===run){setVoiceStatus(`Pops could not prepare the page introduction: ${error instanceof Error?error.message:'voice session unavailable'}.`);startVoiceActivation();}}
     };
-    const handleStartupComplete = () => beginVoiceSession();
+    const handleStartupComplete = () => {
+      if(!speechAudioContextRef.current||speechAudioContextRef.current.state==='closed'){
+        try{
+          const context=new AudioContext();speechAudioContextRef.current=context;
+          const silent=context.createBufferSource();silent.buffer=context.createBuffer(1,1,context.sampleRate);silent.connect(context.destination);silent.start();
+          void context.resume().catch(()=>undefined);
+        }catch{/* Audio output remains available when the browser supports media playback directly. */}
+      }
+      startVoiceActivation();
+      void beginVoiceSession();
+    };
     window.addEventListener("pops:startup-complete", handleStartupComplete);
     const alreadyStarted = window.sessionStorage.getItem("pops:startup-splash-seen");
     const timer = alreadyStarted ? window.setTimeout(beginVoiceSession, 700) : null;
@@ -482,7 +523,7 @@ export default function WebsiteFloatingOrb() {
       if (voiceResumeTimerRef.current !== null) window.clearTimeout(voiceResumeTimerRef.current);
       stopVoiceInput();
     };
-  }, [location.pathname,startVoiceActivation,speakOutput,stopVoiceInput]);
+  }, [location.pathname,startVoiceActivation,speakOutput,stopVoiceInput,warmStartupVoice]);
 
   useEffect(() => {
     const splashTimer = window.setTimeout(() => setSplashActive(false), 1500);
@@ -573,6 +614,15 @@ export default function WebsiteFloatingOrb() {
   useEffect(() => {
     const onPointerMove = (event: PointerEvent) => {
       cursorRef.current = { x: event.clientX, y: event.clientY };
+      const size=orbSizeRef.current,current=positionRef.current;
+      const distance=Math.hypot(event.clientX-(current.x+size/2),event.clientY-(current.y+size/2));
+      const now=performance.now();
+      if(distance<size*1.35&&now-cursorPingAtRef.current>1100){
+        cursorPingAtRef.current=now;
+        setCursorPing({x:event.clientX,y:event.clientY,key:++cursorPingKeyRef.current});
+        if(cursorPingTimeoutRef.current!==null)window.clearTimeout(cursorPingTimeoutRef.current);
+        cursorPingTimeoutRef.current=window.setTimeout(()=>setCursorPing(null),850);
+      }
     };
     window.addEventListener("pointermove", onPointerMove);
     return () => window.removeEventListener("pointermove", onPointerMove);
@@ -712,6 +762,10 @@ export default function WebsiteFloatingOrb() {
   useEffect(() => () => {
     stopVoiceInput();
     stopFinalAudio();
+    startupSpeechAbortRef.current?.abort();
+    void startupSpeechRef.current?.then(warmed=>warmed?.prepared.release());
+    speechAudioContextRef.current?.close().catch(()=>undefined);
+    if(cursorPingTimeoutRef.current!==null)window.clearTimeout(cursorPingTimeoutRef.current);
     if (silenceFrameRef.current !== null) window.cancelAnimationFrame(silenceFrameRef.current);
     if (maxRecordingTimerRef.current !== null) window.clearTimeout(maxRecordingTimerRef.current);
     audioContextRef.current?.close().catch(() => undefined);
@@ -776,6 +830,7 @@ export default function WebsiteFloatingOrb() {
   return (
     <>
       <WebsiteOrbPointerOverlay guide={guide} onDismiss={() => setGuide(null)} />
+      {cursorPing&&<span key={cursorPing.key} className="website-orb-cursor-ping" style={{left:cursorPing.x,top:cursorPing.y}} aria-hidden="true" />}
       <div className="website-orb" style={{ transform: `translate3d(${position.x}px, ${position.y}px, 0)`, ["--orb-size" as string]: `${orbSize}px` }}>
       <button
         ref={coreRef}

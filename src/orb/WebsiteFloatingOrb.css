@@ -331,6 +331,19 @@
   pointer-events: none;
 }
 
+.website-orb-cursor-ping {
+  position: fixed;
+  z-index: 1201;
+  width: 10px;
+  height: 10px;
+  border: 1px solid rgba(119, 232, 255, .9);
+  border-radius: 50%;
+  box-shadow: 0 0 12px rgba(65, 205, 255, .55);
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  animation: website-orb-cursor-ping 820ms ease-out both;
+}
+
 .website-orb-target-ring {
   position: fixed;
   border: 2px solid rgba(251, 191, 36, 0.94);
@@ -442,6 +455,11 @@
 @keyframes website-orb-target-ping {
   0% { outline: 0 solid rgba(251, 191, 36, 0.62); }
   100% { outline: 18px solid rgba(251, 191, 36, 0); }
+}
+
+@keyframes website-orb-cursor-ping {
+  0% { opacity: .95; transform: translate(-50%, -50%) scale(.35); }
+  100% { opacity: 0; transform: translate(-50%, -50%) scale(4.2); }
 }
 
 @media (max-width: 720px) {
