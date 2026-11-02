@@ -218,7 +218,7 @@ def beta(request):
     data = form.cleaned_data
     owner=request.user if request.user.is_authenticated and request.user.email.casefold()==data['email'].strip().casefold() else None
     _, created = BetaApplication.objects.get_or_create(email=data['email'].strip().casefold(), defaults={**{key: data[key] for key in ['name', 'platform', 'experience', 'updates', 'phone', 'street_address', 'city', 'state', 'source']},'user':owner})
-    return JsonResponse({'message': 'Your interest has been recorded for review. This is not a beta invitation or a license. ' + ('This development entry is stored locally and will not reach the production team.' if settings.DEVELOPMENT else 'Invitations depend on testing needs and available places.')}, status=201 if created else 200)
+    return JsonResponse({'created': created, 'message': 'Your interest has been recorded for review. This is not a beta invitation or a license. ' + ('This development entry is stored locally and will not reach the production team.' if settings.DEVELOPMENT else 'Invitations depend on testing needs and available places.')}, status=201 if created else 200)
 
 
 @require_POST
