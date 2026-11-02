@@ -84,6 +84,26 @@ class CustomerTests(TestCase):
         self.assertEqual(BetaApplication.objects.get().email,'beta@example.com')
         self.assertEqual(self.post('beta',{**payload,'email':'other@example.com','consent':False}).status_code,400)
 
+    def test_tiktok_beta_contact_and_source_are_saved(self):
+        payload = {'name': 'Test Parent', 'email': 'campaign@example.com',
+                   'platform': 'android', 'experience': 'new', 'consent': True,
+                   'phone': '+12025550123', 'street_address': 'Sample Street',
+                   'city': 'Joplin', 'state': 'MO', 'source': 'tiktok'}
+        response = self.post('beta', payload)
+        self.assertEqual(response.status_code, 201)
+        application = BetaApplication.objects.get(email='campaign@example.com')
+        self.assertEqual(application.phone, '+12025550123')
+        self.assertEqual(application.city, 'Joplin')
+        self.assertEqual(application.source, 'tiktok')
+        self.assertEqual(self.post('beta', payload).status_code, 200)
+        self.assertEqual(BetaApplication.objects.filter(email='campaign@example.com').count(), 1)
+
+    def test_beta_rejects_unknown_ad_source(self):
+        payload = {'name': 'Test Parent', 'email': 'other@example.com',
+                   'platform': 'android', 'experience': 'new', 'consent': True,
+                   'source': 'untrusted-source'}
+        self.assertEqual(self.post('beta', payload).status_code, 400)
+
     def test_support_is_saved_with_reference(self):
         response=self.post('support',{'email':'test@example.com','category':'beta-feedback','message':'Fictional data test: the timeline did not show the new example event.','consent':True})
         self.assertEqual(response.status_code,201)
