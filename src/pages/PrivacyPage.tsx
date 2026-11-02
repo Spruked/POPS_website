@@ -77,6 +77,9 @@ export default function PrivacyPage() {
 
             <hr />
 
+            <h3>2.3 Optional TikTok Advertising Measurement</h3>
+            <p>On the beta signup page, visitors can optionally enable TikTok Pixel advertising measurement. When enabled, TikTok may receive browser, device and page-visit information and a registration completion event after a newly saved beta application. POPS does not intentionally include form answers, family records, names, email addresses or telephone numbers as event properties. You can register without enabling this optional measurement. TikTok processes measurement data under its own policies.</p>
+
             <h2>3. Information POPS Does Not Request Through General Forms</h2>
             <p>
               Do not send private case evidence through a general POPS contact form,
