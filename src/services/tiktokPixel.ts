@@ -1,6 +1,6 @@
 // TikTok conversion measurement is opt-in on the beta signup page.
 const PIXEL_ID = 'DBK9QJ3C77U97ADLNV40';
-type TikTokQueue = unknown[][] & { page?: () => void; track?: (event: string) => void; load?: (id: string) => void; instance?: (id: string) => TikTokQueue; _u?: string; methods?: string[]; setAndDefer?: (queue: TikTokQueue, name: string) => void; _i?: Record<string, TikTokQueue>; _t?: Record<string, number>; _o?: Record<string, object> };
+type TikTokQueue = unknown[][] & { page?: () => void; track?: (event: string, params?: Record<string, unknown>) => void; load?: (id: string) => void; instance?: (id: string) => TikTokQueue; _u?: string; methods?: string[]; setAndDefer?: (queue: TikTokQueue, name: string) => void; _i?: Record<string, TikTokQueue>; _t?: Record<string, number>; _o?: Record<string, object> };
 declare global { interface Window { ttq?: TikTokQueue; TiktokAnalyticsObject?: string } }
 let enabled = false;
 
@@ -38,6 +38,26 @@ export function enableTikTokPixel() {
   q.page?.();
 }
 
-export function trackTikTokBetaSignup() {
-  if (enabled) window.ttq?.track?.('CompleteRegistration');
+const betaContent = {
+  contents: [{
+    content_id: 'pops-beta-android',
+    content_type: 'product',
+    content_name: 'POPS Beta Tester Registration',
+  }],
+};
+
+export function trackTikTokBetaPageView() {
+  if (enabled) window.ttq?.track?.('ViewContent', betaContent);
 }
+
+export function trackTikTokBetaFormAttempt() {
+  if (enabled) window.ttq?.track?.('ClickButton', betaContent);
+}
+
+export function trackTikTokBetaSignup() {
+  if (enabled) window.ttq?.track?.('CompleteRegistration', betaContent);
+}
+
+// Other events from TikTok's template only belong to actual matching actions.
+// Do not send placeholder values or personal contact data to ttq.identify.
+
