@@ -8,6 +8,21 @@
     'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
     })(window,document,'script','dataLayer','GTM-55BSN7RF');</script>
     <!-- End Google Tag Manager -->
+    <!-- TikTok Pixel — marketing pages, not private customer routes -->
+    <script>
+    !function(w,d,t){
+      if(/^\/(?:account|cart|checkout)(?:\/|$)/.test(w.location.pathname))return;
+      w.TiktokAnalyticsObject=t;var q=w[t]=w[t]||[];
+      q.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie","holdConsent","revokeConsent","grantConsent"];
+      q.setAndDefer=function(x,m){x[m]=function(){x.push([m].concat(Array.prototype.slice.call(arguments,0)))}};
+      for(var i=0;i<q.methods.length;i++)q.setAndDefer(q,q.methods[i]);
+      q.instance=function(id){for(var x=q._i[id]||[],n=0;n<q.methods.length;n++)q.setAndDefer(x,q.methods[n]);return x};
+      q.load=function(id,opts){var url="https://analytics.tiktok.com/i18n/pixel/events.js";q._i=q._i||{};q._i[id]=[];q._i[id]._u=url;q._t=q._t||{};q._t[id]=+new Date;q._o=q._o||{};q._o[id]=opts||{};
+        var e=d.createElement("script");e.type="text/javascript";e.async=true;e.src=url+"?sdkid="+id+"&lib="+t;var f=d.getElementsByTagName("script")[0];f.parentNode.insertBefore(e,f)};
+      q.load("DBK9QJ3C77U97ADLNV40");q.page();
+    }(window,document,"ttq");
+    </script>
+    <!-- End TikTok Pixel -->
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
