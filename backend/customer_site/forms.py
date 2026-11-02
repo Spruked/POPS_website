@@ -13,6 +13,11 @@ class BetaForm(forms.Form):
     experience = forms.ChoiceField(choices=[('new', 'New to this'), ('some', 'Some experience'), ('experienced', 'Experienced')])
     consent = forms.BooleanField()
     updates = forms.BooleanField(required=False)
+    phone = forms.CharField(max_length=30, required=False)
+    street_address = forms.CharField(max_length=200, required=False)
+    city = forms.CharField(max_length=100, required=False)
+    state = forms.CharField(max_length=100, required=False)
+    source = forms.ChoiceField(required=False, choices=[(x, x) for x in ['tiktok', 'facebook', 'instagram', 'youtube', 'friend', 'other']])
     website = forms.CharField(required=False, max_length=100)
 
 
