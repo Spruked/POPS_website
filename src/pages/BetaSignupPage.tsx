@@ -1,10 +1,10 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import type { FormEvent } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
 import { LaunchPage, ContentSection as Section } from '../components/LaunchContent';
 import { CustomerField, FormFeedback, Honeypot } from '../components/CustomerForms';
 import { CustomerError, customerPost } from '../services/customerApi';
-import { enableTikTokPixel, trackTikTokBetaPageView, trackTikTokBetaFormAttempt, trackTikTokBetaSignup } from '../services/tiktokPixel';
+import { trackTikTokBetaPageView, trackTikTokBetaFormAttempt, trackTikTokBetaSignup } from '../services/tiktokPixel';
 
 const sources = ['tiktok', 'facebook', 'instagram', 'youtube', 'friend', 'other'] as const;
 
@@ -13,7 +13,7 @@ export default function BetaSignupPage() {
   const trackingSource = params.get('utm_source')?.toLowerCase() ?? '';
   const initialSource = sources.find(source => source === trackingSource) ?? '';
   const [source, setSource] = useState<string>(initialSource);
-  const [analyticsConsent, setAnalyticsConsent] = useState(false);
+  useEffect(() => { trackTikTokBetaPageView(); }, []);
   const [busy, setBusy] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [message, setMessage] = useState('');
@@ -22,7 +22,7 @@ export default function BetaSignupPage() {
 
   async function submit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    if (analyticsConsent) trackTikTokBetaFormAttempt();
+    trackTikTokBetaFormAttempt();
     setBusy(true);
     setFailed(false);
     setMessage('');
@@ -35,7 +35,7 @@ export default function BetaSignupPage() {
         experience: 'new',
       });
       setMessage(result.message);
-      if (analyticsConsent && result.created === true) trackTikTokBetaSignup();
+      if (result.created === true) trackTikTokBetaSignup();
       setSubmitted(true);
     } catch (error) {
       setFailed(true);
@@ -80,7 +80,6 @@ export default function BetaSignupPage() {
           <option value="other">Other</option>
         </select>
         <Honeypot />
-        <label className="launch-check"><input type="checkbox" checked={analyticsConsent} onChange={event => { setAnalyticsConsent(event.target.checked); if (event.target.checked) { enableTikTokPixel(); trackTikTokBetaPageView(); } }} /><span>Optional: Allow TikTok advertising measurement on this page so we can understand whether our ads bring beta registrations. This loads TikTok Pixel and may share browser and visit information with TikTok. Your contact details and form answers are not sent as conversion event properties. You can register without enabling this.</span></label>
         <label className="launch-check"><input type="checkbox" name="consent" required /><span>I agree to be contacted regarding POPS beta testing and have read the <Link to="/privacy">Privacy Notice</Link>. My information is for beta registration, not an unrelated marketing subscription.</span></label>
         <FormFeedback message={message} error={failed} />
         <button className="btn btn-primary" type="submit" disabled={busy || submitted}>{busy ? 'Submitting…' : submitted ? 'Registration received' : 'Join the beta interest list'}</button>
