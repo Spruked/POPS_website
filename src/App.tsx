@@ -24,6 +24,7 @@ import DesktopAppPage from "./pages/DesktopAppPage";
 import HowYouUseItPage from "./pages/HowYouUseItPage";
 import { AndroidPage, EarlyAdoptersPage, InstallationPage, FaqPage, NotFoundPage } from "./pages/LaunchPages";
 import { BetaPage, SupportPage } from "./pages/ParticipationPages";
+import BetaSignupPage from "./pages/BetaSignupPage";
 import { MissouriCustodyPage, MissouriParentagePage } from "./pages/MissouriFamilyLawPages";
 
 function App() {
@@ -42,6 +43,7 @@ function App() {
           <Route path="/desktop-app" element={<DesktopAppPage />} />
           <Route path="/android" element={<AndroidPage />} />
           <Route path="/beta" element={<BetaPage />} />
+          <Route path="/beta-signup" element={<BetaSignupPage />} />
           <Route path="/early-adopters" element={<EarlyAdoptersPage />} />
           <Route path="/installation" element={<InstallationPage />} />
           <Route path="/faq" element={<FaqPage />} />
