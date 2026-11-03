@@ -127,6 +127,17 @@ export default function Layout({ children }: LayoutProps) {
             <a href="https://certsig.com/" target="_blank" rel="noopener">CertSig</a>
             <a href="https://truemarkmint.com/" target="_blank" rel="noopener">TrueMarkMint</a>
           </div>
+          <div className="footer-contact" aria-label="Business email contacts">
+            {typeof window !== 'undefined' && window.location.hostname.replace(/^www\\./, '') === 'popsmatter.com' ? (
+              <a href="mailto:bryan@popsmatter.com">Business contact: bryan@popsmatter.com</a>
+            ) : (
+              <>
+                <a href="mailto:info@popsproof.com">Information: info@popsproof.com</a>
+                <a href="mailto:contact@popsproof.com">Contact: contact@popsproof.com</a>
+                <a href="mailto:betatesters@popsproof.com">Beta testing: betatesters@popsproof.com</a>
+              </>
+            )}
+          </div>
           <div className="footer-copy">
             Copyright 2026 Proof of Presence System. Pro Prime Series AI. All rights reserved.
           </div>
