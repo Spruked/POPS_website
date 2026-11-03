@@ -56,6 +56,7 @@ export default function BetaSignupPage() {
   >
     <Section id="beta-signup" title="Register your interest">
       <p>Registration is an expression of interest, not a guaranteed invitation. Please do not submit any private family records, court documents, or information about children.</p>
+      <p>Questions about beta testing? Email <a href="mailto:betatesters@popsproof.com">betatesters@popsproof.com</a>. The registration form below is still the way to join the interest list.</p>
       <form className="launch-form" onSubmit={submit} aria-busy={busy}>
         <CustomerField name="name" label="Full name" autoComplete="name" maxLength={100} required errors={errors} />
         <CustomerField name="email" label="Email address" type="email" autoComplete="email" required errors={errors} />
