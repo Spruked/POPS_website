@@ -128,7 +128,7 @@ export default function Layout({ children }: LayoutProps) {
             <a href="https://truemarkmint.com/" target="_blank" rel="noopener">TrueMarkMint</a>
           </div>
           <div className="footer-contact" aria-label="Business email contacts">
-            {typeof window !== 'undefined' && window.location.hostname.replace(/^www\\./, '') === 'popsmatter.com' ? (
+            {typeof window !== 'undefined' && ['popsmatter.com', 'www.popsmatter.com'].includes(window.location.hostname) ? (
               <a href="mailto:bryan@popsmatter.com">Business contact: bryan@popsmatter.com</a>
             ) : (
               <>
